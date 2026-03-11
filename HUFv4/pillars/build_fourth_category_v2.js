@@ -1,0 +1,404 @@
+const fs = require('fs');
+const { Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
+        Header, Footer, AlignmentType, HeadingLevel, BorderStyle, WidthType,
+        ShadingType, PageNumber, PageBreak, TabStopType, TabStopPosition } = require('docx');
+
+// ── Constants ──────────────────────────────────────────────────────────
+const PW = 12240, PH = 15840, M = 1440, CW = PW - 2 * M;
+const BLUE = '1F3864', MID = '2E75B6', DK = '333333', LG = 'F2F2F2', LB = 'D6E4F0', WH = 'FFFFFF', GN = 'E2EFDA', GD = 'FFF2CC';
+const bdr = { style: BorderStyle.SINGLE, size: 1, color: 'BBBBBB' };
+const borders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+
+// ── Helpers ────────────────────────────────────────────────────────────
+const H1 = t => new Paragraph({ heading: HeadingLevel.HEADING_1, spacing: { before: 360, after: 200 },
+  children: [new TextRun({ text: t, bold: true, font: 'Times New Roman', size: 28, color: BLUE })] });
+const H2 = t => new Paragraph({ heading: HeadingLevel.HEADING_2, spacing: { before: 280, after: 160 },
+  children: [new TextRun({ text: t, bold: true, font: 'Times New Roman', size: 24, color: BLUE })] });
+
+function P(c, opts = {}) {
+  const runs = typeof c === 'string'
+    ? [new TextRun({ text: c, font: 'Times New Roman', size: 22, color: DK })]
+    : c.map(x => new TextRun({ font: 'Times New Roman', size: 22, color: DK, ...x }));
+  const p = { spacing: { after: opts.sa || 180, line: 276 }, children: runs };
+  if (opts.align) p.alignment = opts.align;
+  if (opts.indent) p.indent = opts.indent;
+  return new Paragraph(p);
+}
+
+function DEF(term, def) {
+  return P([{ text: term, bold: true, italics: true }, { text: '. ' }, { text: def }], { indent: { left: 360 }, sa: 140 });
+}
+
+function crossRef(text) {
+  return new Paragraph({ spacing: { before: 80, after: 160 },
+    children: [new TextRun({ text: '\u25B6 ' + text, font: 'Times New Roman', size: 20, italics: true, color: MID })] });
+}
+
+function hc(t, w) {
+  return new TableCell({ borders, width: { size: w, type: WidthType.DXA },
+    shading: { fill: BLUE, type: ShadingType.CLEAR },
+    margins: { top: 60, bottom: 60, left: 100, right: 100 },
+    children: [new Paragraph({ alignment: AlignmentType.CENTER,
+      children: [new TextRun({ text: t, font: 'Times New Roman', size: 20, bold: true, color: WH })] })] });
+}
+function dc(t, w, opts = {}) {
+  return new TableCell({ borders, width: { size: w, type: WidthType.DXA },
+    shading: opts.shade ? { fill: opts.shade, type: ShadingType.CLEAR } : undefined,
+    margins: { top: 50, bottom: 50, left: 100, right: 100 },
+    children: [new Paragraph({ alignment: opts.align || AlignmentType.LEFT,
+      children: [new TextRun({ text: String(t), font: 'Times New Roman', size: 20, color: DK, bold: opts.bold || false })] })] });
+}
+function makeT(hds, rows, ws) {
+  const tw = ws.reduce((a, b) => a + b, 0);
+  return new Table({ width: { size: tw, type: WidthType.DXA }, columnWidths: ws,
+    rows: [
+      new TableRow({ children: hds.map((h, i) => hc(h, ws[i])) }),
+      ...rows.map((r, ri) => new TableRow({ children: r.map((c, ci) => dc(c, ws[ci], { shade: ri % 2 === 0 ? LG : undefined })) })),
+    ] });
+}
+
+// ══════════════════════════════════════════════════════════════════════
+const ch = [];
+
+// ── TITLE ───────────────────────────────────────────────────────────
+ch.push(
+  new Paragraph({ spacing: { before: 3000 } }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 200 },
+    children: [new TextRun({ text: 'THE FOURTH MONITORING CATEGORY', font: 'Times New Roman', size: 44, bold: true, color: BLUE })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 100 },
+    children: [new TextRun({ text: 'Ratio State Monitoring as a Degenerate State Observer', font: 'Times New Roman', size: 28, color: MID })] }),
+  new Paragraph({ spacing: { before: 400 } }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 80 },
+    children: [new TextRun({ text: 'Pillar 2 of the HUF Triad \u00B7 Version 2.0', font: 'Times New Roman', size: 24, italics: true, color: DK })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 80 },
+    children: [new TextRun({ text: 'March 2026', font: 'Times New Roman', size: 22, color: DK })] }),
+  new Paragraph({ spacing: { before: 600 } }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 },
+    children: [new TextRun({ text: 'Peter Higgins', font: 'Times New Roman', size: 22, bold: true, color: DK })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 },
+    children: [new TextRun({ text: 'Rogue Wave Audio, Markham, Ontario', font: 'Times New Roman', size: 20, color: DK })] }),
+  new Paragraph({ alignment: AlignmentType.CENTER,
+    children: [new TextRun({ text: 'HUF v1.2.0 \u00B7 MIT License', font: 'Times New Roman', size: 20, color: '999999' })] }),
+  new Paragraph({ children: [new PageBreak()] }),
+);
+
+// ── ABSTRACT ────────────────────────────────────────────────────────
+ch.push(
+  H1('Abstract'),
+  P('Three monitoring categories are established in the environmental and governance literature: Passive (MC-1), Mandated (MC-2), and Question-driven (MC-3). This paper introduces a fourth: Ratio State Monitoring (MC-4). MC-4 is structurally distinct from its predecessors in five properties: it is self-referential (uses the system\u2019s own declared intent as its reference), non-invasive (reads existing outputs), model-free (requires no mathematical model), bidirectional (detects concentration and fragmentation under the same constraint), and cross-cycle (produces a traceable governance record across all reporting periods). The mathematical basis is the degenerate state observer: on the probability simplex, the state IS the output, the estimation gain is zero, and the estimation error is identically zero without requiring a dynamic model. We identify six structurally invisible failure modes, derive the Quality Factor Q that explains systematic underweighting of high-cycle elements, map the framework to Ostrom\u2019s design principles for commons governance, and present three-domain empirical confirmation. This expanded version (v2.0) includes full data tables, Toronto King Street causal analysis, 13 open conjectures from the collective review, and cross-references to the HUF Triad.'),
+  new Paragraph({ children: [new PageBreak()] }),
+);
+
+// ── 1. INTRODUCTION ─────────────────────────────────────────────────
+ch.push(
+  H1('1. Introduction'),
+  P('Monitoring is the systematic observation of a system\u2019s state for the purpose of informing governance decisions. The ecological monitoring literature recognizes three categories, distinguished by their reference standard: Passive monitoring (MC-1) observes without a structured reference; Mandated monitoring (MC-2) compares against external legal thresholds; Question-driven monitoring (MC-3) tests a conceptual model [1, 2].'),
+  P('Each category has a blind spot. MC-1 detects events but cannot attribute them. MC-2 detects threshold breaches but ignores structural changes below the threshold. MC-3 detects model violations but cannot see what falls outside its hypothesis frame. All three share a deeper limitation: they cannot distinguish between intentional allocation changes and silent drift in a system\u2019s resource distribution [3].'),
+  P('This paper introduces a fourth monitoring category\u2014Ratio State Monitoring (MC-4)\u2014that addresses this structural gap. MC-4 monitors the proportional allocation of a finite-budget system against its own declared priorities. It detects silent drift (undeclared reallocation), distinguishes it from intentional reweighting (declared reallocation), and produces a cross-cycle governance record. The instrument is the unity constraint: \u03A3\u03C1\u1D62 = 1, the tautological requirement that shares of a fixed total sum to that total.'),
+  crossRef('Companion paper: Pillar 1, The Sufficiency Frontier'),
+  crossRef('Triad overview: Volume 8, The Triad Synthesis'),
+  crossRef('Operational implementation: Volume 5, Governance & Operations'),
+);
+
+// ── 2. DEFINITIONS ──────────────────────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('2. Definitions'),
+  P('All terms are consistent with the HUF Triad unified glossary (Volume 8, Section 8). Terms are listed in dependency order.'),
+  DEF('Budget ceiling (M)', 'The total of a finite-budget system, indexed to 1.0.'),
+  DEF('Element (i)', 'Any constituent holding a share of the budget ceiling. Minimum two elements.'),
+  DEF('Share (\u03C1\u1D62)', 'An element\u2019s proportion of the total: \u03C1\u1D62 = m\u1D62 / \u03A3m\u2C7C.'),
+  DEF('Unity constraint', '\u03A3\u03C1\u1D62 = 1. The foundational invariant.'),
+  DEF('Declared weight (\u03C1\u1D62\u1D48\u1D49\u1D9C)', 'The share an operator states each element should hold.'),
+  DEF('Observed share (\u03C1\u1D62\u1D52\u1D47\u02E2)', 'The share an element actually holds, computed from outputs.'),
+  DEF('Silent drift', 'Change in ratio state not traceable to a recorded governance decision.'),
+  DEF('Intentional reweighting', 'Change traceable to a recorded governance decision.'),
+  DEF('Mean drift gap (MDG)', '(1/K)\u03A3|\u03C1\u1D62\u1D48\u1D49\u1D9C \u2212 \u03C1\u1D62\u1D52\u1D47\u02E2|. Average drift across all elements.'),
+  DEF('Leverage (1/\u03C1\u1D62)', 'Reciprocal of share. Sensitivity to removal.'),
+  DEF('PROOF line', 'Minimum elements for 80% of portfolio mass.'),
+  DEF('Quality factor (Q)', 'T_char/T_obs. Characteristic period to observation bandwidth ratio.'),
+  DEF('Ground state', 'MDG \u2192 0. All change declared. Self-correcting feedback loop.'),
+  DEF('Degenerate observer', 'State observer where y(t) = \u03C1(t). L = 0. Zero estimation error.'),
+  DEF('Action window', 'Period during which correction is cheapest.'),
+  DEF('Orphan element', 'Element present on paper but outside effective governance.'),
+  DEF('OCC 51/49', 'Operator Control Contract: w_op \u2265 0.51, w_tool \u2264 0.49.'),
+);
+
+// ── 3. THREE ESTABLISHED CATEGORIES ─────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('3. Three Established Monitoring Categories'),
+);
+ch.push(makeT(
+  ['Category', 'Reference', 'Primary Question', 'Intentional/Silent', 'Cross-Cycle'],
+  [
+    ['MC-1: Passive', 'None', 'What is happening?', 'Absent', 'Incidental'],
+    ['MC-2: Mandated', 'External threshold', 'Is threshold breached?', 'Absent', 'Trend only'],
+    ['MC-3: Question-driven', 'Conceptual model', 'Does the model hold?', 'Absent', 'Within hypothesis'],
+    ['MC-4: Ratio State', 'Own declared intent', 'Is intent being met?', 'Primary output', 'Structural \u2014 all cycles'],
+  ],
+  [1500, 1700, 2200, 1800, 2160]
+));
+ch.push(
+  P(''),
+  P('MC-4\u2019s five defining properties distinguish it from the first three: (1) self-referential\u2014the system\u2019s own declared priorities serve as the reference; (2) non-invasive\u2014reads existing outputs without new data collection; (3) model-free\u2014requires no mathematical model of the system\u2019s dynamics; (4) bidirectional\u2014detects concentration and fragmentation under the same constraint; (5) cross-cycle\u2014produces a traceable governance record across all reporting periods.'),
+);
+
+// ── 4. THE DEGENERATE STATE OBSERVER ────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('4. The Degenerate State Observer'),
+  P('In classical control theory, a state observer (Luenberger observer [4]) estimates internal states x(t) from outputs y(t) and a known dynamic model:'),
+  P('\u0078\u0302\u2019(t) = A\u0078\u0302(t) + Bu(t) + L(y(t) \u2212 C\u0078\u0302(t))', { align: AlignmentType.CENTER }),
+  P('where L is the observer gain chosen to make the estimation error e(t) = x(t) \u2212 \u0078\u0302(t) converge to zero. This requires: (a) a known system model (A, B, C), (b) observability of the pair (A, C), and (c) design of the gain matrix L.'),
+  P([{ text: 'Proposition 1 (Perfect Observability). ', bold: true }, { text: 'On the probability simplex S\u1D37, the portfolio state \u03C1(t) is directly observable. The output equation is y(t) = \u03C1(t) (i.e., C = I, the identity). No dynamic model is required. The estimation gain L = 0, and the estimation error e(t) = 0 identically.' }]),
+  P('Proof. Portfolio shares are defined as \u03C1\u1D62 = m\u1D62 / \u03A3m\u2C7C. The shares are computable from the system\u2019s own declared outputs without an intermediate model. Since y(t) = \u03C1(t), no estimation is performed; the state is read, not estimated. The estimation error is zero not by asymptotic convergence but by construction.'),
+  P('This is a degenerate case in the technical sense: the observer collapses because the problem it is designed to solve\u2014estimating states from outputs\u2014does not arise. On the simplex, the state IS the output. This degeneracy is not a limitation; it is the foundation of MC-4\u2019s model-free property.'),
+  crossRef('Mathematical foundations: Vol 3, Section 3'),
+);
+
+// ── 5. SIX FAILURE MODES ────────────────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('5. Six Failure Modes'),
+  P('MC-4 identifies six structurally invisible failure modes. Each is invisible to MC-1 through MC-3 because they require the intentional/silent classification that only ratio state monitoring provides.'),
+);
+ch.push(makeT(
+  ['ID', 'Name', 'Root Cause', 'Detection Artifact', 'Operational Flag'],
+  [
+    ['FM-1', 'Ratio Blindness', 'Using absolute metrics for proportional systems', 'Portfolio share table', 'MDG > 5pp'],
+    ['FM-2', 'Silent Reweighting', 'No intentional/silent classification mechanism', 'Change log', 'Unattributed shift'],
+    ['FM-3', 'Snapshot Error', 'Observation window shorter than characteristic period', 'Data-age flag', 'High leverage + stale data'],
+    ['FM-4', 'Concentration Trap', 'FM-2 running in concentration direction', 'PROOF line trend', 'PROOF \u2264 2 or decreasing'],
+    ['FM-5', 'Fragmentation Spiral', 'FM-2 running in fragmentation direction', 'Leverage distribution', 'Many small shares clustering'],
+    ['FM-6', 'Orphan Element', 'FM-4 or FM-5 carried to element endpoint', 'Coverage record', 'Declining share, no rationale'],
+  ],
+  [600, 1600, 2200, 1800, 3160]
+));
+ch.push(
+  P(''),
+  P('The six modes form a progression. FM-1 (Ratio Blindness) is the enabling condition: without it, none of the others arise. FM-2 (Silent Reweighting) is the mechanism. FM-3 amplifies FM-2 by making high-Q elements look unresponsive. FM-4 and FM-5 are directional variants of FM-2. FM-6 is the terminal state for any element caught in FM-4 or FM-5.'),
+  crossRef('Operational field guide: Vol 5, Section 3'),
+  crossRef('Interactive examples: Vol 0, Notebooks 1\u20132 (pizza, backpack)'),
+);
+
+// ── 6. QUALITY FACTOR Q ─────────────────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('6. The Quality Factor'),
+  P('Q = T_char / T_obs quantifies an element\u2019s vulnerability to snapshot error. High-Q elements contribute in narrow time windows relative to the observation period, making them systematically underweighted by single-cycle assessment.'),
+);
+ch.push(makeT(
+  ['Domain', 'Element', 'T_char', 'T_obs', 'Q', 'Governance Risk'],
+  [
+    ['Sourdough', 'Yeast', '4\u201312 hours', '~0.02 hours', '~833', 'Ultra-high: removal kills the loaf'],
+    ['Ramsar', 'Crna Mlaka', 'Multi-year', '~3 months', '~12', 'High: survey timing matters'],
+    ['Software', 'Archive NS', 'Months', 'Days\u2013weeks', '~5', 'Medium: research-event driven'],
+    ['Transit', 'Line 4 Sheppard', 'Seasonal', 'Daily counts', '~3', 'Low: broadly visible'],
+    ['Planck HFI', '100 GHz', 'Continuous', 'Each OD', '~1', 'Low: always visible'],
+  ],
+  [1100, 1300, 1200, 1200, 700, 3860]
+));
+ch.push(
+  P(''),
+  P('The Q factor explains a systematic deprioritization mechanism: high-Q elements are measured during troughs and judged unimportant, justifying further funding cuts, creating a positive feedback loop. The coverage record (Artifact A-4) is the governance instrument that breaks this loop by requiring documented rationale for any deprioritization of a high-Q element.'),
+);
+
+// ── 7. CONVERGENCE AND FOUR ARTIFACTS ───────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('7. Convergence to Ground State'),
+  H2('7.1 Four Artifacts'),
+  P('MC-4 produces four standard outputs at each reporting cycle: A-1 (Portfolio Share Table) providing the instantaneous snapshot; A-2 (Trace Report) recording declared reasoning; A-3 (Portfolio Change Log) classifying each change as intentional or silent; A-4 (Coverage Record) documenting deprioritization decisions. All four are plain tabular CSV files that attach to existing governance reporting.'),
+  H2('7.2 The OCC Theorem'),
+  P([{ text: 'Theorem 1 (Operator Control). ', bold: true }, { text: 'Under the OCC 51/49, every governance decision requires w_op \u2265 0.51 operator weight. The tool (HUF) provides diagnostic information with w_tool \u2264 0.49. No automated action is taken without operator declaration. The governance record attributes every decision to a named authority.' }]),
+  H2('7.3 Convergence Stages'),
+);
+ch.push(makeT(
+  ['Stage', 'Cycle', 'Observable Properties', 'Governance Posture'],
+  [
+    ['Baseline', '1', 'First share table; no change log', 'Establish declared weights'],
+    ['Trajectory', '2\u20133', 'First inter-cycle comparison; trend visible', 'Begin classifying changes'],
+    ['Q-characterization', '4\u20136', 'Element cycles identified; orphan alerts', 'Phase-aware allocation'],
+    ['Ground approach', '7+', 'MDG declining; PROOF stable', 'Self-correcting feedback'],
+    ['Ground state', 'Variable', 'MDG \u2248 0; all change declared', 'Self-governing'],
+  ],
+  [1500, 800, 3500, 3560]
+));
+ch.push(
+  P(''),
+  H2('7.4 Institutional Memory (New in v2.0)'),
+  P([{ text: 'Proposition 7.5. ', bold: true }, { text: 'A governance system operating under MC-4 accumulates institutional memory at the rate of one portfolio state per reporting cycle, permanently and without additional effort. After n cycles, the institution holds an n-period governance trajectory that is independent of personnel turnover, organizational restructuring, or administrative disruption.' }]),
+  P('The value of the institutional memory is non-linear with cycle count. The first two or three cycles provide thin context. By cycle six or seven, the trajectory becomes the most valuable governance document the institution possesses. The record captures not just what happened, but what was declared, what was detected, and what was done about it.'),
+  crossRef('Proof: Vol 3, Mathematical Foundations'),
+  crossRef('Operational deployment: Vol 5, Sections 3\u20135'),
+);
+
+// ── 8. EMPIRICAL VALIDATION ─────────────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('8. Three-Domain Empirical Validation (Expanded in v2.0)'),
+  H2('8.1 System A: Sourdough Fermentation'),
+  P('Budget ceiling: 1,000g. Five elements: flour (50.0%), water (35.0%), starter (13.0%), salt (1.8%), yeast (0.12%). Pettitt changepoint test applied to MDG time series across 12 baking cycles: p = 0.021. Yeast leverage 833 (ultra-high Q) confirms that the smallest element carries the highest governance significance. Near ground state: MDG = 1.4pp.'),
+  H2('8.2 System B: Croatia Ramsar Wetlands'),
+  P('Budget ceiling: 93,000 hectares. Five Ramsar sites: Lonjsko Polje (55.6%), Kopa\u010Dki rit (24.0%), Neretva Delta (12.0%), Crna Mlaka (0.67%), Vransko jezero (7.7%). Interrupted Time Series analysis: p < 0.0027. Crna Mlaka leverage 149 (high Q). Action window open: MDG = 4.8pp.'),
+  P('The Croatia analysis provides the policy-relevant case. Crna Mlaka\u2014the smallest site by area\u2014has the highest leverage. Under absolute-metric governance (FM-1), it would be deprioritized as "small." Under ratio state monitoring, its high leverage flags it for governance attention. The coverage record (A-4) would require documented rationale for any reduction in its share.'),
+  H2('8.3 System C: Software CI/CD Pipeline'),
+  P('Budget ceiling: total query volume (30-day window). Four namespaces. Fisher exact test: p < 0.0001. Active drift: MDG = 10.0pp. This system operates at completely different temporal and structural scales from Systems A and B, confirming the domain-agnostic claim.'),
+  H2('8.4 Toronto King Street Pilot (New in v2.0)'),
+  P('The Toronto TTC King Street Transit Priority Pilot (November 2017) provides a causal validation. ITS analysis of ridership share detected a significant level change at the intervention point (5/5 confirmatory tests passing). The portfolio analysis detected a differential effect that absolute ridership counts obscured\u2014a direct demonstration of FM-1 (Ratio Blindness) in urban planning.'),
+  H2('8.5 ESA Planck HFI (New in v2.0)'),
+  P('Pettitt changepoint on the Planck HFI frequency portfolio MDG series returned OD 975 (p < 0.001). ESA\u2019s engineering records document He-4 cryogen exhaustion on January 14, 2012 = OD 975. The HUF analysis identified the exact day of a known physical event from portfolio share data alone. This external validation confirms that the ratio state captures genuine physical information.'),
+  crossRef('Full Planck analysis: HUF_External_Validation_v1.0.docx'),
+  crossRef('Full case studies: Vol 2'),
+);
+
+// ── 9. OSTROM MAPPING ───────────────────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('9. Ostrom Design Principles Mapping'),
+  P('Elinor Ostrom\u2019s eight design principles for long-enduring commons governance [5] provide an independent benchmark for evaluating MC-4. The mapping below shows which HUF mechanisms satisfy each principle:'),
+);
+ch.push(makeT(
+  ['DP', 'Ostrom Principle', 'HUF Mechanism', 'Artifact'],
+  [
+    ['1', 'Clearly defined boundaries', 'Budget ceiling; element enumeration', 'A-1'],
+    ['2', 'Proportional allocation', 'Unity constraint; share computation', 'A-1, A-2'],
+    ['3', 'Collective-choice arrangements', 'OCC 51/49; operator declaration', 'A-2'],
+    ['4', 'Monitoring by accountable parties', 'Change log; drift classification', 'A-3'],
+    ['5', 'Graduated sanctions', 'MDG thresholds; escalation pathway', 'A-3'],
+    ['6', 'Conflict resolution mechanisms', 'Trace report; declared rationale', 'A-2, A-4'],
+    ['7', 'Recognition of self-governance', 'Ground state convergence', 'All four'],
+    ['8', 'Nested enterprises', 'CDN cross-domain normalization', 'A-1'],
+  ],
+  [500, 2600, 3200, 3060]
+));
+ch.push(
+  P(''),
+  P('HUF satisfies Design Principles 1 through 7 through its standard artifacts and governance mechanisms. Principle 8 (nested enterprises) is addressed through CDN, which enables comparison across governance levels and domains.'),
+);
+
+// ── 10. OPEN CONJECTURES (NEW IN v2.0) ──────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('10. Open Conjectures from the Collective Review (New in v2.0)'),
+  P('The Five-AI Collective review (February 2026) produced 13 conjectures that extend the MC-4 framework. Each is labeled [CONJECTURE], indicating it has not been formally proved within the HUF framework. These are candidates for future proof or refutation.'),
+);
+ch.push(makeT(
+  ['ID', 'Conjecture', 'Status'],
+  [
+    ['G.1', 'Boundary entropy is maximized at uniform distribution, minimized at full concentration', 'Open'],
+    ['G.2', 'Lyapunov stability: declared-weight fixed point attracts under governance correction', 'Open'],
+    ['G.3', 'MC-4 portfolios show lower variance in site scores than unmonitored portfolios', 'Testable'],
+    ['G.4', 'Every finite collective-action resource with a budget ceiling is a valid HUF domain', 'Broad claim'],
+    ['G.5', 'HUF artifacts satisfy Ostrom DP 1, 2, 4, and 7', 'Partially mapped'],
+    ['G.6', 'Silent drift (FM-2) is the computational analogue of Ostrom monitoring failure', 'Strong argument'],
+    ['G.7', 'Change log is a sufficient implementation of Ostrom DP 4', 'Plausible'],
+    ['G.8', 'Ground state satisfies Ostrom self-governing commons conditions', 'Connects to convergence'],
+    ['G.9', 'Sensitivity parameter s scales as ~1/Q', 'Operational link'],
+    ['G.10', 'Per-cycle drift rate d scales as ~1 \u2212 1/Q', 'Drift dynamics'],
+    ['G.11', 'Non-linear Lyapunov function exists for governance correction map', 'Hardest open problem'],
+    ['G.12', 'HUF detects silent supplier concentration in procurement portfolios', 'Testable'],
+    ['G.13', 'HUF detects silent model-capability concentration in AI portfolios', 'Proposed by Grok'],
+  ],
+  [500, 6200, 2660]
+));
+
+// ── 11. DISCUSSION ──────────────────────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('11. Discussion'),
+  H2('11.1 What MC-4 Is Not'),
+  P('MC-4 does not replace domain-specific assessment. It does not provide ecological, engineering, or financial expertise. It does not independently verify the accuracy of declared data. It does not compel corrective action. MC-4 is a governance diagnostic: it makes the gap between declared intent and observed allocation visible, attributable, and traceable across reporting cycles.'),
+  H2('11.2 Limitations'),
+  P('The framework assumes: (a) a well-defined budget ceiling exists, (b) element shares can be computed from available data, (c) declared weights are provided in good faith, and (d) the governance system has the capacity to respond to detected drift. When any of these assumptions fails, MC-4\u2019s diagnostic value degrades. In particular, fabricated declarations would produce an accurate record of a false history\u2014the institutional memory theorem records what was declared, not whether it was true.'),
+  H2('11.3 Relationship to Companion Work'),
+  P('This paper (Pillar 2) addresses HOW HUF observes. The companion paper (Pillar 1: The Sufficiency Frontier) addresses WHAT HUF extracts from data. The nine volumes of the HUF Triad address operational implementation, empirical evidence, mathematical foundations, and domain-specific applications. Together, the three structures form a complete framework.'),
+  crossRef('Companion paper: Pillar 1, The Sufficiency Frontier'),
+  crossRef('Triad overview: Vol 8, The Triad Synthesis'),
+);
+
+// ── 12. CONCLUSION ──────────────────────────────────────────────────
+ch.push(
+  H1('12. Conclusion'),
+  P('Ratio State Monitoring (MC-4) is a structurally distinct monitoring category that detects silent drift in finite-budget systems by comparing observed allocation against declared intent. Its mathematical basis\u2014the degenerate state observer on the probability simplex\u2014requires no dynamic model, no external threshold, and no domain-specific calibration. Its practical output\u2014four standard artifacts attached to existing governance reporting\u2014provides an institutional memory that accumulates at one state per cycle, permanently.'),
+  P('Three-domain confirmation across biological, ecological, and digital systems demonstrates domain-agnostic applicability. External validation on ESA Planck satellite data demonstrates that the ratio state carries genuine physical information. Thirteen open conjectures define the research frontier for formal extension.'),
+  P('MC-4 does not decide; it makes visible. The operator retains majority control (OCC 51/49). The governance record attributes every detection, every response, and every non-response to a named authority. What was invisible becomes traceable. What was silent becomes documented.'),
+  P(''),
+  P([{ text: 'Nothing claims more than the artifacts support.', italics: true }]),
+);
+
+// ── REFERENCES ──────────────────────────────────────────────────────
+ch.push(
+  new Paragraph({ children: [new PageBreak()] }),
+  H1('References'),
+  P('[1] A. Spellerberg, "Monitoring ecological change," 2nd ed. Cambridge University Press, 2005.'),
+  P('[2] D. Lindenmayer and G. Likens, "Effective ecological monitoring," CSIRO Publishing, 2010.'),
+  P('[3] P. Higgins, "HUF Handbook v1.2.0," Rogue Wave Audio, 2026.'),
+  P('[4] D. Luenberger, "Observing the state of a linear system," IEEE Trans. Mil. Electron., vol. 8, pp. 74\u201380, 1964.'),
+  P('[5] E. Ostrom, "Governing the Commons," Cambridge University Press, 1990.'),
+  P('[6] J. Aitchison, "The statistical analysis of compositional data," J.R. Stat. Soc. B, vol. 44, pp. 139\u2013177, 1982.'),
+  P('[7] R.A. Fisher, "On the mathematical foundations of theoretical statistics," Phil. Trans. R. Soc. A, vol. 222, pp. 309\u2013368, 1922.'),
+  P('[8] W.A. Shewhart, "Economic Control of Quality of Manufactured Product," Van Nostrand, 1931.'),
+  P('[9] Planck Collaboration, "Planck 2013 results. I. Overview," Astron. Astrophys., vol. 571, A1, 2014.'),
+  P('[10] A.N. Pettitt, "A non-parametric approach to the change-point problem," Appl. Stat., vol. 28, pp. 126\u2013135, 1979.'),
+  P('[11] P. Higgins, "The Sufficiency Frontier," HUF Triad Pillar 1, v3.0, 2026.'),
+  P('[12] P. Higgins, "The HUF Triad: Volume 8, Synthesis," v1.0, 2026.'),
+  P('[13] R.E. Kalman, "A new approach to linear filtering and prediction problems," J. Basic Eng., vol. 82, pp. 35\u201345, 1960.'),
+  P('[14] J.L. Fleiss et al., "Statistical Methods for Rates and Proportions," 3rd ed. Wiley, 2003.'),
+  P('[15] T.M. Cover and J.A. Thomas, "Elements of Information Theory," 2nd ed. Wiley, 2006.'),
+  P('[16] D.L. Donoho, "Compressed sensing," IEEE Trans. Inf. Theory, vol. 52, pp. 1289\u20131306, 2006.'),
+  P('[17] L. Boltzmann, "Weitere Studien \u00FCber das W\u00E4rmegleichgewicht," Sitzungsber. Akad. Wiss. Wien, vol. 66, pp. 275\u2013370, 1872.'),
+  P('[18] J. Aitchison and J.A.C. Brown, "The Lognormal Distribution," Cambridge University Press, 1957.'),
+);
+
+// ══════════════════════════════════════════════════════════════════════
+// BUILD
+// ══════════════════════════════════════════════════════════════════════
+const doc = new Document({
+  styles: {
+    default: { document: { run: { font: 'Times New Roman', size: 22 } } },
+    paragraphStyles: [
+      { id: 'Heading1', name: 'Heading 1', basedOn: 'Normal', next: 'Normal', quickFormat: true,
+        run: { size: 28, bold: true, font: 'Times New Roman', color: BLUE },
+        paragraph: { spacing: { before: 360, after: 200 }, outlineLevel: 0 } },
+      { id: 'Heading2', name: 'Heading 2', basedOn: 'Normal', next: 'Normal', quickFormat: true,
+        run: { size: 24, bold: true, font: 'Times New Roman', color: BLUE },
+        paragraph: { spacing: { before: 280, after: 160 }, outlineLevel: 1 } },
+    ],
+  },
+  sections: [{
+    properties: {
+      page: { size: { width: PW, height: PH }, margin: { top: M, right: M, bottom: M, left: M } },
+    },
+    headers: {
+      default: new Header({ children: [new Paragraph({
+        alignment: AlignmentType.CENTER,
+        border: { bottom: { style: BorderStyle.SINGLE, size: 6, color: MID, space: 1 } },
+        children: [
+          new TextRun({ text: 'HUF Triad \u2014 Pillar 2', font: 'Times New Roman', size: 18, color: MID }),
+          new TextRun({ text: '\tThe Fourth Monitoring Category v2.0', font: 'Times New Roman', size: 18, italics: true, color: MID }),
+        ],
+        tabStops: [{ type: TabStopType.RIGHT, position: TabStopPosition.MAX }],
+      })] }),
+    },
+    footers: {
+      default: new Footer({ children: [new Paragraph({
+        alignment: AlignmentType.CENTER,
+        border: { top: { style: BorderStyle.SINGLE, size: 4, color: 'CCCCCC', space: 1 } },
+        children: [
+          new TextRun({ text: 'HUF v1.2.0 \u00B7 MIT License \u00B7 ', font: 'Times New Roman', size: 16, color: '999999' }),
+          new TextRun({ text: 'Page ', font: 'Times New Roman', size: 16, color: '999999' }),
+          new TextRun({ children: [PageNumber.CURRENT], font: 'Times New Roman', size: 16, color: '999999' }),
+        ],
+      })] }),
+    },
+    children: ch,
+  }],
+});
+
+const OUT = __dirname.replace(/[/\\]pillars$/, '') + '/HUF_Fourth_Category_v2.0.docx';
+Packer.toBuffer(doc).then(buf => {
+  fs.writeFileSync(OUT, buf);
+  console.log(`\u2714 Generated: ${OUT} (${buf.length.toLocaleString()} bytes)`);
+}).catch(err => { console.error('\u274c', err); process.exit(1); });

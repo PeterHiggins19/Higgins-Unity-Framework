@@ -1,0 +1,157 @@
+flowchart TD
+
+%% ======================================================
+%% ROOT
+%% ======================================================
+
+ROOT[Regime Atlas<br/>Universal Regime Space]
+
+%% ======================================================
+%% PHYSICAL REGIMES
+%% ======================================================
+
+subgraph PHYS["Physical Regimes"]
+    direction TB
+
+    subgraph FUND["Fundamental Field Regimes"]
+        GRAV[Spacetime & Gravitation]
+        QFT[Quantum Field Regimes]
+        EM[Electromagnetic Regimes]
+    end
+
+    subgraph MATTER["Matter & Phase Regimes"]
+        SOLID[Solid Phases]
+        LIQUID[Liquid Phases]
+        GAS[Gas Phases]
+        PLASMA[Plasma]
+        SOFT[Soft / Active Matter]
+    end
+
+    subgraph FLOW["Transport & Flow Regimes"]
+        LAM[Laminar Flow]
+        TURB[Turbulent Flow]
+        HEAT[Heat Transport]
+        MASS[Mass Transport]
+        CHARGE[Charge Transport]
+    end
+
+    subgraph THERMO["Thermodynamic Regimes"]
+        EQ[Equilibrium]
+        NEQ[Near‑Equilibrium]
+        FAR[FAR‑from‑Equilibrium]
+    end
+end
+
+%% ======================================================
+%% PLANETARY & EARTH SYSTEMS
+%% ======================================================
+
+subgraph PLANET["Planetary & Earth System Regimes"]
+    direction TB
+    CLIMATE[Climate Regimes]
+    GEO[Geophysical Regimes]
+    BIO[Biosphere Regimes]
+end
+
+%% ======================================================
+%% INFORMATION–PHYSICAL REGIMES
+%% ======================================================
+
+subgraph INFO["Information–Physical Regimes"]
+    direction TB
+
+    subgraph COMP["Computation Regimes"]
+        CLASSICAL[Classical Computing]
+        NEURO[Neuromorphic Computing]
+        QUANTUM[Quantum Computing]
+    end
+
+    subgraph AI["Artificial Intelligence Regimes"]
+        TOOL[Tool AI]
+        AGENT[Agentic Optimization]
+        RECURSIVE[Recursive Self‑Modeling AI]
+        ALIGNED[Aligned Co‑Regulator AI]
+    end
+
+    subgraph CONTROL["Measurement & Control Regimes"]
+        SENSOR[Sensing & Measurement]
+        FEEDBACK[Feedback Control]
+        CYBER[Cyber‑Physical Systems]
+    end
+end
+
+%% ======================================================
+%% INDUSTRY & INFRASTRUCTURE
+%% ======================================================
+
+subgraph INDUSTRY["Industry & Infrastructure Regimes"]
+    direction TB
+    ENERGY[Energy Systems]
+    MANUF[Manufacturing Systems]
+    GRID[Infrastructure Networks]
+end
+
+%% ======================================================
+%% ECONOMIC & MARKET REGIMES
+%% ======================================================
+
+subgraph ECON["Economic & Market Regimes"]
+    direction TB
+    MARKET_EQ[Market Equilibrium]
+    BUBBLE[Speculative Bubble]
+    CRASH[Crash / Contagion]
+end
+
+%% ======================================================
+%% GOVERNANCE REGIMES
+%% ======================================================
+
+subgraph GOV["Governance Regimes"]
+    direction TB
+    STATE[Nation‑State Governance]
+    MARKET_GOV[Market‑Dominant Governance]
+    ALGO_GOV[Algorithmic Governance]
+end
+
+%% ======================================================
+%% SEMANTIC & MEANING REGIMES
+%% ======================================================
+
+subgraph SEM["Semantic & Meaning Regimes"]
+    direction TB
+    MYTHIC[Mythic / Religious Meaning]
+    RATIONAL[Scientific‑Rational Meaning]
+    FRAG[Fragmented / Post‑Truth Meaning]
+end
+
+%% ======================================================
+%% CIVILIZATIONAL REGIMES
+%% ======================================================
+
+subgraph CIV["Civilizational Regimes"]
+    direction TB
+    STABLE_CIV[Stable Civilization]
+    POLY[Polycrisis]
+    COLLAPSE[Civilizational Collapse / Transition]
+end
+
+%% ======================================================
+%% CONNECTIONS (INFLUENCE FLOWS)
+%% ======================================================
+
+ROOT --> PHYS
+PHYS --> PLANET
+PLANET --> INDUSTRY
+INDUSTRY --> ECON
+ECON --> INFO
+INFO --> GOV
+GOV --> SEM
+SEM --> CIV
+
+%% FEEDBACK LOOPS
+
+CIV -->|Cultural Demand| ECON
+GOV -->|Policy Constraints| INDUSTRY
+INFO -->|Optimization Pressure| ECON
+PLANET -->|Climate Limits| INDUSTRY
+PHYS -->|Energy & Entropy| PLANET

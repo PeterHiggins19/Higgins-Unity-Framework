@@ -1,0 +1,30 @@
+=== SHA-256 CHECKSUMS FOR ALL RAW INPUT FILES ===
+Generated: 2026-03-09T03:03:09Z
+
+--- ESA/Planck Data ---
+5df7b7a7f22fee63807bbfb076ac206c1e5575e275de5ed239d01c6a1c86ce16  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/esa/PSO_Posh_Cat_R0.14.fits
+88b7833178864fc454cb4f1047e0c701fa7abdf461d9dbc77512383858cf1b93  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/esa/HFI_SkyMap_353_2048_R3.01_full.fits
+710af28b91e3dcb0f35a3d500229ed8d62e648121fbed52844c73193cf05dd44  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/esa/HFI_SkyMap_353_2048_R3.01_full-evenring.fits
+13c5a21cf8a001c1353e3b4e4ae6eecbcff613a5f82649a67701878fb72fa12f  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/esa/HFI_SkyMap_353_2048_R3.01_full-oddring.fits
+
+--- TTC GTFS Data ---
+fd5afb6d70868db2e385647f7d8dbe8271d8e042e347f705f494674627a52afa  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/agency.txt
+3cb017e0dfae72c44f942dc6fa854b980443011a5cf9ebd8e3b3d3f1efe29eff  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/calendar.txt
+6f42cc86ff4e4cf6c0d1e1b32c5766eab1f180a4f08f648a9b58718ccab7f599  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/calendar_dates.txt
+85f3dbcf8cc67af1a2ac345342de5fc6923e109a856dbcec53ce3b8a37a1512b  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/routes.txt
+230cdafc07bb379a09049914de7197e21292315020cac165c36d36d6bbb5ce36  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/shapes.txt
+e1f5ceba80138589d9b9389be7e8233d000bb79c810f0834a00259c806c97107  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/stop_times.txt
+47e1d1e929d69906685d37f55ca61ebb01e12bc6c51a5ee50d826951a2db5dcc  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/stops.txt
+398f6d02f8923bb1a0538b2af97c5228dbe1a3121f4bff701bdb5c298ef99487  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/TTC Routes and Schedules Data/trips.txt
+
+--- Toronto Infrastructure Data ---
+029625f7465b2a37a836fb69a11d9c67cc483f73c3011599a360b107ca8b231b  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/Centreline - Version 2 - 4326.geojson
+c8c9a9cb8a6342323687575f079f93fb783938ce4cf02827568174fe6c06771d  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/Code Descriptions.csv
+b12aa6ddfa1a3198e92b83d89e69e5396e1a46c48defc84005dc70e75364a216  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/Pedestrian Crossover - 4326.geojson
+b0a1c91d17612b008ee430f50bc4d74d4610f37d2d6cab40f97ebe4a2c5c064f  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/TTC LRT Delays.csv
+edbd2e58ff65d18c0be6b5429e1d6a5aaee517e56f20bc40b4c9ca415b8c258c  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/Traffic Beacon - 4326.geojson
+b826878b5fe45e7696924a7ee1b8d80e0e96f9f78d44c43888c3c80ed2601ee4  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/Traffic Signal - 4326.geojson
+205d85c9ebabc55dcc37ee8738ad121168ffc6b4b397a1ba44aafb0dce7d9a2f  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/Traffic Signal Tabular Readme.xlsx
+9dfda746b6156a145bd827d5e00aafdcec8fe91eed02e67cb386ac9431f28a74  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/ttc-king-st-pilot-disaggregate-weekday-peak-headway-2017-2018-xlsx.xlsx
+24ab0ffe6f431eba458c3b661468504265f1e152f7b77fe4d9f96f8e77e81f4a  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/ttc-king-st-pilot-disaggregate-weekday-travel-time-2017-2018-xlsx.xlsx
+0ca6e03abc0272d3ec59577542a5ac25ba2805094827aa49ae0b1f46ecb1b0f9  /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/Toronto_data/ttc-king-st-pilot-summary.csv

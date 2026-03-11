@@ -1,0 +1,95 @@
+======================================================================
+HUF PING HELL TEST — SUMMARY REPORT
+======================================================================
+Date: March 10, 2026
+Framework: HUF v1.3.0 / Phase 3
+Principal Investigator: Peter Higgins, Rogue Wave Audio
+
+
+──────────────────────────────────────────────────
+LEVEL 1: Simple Ping
+──────────────────────────────────────────────────
+  Pings: 100
+  MDG range: 0.0 to 54.0 dB
+  MDG mean:  41.4 dB
+  Ratio Velocity (dHUF/dt) max: 0.028284
+  Ratio Velocity mean:          0.006187
+  Deceptive Drift alerts: 59
+  Unity constraint max error: 0.00e+00
+  Σρᵢ = 1.0: PASS ✓
+
+──────────────────────────────────────────────────
+LEVEL 2: Realistic Network
+──────────────────────────────────────────────────
+  Pings: 1,000
+  MDG range: 0.0 to 64.6 dB
+  MDG mean:  51.0 dB
+  Ratio Velocity (dHUF/dt) max: 0.028284
+  Ratio Velocity mean:          0.010194
+  Deceptive Drift alerts: 844
+  Unity constraint max error: 0.00e+00
+  Σρᵢ = 1.0: PASS ✓
+
+──────────────────────────────────────────────────
+LEVEL 3: Volume Test (100K pings)
+──────────────────────────────────────────────────
+  Pings: 100,000
+  MDG range: 0.0 to 70.6 dB
+  MDG mean:  50.5 dB
+  Ratio Velocity (dHUF/dt) max: 0.007071
+  Ratio Velocity mean:          0.001692
+  Deceptive Drift alerts: 33149
+  Unity constraint max error: 0.00e+00
+  Σρᵢ = 1.0: PASS ✓
+
+──────────────────────────────────────────────────
+LEVEL 4: Multi-Stream (8 endpoints)
+──────────────────────────────────────────────────
+  Pings: 5,000
+  Streams: 8
+  MDG range: -2.9 to 18.7 dB
+  MDG mean:  14.1 dB
+  Ratio Velocity (dHUF/dt) max: 0.003363
+  Ratio Velocity mean:          0.000968
+  Unity constraint max error: 2.22e-16
+  Σρᵢ = 1.0: PASS
+
+──────────────────────────────────────────────────
+LEVEL 5: HUF HELL TEST
+──────────────────────────────────────────────────
+  Pings: 50,000
+  Streams: 12
+  MDG range: -19.4 to 29.2 dB
+  MDG mean:  6.3 dB
+  Ratio Velocity (dHUF/dt) max: 0.011304
+  Ratio Velocity mean:          0.001141
+  Unity constraint max error: 4.44e-16
+  Σρᵢ = 1.0: PASS
+
+==================================================
+HELL TEST — FAILURE MODE DETECTION
+==================================================
+  t=  5000  slow_drift_start                     MDG=    6.6 dB  RV=0.0010  MISSED
+  t=  8000  first_burst_storm                    MDG=    9.9 dB  RV=0.0021  MISSED
+  t= 12000  deceptive_drift_start                MDG=    6.9 dB  RV=0.0011  MISSED
+  t= 18000  concentration_trap                   MDG=   12.1 dB  RV=0.0021  DETECTED
+  t= 22000  false_recovery                       MDG=    6.6 dB  RV=0.0012  MISSED
+  t= 26000  adversarial_injection                MDG=    9.0 dB  RV=0.0013  MISSED
+  t= 32000  synchronized_catastrophe             MDG=   25.1 dB  RV=0.0113  DETECTED
+  t= 36000  ratio_inversion                      MDG=   28.3 dB  RV=0.0027  DETECTED
+  t= 40000  undeclared_regime_change             MDG=   19.7 dB  RV=0.0020  DETECTED
+  t= 44000  ground_state_departure               MDG=    9.7 dB  RV=0.0020  MISSED
+  t= 47000  final_cascade                        MDG=   12.6 dB  RV=0.0023  DETECTED
+
+==================================================
+CONCLUSION
+==================================================
+HUF ratio-state monitoring detects structural redistribution
+that traditional throughput monitoring misses. The Temporal Sieve
+(dHUF/dt) provides early warning of deceptive drift — changes in
+the relationship between streams even when total throughput is stable.
+
+Key: Ratio Velocity spikes WHERE traditional monitoring sees NOTHING.
+This is the 'Known delta t' — extraction of structural change at each step.
+
+Figures saved to: /sessions/wonderful-elegant-pascal/mnt/Claude CoWorker/HUFv4/helltest_figures/

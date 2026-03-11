@@ -1,0 +1,82 @@
+{
+  "manifest_version": "1.0",
+  "last_updated": "2026-03-11",
+  "phase": "Phase 3 — Formalization and Deployment Preparation",
+  "collective": {
+    "members": ["Claude", "Grok", "ChatGPT", "Gemini", "Copilot"],
+    "reviews": 14,
+    "categories": 85
+  },
+  "canonical_documents": {
+    "pillars": [
+      {
+        "name": "HUF_Sufficiency_Frontier",
+        "current_version": "v3.6",
+        "path": "docs/pillars/HUF_Sufficiency_Frontier_v3.6.docx",
+        "builder": "src/builders/pillars/build_sufficiency_frontier_v3_6.js",
+        "superseded": ["v1.0", "v2.0", "v3.0", "v3.1", "v3.2", "v3.3", "v3.4", "v3.5"]
+      },
+      {
+        "name": "HUF_Fourth_Category",
+        "current_version": "v2.6",
+        "path": "docs/pillars/HUF_Fourth_Category_v2.6.docx",
+        "builder": "src/builders/pillars/build_fourth_category_v2_6.js",
+        "superseded": ["v1.0", "v2.0", "v2.1", "v2.2", "v2.3", "v2.4", "v2.5"]
+      },
+      {
+        "name": "HUF_Triad_Synthesis",
+        "current_version": "v1.6",
+        "path": "docs/pillars/HUF_Triad_Synthesis_v1.6.docx",
+        "builder": "src/builders/volumes/build_triad_synthesis_v1_6.js",
+        "superseded": ["v1.0", "v1.1", "v1.2", "v1.3", "v1.4", "v1.5"]
+      },
+      {
+        "name": "HUF_Collective_Trace",
+        "current_version": "v5.10",
+        "path": "docs/pillars/HUF_Collective_Trace_v5.10.docx",
+        "builder": "src/builders/governance/build_collective_trace_v5_10.js",
+        "superseded": ["v4.0", "v4.1", "v4.2", "v4.3", "v4.4", "v4.5", "v4.6", "v4.7", "v4.8", "v5.0", "v5.1", "v5.2", "v5.3", "v5.4", "v5.5", "v5.6", "v5.7", "v5.8", "v5.9"]
+      }
+    ],
+    "governance": [
+      {
+        "name": "review_catalog",
+        "path": "docs/governance/review_catalog.md",
+        "note": "Living document, no versioning — always current"
+      },
+      {
+        "name": "HUF_Category_Class_Structure_Tree",
+        "current_version": "v1.4",
+        "path": "docs/governance/HUF_Category_Class_Structure_Tree_v1.4.docx",
+        "builder": "src/builders/governance/build_category_tree_v1_4.js",
+        "superseded": ["v1.0", "v1.1", "v1.2", "v1.3"]
+      },
+      {
+        "name": "HUF_Collective_Review_March2026",
+        "path": "docs/governance/HUF_Collective_Review_March2026.docx",
+        "builder": "src/builders/governance/build_collective_review.js"
+      }
+    ],
+    "explorations": [
+      {"name": "HUF_Tetrahedral_Triad_Geometry", "path": "docs/explorations/HUF_Tetrahedral_Triad_Geometry.docx"},
+      {"name": "HUF_CDN_Proof", "version": "v1.0", "path": "docs/explorations/HUF_CDN_Proof_v1.0.docx"},
+      {"name": "HUF_Planck_CaseStudy", "version": "v1.0", "path": "docs/explorations/HUF_Planck_CaseStudy_v1.0.docx"},
+      {"name": "HUF_TTC_CaseStudy", "version": "v1.0", "path": "docs/explorations/HUF_TTC_CaseStudy_v1.0.docx"},
+      {"name": "HUF_Toronto_Infrastructure", "version": "v1.0", "path": "docs/explorations/HUF_Toronto_Infrastructure_v1.0.docx"},
+      {"name": "HUF_External_Validation", "version": "v1.0", "path": "docs/explorations/HUF_External_Validation_v1.0.docx"},
+      {"name": "HUF_Origin_Story", "version": "v1.0", "path": "docs/explorations/HUF_Origin_Story_v1.0.docx"},
+      {"name": "HUF_Phase3_Exploration", "path": "docs/explorations/HUF_Phase3_Exploration.md"},
+      {"name": "HUF_Spectral_Sequences_Exploration", "path": "docs/explorations/HUF_Spectral_Sequences_Exploration.md"}
+    ],
+    "reviews": [
+      {"name": "HUF_Gemini_Brief", "version": "v1.0", "path": "docs/reviews/HUF_Gemini_Brief_v1.0.docx"},
+      {"name": "HUF_Copilot_Response", "version": "v1.0", "path": "docs/reviews/HUF_Copilot_Response_v1.0.docx"},
+      {"name": "HUF_Corpus_PreParser", "version": "v1.0", "path": "docs/reviews/HUF_Corpus_PreParser_v1.0.docx"}
+    ],
+    "appendices": [
+      {"name": "HUF_Code_Appendix", "version": "v1.0", "path": "docs/appendices/HUF_Code_Appendix_v1.0.docx"},
+      {"name": "HUF_Methodology_Appendix", "version": "v1.0", "path": "docs/appendices/HUF_Methodology_Appendix_v1.0.docx"}
+    ]
+  },
+  "release_notes": []
+}

@@ -1,0 +1,363 @@
+{
+  "system": {
+    "name": "Markham_POSSE_Planning",
+    "version": "1.0.0",
+    "domains": [
+      "Planning",
+      "Building",
+      "Engineering",
+      "Transportation",
+      "Heritage",
+      "Environmental",
+      "Enforcement"
+    ]
+  },
+  "entities": [],
+  "workflows": [],
+  "rules": [],
+  "integrations": [],
+  "security": {
+    "roles": [],
+    "permissions": []
+  },
+  "ui": {
+    "portals": [],
+    "forms": [],
+    "dashboards": []
+  }
+}
+{
+  "entities": [
+    {
+      "name": "Parcel",
+      "code": "PARCEL",
+      "type": "core",
+      "primaryKey": "parcelId",
+      "fields": [
+        { "name": "parcelId", "type": "string", "required": true, "unique": true },
+        { "name": "rollNumber", "type": "string" },
+        { "name": "address", "type": "string" },
+        { "name": "geometryRef", "type": "string" },
+        { "name": "zoningCode", "type": "string" },
+        { "name": "secondaryPlanId", "type": "string" },
+        { "name": "heritageFlag", "type": "boolean" },
+        { "name": "floodplainFlag", "type": "boolean" },
+        { "name": "intensificationAreaFlag", "type": "boolean" }
+      ],
+      "relationships": [
+        { "type": "oneToMany", "target": "Application", "field": "applications" }
+      ]
+    },
+    {
+      "name": "Application",
+      "code": "APP",
+      "type": "transactional",
+      "primaryKey": "applicationId",
+      "fields": [
+        { "name": "applicationId", "type": "string", "required": true, "unique": true },
+        { "name": "applicationType", "type": "enum", "values": ["ZBA", "OPA", "SitePlan", "Subdivision", "Consent", "MinorVariance", "HeritagePermit"] },
+        { "name": "status", "type": "enum", "values": ["Draft", "Submitted", "InReview", "OnHold", "Approved", "Refused", "Closed"] },
+        { "name": "submittedDate", "type": "date" },
+        { "name": "decisionDate", "type": "date" },
+        { "name": "primaryParcelId", "type": "string", "ref": "Parcel.parcelId" },
+        { "name": "applicantId", "type": "string", "ref": "Party.partyId" },
+        { "name": "feeTotal", "type": "decimal" },
+        { "name": "councilReportId", "type": "string" }
+      ],
+      "relationships": [
+        { "type": "manyToOne", "target": "Parcel", "field": "parcel" },
+        { "type": "oneToMany", "target": "Review", "field": "reviews" },
+        { "type": "oneToMany", "target": "Condition", "field": "conditions" },
+        { "type": "oneToMany", "target": "Inspection", "field": "inspections" }
+      ]
+    },
+    {
+      "name": "Review",
+      "code": "REV",
+      "type": "transactional",
+      "primaryKey": "reviewId",
+      "fields": [
+        { "name": "reviewId", "type": "string", "required": true, "unique": true },
+        { "name": "applicationId", "type": "string", "ref": "Application.applicationId" },
+        { "name": "department", "type": "enum", "values": ["Planning", "Engineering", "Building", "Transportation", "Heritage", "Legal", "Finance"] },
+        { "name": "assignedTo", "type": "string", "ref": "User.userId" },
+        { "name": "status", "type": "enum", "values": ["Pending", "InProgress", "Completed"] },
+        { "name": "slaDueDate", "type": "date" },
+        { "name": "decision", "type": "enum", "values": ["Support", "DoNotSupport", "ConditionsRequired"] },
+        { "name": "comments", "type": "text" }
+      ]
+    },
+    {
+      "name": "Condition",
+      "code": "COND",
+      "type": "transactional",
+      "primaryKey": "conditionId",
+      "fields": [
+        { "name": "conditionId", "type": "string", "required": true, "unique": true },
+        { "name": "applicationId", "type": "string", "ref": "Application.applicationId" },
+        { "name": "source", "type": "enum", "values": ["Council", "Committee", "Staff", "ExternalAgency"] },
+        { "name": "description", "type": "text" },
+        { "name": "responsibleParty", "type": "string" },
+        { "name": "dueDate", "type": "date" },
+        { "name": "status", "type": "enum", "values": ["Pending", "InProgress", "Satisfied", "Waived"] }
+      ]
+    },
+    {
+      "name": "Inspection",
+      "code": "INSP",
+      "type": "transactional",
+      "primaryKey": "inspectionId",
+      "fields": [
+        { "name": "inspectionId", "type": "string", "required": true, "unique": true },
+        { "name": "applicationId", "type": "string", "ref": "Application.applicationId" },
+        { "name": "inspectionType", "type": "enum", "values": ["SitePlan", "Landscape", "Building", "Heritage", "ZoningCompliance"] },
+        { "name": "scheduledDate", "type": "date" },
+        { "name": "completedDate", "type": "date" },
+        { "name": "inspectorId", "type": "string", "ref": "User.userId" },
+        { "name": "result", "type": "enum", "values": ["Pass", "Fail", "ReinspectRequired"] },
+        { "name": "notes", "type": "text" }
+      ]
+    },
+    {
+      "name": "Policy",
+      "code": "POL",
+      "type": "reference",
+      "primaryKey": "policyId",
+      "fields": [
+        { "name": "policyId", "type": "string", "required": true, "unique": true },
+        { "name": "policyType", "type": "enum", "values": ["Zoning", "SecondaryPlan", "OPA", "Guideline"] },
+        { "name": "code", "type": "string" },
+        { "name": "title", "type": "string" },
+        { "name": "effectiveDate", "type": "date" },
+        { "name": "status", "type": "enum", "values": ["Active", "Superseded", "Draft"] }
+      ]
+    }
+  ]
+}
+
+{
+  "workflows": [
+    {
+      "name": "DevelopmentApplication",
+      "code": "WF_DEV_APP",
+      "entity": "Application",
+      "triggers": [
+        { "event": "onCreate", "action": "setStatus", "params": { "status": "Draft" } },
+        { "event": "onSubmit", "action": "setStatus", "params": { "status": "Submitted" } }
+      ],
+      "states": [
+        "Draft",
+        "Submitted",
+        "Circulation",
+        "DecisionPending",
+        "Approved",
+        "Refused",
+        "Closed"
+      ],
+      "transitions": [
+        {
+          "from": "Draft",
+          "to": "Submitted",
+          "trigger": "submitApplication",
+          "conditions": ["feesPaid", "completenessCheckPassed"]
+        },
+        {
+          "from": "Submitted",
+          "to": "Circulation",
+          "trigger": "startCirculation",
+          "actions": ["createDepartmentReviews", "runGISChecks"]
+        },
+        {
+          "from": "Circulation",
+          "to": "DecisionPending",
+          "trigger": "allReviewsComplete"
+        },
+        {
+          "from": "DecisionPending",
+          "to": "Approved",
+          "trigger": "approveApplication",
+          "actions": ["generateConditions", "notifyApplicant"]
+        },
+        {
+          "from": "DecisionPending",
+          "to": "Refused",
+          "trigger": "refuseApplication",
+          "actions": ["notifyApplicant"]
+        },
+        {
+          "from": "Approved",
+          "to": "Closed",
+          "trigger": "allConditionsSatisfied"
+        }
+      ]
+    },
+    {
+      "name": "InspectionWorkflow",
+      "code": "WF_INSP",
+      "entity": "Inspection",
+      "states": ["Scheduled", "InProgress", "Completed"],
+      "transitions": [
+        { "from": "Scheduled", "to": "InProgress", "trigger": "startInspection" },
+        { "from": "InProgress", "to": "Completed", "trigger": "completeInspection" }
+      ]
+    }
+  ]
+}
+{
+  "rules": [
+    {
+      "name": "ZoningConformityCheck",
+      "code": "RULE_ZONING_CHECK",
+      "scope": "Application",
+      "trigger": "onSubmit",
+      "logic": {
+        "type": "spatialOverlay",
+        "inputs": ["Parcel.geometryRef", "ZoningLayer"],
+        "outputs": ["zoningCode"],
+        "conditions": [
+          {
+            "if": "applicationType in ['SitePlan','ZBA']",
+            "then": "compare(application.requestedZoning, parcel.zoningCode)"
+          }
+        ]
+      },
+      "outcomes": [
+        { "on": "nonConform", "action": "flag", "params": { "flagType": "ZoningMismatch" } },
+        { "on": "nonConform", "action": "routeTo", "params": { "department": "Planning" } }
+      ]
+    },
+    {
+      "name": "HeritageTrigger",
+      "code": "RULE_HERITAGE",
+      "scope": "Parcel",
+      "trigger": "onApplicationLinked",
+      "logic": {
+        "type": "booleanCheck",
+        "condition": "heritageFlag == true"
+      },
+      "outcomes": [
+        { "on": "true", "action": "createReview", "params": { "department": "Heritage" } }
+      ]
+    },
+    {
+      "name": "FeeCalculation",
+      "code": "RULE_FEES",
+      "scope": "Application",
+      "trigger": "onSubmit",
+      "logic": {
+        "type": "tableLookup",
+        "inputs": ["applicationType", "grossFloorArea", "unitCount"],
+        "table": "FeeSchedule"
+      },
+      "outcomes": [
+        { "on": "success", "action": "setField", "params": { "field": "feeTotal", "valueFrom": "calculatedFee" } }
+      ]
+    }
+  ]
+}
+
+
+{
+  "integrations": [
+    {
+      "name": "ArcGIS_ParcelOverlay",
+      "code": "INT_GIS_PARCEL",
+      "type": "REST",
+      "direction": "read",
+      "endpoints": [
+        {
+          "name": "GetParcelAttributes",
+          "url": "https://gis.markham.ca/arcgis/rest/services/Parcels/MapServer/0/query",
+          "method": "GET",
+          "params": ["geometry", "geometryType", "spatialRel", "outFields", "f"]
+        }
+      ],
+      "mappings": [
+        { "from": "attributes.ZONING", "to": "Parcel.zoningCode" },
+        { "from": "attributes.SEC_PLAN", "to": "Parcel.secondaryPlanId" }
+      ]
+    },
+    {
+      "name": "CouncilReports_eScribe",
+      "code": "INT_ESCRIBE",
+      "type": "REST",
+      "direction": "write",
+      "endpoints": [
+        {
+          "name": "CreateReport",
+          "url": "https://escribe.markham.ca/api/reports",
+          "method": "POST"
+        }
+      ],
+      "mappings": [
+        { "from": "Application.applicationId", "to": "externalId" },
+        { "from": "Application.summary", "to": "title" }
+      ]
+    },
+    {
+      "name": "Finance_Fees",
+      "code": "INT_FIN_FEES",
+      "type": "batch",
+      "direction": "write",
+      "schedule": "daily",
+      "mappings": [
+        { "from": "Application.applicationId", "to": "Finance.referenceId" },
+        { "from": "Application.feeTotal", "to": "Finance.amount" }
+      ]
+    }
+  ]
+}
+
+{
+  "security": {
+    "roles": [
+      { "name": "Planner", "code": "ROLE_PLANNER" },
+      { "name": "Engineer", "code": "ROLE_ENGINEER" },
+      { "name": "BuildingOfficial", "code": "ROLE_BUILDING" },
+      { "name": "HeritagePlanner", "code": "ROLE_HERITAGE" },
+      { "name": "Clerk", "code": "ROLE_CLERK" },
+      { "name": "Inspector", "code": "ROLE_INSPECTOR" },
+      { "name": "Admin", "code": "ROLE_ADMIN" }
+    ],
+    "permissions": [
+      { "role": "ROLE_PLANNER", "entity": "Application", "actions": ["create", "read", "update"] },
+      { "role": "ROLE_PLANNER", "entity": "Review", "actions": ["read", "update"] },
+      { "role": "ROLE_INSPECTOR", "entity": "Inspection", "actions": ["create", "read", "update"] },
+      { "role": "ROLE_ADMIN", "entity": "*", "actions": ["create", "read", "update", "delete"] }
+    ]
+  }
+}
+
+{
+  "ui": {
+    "portals": [
+      {
+        "name": "PublicPlanningPortal",
+        "code": "PORTAL_PUBLIC",
+        "audience": "External",
+        "features": ["ApplicationSubmission", "StatusTracking", "FeePayment"]
+      }
+    ],
+    "forms": [
+      {
+        "name": "SitePlanApplicationForm",
+        "code": "FORM_SP",
+        "entity": "Application",
+        "layout": ["applicantInfo", "parcelSelection", "proposalDetails", "attachments", "fees"]
+      }
+    ],
+    "dashboards": [
+      {
+        "name": "DevelopmentPipelineDashboard",
+        "code": "DASH_DEV_PIPE",
+        "widgets": [
+          { "type": "kpi", "metric": "applicationsInReview" },
+          { "type": "map", "layer": "ApplicationsByStatus" },
+          { "type": "chart", "metric": "applicationsByType" }
+        ]
+      }
+    ]
+  }
+}
+
+

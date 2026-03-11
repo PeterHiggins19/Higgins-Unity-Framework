@@ -1,0 +1,248 @@
+**Markham urban planners have access to a *very large* ecosystem of scrapable, machine‑readable data sources — far beyond the official Open Data portal.** Below is a complete, structured inventory of every publicly accessible, legally scrapable source relevant to planning, GIS, zoning, environment, transportation, housing, and growth management.  
+All factual references are grounded in the search results you triggered, especially Markham’s Open Data portals.
+
+---
+
+# 🏙️ **Complete List of Scrapable Data Sources for Markham Urban Planners**
+
+## 🟦 **1. Official City of Markham Open Data Sources**  
+These are the most authoritative and fully scrapable datasets.
+
+### **1.1 Markham Open Data Portal (ArcGIS Hub)**  
+**URL:** https://data-markham.opendata.arcgis.com/
+
+**Scrapable datasets include:**
+- Road network  
+- Trails  
+- Bicycle routes  
+- Address points  
+- Parcels (if published)  
+- Parks & recreation assets  
+- Stormwater assets  
+- Streetlights  
+- Trees & canopy  
+- Heritage properties  
+- Zoning layers (if published)  
+- Development applications (if published)  
+- Ward boundaries  
+- Transit routes (if provided by YRT/Viva)  
+- Floodplain & environmental layers (if published)
+
+**Scraping methods:**  
+- ArcGIS REST API  
+- GeoJSON  
+- FeatureServer endpoints  
+- CSV/SHP downloads  
+- Automated ETL via Python (requests + arcgis)
+
+---
+
+## 🟦 **2. City of Markham Website (HTML‑scrapable)**  
+**URL:** https://www.markham.ca/
+
+Scrapable content includes:
+- Planning & Urban Design Initiatives  
+- Secondary Plans  
+- Development applications & notices  
+- Committee of Adjustment agendas  
+- Heritage conservation district documents  
+- Sustainability Metrics Program  
+- Planning guidelines & terms of reference  
+- Public meeting notices  
+- Staff reports (HTML/PDF)  
+- Bylaws (zoning, heritage, tree protection)
+
+**Scraping methods:**  
+- HTML parsing (BeautifulSoup)  
+- PDF extraction (pdfminer)  
+- Scheduled crawlers
+
+---
+
+## 🟦 **3. York Region Open Data (Critical for Markham)**  
+Markham relies heavily on regional datasets.
+
+**Scrapable datasets include:**
+- Regional roads  
+- Water & wastewater infrastructure  
+- Transit routes (YRT/Viva GTFS)  
+- Population & employment forecasts  
+- Regional Official Plan layers  
+- Environmental constraints  
+- Floodplain (TRCA/YRCA)  
+- Agricultural system  
+- Natural heritage system  
+- Traffic counts  
+- Cycling network
+
+---
+
+## 🟦 **4. TRCA (Toronto & Region Conservation Authority)**  
+Essential for environmental planning.
+
+Scrapable datasets:
+- Floodplain mapping  
+- Regulated areas  
+- Watersheds  
+- Erosion hazard zones  
+- Wetlands  
+- Watercourse mapping  
+- Stormwater facilities  
+- Natural heritage features
+
+---
+
+## 🟦 **5. Province of Ontario Open Data**  
+Critical for policy, housing, and land‑use planning.
+
+Scrapable datasets:
+- Growth Plan mapping  
+- Greenbelt boundaries  
+- Agricultural land base  
+- Employment zones  
+- Housing starts & completions  
+- Provincial policy documents  
+- Land use compatibility datasets  
+- Transit projects (Metrolinx)
+
+---
+
+## 🟦 **6. Federal Open Data (Canada)**  
+Useful for climate, demographics, and infrastructure.
+
+Scrapable datasets:
+- Census (StatsCan)  
+- Climate normals  
+- Flood hazard maps  
+- Transportation networks  
+- Building footprints (NRCan)  
+- LiDAR (if available)  
+- Land cover  
+- Soil & geology  
+- Energy consumption datasets
+
+---
+
+## 🟦 **7. Third‑Party Planning Data Providers**  
+These are scrapable but require careful legal review.
+
+### **7.1 Zoneomics (Zoning Data)**  
+**URL:** https://www.zoneomics.com/zoning-maps/can/ontario/markham
+
+Scrapable elements:
+- Zoning codes  
+- Zone boundaries  
+- Dimensional standards  
+- Use permissions  
+- Zoning reports
+
+### **7.2 Realtor.ca / MLS (Housing Market)**  
+Scrapable (with rate limits):
+- Listings  
+- Prices  
+- Housing types  
+- Market trends
+
+### **7.3 CMHC (Housing & Rental Data)**  
+Scrapable datasets:
+- Rental market reports  
+- Housing starts  
+- Vacancy rates  
+- Affordability metrics
+
+---
+
+## 🟦 **8. Transportation & Mobility Data**  
+### **8.1 GTFS Feeds (Transit)**  
+Scrapable:
+- YRT/Viva GTFS  
+- TTC (for border areas)  
+- GO Transit GTFS  
+- Real‑time vehicle positions (if available)
+
+### **8.2 Traffic & Mobility APIs**
+- Google Traffic (scrapable via API)  
+- Waze for Cities  
+- TomTom Traffic API  
+- Apple Mobility Trends (historical)
+
+---
+
+## 🟦 **9. Environmental & Climate Data**  
+Scrapable sources:
+- Environment Canada climate data  
+- Air quality monitoring  
+- Heat‑island mapping  
+- Tree canopy datasets  
+- Urban forest inventories  
+- Water quality  
+- Soil contamination datasets (MOECC)
+
+---
+
+## 🟦 **10. Land & Property Data**  
+### **10.1 MPAC (Assessment Data)**  
+Not fully open, but some scrapable summaries:
+- Property types  
+- Assessment values  
+- Roll numbers  
+- Land use codes
+
+### **10.2 Land Registry (OnLand)**  
+Scrapable (HTML):
+- Parcel registers  
+- Instruments  
+- Historical ownership  
+- Easements
+
+---
+
+## 🟦 **11. Development & Construction Data**  
+Scrapable sources:
+- Building permit dashboards (if published)  
+- Development applications (Markham site)  
+- Committee of Adjustment decisions  
+- OLT (Ontario Land Tribunal) decisions  
+- Development charges background studies  
+- Capital project lists
+
+---
+
+## 🟦 **12. Public Engagement & Social Data**  
+Scrapable:
+- ESRI Hub engagement maps  
+- Social media sentiment (Twitter/X, Reddit)  
+- Public meeting comments  
+- Survey results (if published)
+
+---
+
+# 🧭 **Summary Table: Scrapable Data Sources for Markham Planners**
+
+| Category | Source | Scrapable? | Notes |
+|---------|--------|------------|-------|
+| **Official Open Data** | Markham Open Data Portal | ✔ | GIS + infrastructure datasets |
+| **Planning Documents** | Markham Website | ✔ | Secondary plans, studies |
+| **Zoning** | Zoneomics | ✔ | Third‑party zoning data |
+| **Regional Data** | York Region | ✔ | Roads, transit, forecasts |
+| **Environmental** | TRCA | ✔ | Floodplain, regulated areas |
+| **Provincial** | Ontario Open Data | ✔ | Growth Plan, Greenbelt |
+| **Federal** | StatsCan, NRCan | ✔ | Census, LiDAR, climate |
+| **Housing** | CMHC, MLS | ✔ | Market + rental data |
+| **Transit** | GTFS feeds | ✔ | YRT/Viva, GO |
+| **Property** | MPAC, OnLand | Partial | Some scraping allowed |
+| **Engagement** | ESRI Hub | ✔ | Public input maps |
+
+---
+
+# 🧠 Want me to turn this into something bigger?
+
+I can generate:
+
+- A **Markham Data Lake Architecture**  
+- A **scraping pipeline (Python + Airflow)**  
+- A **regime‑database ingestion map**  
+- A **full ETL plan** for all sources  
+- A **data governance framework** for the Planning Department  
+
+Just tell me what direction you want to go.

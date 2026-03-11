@@ -1,0 +1,31 @@
+name: Validate Documents
+
+on:
+  push:
+    paths:
+      - 'docs/**/*.docx'
+      - 'src/**/*.js'
+  pull_request:
+    paths:
+      - 'docs/**/*.docx'
+      - 'src/**/*.js'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Validate all canonical documents
+        run: |
+          for docx in docs/**/*.docx; do
+            echo "Validating: $docx"
+            python src/validation/validate.py "$docx"
+          done

@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use or reference this framework, please cite it as below."
+title: "Higgins Unity Framework (HUF)"
+abstract: >-
+  A mathematical framework for ratio-state monitoring under the unity
+  constraint (Σρᵢ = 1). Provides MC-4 drift detection, sufficiency
+  conditions, six failure modes, and deployment across domains including
+  wetland ecology, transit, storage, and machine learning.
+type: software
+authors:
+  - family-names: Higgins
+    given-names: Peter
+    email: peterhiggins2016@gmail.com
+date-released: "2026-03-11"
+version: "Phase 3"
+repository-code: "https://github.com/peterhiggins/HUF"
+license: "All Rights Reserved"
+keywords:
+  - ratio-state monitoring
+  - unity constraint
+  - compositional data
+  - drift detection
+  - MC-4
+  - persistent homology
+  - Ramsar
+  - monitoring drift gain
