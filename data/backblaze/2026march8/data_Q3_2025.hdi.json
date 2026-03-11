@@ -1,0 +1,4275 @@
+{
+  "hdi_version": "2.0",
+  "parser_version": "huf-preparser-3.0.0",
+  "parse_timestamp": "2026-03-08T20:15:14Z",
+  "huf_doc_id": "HUF.REL.CASE.DATA.BACKBLAZE_HDI",
+  "mode": "zip",
+  "source": {
+    "name": "Backblaze Hard Drive Test Data",
+    "url": "https://www.backblaze.com/cloud-storage/resources/hard-drive-test-data",
+    "file": "data_Q3_2025.zip",
+    "file_size_bytes": 1111587745,
+    "sha256": "0c8962e8efef6eba5ebe6f17f561265fef07df68c88fe3c65d4225159c54528c"
+  },
+  "portfolio_definition": {
+    "Mechanical": {
+      "key": "smart_5_raw",
+      "description": "Reallocated Sectors Count - physical media reallocation"
+    },
+    "Electronic": {
+      "key": "smart_187_raw",
+      "description": "Reported Uncorrectable Errors - controller/firmware errors"
+    },
+    "Media": {
+      "key": "smart_197_raw",
+      "description": "Current Pending Sector Count - sectors awaiting reallocation"
+    },
+    "Offline": {
+      "key": "smart_198_raw",
+      "description": "Offline Uncorrectable - sectors failed offline scan"
+    }
+  },
+  "snapshots": {
+    "2025-07-01": {
+      "fleet_size": 321792,
+      "total_anomalous_drives": 18751,
+      "anomaly_rate_pct": 5.8271,
+      "total_anomaly_events": 28091,
+      "failure_count": 14,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14418,
+        "Electronic": 4563,
+        "Media": 5344,
+        "Offline": 3766
+      },
+      "rho": {
+        "Mechanical": 0.51326,
+        "Electronic": 0.162436,
+        "Media": 0.190239,
+        "Offline": 0.134064
+      },
+      "leverage": {
+        "Mechanical": 1.9483,
+        "Electronic": 6.1563,
+        "Media": 5.2565,
+        "Offline": 7.4591
+      },
+      "mdg_bps": 5265,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.04
+    },
+    "2025-07-02": {
+      "fleet_size": 322496,
+      "total_anomalous_drives": 18787,
+      "anomaly_rate_pct": 5.8255,
+      "total_anomaly_events": 28148,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14445,
+        "Electronic": 4571,
+        "Media": 5357,
+        "Offline": 3775
+      },
+      "rho": {
+        "Mechanical": 0.51318,
+        "Electronic": 0.162392,
+        "Media": 0.190315,
+        "Offline": 0.134113
+      },
+      "leverage": {
+        "Mechanical": 1.9486,
+        "Electronic": 6.1579,
+        "Media": 5.2544,
+        "Offline": 7.4564
+      },
+      "mdg_bps": 5264,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.13
+    },
+    "2025-07-03": {
+      "fleet_size": 322445,
+      "total_anomalous_drives": 18822,
+      "anomaly_rate_pct": 5.8373,
+      "total_anomaly_events": 28206,
+      "failure_count": 13,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14475,
+        "Electronic": 4574,
+        "Media": 5374,
+        "Offline": 3783
+      },
+      "rho": {
+        "Mechanical": 0.513189,
+        "Electronic": 0.162164,
+        "Media": 0.190527,
+        "Offline": 0.13412
+      },
+      "leverage": {
+        "Mechanical": 1.9486,
+        "Electronic": 6.1666,
+        "Media": 5.2486,
+        "Offline": 7.456
+      },
+      "mdg_bps": 5264,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.07
+    },
+    "2025-07-04": {
+      "fleet_size": 322490,
+      "total_anomalous_drives": 18855,
+      "anomaly_rate_pct": 5.8467,
+      "total_anomaly_events": 28262,
+      "failure_count": 20,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14496,
+        "Electronic": 4579,
+        "Media": 5393,
+        "Offline": 3794
+      },
+      "rho": {
+        "Mechanical": 0.512915,
+        "Electronic": 0.16202,
+        "Media": 0.190822,
+        "Offline": 0.134244
+      },
+      "leverage": {
+        "Mechanical": 1.9496,
+        "Electronic": 6.1721,
+        "Media": 5.2405,
+        "Offline": 7.4491
+      },
+      "mdg_bps": 5258,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.12
+    },
+    "2025-07-05": {
+      "fleet_size": 322384,
+      "total_anomalous_drives": 18841,
+      "anomaly_rate_pct": 5.8443,
+      "total_anomaly_events": 28221,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14478,
+        "Electronic": 4571,
+        "Media": 5385,
+        "Offline": 3787
+      },
+      "rho": {
+        "Mechanical": 0.513022,
+        "Electronic": 0.161972,
+        "Media": 0.190815,
+        "Offline": 0.134191
+      },
+      "leverage": {
+        "Mechanical": 1.9492,
+        "Electronic": 6.1739,
+        "Media": 5.2407,
+        "Offline": 7.4521
+      },
+      "mdg_bps": 5260,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.08
+    },
+    "2025-07-06": {
+      "fleet_size": 322399,
+      "total_anomalous_drives": 18882,
+      "anomaly_rate_pct": 5.8567,
+      "total_anomaly_events": 28323,
+      "failure_count": 9,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14516,
+        "Electronic": 4586,
+        "Media": 5413,
+        "Offline": 3808
+      },
+      "rho": {
+        "Mechanical": 0.512516,
+        "Electronic": 0.161918,
+        "Media": 0.191117,
+        "Offline": 0.134449
+      },
+      "leverage": {
+        "Mechanical": 1.9512,
+        "Electronic": 6.176,
+        "Media": 5.2324,
+        "Offline": 7.4378
+      },
+      "mdg_bps": 5250,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.08
+    },
+    "2025-07-07": {
+      "fleet_size": 322340,
+      "total_anomalous_drives": 18872,
+      "anomaly_rate_pct": 5.8547,
+      "total_anomaly_events": 28295,
+      "failure_count": 4,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14503,
+        "Electronic": 4584,
+        "Media": 5406,
+        "Offline": 3802
+      },
+      "rho": {
+        "Mechanical": 0.512564,
+        "Electronic": 0.162007,
+        "Media": 0.191058,
+        "Offline": 0.13437
+      },
+      "leverage": {
+        "Mechanical": 1.951,
+        "Electronic": 6.1726,
+        "Media": 5.234,
+        "Offline": 7.4421
+      },
+      "mdg_bps": 5251,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.1
+    },
+    "2025-07-08": {
+      "fleet_size": 322275,
+      "total_anomalous_drives": 18886,
+      "anomaly_rate_pct": 5.8602,
+      "total_anomaly_events": 28309,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14512,
+        "Electronic": 4583,
+        "Media": 5405,
+        "Offline": 3809
+      },
+      "rho": {
+        "Mechanical": 0.512628,
+        "Electronic": 0.161892,
+        "Media": 0.190929,
+        "Offline": 0.134551
+      },
+      "leverage": {
+        "Mechanical": 1.9507,
+        "Electronic": 6.177,
+        "Media": 5.2375,
+        "Offline": 7.4321
+      },
+      "mdg_bps": 5253,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.05
+    },
+    "2025-07-09": {
+      "fleet_size": 322441,
+      "total_anomalous_drives": 18924,
+      "anomaly_rate_pct": 5.869,
+      "total_anomaly_events": 28360,
+      "failure_count": 9,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14548,
+        "Electronic": 4592,
+        "Media": 5412,
+        "Offline": 3808
+      },
+      "rho": {
+        "Mechanical": 0.512976,
+        "Electronic": 0.161918,
+        "Media": 0.190832,
+        "Offline": 0.134274
+      },
+      "leverage": {
+        "Mechanical": 1.9494,
+        "Electronic": 6.176,
+        "Media": 5.2402,
+        "Offline": 7.4475
+      },
+      "mdg_bps": 5260,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.17
+    },
+    "2025-07-10": {
+      "fleet_size": 322531,
+      "total_anomalous_drives": 18975,
+      "anomaly_rate_pct": 5.8832,
+      "total_anomaly_events": 28453,
+      "failure_count": 19,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14590,
+        "Electronic": 4597,
+        "Media": 5440,
+        "Offline": 3826
+      },
+      "rho": {
+        "Mechanical": 0.512775,
+        "Electronic": 0.161565,
+        "Media": 0.191192,
+        "Offline": 0.134467
+      },
+      "leverage": {
+        "Mechanical": 1.9502,
+        "Electronic": 6.1895,
+        "Media": 5.2303,
+        "Offline": 7.4368
+      },
+      "mdg_bps": 5256,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.07
+    },
+    "2025-07-11": {
+      "fleet_size": 322529,
+      "total_anomalous_drives": 19000,
+      "anomaly_rate_pct": 5.8909,
+      "total_anomaly_events": 28457,
+      "failure_count": 4,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14596,
+        "Electronic": 4600,
+        "Media": 5442,
+        "Offline": 3819
+      },
+      "rho": {
+        "Mechanical": 0.512914,
+        "Electronic": 0.161647,
+        "Media": 0.191236,
+        "Offline": 0.134202
+      },
+      "leverage": {
+        "Mechanical": 1.9496,
+        "Electronic": 6.1863,
+        "Media": 5.2291,
+        "Offline": 7.4515
+      },
+      "mdg_bps": 5258,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-07-12": {
+      "fleet_size": 322477,
+      "total_anomalous_drives": 18990,
+      "anomaly_rate_pct": 5.8888,
+      "total_anomaly_events": 28440,
+      "failure_count": 24,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14581,
+        "Electronic": 4597,
+        "Media": 5445,
+        "Offline": 3817
+      },
+      "rho": {
+        "Mechanical": 0.512693,
+        "Electronic": 0.161639,
+        "Media": 0.191456,
+        "Offline": 0.134212
+      },
+      "leverage": {
+        "Mechanical": 1.9505,
+        "Electronic": 6.1866,
+        "Media": 5.2231,
+        "Offline": 7.4509
+      },
+      "mdg_bps": 5254,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-07-13": {
+      "fleet_size": 322510,
+      "total_anomalous_drives": 19001,
+      "anomaly_rate_pct": 5.8916,
+      "total_anomaly_events": 28459,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14610,
+        "Electronic": 4599,
+        "Media": 5430,
+        "Offline": 3820
+      },
+      "rho": {
+        "Mechanical": 0.51337,
+        "Electronic": 0.161601,
+        "Media": 0.190801,
+        "Offline": 0.134228
+      },
+      "leverage": {
+        "Mechanical": 1.9479,
+        "Electronic": 6.1881,
+        "Media": 5.2411,
+        "Offline": 7.45
+      },
+      "mdg_bps": 5267,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.08
+    },
+    "2025-07-14": {
+      "fleet_size": 322410,
+      "total_anomalous_drives": 18993,
+      "anomaly_rate_pct": 5.8909,
+      "total_anomaly_events": 28449,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14605,
+        "Electronic": 4602,
+        "Media": 5420,
+        "Offline": 3822
+      },
+      "rho": {
+        "Mechanical": 0.513375,
+        "Electronic": 0.161763,
+        "Media": 0.190516,
+        "Offline": 0.134346
+      },
+      "leverage": {
+        "Mechanical": 1.9479,
+        "Electronic": 6.1819,
+        "Media": 5.2489,
+        "Offline": 7.4435
+      },
+      "mdg_bps": 5268,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.14
+    },
+    "2025-07-15": {
+      "fleet_size": 322402,
+      "total_anomalous_drives": 19003,
+      "anomaly_rate_pct": 5.8942,
+      "total_anomaly_events": 28483,
+      "failure_count": 12,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14619,
+        "Electronic": 4606,
+        "Media": 5425,
+        "Offline": 3833
+      },
+      "rho": {
+        "Mechanical": 0.513254,
+        "Electronic": 0.16171,
+        "Media": 0.190464,
+        "Offline": 0.134571
+      },
+      "leverage": {
+        "Mechanical": 1.9484,
+        "Electronic": 6.1839,
+        "Media": 5.2503,
+        "Offline": 7.431
+      },
+      "mdg_bps": 5265,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.08
+    },
+    "2025-07-16": {
+      "fleet_size": 322429,
+      "total_anomalous_drives": 19030,
+      "anomaly_rate_pct": 5.9021,
+      "total_anomaly_events": 28503,
+      "failure_count": 8,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14635,
+        "Electronic": 4607,
+        "Media": 5434,
+        "Offline": 3827
+      },
+      "rho": {
+        "Mechanical": 0.513455,
+        "Electronic": 0.161632,
+        "Media": 0.190647,
+        "Offline": 0.134267
+      },
+      "leverage": {
+        "Mechanical": 1.9476,
+        "Electronic": 6.1869,
+        "Media": 5.2453,
+        "Offline": 7.4478
+      },
+      "mdg_bps": 5269,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.14
+    },
+    "2025-07-17": {
+      "fleet_size": 322464,
+      "total_anomalous_drives": 19066,
+      "anomaly_rate_pct": 5.9126,
+      "total_anomaly_events": 28548,
+      "failure_count": 7,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14662,
+        "Electronic": 4616,
+        "Media": 5438,
+        "Offline": 3832
+      },
+      "rho": {
+        "Mechanical": 0.513591,
+        "Electronic": 0.161693,
+        "Media": 0.190486,
+        "Offline": 0.13423
+      },
+      "leverage": {
+        "Mechanical": 1.9471,
+        "Electronic": 6.1846,
+        "Media": 5.2497,
+        "Offline": 7.4499
+      },
+      "mdg_bps": 5272,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-07-18": {
+      "fleet_size": 322297,
+      "total_anomalous_drives": 19054,
+      "anomaly_rate_pct": 5.9119,
+      "total_anomaly_events": 28515,
+      "failure_count": 9,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14654,
+        "Electronic": 4617,
+        "Media": 5424,
+        "Offline": 3820
+      },
+      "rho": {
+        "Mechanical": 0.513905,
+        "Electronic": 0.161915,
+        "Media": 0.190216,
+        "Offline": 0.133965
+      },
+      "leverage": {
+        "Mechanical": 1.9459,
+        "Electronic": 6.1761,
+        "Media": 5.2572,
+        "Offline": 7.4646
+      },
+      "mdg_bps": 5278,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.1
+    },
+    "2025-07-19": {
+      "fleet_size": 322282,
+      "total_anomalous_drives": 19071,
+      "anomaly_rate_pct": 5.9175,
+      "total_anomaly_events": 28553,
+      "failure_count": 11,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14654,
+        "Electronic": 4615,
+        "Media": 5450,
+        "Offline": 3834
+      },
+      "rho": {
+        "Mechanical": 0.513221,
+        "Electronic": 0.161629,
+        "Media": 0.190873,
+        "Offline": 0.134277
+      },
+      "leverage": {
+        "Mechanical": 1.9485,
+        "Electronic": 6.187,
+        "Media": 5.2391,
+        "Offline": 7.4473
+      },
+      "mdg_bps": 5264,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.12
+    },
+    "2025-07-20": {
+      "fleet_size": 322269,
+      "total_anomalous_drives": 19114,
+      "anomaly_rate_pct": 5.9311,
+      "total_anomaly_events": 28650,
+      "failure_count": 9,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14692,
+        "Electronic": 4626,
+        "Media": 5478,
+        "Offline": 3854
+      },
+      "rho": {
+        "Mechanical": 0.51281,
+        "Electronic": 0.161466,
+        "Media": 0.191204,
+        "Offline": 0.13452
+      },
+      "leverage": {
+        "Mechanical": 1.95,
+        "Electronic": 6.1933,
+        "Media": 5.23,
+        "Offline": 7.4338
+      },
+      "mdg_bps": 5256,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.16
+    },
+    "2025-07-21": {
+      "fleet_size": 322305,
+      "total_anomalous_drives": 19115,
+      "anomaly_rate_pct": 5.9307,
+      "total_anomaly_events": 28666,
+      "failure_count": 19,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14705,
+        "Electronic": 4623,
+        "Media": 5477,
+        "Offline": 3861
+      },
+      "rho": {
+        "Mechanical": 0.512977,
+        "Electronic": 0.161271,
+        "Media": 0.191063,
+        "Offline": 0.134689
+      },
+      "leverage": {
+        "Mechanical": 1.9494,
+        "Electronic": 6.2007,
+        "Media": 5.2339,
+        "Offline": 7.4245
+      },
+      "mdg_bps": 5260,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.22
+    },
+    "2025-07-22": {
+      "fleet_size": 322351,
+      "total_anomalous_drives": 19115,
+      "anomaly_rate_pct": 5.9299,
+      "total_anomaly_events": 28679,
+      "failure_count": 8,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14709,
+        "Electronic": 4629,
+        "Media": 5469,
+        "Offline": 3872
+      },
+      "rho": {
+        "Mechanical": 0.512884,
+        "Electronic": 0.161407,
+        "Media": 0.190697,
+        "Offline": 0.135012
+      },
+      "leverage": {
+        "Mechanical": 1.9498,
+        "Electronic": 6.1955,
+        "Media": 5.2439,
+        "Offline": 7.4067
+      },
+      "mdg_bps": 5258,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.2
+    },
+    "2025-07-23": {
+      "fleet_size": 322390,
+      "total_anomalous_drives": 19142,
+      "anomaly_rate_pct": 5.9375,
+      "total_anomaly_events": 28710,
+      "failure_count": 7,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14732,
+        "Electronic": 4625,
+        "Media": 5481,
+        "Offline": 3872
+      },
+      "rho": {
+        "Mechanical": 0.513131,
+        "Electronic": 0.161094,
+        "Media": 0.190909,
+        "Offline": 0.134866
+      },
+      "leverage": {
+        "Mechanical": 1.9488,
+        "Electronic": 6.2076,
+        "Media": 5.2381,
+        "Offline": 7.4148
+      },
+      "mdg_bps": 5263,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.2
+    },
+    "2025-07-24": {
+      "fleet_size": 322331,
+      "total_anomalous_drives": 19159,
+      "anomaly_rate_pct": 5.9439,
+      "total_anomaly_events": 28744,
+      "failure_count": 11,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14742,
+        "Electronic": 4636,
+        "Media": 5492,
+        "Offline": 3874
+      },
+      "rho": {
+        "Mechanical": 0.512872,
+        "Electronic": 0.161286,
+        "Media": 0.191066,
+        "Offline": 0.134776
+      },
+      "leverage": {
+        "Mechanical": 1.9498,
+        "Electronic": 6.2002,
+        "Media": 5.2338,
+        "Offline": 7.4197
+      },
+      "mdg_bps": 5257,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.23
+    },
+    "2025-07-25": {
+      "fleet_size": 322281,
+      "total_anomalous_drives": 19157,
+      "anomaly_rate_pct": 5.9442,
+      "total_anomaly_events": 28750,
+      "failure_count": 24,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14745,
+        "Electronic": 4633,
+        "Media": 5492,
+        "Offline": 3880
+      },
+      "rho": {
+        "Mechanical": 0.51287,
+        "Electronic": 0.161148,
+        "Media": 0.191026,
+        "Offline": 0.134957
+      },
+      "leverage": {
+        "Mechanical": 1.9498,
+        "Electronic": 6.2055,
+        "Media": 5.2349,
+        "Offline": 7.4098
+      },
+      "mdg_bps": 5257,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.2
+    },
+    "2025-07-26": {
+      "fleet_size": 322394,
+      "total_anomalous_drives": 19204,
+      "anomaly_rate_pct": 5.9567,
+      "total_anomaly_events": 28836,
+      "failure_count": 33,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14785,
+        "Electronic": 4650,
+        "Media": 5507,
+        "Offline": 3894
+      },
+      "rho": {
+        "Mechanical": 0.512727,
+        "Electronic": 0.161257,
+        "Media": 0.190977,
+        "Offline": 0.13504
+      },
+      "leverage": {
+        "Mechanical": 1.9504,
+        "Electronic": 6.2013,
+        "Media": 5.2362,
+        "Offline": 7.4052
+      },
+      "mdg_bps": 5255,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.22
+    },
+    "2025-07-27": {
+      "fleet_size": 322262,
+      "total_anomalous_drives": 19169,
+      "anomaly_rate_pct": 5.9483,
+      "total_anomaly_events": 28777,
+      "failure_count": 14,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14761,
+        "Electronic": 4650,
+        "Media": 5481,
+        "Offline": 3885
+      },
+      "rho": {
+        "Mechanical": 0.512944,
+        "Electronic": 0.161587,
+        "Media": 0.190465,
+        "Offline": 0.135004
+      },
+      "leverage": {
+        "Mechanical": 1.9495,
+        "Electronic": 6.1886,
+        "Media": 5.2503,
+        "Offline": 7.4072
+      },
+      "mdg_bps": 5259,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.23
+    },
+    "2025-07-28": {
+      "fleet_size": 322182,
+      "total_anomalous_drives": 19152,
+      "anomaly_rate_pct": 5.9445,
+      "total_anomaly_events": 28758,
+      "failure_count": 7,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14745,
+        "Electronic": 4655,
+        "Media": 5478,
+        "Offline": 3880
+      },
+      "rho": {
+        "Mechanical": 0.512727,
+        "Electronic": 0.161868,
+        "Media": 0.190486,
+        "Offline": 0.134919
+      },
+      "leverage": {
+        "Mechanical": 1.9504,
+        "Electronic": 6.1779,
+        "Media": 5.2497,
+        "Offline": 7.4119
+      },
+      "mdg_bps": 5255,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.21
+    },
+    "2025-07-29": {
+      "fleet_size": 322013,
+      "total_anomalous_drives": 19140,
+      "anomaly_rate_pct": 5.9439,
+      "total_anomaly_events": 28752,
+      "failure_count": 20,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14742,
+        "Electronic": 4661,
+        "Media": 5476,
+        "Offline": 3873
+      },
+      "rho": {
+        "Mechanical": 0.51273,
+        "Electronic": 0.16211,
+        "Media": 0.190456,
+        "Offline": 0.134704
+      },
+      "leverage": {
+        "Mechanical": 1.9503,
+        "Electronic": 6.1687,
+        "Media": 5.2506,
+        "Offline": 7.4237
+      },
+      "mdg_bps": 5255,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.18
+    },
+    "2025-07-30": {
+      "fleet_size": 322141,
+      "total_anomalous_drives": 19196,
+      "anomaly_rate_pct": 5.9589,
+      "total_anomaly_events": 28850,
+      "failure_count": 14,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14786,
+        "Electronic": 4671,
+        "Media": 5500,
+        "Offline": 3893
+      },
+      "rho": {
+        "Mechanical": 0.512513,
+        "Electronic": 0.161906,
+        "Media": 0.190641,
+        "Offline": 0.134939
+      },
+      "leverage": {
+        "Mechanical": 1.9512,
+        "Electronic": 6.1764,
+        "Media": 5.2455,
+        "Offline": 7.4108
+      },
+      "mdg_bps": 5250,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.18
+    },
+    "2025-07-31": {
+      "fleet_size": 322315,
+      "total_anomalous_drives": 19220,
+      "anomaly_rate_pct": 5.9631,
+      "total_anomaly_events": 28881,
+      "failure_count": 20,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14808,
+        "Electronic": 4671,
+        "Media": 5505,
+        "Offline": 3897
+      },
+      "rho": {
+        "Mechanical": 0.512725,
+        "Electronic": 0.161733,
+        "Media": 0.19061,
+        "Offline": 0.134933
+      },
+      "leverage": {
+        "Mechanical": 1.9504,
+        "Electronic": 6.183,
+        "Media": 5.2463,
+        "Offline": 7.4111
+      },
+      "mdg_bps": 5254,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.19
+    },
+    "2025-08-01": {
+      "fleet_size": 322327,
+      "total_anomalous_drives": 19250,
+      "anomaly_rate_pct": 5.9722,
+      "total_anomaly_events": 28943,
+      "failure_count": 21,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14831,
+        "Electronic": 4685,
+        "Media": 5519,
+        "Offline": 3908
+      },
+      "rho": {
+        "Mechanical": 0.512421,
+        "Electronic": 0.16187,
+        "Media": 0.190685,
+        "Offline": 0.135024
+      },
+      "leverage": {
+        "Mechanical": 1.9515,
+        "Electronic": 6.1778,
+        "Media": 5.2443,
+        "Offline": 7.4061
+      },
+      "mdg_bps": 5248,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.16
+    },
+    "2025-08-02": {
+      "fleet_size": 323017,
+      "total_anomalous_drives": 19268,
+      "anomaly_rate_pct": 5.965,
+      "total_anomaly_events": 28966,
+      "failure_count": 14,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14839,
+        "Electronic": 4674,
+        "Media": 5530,
+        "Offline": 3923
+      },
+      "rho": {
+        "Mechanical": 0.51229,
+        "Electronic": 0.161362,
+        "Media": 0.190913,
+        "Offline": 0.135435
+      },
+      "leverage": {
+        "Mechanical": 1.952,
+        "Electronic": 6.1972,
+        "Media": 5.238,
+        "Offline": 7.3836
+      },
+      "mdg_bps": 5246,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.22
+    },
+    "2025-08-03": {
+      "fleet_size": 323610,
+      "total_anomalous_drives": 19303,
+      "anomaly_rate_pct": 5.9649,
+      "total_anomaly_events": 29021,
+      "failure_count": 16,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14876,
+        "Electronic": 4686,
+        "Media": 5533,
+        "Offline": 3926
+      },
+      "rho": {
+        "Mechanical": 0.512594,
+        "Electronic": 0.161469,
+        "Media": 0.190655,
+        "Offline": 0.135281
+      },
+      "leverage": {
+        "Mechanical": 1.9509,
+        "Electronic": 6.1931,
+        "Media": 5.2451,
+        "Offline": 7.392
+      },
+      "mdg_bps": 5252,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.19
+    },
+    "2025-08-04": {
+      "fleet_size": 323570,
+      "total_anomalous_drives": 19313,
+      "anomaly_rate_pct": 5.9687,
+      "total_anomaly_events": 29023,
+      "failure_count": 17,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14876,
+        "Electronic": 4692,
+        "Media": 5529,
+        "Offline": 3926
+      },
+      "rho": {
+        "Mechanical": 0.512559,
+        "Electronic": 0.161665,
+        "Media": 0.190504,
+        "Offline": 0.135272
+      },
+      "leverage": {
+        "Mechanical": 1.951,
+        "Electronic": 6.1856,
+        "Media": 5.2492,
+        "Offline": 7.3925
+      },
+      "mdg_bps": 5251,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.22
+    },
+    "2025-08-05": {
+      "fleet_size": 323347,
+      "total_anomalous_drives": 19329,
+      "anomaly_rate_pct": 5.9778,
+      "total_anomaly_events": 29063,
+      "failure_count": 10,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14885,
+        "Electronic": 4707,
+        "Media": 5536,
+        "Offline": 3935
+      },
+      "rho": {
+        "Mechanical": 0.512163,
+        "Electronic": 0.161959,
+        "Media": 0.190483,
+        "Offline": 0.135396
+      },
+      "leverage": {
+        "Mechanical": 1.9525,
+        "Electronic": 6.1744,
+        "Media": 5.2498,
+        "Offline": 7.3857
+      },
+      "mdg_bps": 5243,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.23
+    },
+    "2025-08-06": {
+      "fleet_size": 323336,
+      "total_anomalous_drives": 19338,
+      "anomaly_rate_pct": 5.9808,
+      "total_anomaly_events": 29069,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14896,
+        "Electronic": 4703,
+        "Media": 5534,
+        "Offline": 3936
+      },
+      "rho": {
+        "Mechanical": 0.512436,
+        "Electronic": 0.161787,
+        "Media": 0.190375,
+        "Offline": 0.135402
+      },
+      "leverage": {
+        "Mechanical": 1.9515,
+        "Electronic": 6.181,
+        "Media": 5.2528,
+        "Offline": 7.3854
+      },
+      "mdg_bps": 5249,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.18
+    },
+    "2025-08-07": {
+      "fleet_size": 323458,
+      "total_anomalous_drives": 19361,
+      "anomaly_rate_pct": 5.9856,
+      "total_anomaly_events": 29110,
+      "failure_count": 10,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14917,
+        "Electronic": 4705,
+        "Media": 5546,
+        "Offline": 3942
+      },
+      "rho": {
+        "Mechanical": 0.512436,
+        "Electronic": 0.161628,
+        "Media": 0.190519,
+        "Offline": 0.135417
+      },
+      "leverage": {
+        "Mechanical": 1.9515,
+        "Electronic": 6.187,
+        "Media": 5.2488,
+        "Offline": 7.3846
+      },
+      "mdg_bps": 5249,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.18
+    },
+    "2025-08-08": {
+      "fleet_size": 323512,
+      "total_anomalous_drives": 19379,
+      "anomaly_rate_pct": 5.9902,
+      "total_anomaly_events": 29128,
+      "failure_count": 25,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14928,
+        "Electronic": 4709,
+        "Media": 5549,
+        "Offline": 3942
+      },
+      "rho": {
+        "Mechanical": 0.512497,
+        "Electronic": 0.161666,
+        "Media": 0.190504,
+        "Offline": 0.135334
+      },
+      "leverage": {
+        "Mechanical": 1.9512,
+        "Electronic": 6.1856,
+        "Media": 5.2492,
+        "Offline": 7.3891
+      },
+      "mdg_bps": 5250,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.1
+    },
+    "2025-08-09": {
+      "fleet_size": 323541,
+      "total_anomalous_drives": 19382,
+      "anomaly_rate_pct": 5.9906,
+      "total_anomaly_events": 29125,
+      "failure_count": 19,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14938,
+        "Electronic": 4704,
+        "Media": 5541,
+        "Offline": 3942
+      },
+      "rho": {
+        "Mechanical": 0.512893,
+        "Electronic": 0.161511,
+        "Media": 0.190249,
+        "Offline": 0.135348
+      },
+      "leverage": {
+        "Mechanical": 1.9497,
+        "Electronic": 6.1915,
+        "Media": 5.2563,
+        "Offline": 7.3884
+      },
+      "mdg_bps": 5258,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-08-10": {
+      "fleet_size": 323427,
+      "total_anomalous_drives": 19391,
+      "anomaly_rate_pct": 5.9955,
+      "total_anomaly_events": 29141,
+      "failure_count": 1,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14947,
+        "Electronic": 4703,
+        "Media": 5544,
+        "Offline": 3947
+      },
+      "rho": {
+        "Mechanical": 0.51292,
+        "Electronic": 0.161388,
+        "Media": 0.190247,
+        "Offline": 0.135445
+      },
+      "leverage": {
+        "Mechanical": 1.9496,
+        "Electronic": 6.1962,
+        "Media": 5.2563,
+        "Offline": 7.3831
+      },
+      "mdg_bps": 5258,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.04
+    },
+    "2025-08-11": {
+      "fleet_size": 323355,
+      "total_anomalous_drives": 19400,
+      "anomaly_rate_pct": 5.9996,
+      "total_anomaly_events": 29187,
+      "failure_count": 2,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14955,
+        "Electronic": 4713,
+        "Media": 5558,
+        "Offline": 3961
+      },
+      "rho": {
+        "Mechanical": 0.512386,
+        "Electronic": 0.161476,
+        "Media": 0.190427,
+        "Offline": 0.135711
+      },
+      "leverage": {
+        "Mechanical": 1.9517,
+        "Electronic": 6.1929,
+        "Media": 5.2514,
+        "Offline": 7.3686
+      },
+      "mdg_bps": 5248,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.14
+    },
+    "2025-08-12": {
+      "fleet_size": 323509,
+      "total_anomalous_drives": 19441,
+      "anomaly_rate_pct": 6.0094,
+      "total_anomaly_events": 29235,
+      "failure_count": 20,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14976,
+        "Electronic": 4715,
+        "Media": 5572,
+        "Offline": 3972
+      },
+      "rho": {
+        "Mechanical": 0.512263,
+        "Electronic": 0.161279,
+        "Media": 0.190593,
+        "Offline": 0.135865
+      },
+      "leverage": {
+        "Mechanical": 1.9521,
+        "Electronic": 6.2004,
+        "Media": 5.2468,
+        "Offline": 7.3602
+      },
+      "mdg_bps": 5245,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.09
+    },
+    "2025-08-13": {
+      "fleet_size": 323395,
+      "total_anomalous_drives": 19453,
+      "anomaly_rate_pct": 6.0152,
+      "total_anomaly_events": 29240,
+      "failure_count": 3,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 14993,
+        "Electronic": 4722,
+        "Media": 5558,
+        "Offline": 3967
+      },
+      "rho": {
+        "Mechanical": 0.512756,
+        "Electronic": 0.161491,
+        "Media": 0.190082,
+        "Offline": 0.13567
+      },
+      "leverage": {
+        "Mechanical": 1.9502,
+        "Electronic": 6.1923,
+        "Media": 5.2609,
+        "Offline": 7.3708
+      },
+      "mdg_bps": 5255,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.14
+    },
+    "2025-08-14": {
+      "fleet_size": 323527,
+      "total_anomalous_drives": 19503,
+      "anomaly_rate_pct": 6.0282,
+      "total_anomaly_events": 29332,
+      "failure_count": 18,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15027,
+        "Electronic": 4729,
+        "Media": 5587,
+        "Offline": 3989
+      },
+      "rho": {
+        "Mechanical": 0.512307,
+        "Electronic": 0.161223,
+        "Media": 0.190475,
+        "Offline": 0.135995
+      },
+      "leverage": {
+        "Mechanical": 1.952,
+        "Electronic": 6.2026,
+        "Media": 5.25,
+        "Offline": 7.3532
+      },
+      "mdg_bps": 5246,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-08-15": {
+      "fleet_size": 323511,
+      "total_anomalous_drives": 19504,
+      "anomaly_rate_pct": 6.0289,
+      "total_anomaly_events": 29319,
+      "failure_count": 16,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15027,
+        "Electronic": 4730,
+        "Media": 5581,
+        "Offline": 3981
+      },
+      "rho": {
+        "Mechanical": 0.512535,
+        "Electronic": 0.161329,
+        "Media": 0.190354,
+        "Offline": 0.135782
+      },
+      "leverage": {
+        "Mechanical": 1.9511,
+        "Electronic": 6.1985,
+        "Media": 5.2534,
+        "Offline": 7.3647
+      },
+      "mdg_bps": 5251,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.09
+    },
+    "2025-08-16": {
+      "fleet_size": 323561,
+      "total_anomalous_drives": 19510,
+      "anomaly_rate_pct": 6.0298,
+      "total_anomaly_events": 29328,
+      "failure_count": 21,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15034,
+        "Electronic": 4731,
+        "Media": 5585,
+        "Offline": 3978
+      },
+      "rho": {
+        "Mechanical": 0.512616,
+        "Electronic": 0.161313,
+        "Media": 0.190432,
+        "Offline": 0.135638
+      },
+      "leverage": {
+        "Mechanical": 1.9508,
+        "Electronic": 6.1991,
+        "Media": 5.2512,
+        "Offline": 7.3726
+      },
+      "mdg_bps": 5252,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.09
+    },
+    "2025-08-17": {
+      "fleet_size": 323534,
+      "total_anomalous_drives": 19531,
+      "anomaly_rate_pct": 6.0368,
+      "total_anomaly_events": 29355,
+      "failure_count": 9,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15041,
+        "Electronic": 4737,
+        "Media": 5595,
+        "Offline": 3982
+      },
+      "rho": {
+        "Mechanical": 0.512383,
+        "Electronic": 0.161369,
+        "Media": 0.190598,
+        "Offline": 0.13565
+      },
+      "leverage": {
+        "Mechanical": 1.9517,
+        "Electronic": 6.197,
+        "Media": 5.2466,
+        "Offline": 7.3719
+      },
+      "mdg_bps": 5248,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.06
+    },
+    "2025-08-18": {
+      "fleet_size": 323474,
+      "total_anomalous_drives": 19555,
+      "anomaly_rate_pct": 6.0453,
+      "total_anomaly_events": 29451,
+      "failure_count": 10,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15071,
+        "Electronic": 4767,
+        "Media": 5612,
+        "Offline": 4001
+      },
+      "rho": {
+        "Mechanical": 0.511731,
+        "Electronic": 0.161862,
+        "Media": 0.190554,
+        "Offline": 0.135853
+      },
+      "leverage": {
+        "Mechanical": 1.9542,
+        "Electronic": 6.1781,
+        "Media": 5.2479,
+        "Offline": 7.3609
+      },
+      "mdg_bps": 5235,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.13
+    },
+    "2025-08-19": {
+      "fleet_size": 323646,
+      "total_anomalous_drives": 19580,
+      "anomaly_rate_pct": 6.0498,
+      "total_anomaly_events": 29486,
+      "failure_count": 12,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15086,
+        "Electronic": 4766,
+        "Media": 5625,
+        "Offline": 4009
+      },
+      "rho": {
+        "Mechanical": 0.511633,
+        "Electronic": 0.161636,
+        "Media": 0.190769,
+        "Offline": 0.135963
+      },
+      "leverage": {
+        "Mechanical": 1.9545,
+        "Electronic": 6.1867,
+        "Media": 5.2419,
+        "Offline": 7.3549
+      },
+      "mdg_bps": 5233,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.06
+    },
+    "2025-08-20": {
+      "fleet_size": 324925,
+      "total_anomalous_drives": 19574,
+      "anomaly_rate_pct": 6.0242,
+      "total_anomaly_events": 29462,
+      "failure_count": 14,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15080,
+        "Electronic": 4758,
+        "Media": 5620,
+        "Offline": 4004
+      },
+      "rho": {
+        "Mechanical": 0.511846,
+        "Electronic": 0.161496,
+        "Media": 0.190754,
+        "Offline": 0.135904
+      },
+      "leverage": {
+        "Mechanical": 1.9537,
+        "Electronic": 6.1921,
+        "Media": 5.2424,
+        "Offline": 7.3581
+      },
+      "mdg_bps": 5237,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.08
+    },
+    "2025-08-21": {
+      "fleet_size": 326031,
+      "total_anomalous_drives": 19603,
+      "anomaly_rate_pct": 6.0126,
+      "total_anomaly_events": 29539,
+      "failure_count": 25,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15102,
+        "Electronic": 4767,
+        "Media": 5648,
+        "Offline": 4022
+      },
+      "rho": {
+        "Mechanical": 0.511256,
+        "Electronic": 0.16138,
+        "Media": 0.191205,
+        "Offline": 0.136159
+      },
+      "leverage": {
+        "Mechanical": 1.956,
+        "Electronic": 6.1966,
+        "Media": 5.23,
+        "Offline": 7.3444
+      },
+      "mdg_bps": 5225,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-08-22": {
+      "fleet_size": 324886,
+      "total_anomalous_drives": 19638,
+      "anomaly_rate_pct": 6.0446,
+      "total_anomaly_events": 29579,
+      "failure_count": 15,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15113,
+        "Electronic": 4770,
+        "Media": 5670,
+        "Offline": 4026
+      },
+      "rho": {
+        "Mechanical": 0.510937,
+        "Electronic": 0.161263,
+        "Media": 0.19169,
+        "Offline": 0.13611
+      },
+      "leverage": {
+        "Mechanical": 1.9572,
+        "Electronic": 6.2011,
+        "Media": 5.2168,
+        "Offline": 7.347
+      },
+      "mdg_bps": 5219,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-08-23": {
+      "fleet_size": 324891,
+      "total_anomalous_drives": 19657,
+      "anomaly_rate_pct": 6.0503,
+      "total_anomaly_events": 29612,
+      "failure_count": 8,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15141,
+        "Electronic": 4780,
+        "Media": 5661,
+        "Offline": 4030
+      },
+      "rho": {
+        "Mechanical": 0.511313,
+        "Electronic": 0.161421,
+        "Media": 0.191172,
+        "Offline": 0.136093
+      },
+      "leverage": {
+        "Mechanical": 1.9557,
+        "Electronic": 6.195,
+        "Media": 5.2309,
+        "Offline": 7.3479
+      },
+      "mdg_bps": 5226,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.13
+    },
+    "2025-08-24": {
+      "fleet_size": 324725,
+      "total_anomalous_drives": 19614,
+      "anomaly_rate_pct": 6.0402,
+      "total_anomaly_events": 29537,
+      "failure_count": 0,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15102,
+        "Electronic": 4772,
+        "Media": 5644,
+        "Offline": 4019
+      },
+      "rho": {
+        "Mechanical": 0.511291,
+        "Electronic": 0.16156,
+        "Media": 0.191082,
+        "Offline": 0.136067
+      },
+      "leverage": {
+        "Mechanical": 1.9558,
+        "Electronic": 6.1897,
+        "Media": 5.2334,
+        "Offline": 7.3493
+      },
+      "mdg_bps": 5226,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.1
+    },
+    "2025-08-25": {
+      "fleet_size": 324724,
+      "total_anomalous_drives": 19639,
+      "anomaly_rate_pct": 6.0479,
+      "total_anomaly_events": 29563,
+      "failure_count": 2,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15124,
+        "Electronic": 4774,
+        "Media": 5648,
+        "Offline": 4017
+      },
+      "rho": {
+        "Mechanical": 0.511585,
+        "Electronic": 0.161486,
+        "Media": 0.19105,
+        "Offline": 0.135879
+      },
+      "leverage": {
+        "Mechanical": 1.9547,
+        "Electronic": 6.1925,
+        "Media": 5.2342,
+        "Offline": 7.3595
+      },
+      "mdg_bps": 5232,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.12
+    },
+    "2025-08-26": {
+      "fleet_size": 324782,
+      "total_anomalous_drives": 19670,
+      "anomaly_rate_pct": 6.0564,
+      "total_anomaly_events": 29646,
+      "failure_count": 7,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15139,
+        "Electronic": 4783,
+        "Media": 5686,
+        "Offline": 4038
+      },
+      "rho": {
+        "Mechanical": 0.510659,
+        "Electronic": 0.161337,
+        "Media": 0.191797,
+        "Offline": 0.136207
+      },
+      "leverage": {
+        "Mechanical": 1.9583,
+        "Electronic": 6.1982,
+        "Media": 5.2138,
+        "Offline": 7.3418
+      },
+      "mdg_bps": 5213,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.09
+    },
+    "2025-08-27": {
+      "fleet_size": 324762,
+      "total_anomalous_drives": 19685,
+      "anomaly_rate_pct": 6.0614,
+      "total_anomaly_events": 29644,
+      "failure_count": 15,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15154,
+        "Electronic": 4777,
+        "Media": 5681,
+        "Offline": 4032
+      },
+      "rho": {
+        "Mechanical": 0.5112,
+        "Electronic": 0.161146,
+        "Media": 0.191641,
+        "Offline": 0.136014
+      },
+      "leverage": {
+        "Mechanical": 1.9562,
+        "Electronic": 6.2056,
+        "Media": 5.2181,
+        "Offline": 7.3522
+      },
+      "mdg_bps": 5224,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.15
+    },
+    "2025-08-28": {
+      "fleet_size": 324856,
+      "total_anomalous_drives": 19716,
+      "anomaly_rate_pct": 6.0692,
+      "total_anomaly_events": 29677,
+      "failure_count": 20,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15183,
+        "Electronic": 4777,
+        "Media": 5687,
+        "Offline": 4030
+      },
+      "rho": {
+        "Mechanical": 0.511608,
+        "Electronic": 0.160966,
+        "Media": 0.19163,
+        "Offline": 0.135795
+      },
+      "leverage": {
+        "Mechanical": 1.9546,
+        "Electronic": 6.2125,
+        "Media": 5.2184,
+        "Offline": 7.364
+      },
+      "mdg_bps": 5232,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-08-29": {
+      "fleet_size": 324862,
+      "total_anomalous_drives": 19749,
+      "anomaly_rate_pct": 6.0792,
+      "total_anomaly_events": 29727,
+      "failure_count": 29,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15202,
+        "Electronic": 4780,
+        "Media": 5708,
+        "Offline": 4037
+      },
+      "rho": {
+        "Mechanical": 0.511387,
+        "Electronic": 0.160797,
+        "Media": 0.192014,
+        "Offline": 0.135802
+      },
+      "leverage": {
+        "Mechanical": 1.9555,
+        "Electronic": 6.219,
+        "Media": 5.208,
+        "Offline": 7.3637
+      },
+      "mdg_bps": 5228,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-08-30": {
+      "fleet_size": 324884,
+      "total_anomalous_drives": 19765,
+      "anomaly_rate_pct": 6.0837,
+      "total_anomaly_events": 29735,
+      "failure_count": 30,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15218,
+        "Electronic": 4780,
+        "Media": 5707,
+        "Offline": 4030
+      },
+      "rho": {
+        "Mechanical": 0.511787,
+        "Electronic": 0.160753,
+        "Media": 0.191929,
+        "Offline": 0.135531
+      },
+      "leverage": {
+        "Mechanical": 1.9539,
+        "Electronic": 6.2207,
+        "Media": 5.2103,
+        "Offline": 7.3784
+      },
+      "mdg_bps": 5236,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.13
+    },
+    "2025-08-31": {
+      "fleet_size": 324815,
+      "total_anomalous_drives": 19727,
+      "anomaly_rate_pct": 6.0733,
+      "total_anomaly_events": 29655,
+      "failure_count": 3,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15193,
+        "Electronic": 4765,
+        "Media": 5683,
+        "Offline": 4014
+      },
+      "rho": {
+        "Mechanical": 0.512325,
+        "Electronic": 0.160681,
+        "Media": 0.191637,
+        "Offline": 0.135357
+      },
+      "leverage": {
+        "Mechanical": 1.9519,
+        "Electronic": 6.2235,
+        "Media": 5.2182,
+        "Offline": 7.3879
+      },
+      "mdg_bps": 5247,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.08
+    },
+    "2025-09-01": {
+      "fleet_size": 324631,
+      "total_anomalous_drives": 19738,
+      "anomaly_rate_pct": 6.0801,
+      "total_anomaly_events": 29666,
+      "failure_count": 1,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15217,
+        "Electronic": 4771,
+        "Media": 5672,
+        "Offline": 4006
+      },
+      "rho": {
+        "Mechanical": 0.512944,
+        "Electronic": 0.160824,
+        "Media": 0.191195,
+        "Offline": 0.135037
+      },
+      "leverage": {
+        "Mechanical": 1.9495,
+        "Electronic": 6.218,
+        "Media": 5.2303,
+        "Offline": 7.4054
+      },
+      "mdg_bps": 5259,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.13
+    },
+    "2025-09-02": {
+      "fleet_size": 324608,
+      "total_anomalous_drives": 19756,
+      "anomaly_rate_pct": 6.0861,
+      "total_anomaly_events": 29710,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15224,
+        "Electronic": 4772,
+        "Media": 5693,
+        "Offline": 4021
+      },
+      "rho": {
+        "Mechanical": 0.51242,
+        "Electronic": 0.160619,
+        "Media": 0.191619,
+        "Offline": 0.135342
+      },
+      "leverage": {
+        "Mechanical": 1.9515,
+        "Electronic": 6.2259,
+        "Media": 5.2187,
+        "Offline": 7.3887
+      },
+      "mdg_bps": 5248,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.09
+    },
+    "2025-09-03": {
+      "fleet_size": 324706,
+      "total_anomalous_drives": 19781,
+      "anomaly_rate_pct": 6.092,
+      "total_anomaly_events": 29750,
+      "failure_count": 19,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15239,
+        "Electronic": 4788,
+        "Media": 5700,
+        "Offline": 4023
+      },
+      "rho": {
+        "Mechanical": 0.512235,
+        "Electronic": 0.160941,
+        "Media": 0.191597,
+        "Offline": 0.135227
+      },
+      "leverage": {
+        "Mechanical": 1.9522,
+        "Electronic": 6.2135,
+        "Media": 5.2193,
+        "Offline": 7.395
+      },
+      "mdg_bps": 5245,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.12
+    },
+    "2025-09-04": {
+      "fleet_size": 324797,
+      "total_anomalous_drives": 19806,
+      "anomaly_rate_pct": 6.098,
+      "total_anomaly_events": 29799,
+      "failure_count": 13,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15259,
+        "Electronic": 4799,
+        "Media": 5711,
+        "Offline": 4030
+      },
+      "rho": {
+        "Mechanical": 0.512064,
+        "Electronic": 0.161046,
+        "Media": 0.191651,
+        "Offline": 0.135239
+      },
+      "leverage": {
+        "Mechanical": 1.9529,
+        "Electronic": 6.2094,
+        "Media": 5.2178,
+        "Offline": 7.3943
+      },
+      "mdg_bps": 5241,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-09-05": {
+      "fleet_size": 324774,
+      "total_anomalous_drives": 19850,
+      "anomaly_rate_pct": 6.1119,
+      "total_anomaly_events": 29896,
+      "failure_count": 22,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15297,
+        "Electronic": 4814,
+        "Media": 5731,
+        "Offline": 4054
+      },
+      "rho": {
+        "Mechanical": 0.511674,
+        "Electronic": 0.161025,
+        "Media": 0.191698,
+        "Offline": 0.135603
+      },
+      "leverage": {
+        "Mechanical": 1.9544,
+        "Electronic": 6.2102,
+        "Media": 5.2165,
+        "Offline": 7.3745
+      },
+      "mdg_bps": 5233,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.09
+    },
+    "2025-09-06": {
+      "fleet_size": 324704,
+      "total_anomalous_drives": 19853,
+      "anomaly_rate_pct": 6.1142,
+      "total_anomaly_events": 29901,
+      "failure_count": 17,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15297,
+        "Electronic": 4814,
+        "Media": 5735,
+        "Offline": 4055
+      },
+      "rho": {
+        "Mechanical": 0.511588,
+        "Electronic": 0.160998,
+        "Media": 0.1918,
+        "Offline": 0.135614
+      },
+      "leverage": {
+        "Mechanical": 1.9547,
+        "Electronic": 6.2113,
+        "Media": 5.2138,
+        "Offline": 7.3739
+      },
+      "mdg_bps": 5232,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.17
+    },
+    "2025-09-07": {
+      "fleet_size": 324642,
+      "total_anomalous_drives": 19852,
+      "anomaly_rate_pct": 6.115,
+      "total_anomaly_events": 29876,
+      "failure_count": 6,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15295,
+        "Electronic": 4810,
+        "Media": 5729,
+        "Offline": 4042
+      },
+      "rho": {
+        "Mechanical": 0.511949,
+        "Electronic": 0.160999,
+        "Media": 0.191759,
+        "Offline": 0.135293
+      },
+      "leverage": {
+        "Mechanical": 1.9533,
+        "Electronic": 6.2112,
+        "Media": 5.2149,
+        "Offline": 7.3914
+      },
+      "mdg_bps": 5239,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.11
+    },
+    "2025-09-08": {
+      "fleet_size": 324748,
+      "total_anomalous_drives": 19879,
+      "anomaly_rate_pct": 6.1214,
+      "total_anomaly_events": 29913,
+      "failure_count": 7,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15312,
+        "Electronic": 4812,
+        "Media": 5737,
+        "Offline": 4052
+      },
+      "rho": {
+        "Mechanical": 0.511884,
+        "Electronic": 0.160867,
+        "Media": 0.19179,
+        "Offline": 0.135459
+      },
+      "leverage": {
+        "Mechanical": 1.9536,
+        "Electronic": 6.2163,
+        "Media": 5.214,
+        "Offline": 7.3823
+      },
+      "mdg_bps": 5238,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.15
+    },
+    "2025-09-09": {
+      "fleet_size": 323872,
+      "total_anomalous_drives": 19814,
+      "anomaly_rate_pct": 6.1178,
+      "total_anomaly_events": 29850,
+      "failure_count": 11,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15259,
+        "Electronic": 4786,
+        "Media": 5748,
+        "Offline": 4057
+      },
+      "rho": {
+        "Mechanical": 0.511189,
+        "Electronic": 0.160335,
+        "Media": 0.192563,
+        "Offline": 0.135913
+      },
+      "leverage": {
+        "Mechanical": 1.9562,
+        "Electronic": 6.2369,
+        "Media": 5.1931,
+        "Offline": 7.3576
+      },
+      "mdg_bps": 5224,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.12
+    },
+    "2025-09-10": {
+      "fleet_size": 324418,
+      "total_anomalous_drives": 19882,
+      "anomaly_rate_pct": 6.1285,
+      "total_anomaly_events": 29943,
+      "failure_count": 19,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15327,
+        "Electronic": 4800,
+        "Media": 5751,
+        "Offline": 4065
+      },
+      "rho": {
+        "Mechanical": 0.511873,
+        "Electronic": 0.160305,
+        "Media": 0.192065,
+        "Offline": 0.135758
+      },
+      "leverage": {
+        "Mechanical": 1.9536,
+        "Electronic": 6.2381,
+        "Media": 5.2066,
+        "Offline": 7.366
+      },
+      "mdg_bps": 5237,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.13
+    },
+    "2025-09-11": {
+      "fleet_size": 324878,
+      "total_anomalous_drives": 19948,
+      "anomaly_rate_pct": 6.1402,
+      "total_anomaly_events": 30053,
+      "failure_count": 23,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15381,
+        "Electronic": 4821,
+        "Media": 5776,
+        "Offline": 4075
+      },
+      "rho": {
+        "Mechanical": 0.511796,
+        "Electronic": 0.160417,
+        "Media": 0.192194,
+        "Offline": 0.135594
+      },
+      "leverage": {
+        "Mechanical": 1.9539,
+        "Electronic": 6.2338,
+        "Media": 5.2031,
+        "Offline": 7.375
+      },
+      "mdg_bps": 5236,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.13
+    },
+    "2025-09-12": {
+      "fleet_size": 324892,
+      "total_anomalous_drives": 19979,
+      "anomaly_rate_pct": 6.1494,
+      "total_anomaly_events": 30095,
+      "failure_count": 15,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15408,
+        "Electronic": 4824,
+        "Media": 5783,
+        "Offline": 4080
+      },
+      "rho": {
+        "Mechanical": 0.511979,
+        "Electronic": 0.160292,
+        "Media": 0.192158,
+        "Offline": 0.135571
+      },
+      "leverage": {
+        "Mechanical": 1.9532,
+        "Electronic": 6.2386,
+        "Media": 5.2041,
+        "Offline": 7.3762
+      },
+      "mdg_bps": 5240,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.12
+    },
+    "2025-09-13": {
+      "fleet_size": 326074,
+      "total_anomalous_drives": 19984,
+      "anomaly_rate_pct": 6.1287,
+      "total_anomaly_events": 30111,
+      "failure_count": 7,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15422,
+        "Electronic": 4830,
+        "Media": 5777,
+        "Offline": 4082
+      },
+      "rho": {
+        "Mechanical": 0.512172,
+        "Electronic": 0.160406,
+        "Media": 0.191857,
+        "Offline": 0.135565
+      },
+      "leverage": {
+        "Mechanical": 1.9525,
+        "Electronic": 6.2342,
+        "Media": 5.2122,
+        "Offline": 7.3765
+      },
+      "mdg_bps": 5243,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.17
+    },
+    "2025-09-14": {
+      "fleet_size": 327134,
+      "total_anomalous_drives": 19979,
+      "anomaly_rate_pct": 6.1073,
+      "total_anomaly_events": 30103,
+      "failure_count": 9,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15421,
+        "Electronic": 4823,
+        "Media": 5781,
+        "Offline": 4078
+      },
+      "rho": {
+        "Mechanical": 0.512275,
+        "Electronic": 0.160217,
+        "Media": 0.192041,
+        "Offline": 0.135468
+      },
+      "leverage": {
+        "Mechanical": 1.9521,
+        "Electronic": 6.2415,
+        "Media": 5.2072,
+        "Offline": 7.3818
+      },
+      "mdg_bps": 5245,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.15
+    },
+    "2025-09-15": {
+      "fleet_size": 327088,
+      "total_anomalous_drives": 19993,
+      "anomaly_rate_pct": 6.1124,
+      "total_anomaly_events": 30129,
+      "failure_count": 4,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15431,
+        "Electronic": 4825,
+        "Media": 5792,
+        "Offline": 4081
+      },
+      "rho": {
+        "Mechanical": 0.512164,
+        "Electronic": 0.160145,
+        "Media": 0.19224,
+        "Offline": 0.135451
+      },
+      "leverage": {
+        "Mechanical": 1.9525,
+        "Electronic": 6.2443,
+        "Media": 5.2018,
+        "Offline": 7.3827
+      },
+      "mdg_bps": 5243,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.21
+    },
+    "2025-09-16": {
+      "fleet_size": 327109,
+      "total_anomalous_drives": 20028,
+      "anomaly_rate_pct": 6.1227,
+      "total_anomaly_events": 30206,
+      "failure_count": 27,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15464,
+        "Electronic": 4835,
+        "Media": 5812,
+        "Offline": 4095
+      },
+      "rho": {
+        "Mechanical": 0.511951,
+        "Electronic": 0.160068,
+        "Media": 0.192412,
+        "Offline": 0.135569
+      },
+      "leverage": {
+        "Mechanical": 1.9533,
+        "Electronic": 6.2473,
+        "Media": 5.1972,
+        "Offline": 7.3763
+      },
+      "mdg_bps": 5239,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.21
+    },
+    "2025-09-17": {
+      "fleet_size": 327855,
+      "total_anomalous_drives": 20075,
+      "anomaly_rate_pct": 6.1231,
+      "total_anomaly_events": 30269,
+      "failure_count": 33,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15485,
+        "Electronic": 4845,
+        "Media": 5838,
+        "Offline": 4101
+      },
+      "rho": {
+        "Mechanical": 0.51158,
+        "Electronic": 0.160065,
+        "Media": 0.192871,
+        "Offline": 0.135485
+      },
+      "leverage": {
+        "Mechanical": 1.9547,
+        "Electronic": 6.2475,
+        "Media": 5.1848,
+        "Offline": 7.3809
+      },
+      "mdg_bps": 5232,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.24
+    },
+    "2025-09-18": {
+      "fleet_size": 328421,
+      "total_anomalous_drives": 20083,
+      "anomaly_rate_pct": 6.115,
+      "total_anomaly_events": 30257,
+      "failure_count": 12,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15498,
+        "Electronic": 4836,
+        "Media": 5831,
+        "Offline": 4092
+      },
+      "rho": {
+        "Mechanical": 0.512212,
+        "Electronic": 0.159831,
+        "Media": 0.192716,
+        "Offline": 0.135241
+      },
+      "leverage": {
+        "Mechanical": 1.9523,
+        "Electronic": 6.2566,
+        "Media": 5.189,
+        "Offline": 7.3942
+      },
+      "mdg_bps": 5244,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.26
+    },
+    "2025-09-19": {
+      "fleet_size": 328362,
+      "total_anomalous_drives": 20079,
+      "anomaly_rate_pct": 6.1149,
+      "total_anomaly_events": 30275,
+      "failure_count": 23,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15506,
+        "Electronic": 4846,
+        "Media": 5821,
+        "Offline": 4102
+      },
+      "rho": {
+        "Mechanical": 0.512172,
+        "Electronic": 0.160066,
+        "Media": 0.192271,
+        "Offline": 0.135491
+      },
+      "leverage": {
+        "Mechanical": 1.9525,
+        "Electronic": 6.2474,
+        "Media": 5.201,
+        "Offline": 7.3806
+      },
+      "mdg_bps": 5243,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.29
+    },
+    "2025-09-20": {
+      "fleet_size": 328376,
+      "total_anomalous_drives": 20096,
+      "anomaly_rate_pct": 6.1198,
+      "total_anomaly_events": 30265,
+      "failure_count": 4,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15507,
+        "Electronic": 4838,
+        "Media": 5827,
+        "Offline": 4093
+      },
+      "rho": {
+        "Mechanical": 0.512374,
+        "Electronic": 0.159855,
+        "Media": 0.192533,
+        "Offline": 0.135239
+      },
+      "leverage": {
+        "Mechanical": 1.9517,
+        "Electronic": 6.2557,
+        "Media": 5.1939,
+        "Offline": 7.3943
+      },
+      "mdg_bps": 5247,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.31
+    },
+    "2025-09-21": {
+      "fleet_size": 328422,
+      "total_anomalous_drives": 20120,
+      "anomaly_rate_pct": 6.1263,
+      "total_anomaly_events": 30304,
+      "failure_count": 5,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15524,
+        "Electronic": 4844,
+        "Media": 5838,
+        "Offline": 4098
+      },
+      "rho": {
+        "Mechanical": 0.512276,
+        "Electronic": 0.159847,
+        "Media": 0.192648,
+        "Offline": 0.13523
+      },
+      "leverage": {
+        "Mechanical": 1.9521,
+        "Electronic": 6.256,
+        "Media": 5.1908,
+        "Offline": 7.3948
+      },
+      "mdg_bps": 5246,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.29
+    },
+    "2025-09-22": {
+      "fleet_size": 328411,
+      "total_anomalous_drives": 20136,
+      "anomaly_rate_pct": 6.1313,
+      "total_anomaly_events": 30342,
+      "failure_count": 10,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15538,
+        "Electronic": 4846,
+        "Media": 5849,
+        "Offline": 4109
+      },
+      "rho": {
+        "Mechanical": 0.512095,
+        "Electronic": 0.159713,
+        "Media": 0.192769,
+        "Offline": 0.135423
+      },
+      "leverage": {
+        "Mechanical": 1.9528,
+        "Electronic": 6.2612,
+        "Media": 5.1876,
+        "Offline": 7.3843
+      },
+      "mdg_bps": 5242,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.31
+    },
+    "2025-09-23": {
+      "fleet_size": 328429,
+      "total_anomalous_drives": 20157,
+      "anomaly_rate_pct": 6.1374,
+      "total_anomaly_events": 30383,
+      "failure_count": 38,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15555,
+        "Electronic": 4846,
+        "Media": 5862,
+        "Offline": 4120
+      },
+      "rho": {
+        "Mechanical": 0.511964,
+        "Electronic": 0.159497,
+        "Media": 0.192937,
+        "Offline": 0.135602
+      },
+      "leverage": {
+        "Mechanical": 1.9533,
+        "Electronic": 6.2697,
+        "Media": 5.183,
+        "Offline": 7.3745
+      },
+      "mdg_bps": 5239,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.25
+    },
+    "2025-09-24": {
+      "fleet_size": 329111,
+      "total_anomalous_drives": 20156,
+      "anomaly_rate_pct": 6.1244,
+      "total_anomaly_events": 30377,
+      "failure_count": 27,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15556,
+        "Electronic": 4845,
+        "Media": 5858,
+        "Offline": 4118
+      },
+      "rho": {
+        "Mechanical": 0.512098,
+        "Electronic": 0.159496,
+        "Media": 0.192843,
+        "Offline": 0.135563
+      },
+      "leverage": {
+        "Mechanical": 1.9528,
+        "Electronic": 6.2697,
+        "Media": 5.1856,
+        "Offline": 7.3766
+      },
+      "mdg_bps": 5242,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.25
+    },
+    "2025-09-25": {
+      "fleet_size": 329555,
+      "total_anomalous_drives": 20191,
+      "anomaly_rate_pct": 6.1267,
+      "total_anomaly_events": 30461,
+      "failure_count": 31,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15595,
+        "Electronic": 4870,
+        "Media": 5868,
+        "Offline": 4128
+      },
+      "rho": {
+        "Mechanical": 0.511966,
+        "Electronic": 0.159877,
+        "Media": 0.19264,
+        "Offline": 0.135518
+      },
+      "leverage": {
+        "Mechanical": 1.9533,
+        "Electronic": 6.2548,
+        "Media": 5.191,
+        "Offline": 7.3791
+      },
+      "mdg_bps": 5239,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.32
+    },
+    "2025-09-26": {
+      "fleet_size": 329386,
+      "total_anomalous_drives": 20179,
+      "anomaly_rate_pct": 6.1262,
+      "total_anomaly_events": 30450,
+      "failure_count": 17,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15603,
+        "Electronic": 4869,
+        "Media": 5859,
+        "Offline": 4119
+      },
+      "rho": {
+        "Mechanical": 0.512414,
+        "Electronic": 0.159901,
+        "Media": 0.192414,
+        "Offline": 0.135271
+      },
+      "leverage": {
+        "Mechanical": 1.9515,
+        "Electronic": 6.2539,
+        "Media": 5.1971,
+        "Offline": 7.3926
+      },
+      "mdg_bps": 5248,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.33
+    },
+    "2025-09-27": {
+      "fleet_size": 329449,
+      "total_anomalous_drives": 20193,
+      "anomaly_rate_pct": 6.1293,
+      "total_anomaly_events": 30435,
+      "failure_count": 17,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15613,
+        "Electronic": 4864,
+        "Media": 5847,
+        "Offline": 4111
+      },
+      "rho": {
+        "Mechanical": 0.512995,
+        "Electronic": 0.159816,
+        "Media": 0.192114,
+        "Offline": 0.135075
+      },
+      "leverage": {
+        "Mechanical": 1.9493,
+        "Electronic": 6.2572,
+        "Media": 5.2052,
+        "Offline": 7.4033
+      },
+      "mdg_bps": 5260,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.31
+    },
+    "2025-09-28": {
+      "fleet_size": 329448,
+      "total_anomalous_drives": 20182,
+      "anomaly_rate_pct": 6.126,
+      "total_anomaly_events": 30404,
+      "failure_count": 2,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15614,
+        "Electronic": 4855,
+        "Media": 5831,
+        "Offline": 4104
+      },
+      "rho": {
+        "Mechanical": 0.513551,
+        "Electronic": 0.159683,
+        "Media": 0.191784,
+        "Offline": 0.134982
+      },
+      "leverage": {
+        "Mechanical": 1.9472,
+        "Electronic": 6.2624,
+        "Media": 5.2142,
+        "Offline": 7.4084
+      },
+      "mdg_bps": 5271,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.27
+    },
+    "2025-09-29": {
+      "fleet_size": 329487,
+      "total_anomalous_drives": 20202,
+      "anomaly_rate_pct": 6.1313,
+      "total_anomaly_events": 30441,
+      "failure_count": 8,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15624,
+        "Electronic": 4860,
+        "Media": 5841,
+        "Offline": 4116
+      },
+      "rho": {
+        "Mechanical": 0.513255,
+        "Electronic": 0.159653,
+        "Media": 0.191879,
+        "Offline": 0.135212
+      },
+      "leverage": {
+        "Mechanical": 1.9483,
+        "Electronic": 6.2636,
+        "Media": 5.2116,
+        "Offline": 7.3958
+      },
+      "mdg_bps": 5265,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.3
+    },
+    "2025-09-30": {
+      "fleet_size": 330237,
+      "total_anomalous_drives": 20237,
+      "anomaly_rate_pct": 6.128,
+      "total_anomaly_events": 30488,
+      "failure_count": 24,
+      "K": 4,
+      "component_labels": [
+        "Mechanical",
+        "Electronic",
+        "Media",
+        "Offline"
+      ],
+      "component_keys": [
+        "smart_5_raw",
+        "smart_187_raw",
+        "smart_197_raw",
+        "smart_198_raw"
+      ],
+      "anomaly_counts": {
+        "Mechanical": 15655,
+        "Electronic": 4868,
+        "Media": 5845,
+        "Offline": 4120
+      },
+      "rho": {
+        "Mechanical": 0.513481,
+        "Electronic": 0.159669,
+        "Media": 0.191715,
+        "Offline": 0.135135
+      },
+      "leverage": {
+        "Mechanical": 1.9475,
+        "Electronic": 6.263,
+        "Media": 5.2161,
+        "Offline": 7.4
+      },
+      "mdg_bps": 5270,
+      "governance_status": "CRITICAL",
+      "thresholds": {
+        "advisory_bps": 58,
+        "alert_bps": 96,
+        "critical_bps": 193
+      },
+      "processing_time_seconds": 3.28
+    }
+  },
+  "summary": {
+    "total_snapshots": 92,
+    "date_range": [
+      "2025-07-01",
+      "2025-09-30"
+    ],
+    "sample_interval": 1,
+    "include_model_breakdown": false
+  }
+}
