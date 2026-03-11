@@ -1,0 +1,1487 @@
+{
+  "hdi_version": "2.0",
+  "parser_version": "huf-preparser-energy-1.0.0",
+  "parse_timestamp": "2026-03-08T19:00:36Z",
+  "huf_doc_id": "HUF.REL.CASE.DATA.ENERGY_HDI",
+  "mode": "energy",
+  "source": {
+    "name": "Our World in Data — Energy Dataset (Ember + IEA + IRENA)",
+    "url": "https://github.com/owid/energy-data",
+    "download_url": "https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv",
+    "license": "CC-BY-4.0",
+    "file": "owid-energy-data.csv",
+    "file_size_bytes": 9150911,
+    "sha256": "62e17d3b0c1395ceab7b68873e3b066358cedf2956da1116bb9ddb16ad6fca34"
+  },
+  "portfolio_definition": {
+    "Coal": {
+      "key": "coal_electricity",
+      "description": "Electricity from coal combustion (TWh)"
+    },
+    "Gas": {
+      "key": "gas_electricity",
+      "description": "Electricity from natural gas combustion (TWh)"
+    },
+    "Nuclear": {
+      "key": "nuclear_electricity",
+      "description": "Electricity from nuclear fission (TWh)"
+    },
+    "Hydro": {
+      "key": "hydro_electricity",
+      "description": "Electricity from hydroelectric generation (TWh)"
+    },
+    "Wind": {
+      "key": "wind_electricity",
+      "description": "Electricity from wind generation (TWh)"
+    },
+    "Solar": {
+      "key": "solar_electricity",
+      "description": "Electricity from solar generation (TWh)"
+    }
+  },
+  "countries": {
+    "United Kingdom": {
+      "years_available": 25,
+      "year_range": [
+        2000,
+        2024
+      ],
+      "latest_total_twh": 232.62,
+      "latest_rho": {
+        "Coal": 0.008168,
+        "Gas": 0.370991,
+        "Nuclear": 0.174491,
+        "Hydro": 0.024761,
+        "Wind": 0.358009,
+        "Solar": 0.06358
+      },
+      "latest_governance_status": "CRITICAL",
+      "latest_mdg_bps": 8070,
+      "latest_proof_line": 3,
+      "latest_dominant_source": "Gas",
+      "latest_dominant_share_pct": 37.1,
+      "latest_orphan_candidates": [
+        "Coal"
+      ],
+      "long_term_drift_bps": {
+        "Coal": -3258,
+        "Gas": -414,
+        "Nuclear": -624,
+        "Hydro": 106,
+        "Wind": 3554,
+        "Solar": 636
+      },
+      "snapshots": {
+        "2000": {
+          "year": 2000,
+          "total_generation_twh": 359.12,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 119.95,
+            "Gas": 148.08,
+            "Nuclear": 85.06,
+            "Hydro": 5.09,
+            "Wind": 0.94,
+            "Solar": 0.0
+          },
+          "rho": {
+            "Coal": 0.334011,
+            "Gas": 0.412341,
+            "Nuclear": 0.236857,
+            "Hydro": 0.014174,
+            "Wind": 0.002618,
+            "Solar": 0.0
+          },
+          "leverage": {
+            "Coal": 2.9939,
+            "Gas": 2.4252,
+            "Nuclear": 4.222,
+            "Hydro": 70.5517,
+            "Wind": 381.971,
+            "Solar": Infinity
+          },
+          "mdg_bps": 9664,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 41.2,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2001": {
+          "year": 2001,
+          "total_generation_twh": 368.47,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 131.46,
+            "Gas": 141.91,
+            "Nuclear": 90.09,
+            "Hydro": 4.05,
+            "Wind": 0.96,
+            "Solar": 0.0
+          },
+          "rho": {
+            "Coal": 0.356773,
+            "Gas": 0.385133,
+            "Nuclear": 0.244498,
+            "Hydro": 0.010991,
+            "Wind": 0.002605,
+            "Solar": 0.0
+          },
+          "leverage": {
+            "Coal": 2.8029,
+            "Gas": 2.5965,
+            "Nuclear": 4.09,
+            "Hydro": 90.9835,
+            "Wind": 383.8772,
+            "Solar": Infinity
+          },
+          "mdg_bps": 9728,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 38.5,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2002": {
+          "year": 2002,
+          "total_generation_twh": 370.45,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 124.28,
+            "Gas": 152.28,
+            "Nuclear": 87.85,
+            "Hydro": 4.79,
+            "Wind": 1.25,
+            "Solar": 0.0
+          },
+          "rho": {
+            "Coal": 0.335484,
+            "Gas": 0.411068,
+            "Nuclear": 0.237144,
+            "Hydro": 0.01293,
+            "Wind": 0.003374,
+            "Solar": 0.0
+          },
+          "leverage": {
+            "Coal": 2.9808,
+            "Gas": 2.4327,
+            "Nuclear": 4.2168,
+            "Hydro": 77.3395,
+            "Wind": 296.3841,
+            "Solar": Infinity
+          },
+          "mdg_bps": 9674,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 41.1,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2003": {
+          "year": 2003,
+          "total_generation_twh": 380.55,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 138.46,
+            "Gas": 148.88,
+            "Nuclear": 88.69,
+            "Hydro": 3.23,
+            "Wind": 1.29,
+            "Solar": 0.0
+          },
+          "rho": {
+            "Coal": 0.363842,
+            "Gas": 0.391223,
+            "Nuclear": 0.233057,
+            "Hydro": 0.008488,
+            "Wind": 0.00339,
+            "Solar": 0.0
+          },
+          "leverage": {
+            "Coal": 2.7484,
+            "Gas": 2.5561,
+            "Nuclear": 4.2908,
+            "Hydro": 117.8134,
+            "Wind": 294.9853,
+            "Solar": Infinity
+          },
+          "mdg_bps": 9762,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 39.1,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2004": {
+          "year": 2004,
+          "total_generation_twh": 375.63,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 131.79,
+            "Gas": 157.06,
+            "Nuclear": 80.0,
+            "Hydro": 4.84,
+            "Wind": 1.94,
+            "Solar": 0.0
+          },
+          "rho": {
+            "Coal": 0.350851,
+            "Gas": 0.418124,
+            "Nuclear": 0.212976,
+            "Hydro": 0.012885,
+            "Wind": 0.005165,
+            "Solar": 0.0
+          },
+          "leverage": {
+            "Coal": 2.8502,
+            "Gas": 2.3916,
+            "Nuclear": 4.6954,
+            "Hydro": 77.6096,
+            "Wind": 193.6108,
+            "Solar": Infinity
+          },
+          "mdg_bps": 9639,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 41.8,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2005": {
+          "year": 2005,
+          "total_generation_twh": 376.73,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 134.64,
+            "Gas": 152.64,
+            "Nuclear": 81.62,
+            "Hydro": 4.92,
+            "Wind": 2.9,
+            "Solar": 0.01
+          },
+          "rho": {
+            "Coal": 0.357391,
+            "Gas": 0.405171,
+            "Nuclear": 0.216654,
+            "Hydro": 0.01306,
+            "Wind": 0.007698,
+            "Solar": 2.7e-05
+          },
+          "leverage": {
+            "Coal": 2.7981,
+            "Gas": 2.4681,
+            "Nuclear": 4.6157,
+            "Hydro": 76.5697,
+            "Wind": 129.9039,
+            "Solar": 37037.037
+          },
+          "mdg_bps": 9584,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 40.5,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2006": {
+          "year": 2006,
+          "total_generation_twh": 373.95,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 148.85,
+            "Gas": 140.83,
+            "Nuclear": 75.45,
+            "Hydro": 4.59,
+            "Wind": 4.22,
+            "Solar": 0.01
+          },
+          "rho": {
+            "Coal": 0.398048,
+            "Gas": 0.376601,
+            "Nuclear": 0.201765,
+            "Hydro": 0.012274,
+            "Wind": 0.011285,
+            "Solar": 2.7e-05
+          },
+          "leverage": {
+            "Coal": 2.5123,
+            "Gas": 2.6553,
+            "Nuclear": 4.9563,
+            "Hydro": 81.473,
+            "Wind": 88.6132,
+            "Solar": 37037.037
+          },
+          "mdg_bps": 9528,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 39.8,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2007": {
+          "year": 2007,
+          "total_generation_twh": 375.12,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 135.94,
+            "Gas": 165.79,
+            "Nuclear": 63.03,
+            "Hydro": 5.08,
+            "Wind": 5.27,
+            "Solar": 0.01
+          },
+          "rho": {
+            "Coal": 0.362391,
+            "Gas": 0.441965,
+            "Nuclear": 0.168026,
+            "Hydro": 0.013542,
+            "Wind": 0.014049,
+            "Solar": 2.7e-05
+          },
+          "leverage": {
+            "Coal": 2.7595,
+            "Gas": 2.2626,
+            "Nuclear": 5.9515,
+            "Hydro": 73.8443,
+            "Wind": 71.1794,
+            "Solar": 37037.037
+          },
+          "mdg_bps": 9448,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 44.2,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2008": {
+          "year": 2008,
+          "total_generation_twh": 365.38,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 124.38,
+            "Gas": 176.22,
+            "Nuclear": 52.49,
+            "Hydro": 5.14,
+            "Wind": 7.13,
+            "Solar": 0.02
+          },
+          "rho": {
+            "Coal": 0.340413,
+            "Gas": 0.482292,
+            "Nuclear": 0.143659,
+            "Hydro": 0.014068,
+            "Wind": 0.019514,
+            "Solar": 5.5e-05
+          },
+          "leverage": {
+            "Coal": 2.9376,
+            "Gas": 2.0734,
+            "Nuclear": 6.9609,
+            "Hydro": 71.0833,
+            "Wind": 51.2453,
+            "Solar": 18181.8182
+          },
+          "mdg_bps": 9787,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 48.2,
+          "orphan_candidates": [
+            "Hydro",
+            "Wind",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2009": {
+          "year": 2009,
+          "total_generation_twh": 353.17,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 103.04,
+            "Gas": 166.5,
+            "Nuclear": 69.1,
+            "Hydro": 5.23,
+            "Wind": 9.28,
+            "Solar": 0.02
+          },
+          "rho": {
+            "Coal": 0.291758,
+            "Gas": 0.471444,
+            "Nuclear": 0.195656,
+            "Hydro": 0.014809,
+            "Wind": 0.026276,
+            "Solar": 5.7e-05
+          },
+          "leverage": {
+            "Coal": 3.4275,
+            "Gas": 2.1211,
+            "Nuclear": 5.111,
+            "Hydro": 67.5265,
+            "Wind": 38.0575,
+            "Solar": 17543.8596
+          },
+          "mdg_bps": 9177,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 47.1,
+          "orphan_candidates": [
+            "Hydro",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2010": {
+          "year": 2010,
+          "total_generation_twh": 359.3,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 107.59,
+            "Gas": 175.65,
+            "Nuclear": 62.14,
+            "Hydro": 3.59,
+            "Wind": 10.29,
+            "Solar": 0.04
+          },
+          "rho": {
+            "Coal": 0.299443,
+            "Gas": 0.488867,
+            "Nuclear": 0.172947,
+            "Hydro": 0.009992,
+            "Wind": 0.028639,
+            "Solar": 0.000111
+          },
+          "leverage": {
+            "Coal": 3.3395,
+            "Gas": 2.0455,
+            "Nuclear": 5.7821,
+            "Hydro": 100.0801,
+            "Wind": 34.9174,
+            "Solar": 9009.009
+          },
+          "mdg_bps": 9225,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 48.9,
+          "orphan_candidates": [
+            "Hydro",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2011": {
+          "year": 2011,
+          "total_generation_twh": 345.81,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 108.44,
+            "Gas": 146.5,
+            "Nuclear": 68.98,
+            "Hydro": 5.69,
+            "Wind": 15.96,
+            "Solar": 0.24
+          },
+          "rho": {
+            "Coal": 0.313583,
+            "Gas": 0.423643,
+            "Nuclear": 0.199474,
+            "Hydro": 0.016454,
+            "Wind": 0.046153,
+            "Solar": 0.000694
+          },
+          "leverage": {
+            "Coal": 3.1889,
+            "Gas": 2.3605,
+            "Nuclear": 5.0132,
+            "Hydro": 60.7755,
+            "Wind": 21.6671,
+            "Solar": 1440.9222
+          },
+          "mdg_bps": 8734,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 42.4,
+          "orphan_candidates": [
+            "Hydro",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2012": {
+          "year": 2012,
+          "total_generation_twh": 339.87,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 142.79,
+            "Gas": 100.17,
+            "Nuclear": 70.41,
+            "Hydro": 5.31,
+            "Wind": 19.84,
+            "Solar": 1.35
+          },
+          "rho": {
+            "Coal": 0.420131,
+            "Gas": 0.29473,
+            "Nuclear": 0.207167,
+            "Hydro": 0.015624,
+            "Wind": 0.058375,
+            "Solar": 0.003972
+          },
+          "leverage": {
+            "Coal": 2.3802,
+            "Gas": 3.3929,
+            "Nuclear": 4.827,
+            "Hydro": 64.0041,
+            "Wind": 17.1306,
+            "Solar": 251.7623
+          },
+          "mdg_bps": 8441,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 42.0,
+          "orphan_candidates": [
+            "Hydro",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2013": {
+          "year": 2013,
+          "total_generation_twh": 331.82,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 130.26,
+            "Gas": 95.84,
+            "Nuclear": 70.61,
+            "Hydro": 4.7,
+            "Wind": 28.4,
+            "Solar": 2.01
+          },
+          "rho": {
+            "Coal": 0.392562,
+            "Gas": 0.288831,
+            "Nuclear": 0.212796,
+            "Hydro": 0.014164,
+            "Wind": 0.085589,
+            "Solar": 0.006058
+          },
+          "leverage": {
+            "Coal": 2.5474,
+            "Gas": 3.4622,
+            "Nuclear": 4.6993,
+            "Hydro": 70.6015,
+            "Wind": 11.6837,
+            "Solar": 165.071
+          },
+          "mdg_bps": 7884,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 39.3,
+          "orphan_candidates": [
+            "Hydro",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2014": {
+          "year": 2014,
+          "total_generation_twh": 306.77,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 100.24,
+            "Gas": 100.89,
+            "Nuclear": 63.75,
+            "Hydro": 5.89,
+            "Wind": 31.95,
+            "Solar": 4.05
+          },
+          "rho": {
+            "Coal": 0.326759,
+            "Gas": 0.328878,
+            "Nuclear": 0.20781,
+            "Hydro": 0.0192,
+            "Wind": 0.10415,
+            "Solar": 0.013202
+          },
+          "leverage": {
+            "Coal": 3.0604,
+            "Gas": 3.0406,
+            "Nuclear": 4.8121,
+            "Hydro": 52.0833,
+            "Wind": 9.6015,
+            "Solar": 75.7461
+          },
+          "mdg_bps": 7269,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 32.9,
+          "orphan_candidates": [
+            "Hydro",
+            "Solar"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2015": {
+          "year": 2015,
+          "total_generation_twh": 300.2,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 75.88,
+            "Gas": 99.88,
+            "Nuclear": 70.34,
+            "Hydro": 6.3,
+            "Wind": 40.27,
+            "Solar": 7.53
+          },
+          "rho": {
+            "Coal": 0.252765,
+            "Gas": 0.332712,
+            "Nuclear": 0.23431,
+            "Hydro": 0.020986,
+            "Wind": 0.134144,
+            "Solar": 0.025083
+          },
+          "leverage": {
+            "Coal": 3.9562,
+            "Gas": 3.0056,
+            "Nuclear": 4.2679,
+            "Hydro": 47.6508,
+            "Wind": 7.4547,
+            "Solar": 39.8676
+          },
+          "mdg_bps": 6396,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 33.3,
+          "orphan_candidates": [],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2016": {
+          "year": 2016,
+          "total_generation_twh": 298.47,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 30.67,
+            "Gas": 143.13,
+            "Nuclear": 71.73,
+            "Hydro": 5.37,
+            "Wind": 37.16,
+            "Solar": 10.41
+          },
+          "rho": {
+            "Coal": 0.102757,
+            "Gas": 0.479546,
+            "Nuclear": 0.240326,
+            "Hydro": 0.017992,
+            "Wind": 0.124502,
+            "Solar": 0.034878
+          },
+          "leverage": {
+            "Coal": 9.7317,
+            "Gas": 2.0853,
+            "Nuclear": 4.161,
+            "Hydro": 55.5803,
+            "Wind": 8.032,
+            "Solar": 28.6714
+          },
+          "mdg_bps": 7731,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 48.0,
+          "orphan_candidates": [
+            "Hydro"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2017": {
+          "year": 2017,
+          "total_generation_twh": 296.61,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 22.53,
+            "Gas": 136.75,
+            "Nuclear": 70.34,
+            "Hydro": 5.88,
+            "Wind": 49.65,
+            "Solar": 11.46
+          },
+          "rho": {
+            "Coal": 0.075958,
+            "Gas": 0.461043,
+            "Nuclear": 0.237146,
+            "Hydro": 0.019824,
+            "Wind": 0.167392,
+            "Solar": 0.038637
+          },
+          "leverage": {
+            "Coal": 13.1652,
+            "Gas": 2.169,
+            "Nuclear": 4.2168,
+            "Hydro": 50.4439,
+            "Wind": 5.974,
+            "Solar": 25.8819
+          },
+          "mdg_bps": 7312,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 46.1,
+          "orphan_candidates": [
+            "Hydro"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2018": {
+          "year": 2018,
+          "total_generation_twh": 288.4,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 16.83,
+            "Gas": 131.49,
+            "Nuclear": 65.06,
+            "Hydro": 5.44,
+            "Wind": 56.91,
+            "Solar": 12.67
+          },
+          "rho": {
+            "Coal": 0.058356,
+            "Gas": 0.455929,
+            "Nuclear": 0.225589,
+            "Hydro": 0.018863,
+            "Wind": 0.19733,
+            "Solar": 0.043932
+          },
+          "leverage": {
+            "Coal": 17.1362,
+            "Gas": 2.1933,
+            "Nuclear": 4.4328,
+            "Hydro": 53.0138,
+            "Wind": 5.0677,
+            "Solar": 22.7625
+          },
+          "mdg_bps": 7577,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 45.6,
+          "orphan_candidates": [
+            "Hydro"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2019": {
+          "year": 2019,
+          "total_generation_twh": 278.38,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 6.92,
+            "Gas": 133.09,
+            "Nuclear": 56.18,
+            "Hydro": 5.93,
+            "Wind": 63.84,
+            "Solar": 12.42
+          },
+          "rho": {
+            "Coal": 0.024858,
+            "Gas": 0.478088,
+            "Nuclear": 0.20181,
+            "Hydro": 0.021302,
+            "Wind": 0.229327,
+            "Solar": 0.044615
+          },
+          "leverage": {
+            "Coal": 40.2285,
+            "Gas": 2.0917,
+            "Nuclear": 4.9552,
+            "Hydro": 46.9439,
+            "Wind": 4.3606,
+            "Solar": 22.414
+          },
+          "mdg_bps": 8184,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 47.8,
+          "orphan_candidates": [],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2020": {
+          "year": 2020,
+          "total_generation_twh": 262.88,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 5.7,
+            "Gas": 111.89,
+            "Nuclear": 50.24,
+            "Hydro": 6.88,
+            "Wind": 75.62,
+            "Solar": 12.55
+          },
+          "rho": {
+            "Coal": 0.021683,
+            "Gas": 0.425631,
+            "Nuclear": 0.191114,
+            "Hydro": 0.026172,
+            "Wind": 0.28766,
+            "Solar": 0.04774
+          },
+          "leverage": {
+            "Coal": 46.1191,
+            "Gas": 2.3495,
+            "Nuclear": 5.2325,
+            "Hydro": 38.2088,
+            "Wind": 3.4763,
+            "Solar": 20.9468
+          },
+          "mdg_bps": 8088,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 42.6,
+          "orphan_candidates": [],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2021": {
+          "year": 2021,
+          "total_generation_twh": 258.21,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 6.79,
+            "Gas": 122.84,
+            "Nuclear": 46.1,
+            "Hydro": 5.42,
+            "Wind": 64.93,
+            "Solar": 12.13
+          },
+          "rho": {
+            "Coal": 0.026296,
+            "Gas": 0.475737,
+            "Nuclear": 0.178537,
+            "Hydro": 0.020991,
+            "Wind": 0.251462,
+            "Solar": 0.046977
+          },
+          "leverage": {
+            "Coal": 38.0286,
+            "Gas": 2.102,
+            "Nuclear": 5.6011,
+            "Hydro": 47.6395,
+            "Wind": 3.9767,
+            "Solar": 21.287
+          },
+          "mdg_bps": 8115,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 47.6,
+          "orphan_candidates": [],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2022": {
+          "year": 2022,
+          "total_generation_twh": 277.66,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 5.94,
+            "Gas": 125.11,
+            "Nuclear": 47.4,
+            "Hydro": 5.66,
+            "Wind": 80.21,
+            "Solar": 13.34
+          },
+          "rho": {
+            "Coal": 0.021393,
+            "Gas": 0.450587,
+            "Nuclear": 0.170712,
+            "Hydro": 0.020385,
+            "Wind": 0.288878,
+            "Solar": 0.048044
+          },
+          "leverage": {
+            "Coal": 46.7443,
+            "Gas": 2.2193,
+            "Nuclear": 5.8578,
+            "Hydro": 49.0557,
+            "Wind": 3.4617,
+            "Solar": 20.8143
+          },
+          "mdg_bps": 8204,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 45.1,
+          "orphan_candidates": [],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2023": {
+          "year": 2023,
+          "total_generation_twh": 247.61,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 3.78,
+            "Gas": 101.66,
+            "Nuclear": 40.6,
+            "Hydro": 5.54,
+            "Wind": 82.15,
+            "Solar": 13.88
+          },
+          "rho": {
+            "Coal": 0.015266,
+            "Gas": 0.410565,
+            "Nuclear": 0.163968,
+            "Hydro": 0.022374,
+            "Wind": 0.331772,
+            "Solar": 0.056056
+          },
+          "leverage": {
+            "Coal": 65.505,
+            "Gas": 2.4357,
+            "Nuclear": 6.0988,
+            "Hydro": 44.6947,
+            "Wind": 3.0141,
+            "Solar": 17.8393
+          },
+          "mdg_bps": 8180,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 41.1,
+          "orphan_candidates": [
+            "Coal"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        },
+        "2024": {
+          "year": 2024,
+          "total_generation_twh": 232.62,
+          "K": 6,
+          "generation_twh": {
+            "Coal": 1.9,
+            "Gas": 86.3,
+            "Nuclear": 40.59,
+            "Hydro": 5.76,
+            "Wind": 83.28,
+            "Solar": 14.79
+          },
+          "rho": {
+            "Coal": 0.008168,
+            "Gas": 0.370991,
+            "Nuclear": 0.174491,
+            "Hydro": 0.024761,
+            "Wind": 0.358009,
+            "Solar": 0.06358
+          },
+          "leverage": {
+            "Coal": 122.429,
+            "Gas": 2.6955,
+            "Nuclear": 5.731,
+            "Hydro": 40.3861,
+            "Wind": 2.7932,
+            "Solar": 15.7282
+          },
+          "mdg_bps": 8070,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Gas",
+          "dominant_share_pct": 37.1,
+          "orphan_candidates": [
+            "Coal"
+          ],
+          "thresholds": {
+            "advisory_bps": 87,
+            "alert_bps": 144,
+            "critical_bps": 290
+          }
+        }
+      },
+      "drift_series": {
+        "2001": {
+          "from_year": 2000,
+          "element_drift_bps": {
+            "Coal": 228,
+            "Gas": -272,
+            "Nuclear": 76,
+            "Hydro": -32,
+            "Wind": 0,
+            "Solar": 0
+          },
+          "total_drift_bps": 608,
+          "largest_gainer": "Coal",
+          "largest_loser": "Gas"
+        },
+        "2002": {
+          "from_year": 2001,
+          "element_drift_bps": {
+            "Coal": -213,
+            "Gas": 259,
+            "Nuclear": -74,
+            "Hydro": 19,
+            "Wind": 8,
+            "Solar": 0
+          },
+          "total_drift_bps": 573,
+          "largest_gainer": "Gas",
+          "largest_loser": "Coal"
+        },
+        "2003": {
+          "from_year": 2002,
+          "element_drift_bps": {
+            "Coal": 284,
+            "Gas": -198,
+            "Nuclear": -41,
+            "Hydro": -44,
+            "Wind": 0,
+            "Solar": 0
+          },
+          "total_drift_bps": 567,
+          "largest_gainer": "Coal",
+          "largest_loser": "Gas"
+        },
+        "2004": {
+          "from_year": 2003,
+          "element_drift_bps": {
+            "Coal": -130,
+            "Gas": 269,
+            "Nuclear": -201,
+            "Hydro": 44,
+            "Wind": 18,
+            "Solar": 0
+          },
+          "total_drift_bps": 661,
+          "largest_gainer": "Gas",
+          "largest_loser": "Nuclear"
+        },
+        "2005": {
+          "from_year": 2004,
+          "element_drift_bps": {
+            "Coal": 65,
+            "Gas": -130,
+            "Nuclear": 37,
+            "Hydro": 2,
+            "Wind": 25,
+            "Solar": 0
+          },
+          "total_drift_bps": 259,
+          "largest_gainer": "Coal",
+          "largest_loser": "Gas"
+        },
+        "2006": {
+          "from_year": 2005,
+          "element_drift_bps": {
+            "Coal": 407,
+            "Gas": -286,
+            "Nuclear": -149,
+            "Hydro": -8,
+            "Wind": 36,
+            "Solar": 0
+          },
+          "total_drift_bps": 885,
+          "largest_gainer": "Coal",
+          "largest_loser": "Gas"
+        },
+        "2007": {
+          "from_year": 2006,
+          "element_drift_bps": {
+            "Coal": -357,
+            "Gas": 654,
+            "Nuclear": -337,
+            "Hydro": 13,
+            "Wind": 28,
+            "Solar": 0
+          },
+          "total_drift_bps": 1388,
+          "largest_gainer": "Gas",
+          "largest_loser": "Coal"
+        },
+        "2008": {
+          "from_year": 2007,
+          "element_drift_bps": {
+            "Coal": -220,
+            "Gas": 403,
+            "Nuclear": -244,
+            "Hydro": 5,
+            "Wind": 55,
+            "Solar": 0
+          },
+          "total_drift_bps": 927,
+          "largest_gainer": "Gas",
+          "largest_loser": "Nuclear"
+        },
+        "2009": {
+          "from_year": 2008,
+          "element_drift_bps": {
+            "Coal": -487,
+            "Gas": -108,
+            "Nuclear": 520,
+            "Hydro": 7,
+            "Wind": 68,
+            "Solar": 0
+          },
+          "total_drift_bps": 1190,
+          "largest_gainer": "Nuclear",
+          "largest_loser": "Coal"
+        },
+        "2010": {
+          "from_year": 2009,
+          "element_drift_bps": {
+            "Coal": 77,
+            "Gas": 174,
+            "Nuclear": -227,
+            "Hydro": -48,
+            "Wind": 24,
+            "Solar": 1
+          },
+          "total_drift_bps": 551,
+          "largest_gainer": "Gas",
+          "largest_loser": "Nuclear"
+        },
+        "2011": {
+          "from_year": 2010,
+          "element_drift_bps": {
+            "Coal": 141,
+            "Gas": -652,
+            "Nuclear": 265,
+            "Hydro": 65,
+            "Wind": 175,
+            "Solar": 6
+          },
+          "total_drift_bps": 1304,
+          "largest_gainer": "Nuclear",
+          "largest_loser": "Gas"
+        },
+        "2012": {
+          "from_year": 2011,
+          "element_drift_bps": {
+            "Coal": 1065,
+            "Gas": -1289,
+            "Nuclear": 77,
+            "Hydro": -8,
+            "Wind": 122,
+            "Solar": 33
+          },
+          "total_drift_bps": 2595,
+          "largest_gainer": "Coal",
+          "largest_loser": "Gas"
+        },
+        "2013": {
+          "from_year": 2012,
+          "element_drift_bps": {
+            "Coal": -276,
+            "Gas": -59,
+            "Nuclear": 56,
+            "Hydro": -15,
+            "Wind": 272,
+            "Solar": 21
+          },
+          "total_drift_bps": 699,
+          "largest_gainer": "Wind",
+          "largest_loser": "Coal"
+        },
+        "2014": {
+          "from_year": 2013,
+          "element_drift_bps": {
+            "Coal": -658,
+            "Gas": 400,
+            "Nuclear": -50,
+            "Hydro": 50,
+            "Wind": 186,
+            "Solar": 71
+          },
+          "total_drift_bps": 1416,
+          "largest_gainer": "Gas",
+          "largest_loser": "Coal"
+        },
+        "2015": {
+          "from_year": 2014,
+          "element_drift_bps": {
+            "Coal": -740,
+            "Gas": 38,
+            "Nuclear": 265,
+            "Hydro": 18,
+            "Wind": 300,
+            "Solar": 119
+          },
+          "total_drift_bps": 1480,
+          "largest_gainer": "Wind",
+          "largest_loser": "Coal"
+        },
+        "2016": {
+          "from_year": 2015,
+          "element_drift_bps": {
+            "Coal": -1500,
+            "Gas": 1468,
+            "Nuclear": 60,
+            "Hydro": -30,
+            "Wind": -96,
+            "Solar": 98
+          },
+          "total_drift_bps": 3253,
+          "largest_gainer": "Gas",
+          "largest_loser": "Coal"
+        },
+        "2017": {
+          "from_year": 2016,
+          "element_drift_bps": {
+            "Coal": -268,
+            "Gas": -185,
+            "Nuclear": -32,
+            "Hydro": 18,
+            "Wind": 429,
+            "Solar": 38
+          },
+          "total_drift_bps": 970,
+          "largest_gainer": "Wind",
+          "largest_loser": "Coal"
+        },
+        "2018": {
+          "from_year": 2017,
+          "element_drift_bps": {
+            "Coal": -176,
+            "Gas": -51,
+            "Nuclear": -116,
+            "Hydro": -10,
+            "Wind": 299,
+            "Solar": 53
+          },
+          "total_drift_bps": 705,
+          "largest_gainer": "Wind",
+          "largest_loser": "Coal"
+        },
+        "2019": {
+          "from_year": 2018,
+          "element_drift_bps": {
+            "Coal": -335,
+            "Gas": 222,
+            "Nuclear": -238,
+            "Hydro": 24,
+            "Wind": 320,
+            "Solar": 7
+          },
+          "total_drift_bps": 1146,
+          "largest_gainer": "Wind",
+          "largest_loser": "Coal"
+        },
+        "2020": {
+          "from_year": 2019,
+          "element_drift_bps": {
+            "Coal": -32,
+            "Gas": -525,
+            "Nuclear": -107,
+            "Hydro": 49,
+            "Wind": 583,
+            "Solar": 31
+          },
+          "total_drift_bps": 1327,
+          "largest_gainer": "Wind",
+          "largest_loser": "Gas"
+        },
+        "2021": {
+          "from_year": 2020,
+          "element_drift_bps": {
+            "Coal": 46,
+            "Gas": 501,
+            "Nuclear": -126,
+            "Hydro": -52,
+            "Wind": -362,
+            "Solar": -8
+          },
+          "total_drift_bps": 1094,
+          "largest_gainer": "Gas",
+          "largest_loser": "Wind"
+        },
+        "2022": {
+          "from_year": 2021,
+          "element_drift_bps": {
+            "Coal": -49,
+            "Gas": -252,
+            "Nuclear": -78,
+            "Hydro": -6,
+            "Wind": 374,
+            "Solar": 11
+          },
+          "total_drift_bps": 770,
+          "largest_gainer": "Wind",
+          "largest_loser": "Gas"
+        },
+        "2023": {
+          "from_year": 2022,
+          "element_drift_bps": {
+            "Coal": -61,
+            "Gas": -400,
+            "Nuclear": -67,
+            "Hydro": 20,
+            "Wind": 429,
+            "Solar": 80
+          },
+          "total_drift_bps": 1058,
+          "largest_gainer": "Wind",
+          "largest_loser": "Gas"
+        },
+        "2024": {
+          "from_year": 2023,
+          "element_drift_bps": {
+            "Coal": -71,
+            "Gas": -396,
+            "Nuclear": 105,
+            "Hydro": 24,
+            "Wind": 262,
+            "Solar": 75
+          },
+          "total_drift_bps": 933,
+          "largest_gainer": "Wind",
+          "largest_loser": "Gas"
+        }
+      }
+    }
+  },
+  "summary": {
+    "total_countries": 1,
+    "portfolio_size": 6,
+    "portfolio_name": "K=6",
+    "year_filter": [
+      2000,
+      2024
+    ],
+    "country_filter": [
+      "United Kingdom"
+    ]
+  }
+}

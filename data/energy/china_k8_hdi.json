@@ -1,0 +1,1755 @@
+{
+  "hdi_version": "2.0",
+  "parser_version": "huf-preparser-energy-1.0.0",
+  "parse_timestamp": "2026-03-08T19:00:43Z",
+  "huf_doc_id": "HUF.REL.CASE.DATA.ENERGY_HDI",
+  "mode": "energy",
+  "source": {
+    "name": "Our World in Data — Energy Dataset (Ember + IEA + IRENA)",
+    "url": "https://github.com/owid/energy-data",
+    "download_url": "https://raw.githubusercontent.com/owid/energy-data/master/owid-energy-data.csv",
+    "license": "CC-BY-4.0",
+    "file": "owid-energy-data.csv",
+    "file_size_bytes": 9150911,
+    "sha256": "62e17d3b0c1395ceab7b68873e3b066358cedf2956da1116bb9ddb16ad6fca34"
+  },
+  "portfolio_definition": {
+    "Coal": {
+      "key": "coal_electricity",
+      "description": "Electricity from coal combustion (TWh)"
+    },
+    "Gas": {
+      "key": "gas_electricity",
+      "description": "Electricity from natural gas combustion (TWh)"
+    },
+    "Nuclear": {
+      "key": "nuclear_electricity",
+      "description": "Electricity from nuclear fission (TWh)"
+    },
+    "Hydro": {
+      "key": "hydro_electricity",
+      "description": "Electricity from hydroelectric generation (TWh)"
+    },
+    "Wind": {
+      "key": "wind_electricity",
+      "description": "Electricity from wind generation (TWh)"
+    },
+    "Solar": {
+      "key": "solar_electricity",
+      "description": "Electricity from solar generation (TWh)"
+    },
+    "Oil": {
+      "key": "oil_electricity",
+      "description": "Electricity from oil combustion (TWh)"
+    },
+    "Bioenergy": {
+      "key": "biofuel_electricity",
+      "description": "Electricity from biofuel/bioenergy sources (TWh)"
+    }
+  },
+  "countries": {
+    "China": {
+      "years_available": 25,
+      "year_range": [
+        2000,
+        2024
+      ],
+      "latest_total_twh": 10086.88,
+      "latest_rho": {
+        "Coal": 0.577741,
+        "Gas": 0.031796,
+        "Nuclear": 0.044697,
+        "Hydro": 0.134259,
+        "Wind": 0.098845,
+        "Solar": 0.083181,
+        "Oil": 0.008811,
+        "Bioenergy": 0.02067
+      },
+      "latest_governance_status": "CRITICAL",
+      "latest_mdg_bps": 9240,
+      "latest_proof_line": 3,
+      "latest_dominant_source": "Coal",
+      "latest_dominant_share_pct": 57.8,
+      "latest_orphan_candidates": [
+        "Oil"
+      ],
+      "long_term_drift_bps": {
+        "Coal": -2044,
+        "Gas": 275,
+        "Nuclear": 323,
+        "Hydro": -298,
+        "Wind": 984,
+        "Solar": 832,
+        "Oil": -261,
+        "Bioenergy": 188
+      },
+      "snapshots": {
+        "2000": {
+          "year": 2000,
+          "total_generation_twh": 1355.6,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 1060.26,
+            "Gas": 5.77,
+            "Nuclear": 16.74,
+            "Hydro": 222.41,
+            "Wind": 0.59,
+            "Solar": 0.02,
+            "Oil": 47.27,
+            "Bioenergy": 2.54
+          },
+          "rho": {
+            "Coal": 0.782133,
+            "Gas": 0.004256,
+            "Nuclear": 0.012349,
+            "Hydro": 0.164068,
+            "Wind": 0.000435,
+            "Solar": 1.5e-05,
+            "Oil": 0.03487,
+            "Bioenergy": 0.001874
+          },
+          "leverage": {
+            "Coal": 1.2786,
+            "Gas": 234.9624,
+            "Nuclear": 80.9782,
+            "Hydro": 6.095,
+            "Wind": 2298.8506,
+            "Solar": 66666.6667,
+            "Oil": 28.6779,
+            "Bioenergy": 533.6179
+          },
+          "mdg_bps": 13924,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 78.2,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2001": {
+          "year": 2001,
+          "total_generation_twh": 1480.79,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 1129.14,
+            "Gas": 4.93,
+            "Nuclear": 17.47,
+            "Hydro": 277.43,
+            "Wind": 0.72,
+            "Solar": 0.03,
+            "Oil": 48.52,
+            "Bioenergy": 2.55
+          },
+          "rho": {
+            "Coal": 0.762525,
+            "Gas": 0.003329,
+            "Nuclear": 0.011798,
+            "Hydro": 0.187353,
+            "Wind": 0.000486,
+            "Solar": 2e-05,
+            "Oil": 0.032766,
+            "Bioenergy": 0.001722
+          },
+          "leverage": {
+            "Coal": 1.3114,
+            "Gas": 300.3905,
+            "Nuclear": 84.7601,
+            "Hydro": 5.3375,
+            "Wind": 2057.6132,
+            "Solar": 50000.0,
+            "Oil": 30.5194,
+            "Bioenergy": 580.7201
+          },
+          "mdg_bps": 13998,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 76.3,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2002": {
+          "year": 2002,
+          "total_generation_twh": 1654.01,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 1282.57,
+            "Gas": 4.19,
+            "Nuclear": 25.13,
+            "Hydro": 287.97,
+            "Wind": 0.84,
+            "Solar": 0.05,
+            "Oil": 50.71,
+            "Bioenergy": 2.55
+          },
+          "rho": {
+            "Coal": 0.775431,
+            "Gas": 0.002533,
+            "Nuclear": 0.015193,
+            "Hydro": 0.174104,
+            "Wind": 0.000508,
+            "Solar": 3e-05,
+            "Oil": 0.030659,
+            "Bioenergy": 0.001542
+          },
+          "leverage": {
+            "Coal": 1.2896,
+            "Gas": 394.7888,
+            "Nuclear": 65.8198,
+            "Hydro": 5.7437,
+            "Wind": 1968.5039,
+            "Solar": 33333.3333,
+            "Oil": 32.6168,
+            "Bioenergy": 648.5084
+          },
+          "mdg_bps": 13991,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 77.5,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2003": {
+          "year": 2003,
+          "total_generation_twh": 1910.58,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 1519.97,
+            "Gas": 5.16,
+            "Nuclear": 43.34,
+            "Hydro": 283.68,
+            "Wind": 1.0,
+            "Solar": 0.06,
+            "Oil": 54.83,
+            "Bioenergy": 2.54
+          },
+          "rho": {
+            "Coal": 0.795554,
+            "Gas": 0.002701,
+            "Nuclear": 0.022684,
+            "Hydro": 0.148478,
+            "Wind": 0.000523,
+            "Solar": 3.1e-05,
+            "Oil": 0.028698,
+            "Bioenergy": 0.001329
+          },
+          "leverage": {
+            "Coal": 1.257,
+            "Gas": 370.2332,
+            "Nuclear": 44.0839,
+            "Hydro": 6.735,
+            "Wind": 1912.0459,
+            "Solar": 32258.0645,
+            "Oil": 34.8456,
+            "Bioenergy": 752.4454
+          },
+          "mdg_bps": 13881,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 79.6,
+          "orphan_candidates": [
+            "Gas",
+            "Wind",
+            "Solar",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2004": {
+          "year": 2004,
+          "total_generation_twh": 2203.31,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 1722.42,
+            "Gas": 7.46,
+            "Nuclear": 50.47,
+            "Hydro": 353.54,
+            "Wind": 1.28,
+            "Solar": 0.08,
+            "Oil": 65.53,
+            "Bioenergy": 2.53
+          },
+          "rho": {
+            "Coal": 0.781742,
+            "Gas": 0.003386,
+            "Nuclear": 0.022906,
+            "Hydro": 0.160459,
+            "Wind": 0.000581,
+            "Solar": 3.6e-05,
+            "Oil": 0.029742,
+            "Bioenergy": 0.001148
+          },
+          "leverage": {
+            "Coal": 1.2792,
+            "Gas": 295.3337,
+            "Nuclear": 43.6567,
+            "Hydro": 6.2321,
+            "Wind": 1721.1704,
+            "Solar": 27777.7778,
+            "Oil": 33.6225,
+            "Bioenergy": 871.0801
+          },
+          "mdg_bps": 13844,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 78.2,
+          "orphan_candidates": [
+            "Gas",
+            "Wind",
+            "Solar",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2005": {
+          "year": 2005,
+          "total_generation_twh": 2500.26,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 1980.15,
+            "Gas": 12.14,
+            "Nuclear": 53.09,
+            "Hydro": 397.02,
+            "Wind": 1.95,
+            "Solar": 0.08,
+            "Oil": 50.51,
+            "Bioenergy": 5.32
+          },
+          "rho": {
+            "Coal": 0.791978,
+            "Gas": 0.004855,
+            "Nuclear": 0.021234,
+            "Hydro": 0.158791,
+            "Wind": 0.00078,
+            "Solar": 3.2e-05,
+            "Oil": 0.020202,
+            "Bioenergy": 0.002128
+          },
+          "leverage": {
+            "Coal": 1.2627,
+            "Gas": 205.9732,
+            "Nuclear": 47.0943,
+            "Hydro": 6.2976,
+            "Wind": 1282.0513,
+            "Solar": 31250.0,
+            "Oil": 49.5,
+            "Bioenergy": 469.9248
+          },
+          "mdg_bps": 14015,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 79.2,
+          "orphan_candidates": [
+            "Gas",
+            "Wind",
+            "Solar",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2006": {
+          "year": 2006,
+          "total_generation_twh": 2865.72,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 2302.42,
+            "Gas": 23.82,
+            "Nuclear": 54.84,
+            "Hydro": 435.79,
+            "Wind": 3.71,
+            "Solar": 0.09,
+            "Oil": 37.92,
+            "Bioenergy": 7.13
+          },
+          "rho": {
+            "Coal": 0.803435,
+            "Gas": 0.008312,
+            "Nuclear": 0.019137,
+            "Hydro": 0.15207,
+            "Wind": 0.001295,
+            "Solar": 3.1e-05,
+            "Oil": 0.013232,
+            "Bioenergy": 0.002488
+          },
+          "leverage": {
+            "Coal": 1.2447,
+            "Gas": 120.308,
+            "Nuclear": 52.2548,
+            "Hydro": 6.5759,
+            "Wind": 772.2008,
+            "Solar": 32258.0645,
+            "Oil": 75.5744,
+            "Bioenergy": 401.9293
+          },
+          "mdg_bps": 14110,
+          "proof_line": 1,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 80.3,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2007": {
+          "year": 2007,
+          "total_generation_twh": 3281.54,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 2656.7,
+            "Gas": 33.91,
+            "Nuclear": 62.13,
+            "Hydro": 485.26,
+            "Wind": 5.48,
+            "Solar": 0.11,
+            "Oil": 28.09,
+            "Bioenergy": 9.86
+          },
+          "rho": {
+            "Coal": 0.809589,
+            "Gas": 0.010334,
+            "Nuclear": 0.018933,
+            "Hydro": 0.147876,
+            "Wind": 0.00167,
+            "Solar": 3.4e-05,
+            "Oil": 0.00856,
+            "Bioenergy": 0.003005
+          },
+          "leverage": {
+            "Coal": 1.2352,
+            "Gas": 96.768,
+            "Nuclear": 52.8178,
+            "Hydro": 6.7624,
+            "Wind": 598.8024,
+            "Solar": 29411.7647,
+            "Oil": 116.8224,
+            "Bioenergy": 332.7787
+          },
+          "mdg_bps": 14149,
+          "proof_line": 1,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 81.0,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2008": {
+          "year": 2008,
+          "total_generation_twh": 3495.76,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 2708.91,
+            "Gas": 34.57,
+            "Nuclear": 68.39,
+            "Hydro": 636.96,
+            "Wind": 13.1,
+            "Solar": 0.15,
+            "Oil": 18.81,
+            "Bioenergy": 14.87
+          },
+          "rho": {
+            "Coal": 0.774913,
+            "Gas": 0.009889,
+            "Nuclear": 0.019564,
+            "Hydro": 0.182209,
+            "Wind": 0.003747,
+            "Solar": 4.3e-05,
+            "Oil": 0.005381,
+            "Bioenergy": 0.004254
+          },
+          "leverage": {
+            "Coal": 1.2905,
+            "Gas": 101.1225,
+            "Nuclear": 51.1143,
+            "Hydro": 5.4882,
+            "Wind": 266.8802,
+            "Solar": 23255.814,
+            "Oil": 185.8391,
+            "Bioenergy": 235.0729
+          },
+          "mdg_bps": 14142,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 77.5,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2009": {
+          "year": 2009,
+          "total_generation_twh": 3714.64,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 2911.52,
+            "Gas": 56.56,
+            "Nuclear": 70.05,
+            "Hydro": 615.64,
+            "Wind": 27.61,
+            "Solar": 0.28,
+            "Oil": 12.12,
+            "Bioenergy": 20.86
+          },
+          "rho": {
+            "Coal": 0.783796,
+            "Gas": 0.015226,
+            "Nuclear": 0.018858,
+            "Hydro": 0.165733,
+            "Wind": 0.007433,
+            "Solar": 7.5e-05,
+            "Oil": 0.003263,
+            "Bioenergy": 0.005616
+          },
+          "leverage": {
+            "Coal": 1.2758,
+            "Gas": 65.6771,
+            "Nuclear": 53.0279,
+            "Hydro": 6.0338,
+            "Wind": 134.5352,
+            "Solar": 13333.3333,
+            "Oil": 306.4664,
+            "Bioenergy": 178.0627
+          },
+          "mdg_bps": 13991,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 78.4,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2010": {
+          "year": 2010,
+          "total_generation_twh": 4207.16,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 3233.6,
+            "Gas": 77.73,
+            "Nuclear": 74.74,
+            "Hydro": 711.38,
+            "Wind": 49.4,
+            "Solar": 0.7,
+            "Oil": 34.71,
+            "Bioenergy": 24.9
+          },
+          "rho": {
+            "Coal": 0.768594,
+            "Gas": 0.018476,
+            "Nuclear": 0.017765,
+            "Hydro": 0.169088,
+            "Wind": 0.011742,
+            "Solar": 0.000166,
+            "Oil": 0.00825,
+            "Bioenergy": 0.005918
+          },
+          "leverage": {
+            "Coal": 1.3011,
+            "Gas": 54.1243,
+            "Nuclear": 56.2905,
+            "Hydro": 5.9141,
+            "Wind": 85.1644,
+            "Solar": 6024.0964,
+            "Oil": 121.2121,
+            "Bioenergy": 168.976
+          },
+          "mdg_bps": 13754,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 76.9,
+          "orphan_candidates": [
+            "Gas",
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2011": {
+          "year": 2011,
+          "total_generation_twh": 4713.02,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 3690.87,
+            "Gas": 108.77,
+            "Nuclear": 87.2,
+            "Hydro": 688.04,
+            "Wind": 74.1,
+            "Solar": 2.61,
+            "Oil": 33.8,
+            "Bioenergy": 27.63
+          },
+          "rho": {
+            "Coal": 0.783122,
+            "Gas": 0.023079,
+            "Nuclear": 0.018502,
+            "Hydro": 0.145987,
+            "Wind": 0.015722,
+            "Solar": 0.000554,
+            "Oil": 0.007172,
+            "Bioenergy": 0.005862
+          },
+          "leverage": {
+            "Coal": 1.2769,
+            "Gas": 43.3294,
+            "Nuclear": 54.0482,
+            "Hydro": 6.8499,
+            "Wind": 63.6051,
+            "Solar": 1805.0542,
+            "Oil": 139.4311,
+            "Bioenergy": 170.5902
+          },
+          "mdg_bps": 13582,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 78.3,
+          "orphan_candidates": [
+            "Nuclear",
+            "Wind",
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2012": {
+          "year": 2012,
+          "total_generation_twh": 4987.54,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 3748.19,
+            "Gas": 110.25,
+            "Nuclear": 98.32,
+            "Hydro": 862.79,
+            "Wind": 103.05,
+            "Solar": 3.59,
+            "Oil": 31.22,
+            "Bioenergy": 30.13
+          },
+          "rho": {
+            "Coal": 0.751511,
+            "Gas": 0.022105,
+            "Nuclear": 0.019713,
+            "Hydro": 0.172989,
+            "Wind": 0.020661,
+            "Solar": 0.00072,
+            "Oil": 0.00626,
+            "Bioenergy": 0.006041
+          },
+          "leverage": {
+            "Coal": 1.3307,
+            "Gas": 45.2386,
+            "Nuclear": 50.7279,
+            "Hydro": 5.7807,
+            "Wind": 48.4004,
+            "Solar": 1388.8889,
+            "Oil": 159.7444,
+            "Bioenergy": 165.5355
+          },
+          "mdg_bps": 13490,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 75.2,
+          "orphan_candidates": [
+            "Nuclear",
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2013": {
+          "year": 2013,
+          "total_generation_twh": 5431.63,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4077.37,
+            "Gas": 116.39,
+            "Nuclear": 111.5,
+            "Hydro": 909.61,
+            "Wind": 138.26,
+            "Solar": 8.37,
+            "Oil": 33.0,
+            "Bioenergy": 37.13
+          },
+          "rho": {
+            "Coal": 0.750672,
+            "Gas": 0.021428,
+            "Nuclear": 0.020528,
+            "Hydro": 0.167465,
+            "Wind": 0.025455,
+            "Solar": 0.001541,
+            "Oil": 0.006076,
+            "Bioenergy": 0.006836
+          },
+          "leverage": {
+            "Coal": 1.3321,
+            "Gas": 46.6679,
+            "Nuclear": 48.714,
+            "Hydro": 5.9714,
+            "Wind": 39.285,
+            "Solar": 648.9293,
+            "Oil": 164.582,
+            "Bioenergy": 146.2844
+          },
+          "mdg_bps": 13363,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 75.1,
+          "orphan_candidates": [
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2014": {
+          "year": 2014,
+          "total_generation_twh": 5794.45,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4203.06,
+            "Gas": 133.28,
+            "Nuclear": 133.22,
+            "Hydro": 1059.69,
+            "Wind": 159.76,
+            "Solar": 23.51,
+            "Oil": 35.66,
+            "Bioenergy": 46.27
+          },
+          "rho": {
+            "Coal": 0.72536,
+            "Gas": 0.023001,
+            "Nuclear": 0.022991,
+            "Hydro": 0.18288,
+            "Wind": 0.027571,
+            "Solar": 0.004057,
+            "Oil": 0.006154,
+            "Bioenergy": 0.007985
+          },
+          "leverage": {
+            "Coal": 1.3786,
+            "Gas": 43.4764,
+            "Nuclear": 43.4953,
+            "Hydro": 5.4681,
+            "Wind": 36.27,
+            "Solar": 246.4876,
+            "Oil": 162.4959,
+            "Bioenergy": 125.2348
+          },
+          "mdg_bps": 13165,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 72.5,
+          "orphan_candidates": [
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2015": {
+          "year": 2015,
+          "total_generation_twh": 5814.58,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4046.17,
+            "Gas": 166.91,
+            "Nuclear": 171.38,
+            "Hydro": 1114.52,
+            "Wind": 185.59,
+            "Solar": 39.48,
+            "Oil": 36.46,
+            "Bioenergy": 54.07
+          },
+          "rho": {
+            "Coal": 0.695866,
+            "Gas": 0.028705,
+            "Nuclear": 0.029474,
+            "Hydro": 0.191677,
+            "Wind": 0.031918,
+            "Solar": 0.00679,
+            "Oil": 0.00627,
+            "Bioenergy": 0.009299
+          },
+          "leverage": {
+            "Coal": 1.4371,
+            "Gas": 34.8371,
+            "Nuclear": 33.9282,
+            "Hydro": 5.2171,
+            "Wind": 31.3303,
+            "Solar": 147.2754,
+            "Oil": 159.4896,
+            "Bioenergy": 107.5384
+          },
+          "mdg_bps": 12751,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 69.6,
+          "orphan_candidates": [
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2016": {
+          "year": 2016,
+          "total_generation_twh": 6133.16,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4156.35,
+            "Gas": 188.28,
+            "Nuclear": 213.18,
+            "Hydro": 1153.27,
+            "Wind": 240.86,
+            "Solar": 66.53,
+            "Oil": 52.56,
+            "Bioenergy": 62.13
+          },
+          "rho": {
+            "Coal": 0.677685,
+            "Gas": 0.030699,
+            "Nuclear": 0.034759,
+            "Hydro": 0.188038,
+            "Wind": 0.039272,
+            "Solar": 0.010848,
+            "Oil": 0.00857,
+            "Bioenergy": 0.01013
+          },
+          "leverage": {
+            "Coal": 1.4756,
+            "Gas": 32.5744,
+            "Nuclear": 28.7695,
+            "Hydro": 5.3181,
+            "Wind": 25.4634,
+            "Solar": 92.1829,
+            "Oil": 116.6861,
+            "Bioenergy": 98.7167
+          },
+          "mdg_bps": 12314,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 67.8,
+          "orphan_candidates": [
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2017": {
+          "year": 2017,
+          "total_generation_twh": 6604.44,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4430.03,
+            "Gas": 203.2,
+            "Nuclear": 248.1,
+            "Hydro": 1165.06,
+            "Wind": 304.6,
+            "Solar": 117.8,
+            "Oil": 56.05,
+            "Bioenergy": 79.6
+          },
+          "rho": {
+            "Coal": 0.670765,
+            "Gas": 0.030767,
+            "Nuclear": 0.037566,
+            "Hydro": 0.176406,
+            "Wind": 0.04612,
+            "Solar": 0.017836,
+            "Oil": 0.008487,
+            "Bioenergy": 0.012052
+          },
+          "leverage": {
+            "Coal": 1.4908,
+            "Gas": 32.5024,
+            "Nuclear": 26.6198,
+            "Hydro": 5.6687,
+            "Wind": 21.6826,
+            "Solar": 56.0664,
+            "Oil": 117.8273,
+            "Bioenergy": 82.9738
+          },
+          "mdg_bps": 11943,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 67.1,
+          "orphan_candidates": [
+            "Solar",
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2018": {
+          "year": 2018,
+          "total_generation_twh": 7166.14,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4763.85,
+            "Gas": 215.5,
+            "Nuclear": 295.0,
+            "Hydro": 1198.89,
+            "Wind": 365.8,
+            "Solar": 176.9,
+            "Oil": 56.4,
+            "Bioenergy": 93.8
+          },
+          "rho": {
+            "Coal": 0.664772,
+            "Gas": 0.030072,
+            "Nuclear": 0.041166,
+            "Hydro": 0.167299,
+            "Wind": 0.051046,
+            "Solar": 0.024686,
+            "Oil": 0.00787,
+            "Bioenergy": 0.013089
+          },
+          "leverage": {
+            "Coal": 1.5043,
+            "Gas": 33.2535,
+            "Nuclear": 24.2919,
+            "Hydro": 5.9773,
+            "Wind": 19.5902,
+            "Solar": 40.5088,
+            "Oil": 127.0648,
+            "Bioenergy": 76.4
+          },
+          "mdg_bps": 11641,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 66.5,
+          "orphan_candidates": [
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2019": {
+          "year": 2019,
+          "total_generation_twh": 7503.43,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4855.12,
+            "Gas": 232.5,
+            "Nuclear": 348.7,
+            "Hydro": 1272.54,
+            "Wind": 405.3,
+            "Solar": 224.0,
+            "Oil": 52.47,
+            "Bioenergy": 112.8
+          },
+          "rho": {
+            "Coal": 0.647053,
+            "Gas": 0.030986,
+            "Nuclear": 0.046472,
+            "Hydro": 0.169594,
+            "Wind": 0.054015,
+            "Solar": 0.029853,
+            "Oil": 0.006993,
+            "Bioenergy": 0.015033
+          },
+          "leverage": {
+            "Coal": 1.5455,
+            "Gas": 32.2726,
+            "Nuclear": 21.5183,
+            "Hydro": 5.8964,
+            "Wind": 18.5134,
+            "Solar": 33.4975,
+            "Oil": 143.0001,
+            "Bioenergy": 66.5203
+          },
+          "mdg_bps": 11333,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 64.7,
+          "orphan_candidates": [
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2020": {
+          "year": 2020,
+          "total_generation_twh": 7779.07,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 4921.89,
+            "Gas": 252.5,
+            "Nuclear": 366.2,
+            "Hydro": 1321.71,
+            "Wind": 466.5,
+            "Solar": 261.1,
+            "Oil": 53.47,
+            "Bioenergy": 135.7
+          },
+          "rho": {
+            "Coal": 0.632709,
+            "Gas": 0.032459,
+            "Nuclear": 0.047075,
+            "Hydro": 0.169906,
+            "Wind": 0.059969,
+            "Solar": 0.033564,
+            "Oil": 0.006874,
+            "Bioenergy": 0.017444
+          },
+          "leverage": {
+            "Coal": 1.5805,
+            "Gas": 30.8081,
+            "Nuclear": 21.2427,
+            "Hydro": 5.8856,
+            "Wind": 16.6753,
+            "Solar": 29.7938,
+            "Oil": 145.4757,
+            "Bioenergy": 57.3263
+          },
+          "mdg_bps": 11052,
+          "proof_line": 2,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 63.3,
+          "orphan_candidates": [
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2021": {
+          "year": 2021,
+          "total_generation_twh": 8534.26,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 5333.8,
+            "Gas": 287.1,
+            "Nuclear": 407.5,
+            "Hydro": 1300.0,
+            "Wind": 655.8,
+            "Solar": 327.0,
+            "Oil": 57.06,
+            "Bioenergy": 166.0
+          },
+          "rho": {
+            "Coal": 0.624987,
+            "Gas": 0.033641,
+            "Nuclear": 0.047749,
+            "Hydro": 0.152327,
+            "Wind": 0.076843,
+            "Solar": 0.038316,
+            "Oil": 0.006686,
+            "Bioenergy": 0.019451
+          },
+          "leverage": {
+            "Coal": 1.6,
+            "Gas": 29.7256,
+            "Nuclear": 20.9428,
+            "Hydro": 6.5648,
+            "Wind": 13.0135,
+            "Solar": 26.0988,
+            "Oil": 149.5663,
+            "Bioenergy": 51.4112
+          },
+          "mdg_bps": 10546,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 62.5,
+          "orphan_candidates": [
+            "Oil",
+            "Bioenergy"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2022": {
+          "year": 2022,
+          "total_generation_twh": 8848.71,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 5414.72,
+            "Gas": 275.62,
+            "Nuclear": 417.78,
+            "Hydro": 1298.12,
+            "Wind": 762.67,
+            "Solar": 427.27,
+            "Oil": 69.93,
+            "Bioenergy": 182.6
+          },
+          "rho": {
+            "Coal": 0.611922,
+            "Gas": 0.031148,
+            "Nuclear": 0.047214,
+            "Hydro": 0.146702,
+            "Wind": 0.08619,
+            "Solar": 0.048286,
+            "Oil": 0.007903,
+            "Bioenergy": 0.020636
+          },
+          "leverage": {
+            "Coal": 1.6342,
+            "Gas": 32.1048,
+            "Nuclear": 21.1802,
+            "Hydro": 6.8165,
+            "Wind": 11.6023,
+            "Solar": 20.7099,
+            "Oil": 126.5342,
+            "Bioenergy": 48.459
+          },
+          "mdg_bps": 10172,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 61.2,
+          "orphan_candidates": [
+            "Oil"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2023": {
+          "year": 2023,
+          "total_generation_twh": 9456.45,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 5752.74,
+            "Gas": 297.8,
+            "Nuclear": 434.72,
+            "Hydro": 1226.0,
+            "Wind": 885.87,
+            "Solar": 584.15,
+            "Oil": 76.97,
+            "Bioenergy": 198.2
+          },
+          "rho": {
+            "Coal": 0.60834,
+            "Gas": 0.031492,
+            "Nuclear": 0.045971,
+            "Hydro": 0.129647,
+            "Wind": 0.093679,
+            "Solar": 0.061773,
+            "Oil": 0.008139,
+            "Bioenergy": 0.020959
+          },
+          "leverage": {
+            "Coal": 1.6438,
+            "Gas": 31.7541,
+            "Nuclear": 21.7528,
+            "Hydro": 7.7133,
+            "Wind": 10.6748,
+            "Solar": 16.1883,
+            "Oil": 122.8652,
+            "Bioenergy": 47.7122
+          },
+          "mdg_bps": 9760,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 60.8,
+          "orphan_candidates": [
+            "Oil"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        },
+        "2024": {
+          "year": 2024,
+          "total_generation_twh": 10086.88,
+          "K": 8,
+          "generation_twh": {
+            "Coal": 5827.6,
+            "Gas": 320.72,
+            "Nuclear": 450.85,
+            "Hydro": 1354.25,
+            "Wind": 997.04,
+            "Solar": 839.04,
+            "Oil": 88.88,
+            "Bioenergy": 208.5
+          },
+          "rho": {
+            "Coal": 0.577741,
+            "Gas": 0.031796,
+            "Nuclear": 0.044697,
+            "Hydro": 0.134259,
+            "Wind": 0.098845,
+            "Solar": 0.083181,
+            "Oil": 0.008811,
+            "Bioenergy": 0.02067
+          },
+          "leverage": {
+            "Coal": 1.7309,
+            "Gas": 31.4505,
+            "Nuclear": 22.3729,
+            "Hydro": 7.4483,
+            "Wind": 10.1168,
+            "Solar": 12.022,
+            "Oil": 113.4945,
+            "Bioenergy": 48.3793
+          },
+          "mdg_bps": 9240,
+          "proof_line": 3,
+          "governance_status": "CRITICAL",
+          "dominant_source": "Coal",
+          "dominant_share_pct": 57.8,
+          "orphan_candidates": [
+            "Oil"
+          ],
+          "thresholds": {
+            "advisory_bps": 116,
+            "alert_bps": 192,
+            "critical_bps": 386
+          }
+        }
+      },
+      "drift_series": {
+        "2001": {
+          "from_year": 2000,
+          "element_drift_bps": {
+            "Coal": -196,
+            "Gas": -9,
+            "Nuclear": -6,
+            "Hydro": 233,
+            "Wind": 1,
+            "Solar": 0,
+            "Oil": -21,
+            "Bioenergy": -2
+          },
+          "total_drift_bps": 467,
+          "largest_gainer": "Hydro",
+          "largest_loser": "Coal"
+        },
+        "2002": {
+          "from_year": 2001,
+          "element_drift_bps": {
+            "Coal": 129,
+            "Gas": -8,
+            "Nuclear": 34,
+            "Hydro": -132,
+            "Wind": 0,
+            "Solar": 0,
+            "Oil": -21,
+            "Bioenergy": -2
+          },
+          "total_drift_bps": 327,
+          "largest_gainer": "Coal",
+          "largest_loser": "Hydro"
+        },
+        "2003": {
+          "from_year": 2002,
+          "element_drift_bps": {
+            "Coal": 201,
+            "Gas": 2,
+            "Nuclear": 75,
+            "Hydro": -256,
+            "Wind": 0,
+            "Solar": 0,
+            "Oil": -20,
+            "Bioenergy": -2
+          },
+          "total_drift_bps": 556,
+          "largest_gainer": "Coal",
+          "largest_loser": "Hydro"
+        },
+        "2004": {
+          "from_year": 2003,
+          "element_drift_bps": {
+            "Coal": -138,
+            "Gas": 7,
+            "Nuclear": 2,
+            "Hydro": 120,
+            "Wind": 1,
+            "Solar": 0,
+            "Oil": 10,
+            "Bioenergy": -2
+          },
+          "total_drift_bps": 280,
+          "largest_gainer": "Hydro",
+          "largest_loser": "Coal"
+        },
+        "2005": {
+          "from_year": 2004,
+          "element_drift_bps": {
+            "Coal": 102,
+            "Gas": 15,
+            "Nuclear": -17,
+            "Hydro": -17,
+            "Wind": 2,
+            "Solar": 0,
+            "Oil": -95,
+            "Bioenergy": 10
+          },
+          "total_drift_bps": 258,
+          "largest_gainer": "Coal",
+          "largest_loser": "Oil"
+        },
+        "2006": {
+          "from_year": 2005,
+          "element_drift_bps": {
+            "Coal": 115,
+            "Gas": 35,
+            "Nuclear": -21,
+            "Hydro": -67,
+            "Wind": 5,
+            "Solar": 0,
+            "Oil": -70,
+            "Bioenergy": 4
+          },
+          "total_drift_bps": 316,
+          "largest_gainer": "Coal",
+          "largest_loser": "Oil"
+        },
+        "2007": {
+          "from_year": 2006,
+          "element_drift_bps": {
+            "Coal": 62,
+            "Gas": 20,
+            "Nuclear": -2,
+            "Hydro": -42,
+            "Wind": 4,
+            "Solar": 0,
+            "Oil": -47,
+            "Bioenergy": 5
+          },
+          "total_drift_bps": 181,
+          "largest_gainer": "Coal",
+          "largest_loser": "Oil"
+        },
+        "2008": {
+          "from_year": 2007,
+          "element_drift_bps": {
+            "Coal": -347,
+            "Gas": -4,
+            "Nuclear": 6,
+            "Hydro": 343,
+            "Wind": 21,
+            "Solar": 0,
+            "Oil": -32,
+            "Bioenergy": 12
+          },
+          "total_drift_bps": 766,
+          "largest_gainer": "Hydro",
+          "largest_loser": "Coal"
+        },
+        "2009": {
+          "from_year": 2008,
+          "element_drift_bps": {
+            "Coal": 89,
+            "Gas": 53,
+            "Nuclear": -7,
+            "Hydro": -165,
+            "Wind": 37,
+            "Solar": 0,
+            "Oil": -21,
+            "Bioenergy": 14
+          },
+          "total_drift_bps": 386,
+          "largest_gainer": "Coal",
+          "largest_loser": "Hydro"
+        },
+        "2010": {
+          "from_year": 2009,
+          "element_drift_bps": {
+            "Coal": -152,
+            "Gas": 32,
+            "Nuclear": -11,
+            "Hydro": 34,
+            "Wind": 43,
+            "Solar": 1,
+            "Oil": 50,
+            "Bioenergy": 3
+          },
+          "total_drift_bps": 326,
+          "largest_gainer": "Oil",
+          "largest_loser": "Coal"
+        },
+        "2011": {
+          "from_year": 2010,
+          "element_drift_bps": {
+            "Coal": 145,
+            "Gas": 46,
+            "Nuclear": 7,
+            "Hydro": -231,
+            "Wind": 40,
+            "Solar": 4,
+            "Oil": -11,
+            "Bioenergy": -1
+          },
+          "total_drift_bps": 485,
+          "largest_gainer": "Coal",
+          "largest_loser": "Hydro"
+        },
+        "2012": {
+          "from_year": 2011,
+          "element_drift_bps": {
+            "Coal": -316,
+            "Gas": -10,
+            "Nuclear": 12,
+            "Hydro": 270,
+            "Wind": 49,
+            "Solar": 2,
+            "Oil": -9,
+            "Bioenergy": 2
+          },
+          "total_drift_bps": 670,
+          "largest_gainer": "Hydro",
+          "largest_loser": "Coal"
+        },
+        "2013": {
+          "from_year": 2012,
+          "element_drift_bps": {
+            "Coal": -8,
+            "Gas": -7,
+            "Nuclear": 8,
+            "Hydro": -55,
+            "Wind": 48,
+            "Solar": 8,
+            "Oil": -2,
+            "Bioenergy": 8
+          },
+          "total_drift_bps": 144,
+          "largest_gainer": "Wind",
+          "largest_loser": "Hydro"
+        },
+        "2014": {
+          "from_year": 2013,
+          "element_drift_bps": {
+            "Coal": -253,
+            "Gas": 16,
+            "Nuclear": 25,
+            "Hydro": 154,
+            "Wind": 21,
+            "Solar": 25,
+            "Oil": 1,
+            "Bioenergy": 11
+          },
+          "total_drift_bps": 506,
+          "largest_gainer": "Hydro",
+          "largest_loser": "Coal"
+        },
+        "2015": {
+          "from_year": 2014,
+          "element_drift_bps": {
+            "Coal": -295,
+            "Gas": 57,
+            "Nuclear": 65,
+            "Hydro": 88,
+            "Wind": 43,
+            "Solar": 27,
+            "Oil": 1,
+            "Bioenergy": 13
+          },
+          "total_drift_bps": 590,
+          "largest_gainer": "Hydro",
+          "largest_loser": "Coal"
+        },
+        "2016": {
+          "from_year": 2015,
+          "element_drift_bps": {
+            "Coal": -182,
+            "Gas": 20,
+            "Nuclear": 53,
+            "Hydro": -36,
+            "Wind": 74,
+            "Solar": 41,
+            "Oil": 23,
+            "Bioenergy": 8
+          },
+          "total_drift_bps": 436,
+          "largest_gainer": "Wind",
+          "largest_loser": "Coal"
+        },
+        "2017": {
+          "from_year": 2016,
+          "element_drift_bps": {
+            "Coal": -69,
+            "Gas": 1,
+            "Nuclear": 28,
+            "Hydro": -116,
+            "Wind": 68,
+            "Solar": 70,
+            "Oil": -1,
+            "Bioenergy": 19
+          },
+          "total_drift_bps": 373,
+          "largest_gainer": "Solar",
+          "largest_loser": "Hydro"
+        },
+        "2018": {
+          "from_year": 2017,
+          "element_drift_bps": {
+            "Coal": -60,
+            "Gas": -7,
+            "Nuclear": 36,
+            "Hydro": -91,
+            "Wind": 49,
+            "Solar": 68,
+            "Oil": -6,
+            "Bioenergy": 10
+          },
+          "total_drift_bps": 328,
+          "largest_gainer": "Solar",
+          "largest_loser": "Hydro"
+        },
+        "2019": {
+          "from_year": 2018,
+          "element_drift_bps": {
+            "Coal": -177,
+            "Gas": 9,
+            "Nuclear": 53,
+            "Hydro": 23,
+            "Wind": 30,
+            "Solar": 52,
+            "Oil": -9,
+            "Bioenergy": 19
+          },
+          "total_drift_bps": 372,
+          "largest_gainer": "Nuclear",
+          "largest_loser": "Coal"
+        },
+        "2020": {
+          "from_year": 2019,
+          "element_drift_bps": {
+            "Coal": -143,
+            "Gas": 15,
+            "Nuclear": 6,
+            "Hydro": 3,
+            "Wind": 60,
+            "Solar": 37,
+            "Oil": -1,
+            "Bioenergy": 24
+          },
+          "total_drift_bps": 289,
+          "largest_gainer": "Wind",
+          "largest_loser": "Coal"
+        },
+        "2021": {
+          "from_year": 2020,
+          "element_drift_bps": {
+            "Coal": -77,
+            "Gas": 12,
+            "Nuclear": 7,
+            "Hydro": -176,
+            "Wind": 169,
+            "Solar": 48,
+            "Oil": -2,
+            "Bioenergy": 20
+          },
+          "total_drift_bps": 510,
+          "largest_gainer": "Wind",
+          "largest_loser": "Hydro"
+        },
+        "2022": {
+          "from_year": 2021,
+          "element_drift_bps": {
+            "Coal": -131,
+            "Gas": -25,
+            "Nuclear": -5,
+            "Hydro": -56,
+            "Wind": 93,
+            "Solar": 100,
+            "Oil": 12,
+            "Bioenergy": 12
+          },
+          "total_drift_bps": 434,
+          "largest_gainer": "Solar",
+          "largest_loser": "Coal"
+        },
+        "2023": {
+          "from_year": 2022,
+          "element_drift_bps": {
+            "Coal": -36,
+            "Gas": 3,
+            "Nuclear": -12,
+            "Hydro": -171,
+            "Wind": 75,
+            "Solar": 135,
+            "Oil": 2,
+            "Bioenergy": 3
+          },
+          "total_drift_bps": 438,
+          "largest_gainer": "Solar",
+          "largest_loser": "Hydro"
+        },
+        "2024": {
+          "from_year": 2023,
+          "element_drift_bps": {
+            "Coal": -306,
+            "Gas": 3,
+            "Nuclear": -13,
+            "Hydro": 46,
+            "Wind": 52,
+            "Solar": 214,
+            "Oil": 7,
+            "Bioenergy": -3
+          },
+          "total_drift_bps": 643,
+          "largest_gainer": "Solar",
+          "largest_loser": "Coal"
+        }
+      }
+    }
+  },
+  "summary": {
+    "total_countries": 1,
+    "portfolio_size": 8,
+    "portfolio_name": "K=8",
+    "year_filter": [
+      2000,
+      2024
+    ],
+    "country_filter": [
+      "China"
+    ]
+  }
+}
