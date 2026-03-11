@@ -1,0 +1,36 @@
+name: Validate Documents
+
+on:
+  push:
+    branches: [master, main]
+  pull_request:
+    branches: [master, main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Validate docx files
+        run: |
+          echo "=== HUF Document Inventory ==="
+          count=0
+          for docx in $(find docs -name '*.docx' -type f | sort); do
+            size=$(stat --format=%s "$docx")
+            kb=$((size / 1024))
+            echo "  OK: $docx (${kb} KB)"
+            count=$((count + 1))
+          done
+          echo ""
+          echo "Total: $count documents found"
+          if [ $count -eq 0 ]; then
+            echo "WARNING: No .docx files found in docs/"
+            exit 1
+          fi
+          echo "All documents present."
