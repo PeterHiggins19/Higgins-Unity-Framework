@@ -1,0 +1,97 @@
+{
+  "manifest_id": "STAGING-001",
+  "manifest_version": "1.0",
+  "description": "Tracks all file changes between Cowork sessions and GitHub pushes. Each session entry records what was added, modified, or deleted — and whether it has been pushed to the live repo.",
+  "workflow": {
+    "step_1": "Claude makes changes in HUF-repo/ during a Cowork session",
+    "step_2": "Changes are logged here with status 'staged'",
+    "step_3": "Peter copies changed files to D:\\GitHub\\HUF and pushes via GitHub Desktop",
+    "step_4": "Peter (or Claude) updates status to 'pushed' with commit hash",
+    "note": "If a session ends before push, this manifest tells you exactly what's pending"
+  },
+  "repo": {
+    "name": "Higgins-Unity-Framework",
+    "url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "local_path_windows": "D:\\GitHub\\HUF",
+    "cowork_mirror": "Claude CoWorker/HUF-repo/"
+  },
+  "sessions": [
+    {
+      "session_id": "S000",
+      "date": "2026-03-30",
+      "label": "Initial repo publish",
+      "status": "pushed",
+      "commit": "HUF new Core — March 30, 2026 11:49 AM EDT",
+      "notes": "254 files. First public commit. README original version.",
+      "files": []
+    },
+    {
+      "session_id": "S001",
+      "date": "2026-03-30",
+      "label": "README restructure (ChatGPT front-door design)",
+      "status": "pushed",
+      "commit": "README restructure — pushed by Peter same day",
+      "notes": "ChatGPT designed three-box opening. Claude drafted full replacement. 27 internal links verified. Broken kill-test link fixed.",
+      "files": [
+        {
+          "path": "README.md",
+          "action": "modified",
+          "size_bytes": 9360,
+          "lines": 159,
+          "summary": "Restructured: claims/disclaims/test-protocol at top, CLS and provenance below fold, all links verified"
+        }
+      ]
+    },
+    {
+      "session_id": "S002",
+      "date": "2026-03-30",
+      "label": "v3 Spectrum Analyzer + Triad Architecture",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Add v3 spectrum analyzer (DISP-001) and triad architecture (ARCH-001)",
+      "notes": "v3 analyzer implements group phase, individual phase (carrier wraps), carrier composition ribbon with real EMBER data for 5 countries. ARCH-001 defines the GOV/CLS/GEO triad with full research taxonomy.",
+      "files": [
+        {
+          "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.jsx",
+          "action": "added",
+          "size_bytes": 50054,
+          "lines": 631,
+          "summary": "DISP-001 phase display: group phase (cumulative TV + K_eff path), carrier wraps, composition ribbon. Real EMBER carrier data for DE/JP/GB/FR/AU, 2000-2025, 9 fuel types."
+        },
+        {
+          "path": "reference/machine-readable/HUF_Triad_Architecture_v1.0.json",
+          "action": "added",
+          "size_bytes": 19993,
+          "summary": "ARCH-001: GOV (SEES) / CLS (DOES) / GEO (IS) triad. Aitchison simplex, Fisher metric, square root embedding. Research taxonomy: established / frontier / future tiers."
+        }
+      ]
+    }
+  ],
+  "pending_items": [
+    {
+      "item": "HTML port of v3 analyzer",
+      "priority": "next",
+      "notes": "JSX done, HTML version not started. Will be added to spectrum-analyzer folder."
+    },
+    {
+      "item": "Peterson letter URL update",
+      "priority": "when ready",
+      "notes": "Letter may reference old GitHub URL — needs updating to PeterHiggins19/Higgins-Unity-Framework"
+    },
+    {
+      "item": "GitHub issue templates",
+      "priority": "when ready",
+      "notes": "ChatGPT suggested: Prior-art challenge, Replication attempt, Negative result / failure case"
+    },
+    {
+      "item": "Contact map Packet A draft",
+      "priority": "when directed",
+      "notes": "MC-4 Methods Challenge one-pager for CoDa critics (Palarea-Albaladejo, Graffelman, CoDaWork 2026)"
+    }
+  ],
+  "file_count_tracking": {
+    "S000_published": 254,
+    "S001_after_push": 254,
+    "S002_when_pushed": 256
+  }
+}
