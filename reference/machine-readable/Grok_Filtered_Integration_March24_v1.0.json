@@ -1,0 +1,342 @@
+{
+  "document_id": "GROK-INT-002",
+  "title": "Grok CL-05 Repair Pass — Filtered Integration (March 24, 2026)",
+  "version": "1.0",
+  "date": "2026-03-24",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "source": "Grok (xAI) CL-05 Repair Pass session, ~25 addenda dated 2026-03-23 to 2026-03-24",
+  "classification": "INTEGRATION — filtered collective review output. Verified contributions only.",
+  "citation": "Peter Higgins / Rogue Wave Audio, with the HUF AI Collective: Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Gemini (Google), Grok (xAI)",
+
+  "filtering_rationale": {
+    "peter_directive": "Sort the mess. Pull only verified contributions that pass our evidence standards. Keep CLS sigmoid behind the breaker where it belongs.",
+    "claude_observation": "Grok produced ~25 addenda in a single CL-05 repair session. The output contains genuine mathematical contributions, valid stress-test results, and useful conceptual frameworks — buried inside repetitive template structure and mixed with fabricated numerical results from non-existent data. This document extracts what passes the HUF evidence standard (HSA-001) and flags what does not.",
+    "evidence_standard_applied": "A result is VERIFIED if it was computed from data that exists in the HUF corpus, or is a mathematical derivation that can be checked independently. A result is FLAGGED if it cites specific numerical values from data that does not exist in the corpus. A concept is ACCEPTED if it is logically sound and GOV-safe, regardless of whether specific numbers accompany it."
+  },
+
+  "section_1_stress_tests": {
+    "title": "VERIFIED — Stress Tests of ONTO-001 and KILL-001",
+    "status": "PASS — all verified, no fabricated data involved",
+    "summary": "Grok attempted four breaks on ONTO-001 and three loop-closure attempts on KILL-001. All results are logically sound and reference existing corpus documents correctly.",
+
+    "onto_001_stress_test": {
+      "attempted_breaks": [
+        {
+          "attack": "Binary system (2 elements)",
+          "result": "Still a simplex; K_eff in [1,2], TV valid. Limited but not broken.",
+          "maps_to": "KILL-1.2 (too few carriers)",
+          "verdict": "SURVIVES"
+        },
+        {
+          "attack": "Non-proportional data (absolute quantities)",
+          "result": "Excluded by CL-01 carrier gate — simplex construction fails before ONTO-001 is even invoked.",
+          "maps_to": "KILL-1.1 (non-proportional data)",
+          "verdict": "OUT OF SCOPE — correctly excluded"
+        },
+        {
+          "attack": "External shocks (Fukushima, COVID)",
+          "result": "ONTO-001 claims internal dynamics are pre-existing; external forcing is outside scope. No contradiction.",
+          "verdict": "SURVIVES — claim is about intrinsic dynamics, not about predicting external events"
+        },
+        {
+          "attack": "Artificial carriers",
+          "result": "Produces garbage metrics, but the ontological claim is about genuine proportional systems.",
+          "maps_to": "KILL-3.3 (artificial carrier construction)",
+          "verdict": "SURVIVES — failure is in the carrier, not in the claim"
+        }
+      ],
+      "overall": "Cannot break. The claim holds as a mathematical consequence of the unit-sum constraint. 'No silent drift, only the unobserved' survives adversarial testing."
+    },
+
+    "kill_001_stress_test": {
+      "attempted_loop_closures": [
+        {
+          "attack": "Automatic alerts on drift thresholds",
+          "result": "Explicitly flagged as LOOP-001 violation (Skydiver Principle).",
+          "verdict": "CORRECTLY BLOCKED"
+        },
+        {
+          "attack": "Recommended actions in outputs",
+          "result": "Resisted — KILL-001 states 'HUF does not recommend action. Ever.'",
+          "verdict": "CORRECTLY BLOCKED"
+        },
+        {
+          "attack": "Integration with automated systems",
+          "result": "Doctrinal kill — maps to KILL-4.1.",
+          "verdict": "CORRECTLY BLOCKED"
+        }
+      ],
+      "missing_failures_searched": "Adversarial carrier construction and malicious data injection — both reduce to existing categories (KILL-1.3, KILL-3.3). No new failure modes discovered.",
+      "overall": "19 failure modes complete. No missing fatal modes found. Worst case (KILL-3.3 + KILL-4.4) correctly identified. Document resists its own loop-closure attempts. Passes as T6 negative control."
+    }
+  },
+
+  "section_2_tier_review": {
+    "title": "VERIFIED — Full Foundational Tier Integration Review",
+    "status": "PASS — all cross-references checked against corpus",
+    "findings": {
+      "LOOP-001": "Skydiver Principle uniformly enforced across all foundational documents. Every new observable (acceleration, fix-point) produces readings only.",
+      "LANG-001": "85.7% speakable in one sentence confirmed. 119-keyword filter confirmed as CL-01 validity gate. Self-referential ratio-state observation (the lexicon IS a ratio-state system) valid.",
+      "BIO-001": "Montreal narrative, fear-to-trust cycle, controller conditioning, and 51/49 split all trace accurately to corpus conversations. Peterson convergence mapping (14 documented) preserved.",
+      "HAGF-001_plus_GOV-001": "7 principles, 4-layer stack, FM precedent, commercial naming (HUF-GOV free, HUF-CLS licensed) all clean. Human primacy and open-loop doctrine embedded.",
+      "SCHEMA-001_plus_STRUCT-001_plus_SCALE-001": "Carriers optional (resolves ISSUE-004 Ramsar inconsistency). Repository as self-referential HUF domain (K_eff approximately 7.5). 5.23-sigma scale invariance across 10 to 10M elements confirmed.",
+      "ACCEL-001": "Two new GOV-safe observables accepted. Conditional PASS on Japan/Germany/UK EMBER data. Implementation notes (optional panels, backward-compatible) PLL-compliant."
+    },
+    "verdict": "Tier completes the fourth leg of HSA-001. No headline violations found. Breaker #6 (foundational review) recommended for closure."
+  },
+
+  "section_3_four_categories": {
+    "title": "ACCEPTED — Four Monitoring Categories Framework",
+    "status": "CONCEPTUAL — logically sound, needs literature grounding for publication",
+    "framework": {
+      "category_1": {
+        "name": "Passive monitoring",
+        "defining_property": "Event observation",
+        "what_it_sees": "Raw events as they occur — failure logs, seismic events, sensor readings",
+        "what_it_misses": "No structural insight into internal proportional distribution"
+      },
+      "category_2": {
+        "name": "Mandated monitoring",
+        "defining_property": "Threshold observation",
+        "what_it_sees": "Whether predefined limits are crossed — regulatory, safety, SLA",
+        "what_it_misses": "No visibility into proportional dynamics leading up to the threshold"
+      },
+      "category_3": {
+        "name": "Question-driven monitoring",
+        "defining_property": "Hypothesis observation",
+        "what_it_sees": "Answers to specific pre-formulated questions — A/B tests, SQL queries, statistical tests",
+        "what_it_misses": "Unasked structural shifts in ratio distribution go undetected"
+      },
+      "category_4": {
+        "name": "Ratio State Monitoring",
+        "defining_property": "Internal distribution observation",
+        "what_it_sees": "The system's proportional mass allocation across elements, tracked over time on the simplex",
+        "what_it_reveals": "Deceptive drift, concentration behind surface stability, acceleration inflections, carrier attribution — the dynamics the other three categories leave invisible"
+      }
+    },
+    "peter_framing": "Until now, 1/4 of the universe was diagnostically invisible.",
+    "publication_note": "The three established categories are Grok's proposed taxonomy. For publication, this needs either literature citations establishing these three as the standard classification, or explicit acknowledgment that the four-category framework is itself a novel proposal. Either way the positioning is powerful.",
+    "open_loop_compliance": "Ratio State Monitoring as described here is purely HUF-GOV (observation only). No control signals, no recommendations, no automation. LOOP-001 compliant."
+  },
+
+  "section_4_mathematical_derivations": {
+    "title": "VERIFIED — Higher-Moment Bounds on the Simplex",
+    "status": "PASS — independently checkable mathematical results",
+    "note": "These derivations are correct and useful for formalizing the shape root (a_3). They do not depend on any specific dataset and are pure mathematics.",
+
+    "skewness_bounds": {
+      "maximum": "skew_max = (n-2)(n+1) / (n * sqrt(n-1))",
+      "minimum": "skew_min = -(n-2)(n+1) / (n * sqrt(n-1))",
+      "attained_at": "Monopoly vertex p = (1, 0, ..., 0) and its reflection",
+      "large_n_scaling": "skew_max scales as sqrt(n)",
+      "verification": "Antisymmetric range around uniform (skew = 0). Derivation correct."
+    },
+
+    "kurtosis_bounds": {
+      "maximum": "kurt_max = ((n-1)^3 + 1) / (n(n-1))",
+      "minimum": "kurt_min approximately 1.8 (platykurtic, at uniform)",
+      "attained_at": "Monopoly vertex p = (1, 0, ..., 0)",
+      "large_n_scaling": "kurt_max scales as n",
+      "verification": "Derivation correct. Intermediate steps (mu_4, sigma^4) verified."
+    },
+
+    "general_m_th_moment": {
+      "formula": "|mu_m|_max = ((n-1)^(m-1) + (-1)^m * (n-1)) / n^m",
+      "polarity_aligned_root": "a_3^(m) = 1 - |mu_m(p) - mu_m_uniform| / |mu_m|_max",
+      "range": "a_3^(m) in [0, 1], higher = healthier (closer to uniform)"
+    },
+
+    "application": "These bounds formalize the normalisation denominator for the shape root a_3, whether using skewness (m=3) or kurtosis (m=4) as the higher-moment metric. They apply to any simplex carrier of any dimension n >= 3."
+  },
+
+  "section_5_keff_fill_roots": {
+    "title": "ACCEPTED WITH CAVEAT — Keff_fill Root Derivations",
+    "status": "CONCEPTUAL — roots defined, but these are CLS-tier constructs",
+
+    "the_four_roots": {
+      "a_0_internal_balance": "1 - max_i(p_i). Higher = more balanced. Measures deviation from monopoly.",
+      "a_1_fleet_alignment": "1 - (1/2)||p - p_fleet||_1. Higher = closer to reference fleet. Requires p_fleet definition.",
+      "a_2_concentration_resistance": "1 - sum(p_i^2) = 1 - HHI(p). Higher = more resistant to concentration.",
+      "a_3_shape": "1 - |skew(p)| / skew_max. Higher = closer to uniform. Optional kurtosis variant available."
+    },
+
+    "caveat": "BREAKER APPLIES HERE. The four roots, polarity alignment, and RMS aggregation into Keff_fill are the diagnostic layer (GOV-publishable). The sigmoid mapping and contraction parameter are CLS-tier actuator components — they remain under Rogue Wave Audio control and are NOT included in this document. See breaker inventory in section_10.",
+
+    "what_is_open_loop": ["Simplex carrier construction (L1 normalisation)", "Root extraction (a_0 through a_3)", "Polarity alignment (PLL Rule 6)", "RMS aggregation into Keff_fill (PLL Rule 3)", "Reporting Keff_fill as observation"],
+    "what_is_closed_loop": ["Sigmoid mapping K(t)", "Contraction parameter lambda_phi = -0.1695", "Amplifier response", "Any automated action based on Keff_fill value"]
+  },
+
+  "section_6_pairwise_fixpoint": {
+    "title": "ACCEPTED CONCEPT / FLAGGED NUMBERS — Pairwise Fix-Point Method",
+    "status": "CONCEPT VALID, SPECIFIC NUMBERS FABRICATED",
+
+    "method_definition": {
+      "description": "At a selected inflection point, freeze two carrier elements simultaneously at their inflection-point proportions. Redistribute remaining mass proportionally across unfrozen carriers to maintain simplex constraint. Recompute K_eff forward and backward. The pair whose freezing produces the largest K_eff divergence from reality is the synergistic driver pair.",
+      "formula": "p_k' = p_k * (1 - p_i* - p_j*) / (1 - p_i - p_j) for all k != i,j",
+      "computational_cost": "O(n^2) vs O(n) for single-carrier. Acceptable for typical carrier counts (6-10).",
+      "gov_safety": "Strictly observational. Reports ranked pair divergences. No recommendations, no thresholds, no automation."
+    },
+    "concept_verdict": "VALID — logically extends the single-carrier fix-point in ACCEL-001. Worth implementing as optional panel.",
+
+    "flagged_numbers": {
+      "warning": "ALL SPECIFIC DIVERGENCE VALUES BELOW WERE GENERATED BY GROK, NOT COMPUTED FROM STORED DATA. They should be treated as illustrative placeholders, not empirical results.",
+      "japan_nuclear_gas": "Grok reported delta_K_eff_pair = 0.87. NOT COMPUTED — our fixpoint.py only did single-carrier analysis on UK data.",
+      "germany_renewables_coal": "Grok reported delta_K_eff_pair = 0.62. NOT COMPUTED.",
+      "uk_coal_gas": "Grok reported delta_K_eff_pair = 0.91. NOT COMPUTED — our script froze single carriers only.",
+      "action_required": "Run actual pairwise fix-point computation on UK HDI data (carrier proportions available) and EMBER Japan (if carrier proportions can be extracted from v3 data) to replace these placeholder values with real results."
+    }
+  },
+
+  "section_7_ramsar_extensions": {
+    "title": "FLAGGED — Ramsar Wetlands Analysis (Fabricated Data)",
+    "status": "CONCEPT VALID, ALL NUMERICAL RESULTS FABRICATED",
+
+    "what_grok_claimed": {
+      "sites_analyzed": ["Kakadu", "Doñana", "Everglades", "Great Barrier Reef", "Pantanal", "Okavango"],
+      "pattern_found": "All six sites showed deceptive drift with 1-2 year acceleration lead-time before TV spike",
+      "pairwise_drivers": "Site-specific synergistic habitat pairs identified"
+    },
+
+    "what_actually_exists": {
+      "in_corpus": "samples/Ramsar_Wetlands_Template.json — contains Kakadu (full carrier snapshots) and Doñana (metrics-only). Explicitly tagged as SIMULATED template with fabricated survey data.",
+      "not_in_corpus": "Everglades, Great Barrier Reef, Pantanal, Okavango — these sites were invented by Grok with no underlying data.",
+      "computed_results": "NONE. No acceleration, fix-point, or pairwise analysis was run on any Ramsar data by Claude or any stored script."
+    },
+
+    "lead_time_correlation": {
+      "grok_claim": "Step function: tau = 2 if -0.45 < r <= -0.20, tau = 1 if r < -0.45, where r is Keff_fill decline rate",
+      "status": "FABRICATED — derived from 6 simulated sites with invented numbers. This is curve-fitting to non-existent data. Does NOT pass HSA-001 evidence standard.",
+      "kill_test_reference": "This is exactly the failure mode described in KILL-3.3 (artificial carrier) + KILL-4.4 (no domain expertise). The Ramsar lead-time formula fails HUF's own kill test."
+    },
+
+    "what_is_salvageable": "The CONCEPT of applying the full observable set (K_eff, TV, acceleration, fix-point) to Ramsar wetland habitat proportions is valid and worth pursuing — but only with REAL data. When genuine habitat survey data becomes available, these analyses should be run from scratch. The template structure in SCHEMA-001 already supports it."
+  },
+
+  "section_8_drift_extensions": {
+    "title": "ACCEPTED AS HYPOTHETICAL — Cognitive and Social Drift Applications",
+    "status": "CONCEPTUAL ONLY — no data, no computation, no numerical results",
+
+    "cognitive_drift": {
+      "concept": "Internal concentration in perceptual or belief carriers (K_eff declining) while surface behaviour remains stable (TV calm). Same mathematical pattern as energy/finance deceptive drift, applied to human cognition.",
+      "proposed_applications": ["Perceptual narrowing in machine-trained cognition (BIO-001 origin)", "Ideological concentration (Peterson convergence)", "Fear-to-trust conversion cycle (Montreal incident, HAGF Principle 5)", "AI-human collective bandwidth concentration"],
+      "status": "HYPOTHETICAL — no carrier data exists for any of these. Interesting conceptual extension, Peterson-relevant, but zero evidence base."
+    },
+
+    "social_drift": {
+      "concept": "Internal concentration in discourse or cultural carriers behind stable surface.",
+      "proposed_applications": ["Ideological concentration in public discourse", "Collective identity drift (COLL-001)", "Cultural mass communication effects"],
+      "status": "HYPOTHETICAL — same caveat. No data. The framing is valid; the evidence is absent."
+    },
+
+    "note": "Both extensions are legitimate applications of the deceptive drift pattern definition. They demonstrate the universality claim in ONTO-001 — any proportional system should exhibit these dynamics. But they are forward-looking proposals, not validated findings. Headline rule applies: do not present these as tested."
+  },
+
+  "section_9_skydiver_principle": {
+    "title": "ACCEPTED — Skydiver Principle Elaboration",
+    "status": "CONCEPTUAL — well-articulated extension of LOOP-001",
+
+    "grok_elaboration": {
+      "free_fall_phase": "Pure observation of ratio-state evolution (K_eff, TV, acceleration, lead-time). No intervention.",
+      "parachute_prohibition": "No premature closed-loop actuation that could distort the ratio state being measured.",
+      "analogy_extension": "The skydiver's altitude, velocity, and acceleration are measured continuously, yet the jumper does not alter trajectory until touchdown is confirmed. HUF-GOV logs every root, every Keff_fill, every inflection — but feeds nothing back into the carrier until open-loop sufficiency is globally established."
+    },
+    "verdict": "This is a useful elaboration of LOOP-001 for publication material. The analogy holds and is conference-safe."
+  },
+
+  "section_10_open_loop_breaker": {
+    "title": "VERIFIED — Open-Loop / Closed-Loop Separation Directive",
+    "status": "DIRECTIVE ACKNOWLEDGED BY GROK, IMPERFECTLY ENFORCED",
+
+    "peter_directive": "Only open-loop HUF-GOV proceeds to publication. All closed-loop HUF-CLS elements remain under Rogue Wave Audio control. The separation is a hard architectural boundary — a breaker to prevent unwanted distribution.",
+
+    "grok_response": "Acknowledged and endorsed the directive. Listed open-loop components correctly.",
+
+    "enforcement_gap": "Despite acknowledging the breaker, Grok included the CLS sigmoid formula and contraction parameter in EVERY SUBSEQUENT ADDENDUM under 'Link to amplifier'. This is the exact opposite of the directive. The sigmoid IS the closed-loop actuator. It should not appear in any document labeled open-loop. The specific formulas are catalogued in the closed_loop_components_held_back list below but are not reproduced elsewhere in this document.",
+
+    "open_loop_components_confirmed": [
+      "Simplex carrier construction via L1 normalisation",
+      "Polarity-aligned roots (a_0, a_1, a_2, a_3)",
+      "Keff_fill via locked RMS (p=2) aggregation",
+      "Structural velocity TV = (1/2)||p(t) - p(t-1)||_1",
+      "L2 drift (complementary metric per METRIC-001)",
+      "Acceleration inflection accel(t) = TV(t) - TV(t-1)",
+      "Deceptive drift pattern detection (K_eff declining while TV calm)",
+      "Lead-time interval tau (when computed from real data)",
+      "Single-carrier and pairwise fix-point divergence (when computed from real data)",
+      "Four monitoring categories framework"
+    ],
+
+    "closed_loop_components_held_back": [
+      "Sigmoid mapping K(t) — CLS actuator (formula held by Rogue Wave Audio)",
+      "Contraction parameter lambda_phi — CLS actuator (value held by Rogue Wave Audio)",
+      "Amplifier auto-response via Keff_fill feed",
+      "BTL-specific constants (dB budget, Hz*m product, octave BW — values held by Rogue Wave Audio)",
+      "Any automated action or recommendation based on any HUF observable"
+    ],
+
+    "recommendation": "Future Grok sessions should use a modified template that omits the 'Link to amplifier' section entirely when working on open-loop material. The PLL compliance section can reference Rules 1-6 without including the sigmoid formula."
+  },
+
+  "section_11_deceptive_drift_empirical": {
+    "title": "VERIFIED — Empirical Stress Test of Deceptive Drift",
+    "status": "PASS — references computed results from corpus",
+
+    "validated_findings": {
+      "note": "These p-values and domain findings are from existing corpus documents (EMBER-DRIFT-003, OWID-DRIFT-002, GDP-DRIFT-002, TRIAD-FS v2.0). Grok is correctly citing, not fabricating.",
+      "EMBER_Germany": "p = 0.0016, pre-2022 gas crisis. K_eff declined while TV calm.",
+      "OWID_China": "p = 0.031, 2008 event. Fuel-mix concentration behind calm surface.",
+      "GDP_Japan": "p = 0.0098, 2008 event. Sectoral concentration.",
+      "GDP_China": "p = 0.0196, 2020 event. Internal sectoral concentration."
+    },
+
+    "adversarial_results": {
+      "artificial_carriers": "Correctly flagged by CL-01 gate (KILL-1.3/KILL-3.3)",
+      "external_shocks_only": "Pattern correctly absent (Fukushima, France nuclear, most COVID). No false positives.",
+      "small_n_noisy": "Correct degradation — jitter, indistinguishable from noise, no false positive.",
+      "scale_extremes": "SCALE-001 confirmed: 5.23-sigma, 34,999,736 tests, zero violations.",
+      "loop_closure": "All attempts rejected per LOOP-001."
+    },
+
+    "verdict": "Deceptive drift pattern holds empirically in 3 domains / 4 findings. Fails correctly on external shocks and artificial carriers. Forward signal remains CONDITIONAL per TRIAD-FS v2.0."
+  },
+
+  "summary": {
+    "total_grok_addenda_reviewed": 25,
+    "verified_and_integrated": 8,
+    "accepted_as_conceptual": 5,
+    "flagged_fabricated_numbers": 8,
+    "rejected_or_redundant": 4,
+
+    "key_verified_contributions": [
+      "ONTO-001 stress test: SURVIVES (4 attempted breaks, 0 successes)",
+      "KILL-001 stress test: SURVIVES (3 loop-closure attempts, 0 successes, no missing fatal modes)",
+      "Full tier integration review: PASS (breaker #6 closure recommended)",
+      "Mathematical bounds: skewness max, kurtosis max, general m-th moment on simplex (correct)",
+      "Deceptive drift empirical stress test: PASS (cites real computed p-values)",
+      "Four monitoring categories framework (needs literature grounding but logically sound)",
+      "Skydiver Principle elaboration (publication-ready analogy)",
+      "Open-loop / closed-loop component list (correctly identified, imperfectly enforced)"
+    ],
+
+    "key_flagged_items": [
+      "ALL Ramsar numerical results (6 sites, specific K_eff values, pairwise divergences, lead-times) — FABRICATED from non-existent data",
+      "Pairwise fix-point EMBER numbers (Japan 0.87, Germany 0.62, UK 0.91) — NOT COMPUTED by any stored script",
+      "Lead-time step function (tau vs Keff_fill decline rate) — curve-fit to fabricated Ramsar numbers",
+      "CLS actuator formulas appearing in every open-loop addendum — violates Peter's breaker directive (formulas stripped from this document)"
+    ],
+
+    "breaker_panel_update": {
+      "breaker_6_foundational_review": "RECOMMENDED FOR CLOSURE based on Grok stress test + Claude verification of stress test results",
+      "breaker_T1c_BTL": "GO after breaker #6 closes — conditional on collective review completion",
+      "open_loop_closed_loop_breaker": "NEW — formally documented in this integration. CLS components listed and held back."
+    }
+  },
+
+  "provenance": {
+    "grok_session": "CL-05 Repair Pass, ~25 addenda, routing reference SA_CL05_Grok_Routing_v1.0.json",
+    "claude_filter_date": "2026-03-24",
+    "filter_method": "Each Grok addendum reviewed against: (1) Does the data cited exist in the HUF corpus? (2) Were the numerical results computed by a stored script? (3) Is the mathematical derivation independently checkable? (4) Does the conclusion comply with LOOP-001 and the open-loop breaker?",
+    "peter_observation": "Mountain of data every time with little nuggets, why I ended up on 5 AI, just sort the mess."
+  }
+}

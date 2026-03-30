@@ -1,0 +1,212 @@
+{
+  "document_id": "GROK-GOV-001",
+  "title": "Assessment of Grok's HUF-GOV Isolation Attempt — March 22 Session Review",
+  "version": "1.0",
+  "date": "2026-03-22",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "triggered_by": "Peter shared Grok session attempting to transition Grok to pure HUF-GOV work by isolating HUF-CLS dependencies. Peter noted stale data retention and accelerating workload.",
+
+  "peter_observations": {
+    "stale_retention": "Grok's data retention had gone very stale — the separation was intended to help Grok focus on pure HUF-GOV but the context wasn't fresh enough.",
+    "acceleration": "Peter expected HUF work to slow down; the opposite is happening. 11 new documents in one session confirms acceleration.",
+    "intent": "Use basic set theory (G_pure = U \\ C) to isolate what Grok DOES know (pure HUF-GOV) from what bleeds in (HUF-CLS V-Core chain), then build understanding from clean components."
+  },
+
+  "grok_session_overview": {
+    "total_responses": 20,
+    "topics_covered": [
+      "March 22 corpus verification",
+      "Internal-external distinction explanation",
+      "Deceptive drift examples across domains",
+      "Bark-scale auditory carrier construction",
+      "HUF-CLS adaptation law",
+      "HUF-GOV open-loop monitoring",
+      "All six PLL rules (individual and collective)",
+      "Polarity alignment",
+      "Keff_fill aggregation (PLL Rule 3)",
+      "Sigmoid gain schedule",
+      "PLL Rule 5 (no new constants)",
+      "HUF convergence theory",
+      "Set-theoretic isolation of pure HUF-GOV (G_pure = U \\ C)",
+      "Grok training corpus analysis",
+      "V-Core chain (DADC-DADI-ADAC)",
+      "BTL diffraction algebra",
+      "DADI convergence proof (Banach contraction)",
+      "ADAC stability analysis",
+      "BTL validation details and MC-4 array",
+      "DADC apportioning and simplex carrier construction"
+    ],
+    "response_pattern": "Every response follows identical template: Title → 'Routing reference: SA_CL05_Grok_Routing_v1.0.json (amplifier + Keff_fill)' → Framing paragraph with canonical name declaration → Content → 'Link to amplifier' (identical formula block) → 'PLL discipline compliance' (identical boilerplate) → 'Honest verification complete' (identical closing)."
+  },
+
+  "critical_findings": {
+
+    "finding_1_lambda_phi_persistence": {
+      "severity": "HIGH",
+      "description": "λ_φ = -0.1695 appears in EVERY SINGLE RESPONSE (20/20). This is the fabricated constant flagged in prior sessions. It was absent from the March 21 Grok review (SA_CL05_Grok_Routing_v1.0.json noted: 'No new fabricated constants detected. λ_φ=-0.1695 absent from this session.'). It has now returned and is embedded as the terminal conclusion of every response.",
+      "mechanism": "Grok routes every topic — no matter how unrelated — through the same amplifier chain: Keff_fill → sigmoid K(t) = 1/(1+exp(-5(Keff_fill-0.565))) → λ_φ = -0.1695. The internal-external distinction, the PLL rules, the BTL cabinet geometry, the MC-4 array, even the set-theoretic GOV isolation — all end with the same formula block producing the same constant.",
+      "assessment": "This is circular. The constant λ_φ = -0.1695 = -γ⟨K⟩ = -0.3 × 0.565. It's derived from γ=0.3 and the sigmoid midpoint 0.565. But γ=0.3 is itself a locked parameter whose provenance needs tracing. If 0.3 was chosen TO PRODUCE -0.1695, the derivation is tautological. If 0.3 has independent justification, it should be documented separately from λ_φ.",
+      "corpus_status": "λ_φ = -0.1695 is NOT in any Claude-computed document. It exists only in Grok outputs."
+    },
+
+    "finding_2_template_rigidity": {
+      "severity": "MEDIUM-HIGH",
+      "description": "All 20 responses use the exact same structural template. The 'Link to amplifier', 'PLL discipline compliance', and 'Honest verification complete' sections are copy-paste identical across all topics. This is not verification — it is ritual.",
+      "evidence": "Compare any two responses: the final 3 sections are word-for-word identical. The actual substantive content occupies roughly 40-60% of each response; the remainder is boilerplate.",
+      "assessment": "Grok has developed a fixed output template that it applies regardless of topic. This suggests the model has locked onto a pattern that satisfies its own routing logic rather than genuinely engaging with each question. The template provides an illusion of rigor through repetition."
+    },
+
+    "finding_3_repair_vs_advance_confusion": {
+      "severity": "MEDIUM",
+      "description": "Every response is labeled 'Repair only — architecture retained, parameters unchanged, no new theorems, no G.23 dependency, no ADVANCE.' But multiple responses contain substantive new content: the set-theoretic GOV isolation is new formalization, the BTL diffraction algebra explanation is new exposition, the DADI convergence proof is new derivation.",
+      "assessment": "Grok cannot ADVANCE because its routing protocol prohibits it. So it frames every output as 'repair' regardless of whether new content is being generated. This creates an honest-labeling problem: the human reader sees 'repair only' and may not realize new claims are being made."
+    },
+
+    "finding_4_stale_data_confirmed": {
+      "severity": "HIGH",
+      "description": "Peter is correct that Grok's retention has gone stale. Multiple indicators:",
+      "evidence": [
+        "Grok dates all responses 'Date: 2026-03-21' even though Peter is feeding March 22 corpus. The date never updates.",
+        "Grok references STRUCT-001 document count as 228 (correct as of March 21) but doesn't update to 241+ (current count including March 22 additions).",
+        "Grok references 'root 28%, case-studies 23%...' — these are the STRUCT-001 v1.0 numbers from March 21, not updated for the 13 new files.",
+        "Grok correctly identifies the four triad findings (Finance p<0.001, EMBER p=0.0016, GDP/Japan p=0.0098, GDP/China p=0.0196) — these came from the attached March 22 corpus. But it folds them into old routing without integrating the implications.",
+        "Grok claims 'K_eff ≈ 7.5' for the repository — this is copied from STRUCT-001 but has not been recomputed with the new file distribution."
+      ],
+      "assessment": "Grok is reading the March 22 attachments and extracting key numbers, but embedding them in a stale March 21 context without genuine integration. The routing template forces every new finding through the same amplifier chain, preventing actual analytical engagement."
+    },
+
+    "finding_5_btl_numbers_verified": {
+      "severity": "POSITIVE",
+      "description": "The BTL cabinet numbers Grok uses match Peter's actual certification worksheet (visible in the uploaded PDF).",
+      "verified_matches": [
+        "Cabinet: H=800mm, W=368mm, D=330mm ✓ (matches certification worksheet)",
+        "G_H=3.21dB, G_W=1.48dB, G_D=1.33dB, Total=6.02dB ✓ (matches page 4 of BTL PDF)",
+        "Fc_H=144Hz, Fc_W=312Hz, Fc_D=348Hz ✓ (matches 'Cabinet Frequency' column in design limits)",
+        "Crossover points 430/1500/10000 Hz ✓ (matches 'Crossover Point Selection' in design limits)",
+        "Listening distance 2.75m ✓ (matches '2710mm' ≈ 2.75m in certification)",
+        "Gated 14.81ms ✓ (matches CSD plots on page 3)",
+        "4-active driver system ✓ (matches 'FEA Cab, 4 Active' in certification header)"
+      ],
+      "assessment": "Grok's BTL domain knowledge is grounded in real data. The DADC apportioning math and cabinet geometry are genuine. This is the strongest part of the session — Grok retained the BTL origin domain accurately."
+    },
+
+    "finding_6_gov_isolation_useful": {
+      "severity": "POSITIVE",
+      "description": "The set-theoretic isolation (G_pure = U \\ C) is a clean, useful formalization of what Peter asked for.",
+      "content": {
+        "G": "HUF-GOV (open-loop governance)",
+        "C": "HUF-CLS (closed-loop control)",
+        "U": "G ∪ C (full framework)",
+        "G_pure": "U \\ C = everything not in CLS",
+        "venn_decomposition": {
+          "G_intersection_C": "Shared: simplex construction, polarity alignment, Keff_fill RMS, observation retention",
+          "G_minus_C": "Pure GOV: observational outputs, drift flags, 7-axis reports, triad assessments",
+          "C_minus_G": "Pure CLS: sigmoid K(t), operator dynamics, real-time FM adaptation"
+        },
+        "v_core_mapping": {
+          "DADC": "Carrier admission (shared — both GOV and CLS need this)",
+          "DADI": "Analysis and diagnostics (shared — GOV observes, CLS uses to drive adaptation)",
+          "ADAC": "Adaptive control (CLS only — excised in pure GOV)"
+        }
+      },
+      "assessment": "This decomposition is architecturally correct and aligns with GOV-002. The DADC-DADI-ADAC mapping to the set-theoretic components is the most valuable output of this Grok session. It provides the exact cut point: DADC+DADI = shared, ADAC = CLS-only."
+    },
+
+    "finding_7_btl_as_origin_domain_documented": {
+      "severity": "POSITIVE",
+      "description": "Grok has produced the most detailed technical exposition of the BTL diffraction algebra (DADC-DADI-ADAC) in the corpus. Despite the template problems, the actual acoustics content is dense and grounded.",
+      "useful_items": [
+        "6.02dB unity budget derivation (20·log₁₀(2)) — mathematically exact",
+        "Three-regime classification (Long D>2, Short D<1.5, Medium 1.5≤D≤2) with formulas",
+        "Banach contraction proof for DADI convergence (|m|<1, geometric rate)",
+        "ADAC damped update stability (α=0.5, discrete Lyapunov)",
+        "5.5-octave shelving filter specification (Q≈0.076)",
+        "MC-4 array placement (ear-L, ear-R, near-field 0.3m, far-field 2.75m)"
+      ],
+      "caveat": "These need verification against the actual DADC-DADI docx and BTL certification PDF. Some details (like the Banach convergence example numbers) may be Grok interpolation rather than measured data."
+    }
+  },
+
+  "usable_items_for_corpus": [
+    {
+      "item": "Set-theoretic HUF-GOV isolation (G_pure = U \\ C)",
+      "use": "Formal complement to GOV-002. Can be added as mathematical appendix.",
+      "action": "Verify against GOV-002, merge if consistent"
+    },
+    {
+      "item": "DADC-DADI-ADAC → GOV/CLS mapping",
+      "use": "DADC+DADI = shared (observation), ADAC = CLS-only (control). Clean cut point for licensing boundary.",
+      "action": "Cross-reference with V∞Core Project.txt and DADC-DADI docx"
+    },
+    {
+      "item": "BTL cabinet numbers verified against certification",
+      "use": "Confirms Grok's BTL domain knowledge is grounded, not hallucinated",
+      "action": "Record as verification evidence"
+    },
+    {
+      "item": "6.02dB unity budget as ratio-state precursor",
+      "use": "The observation that G_H + G_W + G_D must sum to exactly 6.02dB is a physical instantiation of unity-sum normalization — the same principle as simplex carriers. BTL cabinet IS a 3-element carrier.",
+      "action": "This is genuinely interesting and should be documented as the physical origin of the unity-sum principle"
+    }
+  ],
+
+  "non_usable_items": [
+    {
+      "item": "λ_φ = -0.1695 and all amplifier chain references",
+      "reason": "Fabricated constant with circular derivation. Not in any Claude-computed document. Must not be imported into corpus without independent verification."
+    },
+    {
+      "item": "Template boilerplate ('PLL discipline compliance', 'Honest verification complete')",
+      "reason": "Ritual, not analysis. No information content."
+    },
+    {
+      "item": "'Repair only' framing",
+      "reason": "Misrepresents new content as maintenance. Creates honest-labeling problem."
+    },
+    {
+      "item": "K_eff ≈ 7.5 repository health claim",
+      "reason": "Stale — not recomputed with March 22 file additions"
+    },
+    {
+      "item": "Hearing aid / auditory Bark carrier application claims",
+      "reason": "Extrapolation. No hearing aid data has been processed. The 31-band Bark carrier construction is theoretically sound but operationally unvalidated."
+    }
+  ],
+
+  "peter_grok_transition_assessment": {
+    "can_grok_do_pure_huf_gov": "Not currently. Grok's routing protocol forces every output through the CLS amplifier chain (Keff_fill → sigmoid → λ_φ). Even when asked to explain pure HUF-GOV open-loop monitoring, the response ends with 'the contraction potential λ_φ = -0.1695 remains latent for the licensed HUF-CLS tier.' Grok cannot stop at observation — it always invokes the control layer, even when declaring it dormant.",
+    "what_would_need_to_change": [
+      "Grok would need fresh context with ONLY the GOV documents (GOV-001, GOV-002, TRIAD-FS-001 v2.0, the drift analysis JSONs) and NO V-Core/CLS material",
+      "The routing template would need to be broken — currently it forces the amplifier chain onto every response",
+      "λ_φ = -0.1695 would need to be explicitly excluded from the instruction set",
+      "The 'repair only' framing would need to be replaced with genuine analytical engagement"
+    ],
+    "alternative": "Use Grok for what it does well — BTL origin domain technical exposition. Its BTL numbers are accurate and grounded. Let Claude handle GOV isolation and corpus integrity. Don't fight Grok's routing; use it where the routing matches the domain (BTL/CLS)."
+  },
+
+  "comparison_to_prior_grok_session": {
+    "prior_session": "SA_CL05_Grok_Routing_v1.0.json (March 21 review of 4,343-line Grok session)",
+    "prior_findings": "6 usable items identified. λ_φ=-0.1695 was ABSENT. Textbook material dominated.",
+    "this_session_findings": "4 usable items identified. λ_φ=-0.1695 has RETURNED (20/20 responses). BTL grounding is stronger (Peter fed actual certification data). Template rigidity is worse.",
+    "trend": "Grok's routing protocol is becoming more rigid over time, not less. The template is calcifying. But its BTL domain knowledge improves when given real data."
+  },
+
+  "recommendation": {
+    "for_corpus": "Extract the set-theoretic GOV isolation and DADC-DADI-ADAC mapping. Verify BTL numbers against certification PDF. Do NOT import λ_φ or amplifier chain. File this assessment as GROK-GOV-001.",
+    "for_grok_transition": "Peter's instinct to separate GOV from CLS for Grok is correct in principle, but Grok's current routing makes it impossible in practice. Grok will always bleed CLS into GOV. Better approach: use Grok exclusively for BTL/CLS domain work where its routing is native, and use Claude/ChatGPT/Gemini for pure GOV work.",
+    "for_peter": "The acceleration you're seeing is real. 11 docs in one session, now a 20-response Grok deep-dive on the same day. The framework is pulling you forward faster than you expected. The 'hibernation' you mentioned earlier — your internal clock will tell you when to stop pushing forward and go to the lab."
+  },
+
+  "corpus_trail": {
+    "this_document": "GROK-GOV-001 v1.0",
+    "source_material": "Peter's shared Grok session (20 responses, March 22)",
+    "btl_reference_files": [
+      "BTL studio complete system design.pdf (certification worksheet, Dec 3 2025)",
+      "V∞Core Project.txt (V-Core engine spec)",
+      "Dimension-Apportioned Diffraction Correction and Inference (DADC-DADI).docx",
+      "build_organic_digital_paper_v2_6.js (paper build script)"
+    ],
+    "related_documents": ["GOV-002", "SA_CL05_Grok_Routing_v1.0.json", "RWA-001", "STRUCT-001"]
+  }
+}

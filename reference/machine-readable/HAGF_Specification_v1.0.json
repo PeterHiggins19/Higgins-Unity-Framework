@@ -1,0 +1,276 @@
+{
+  "document_id": "HAGF-001",
+  "title": "HUF-Aligned Applied Governance Framework (HAGF) — Specification v1.0",
+  "version": "1.0",
+  "date": "2026-03-22",
+  "authors": ["Peter Higgins", "Claude (Anthropic)", "Copilot (Microsoft)"],
+  "classification": "Framework Specification",
+  "status": "DRAFT — Ready for review",
+
+  "abstract": "HAGF provides a reproducible, audit-ready governance methodology for deploying high-capability analytical systems safely, predictably, and transparently. Derived from real industrial safety practice — specifically the Montreal Automated Placement Incident — and aligned with the HUF ratio-state observation architecture. HAGF encodes the principle that powerful systems become safe not by eliminating capability, but by embedding predictable failure modes, human-auditable safeguards, and cultural clarity about responsibility.",
+
+  "origin_narrative": {
+    "title": "The Montreal Incident",
+    "setting": "Major telecommunications advanced manufacturing facility, Montreal, Canada",
+    "system": "Automated placement machine — six 15-horsepower motors, lethal kinetic energy",
+    "incident": "An engineer entered the live machine believing it was secured. It was not. The act was reckless — the machine should not have been entered without proper lockout procedure. His body bent a steel beam on impact. A shear bolt — one bolt among thousands, intentionally engineered as a sacrificial failure point — broke at precisely the right location, tripping a safety sensor. The engineer survived.",
+    "aftermath": "Operators were terrified. The machine was nicknamed 'the killer.' Peter Higgins was called in to investigate — he was not present during the incident. Had he been there, he would never have allowed the entry. His role was not to repair the machine but to restore trust. His message: the machine is not malicious — it is powerful, predictable, and governed. The shear bolt worked exactly as designed. Respect the power, understand the boundaries, return to work.",
+    "governance_lesson": "Fear arises when power is present but understanding is absent. Trust is restored through explanation, not through removing capability.",
+    "ai_parallel": "The same dynamic now plays out globally with AI systems. HAGF translates the industrial governance principles that saved a life in Montreal into a formal methodology for AI-era analytical systems."
+  },
+
+  "framework_name": {
+    "full": "HUF-Aligned Applied Governance Framework",
+    "abbreviation": "HAGF",
+    "naming_rationale": "Conservative, institutional-grade naming that passes academic and regulatory filters. Avoids metaphorical names (shear-bolt, Montreal Protocol — already taken) that may confuse non-technical audiences. Directly signals alignment with HUF architecture.",
+    "pronunciation": "H-A-G-F (spelled out) or 'hag-eff'"
+  },
+
+  "core_principles": {
+    "count": 7,
+    "principles": [
+      {
+        "number": 1,
+        "name": "Explainability",
+        "statement": "Systems must be interpretable by their operators.",
+        "montreal_anchor": "Operators feared the machine because they did not understand its boundaries. Once the safety design was explained, fear dissolved.",
+        "ai_application": "Model cards, transparent processing pipelines, human-readable audit logs, operator dashboards with standard vocabulary (KNOB-001)."
+      },
+      {
+        "number": 2,
+        "name": "Predictability",
+        "statement": "System behavior must be bounded and consistent.",
+        "montreal_anchor": "The machine behaved exactly as engineered — including its failure mode. The shear bolt broke where designed.",
+        "ai_application": "Defined operational envelopes, consistent metric computation, reproducible results across runs, schema-compliant outputs (SCHEMA-001)."
+      },
+      {
+        "number": 3,
+        "name": "Drift Awareness",
+        "statement": "Deviations from baseline must be detected early and surfaced clearly.",
+        "montreal_anchor": "The pre-incident period had no monitoring of operator procedure drift. The boundary was crossed because no one was watching the boundary.",
+        "ai_application": "HUF-GOV deceptive drift detection, K_eff monitoring, velocity/peak dual-metric alerting, forward signal pattern recognition."
+      },
+      {
+        "number": 4,
+        "name": "Designed Failure",
+        "statement": "Every high-power system must contain intentional, predictable failure points that protect humans from catastrophic outcomes.",
+        "montreal_anchor": "One shear bolt among thousands — placed by an engineer in Japan who anticipated the worst case — saved a life.",
+        "ai_application": "Rate limits, kill switches, conservative defaults, escalation paths, graceful degradation, bounded confidence intervals, automatic flagging of results that exceed calibration thresholds."
+      },
+      {
+        "number": 5,
+        "name": "Human Primacy",
+        "statement": "Operators remain in control. The system serves; it does not decide.",
+        "montreal_anchor": "The machine did not attack anyone. A human bypassed procedure. Governance focuses on human behavior, not machine intent.",
+        "ai_application": "Human-in-the-loop design, no autonomous action on findings, operator must interpret and act on instrument readings, HUF-GOV is observation-only (no controller).",
+        "open_loop_doctrine": "LOOP-001 — The Skydiver Principle. The instrument is the altimeter, not the hand that pushes you out of the plane. The skydiver jumps on their own volition. Closing the GOV loop is the single most dangerous tendency in the project because every engineer, every AI, and every institution will instinctively try to do it. The Skydiver Test: does this feature push the skydiver, or show the skydiver the altimeter?"
+      },
+      {
+        "number": 6,
+        "name": "Auditability",
+        "statement": "All system actions, inputs, and outputs must be traceable by independent reviewers.",
+        "montreal_anchor": "Post-incident, every mechanical element could be inspected. The shear bolt failure was physically verifiable. The safety sensor activation was logged.",
+        "ai_application": "Immutable processing logs, version-controlled analysis scripts, JSON output with full provenance, structure catalog (STRUCT-001), session ledgers, collective reports."
+      },
+      {
+        "number": 7,
+        "name": "Institutional Fit",
+        "statement": "Governance must align with existing standards and be adoptable by real organizations.",
+        "montreal_anchor": "The operators returned to work because the explanation fit their mental model of industrial safety. It wasn't abstract theory — it was engineering they could verify.",
+        "ai_application": "ISO/IEC alignment, domain-specific App Notes, standard vocabulary, portable analyzer format, training modules for non-specialists."
+      }
+    ]
+  },
+
+  "governance_stack": {
+    "description": "Four-layer governance architecture, from system capabilities to institutional adoption.",
+    "layers": [
+      {
+        "layer": 1,
+        "name": "System Capabilities & Operational Logic",
+        "content": "The raw analytical power — ratio-state compression, entropy computation, drift detection algorithms, dual-metric (L2/TVD) processing.",
+        "montreal_parallel": "The six 15-hp motors. The machine's physical capability.",
+        "huf_components": ["Carrier construction", "K_eff computation", "Velocity/Peak metrics", "Statistical testing"]
+      },
+      {
+        "layer": 2,
+        "name": "Safety Boundaries & Designed-Failure Controls",
+        "content": "Engineered constraints that prevent misuse and ensure graceful failure.",
+        "montreal_parallel": "The shear bolt. The safety sensor. The physical stops.",
+        "huf_components": ["Calibration check (sum-to-unity)", "Metric invariance testing", "Orthogonality boundaries (GOV/CLS separation)", "Headline governance rule (body caveats must match)"]
+      },
+      {
+        "layer": 3,
+        "name": "Drift Detection & Auditability (HUF Core)",
+        "content": "Continuous monitoring of structural change with human-auditable outputs.",
+        "montreal_parallel": "Would have been: continuous monitoring of operator procedure compliance.",
+        "huf_components": ["Deceptive drift detection", "Forward signal pattern", "Triad methodology", "Structure catalog", "Session ledgers", "Spectrum Analyzer display"]
+      },
+      {
+        "layer": 4,
+        "name": "Institutional Adoption & Oversight",
+        "content": "The organizational, cultural, and procedural framework for responsible deployment.",
+        "montreal_parallel": "Peter's intervention: explaining the system to frightened operators, restoring trust, returning to productive operation.",
+        "huf_components": ["App Notes per domain", "KNOB-001 standard vocabulary", "Training modules", "Operator certification", "Incident response protocols"]
+      }
+    ]
+  },
+
+  "methodology": {
+    "title": "HAGF Applied Governance Methodology",
+    "steps": [
+      {
+        "step": 1,
+        "name": "System Characterization",
+        "action": "Identify system capabilities, map power domains, define operational envelope.",
+        "huf_implementation": "Define carrier structure, identify source elements, establish observation cadence."
+      },
+      {
+        "step": 2,
+        "name": "Safety Boundary Engineering",
+        "action": "Establish designed-failure points, define non-negotiable constraints, implement automatic fallback modes.",
+        "huf_implementation": "Calibration rack (sum-to-unity), metric invariance testing, orthogonality boundary enforcement."
+      },
+      {
+        "step": 3,
+        "name": "Drift Detection Integration",
+        "action": "Baseline system behavior, implement continuous spectral monitoring, establish anomaly thresholds.",
+        "huf_implementation": "Compute K_eff baseline, establish drift detection via velocity/peak exceedance, flag deceptive drift pattern."
+      },
+      {
+        "step": 4,
+        "name": "Human Interaction Design",
+        "action": "Train operators, implement fear-to-trust conversion, establish clear system explanations.",
+        "huf_implementation": "Deploy Spectrum Analyzer with KNOB-001 vocabulary, provide domain-specific App Notes, run guided demonstrations."
+      },
+      {
+        "step": 5,
+        "name": "Governance Controls",
+        "action": "Layer policies, implement access controls, establish review cycles.",
+        "huf_implementation": "Session ledgers, collective reports, headline governance rule, three-pass correction methodology."
+      },
+      {
+        "step": 6,
+        "name": "Auditability Infrastructure",
+        "action": "Maintain immutable logs, enable reproducible tests, support third-party verification.",
+        "huf_implementation": "Structure catalog (STRUCT-001), version-controlled scripts, JSON output with full provenance chain."
+      },
+      {
+        "step": 7,
+        "name": "Incident Response & Trust Restoration",
+        "action": "Rapid assessment, root-cause analysis, trust restoration protocol, system re-certification.",
+        "huf_implementation": "Metric correction methodology (L2/TVD correction as example), document count reconciliation, headline downgrade protocol."
+      }
+    ]
+  },
+
+  "fear_to_trust_conversion": {
+    "description": "The psychological governance cycle that transforms operator fear into productive confidence.",
+    "stages": [
+      {"stage": "Incident", "description": "Something goes wrong or looks threatening."},
+      {"stage": "Fear", "description": "Operators attribute agency or malice to the system."},
+      {"stage": "Explanation", "description": "A knowledgeable guide explains the actual mechanism and designed safety."},
+      {"stage": "Reframing", "description": "The narrative shifts from 'dangerous machine' to 'powerful tool with governed behavior.'"},
+      {"stage": "Restored Trust", "description": "Operators understand boundaries, safety mechanisms, and their own role."},
+      {"stage": "Safe Operation", "description": "Productive work resumes with appropriate respect for system power."}
+    ],
+    "key_insight": "Fear fills the gap where understanding should be. Governance closes that gap."
+  },
+
+  "standards_alignment": {
+    "referenced_standards": [
+      "ISO/IEC 42001 — AI Management System",
+      "ISO/IEC 23894 — AI Risk Management",
+      "IEC 61508 — Functional Safety",
+      "NIST AI Risk Management Framework (AI RMF 1.0)"
+    ],
+    "hagf_additions": [
+      "Designed-failure principle (from industrial safety, not present in most AI standards)",
+      "Fear-to-trust conversion cycle (psychological governance, absent from technical standards)",
+      "Drift detection as continuous governance (HUF-specific contribution)",
+      "Operator-level vocabulary standardization (KNOB-001)"
+    ]
+  },
+
+  "relationship_to_huf_corpus": {
+    "hagf_governs": ["HUF Spectrum Analyzer", "All domain analysis scripts", "All JSON outputs", "All assessment documents"],
+    "hagf_depends_on": ["KNOB-001 (standard vocabulary)", "SCHEMA-001 (universal data schema)", "GOV-003 (pure HUF-GOV standalone)"],
+    "hagf_extends": ["STRUCT-001 (adds governance layer to catalog)", "CRPT series (adds governance audit to collective reports)"],
+    "hagf_does_not_govern": ["HUF-CLS (closed-loop systems — separate governance required)", "BTL lab operations (separate safety protocols)", "External domain data collection (domain responsibility)"]
+  },
+
+  "training_module_outline": {
+    "title": "From Fear to Mastery: Operating High-Capability Analytical Systems Under HAGF",
+    "modules": [
+      {
+        "module": 1,
+        "title": "The Montreal Incident — A Governance Parable",
+        "duration": "30 minutes",
+        "content": "Case study of the automated placement machine incident. Why fear arose. How trust was restored. The shear-bolt principle.",
+        "outcome": "Understand that powerful systems require governance, not fear."
+      },
+      {
+        "module": 2,
+        "title": "HUF-GOV — The Observation Layer",
+        "duration": "45 minutes",
+        "content": "What ratio-state analysis does. The five knobs (Source, Calibration, Complexity, Velocity, Peak). What the Spectrum Analyzer shows.",
+        "outcome": "Read and interpret a HUF Spectrum Analyzer display."
+      },
+      {
+        "module": 3,
+        "title": "HAGF Governance Principles",
+        "duration": "30 minutes",
+        "content": "The seven principles. How they map from industrial safety to analytical systems. The governance stack.",
+        "outcome": "Identify which HAGF principle applies to a given scenario."
+      },
+      {
+        "module": 4,
+        "title": "Drift Detection and Forward Signals",
+        "duration": "45 minutes",
+        "content": "What deceptive drift looks like. Internal vs external shocks. The forward signal pattern. How to distinguish structural concentration from surface stability.",
+        "outcome": "Recognize deceptive drift on the analyzer and understand its implications."
+      },
+      {
+        "module": 5,
+        "title": "Hands-On Exercises",
+        "duration": "60 minutes",
+        "content": "Load sample JSON files into the analyzer. Identify drift events. Interpret complexity traces. Practice the fear-to-trust conversion narrative.",
+        "outcome": "Operate the HUF Spectrum Analyzer independently on new domain data."
+      },
+      {
+        "module": 6,
+        "title": "Incident Response Under HAGF",
+        "duration": "30 minutes",
+        "content": "What to do when findings are unexpected. The metric correction example. How to document, escalate, and restore confidence.",
+        "outcome": "Handle unexpected analytical results using HAGF methodology."
+      }
+    ],
+    "total_duration": "4 hours",
+    "certification": "HAGF Operator Certificate — issued upon completion of all modules and scenario-based assessment."
+  },
+
+  "whitepaper_skeleton": {
+    "title": "HAGF: A HUF-Aligned Applied Governance Framework for High-Capability Analytical Systems",
+    "sections": [
+      {"number": 1, "title": "Introduction", "content_summary": "Global context of AI governance anxiety. The gap between theoretical panic and applied practice. HAGF as a bridge."},
+      {"number": 2, "title": "The Montreal Case Study", "content_summary": "Full narrative of the automated placement incident. Extraction of governance principles. The shear-bolt as designed failure."},
+      {"number": 3, "title": "From Industrial Safety to Analytical Governance", "content_summary": "How manufacturing safety principles translate to AI/analytical system governance. Power asymmetry, predictable failure, operator psychology."},
+      {"number": 4, "title": "The HAGF Framework", "content_summary": "Seven principles. Four-layer governance stack. Methodology steps. Fear-to-trust conversion cycle."},
+      {"number": 5, "title": "HUF-GOV as the Operating System", "content_summary": "Ratio-state observation. The five knobs. Pure GOV architecture. Why observation without control is the safe deployment model."},
+      {"number": 6, "title": "The Spectrum Analyzer as Universal Instrument", "content_summary": "One instrument, every domain. JSON-driven configuration. Domain-invariant measurement. The killer app."},
+      {"number": 7, "title": "Domain Evidence", "content_summary": "Electricity (EMBER), GDP (World Bank), Finance, Wetlands (Ramsar template). Metric invariance across domains. Forward signal validation."},
+      {"number": 8, "title": "Standards Alignment", "content_summary": "ISO/IEC mapping. NIST AI RMF compatibility. What HAGF adds that existing standards lack."},
+      {"number": 9, "title": "Training and Deployment", "content_summary": "Operator training module. Certification pathway. Institutional adoption guide."},
+      {"number": 10, "title": "Conclusion", "content_summary": "Why governance beats fear. The path from panic to practice. HAGF as reproducible methodology for the AI era."}
+    ],
+    "target_length": "15-20 pages",
+    "target_audience": "Institutional decision-makers, research leads, policy advisors, domain scientists"
+  },
+
+  "meta": {
+    "copilot_contribution": "Initial extraction of Montreal narrative into governance principles, whitepaper structure, training module outline, framework naming consultation.",
+    "claude_contribution": "Formalization into HUF corpus format, integration with existing architecture (KNOB-001, SCHEMA-001, GOV-003, STRUCT-001), standards-ready specification, cross-referencing.",
+    "peter_contribution": "Original Montreal incident experience, governance philosophy, naming decision (HAGF), architectural direction, lazy-human principle, touch-and-die doctrine.",
+    "three_ai_note": "This document was collaboratively developed across three AI systems (Claude/Anthropic, Copilot/Microsoft, ChatGPT/OpenAI) under human governance by Peter Higgins. This itself demonstrates HAGF Principle 5 (Human Primacy) — the human directed, the systems contributed, the human decided."
+  }
+}

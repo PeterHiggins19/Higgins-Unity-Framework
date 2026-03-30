@@ -1,88 +1,110 @@
 # Higgins Unity Framework (HUF)
 
-**A mathematical framework for ratio-state monitoring under the unity constraint.**
+**Composition Monitoring as a Fourth Category of System Observation**
 
-The Higgins Unity Framework provides a complete analytical system for monitoring compositional data — any system where component ratios must sum to one (Σρᵢ = 1). It detects drift, diagnoses failure modes, and quantifies monitoring performance across domains from wetland ecology to transit networks to storage infrastructure.
+Most institutions monitor the systems they are responsible for using three categories of information: magnitude (how much), identity (which), and trend (what direction). The fourth category — composition — asks how the internal parts are arranged relative to each other, regardless of total volume. When any system's elements are normalized so that proportions sum to one, the resulting structure lives on a mathematical simplex, and structural changes on that simplex carry lead-time information that the first three categories cannot access.
 
-## Core Concepts
+The mathematics is not new. Compositional data analysis on the simplex was formalized by John Aitchison in 1982 (Journal of the Royal Statistical Society). The measurement taxonomy was formalized by Stanley Smith Stevens at Harvard in 1946. What is new is the application: treating compositional structure as a primary monitoring observable rather than a post-hoc statistical correction.
 
-HUF is built on a simple but powerful observation: when a system's state is fully described by ratios that sum to unity, drift in any component necessarily affects others. The framework provides:
+This framework was developed over five months by Peter Higgins, with five AI systems (Claude, ChatGPT, Gemini, Copilot, Grok) contributing under human direction. The operator governed the process. The AI systems were the instruments. The loop stayed open.
 
-- **MC-4 Ratio State Monitoring** — four-moment characterization of drift dynamics
-- **Sufficiency Conditions** — formal criteria for when MC-4 monitoring is sufficient (and when it is not)
-- **Six Failure Modes (FM-1 to FM-6)** — taxonomy of how ratio-state monitoring can fail
-- **Monitoring Drift Gain (MDG)** — single-number performance metric in decibels
-- **OCC 51/49** — operational constraint corridor for deceptive drift detection
-- **Persistent Homology Extensions** — topological methods for mixture-distribution detection
-
-## The Collective
-
-HUF was developed through a collaborative process involving five AI systems and one human researcher:
-
-| System | Role | I/O |
-|--------|------|-----|
-| **Peter Higgins** | Principal researcher, framework architect | — |
-| **Claude** | Document creator, formal builder | Local file system |
-| **ChatGPT** | Document manager, phase assessor | Web |
-| **Grok** | Simulation runner, topology educator | Web |
-| **Gemini** | Cross-checker, reviewer | Chat |
-| **Copilot** | Reviewer | Microsoft ecosystem |
-
-Review counts are data, not contribution scores. All five AI systems are equal collective members.
-
-## Document Index
-
-### Pillar Documents (canonical)
-
-| Document | Version | Description |
-|----------|---------|-------------|
-| Sufficiency Frontier | v3.6 | Formal sufficiency conditions for MC-4 monitoring |
-| Fourth Category | v2.6 | Observational Dynamics — the operational deployment pillar |
-| Triad Synthesis | v1.6 | Synthesis of the three foundational categories |
-| Collective Trace | v5.10 | Living trace of the entire review and development process |
-
-### Governance
-
-- **Review Catalog** — Master catalog of 14 reviews, 85 categories, 5 AI systems
-- **Category Class Structure Tree** v1.4 — Hierarchical classification of all review categories
-- **Collective Review March 2026** — Consolidated review document
-
-### Explorations & Case Studies
-
-Tetrahedral Triad Geometry, CDN Proof, Planck Case Study, TTC Case Study, Toronto Infrastructure, External Validation, Origin Story, Phase 3 Exploration, Spectral Sequences Exploration
-
-### Code
-
-- **Hell Test** — Five-level stress test for MC-4 detection (code/helltest/)
-- **Onboarding Notebooks** — Educational Jupyter series (notebooks/onboarding/)
+---
 
 ## Repository Structure
 
-See [REPO_MAP.md](REPO_MAP.md) for the complete folder map and document status legend.
+### `huf-gov/` — Open-Loop Composition Monitoring Instrument
 
-## Building Documents
+The instrument that reads. It computes carrier proportions, structural drift velocity, effective complexity, and concentration metrics. It offers no recommendations. It takes no actions. It closes no loops.
 
-All `.docx` files are generated programmatically using JavaScript (docx-js). Builders live in `src/builders/` and share common styles from `src/shared/`.
+- **`science/`** — Formal taxonomy (MONITOR-001), paper skeleton, teaching materials
+- **`evidence/`** — Case studies across six domains with real-world data
+- **`governance/`** — Safe operations doctrine, human operator manual, kill test (19 failure modes)
+- **`tools/`** — Working spectrum analyzer, Ramsar demo wrapper
 
-```bash
-# Install dependencies
-npm install
+### `huf-cls/` — Closed-Loop Composition Control System
 
-# Build a specific document
-node src/builders/pillars/build_sufficiency_frontier_v3_6.js
+The actuator that could act. It includes a sigmoid mapping function, contraction parameter, phase-lock mechanism, and feedback architecture. It is the parachute-pulling arm. It is published here under the same MIT license as HUF-GOV because the author concluded that suppression is not governance — understanding is.
 
-# Validate a document
-python src/validation/validate.py docs/pillars/HUF_Sufficiency_Frontier_v3.6.docx
-```
+- **`architecture/`** — CL-01 through CL-05 control loop stack
+- **`formulas/`** — Sigmoid actuator, contraction parameter, Keff_fill derivations
+- **`calibration/`** — CL-05 calibration study, sensitivity analysis
+- **`routing/`** — Multi-AI routing assessments and integration work
 
-## Status
+### `context-books/` — Audience-Specific Explanations
 
-**Phase 3** — Formalization and deployment preparation. The framework has moved from "is this coherent?" to "can this be operationalized responsibly?"
+Four editions of the core theory, each written for a different audience: general, engineering, physics, sciences. Same content, different entry points.
+
+### `math-books/` — Formal Mathematics Reference
+
+Four editions of the mathematical foundations. 42 numbered items across Areas A–F with full proofs. Audience-specific editions available.
+
+### `process/` — How We Got Here
+
+Collective review traces, session ledgers, governance documents. Included for transparency. This is the process record of five AI systems and one human operator building a framework over five months.
+
+### `reference/` — Deep Technical Material
+
+Technical notes, formal proofs, code appendix, wiki documentation, and all machine-readable JSON specifications.
+
+### `drafts/` — Work in Progress
+
+Submission papers (pre-validation), the Human-AI Accord (untested governance proposal). Included because the work is ours and hiding drafts is not transparency.
+
+---
+
+## Where to Start
+
+1. **If you have five minutes:** Read `huf-gov/governance/HANDOFF-001.docx` — the coldest, most external-ready summary of what this is.
+
+2. **If you have thirty minutes:** Read the teaching progression in `huf-gov/science/` — fuel gauge to rocket equation in four levels.
+
+3. **If you want the evidence:** Start with `huf-gov/evidence/case-studies/energy/` (Germany, EMBER dataset, p = 0.0016) and `huf-gov/evidence/case-studies/ramsar/` (wetland habitat composition).
+
+4. **If you want the math:** The formal taxonomy is in `huf-gov/science/MONITOR-001.json`. The proofs are in `math-books/`.
+
+5. **If you want to break it:** Read `huf-gov/governance/kill-test.json` — nineteen documented failure modes, the things this framework cannot do, must not do, and will fail at.
+
+---
+
+## The Four Monitoring Categories
+
+| Category | Name | Question | Status |
+|----------|------|----------|--------|
+| MC-1 | Magnitude Monitoring | How much? | Universally deployed |
+| MC-2 | Identity Monitoring | Who or what? | Universally deployed |
+| MC-3 | Trend Monitoring | Which direction? | Universally deployed |
+| MC-4 | Composition Monitoring | What is the internal balance? | Diagnostically invisible in standard practice |
+
+---
+
+## Key Evidence
+
+- **Electricity generation (EMBER):** Germany — structural concentration p = 0.0016 behind stable total generation
+- **GDP composition (World Bank):** Japan p = 0.0098, China p = 0.0196 — internal drift behind stable headline GDP
+- **Scale invariance:** 35 million tests, 10 to 10 million elements, zero violations, 5.23 sigma
+- **Ecosystem monitoring (Ramsar template):** Structural thinning of habitat diversity behind stable total-area figures
+
+---
+
+## On HUF-CLS Being Public
+
+The closed-loop system was originally held behind engineered breakers. The decision to publish it under MIT license was made on March 29, 2026. The reasoning: suppression does not prevent misuse — it prevents understanding. If someone will close the loop, it is better that the architecture, the failure modes, and the governance principles are public knowledge than that they are reinvented without them.
+
+The instrument reads. The human decides. That principle does not change because the formulas are visible. It changes when humans stop reading.
+
+---
+
+## Contact
+
+Peter Higgins
+Rogue Wave Audio
+Markham, Ontario, Canada
+PeterHiggins@RogueWaveAudio.com
+
+---
 
 ## License
 
-All rights reserved. See [LICENSE](LICENSE) for details.
+MIT License. See [LICENSE](LICENSE).
 
-## Citation
-
-See [CITATION.cff](CITATION.cff) for citation metadata.
+Developed with Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), Copilot (Microsoft), and Grok (xAI) under human direction. March 2026.

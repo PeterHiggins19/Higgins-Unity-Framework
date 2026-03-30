@@ -1,0 +1,225 @@
+{
+  "document_id": "DISP-001",
+  "title": "HUF Phase Display Modes — Group and Individual Phase Analysis for the Spectrum Analyzer",
+  "version": "1.0",
+  "date": "2026-03-24",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "classification": "FRAMEWORK SPECIFICATION — analyzer display architecture. GOV-safe. CLS research path documented.",
+  "citation": "Peter Higgins / Rogue Wave Audio, with the HUF AI Collective: Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Gemini (Google), Grok (xAI)",
+
+  "origin": {
+    "peter_insight": "Standard audio spectrum analyzers display continuous group phase (unwrapped, values go to infinity) and individual phase (all mapped at once, wrapping at 360 degrees back to 0). The trick: anytime HUF hits a ceiling, ground it. Visual but effective.",
+    "domain_transfer": "The simplex is a phase space. Carriers are oscillators. The display problem — showing unbounded cumulative dynamics on a bounded display — was solved decades ago in audio signal processing. The same technique applies directly to composition monitoring.",
+    "implication": "HUF observables (K_eff, TV, acceleration, Keff_fill) are bounded metrics tracking continuous, cumulative dynamics. A system can drift through multiple cycles of concentration and recovery. Point-in-time metrics show current position only. Phase display shows both current position and cumulative history."
+  },
+
+  "audio_analog": {
+    "description": "In audio spectrum analysis, phase has two standard display modes that solve the same fundamental problem: continuous unbounded signal on a finite display.",
+
+    "group_phase": {
+      "audio_definition": "Continuous unwrapped phase. The cumulative phase rotation is displayed without wrapping, allowing values to climb toward infinity. Shows the total phase trajectory of the signal over time.",
+      "what_it_reveals": "Long-term trajectory, cumulative rotation, total signal path history. Two signals at the same instantaneous phase may have completely different group phase histories.",
+      "display_characteristic": "Unbounded vertical axis. Line climbs or descends continuously."
+    },
+
+    "individual_phase": {
+      "audio_definition": "Wrapped phase. Each frequency component's current phase angle is displayed on a bounded [0, 360) degree range. When phase exceeds 360, it wraps back to 0. All components visible simultaneously.",
+      "what_it_reveals": "Instantaneous angular position of every component at once. The full distribution is readable on a single bounded display.",
+      "display_characteristic": "Bounded vertical axis [0, 360). Wrap discontinuities mark full rotations."
+    },
+
+    "the_grounding_trick": "When the signal hits the ceiling (360 degrees), ground it back to reference (0 degrees). Don't clip. Don't saturate. Don't extrapolate. The number of wraps encodes cumulative history. The position within the current wrap encodes instantaneous state. Both views from the same data."
+  },
+
+  "huf_phase_display_specification": {
+    "principle": "Apply the audio phase display paradigm to HUF ratio-state observables. The simplex boundary is the 360-degree equivalent. When any observable hits its natural boundary, wrap it. The wrap count is cumulative history. The position within the wrap is current state.",
+
+    "group_phase_mode": {
+      "name": "Group Phase — Cumulative Drift History",
+      "tier": "GOV — pure observation, no actuation",
+
+      "definition": "Unwrapped cumulative path of a ratio-state observable from the start of the observation window. The display does not reset when the observable returns to a previously visited value. Instead, the full trajectory is preserved.",
+
+      "primary_observable": "Cumulative TV distance travelled: G(t) = sum from s=1 to t of TV(s), where TV(s) = (1/2)||p(s) - p(s-1)||_1",
+
+      "interpretation": {
+        "what_it_shows": "Total structural distance the system has travelled on the simplex since observation began. Two systems with identical current K_eff and TV may have vastly different group phase — one arrived directly, the other has been around the dial multiple times.",
+        "deceptive_drift_signature": "A system with K_eff returning to a prior value but high accumulated group phase has undergone structural rotation that point-in-time metrics erase. The group phase preserves what the snapshot hides.",
+        "competitive_application": "An observer with group phase visibility can distinguish a stable system from a system that has been stressed and recovered. A competitor without group phase sees only the current reading and cannot detect the accumulated fatigue."
+      },
+
+      "additional_group_observables": [
+        {
+          "name": "Cumulative K_eff path",
+          "formula": "G_K(t) = sum from s=1 to t of |K_eff(s) - K_eff(s-1)|",
+          "reveals": "Total concentration volatility, regardless of current K_eff level"
+        },
+        {
+          "name": "Cumulative acceleration integral",
+          "formula": "G_a(t) = sum from s=1 to t of |accel(s)|",
+          "reveals": "Total structural jerk — how much the rate of change itself has changed. High G_a with calm current TV indicates a system that has been through multiple inflection cycles."
+        }
+      ],
+
+      "display_specification": {
+        "panel": "New panel in analyzer, below or beside existing time-series charts",
+        "x_axis": "Time (same as existing panels)",
+        "y_axis": "Cumulative distance (unbounded, auto-scaling)",
+        "line_style": "Monotonically non-decreasing line (TV cumulative) or monotonically non-decreasing line (absolute K_eff path). Never resets. Never wraps. Slope IS the current rate of structural change.",
+        "slope_interpretation": "Flat slope = structurally quiet period. Steep slope = active structural change. Slope change = acceleration/deceleration visible as curvature.",
+        "backward_compatible": "Existing panels unchanged. Group phase is an additive display mode."
+      }
+    },
+
+    "individual_phase_mode": {
+      "name": "Individual Phase — Wrapped Carrier Position Map",
+      "tier": "GOV — pure observation, no actuation",
+
+      "definition": "Each carrier element's current proportional position mapped onto a bounded [0, 1) display range, with wrap-around when a carrier hits the simplex boundary (0 or 1). All carriers visible simultaneously on a single bounded display.",
+
+      "the_wrap": {
+        "natural_boundary": "The simplex constraint: each carrier p_i is in [0, 1] and all carriers sum to 1. Unlike audio phase where 360 is an arbitrary display convention, the simplex boundaries are structural — a carrier cannot exceed 1 or go below 0.",
+        "grounding_rule": "When a carrier approaches its boundary (either monopoly at 1 or extinction at 0), the display grounds it. In practice, carriers on a real simplex rarely hit exact 0 or 1, but they can concentrate toward boundaries. The visual grounding shows proximity to boundary as proximity to the wrap point.",
+        "wrap_count": "For each carrier, track the number of times it has crossed a concentration threshold (e.g., doubled or halved its proportion). Each crossing is a wrap. The wrap count per carrier is its individual rotation history."
+      },
+
+      "display_specification": {
+        "panel": "Overlay or companion to existing carrier ribbon in v2 Command Dashboard",
+        "format_option_1_polar": "Polar plot — each carrier as a radial arm, angle = normalised proportion mapped to [0, 360), length = wrap count. All carriers visible simultaneously. Rotation shows structural change. Arm length shows cumulative history.",
+        "format_option_2_linear": "Linear wrapped plot — x-axis = carriers, y-axis = [0, 1) wrapped proportion, with colour or marker indicating wrap count. Simpler to read, less information-dense.",
+        "format_option_3_ribbon_overlay": "Existing carrier ribbon with wrap-count annotation — each carrier band shows its current proportion and a small numeral or colour code indicating how many wraps (concentration/deconcentration cycles) it has been through.",
+        "recommended": "Option 3 (ribbon overlay) for v3 analyzer — minimal visual disruption, maximum information gain. Option 1 (polar) for dedicated phase analysis panel in future versions."
+      },
+
+      "interpretation": {
+        "what_it_shows": "Instantaneous proportional distribution of all carriers simultaneously, with cumulative rotation history encoded in wrap count. A carrier showing p_i = 0.15 with 3 wraps has a fundamentally different history than p_i = 0.15 with 0 wraps.",
+        "pattern_signatures": {
+          "uniform_low_wraps": "Healthy balanced system with stable history.",
+          "uniform_high_wraps": "System that LOOKS balanced but has been through multiple concentration/recovery cycles. Deceptive stability — the group phase would confirm accumulated drift.",
+          "concentrated_low_wraps": "Recently concentrated system — may be transitional or newly formed.",
+          "concentrated_high_wraps": "Chronically concentrating system — structural rigidity. The carrier has been near the boundary repeatedly and keeps returning."
+        }
+      }
+    }
+  },
+
+  "cls_research_path": {
+    "note": "The following section documents the CLS research direction for phase display. This is NOT for current publication. It is documented here because Peter's directive is clear: research never stops, development continues, but distribution is slow and deliberate. When HUF-GOV establishes itself with a serious audience, the originating organisation receives HUF-CLS to continue with.",
+
+    "cls_phase_applications": {
+      "phase_lock_detection": "Group phase comparison across multiple domains. If two independent ratio-state systems show correlated group phase trajectories, they may be structurally coupled. This is the cross-domain coherence that Gemini proposed and that was correctly flagged as CLS territory in COORD-001.",
+      "phase_velocity_control": "Rate of group phase accumulation as a control input. If G(t) slope exceeds a threshold, trigger CLS response. This is explicitly closed-loop — the phase reading drives an actuator.",
+      "resonance_detection": "Individual phase alignment across carriers — when multiple carriers approach wrap points simultaneously, the system may be near a structural resonance (analogous to audio feedback). Detection is GOV. Response is CLS.",
+      "predictive_wrap": "Using group phase trajectory to estimate time-to-next-wrap for individual carriers. This is forward-looking (CL-03 territory) and requires the sigmoid or equivalent actuator model to convert observation to prediction."
+    },
+
+    "breaker_status": "All CLS phase applications remain behind the breaker. Phase display modes (group and individual) are GOV-safe as specified above — they show what has happened and what is happening. They do not predict, recommend, or actuate.",
+
+    "peter_doctrine": "Once HUF-GOV is out, it won't be long before homegrown closed-loop versions appear. Twenty minutes with HUF-GOV and someone will try to close the loop. The originating organisation needs HUF-CLS ready — not to suppress the inevitable, but to provide the tested, breaker-controlled version before the untested versions cause harm. The goal is not to prevent loop closure forever. The goal is to ensure that when the loop closes, it closes with the parachute on."
+  },
+
+  "adoption_dynamics": {
+    "peter_observation": "We just need to get it started. Any unknown system should be limited. Not going to push you out of a plane without consent.",
+
+    "staged_release_sequence": [
+      {
+        "stage": 1,
+        "name": "GOV instrument release",
+        "content": "Analyzer with group and individual phase display. Open-loop only. All four observable categories (K_eff, TV, acceleration, fix-point) plus phase history. Free. GOV-safe.",
+        "purpose": "Establish the fourth monitoring category. Demonstrate ratio-state visibility. Build adoption through competitive advantage — adopters see what non-adopters can't."
+      },
+      {
+        "stage": 2,
+        "name": "First successful public demonstration",
+        "content": "One domain, one conference, real data, real deceptive drift detection, real phase history showing what point-in-time metrics missed.",
+        "purpose": "Viral trigger. The four-category framing ('you've been monitoring with three of four') does the persuading."
+      },
+      {
+        "stage": 3,
+        "name": "CLS release to originating organisation",
+        "content": "Sigmoid, contraction parameter, amplifier, phase-lock detection, phase velocity control. Full closed-loop capability with breaker architecture.",
+        "purpose": "Provide the tested, controlled version before the inevitable homegrown closed-loop attempts proliferate. The parachute must be on before the jump."
+      },
+      {
+        "stage": 4,
+        "name": "Regulated CLS distribution",
+        "content": "HUF-CLS made available under licensing through Rogue Wave Audio. Breaker architecture mandatory. Training mandatory. The cost of adoption IS the governance.",
+        "purpose": "Slow, deliberate, consent-based. The cost ensures the open loop is maintained even as closed-loop capability is deployed."
+      }
+    ],
+
+    "thermodynamic_note": "The staged release sequence is itself an entropy management strategy. Each stage increases the system's capability while maintaining the energy input (human work, training, breakers) required to keep the loop open. Skipping stages is loop closure by neglect — the parachute isn't on yet."
+  },
+
+  "implementation_notes": {
+    "analyzer_integration": {
+      "target": "HUF Spectrum Analyzer v3 (future build)",
+      "new_panels": ["Group Phase (cumulative TV distance)", "Group Phase (cumulative K_eff path)", "Individual Phase (carrier wrap overlay on ribbon)"],
+      "existing_panels_unchanged": ["K_eff time series", "TV time series", "Carrier ribbon (v2)", "Complexity heatmap (v2)"],
+      "data_requirements": "No new data fields required. Group phase is computed from existing time-series data (cumulative sum of per-period TV or |delta K_eff|). Individual phase wrap count is computed from carrier proportion history (threshold crossing count). All derivable from existing SCHEMA-001 carrier_snapshots.",
+      "backward_compatible": true
+    },
+
+    "schema_extension": {
+      "optional_new_fields": {
+        "group_phase_tv": "Cumulative TV distance from observation start. Float, monotonically non-decreasing.",
+        "group_phase_keff": "Cumulative absolute K_eff change from observation start. Float, monotonically non-decreasing.",
+        "carrier_wrap_counts": "Array of integers, one per carrier. Number of concentration threshold crossings since observation start."
+      },
+      "note": "These fields are DERIVED, not primary. They can be computed on the fly from carrier_snapshots. Pre-computing and storing them is an optimisation, not a requirement. SCHEMA-001 does not need modification — these are display-layer computations."
+    }
+  },
+
+  "pll_compliance": {
+    "rule_1_real_data": "Phase display modes operate on whatever data the carrier provides. No synthetic data, no interpolation, no extrapolation.",
+    "rule_2_simplex": "Individual phase wrap is defined by simplex boundaries. The display respects the carrier's L1 normalisation.",
+    "rule_3_rms": "Group phase aggregation (if combining multiple observables) uses RMS with p=2, consistent with Keff_fill root aggregation.",
+    "rule_4_observation": "Phase display is observation only. Group phase shows where the system has been. Individual phase shows where each carrier is. Neither recommends, predicts, or actuates.",
+    "rule_5_constant_budget": "Phase display does not alter the carrier's energy budget. The display is a transformation of existing data, not an injection of new information.",
+    "rule_6_polarity": "Higher group phase = more structural distance travelled (neutral — neither good nor bad without context). Lower wrap count = more stable carrier (polarity: higher stability = healthier, consistent with root polarity alignment)."
+  },
+
+  "governance_compliance": {
+    "loop_001": "COMPLIANT — Skydiver Principle. Phase display shows the altimeter reading (including cumulative altitude history). Does not pull the parachute.",
+    "kill_test_check": {
+      "kill_1_1": "N/A — phase display does not alter carrier admission.",
+      "kill_1_2": "N/A — phase display works with any carrier count >= 2.",
+      "kill_3_3": "WATCH — group phase on fabricated data produces fabricated cumulative history. Same GIGO principle. Not a new failure mode, but worth noting.",
+      "kill_4_1": "COMPLIANT — no automation, no thresholds, no recommended actions.",
+      "kill_4_4": "N/A — phase display is domain-agnostic mathematical transformation."
+    },
+    "hagf_principles": "Consistent with all 7 HAGF principles. Human primacy preserved (human reads the phase display). Transparency enhanced (cumulative history visible). Accountability maintained (phase display is auditable — the math is deterministic)."
+  },
+
+  "open_questions": [
+    {
+      "id": "DISP-Q1",
+      "question": "What is the optimal concentration threshold for individual phase wrap counting? Options: fixed (e.g., carrier doubles or halves), adaptive (based on n and historical variance), or percentile-based (carrier enters top or bottom quartile of its historical range).",
+      "priority": "Medium — affects display granularity but not the fundamental concept."
+    },
+    {
+      "id": "DISP-Q2",
+      "question": "Should group phase be displayed as absolute cumulative distance or as rate of accumulation (slope)? Both are useful — distance shows total history, slope shows current activity. Possibly both panels.",
+      "priority": "Low — implementation choice, not architectural."
+    },
+    {
+      "id": "DISP-Q3",
+      "question": "Polar plot for individual phase (format option 1) — is this too visually complex for a GOV audience? The audio industry uses it routinely, but GOV adopters may not have signal processing backgrounds. Ribbon overlay (option 3) may be safer for initial release.",
+      "priority": "Low — UX decision for v3 build."
+    },
+    {
+      "id": "DISP-Q4",
+      "question": "CLS phase-lock detection across domains — at what point does cross-domain group phase correlation become a publishable GOV finding versus a CLS-only diagnostic? If two domains show correlated cumulative drift, reporting the correlation is observation (GOV). Using it to predict coupling is actuation (CLS). The line needs formal definition.",
+      "priority": "High — affects breaker placement for future CLS research."
+    }
+  ],
+
+  "provenance": {
+    "origin": "Peter Higgins — audio spectrum analyzer phase display technique, transferred to ratio-state domain",
+    "domain_source": "Standard audio measurement practice: group delay / group phase (unwrapped) and individual phase (wrapped at 360 degrees). Technique predates digital audio analyzers — fundamental to RF and acoustic measurement.",
+    "huf_application_date": "2026-03-24",
+    "peter_quote": "My trick, anytime HUF hits a ceiling, ground it. Secret's out.",
+    "strategic_context": "Disclosed in the context of the competitive adoption argument — phase display as the informational edge that makes non-adoption costly. Group phase reveals what point-in-time metrics hide. The observer with phase history can distinguish a stable system from a stressed-and-recovered system. The observer without it cannot."
+  }
+}

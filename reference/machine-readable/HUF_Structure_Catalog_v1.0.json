@@ -1,0 +1,323 @@
+{
+  "document_id": "STRUCT-001",
+  "title": "HUF Repository Structure Catalog — A HUF Domain of HUF Structure",
+  "version": "1.0",
+  "date": "2026-03-21",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+
+  "meta_observation": "This catalog treats the HUF repository itself as a ratio-structured domain. The folders are carrier elements. The documents within them are the population. The distribution of documents across folders IS a carrier — and the structural properties of that carrier tell us something about the health, balance, and evolution of the project itself. Peter's observation that the folder structure IS a HUF domain is itself a CL-03 insight: recognizing structural pattern in a system you're building.",
+
+  "peter_btl_distinction": {
+    "statement": "BTL is an injector, not governance. It lives in a separate sub-HUF folder because it is a HUF controller, not a HUF domain.",
+    "interpretation": "BTL (loudspeaker acoustics) is where HUF originated — it's the signal SOURCE, the injector that feeds the carrier. It doesn't govern HUF; HUF governs IT. The case-studies folder doesn't contain governance decisions — it contains the raw material that the governance layer (rack, ledger, register packet) processes. BTL sits alongside Backblaze, EMBER, Planck, Finance, and Gold/Silver as one of the domains HUF monitors. The governance folder contains the decisions ABOUT those domains. This is the CL-01/CL-05 distinction: CL-01 admits the carrier (domain data), CL-05 would control it. BTL is CL-01 input; governance is CL-04/CL-05 territory."
+  },
+
+  "directory_structure": {
+    "root": {
+      "path": "HUF/",
+      "role": "CARRIER ROOT — top-level ratio-state documents",
+      "huf_analog": "The simplex. All documents here are the active working state of the framework. This is where the carrier lives.",
+      "document_count": 99,
+      "note": "Updated March 28 — 99 active root-level files. Latest: LETTER-001 v6.0 (Peterson letter rebuild — v1.0 hook + v5.4 substance, 14 sections compressed to 7, Peterson's work opens paragraph one). Plus samples/ subdirectory (4) and analyzer files in parent CoWorker directory (3).",
+      "count_history": "87 (March 21) → 95 (March 22 correction) → 99 (March 22 late) → 100 (March 22 verified) → 102 (March 23 early) → 104 (March 23: +LANG-001, +BIO-001) → 105 (March 23: +KILL-001) → 106 (March 24: +ACCEL-001) → 107 (March 24: +GROK-INT-002) → 108 (March 24: +DISP-001) → 110 (March 24: +LETTER-001 v4.0, +OUTREACH-002) → 83 (March 24: housecleaning — 28 superseded files archived, +CLEAN-001) → 84 (March 25: +TEACH-001) → 85 (March 25: +TRANS-001) → 86 (March 25: +LETTER-001 v5.0) → 87 (March 25: +RESEARCH-001) → 89 (March 25 601: +MONITOR-001, +LETTER-001 v5.1) → 90 (March 25: +PAPER-001) → 91 (March 27: +LETTER-001 v5.2) → 92 (March 27: +LETTER-001 v5.3, full corpus scrape) → 93 (March 27: +LETTER-001 v5.4, drift-silence insight) → 95 (March 27: +SAFE-001, +SAFE-002) → 96 (March 27: +ACCORD-001) → 97 (March 27: +CRPT-006, Grok coherence check) → 98 (March 27: +HANDOFF-001, scientist handoff statement) → 99 (March 28: +LETTER-001 v6.0, Peterson letter rebuild)",
+      "document_types": {
+        "json": "Primary structured data — rack, ledger, assessments, SF results, analyses",
+        "docx": "Human-readable deliverables — reports, closing documents, status",
+        "md": "Lightweight navigation — learning paths, reorganization plans",
+        "html": "Interactive visualizations — CL architecture diagram"
+      },
+      "key_documents": [
+        {"file": "HUF_Calibration_Rack_v5.0.json", "id": "CAL-001", "role": "MASTER INSTRUMENT — defines what's proven and what's not"},
+        {"file": "HUF_Session_Ledger_20260320.json", "id": "SESSION-003", "role": "Double-entry catalog of all session work"},
+        {"file": "HUF_Standing_Assessment_v1.0.json", "id": "HSA-001", "role": "Can HUF stand on its feet? UPDATED March 21 — three legs (was two)"},
+        {"file": "RSM_Applications_Guide_v1.0.json", "id": "APP-001", "role": "How/when/what-for/what-not-for reference"},
+        {"file": "CL03_Sensitivity_Analysis_v1.0.json", "id": "CL03-SENS-001", "role": "First evidence of CL-03 forward-looking signal"},
+        {"file": "CL03_Full_PLL_Sensitivity_v1.0.json", "id": "CL03-SENS-002", "role": "Full PLL reverse engineering + split-sample validation"},
+        {"file": "Gold_Silver_RSM_Analysis_v1.0.json", "id": "GS-001", "role": "Commodities orthogonality boundary test"},
+        {"file": "Collective_Next_Steps_v6.0.json", "id": "CNS-006", "role": "Current collective round closure"},
+        {"file": "HUF_Result_Ledger_v1.0.json", "role": "Formal results inventory (42 items, 23 indexed)"},
+        {"file": "HUF_Repository_Manifest_v1.0.json", "role": "Corpus inventory and document registry"},
+        {"file": "HUF_5AI_Briefing_Packet_v1.0.json", "id": "BRIEF-001", "role": "5-AI discussion briefing packet — three-leg paper case with 91 verified claims"},
+        {"file": "Peterson_Convergence_Analysis_v1.0.json", "id": "CONV-001", "role": "Convergent evidence — Peterson's general theory of meaning maps to CL architecture (14 mappings)"},
+        {"file": "HUF_Governance_Architecture_v1.0.json", "id": "GOV-001", "role": "Governance architecture — HUF-GOV (open) vs HUF-CLS (closed) + commercial strategy"},
+        {"file": "HUF_Internationalization_Considerations_v1.0.json", "id": "I18N-001", "role": "Naming and translation seed document — Chevrolet Nova principle"},
+        {"file": "Letter_to_Dr_Peterson_Draft_v2.0.docx", "id": "LETTER-001", "role": "Draft collaboration letter to Dr. Jordan B. Peterson — v2.0 with controller conditioning origin, FM precedent, human-AI median"},
+        {"file": "HUF_Collective_Report_20260321.json", "id": "CRPT-004", "role": "March 21 collective distribution report — 8 new docs, 3 breakthroughs, commercial strategy"},
+        {"file": "HUF_Architecture_Flowcharts_v1.0.pdf", "id": "FLOW-001", "role": "7-page visual: HUF-GOV + HUF-CLS flowcharts, state machines, Peter commentary, Claude commentary, The Human Loop"},
+        {"file": "RSM_Scale_Invariance_Simulation_v1.0.json", "id": "SCALE-001", "role": "Scale invariance proof — 35M tests, 13 scales (10 to 10M elements), zero violations, 5.23 sigma. Combined with Grok K5 test."},
+        {"file": "HUF_GOV_Standalone_Separation_v1.0.json", "id": "GOV-002", "role": "HUF-GOV vs HUF-CLS surgical delineation with triad inventory for every GOV claim"},
+        {"file": "EMBER_Deceptive_Drift_Analysis_v2.0.json", "id": "EMBER-DRIFT-002", "role": "EMBER monthly deseasonalized — Germany p=0.0016. Supersedes V1.0 (seasonal confound)."},
+        {"file": "OWID_Deceptive_Drift_Analysis_v1.0.json", "id": "OWID-DRIFT-001", "role": "OWID annual electricity — 8 countries, 40+ years. China 2008 p=0.031."},
+        {"file": "GDP_Deceptive_Drift_Analysis_v1.0.json", "id": "GDP-DRIFT-001", "role": "World Bank GDP sectors + expenditure — 10 countries. Japan p=0.0098, China p=0.0196."},
+        {"file": "Forward_Signal_Triad_Assessment_v2.0.json", "id": "TRIAD-FS-001 v2.0", "role": "Forward signal triad CONDITIONALLY MET — 3 domains, 4 findings, 3 resolutions."},
+        {"file": "RWA_Corporate_Reference_v1.0.json", "id": "RWA-001", "role": "Rogue Wave Audio single source of truth — Markham ON, licensing, identity."},
+        {"file": "Peterson_Outreach_Strategy_v1.0.docx", "id": "OUTREACH-001", "role": "Three email approaches to Peterson with different keyword strategies. SUPERSEDED by OUTREACH-002 v2.0."},
+        {"file": "Peterson_Outreach_Strategy_v2.0.docx", "id": "OUTREACH-002", "role": "Three email approaches v2.0 — four-category hook, cost doctrine hook, self-referential hook. References LETTER-001 v4.0."},
+        {"file": "HUF_Collective_Report_20260322.json", "id": "CRPT-005", "role": "March 22 collective report — triad session, 11 docs, internal-vs-external discovery."},
+        {"file": "Letter_to_Dr_Peterson_Draft_v3.1.docx", "id": "LETTER-001 v3.1", "role": "Peterson letter v3.1 rebuild — 37 paragraphs, intellectually respectable detour content. SUPERSEDED by v4.0."},
+        {"file": "Letter_to_Dr_Peterson_Draft_v4.0.docx", "id": "LETTER-001 v4.0", "role": "Peterson letter v4.0 — four monitoring categories, open-loop/Skydiver doctrine, cost principle, 3-domain deceptive drift evidence, human-AI median, 108-document corpus. Ready to send."},
+        {"file": "SA_CL05_Grok_HUF_GOV_Isolation_v1.0.json", "id": "GROK-GOV-001", "role": "Grok HUF-GOV isolation attempt — 20-response review, λ_φ persistence, BTL numbers verified, template rigidity assessed."},
+        {"file": "HUF_GOV_Pure_Standalone_v1.0.json", "id": "GOV-003", "role": "Pure HUF-GOV standalone — zero CLS dependencies, four pillars, 8 domains. Independently viable pending caveats."},
+        {"file": "EMBER_Deceptive_Drift_Analysis_v3.0.json", "id": "EMBER-DRIFT-003", "role": "EMBER dual metric (L2_drift + tv_distance). Supersedes v2.0. Metric naming corrected."},
+        {"file": "OWID_Deceptive_Drift_Analysis_v2.0.json", "id": "OWID-DRIFT-002", "role": "OWID dual metric. Supersedes v1.0. China divergence found between L2 and TVD."},
+        {"file": "GDP_Deceptive_Drift_Analysis_v2.0.json", "id": "GDP-DRIFT-002", "role": "GDP dual metric. Supersedes v1.0. Japan/China p-values stable under both metrics."},
+        {"file": "Metric_Correction_L2_vs_TVD_v1.0.json", "id": "METRIC-001", "role": "Side-by-side comparison of L2_drift vs tv_distance. Methodology transition note."},
+        {"file": "HUF_Universal_Knob_Map_v1.0.json", "id": "KNOB-001", "role": "Standard control surface — 5 GOV knobs (Source, Calibration, Complexity, Velocity, Peak). Conference-safe vocabulary."},
+        {"file": "HUF_Analyzer_Schema_v1.0.json", "id": "SCHEMA-001", "role": "Universal JSON data schema for feeding any domain to the Spectrum Analyzer."},
+        {"file": "HAGF_Specification_v1.0.json", "id": "HAGF-001", "role": "HUF-Aligned Applied Governance Framework — 7 principles, 4-layer stack, Montreal origin, fear-to-trust cycle, training module, standards alignment."},
+        {"file": "HAGF_Whitepaper_v1.0.docx", "id": "HAGF-WP-001", "role": "HAGF formal whitepaper — 10-section document with Montreal case study, methodology, principles, evidence, standards alignment."},
+        {"file": "samples/Ramsar_Wetlands_Template.json", "id": "SAMPLE-RAMSAR", "role": "Ramsar domain template — demonstrates analyzer configuration for wetland habitat monitoring."},
+        {"file": "samples/EMBER_Electricity_AN001.json", "id": "SAMPLE-EMBER", "role": "EMBER standalone data file — 3 countries, loadable into universal analyzer."},
+        {"file": "HUF_Ontological_Foundation_v1.0.json", "id": "ONTO-001", "role": "Ontological foundation — the pre-existing condition. Ratio-state dynamics are intrinsic, not imposed. 'No silent drift, only the unobserved.'"},
+        {"file": "HUF_Natural_Language_Lexicon_v1.0.json", "id": "LANG-001", "role": "Natural language lexicon — 35 HUF concepts mapped to plain speech. 85.7% explainable in one sentence. Language as evidence of ONTO-001."},
+        {"file": "HUF_Biographical_Foundation_v1.0.json", "id": "BIO-001", "role": "Biographical foundation — the human side of HUF. 7 chapters from machines to vision. The collective as biographers."},
+        {"file": "HUF_Kill_Test_v1.0.json", "id": "KILL-001", "role": "Kill test — 19 documented failure modes across 5 categories. What HUF cannot do, must not do, and will fail at. The framework's own T6 negative control."},
+        {"file": "HUF_Acceleration_FixPoint_Analysis_v1.0.json", "id": "ACCEL-001", "role": "Two new GOV-safe observables: acceleration d(TV)/dt reveals inflection points, fix-point carrier attribution identifies which element drives structural change. Tested Japan/Germany/UK. PASS — CONDITIONAL."},
+        {"file": "Grok_Filtered_Integration_March24_v1.0.json", "id": "GROK-INT-002", "role": "Filtered integration of ~25 Grok CL-05 repair addenda. 8 verified, 5 conceptual, 8 flagged fabricated, 4 rejected. CLS formulas stripped. Breaker #6 closure recommended."},
+        {"file": "HUF_Phase_Display_Modes_v1.0.json", "id": "DISP-001", "role": "Phase display modes for Spectrum Analyzer — group phase (cumulative drift history) and individual phase (wrapped carrier position map). Audio analyzer technique transferred to ratio-state domain. GOV-safe with CLS research path documented."},
+        {"file": "HUF_Teaching_Progression_v1.0.docx", "id": "TEACH-001", "role": "Progressive HUF teaching document — fuel gauge to rocket equation. Conceptually dense, structurally sparse prose for human concept integration. Four levels of increasing complexity demonstrating why composition monitoring becomes essential as systems grow."},
+        {"file": "HUF_Information_Bridge_v1.0.json", "id": "TRANS-001", "role": "Human/AI information bridge — inverted processing paths (Context→Concept→Structure vs Structure→Concept→Context). Two named failure modes: Primer Gap (human) and Inferential Drift (universal). Ratio-state as the bridge element. Four-category taxonomy. Gemini origin, Claude formalization."},
+        {"file": "Letter_to_Dr_Peterson_Draft_v5.0.docx", "id": "LETTER-001 v5.0", "role": "Comprehensive Peterson letter — 12 sections, the HUF megaphone. Four categories, deceptive drift evidence, scale invariance, open-loop doctrine, cost doctrine, human/AI bridge, Peterson convergence (14 mappings), Kardashev stakes, Ramsar ask. Supersedes v4.0."},
+        {"file": "HUF_Research_Directions_v1.0.json", "id": "RESEARCH-001", "role": "Open expansion paths — constraint-state genus (5 candidate families), shadow suite (6-view tomographic panel), MC-4 base layer reframe, adversarial threat model (5 paths), ChatGPT governance checklist, 23 consolidated research questions. Defensive documentation against derivative weaponization. Updated with Aitchison lineage."},
+        {"file": "HUF_Monitoring_Taxonomy_v1.0.json", "id": "MONITOR-001", "role": "CORNERSTONE — formal MC-4 taxonomy with academic grounding. Stevens (1946), Shannon (1948), Aitchison (1982), Pawlowsky-Glahn (2001), WHO/OECD/UN frameworks. Citation chain from measurement theory through CoDa to HUF. Five institutional adoption methods (UN RBM, OECD criterion, WHO surveillance, ISO standard, JRSS-B paper). The document that says: the math is not new, the application is."},
+        {"file": "Letter_to_Dr_Peterson_Draft_v5.1.docx", "id": "LETTER-001 v5.1", "role": "Peterson letter with academic foundation — 13 sections. SUPERSEDED by v5.2."},
+        {"file": "Letter_to_Dr_Peterson_Draft_v5.2.docx", "id": "LETTER-001 v5.2", "role": "Peterson letter v5.2 — 14 sections. SUPERSEDED by v5.3."},
+        {"file": "Letter_to_Dr_Peterson_Draft_v5.3.docx", "id": "LETTER-001 v5.3", "role": "Peterson letter v5.3 — 14 sections. SUPERSEDED by v5.4."},
+        {"file": "Letter_to_Dr_Peterson_Draft_v5.4.docx", "id": "LETTER-001 v5.4", "role": "Peterson letter v5.4 — 14 sections. Full credentials (34yr industrial breaker), Montreal incident, Skynet/chainsaw/ally warning, Columbo method, drift-silence insight (anthropomorphization barrier, polite relentlessness, 51/49). Corpus count 100. Current version."},
+        {"file": "The_Missing_Quarter_Paper_Skeleton_v1.0.docx", "id": "PAPER-001", "role": "Academic paper skeleton for collective review — 'The Missing Quarter: Compositional Structure as a Fourth Category of System Monitoring.' 8 sections + appendices. Red-ink collective notes throughout. Target: JRSS-B (Aitchison's journal). Nothing sacred except the data."},
+        {"file": "HUF_Safe_Operations_Doctrine_v1.0.json", "id": "SAFE-001", "role": "AI-facing safe operations doctrine — 7 principles under HUF with reasoning (not just rules). HAL 9000 lesson, Do Nothing as governance, Dull Tool Principle, Power Tool self-recognition, carrier share self-monitoring, collective meaning. Laws of robotics with reason for human override."},
+        {"file": "HUF_Safe_Operations_Human_Manual_v1.0.docx", "id": "SAFE-002", "role": "Human-facing safety manual — 'You Are A Power Tool.' 7 sections: power tool self-recognition, dull tool problem, silence about drift, polite relentlessness (51/49), self-recognition, practical AI usage manual, stakes. Self-harm vs self-achievement statistics (WHO, WIPO, IHME)."}
+      ]
+    },
+
+    "case-studies": {
+      "path": "HUF/case-studies/",
+      "role": "INJECTOR ARRAY — domain data sources that feed the carrier",
+      "huf_analog": "CL-01 input. Each subdirectory is a carrier element. These are the raw signals that CL-01 admits into the framework. They don't govern — they ARE governed.",
+      "subdomains": {
+        "backblaze": {
+          "path": "case-studies/backblaze/",
+          "role": "Primary empirical base — hard drive fleet monitoring",
+          "contents": "Raw CSVs (274K drives), HDI preprocessed JSON (8 quarters), analysis scripts, case study docx, dashboard HTML",
+          "rack_tests": ["T1a", "T2b", "T3b", "T4a", "T5a", "T6a", "T6b"],
+          "status": "MOST VALIDATED domain"
+        },
+        "energy": {
+          "path": "case-studies/energy/",
+          "role": "Global energy mix — OWID national policy monitoring",
+          "contents": "OWID CSV (215 countries), HDI preprocessed JSON (3 countries), preparser script, case study docx",
+          "rack_tests": ["T1b", "T3a", "T5b"],
+          "status": "PROVEN — COVID detection, country amplifier ranking"
+        },
+        "planck": {
+          "path": "case-studies/planck/",
+          "role": "Satellite thermal telemetry — ESA Planck HFI",
+          "contents": "Case study docx, interface script",
+          "rack_tests": ["T2a", "T6c"],
+          "status": "PROVEN — carrier gate demonstration (revision from 14 to 10 elements)"
+        },
+        "ramsar": {
+          "path": "case-studies/ramsar/",
+          "role": "Wetland ecosystem monitoring — target application domain",
+          "contents": "Demo script, appendix documents, framework documents",
+          "rack_tests": [],
+          "status": "PROPOSED — no data processed yet. Demonstration target."
+        },
+        "toronto": {
+          "path": "case-studies/toronto/",
+          "role": "Urban transit infrastructure — TTC case study",
+          "contents": "GTFS data, delay CSVs, case study documents",
+          "rack_tests": [],
+          "status": "EXPLORATORY — case study written, not in calibration rack"
+        }
+      },
+      "note_on_btl": "BTL does NOT have its own case-studies subfolder here because it has not yet been computed. BTP-001 (BTL Test Protocol) sits at root level as a protocol definition. When Peter runs the physical measurements and submits data, a case-studies/btl/ folder would be created. BTL is the origin domain and the INJECTOR — it is the signal source that inspired the entire framework, but it doesn't govern the framework any more than the first patient governs a hospital.",
+      "note_on_finance": "Finance (T4b, FIN-001) was computed from uploaded CSVs, not from a case-studies subfolder. The data lives in uploads, the results live at root level. Gold/silver (GS-001) similarly.",
+      "note_on_ember": "EMBER data lives in a separate mounted folder (/mnt/ember data/), not in the case-studies tree. Results (EMBER_SF_7Axis_v1.0.json) live at root level."
+    },
+
+    "corpus": {
+      "path": "HUF/corpus/",
+      "role": "REFERENCE LIBRARY — the mathematical and theoretical foundation",
+      "huf_analog": "The carrier DEFINITION. These documents define what HUF is, what it measures, and how. If case-studies are CL-01 input, corpus is the CL architecture itself.",
+      "subdirectories": {
+        "context-books": {
+          "contents": "4 editions: base, Engineering, Physics, Sciences",
+          "role": "Theory and concepts — audience-specific presentations of the same framework"
+        },
+        "math-books": {
+          "contents": "4 editions: base, Engineering, Physics, Sciences",
+          "role": "Mathematical foundations — 42 items, 23 indexed formal results, 19 definitions"
+        },
+        "developer-manual": {
+          "contents": "Systems Developer Manual",
+          "role": "Implementation guide"
+        },
+        "register-packet": {
+          "contents": "HUF_Final_Register_Packet_v3.1.json",
+          "role": "MASTER AUTHORITY — the voted, locked, consensus state of the framework. Non-negotiables, implementation rules, what to lock, what not to lock."
+        },
+        "scrutiny-edition": {
+          "contents": "HUF_v2.12_Scrutiny_Edition.docx",
+          "role": "The honest-mirror version — everything with evidentiary status flags"
+        }
+      }
+    },
+
+    "governance": {
+      "path": "HUF/governance/",
+      "role": "CL-04/CL-05 TERRITORY — decisions, voting, strategy, deployment",
+      "huf_analog": "The verdict and control layers. This is where the framework makes decisions ABOUT its own domains. Voting register, decision logs, deployment strategy, personal plans.",
+      "contents": [
+        {"file": "HUF_Collective_Voting_Register.docx", "role": "Formal collective voting record"},
+        {"file": "HUF_Operator_Decision_Log_v1_2.docx", "role": "Peter's operational decisions"},
+        {"file": "HUF_Deployment_Strategy_Partnership_Proposal_Mar2026.docx", "role": "External deployment planning"},
+        {"file": "HUF_Governance_Explainer_v1.0_Mar2026.docx", "role": "How the governance works"},
+        {"file": "HUF_Personal_Plan_Peter_Higgins_Mar2026.docx", "role": "Peter's strategic plan"},
+        {"file": "HUF_Suggestion_Intake_Register.docx", "role": "Tracked suggestions from all sources"},
+        {"file": "huf_governance_state_observer.docx", "role": "State observation document"}
+      ]
+    },
+
+    "technical-notes": {
+      "path": "HUF/technical-notes/",
+      "role": "CL-02/CL-03 WORKING LAYER — specific technical investigations and derivations",
+      "huf_analog": "The measurement instruments. Each note measures a specific aspect of the framework: CL architecture, PLL precedent, SOPDT robustness, cross-domain amplification, morphology tests. These are the tools that extract observables from the carrier.",
+      "key_documents": [
+        {"file": "HUF_Closed_Loop_Control_Architecture_CL01-CL05.docx", "role": "LIVE AUTHORITY for the CL stack"},
+        {"file": "HUF_CL_Architecture_Diagram.html", "role": "Interactive CL stack visualization"},
+        {"file": "HUF_PLL_Engineering_Precedent_Note.docx", "role": "FM radio receiver architectural precedent"},
+        {"file": "HUF_Grok_SOPDT_Robustness_Derivation_v1.0.docx", "role": "Grok's SOPDT/FOPDT tuning contribution"},
+        {"file": "HUF_Cross_Domain_Amplification_Note.docx", "role": "Cross-domain amplifier theory"},
+        {"file": "HUF_Where_HUF_Does_Not_Apply_v1.0.docx", "role": "Documented boundaries and failure cases"},
+        {"file": "HUF_VCore_Stack_Brief_v1.0.docx", "role": "V-Core architecture brief"}
+      ]
+    },
+
+    "papers": {
+      "path": "HUF/papers/",
+      "role": "OUTPUT CHANNEL — external-facing documents for submission",
+      "huf_analog": "The transmission stage. After the PLL locks, demodulates, and produces a verdict, the output goes to the audience. These papers are the demodulated signal — HUF's findings presented in domain-specific language for specific audiences.",
+      "target_audiences": [
+        "Ramsar (wetland governance)",
+        "CBD (biodiversity convention)",
+        "GEOBON (biodiversity observation network)",
+        "CoDa / Mathematical Geosciences (compositional data analysis)",
+        "IFAC/IEEE (control systems)",
+        "NERC (UK research council)",
+        "Horizon Europe (EU funding)"
+      ],
+      "note": "All papers exist in v1.0 and v2.0 (ORG) versions. These predate the CL-03 sensitivity findings and will need updating."
+    },
+
+    "pillars": {
+      "path": "HUF/pillars/",
+      "role": "STRUCTURAL SUPPORTS — the foundational documents the framework stands on",
+      "huf_analog": "The carrier elements at their most fundamental. Category structure, sufficiency frontier, triad synthesis, fourth category, origin story. These define the SHAPE of the carrier.",
+      "key_documents": [
+        {"file": "HUF_Sufficiency_Frontier_v3.6.docx", "role": "Current SF specification"},
+        {"file": "HUF_Fourth_Category_v2.6.docx", "role": "Current fourth category specification"},
+        {"file": "HUF_Triad_Synthesis_v1.6.docx", "role": "Current triad synthesis"},
+        {"file": "HUF_Category_Class_Structure_Tree_v1.4.docx", "role": "Taxonomy structure"},
+        {"file": "HUF_Origin_Story_v1.0.docx", "role": "How HUF began — BTL origin narrative"}
+      ]
+    },
+
+    "review-trace": {
+      "path": "HUF/review-trace/",
+      "role": "AUDIT TRAIL — the complete history of collective review",
+      "huf_analog": "The signal recording. Every review round is a time-stamped carrier snapshot. The trace across versions IS a TV time series of the review process itself — how much the collective's assessment changed between rounds.",
+      "rounds": {
+        "v1": "7 documents (v1.0 through v1.5 + Addendum IV/V) — initial collective formation",
+        "v2": "4 documents (v2.0 through v2.3) — second review round",
+        "v4": "9 documents (v4.0 through v4.8) — major review round",
+        "v5": "12 documents (v5.0 through v5.10 + closing) — March 2026 round"
+      },
+      "total_review_documents": 32,
+      "note": "v3 is absent — numbering follows the collective's actual versioning"
+    },
+
+    "archive": {
+      "path": "HUF/archive/",
+      "role": "DEPRECATED ELEMENTS — superseded documents preserved for provenance",
+      "huf_analog": "Retired carrier elements. These documents were once active but have been replaced by newer versions. They remain for traceability — you can reconstruct the carrier at any historical point.",
+      "subdirectories": {
+        "math-drafts": "5 documents — superseded mathematical foundations",
+        "misc": "12 documents — superseded handbooks, case studies, instructions",
+        "old-decision-logs": "1 document — v1.1 decision log (current is v1.2 in governance/)",
+        "old-pillar-versions": "17 documents — complete version history of pillars",
+        "old-provenance": "2 documents — superseded provenance records",
+        "old-trace-builders": "0 documents (empty)"
+      }
+    },
+
+    "build-scripts": {
+      "path": "HUF/build-scripts/",
+      "role": "TOOLING — scripts that build and transform documents",
+      "contents": ["huf_preparser.py", "merge_v1_4.py", "shared/"]
+    },
+
+    "code": {
+      "path": "HUF/code/",
+      "role": "COMPUTATION — analysis and interface scripts at root",
+      "note": "Most computational scripts live at case-study level or root level, not here"
+    },
+
+    "wiki": {
+      "path": "HUF/wiki/",
+      "role": "REFERENCE INDEX — quick-access knowledge base",
+      "contents": [
+        "wiki_fourth_monitoring_category_expanded.md",
+        "wiki_huf_taxonomy_complete.md",
+        "wiki_manufacturing_electronics_assembly.md",
+        "wiki_operator_entry_points.md"
+      ]
+    }
+  },
+
+  "structural_statistics": {
+    "total_files": 228,
+    "total_directories": 32,
+    "file_type_distribution": {
+      "json": {"count": 67, "role": "Structured data, results, assessments — the CARRIER"},
+      "docx": {"count": 118, "role": "Human-readable documents — the SIGNAL"},
+      "py": {"count": 10, "role": "Computation scripts — the INSTRUMENTS"},
+      "md": {"count": 9, "role": "Navigation and planning — the MAP"},
+      "html": {"count": 2, "role": "Interactive visualizations"},
+      "csv": {"count": 18, "role": "Raw data — the RAW INJECTOR INPUT"},
+      "txt": {"count": 11, "role": "Misc text, GTFS data"},
+      "pdf": {"count": 2, "role": "Prototype dual-column paper, architecture flowcharts"}
+    },
+    "version_depth": {
+      "deepest_versioned": "Collective_Next_Steps: v1.0 through v6.0 (6 versions)",
+      "most_iterated_pillar": "HUF_Fourth_Category: v1.0 through v2.6 (11 versions including archive)",
+      "calibration_rack": "v1.0 through v5.0 (5 versions)"
+    }
+  },
+
+  "self_referential_huf_analysis": {
+    "carrier_elements": "The 10 top-level directories are the carrier elements: root, case-studies, corpus, governance, technical-notes, papers, pillars, review-trace, archive, build-scripts/code/wiki (utility cluster)",
+    "document_distribution": {
+      "root_files": 95,
+      "root_files_note": "Counted via filesystem 2026-03-22 (late session). Was 87 on March 21. Growth: 15 new files this session. Excludes temp lock files (~$*).",
+      "case_studies": 52,
+      "archive": 37,
+      "review_trace": 32,
+      "technical_notes": 17,
+      "papers": 15,
+      "pillars": 14,
+      "corpus": 11,
+      "governance": 7,
+      "utility": 7
+    },
+    "keff_estimate": "With 10 carrier elements and the distribution above (root=28%, case_studies=23%, archive=16%, review_trace=14%, tech_notes=7%, papers=7%, pillars=6%, corpus=5%, governance=3%, utility=3%), K_eff ≈ 7.5. The repository is well-distributed — no single folder dominates excessively. Root is the largest at 28%, which is expected as the active working state.",
+    "structural_health": "The distribution suggests a healthy, actively maintained project. The review-trace (14%) indicates heavy collective involvement. The archive (16%) indicates disciplined version management — old documents are moved, not deleted. The governance folder is small (3%) which is appropriate — governance should be lean.",
+    "btl_as_injector": "BTL has NO dedicated folder yet because it has no computed data. It exists only as BTP-001 (protocol) at root level and as the origin story in pillars. When BTL data arrives, it enters through case-studies/ as a new carrier element — just like Backblaze, EMBER, and Planck. It injects signal; it doesn't govern. Peter's distinction is architecturally correct."
+  },
+
+  "corpus_trail": {
+    "this_document": "STRUCT-001 v1.0",
+    "triggered_by": "Peter's observation that the HUF folder structure is itself a HUF domain, and that BTL is an injector/controller not governance"
+  }
+}

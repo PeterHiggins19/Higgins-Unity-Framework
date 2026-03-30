@@ -1,0 +1,345 @@
+{
+  "document_id": "SF-002",
+  "title": "HUF Sufficiency Frontier \u2014 All Angles: Forward, Backward, Upside Down",
+  "version": "1.0",
+  "date": "2026-03-19 16:40:26",
+  "tool": "HUF Sufficiency Frontier All-Angles v1.0",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "design_principle": "HUF works forward, backwards and upside down. 4 degrees of freedom just to start. The Sufficiency Frontier must be tested from ALL angles, not just forward compression.",
+  "results": {
+    "input": {
+      "n": 79,
+      "p": 12,
+      "kaiser_k": 4
+    },
+    "direction_1_forward": {
+      "r2": 0.7724,
+      "reference": "SF-001"
+    },
+    "direction_2_backward": {
+      "test": "backward_identification",
+      "k_roots": 4,
+      "n_countries": 79,
+      "correct_at_rank_1": 46,
+      "correct_at_rank_3": 61,
+      "correct_at_rank_5": 67,
+      "pct_at_rank_1": 58.2,
+      "mean_rank": 3.44,
+      "root_clusters": {
+        "PC1-": 22,
+        "PC3-": 4,
+        "PC2+": 12,
+        "PC1+": 16,
+        "PC4+": 6,
+        "PC3+": 12,
+        "PC2-": 4,
+        "PC4-": 3
+      },
+      "hardest_10": [
+        {
+          "country": "Indonesia",
+          "rank": 50
+        },
+        {
+          "country": "Chile",
+          "rank": 19
+        },
+        {
+          "country": "Brazil",
+          "rank": 17
+        },
+        {
+          "country": "Ireland",
+          "rank": 14
+        },
+        {
+          "country": "Israel",
+          "rank": 12
+        },
+        {
+          "country": "Denmark",
+          "rank": 9
+        },
+        {
+          "country": "Uzbekistan",
+          "rank": 9
+        },
+        {
+          "country": "Australia",
+          "rank": 7
+        },
+        {
+          "country": "Ecuador",
+          "rank": 7
+        },
+        {
+          "country": "Singapore",
+          "rank": 7
+        }
+      ]
+    },
+    "direction_3_carrier": {
+      "test": "carrier_row_compression",
+      "n_countries": 79,
+      "p_columns": 12,
+      "row_kaiser_roots": 8,
+      "row_effective_rank": 5.61,
+      "archetype_countries": [
+        {
+          "root": 1,
+          "country": "Iceland"
+        },
+        {
+          "root": 2,
+          "country": "Iceland"
+        },
+        {
+          "root": 3,
+          "country": "South Africa"
+        },
+        {
+          "root": 4,
+          "country": "France"
+        }
+      ],
+      "archetype_r2": 0.0413,
+      "pca_r2": 0.7724,
+      "row_frontier": [
+        {
+          "k_row": 1,
+          "r2": 0.4052,
+          "cumul_var": 29.8
+        },
+        {
+          "k_row": 2,
+          "r2": 0.5361,
+          "cumul_var": 48.3
+        },
+        {
+          "k_row": 3,
+          "r2": 0.6645,
+          "cumul_var": 64.1
+        },
+        {
+          "k_row": 4,
+          "r2": 0.7625,
+          "cumul_var": 75.7
+        },
+        {
+          "k_row": 5,
+          "r2": 0.8328,
+          "cumul_var": 84.4
+        },
+        {
+          "k_row": 6,
+          "r2": 0.903,
+          "cumul_var": 92.5
+        },
+        {
+          "k_row": 8,
+          "r2": 1.0,
+          "cumul_var": 100.0
+        }
+      ]
+    },
+    "direction_4_cross": {
+      "test": "cross_reconstruction",
+      "n_common_countries": 79,
+      "results": {
+        "share\u2192percap": {
+          "source_roots": 4,
+          "target_columns": 13,
+          "global_r2": 0.4609,
+          "mean_column_r2": 0.4609,
+          "min_column_r2": 0.1229,
+          "max_column_r2": 0.7467
+        },
+        "share\u2192abs": {
+          "source_roots": 4,
+          "target_columns": 12,
+          "global_r2": 0.0822,
+          "mean_column_r2": 0.0822,
+          "min_column_r2": 0.0428,
+          "max_column_r2": 0.153
+        },
+        "percap\u2192share": {
+          "source_roots": 4,
+          "target_columns": 12,
+          "global_r2": 0.4916,
+          "mean_column_r2": 0.4916,
+          "min_column_r2": 0.1128,
+          "max_column_r2": 0.7384
+        },
+        "percap\u2192abs": {
+          "source_roots": 4,
+          "target_columns": 12,
+          "global_r2": 0.0873,
+          "mean_column_r2": 0.0873,
+          "min_column_r2": 0.043,
+          "max_column_r2": 0.1356
+        },
+        "abs\u2192share": {
+          "source_roots": 2,
+          "target_columns": 12,
+          "global_r2": 0.0237,
+          "mean_column_r2": 0.0237,
+          "min_column_r2": 0.0005,
+          "max_column_r2": 0.1242
+        },
+        "abs\u2192percap": {
+          "source_roots": 2,
+          "target_columns": 13,
+          "global_r2": 0.0295,
+          "mean_column_r2": 0.0295,
+          "min_column_r2": 0.0003,
+          "max_column_r2": 0.126
+        }
+      }
+    },
+    "direction_5_temporal": {
+      "test": "temporal_compression",
+      "n_years": 24,
+      "temporal_eigenvalues": [
+        6.971,
+        1.5767,
+        1.1054,
+        0.2729,
+        0.053,
+        0.0187,
+        0.0022,
+        0.0001
+      ],
+      "temporal_kaiser_eras": 3,
+      "temporal_frontier": [
+        {
+          "eras": 1,
+          "r2": 0.6971,
+          "cumul_var": 69.7
+        },
+        {
+          "eras": 2,
+          "r2": 0.8548,
+          "cumul_var": 85.5
+        },
+        {
+          "eras": 3,
+          "r2": 0.9653,
+          "cumul_var": 96.5
+        },
+        {
+          "eras": 4,
+          "r2": 0.9926,
+          "cumul_var": 99.3
+        },
+        {
+          "eras": 5,
+          "r2": 0.9979,
+          "cumul_var": 99.8
+        },
+        {
+          "eras": 6,
+          "r2": 0.9998,
+          "cumul_var": 100.0
+        },
+        {
+          "eras": 7,
+          "r2": 1.0,
+          "cumul_var": 100.0
+        },
+        {
+          "eras": 8,
+          "r2": 1.0,
+          "cumul_var": 100.0
+        }
+      ],
+      "era_transitions": [
+        {
+          "year": "2021",
+          "distance": 2.185
+        },
+        {
+          "year": "2023",
+          "distance": 2.0085
+        },
+        {
+          "year": "2022",
+          "distance": 1.6506
+        },
+        {
+          "year": "2020",
+          "distance": 1.5008
+        },
+        {
+          "year": "2003",
+          "distance": 1.2342
+        }
+      ]
+    },
+    "direction_6_missing": {
+      "test": "missing_data_recovery",
+      "k_roots": 4,
+      "results": [
+        {
+          "missing_pct": 10,
+          "n_cells_masked": 94,
+          "recovery_r2": 0.0915,
+          "recovery_mae": 0.5254
+        },
+        {
+          "missing_pct": 20,
+          "n_cells_masked": 189,
+          "recovery_r2": 0.3036,
+          "recovery_mae": 0.5942
+        },
+        {
+          "missing_pct": 30,
+          "n_cells_masked": 284,
+          "recovery_r2": 0.1515,
+          "recovery_mae": 0.6408
+        },
+        {
+          "missing_pct": 50,
+          "n_cells_masked": 474,
+          "recovery_r2": -0.0198,
+          "recovery_mae": 0.6734
+        }
+      ]
+    },
+    "direction_7_stability": {
+      "test": "split_half_stability",
+      "k_roots": 4,
+      "n_trials": 20,
+      "mean_ab_similarity_per_root": [
+        0.8748,
+        0.4148,
+        0.4246,
+        0.2218
+      ],
+      "mean_a_to_full_per_root": [
+        0.9692,
+        0.7873,
+        0.5731,
+        0.4256
+      ],
+      "overall_stability": 0.484,
+      "verdict": "UNSTABLE \u2014 root structure depends heavily on sample"
+    },
+    "synthesis": {
+      "forward_r2": 0.7724,
+      "backward_identification_pct": 58.2,
+      "carrier_archetype_r2": 0.0413,
+      "carrier_row_kaiser": 8,
+      "cross_best": 0.4916,
+      "cross_worst": 0.0237,
+      "temporal_eras": 3,
+      "missing_10pct_r2": 0.0915,
+      "missing_30pct_r2": 0.1515,
+      "stability": 0.484,
+      "stability_verdict": "UNSTABLE \u2014 root structure depends heavily on sample",
+      "directions_passed": 3,
+      "directions_total": 7,
+      "overall": "INSUFFICIENT"
+    }
+  }
+}
