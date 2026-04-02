@@ -1,0 +1,411 @@
+{
+  "document_id": "EMBER-001",
+  "title": "EMBER Electricity Data \u2014 HUF 7-Axis Sufficiency Frontier",
+  "version": "1.0",
+  "date": "2026-03-19",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "data_source": {
+    "file": "yearly_full_release_long_format.csv",
+    "provider": "EMBER (ember-energy.org)",
+    "panel": "156 countries \u00d7 9 fuels \u00d7 26 years (2000-2025)",
+    "carrier_elements": [
+      "Bioenergy",
+      "Coal",
+      "Gas",
+      "Hydro",
+      "Nuclear",
+      "Other Fossil",
+      "Other Renewables",
+      "Solar",
+      "Wind"
+    ],
+    "carrier_type": "Electricity generation source shares (TWh normalized to simplex)"
+  },
+  "sufficiency_frontier": {
+    "reference_year": 2023,
+    "n_countries": 156,
+    "n_fuels": 9,
+    "direction_1_forward": {
+      "kaiser_roots": 3,
+      "eigenvalues": [
+        0.133835,
+        0.088733,
+        0.0645,
+        0.023343,
+        0.011655,
+        0.003169,
+        0.002376,
+        0.00212,
+        0
+      ],
+      "frontier": [
+        {
+          "k": 1,
+          "r2": 0.4059,
+          "cumvar": 40.6
+        },
+        {
+          "k": 2,
+          "r2": 0.675,
+          "cumvar": 67.5
+        },
+        {
+          "k": 3,
+          "r2": 0.8706,
+          "cumvar": 87.1
+        },
+        {
+          "k": 4,
+          "r2": 0.9414,
+          "cumvar": 94.1
+        },
+        {
+          "k": 5,
+          "r2": 0.9768,
+          "cumvar": 97.7
+        },
+        {
+          "k": 6,
+          "r2": 0.9864,
+          "cumvar": 98.6
+        },
+        {
+          "k": 7,
+          "r2": 0.9936,
+          "cumvar": 99.4
+        },
+        {
+          "k": 8,
+          "r2": 1.0,
+          "cumvar": 100.0
+        }
+      ],
+      "r2_at_kaiser": 0.8706
+    },
+    "direction_2_backward": {
+      "pc1_interpretation": "fossil/clean axis",
+      "bottom_5": [
+        {
+          "country": "Turkmenistan",
+          "pc1": -0.7278
+        },
+        {
+          "country": "Bahrain",
+          "pc1": -0.7265
+        },
+        {
+          "country": "Trinidad and Tobago",
+          "pc1": -0.7244
+        },
+        {
+          "country": "Algeria",
+          "pc1": -0.7186
+        },
+        {
+          "country": "Qatar",
+          "pc1": -0.7021
+        }
+      ],
+      "top_5": [
+        {
+          "country": "Ethiopia",
+          "pc1": 0.6589
+        },
+        {
+          "country": "Albania",
+          "pc1": 0.6606
+        },
+        {
+          "country": "Nepal",
+          "pc1": 0.6762
+        },
+        {
+          "country": "Paraguay",
+          "pc1": 0.6802
+        },
+        {
+          "country": "Bhutan",
+          "pc1": 0.6832
+        }
+      ]
+    },
+    "direction_3_archetype": {
+      "n_archetypes": 4,
+      "archetype_r2": 0.055,
+      "archetypes": [
+        "Bahamas (the)",
+        "Botswana",
+        "Bhutan",
+        "Turkmenistan"
+      ]
+    },
+    "direction_4_cross": {
+      "pc1_fossil_correlation": -0.7832,
+      "pc1_keff_correlation": -0.0081
+    },
+    "direction_5_temporal": {
+      "world_temporal_pca": {
+        "eigenvalues": [
+          0.002356,
+          0.000396,
+          5.3e-05,
+          2.7e-05
+        ],
+        "kaiser_eras": 1
+      }
+    },
+    "direction_6_missing": {
+      "mask_pct": 10,
+      "n_masked": 140,
+      "recovery_r2": 0.8674,
+      "k_used": 3
+    },
+    "direction_7_stability": {
+      "n_trials": 20,
+      "per_root_stability": [
+        0.8878,
+        0.6876,
+        0.7561
+      ],
+      "overall_stability": 0.7772
+    }
+  },
+  "shock_detection": {
+    "fukushima": {
+      "country": "Japan",
+      "shock_year": 2011,
+      "max_tv_year": 2012,
+      "max_tv": 0.1364,
+      "mean_tv": 0.0439,
+      "ratio": 3.1,
+      "nuclear_before": 25.3,
+      "nuclear_after": 0.0,
+      "keff_before": 4.88,
+      "keff_after": 4.18,
+      "detected": true
+    },
+    "covid": {
+      "area": "World",
+      "shock_year": 2020,
+      "tv_2020": 0.0194,
+      "mean_tv": 0.0138,
+      "ratio": 1.4,
+      "detected": false
+    },
+    "ukraine_germany": {
+      "country": "Germany",
+      "shock_year": 2022,
+      "tv_2022": 0.0779,
+      "tv_2023": 0.1181,
+      "mean_tv": 0.0393,
+      "ratio_2022": 2.0,
+      "ratio_2023": 3.0,
+      "detected": true
+    }
+  },
+  "stability_analysis": {
+    "most_stable_country": {
+      "country": "Bhutan",
+      "n_years": 25,
+      "mean_tv": 0.0,
+      "mean_keff": 1.0,
+      "max_tv": 0.0
+    },
+    "top_10_stable": [
+      {
+        "country": "Bhutan",
+        "n_years": 25,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Comoros (the)",
+        "n_years": 24,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Gambia (the)",
+        "n_years": 25,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Grenada",
+        "n_years": 25,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Guinea-Bissau",
+        "n_years": 25,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Lesotho",
+        "n_years": 23,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Montserrat",
+        "n_years": 25,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Saint Helena, Ascension and Tristan da Cunha",
+        "n_years": 24,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Saint Pierre and Miquelon",
+        "n_years": 24,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      },
+      {
+        "country": "Timor-Leste",
+        "n_years": 22,
+        "mean_tv": 0.0,
+        "mean_keff": 1.0,
+        "max_tv": 0.0
+      }
+    ],
+    "top_10_volatile": [
+      {
+        "country": "Montenegro",
+        "n_years": 21,
+        "mean_tv": 0.09844918787530293,
+        "mean_keff": 2.195867268129892,
+        "max_tv": 0.23124941331080445
+      },
+      {
+        "country": "Ghana",
+        "n_years": 25,
+        "mean_tv": 0.09981039323144118,
+        "mean_keff": 2.1983877887091614,
+        "max_tv": 0.2169047619047619
+      },
+      {
+        "country": "Sierra Leone",
+        "n_years": 25,
+        "mean_tv": 0.09998904646709418,
+        "mean_keff": 1.6591753477563242,
+        "max_tv": 0.5238095238095238
+      },
+      {
+        "country": "Lithuania",
+        "n_years": 26,
+        "mean_tv": 0.10276983241327406,
+        "mean_keff": 3.4757687032350466,
+        "max_tv": 0.741120218579235
+      },
+      {
+        "country": "Belize",
+        "n_years": 25,
+        "mean_tv": 0.10359620065163518,
+        "mean_keff": 2.2140885318996393,
+        "max_tv": 0.4196428571428571
+      },
+      {
+        "country": "Portugal",
+        "n_years": 26,
+        "mean_tv": 0.11273121712635958,
+        "mean_keff": 4.9872701308801615,
+        "max_tv": 0.17050052187238024
+      },
+      {
+        "country": "Uruguay",
+        "n_years": 25,
+        "mean_tv": 0.12520401806463513,
+        "mean_keff": 2.5473484234671355,
+        "max_tv": 0.3418977761461466
+      },
+      {
+        "country": "Jordan",
+        "n_years": 25,
+        "mean_tv": 0.12683090482759193,
+        "mean_keff": 1.889425536507613,
+        "max_tv": 0.4419251018582192
+      },
+      {
+        "country": "Macao",
+        "n_years": 25,
+        "mean_tv": 0.1665798364930324,
+        "mean_keff": 2.0849341887383215,
+        "max_tv": 0.5863486842105263
+      },
+      {
+        "country": "Togo",
+        "n_years": 25,
+        "mean_tv": 0.17161416582568126,
+        "mean_keff": 2.2584276276333406,
+        "max_tv": 0.40409836065573773
+      }
+    ]
+  },
+  "key_findings": {
+    "carrier_validity": "Electricity source shares form a natural simplex — 9 fuels sum to total generation. Units are homogeneous (TWh), the sum constraint is physical (total demand), and compositional closure holds. This is a textbook-valid carrier unlike the Planck fake simplex (T6c).",
+    "covid_miss_is_diagnostic": "COVID affected electricity DEMAND (volume) more than fuel MIX (composition). At the world level, TV=0.019 vs mean=0.014 — only 1.4× baseline. HUF correctly sees structure, not volume. A demand drop that preserves fuel ratios is invisible to a carrier-based instrument. This is correct instrument behavior, not a failure.",
+    "stability_hierarchy": "Trivially stable countries (Bhutan, K_eff=1.0) are monopolies — the T6b negative control already covers this. Russia (K_eff=3.9, mean TV=0.016) is the genuine stability test: four-source mix (gas 45%, nuclear 18%, hydro 17%, coal 17%) that barely moves in 25 years.",
+    "domain_comparison": "EMBER sits between Backblaze (tight, R²=0.96 at k=2) and OWID (loose, R²=0.77 at k=4). EMBER: R²=0.87 at k=3. All three domains produce valid but different compression characteristics — consistent with carrier structure, not method artifact."
+  },
+  "calibration_rack_mapping": {
+    "T2c_stability": {
+      "candidate": "Russian Federation",
+      "mean_tv": 0.0164,
+      "mean_keff": 3.86,
+      "n_years": 26,
+      "interpretation": "Genuinely diverse (4-source gas/nuclear/hydro/coal mix) but remarkably stable. Mean TV=0.016 over 26 years. K_eff range [3.6, 4.1]. HUF correctly reads this as 'quiet'.",
+      "note": "Bhutan (K_eff=1.0, pure hydro) is trivially stable — already covered by T6b monopoly test",
+      "status": "DONE"
+    },
+    "T3c_shock": {
+      "fukushima": {
+        "country": "Japan",
+        "shock_year": 2011,
+        "max_tv_year": 2012,
+        "max_tv": 0.1364,
+        "mean_tv": 0.0439,
+        "ratio": 3.1,
+        "nuclear_before": 25.3,
+        "nuclear_after": 0.0,
+        "keff_before": 4.88,
+        "keff_after": 4.18,
+        "detected": true
+      },
+      "covid": {
+        "area": "World",
+        "shock_year": 2020,
+        "tv_2020": 0.0194,
+        "mean_tv": 0.0138,
+        "ratio": 1.4,
+        "detected": false
+      },
+      "ukraine": {
+        "country": "Germany",
+        "shock_year": 2022,
+        "tv_2022": 0.0779,
+        "tv_2023": 0.1181,
+        "mean_tv": 0.0393,
+        "ratio_2022": 2.0,
+        "ratio_2023": 3.0,
+        "detected": true
+      },
+      "status": "DONE"
+    }
+  }
+}

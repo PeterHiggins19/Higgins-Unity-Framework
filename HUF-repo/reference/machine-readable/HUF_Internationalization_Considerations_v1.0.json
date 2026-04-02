@@ -1,0 +1,85 @@
+{
+  "document_id": "I18N-001",
+  "title": "HUF Internationalization Considerations — Naming, Translation, and Cross-Language Awareness",
+  "version": "1.0",
+  "date": "2026-03-21",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "purpose": "Seed document for cross-language and cross-cultural considerations. Not expanded — flagged for future attention when human-readable documents are generated for international audiences. The Chevrolet Nova principle: check that your terms don't mean something unfortunate in the target language.",
+  "status": "SEED — to be expanded when specific translation needs arise",
+
+  "naming_decisions_log": [
+    {
+      "term": "HUF-CLS",
+      "chosen_over": "HUF-CON",
+      "reason": "CON = convict, con artist, con job (English). First pattern recognition is negative. Unacceptable for multinational framework.",
+      "CLS_check": {
+        "english": "Closed-Loop System — clean, technical",
+        "french": "No negative connotation identified",
+        "spanish": "No negative connotation identified (CLS is not a word)",
+        "japanese": "Abbreviations are neutral in Japanese technical context",
+        "german": "No negative connotation identified",
+        "note": "CLS is used in automotive (Mercedes CLS), finance (CLS Group settlement), and web (CSS class). All neutral or positive associations."
+      }
+    },
+    {
+      "term": "HUF-GOV",
+      "status": "Accepted",
+      "check": {
+        "english": "Governance — appropriate",
+        "note": "GOV is universally understood as government/governance. No negative connotations identified in major languages. '.gov' domain association is actually positive (authority, trust)."
+      }
+    },
+    {
+      "term": "Composition Monitoring",
+      "full": "Composition Monitoring (MC-4)",
+      "status": "Canonical name formalized March 28, 2026. Supersedes earlier 'Ratio-State Monitoring' as category name.",
+      "note": "HUF remains the framework name. Composition Monitoring is the MC-4 category name. 'Ratio-state' describes the mathematical state on the simplex.",
+      "check": {
+        "english": "Clean, descriptive",
+        "note": "RSM has existing uses (Revenue and Sales Management, Royal School of Mines) but no negative connotations. Context disambiguates."
+      }
+    },
+    {
+      "term": "HUF",
+      "status": "Internal shorthand — Higgins Unified Framework",
+      "check": {
+        "hungarian": "HUF = Hungarian Forint (currency code). Not negative but could cause confusion in financial contexts. RSM avoids this.",
+        "english": "No negative connotation",
+        "note": "Since HUF is internal and RSM is public-facing, the Hungarian Forint overlap is manageable."
+      }
+    }
+  ],
+
+  "general_principles": [
+    "Always check abbreviations against major language connotations before locking terminology",
+    "Technical abbreviations (CLS, GOV, RSM) are generally safer than common words",
+    "When generating human-readable documents for specific audiences, verify that key terms translate cleanly",
+    "Peter's English phrasing and terminology should be preserved in source documents but may need adaptation for non-English audiences — translate the meaning, not the words",
+    "The Chevrolet Nova principle: a name that works in one market can fail in another. Test before committing."
+  ],
+
+  "languages_to_consider_first": {
+    "rationale": "Based on target domains and likely early adopters",
+    "priority_1": ["English", "French (Canada bilingual, Ramsar Convention headquartered in Switzerland)"],
+    "priority_2": ["Japanese (Fuji engineering relationship, 'Mr. Peter San')", "Spanish (Latin American environmental monitoring)", "German (engineering community)"],
+    "priority_3": ["Mandarin (global energy/finance applications)", "Arabic (MENA environmental monitoring)"]
+  },
+
+  "terms_requiring_future_translation_review": [
+    {"term": "Deceptive drift", "concern": "The word 'deceptive' has moral connotation. In some cultures, attributing deception to a mathematical phenomenon may not translate well. Consider 'silent concentration' or 'latent drift' as alternatives for specific audiences."},
+    {"term": "Carrier", "concern": "Multiple meanings across languages. In French 'porteur' works. In Japanese technical context 'キャリア' (kyaria) is standard. Verify for each language."},
+    {"term": "Simplex", "concern": "Mathematical term — generally universal in technical contexts. May need plain-language alternative for non-technical audiences."},
+    {"term": "Orthogonality boundary", "concern": "Highly technical. Non-technical translation might be 'information boundary' or 'independence boundary'. Context-dependent."},
+    {"term": "Governance vs Control", "concern": "The GOV/CLS distinction is central to HUF architecture. In some languages governance and control are closer synonyms than in English. The distinction must be preserved in translation — governance = who decides the rules, control = who implements them."},
+    {"term": "Rack (calibration rack)", "concern": "English metaphor from audio/server equipment. May not translate intuitively. Consider 'test battery' or 'validation suite' for some audiences."},
+    {"term": "Gate (carrier validity gate)", "concern": "English metaphor — pass/fail checkpoint. Generally translates well but verify."}
+  ],
+
+  "corpus_trail": {
+    "this_document": "I18N-001 v1.0",
+    "triggered_by": "Peter's observation that HUF-CON has negative English connotation + the Chevrolet Nova analogy + multinational scope of the framework",
+    "related_documents": ["GOV-001 (governance architecture with naming)", "CONV-001 (Peterson convergence — English-language source)"],
+    "next": "Expand when specific translation projects begin. This is a seed, not a finished product."
+  }
+}

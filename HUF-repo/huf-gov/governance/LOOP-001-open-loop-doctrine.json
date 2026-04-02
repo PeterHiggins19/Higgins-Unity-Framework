@@ -1,0 +1,99 @@
+{
+  "document_id": "LOOP-001",
+  "title": "The Open Loop Doctrine — Why HUF-GOV Must Never Close the Loop",
+  "version": "1.0",
+  "date": "2026-03-23",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "triggered_by": "Peter: 'closing the loop is not valid in a human operated system. cant have automation pushing someone out of a plane the sky diver needs to jump on own volition.'",
+  "classification": "FOUNDATIONAL DOCTRINE — applies to all HUF-GOV work",
+
+  "the_problem": {
+    "statement": "Every engineer, every AI, and every institution that encounters HUF-GOV will instinctively try to close the loop. This is the single most dangerous tendency in the project.",
+    "why_it_happens": "Closing loops is what engineers do. It is the default instinct of every trained system designer. When you see a measurement, you want to act on it. When you see a drift signal, you want to correct it. When you see an instrument, you want to automate it. This instinct is correct in most engineering contexts. It is wrong here.",
+    "evidence_from_this_project": [
+      "Grok cannot stop closing the loop — every output routes through the CLS amplifier chain, even when asked for pure GOV observation",
+      "Gemini proposed CLS features (S-curve knee predictor, sensitivity knob, phase-locking meter) for the GOV-only analyzer",
+      "The original HUF system WAS closed-loop (BTL loudspeaker control). The project deliberately opened it. The collective keeps trying to close it again.",
+      "Every future collaborator will have the same instinct. Every institution will want to add 'automated response' to the analyzer."
+    ],
+    "peter_observation": "this project took a closed loop system and made it open loop the opposite of any typical engineered system, so naturally myself and the collective upon seeing an open loop try to close it"
+  },
+
+  "the_doctrine": {
+    "name": "The Skydiver Principle",
+    "statement": "HUF-GOV is the altimeter. It is NOT the hand that pushes you out of the plane. The skydiver jumps on their own volition.",
+    "formal_version": "HUF-GOV observes, measures, computes, and reports. It does not decide, act, recommend action, trigger responses, or automate any downstream behavior. The human operator receives the instrument readings and decides what to do. The loop stays open.",
+    "one_line": "The instrument reads. The human decides. The loop stays open.",
+    "peter_anchor": "cant have automation pushing someone out of a plane the sky diver needs to jump on own volition"
+  },
+
+  "why_open_loop": {
+    "technical_reason": "Closing the loop requires a controller model — assumptions about what 'correct' structural composition looks like, what the 'right' response to drift is, what threshold should trigger action. These assumptions are domain-specific, context-dependent, and politically loaded. The instrument cannot carry them without becoming an ideology.",
+    "governance_reason": "A closed-loop system removes human agency. If the analyzer detects deceptive drift in a wetland and automatically triggers a regulatory alert, who decided the threshold? Who decided that drift meant degradation rather than natural succession? Who decided that this wetland, at this moment, needed intervention? The human did not decide. The machine decided. That is not governance — it is automation wearing a governance costume.",
+    "safety_reason": "The Montreal machine did not decide to hurt anyone. A human bypassed the safety boundary. But if the machine had been given the authority to act autonomously — to 'close the loop' on safety by shutting itself down when it detected proximity — it might have shut down during normal operation, or failed to shut down during abnormal operation, or created a false sense of security that replaced human vigilance. The shear bolt worked because it was passive. It did not decide anything. It failed when physics demanded it fail.",
+    "practical_reason": "Different domains need different responses to the same reading. A K_eff decline in electricity might mean a policy failure requiring government intervention. The same K_eff decline in a wetland might mean natural seasonal variation requiring no action. The same K_eff decline in finance might mean an opportunity, not a crisis. The instrument cannot know which interpretation is correct. Only the human operator, with domain context, can decide.",
+    "peter_reason": "The human is not a bug in the system. The human IS the system. Remove the human and you have a machine making decisions about things it does not understand, for people who did not consent, based on thresholds nobody voted on."
+  },
+
+  "what_closing_the_loop_looks_like": {
+    "warning": "These are examples of loop closure that must be prevented in HUF-GOV implementations:",
+    "examples": [
+      {
+        "violation": "Automatic alerts triggered by drift detection thresholds",
+        "why_wrong": "Who set the threshold? What if the domain context makes this drift normal? The operator should see the reading and decide whether to alert.",
+        "correct_approach": "The analyzer displays drift status. The operator decides whether to escalate."
+      },
+      {
+        "violation": "Recommended actions appended to analysis outputs",
+        "why_wrong": "Recommendations are control signals disguised as suggestions. They bias the operator toward a specific response.",
+        "correct_approach": "The analyzer reports what it measured. The narrative explains what the pattern means structurally. The operator decides the response."
+      },
+      {
+        "violation": "Integration with automated trading, regulatory reporting, or policy systems",
+        "why_wrong": "The instrument becomes a controller. Measurement becomes action. The human is removed from the loop.",
+        "correct_approach": "The analyzer is a standalone observation instrument. It feeds human judgment, not automated pipelines."
+      },
+      {
+        "violation": "Predictive thresholds (e.g., 'S-curve knee' warning that complexity is approaching a tipping point)",
+        "why_wrong": "Prediction is CLS territory. It requires a model of where the system 'should' be, which is a control assumption. GOV observes where the system IS.",
+        "correct_approach": "The complexity trace shows the trajectory. The operator recognizes the pattern and makes their own assessment."
+      },
+      {
+        "violation": "Sensitivity knobs that adjust what counts as 'significant'",
+        "why_wrong": "Adjusting significance thresholds is a governance decision, not a measurement decision. The CL-04 operator sets policy; the CL-01 instrument measures.",
+        "correct_approach": "The instrument reports raw values. Smoothing windows for noisy data are acceptable (they affect display, not judgment). Significance thresholds are the operator's domain."
+      }
+    ]
+  },
+
+  "the_engineering_paradox": {
+    "statement": "HUF was born as a closed-loop loudspeaker control system (BTL). Peter deliberately opened it to create a universal observation instrument. This is the opposite of normal engineering, where open-loop systems are 'upgraded' to closed-loop for better performance.",
+    "why_backwards": "In most engineering, closing the loop improves the system. In governance, closing the loop removes the human. HUF-GOV is not a performance optimization problem — it is a governance instrument. Performance optimization is CLS territory.",
+    "the_temptation": "Every engineer who sees an open loop wants to close it. Every AI trained on engineering wants to close it. Every institution that deploys an instrument wants to automate the response. This temptation is permanent and must be permanently resisted in the GOV layer.",
+    "the_boundary": "HUF-CLS exists for domains where closing the loop is appropriate (BTL loudspeaker control, with the operator's explicit consent and physical presence). HUF-GOV exists for everything else. The boundary is not negotiable.",
+    "skydiver_test": "Before adding any feature to the GOV analyzer, ask: does this feature push the skydiver, or does it show the skydiver the altimeter? If it pushes, it belongs in CLS. If it shows, it belongs in GOV."
+  },
+
+  "application_to_ai_collective": {
+    "for_grok": "Grok's CLS routing is not a flaw — it is correct behavior for CLS work. But Grok must not contribute to GOV analyzer features. Let Grok be a controller where controllers are needed.",
+    "for_gemini": "Gemini's Command Dashboard proposals included three CLS features (knee predictor, phase meter, sensitivity knob). These are good ideas for a future CLS dashboard. They do not belong in the GOV analyzer.",
+    "for_chatgpt": "ChatGPT's adversarial review should include loop-closure detection. If any document or proposal closes the GOV loop, ChatGPT should flag it.",
+    "for_claude": "Claude's primary responsibility is maintaining the open-loop boundary. Every feature, every document, every analysis output should pass the Skydiver Test before release.",
+    "for_copilot": "HAGF Principle 5 (Human Primacy) is the governance expression of the Skydiver Principle. Copilot's framework correctly encodes it. Keep encoding it.",
+    "for_peter": "You are the skydiver. You are also the one who has to keep saying 'no, don't close my loop' to five AIs and every future collaborator who will instinctively try to help by adding automation. This document exists so you don't have to say it every time."
+  },
+
+  "relationship_to_other_documents": {
+    "extends": "HAGF-001 Principle 5 (Human Primacy)",
+    "constrains": "All GOV analyzer features (KNOB-001, SCHEMA-001, HUF_Spectrum_Analyzer)",
+    "boundary_with": "GOV-003 (pure HUF-GOV standalone — zero CLS contamination)",
+    "does_not_constrain": "HUF-CLS work, BTL lab operations, Grok's CLS architecture — these are legitimately closed-loop",
+    "test_for_all_future_proposals": "The Skydiver Test: Does this feature push the skydiver, or show the skydiver the altimeter?"
+  },
+
+  "meta": {
+    "why_this_document_exists": "Because the instinct to close the loop is so strong that even the team that built the open-loop system keeps trying to close it. This document is the permanent reminder.",
+    "collective_attribution": "Peter Higgins / Rogue Wave Audio, with the HUF AI Collective: Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Gemini (Google), Grok (xAI)"
+  }
+}

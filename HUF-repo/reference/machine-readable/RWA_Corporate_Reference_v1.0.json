@@ -1,0 +1,100 @@
+{
+  "document_id": "RWA-001",
+  "title": "Rogue Wave Audio — Corporate Reference",
+  "version": "1.0",
+  "date": "2026-03-22",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "purpose": "Single source of truth for all RWA corporate identity, location, and licensing data. Referenced by all HUF correspondence and legal documents.",
+
+  "company": {
+    "legal_name": "Rogue Wave Audio",
+    "abbreviation": "RWA",
+    "nature": "Theory and acoustics development company",
+    "product_philosophy": "Concepts are the product, not a loudspeaker. Ideas are the commodity.",
+    "owner": "Peter Higgins",
+    "domain": "RogueWaveAudio.com",
+    "status": "Peter owns the company and the domain"
+  },
+
+  "location": {
+    "city": "Markham",
+    "province": "Ontario",
+    "country": "Canada",
+    "all_operations": "Ontario only",
+    "btl_lab": {
+      "location": "Markham, Ontario",
+      "facility": "Basement laboratory — purpose-built by Peter Higgins",
+      "description": "Binaural Test Lab for loudspeaker measurement and closed-loop validation",
+      "note": "Peter lived with the system to learn it. Built the lab himself."
+    }
+  },
+
+  "contact": {
+    "correspondence_name": "Peter Higgins",
+    "email": "PeterHiggins@RogueWaveAudio.com",
+    "use_for": "All HUF correspondence, Peterson outreach, Ramsar contact, academic submissions, commercial inquiries"
+  },
+
+  "personnel": {
+    "peter_higgins": {
+      "role": "Owner, principal researcher, measurement engineer",
+      "industry_background": "35 years man/machine interface — Dage X-ray, Fuji, Electrovert wave solder, AOI, PLC, first-generation AI systems across Canadian electronics assembly",
+      "current_employer": "Brock Electronics (industry work, cross-Canada travel)",
+      "huf_work": "Personal research, conducted from Markham lab and remotely with AI, primarily evenings/nights",
+      "note": "Brock Electronics is the day job. HUF/RWA is the mission."
+    }
+  },
+
+  "licensing": {
+    "last_updated": "2026-03-22",
+    "framework": {
+      "HUF_GOV": {
+        "license": "Open — free, academic, CC BY 4.0 or equivalent",
+        "scope": "Open-loop governance framework, ratio-state mathematics, carrier construction methodology, 7-axis diagnostics, all observation-only measurement results",
+        "who_can_use": "Anyone — universities, research labs, conservation organizations, independent researchers",
+        "revenue_model": "None. Given away. Builds reputation, credibility, community.",
+        "note": "The science. 51% of the mission priority."
+      },
+      "HUF_CLS": {
+        "license": "Commercial — proprietary, licensed through RWA",
+        "scope": "Closed-loop control system, SMAART v9 API integration, real-time acoustic monitoring, BTL closed-loop automation, any implementation where measurement feeds back to control",
+        "who_can_use": "Licensed users only. RWA retains IP authority.",
+        "revenue_model": "Licensed plugin/API. Affordable pricing — infrastructure tool, not premium product. Recurring revenue.",
+        "note": "The engineering. 49% of the mission priority."
+      },
+      "HUF_GOV_union_CLS": {
+        "license": "Commercial — same license as HUF-CLS",
+        "scope": "Any product, service, or implementation that combines open-loop governance with closed-loop control. The union inherits the more restrictive license.",
+        "rationale": "If the union were free, anyone could build the closed-loop product by wrapping it in governance framing. The commercial license on the union protects HUF-CLS IP while keeping HUF-GOV fully open.",
+        "note": "This covers the gap where someone might use HUF-GOV methodology to inform HUF-CLS-type control systems. The governance is free. The control is licensed. The combination is licensed."
+      },
+      "btl_open_loop": {
+        "license": "Open — same as HUF-GOV",
+        "scope": "Open-loop BTL measurement methodology. Universities and research labs can freely build and use an open-loop BTL product for measurement and assessment.",
+        "what_is_free": "Building a loudspeaker measurement system using RSM carrier methodology. Measuring, reporting, filing. No feedback to design.",
+        "what_is_not_free": "Closing the loop — using the measurement output to automatically or semi-automatically adjust crossover design through SMAART or equivalent integration."
+      }
+    },
+    "provisional_note": "This licensing structure is provisional. Peter reserves the right to adjust as HUF develops. The core principle holds: give away the science, license the engineering. Specifics may change."
+  },
+
+  "naming_decisions": {
+    "RWA": "Rogue Wave Audio — clean, no negative connotations in any language tested",
+    "HUF_GOV": "Governance framework — open",
+    "HUF_CLS": "Closed-Loop System — commercial. Chosen over HUF-CON (CON = convict, con artist in English, rejected for multinational use)",
+    "BTL": "Binaural Test Lab — the physical laboratory and the closed-loop loudspeaker testing methodology"
+  },
+
+  "geography_note": {
+    "common_confusion": "Peter has been traveling cross-Canada for Brock Electronics over the past 5 months. All HUF/RWA activity traces back to Markham, Ontario. Any appearance of BC or other Canadian locations in the trail is Brock work, not HUF.",
+    "correspondence_address": "Markham, Ontario, Canada",
+    "all_rwa_operations": "Ontario only"
+  },
+
+  "corpus_trail": {
+    "this_document": "RWA-001 v1.0",
+    "referenced_by": "All HUF correspondence, Peterson outreach, Ramsar contact, licensing discussions",
+    "related": ["GOV-001 (governance architecture, contains original naming decisions)", "GOV-002 (standalone separation, contains licensing boundaries)"]
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "document_id": "GS-001",
+  "title": "Gold-Silver Commodities \u2014 RSM Structural Analysis and Prediction Test",
+  "version": "1.0",
+  "date": "2026-03-20",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "data_sources": {
+    "gold_multi_currency": "World Gold Council, 19 currencies, monthly since 1978 (245 months with full coverage)",
+    "gold_silver_ratio": "MeasuringWorth enriched, 1688-2026 (624 months with ratio)",
+    "silver_monthly": "Monthly silver prices, 1833-2026 (2318 months)"
+  },
+  "carrier_a_returns_19_currency": {
+    "description": "Monthly gold returns in 19 currencies, softmax-normalized to simplex",
+    "shape": [
+      244,
+      19
+    ],
+    "keff_mean": 18.98,
+    "kaiser_k": 4,
+    "r2_at_kaiser": 0.8214,
+    "cross_prediction_r2": -28.0717
+  },
+  "carrier_c_returns_6_major": {
+    "description": "Monthly gold returns in 6 major currencies (USD, EUR, JPY, GBP, INR, CNY), softmax to simplex",
+    "currencies": [
+      "USD",
+      "EUR",
+      "JPY",
+      "GBP",
+      "INR",
+      "CNY"
+    ],
+    "shape": [
+      244,
+      6
+    ],
+    "keff_mean": 6.0,
+    "kaiser_k": 3,
+    "r2_at_kaiser": 0.8649,
+    "cross_prediction_r2": -28.1007,
+    "pc1_loadings": {
+      "USD": -0.0269,
+      "EUR": 0.1465,
+      "JPY": -0.8294,
+      "GBP": 0.4075,
+      "INR": 0.3489,
+      "CNY": -0.0466
+    }
+  },
+  "prediction_verdict": {
+    "can_rsm_predict_ratio_transitions": "NO \u2014 not from currency structure alone",
+    "evidence": [
+      "Cross-prediction R\u00b2 (19-currency returns \u2192 ratio): -28.0717",
+      "Cross-prediction R\u00b2 (6-major returns \u2192 ratio): -28.1007",
+      "Direction accuracy (TV-signal): 47.8% vs coin flip 50%",
+      "Forward regression R\u00b2 is negative or near-zero at all lead times"
+    ],
+    "why": "Gold's cross-currency return structure captures FX dynamics (which currencies gold appreciates in fastest). The gold/silver ratio is driven by different forces: industrial demand, monetary policy, speculative flows. These are structurally orthogonal \u2014 similar to Backblaze where K_eff doesn't predict failure rate (r=-0.06).",
+    "analogy": "This is a T5-type finding: the currency-structure carrier and the gold/silver ratio are in different information domains. The carrier correctly measures something (gold's FX structure), but that something doesn't predict the ratio."
+  },
+  "what_rsm_CAN_do_for_gold_silver": {
+    "detection_not_prediction": "RSM can DETECT major structural transitions in the gold/silver ratio after they begin (z-score regime detection), but cannot PREDICT them from currency structure before they happen.",
+    "regime_detection": {
+      "method": "12-month rolling z-score on ratio time series",
+      "transitions_detected": 47,
+      "regime_distribution": {
+        "normal_pct": 74,
+        "gold_favored_pct": 16,
+        "silver_favored_pct": 10
+      }
+    },
+    "mean_reversion_signal": {
+      "below_50": {
+        "instances": 96,
+        "avg_12m_change": 0.0928,
+        "pct_ratio_increased_12m": 0.75,
+        "avg_24m_change": 0.2529,
+        "interpretation": "When ratio falls below 50 (silver very expensive relative to gold), historical tendency is for ratio to revert upward"
+      },
+      "above_80": {
+        "instances": 98,
+        "avg_12m_change": -0.0332,
+        "pct_ratio_decreased_12m": 0.61,
+        "avg_24m_change": -0.0521,
+        "interpretation": "When ratio exceeds 80 (gold very expensive relative to silver), historical tendency is for ratio to revert downward"
+      }
+    }
+  },
+  "current_state_march_2026": {
+    "gold_silver_ratio": 61.5,
+    "percentile_since_1978": 42,
+    "current_regime": "NORMAL",
+    "z_score": -1.8,
+    "interpretation": "At 61, the ratio is at the 42th percentile of post-1978 history. This is NORMAL territory."
+  },
+  "cl03_status_update": {
+    "prior_status": "ADD* \u2014 Hard gate not passed with real-data K_eff",
+    "this_test": "Gold/silver cross-currency carrier does NOT predict ratio transitions. CL-03 remains ADD*.",
+    "finding": "Prediction requires a carrier whose elements are causally upstream of the target variable. Gold's currency structure is not causally upstream of the gold/silver ratio. This is a domain-selection issue, not a framework failure.",
+    "recommendation": "For gold/silver prediction, the carrier would need to include industrial demand indicators, monetary policy signals, speculative positioning \u2014 variables that are causally connected to relative precious metal prices. RSM with a currency-only carrier correctly reports: structure and target are orthogonal."
+  },
+  "rack_impact": "No rack change. This is an exploratory application, not a calibration test. However, the T5-analog finding (structure-target orthogonality in commodities) strengthens the evidence that RSM correctly identifies information boundaries."
+}

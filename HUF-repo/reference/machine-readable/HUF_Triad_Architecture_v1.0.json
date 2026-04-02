@@ -1,0 +1,239 @@
+{
+  "document_id": "ARCH-001",
+  "title": "HUF Triad Architecture — The Three Legs of Composition Monitoring",
+  "version": "1.0",
+  "date": "2026-03-30",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "classification": "FRAMEWORK ARCHITECTURE — structural foundation. Defines the three-layer triad on which all of HUF stands.",
+  "citation": "Peter Higgins / Rogue Wave Audio, with the HUF AI Collective",
+
+  "origin": {
+    "peter_insight": "Reversing from the huf-gov core towards the huf-cls explorations found the divergence point. The real mathematics lives between observation and control. There must be a triad: huf-gov, huf-cls, and a third leg. All of HUF seems based on it.",
+    "convergence_event": "After mapping Wagner's independent convergence (CONV-001), verifying the role of e in Aitchison geometry, clarifying the Σ=1 display vs e computational relationship, and testing the Penrose sphere claim to find its valid kernel (square root embedding) while rejecting the speculative shell — the three layers became visible. The math was always there. It just didn't have a name."
+  },
+
+  "the_triad": {
+    "principle": "HUF is a three-legged structure. Each leg is necessary. No two legs are sufficient without the third. Remove any leg and the framework collapses.",
+
+    "leg_1": {
+      "name": "HUF-GOV",
+      "full_name": "Governance — Observation Layer",
+      "directory": "huf-gov/",
+      "function": "SEES",
+      "question": "What is the structural state?",
+      "description": "The open-loop instrument. Reads the ratio-state of any proportional system and reports to a human operator. Contains the spectrum analyzer, monitoring taxonomy (MC-1 through MC-4), evidence base, case studies, and safe operations doctrine.",
+      "mathematical_space": "The proportion coordinate system (Σ=1). The instrument face. Human-readable.",
+      "key_documents": ["KNOB-001", "LOOP-001", "SAFE-001", "MONITOR-001", "DISP-001"],
+      "doctrine": "The instrument reads. The human decides. The loop stays open.",
+      "what_it_outputs": "K_eff, TV distance, L2 drift, deceptive drift detection, group phase, carrier wrap counts, status badges, narrative context. All observation. No actuation."
+    },
+
+    "leg_2": {
+      "name": "HUF-CLS",
+      "full_name": "Closed-Loop System — Control Layer",
+      "directory": "huf-cls/",
+      "function": "DOES",
+      "question": "What action should the system take?",
+      "description": "The closed-loop actuator. Takes GOV readings as input and could produce control outputs — sigmoid mapping, contraction parameter, amplifier, phase-lock detection. Published under MIT license for transparency, held behind the breaker for safety.",
+      "mathematical_space": "The control function space. Sigmoid mappings, feedback loops, amplifier chains.",
+      "key_documents": ["CL-01 through CL-05", "Sensitivity analysis (CL03-SENS)"],
+      "doctrine": "The parachute must be on before the jump. Once HUF-GOV is out, homegrown closed-loop versions will appear. The originating organisation needs HUF-CLS ready — the tested version before the untested ones cause harm.",
+      "what_it_outputs": "Control signals, actuation recommendations, threshold triggers, amplified or dampened responses. Explicitly closed-loop."
+    },
+
+    "leg_3": {
+      "name": "HUF-GEO",
+      "full_name": "Geometry — Mathematical Foundation Layer",
+      "proposed_directory": "huf-geo/",
+      "function": "IS",
+      "question": "What is the mathematical reality underneath?",
+      "description": "The geometric and information-theoretic foundation on which both GOV and CLS operate. This is NOT HUF's invention — it is the pre-existing mathematical structure of all compositional systems, formalized by Aitchison (1982), Amari (1985), and the Fisher-Rao geometric tradition. HUF applies this mathematics; it does not create it.",
+      "mathematical_space": "The Aitchison simplex with its induced geometry. ILR coordinates (base e). Fisher information metric. Square root embedding to the sphere. Shannon entropy as structural information measure.",
+
+      "components": {
+        "the_simplex": {
+          "what": "Δ^(D-1) = {ρ ∈ R^D : ρ_i ≥ 0, Σρ_i = 1}",
+          "why": "Every proportional system lives here. Not by choice — by mathematical necessity. The closure constraint (Σ=1) is not a modeling decision; it is a consequence of proportional representation itself.",
+          "status": "ESTABLISHED — Aitchison (1982), 40+ years of CoDa literature"
+        },
+        "aitchison_geometry": {
+          "what": "The natural Euclidean geometry on the simplex, where perturbation (component-wise multiplication + renormalization) plays the role of addition, and powering (raising each component to a power + renormalization) plays the role of scalar multiplication.",
+          "why": "Doing statistics directly on the simplex produces spurious results (closure artifact). The Aitchison geometry, accessed through the ILR transform, makes the simplex flat Euclidean space where standard tools work correctly.",
+          "status": "ESTABLISHED — Pawlowsky-Glahn & Egozcue (2001), standard in geochemistry and geosciences"
+        },
+        "base_e": {
+          "what": "The natural logarithm (base e) is the native operation of the Aitchison geometry. K_eff = exp(H) where H = -Σ ρ_i ln(ρ_i). The ILR coordinate system uses ln/exp (base e) for all operations.",
+          "why": "Σ=1 defines the SPACE (the manifold, the instrument face). e defines the GEOMETRY of that space (how distances, angles, and operations work on the manifold). Both are necessary. Neither is a stepping stone.",
+          "status": "ESTABLISHED — embedded in the Shannon entropy foundation, ILR transform, and Fisher metric",
+          "huf_implication": "This explains why PCA coherence metrics (CL03-SENS findings) were stronger forward predictors than entropy metrics: PCA operates in the e-native ILR representation where the geometry is flat Euclidean. Entropy metrics operate in proportion coordinates where the geometry is curved."
+        },
+        "fisher_metric": {
+          "what": "The Fisher information metric on the simplex. For compositions, ds² = Σ (dρ_i)² / ρ_i. This is the natural Riemannian metric that measures statistical distinguishability.",
+          "why": "Tells you how far apart two compositions are in information-theoretic terms. Under the square root embedding, this becomes the standard round metric on the sphere.",
+          "status": "ESTABLISHED — Fisher (1925), Rao (1945), Amari (1985)"
+        },
+        "square_root_embedding": {
+          "what": "Map ρ → √ρ: the simplex Δ^(D-1) embeds into the positive orthant of the unit sphere S^(D-1). Under this map, Fisher metric → round metric, Hellinger distance → geodesic distance.",
+          "why": "This is the REAL kernel of the Penrose sphere exploration. The simplex genuinely maps to a sphere. The connection to Penrose's twistor/Riemann sphere is NOT valid (twistors are for 4D spacetime conformal geometry, not compositional data). But the sphere embedding itself is clean, proven, and useful.",
+          "status": "ESTABLISHED — Amari (1985), Bhattacharyya (1943). Verified computationally in this session.",
+          "what_is_NOT_real": "Connection to Penrose twistor sphere. Complex structure on the carrier simplex. Fourier analysis directly on the simplex. For D>3 carriers, HUF maps to S^(D-1), not the Riemann sphere S²."
+        },
+        "shannon_entropy": {
+          "what": "H = -Σ ρ_i ln(ρ_i). The information content of the carrier distribution. K_eff = exp(H) converts this to the effective number of equi-concentrated carriers.",
+          "why": "The fundamental measurement that GOV's instrument reads. Maps continuously from 0 (one carrier dominates) to ln(D) (all carriers equal).",
+          "status": "ESTABLISHED — Shannon (1948), interpreted in ecological context as Hill numbers (Hill 1973, Jost 2006)"
+        }
+      },
+
+      "key_documents_current": ["ONTO-001 (ontological foundation)", "math-books/ (four audience editions)", "CONV-001 (Wagner convergence)", "Reference pillars (Phase3, Spectral Sequences, Sufficiency Frontier)"],
+      "doctrine": "The mathematics pre-exists. HUF reads it. The simplex was there before anyone looked."
+    }
+  },
+
+  "why_three_not_two": {
+    "without_geo": "GOV and CLS have no mathematical ground. The monitoring readings have no formal basis. The control functions operate in undefined space. This is the pre-HUF state — people monitored magnitude, identity, and trend (MC-1,2,3) without the compositional fourth category because the Aitchison geometry wasn't applied to monitoring.",
+    "without_gov": "GEO and CLS have no observation layer. The mathematics exists but nobody reads it. The control system has no input. This is the 'untested closed loop' that Peter's doctrine warns against — closing the loop without first establishing what the instrument says.",
+    "without_cls": "GEO and GOV have no action layer. The mathematics exists and is observed but never acted upon. This is the current HUF-GOV release state — and it is DELIBERATELY incomplete. The third leg is held back until the first two legs are stable. But it must exist, documented and tested, ready for when the loop must close."
+  },
+
+  "the_triad_in_the_data": {
+    "display_layer": "Σ=1 proportion coordinates — what the human sees on the instrument face (GOV)",
+    "computational_layer": "ILR coordinates (base e) — where the mathematics operates correctly (GEO)",
+    "control_layer": "Sigmoid/contraction functions — where observations become actions (CLS)",
+    "isomorphism": "The map between display and computation is the ILR transform. The map between display and the sphere is the square root embedding. Both are invertible. No information is lost. The three layers see the same reality through different coordinate systems."
+  },
+
+  "research_taxonomy": {
+    "established_categories": {
+      "MC-4_composition_monitoring": {
+        "status": "ESTABLISHED — core HUF contribution",
+        "description": "The fourth monitoring category. Ratio-state observation on the Aitchison simplex.",
+        "evidence": "8 domains compressed, 3 domains with forward signal, 156-country sufficiency frontier",
+        "key_finding": "Deceptive drift — internal concentration invisible to MC-1,2,3 metrics"
+      },
+      "aitchison_geometry_application": {
+        "status": "ESTABLISHED — 40+ years CoDa literature, applied by HUF",
+        "description": "Using the Aitchison simplex geometry as the mathematical home of composition monitoring",
+        "link": "Aitchison (1982), Pawlowsky-Glahn & Egozcue (2001)"
+      },
+      "forward_signal_triad": {
+        "status": "ESTABLISHED — 3 domains, p < 0.05, split-sample validated (finance)",
+        "description": "Conditional forward signal: complexity falling + velocity calm → structural event follows",
+        "evidence": "S&P 500 (daily), EMBER electricity (monthly), World Bank GDP sectors (annual)",
+        "constraint": "Conditional on internal concentration. Does NOT predict external shocks."
+      },
+      "spectrum_analyzer_instrument": {
+        "status": "ESTABLISHED — v3 built, EMBER data verified",
+        "description": "Domain-agnostic instrument displaying K_eff, velocity, peak, drift, carrier ribbon, group phase, individual phase",
+        "standard": "KNOB-001 (five readings) + DISP-001 (phase display modes)"
+      }
+    },
+
+    "frontier_research": {
+      "pca_coherence_channel": {
+        "status": "DISCOVERED — CL03-SENS, not yet fully characterized",
+        "description": "Kaiser k, split-half stability, R²-at-Kaiser as forward predictors. Stronger than entropy metrics. Operates in the ILR (e-native) representation.",
+        "implication": "The CLS sensitivity analysis accidentally revealed a new GOV observable channel. The PCA coherence metrics should be added to KNOB-001 as the sixth and seventh readings.",
+        "next_step": "Formal specification as KNOB extension. Non-finance domain validation (ISSUE-005)."
+      },
+      "phase_display_modes": {
+        "status": "SPECIFIED — DISP-001. Implemented in v3 analyzer.",
+        "description": "Group phase (cumulative TV distance, cumulative K_eff path) and individual phase (carrier wrap count overlay). Audio spectrum analyzer technique transferred to composition monitoring.",
+        "next_step": "Real-data validation. Does group phase distinguish stressed-and-recovered systems from genuinely stable systems?"
+      },
+      "cross_domain_convergence": {
+        "status": "DOCUMENTED — Wagner (CONV-001), plus the 8-domain compression evidence",
+        "description": "Independent researchers arriving at the same mathematical structure from different starting points. Wagner (gravitational lensing, 2025): ratios as maximum information. HUF (monitoring, 2026): ratios as fourth monitoring category.",
+        "implication": "The convergence is not coincidence. The Aitchison simplex is the natural mathematical home of proportional systems across all domains.",
+        "next_step": "Formal literature review. How many other fields have independently discovered compositional structure?"
+      },
+      "square_root_embedding": {
+        "status": "ESTABLISHED mathematics, UNEXPLORED in HUF context",
+        "description": "The √ρ map from simplex to sphere. Fisher metric becomes round metric. Hellinger distance becomes geodesic distance.",
+        "what_is_real": "The embedding itself (Amari 1985). The metric equivalence. The distance relationship.",
+        "what_is_speculative": "Penrose twistor connection (NOT valid for D>3). Complex structure on the simplex (NOT established). Spherical harmonics on the embedded simplex (possible but unexplored).",
+        "next_step": "Is the sphere representation useful for visualization? For D=3 carriers, the simplex maps to a patch of S², which IS visualizable. Could create a literal 3D sphere display for 3-carrier systems."
+      }
+    },
+
+    "future_directions": {
+      "non_finance_forward_signal_validation": {
+        "status": "OPEN — ISSUE-005",
+        "description": "Split-sample validation of conditional forward signal in non-finance domains",
+        "priority": "HIGH — needed before PAPER-002"
+      },
+      "real_ramsar_data_acquisition": {
+        "status": "OPEN — waiting for RSIS data",
+        "description": "Replace synthetic Ramsar test data with real species composition data",
+        "priority": "MEDIUM — proof of ecological domain applicability"
+      },
+      "monthly_resolution_analysis": {
+        "status": "OPEN — data available, not yet computed",
+        "description": "EMBER monthly data exists for all 5 countries. Monthly K_eff and velocity would reveal sub-annual structural dynamics invisible to yearly resolution.",
+        "priority": "MEDIUM — enhances the EMBER evidence base"
+      },
+      "ilr_formal_documentation": {
+        "status": "RECOMMENDED — not yet directed",
+        "description": "Add formal mathematical note to MONITOR-001 documenting that HUF monitors the Aitchison simplex displayed in proportion coordinates (Σ=1) and analyzed in ILR coordinates (base e).",
+        "priority": "MEDIUM — mathematical rigor for academic audience"
+      },
+      "spherical_harmonics_exploration": {
+        "status": "SPECULATIVE — mathematically possible, practical value unknown",
+        "description": "Via the square root embedding, compositions live on a sphere. Spherical harmonics are a natural basis for functions on spheres. Could decompose compositional dynamics into harmonic modes.",
+        "priority": "LOW — research frontier, no immediate practical application",
+        "warning": "This is where Grok went off the rails. The math is valid in principle but the connection to HUF's practical monitoring purpose is unestablished."
+      },
+      "jrss_b_paper": {
+        "status": "OPEN — PAPER-001 exists, PAPER-002 planned",
+        "description": "Journal of the Royal Statistical Society, Series B submission. The formal academic publication establishing MC-4.",
+        "priority": "HIGH — the academic anchor for the entire framework"
+      },
+      "peterson_outreach": {
+        "status": "OPEN — Peter's action, needs GitHub repo live",
+        "description": "Letter to Dr. Peterson with GitHub link. The public introduction of HUF.",
+        "priority": "HIGH — the starting gun"
+      }
+    }
+  },
+
+  "naming_convention": {
+    "established": {
+      "huf-gov": "Governance — Observation Layer (SEES)",
+      "huf-cls": "Closed-Loop System — Control Layer (DOES)",
+      "huf-geo": "Geometry — Mathematical Foundation Layer (IS)"
+    },
+    "pattern": "Three-letter suffix. Verb function. Clear separation of concerns.",
+    "mnemonic": "GEO sees IS. GOV sees WHAT. CLS does WHAT-TO-DO. The triad: IS → SEES → DOES.",
+    "alternative_considered": {
+      "huf-mth": "Rejected — too generic. 'Math' could mean anything.",
+      "huf-sim": "Rejected — too specific. The simplex is one structure; the geometry encompasses the simplex, its metric, its transforms, and its embeddings.",
+      "huf-ont": "Considered — ontology captures 'what IS'. But ONTO-001 already exists as a document within the framework, and making the directory name match a single document creates confusion.",
+      "huf-sig": "Considered — 'signal' matches Peter's audio metaphor (the carrier IS the signal). But the third leg isn't the signal itself; it's the mathematical space the signal propagates through."
+    }
+  },
+
+  "the_audio_metaphor": {
+    "peter_context": "Peter's background in audio engineering (Rogue Wave Audio) provides the foundational metaphor for the entire framework. The spectrum analyzer display technique. The carrier-as-signal concept. Phase display modes from audio measurement practice.",
+    "mapping": {
+      "the_signal": "The compositional data stream — the carrier proportions changing over time. This is what EXISTS in any proportional system.",
+      "the_medium": "HUF-GEO — the mathematical space through which the signal propagates. The Aitchison simplex with its geometry. The signal doesn't create the space; the space shapes the signal.",
+      "the_analyzer": "HUF-GOV — the instrument that reads the signal in the medium. Converts mathematical structure to human-readable display.",
+      "the_processor": "HUF-CLS — the actuator that could modify the signal based on the analyzer's readings. Feedback, compression, limiting, routing."
+    },
+    "the_triad_in_audio_terms": "You need the medium (room acoustics, cable impedance, electromagnetic spectrum) to carry the signal. You need the analyzer (spectrum analyzer, meter, scope) to read it. You need the processor (compressor, EQ, mixer) to act on it. Remove any one and the chain breaks."
+  },
+
+  "provenance": {
+    "origin": "Peter Higgins — identification of the three-layer structure through convergent exploration from GOV (established) and CLS (Grok explorations) meeting at the mathematical foundation",
+    "key_session_discoveries": [
+      "Wagner convergence (CONV-001) — independent astrophysicist arrives at same ratio primacy",
+      "Role of e — base-e is the native operation of the Aitchison geometry, already embedded in K_eff = exp(H)",
+      "Σ=1 vs e — display space vs computational space, isomorphic and both necessary",
+      "Square root embedding — the REAL kernel of the Penrose sphere exploration (Amari 1985)",
+      "Penrose sphere rejection — twistor connection NOT valid for HUF with D>3 carriers",
+      "The triad — GOV (SEES) + CLS (DOES) + GEO (IS) = complete framework"
+    ],
+    "peter_quote": "we meet at huf-gov huf-cls and huf-?, this must be a triad, all of huf seems based on it"
+  }
+}

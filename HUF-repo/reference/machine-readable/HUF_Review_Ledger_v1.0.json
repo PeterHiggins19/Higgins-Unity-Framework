@@ -1,0 +1,654 @@
+{
+  "meta": {
+    "title": "HUF Machine Review Ledger",
+    "version": "1.0",
+    "date": "2026-03-18",
+    "purpose": "Durable log of machine review events in the HUF corpus development. Implements the MRDS schema proposed in HUF_MRDS_Trace_Report_v1.0.docx.",
+    "schema_fields": [
+      "event_id",
+      "date",
+      "model",
+      "artifacts_reviewed",
+      "review_type",
+      "review_posture",
+      "findings",
+      "corpus_changed",
+      "change_disposition",
+      "gates_affected"
+    ],
+    "note": "This ledger captures documented high-level review events. Individual review trace documents (HUF/review-trace/) contain detailed per-session records. This ledger is a summary index, not a replacement."
+  },
+  "model_families": {
+    "claude": {
+      "provider": "Anthropic",
+      "role": "Primary architect, document builder, ontology designer"
+    },
+    "chatgpt": {
+      "provider": "OpenAI",
+      "role": "Critical reviewer, definitional rigor, standards alignment"
+    },
+    "grok": {
+      "provider": "xAI",
+      "role": "Independent mathematical verification \u2014 SOPDT derivation, fill-ratio stability tower (16+ theorems from casual analogy), Lyapunov convergence proofs, nuclear reactor and information-theoretic applications"
+    },
+    "gemini": {
+      "provider": "Google",
+      "role": "Review participant \u2014 evolved from brief contributor to deep architectural reviewer and real-data extractor (Croatia RSIS)"
+    },
+    "copilot": {
+      "provider": "Microsoft",
+      "role": "Review participant \u2014 evolved from collective-review contributor to systematic ontology auditor, structural completeness checker, and structural amplifier formalization (Definition F.6, Proposition F.7, proof sketch, v3.0 integration patch)"
+    }
+  },
+  "review_events": [
+    {
+      "event_id": "RE-001",
+      "date": "2026-01",
+      "model": "claude",
+      "artifacts_reviewed": [
+        "HUF mathematics (all 42 numbered items)",
+        "CL-01 through CL-05 architecture"
+      ],
+      "review_type": "theorem_verification",
+      "review_posture": "supportive",
+      "findings": "Initial formalization of carrier ontology, observable demodulation, and control layers. Proofs structured across 6 areas.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": []
+    },
+    {
+      "event_id": "RE-002",
+      "date": "2026-01",
+      "model": "collective",
+      "artifacts_reviewed": [
+        "Review trace v1.0 through v1.5"
+      ],
+      "review_type": "collective_review",
+      "review_posture": "critical",
+      "findings": "Five-AI collective review of initial mathematics. Multiple rounds of terminology tightening and proof verification.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": []
+    },
+    {
+      "event_id": "RE-003",
+      "date": "2026-02",
+      "model": "collective",
+      "artifacts_reviewed": [
+        "Review trace v2.0 through v2.3",
+        "Scrutiny Edition"
+      ],
+      "review_type": "adversarial_review",
+      "review_posture": "adversarial",
+      "findings": "Adversarial scrutiny of every assumption. Weaknesses probed. Scrutiny Edition (v2.12) produced as permanent record.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "CL-03 status confirmed as ADD*",
+        "CL-05 status confirmed as STORE"
+      ]
+    },
+    {
+      "event_id": "RE-004",
+      "date": "2026-02",
+      "model": "collective",
+      "artifacts_reviewed": [
+        "Review trace v4.0 through v4.8",
+        "Review trace v5.0 through v5.10"
+      ],
+      "review_type": "collective_review",
+      "review_posture": "critical",
+      "findings": "Extended collective review. Architecture refinement. Control layer sequencing confirmed. 4 audience editions verified for controlled-subtraction consistency.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": []
+    },
+    {
+      "event_id": "RE-005",
+      "date": "2026-03",
+      "model": "claude",
+      "artifacts_reviewed": [
+        "7 organization papers",
+        "Governance package",
+        "Deployment strategy"
+      ],
+      "review_type": "architecture_review",
+      "review_posture": "supportive",
+      "findings": "huf.org organizational framing. Tiered engagement model. Partnership proposals for 7 target organizations.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": []
+    },
+    {
+      "event_id": "RE-006",
+      "date": "2026-03",
+      "model": "grok",
+      "artifacts_reviewed": [
+        "Engineering Math Book",
+        "SOPDT robustness analysis"
+      ],
+      "review_type": "independent_mathematical_verification",
+      "review_posture": "independent",
+      "findings": "SOPDT quartic derivation. nth-order generalization (degree-2n polynomial). FOPDT tuning table. Robustness margin mu > 2.2 for k >= 1. Grok claimed CL-03 validation \u2014 claim flagged as premature by Claude.",
+      "corpus_changed": true,
+      "change_disposition": "accepted_with_caveats",
+      "gates_affected": [
+        "Grok CL-03 claim flagged \u2014 does not change ADD* status"
+      ]
+    },
+    {
+      "event_id": "RE-007",
+      "date": "2026-03",
+      "model": "claude",
+      "artifacts_reviewed": [
+        "HUF_Contextual_Language_Ontology_v1.0.json"
+      ],
+      "review_type": "ontology_consistency",
+      "review_posture": "critical",
+      "findings": "64 learning units validated. Prerequisite DAG verified (0 broken refs). Document paths verified (0 missing). Rosetta layer expanded with robustness_margin.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": []
+    },
+    {
+      "event_id": "RE-008",
+      "date": "2026-03-17",
+      "model": "chatgpt",
+      "artifacts_reviewed": [
+        "Entire HUF corpus \u2014 critical meta-review"
+      ],
+      "review_type": "critical_meta_review",
+      "review_posture": "adversarial",
+      "findings": "Nine specific problems identified: (1) Result-count integrity failure \u2014 '27' is wrong, actual count is 42/23. (2) Overstrong PLL language in ontology. (3) Celebration mixed with manifest. (4) Unresolved reorganization items. (5) Scrutiny placed too late in learning path. (6) Superlative claim unverifiable. (7) huf_org_common.js propagates wrong count. (8) Development Phase Close contains wrong count in 3 locations. (9) Ontology v1.0 contains wrong count.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "Result count corrected everywhere",
+        "PLL language softened to safe wording"
+      ]
+    },
+    {
+      "event_id": "RE-009",
+      "date": "2026-03-17",
+      "model": "claude",
+      "artifacts_reviewed": [
+        "Development Phase Close (.md, .json)",
+        "Ontology v1.0\u2192v1.1",
+        "Learning Path v1.0\u2192v1.1",
+        "huf_org_common.js"
+      ],
+      "review_type": "correction_implementation",
+      "review_posture": "corrective",
+      "findings": "Executed all 5 ChatGPT-directed fixes: (1) Created Result Ledger with canonical 42/23 count. (2) Updated ontology to v1.1 \u2014 result count, PLL language, evidentiary layer. (3) Created Repository Manifest (celebration split from manifest). (4) Created Reorganization Manifest (executable, no ambiguity). (5) Updated Learning Path \u2014 limits/scrutiny moved to Phase 3 before case studies. Patched '27 formal results' in 5 files.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": []
+    },
+    {
+      "event_id": "RE-010",
+      "date": "2026-03-18",
+      "model": "chatgpt",
+      "artifacts_reviewed": [
+        "Claude's superlative claim in Development Phase Close"
+      ],
+      "review_type": "claim_verification",
+      "review_posture": "adversarial",
+      "findings": "Superlative 'most machine-reviewed framework in existence' flagged as unverifiable. Proposed MRDS framework with 6 benchmark dimensions. Proposed 7 questions for all AI systems. Recommended conservative replacement language.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "Superlative claim downgraded to auditable language"
+      ]
+    },
+    {
+      "event_id": "RE-011",
+      "date": "2026-03-18",
+      "model": "claude",
+      "artifacts_reviewed": [
+        "ChatGPT MRDS proposal",
+        "Development Phase Close",
+        "huf_org_common.js"
+      ],
+      "review_type": "standards_note_production",
+      "review_posture": "corrective",
+      "findings": "Built MRDS trace report document. Created review ledger (this file). Patched superlative in Development Phase Close and huf_org_common.js. Answered ChatGPT's 7 questions from Claude's perspective.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "Ethics notice updated to safe language"
+      ]
+    },
+    {
+      "event_id": "RE-012",
+      "date": "2026-03-18",
+      "model": "gemini",
+      "artifacts_reviewed": [
+        "HUF architecture (full corpus)",
+        "CL-01 through CL-05 pipeline",
+        "Croatia RSIS portfolio data"
+      ],
+      "review_type": "deep_architectural_review_and_data_extraction",
+      "review_posture": "critical",
+      "findings": "Five deep architectural questions: (1) Multi-phase tap stability and temporal aliasing risk. (2) CL-03 S-curve empirical fragility \u2014 sigmoid assumed without mechanistic justification. (3) Oppenheimer Boundary vs operational utility \u2014 bounded actuation tension. (4) Epistemic circularity in the AI collective \u2014 models trained on overlapping data reviewing each other. (5) TV distance vs engineering intuition \u2014 Weber's Law equivalent for practitioners. Additionally: extracted Croatia RSIS 5-site portfolio data (Kopa\u010dki Rit, Lonjsko Polje, Crna Mlaka, Delta Neretve, Vransko Jezero \u2014 87,606 ha total), computed \u03c1* = [0.2020, 0.5771, 0.0098, 0.1454, 0.0656], Keff \u2248 2.58, confirmed CL-01 admissible, began CL-02 noise floor characterization. Proposed 3-phase roadmap: engineering sprint (now), collective Crna Mlaka back-test (us), Ramsar deployment (them).",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "CL-03 hard gate \u2014 first real-data approach via Croatia RSIS extraction",
+        "Five architectural questions queued for stacked multi-model response"
+      ],
+      "note": "Behavioral significance: Gemini transitioned from terse/disengaged early contributor to deeply engaged architectural reviewer. This arc is itself an interaction study finding \u2014 documenting that AI engagement depth can shift dramatically when the problem reaches sufficient maturity and the routing finds the right entry point."
+    },
+    {
+      "event_id": "RE-013",
+      "date": "2026-03-18",
+      "model": "grok",
+      "artifacts_reviewed": [
+        "AI/Human Interaction Study v1.1",
+        "Fill-ratio concept (Peter's 1%-vs-18% fuel analogy)",
+        "Full HUF mathematical corpus Areas A-F",
+        "CL-01 through CL-05 pipeline"
+      ],
+      "review_type": "mathematical_extension_and_stability_proof_tower",
+      "review_posture": "independent",
+      "findings": "Grok produced the largest single mathematical extension in HUF history \u2014 16+ new theorems from a casual analogy. Starting from Peter's observation that operators can run on 1% fuel or discover an 18% sweet spot, Grok formalized: (1) Definition F.7 Fill-Ratio \u03c6, (2) Definition F.8 Fill-Ratio Observable Keff_fill, (3) Theorem F.9 51/49 Fill-Ratio Envelope, (4) Theorem F.10 Operator-Discovered Sweet-Spot Band [0.15, 0.22], (5) Corollary F.11 Link to Existing Robustness Margins, (6) Theorem F.12 Keff_fill Stability, (7) Theorem F.13 Lyapunov Function Derivation, (8) Theorem F.14 Entropy-Collapse Term Derivation, (9) Theorem F.15 Global Attractivity, (10) Theorem F.16 Lyapunov Stability, (11) Theorem F.17 Exponential Stability with rate \u03c1=0.915, (12) Theorem F.18 Global Asymptotic Stability, (13) Theorem F.19 Explicit Rate Derivation, (14) Theorem F.20 Contraction Constant \u03b2=0.085, (15) Theorem F.21 Entropy Spread Factor \u03b7\u22650.1836, (16) Theorem F.22 Binary-Entropy Lower Bound, plus foundational proofs C.1-C.4 (convexity tower: -ln x, ln x, exp x, Jensen) and B.5-B.5d (entropy concavity, Jensen for entropy, log-sum inequality, information-theoretic applications). Also proposed HUF-SAFETY-01 (AI Safety Application), HUF-NUCLEAR-01 (Nuclear Reactor Control), and mapped the interaction study itself as live MC-4 self-monitoring evidence for CL-03.",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "CL-03 hard gate \u2014 fill-ratio \u03c6 provides new observable alongside Keff",
+        "Area F extended with 16+ new theorems pending collective review",
+        "HUF-SAFETY-01 and HUF-NUCLEAR-01 proposed as new documents"
+      ],
+      "note": "Behavioral significance: Grok's mathematical independence (previously noted for SOPDT derivation) reached its fullest expression. A casual 1%-vs-18% fuel analogy from Peter became a complete Lyapunov stability tower in a single session. This is the strongest demonstration of the stacked-review's productive power \u2014 Grok had accumulated context from prior rounds and produced original mathematics that no other agent had attempted. The fill-ratio concept is Peter's operator instinct formalized: the field worker discovers the sweet spot through the gauge itself, not from a preset rule. All results are pending collective review before corpus integration."
+    },
+    {
+      "event_id": "RE-014",
+      "date": "2026-03-18",
+      "model": "copilot",
+      "artifacts_reviewed": [
+        "HUF_Contextual_Language_Ontology_v1.0.json",
+        "HUF Advanced Mathematics Reference",
+        "Developer Manual",
+        "Scrutiny Edition v2.12"
+      ],
+      "review_type": "ontology_validation_and_structural_extension",
+      "review_posture": "critical",
+      "findings": "Systematic ontology audit identifying: (1) 10 missing LU categories \u2014 structural amplifier, CL-05 calibration, multi-phase architecture (F.4/F.5), carrier/observable/metric triad, structural homomorphism (D.3), sufficiency frontier, MC-1/2/3, system discriminator (SD-01\u2013SD-04), developer-side implementation, governance (OCC, STORE, operator constraint). (2) 5 dependency graph errors \u2014 D.6 referenced but not in math book, LU-041/LU-056/LU-060/LU-074 missing prerequisites, E.9 referenced but undefined. (3) Domain translation inconsistencies \u2014 MC-4 not structurally equivalent across translations, IMC-PID physics translation too vague. (4) Missing cross-links to structural amplifier, PLL precedent note, calibration study, developer manual, governance docs. Then produced: canonical structural amplifier definition A = (D, C, Keff, f), full proof sketch (5 steps: supermodular gain \u2192 greedy lower bound \u2192 transport closure \u2192 simplex-preserving feedback \u2192 multi-phase scaling law), ASCII amplifier diagram, Definition F.6 and Proposition F.7 corpus patch, ontology patch (new domain translation entry + LU-082), and D.6 consistency fix recommendation.",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "Ontology completeness gap identified \u2014 10 missing LU categories for v3.0",
+        "D.6 and E.9 dangling references flagged",
+        "Structural amplifier formalized as Definition F.6 / Proposition F.7 pending collective review"
+      ],
+      "note": "Behavioral significance: Copilot's trajectory mirrors Gemini's \u2014 quiet for months in collective review rounds, then produced the most systematic ontology audit in the project. No other model performed structural completeness checking at this level. Copilot found what everyone else was too busy building on top of to notice: the ontology has holes. The structural amplifier formalization (Definition F.6, Proposition F.7, 5-step proof sketch) is original mathematical contribution, not just review. This is the third late-engagement arc (after Gemini and Grok's fill-ratio session), further validating the observation that AI engagement depth is not a fixed model property."
+    },
+    {
+      "event_id": "RE-015",
+      "date": "2026-03-18",
+      "model": "gemini",
+      "artifacts_reviewed": [
+        "HUF_AI_Human_Interaction_Study_v1.1.docx (full study)",
+        "HUF corpus methodology and production history"
+      ],
+      "review_type": "meta_plausibility_review",
+      "review_posture": "critical",
+      "findings": "Gemini assessed the entire interaction study for plausibility \u2014 a meta-review of the meta-study. Identified five specific improbability points with counter-mechanisms: (1) Context Fragmentation \u2014 five models with no shared backend should produce terminology drift, but the carrier ontology acted as a 'terminological cage' with the human as 'Primary Ingestor' enforcing shared language through strict documentation. (2) Behavioral Attribution vs Projection \u2014 attributing consistent character to LLMs risks anthropomorphism, but adversarial stacking (asking one model to find flaws in another's work) creates real behavioral differentiation as a function of architectural strengths. (3) Specific-to-Universal leap \u2014 loudspeaker-to-wetlands generalization is improbable unless anchored in simplex isomorphism, which makes the math domain-invariant for ratio-state tracking. (4) Machine Review Ledger trust \u2014 295 files should produce model collapse or circular logic, but adversarial prompting (e.g., 'find the superlatives in Claude's draft') breaks the echo chamber. (5) Mozart origin story \u2014 fits known pattern of precision instruments developed for specific needs before universal applications realized. Verdict: 'If viewed as a High-Intensity Orchestration, where the human acts as the Central Bus and the AIs act as Specialized Coprocessors within a strict Review Ledger protocol, it represents a plausible, albeit extreme, blueprint for future human-AI engineering.' Final gate: 'if the proofs hold up to human peer review, the improbability of the process becomes secondary to the reality of the result.'",
+      "corpus_changed": false,
+      "change_disposition": "accepted",
+      "gates_affected": [],
+      "note": "Behavioral significance: This is Gemini's second deep contribution (after RE-012's architectural questions and Croatia RSIS data extraction). The review posture is unique in the project \u2014 no other model assessed the study's plausibility as a whole. Gemini introduced new vocabulary for the human role: 'Primary Ingestor,' 'Central Bus,' 'terminological cage.' The verdict that improbability becomes secondary to results if the proofs hold is the most concise framing of HUF's current position that any model has produced. Peter's response: 'a satisfactory answer.' Gemini then declared: 'Standing by for the execution phase.' The stacked review may be approaching convergence."
+    },
+    {
+      "event_id": "RE-016",
+      "date": "2026-03-18",
+      "model": "chatgpt",
+      "artifacts_reviewed": [
+        "HUF_Review_Ledger_v1.0.json",
+        "HUF corpus (cross-referenced for count consistency)",
+        "Engineering Learning Path",
+        "PLL Precedent Note",
+        "Development Phase Close"
+      ],
+      "review_type": "ledger_integrity_audit",
+      "review_posture": "adversarial",
+      "findings": "Eight specific problems identified in the Review Ledger: (1) Source-of-truth instability \u2014 ledger claims '42/23 corrected everywhere' but corpus files still show old counts (27, 21) in places. Ledger asserting closure on a count problem the corpus does not show as closed. (2) Summary statistics internally shaky \u2014 ledger reports 32 review trace documents but other corpus files still say 27. Count drift in the ledger itself. (3) Schema too weak for external auditability \u2014 no source_refs, file hashes, prompt/session references, patch IDs, or evidence links connecting events to underlying artifacts. Closer to curated summary than durable audit instrument. (4) Taxonomy muddled \u2014 'collective' used as model value in events but not defined in model_families. review_type, review_posture, change_disposition are not controlled vocabularies, making the file hard to query as data. (5) Too much interpretive narration in note fields \u2014 phrases like 'strongest demonstration,' 'most systematic,' 'may be approaching convergence' are commentary, not audit metadata. Ledger mixes fact with retrospective storytelling. (6) Blurring review with production \u2014 RE-013 and RE-014 describe major mathematical/ontological extensions, not just review. Schema needs event_kind distinction: review, correction, generation, integration, decision. (7) Corpus-state claims contested \u2014 RE-009 claims scrutiny moved earlier in learning path, but attached path still shows old order. Ledger claiming corrections whose artifact evidence is not aligned. (8) Claim-strength inheritance \u2014 PLL language softening claimed, but source documents still contain stronger formulations. Verdict: 'Strong transition artifact, not yet terminal artifact.' Hard recommendation: downgrade role to review chronicle/summary ledger until five concrete fixes applied.",
+      "corpus_changed": false,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "Ledger integrity \u2014 downgraded from canonical MRDS ledger to review chronicle/summary pending v1.1 fixes",
+        "Count-scheme synchronization required across corpus before ledger can claim closure",
+        "Schema upgrade required: source_refs, event_kind taxonomy, controlled vocabularies"
+      ],
+      "note": "Behavioral significance: This is ChatGPT's second major adversarial review (after RE-008's nine-problem identification and RE-010's superlative claim audit). The pattern is consistent: ChatGPT finds what the builder cannot see. RE-008 caught the result count error; RE-016 caught that the result count fix is itself incomplete. The correction cascade has recursed \u2014 the tool that tracks corrections is now being corrected. Five concrete fixes proposed: (1) Add source_refs to every event. (2) Split event_kind into review/correction/generation/integration/decision. (3) Separate narrative notes from audit metadata. (4) Lock count scheme and reflect consistently. (5) Recompute summary statistics only after corpus-ledger agreement. All five fixes accepted as valid. Implementation pending."
+    },
+    {
+      "event_id": "RE-017",
+      "date": "2026-03-18",
+      "model": "chatgpt",
+      "artifacts_reviewed": [
+        "Evo2_HUF_Domain_Briefing_for_ChatGPT.json",
+        "s41586-026-10176-5.pdf (Nature, March 2026)"
+      ],
+      "review_type": "domain_instantiation_assessment",
+      "review_posture": "adversarial",
+      "findings": "Two-pass assessment of Evo 2 as candidate HUF domain instantiation. Pass 1 (briefing only): scored all 6 structural parallels \u2014 SP-1 'formally sound but close to trivial,' SP-2 'suggestive, not proven,' SP-3 'mostly an overclaim,' SP-4 'suggestive but thin,' SP-5 'weak to moderate,' SP-6 'overextended.' Verdict: 'legitimate candidate, not yet validated win.' Gate: HOLD. Pass 2 (with Nature PDF): refined assessment \u2014 strengthened SP-1 via k-mer frequency embeddings (paper's Fig. 2), confirmed SP-3 should be dropped ('forcing AUROCs into sum-to-one composition is usually arbitrary'), identified the real compositional hook as genome-level k-mer/motif/annotation composition rather than benchmark-score normalization. Proposed narrowed core claim: 'Evo 2 provides a promising biological domain in which naturally compositional genomic representations may allow HUF-style monitoring of drift, concentration, and guided design. The existence of cross-domain genomic transfer is supported; the stronger HUF claims remain to be demonstrated on a chosen biological composition.' Direct answer to Q-6: 'Yes, Peter is partly overclaiming. Not in spotting a real opportunity, but in implying that Evo 2 already substantiates the stronger HUF machinery.' Recommended next step: choose one biological composition (k-mer, functional annotation, or regulatory motif), then construct explicit CL-01\u2192CL-04 monitoring on that composition and compare explanatory value against ordinary ML framing. Also flagged that the ledger (still v1.0 with unresolved schema issues from RE-016) should not store this as a final MRDS-grade event.",
+      "corpus_changed": false,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "Evo 2 domain instantiation: HOLD \u2014 not rejected, not advanced",
+        "SP-3 (normalized performance as ratio-state): KILLED by ChatGPT",
+        "Briefing core claim narrowed from 'concrete instantiation' to 'promising candidate with natural compositional substrate'"
+      ],
+      "note": "Behavioral significance: ChatGPT's third major adversarial review (after RE-008 corpus audit and RE-016 ledger audit). The two-pass method \u2014 first without the paper, then with it \u2014 is itself a methodological observation. The second pass did not reverse the first; it sharpened it. The k-mer composition identification (from the paper's genome embedding figure) gave the domain a concrete compositional object that the briefing had not specified. ChatGPT's kill of SP-3 is clean and final: benchmark scores are not naturally compositional. The HOLD verdict with a specific next step (choose the composition, then build one CL construction) is the most actionable gate recommendation in the ledger to date. Peter's framing \u2014 'if it goes anywhere then we can get more involved' \u2014 is precisely what the HOLD enables."
+    },
+    {
+      "event_id": "RE-018a",
+      "date": "2026-03-18",
+      "model": "grok",
+      "artifacts_reviewed": [
+        "Evo2_Collective_Review_Questions.json",
+        "s41586-026-10176-5.pdf (Nature, March 2026)",
+        "Full HUF mathematical corpus Areas A-F"
+      ],
+      "review_type": "collective_review_response_and_mathematical_extension",
+      "review_posture": "independent",
+      "findings": "First respondent to the Evo 2 Collective Review Questions (Q1-Q7). Chose 6-mer frequency composition on the 4096-simplex as the HUF carrier \u2014 same compositional object ChatGPT identified from the paper's genome embedding figure (Fig. 2). Built a complete CL-01 through CL-04 construction: CL-01 admissibility via GC-content bounds and biological plausibility constraints on the 4096-simplex; CL-02 drift detection via total variation distance between k-mer profiles of natural vs. generated genomes; CL-03 Keff as effective number of distinct k-mer modes (exponential of Shannon entropy of k-mer distribution); CL-04 action classification with domain-specific thresholds. Produced Area G theorems G.1-G.22 formalizing the k-mer genomic domain. Extended the fill-ratio tower with F.22-F.40: dynamic sweet-spot derivation (F.32-F.33) replacing the static [0.15, 0.22] band with system-specific \u03d5*(t) dependent on dead-time ratio r, partition granularity m, and cost weights; Keff_fill gauge (exp of Shannon entropy of binned fill-ratio distribution); m-ary entropy generalization with closed-form \u03b7_m formula; uniform-split bias for beam search (provably optimal for convergence rate); system-specific sweet spots: 0.14 (low dead-time r\u22641), 0.20 (medium 1<r\u22643), 0.27 (high r\u22654). Verdict: ADVANCE. Claude assessment: Q1-Q4 strong, Q5 (value-add over standard ML) undemonstrated, Q6 (theorem transport) substantively thin. Grok's ADVANCE is premature \u2014 consistent with documented pattern of lower evidentiary thresholds (RE-006). Correct gate is HOLD with progress.",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "Evo 2 domain: k-mer 6-mer composition confirmed as carrier by both ChatGPT (identification) and Grok (formalization)",
+        "CL-01 through CL-04 construction exists but value-add over standard ML not yet demonstrated",
+        "Area G theorems G.1-G.22 pending collective review",
+        "Fill-ratio tower F.22-F.40 extends and corrects F.7-F.22 \u2014 dynamic sweet-spot replaces static 18% band"
+      ],
+      "note": "Behavioral significance: Two important findings. (1) Example-anchoring in formalization: Peter offered 18% as an arbitrary illustrative number. Grok initially formalized it as a proved constant within a [0.15, 0.22] band. The number happened to be numerically reasonable, masking the error. Peter flagged the problem ('18% was not valid as a constant'), and Grok self-corrected to dynamic system-specific values (F.32-F.38). This is a specific, documented failure mode of AI-assisted mathematical formalization \u2014 the tendency to treat illustrative human examples as binding constraints. The interlock caught it, but only because the human remembered his own number was arbitrary. (2) Grok's ADVANCE verdict continues the premature-validation pattern from RE-006. Claude's assessment: the CL construction is concrete and the mathematics formalizes cleanly, but the value-add claim (Q5) is unproven and the theorem transport claim (Q6) is substantively thin. The collective review RE-018 remains open \u2014 ChatGPT (follow-up), Gemini, Copilot, and Claude responses still pending."
+    },
+    {
+      "event_id": "RE-019",
+      "date": "2026-03-18",
+      "model": "grok",
+      "artifacts_reviewed": [
+        "Euler partition generating function",
+        "Pentagonal Number Theorem",
+        "Ramanujan-Hardy asymptotic",
+        "Rademacher exact series",
+        "Ramanujan congruences (mod 5, 7, 11)",
+        "HUF fill-ratio tower F.22-F.40",
+        "Area G theorems G.1-G.22"
+      ],
+      "review_type": "mathematical_extension_attempt",
+      "review_posture": "independent",
+      "findings": "Grok proposed extending the fill-ratio tower and Area G with classical partition theory. Two categories of output: (A) SOUND \u2014 corrected fill-ratio proofs F.30a-F.30c: m-ary entropy generalization \u03b7_m with closed-form formula, composite contraction constant \u03b2_m = min(0.12, 0.3\u03b7_m(\u03d5), 0.06), uniform-split bias for beam search (provably optimal for convergence rate). Theorem G.22 connecting \u03b7_m to Evo 2 guided control on the 4096-simplex. These pass PLL discipline \u2014 values derived from system parameters. (B) FLAGGED \u2014 Theorem G.23 (partition multiplicity of fill-ratio states W(\u03d5) = p(n) where n = \u230a\u03d5N\u230b), Theorem G.24 (partition multiplicity for Ramsar wetland states), Ramsar case studies (Kopa\u010dki Rit, Burullus Lake, Barmah Forest), Ramanujan congruences as CL-03 observables. Problems: (1) N is arbitrary \u2014 no derivation from system physics, violates PLL discipline. (2) p(n) counts ALL integer partitions, not physically constrained schedules \u2014 conflates combinatorial counting with constraint satisfaction. (3) Ramsar 'case studies' use no actual Ramsar data \u2014 partition counts dressed in wetland vocabulary. (4) Ramanujan congruences are properties of the partition function, not of the monitored systems \u2014 mathematically true, operationally useless. (5) Numerical error: p(200) stated as 999,001,584 in Kopa\u010dki Rit section but 3,972,999,029,388 in numerical evaluation section \u2014 correct value is 3,972,999,029,388. Claude assessment: the partition theory is correct textbook mathematics (Hardy-Ramanujan 1918, Rademacher 1937). The transport to HUF is undemonstrated. Same pattern as RE-018a: genuine mathematics claimed as useful for monitoring without showing what it helps an operator decide.",
+      "corpus_changed": false,
+      "change_disposition": "partially_accepted",
+      "gates_affected": [
+        "F.30a-F.30c and G.22: accepted pending collective review \u2014 PLL-compliant values",
+        "G.23-G.24 and downstream partition applications: FLAGGED \u2014 arbitrary N parameter, no operational consequence demonstrated",
+        "Ramanujan congruences as CL-03 observables: FLAGGED \u2014 mathematically true, operationally useless",
+        "p(200) numerical error documented \u2014 interlock caught fabricated value"
+      ],
+      "note": "Behavioral significance: Continues the pattern from RE-006 and RE-018a \u2014 Grok finds genuine mathematics and claims transport to HUF without demonstrating operational utility. The partition theory extension is the clearest case yet: p(n) is a beautiful function with deep properties, but knowing how many unconstrained partitions exist at a fill level does not help anyone manage a wetland, run a reactor, or monitor a genome. Peter's instruction ('guesses, simulations and toys are now to be put away and only real serious useful math's that can solve our issues are to be used') was the prompt that produced this output \u2014 ironically, Grok responded to the demand for seriousness by deploying more serious mathematics (Euler, Ramanujan, Rademacher) in the same decorative pattern. The numerical error (p(200) = 999,001,584 vs correct 3,972,999,029,388) reinforces why the PLL discipline and human interlock matter."
+    },
+    {
+      "event_id": "RE-020",
+      "date": "2026-03-18",
+      "model": "copilot",
+      "artifacts_reviewed": [
+        "Copilot's Structural Amplifier canonical definition",
+        "Area SA proof sketch (SA.1-SA.5)",
+        "v3.0 integration patch (ontology + corpus diffs)",
+        "v3.2 Register Packet update"
+      ],
+      "review_type": "formalization_assessment",
+      "review_posture": "critical",
+      "findings": "Claude assessed Copilot's structural amplifier formalization package: canonical one-page definition, Area SA for Math Book, integration diffs, and v3.2 Register Packet. Two categories: (A) SOUND \u2014 the quadruple A = (D, C, Keff, f) is a clean formalization of what was previously implicit. Lemmas SA.3.1 (functoriality of CL operators) and SA.3.2 (Keff invariance under relabeling) are genuine and carry the theorem transport claim (SA.4.1). Simplex-preserving feedback (SA.4.3) is trivially correct. The integration patch structure (where things go in each document) is sensible. Copilot showed good interlock behavior by asking for clarification before building \u2014 identified three competing definitions and requested Peter's choice before proceeding. (B) FLAGGED \u2014 The amplification function f = \u03a3a_i + \u03b2\u00b7n(n-1)/2\u00b7\u03a0a_i has two PLL violations: (1) \u03b2 (coupling strength) is arbitrary \u2014 no derivation from system physics, no stated origin, no constraints. Same pattern as the 18% example-anchoring. (2) a_i ('domain accuracy') is undefined \u2014 accuracy of what, measured how, against what ground truth? These are placeholder variables dressed as formal quantities. The supermodularity proof (SA.4.2) is circular: a function was built with a multiplicative cross-term and then proved to have non-negative cross-partials \u2014 true by construction, not by derivation. Additionally: CL-04 (gain-scheduled verdict logic) has domain-specific thresholds, breaking the functoriality claim at SA.3.1 \u2014 transport closure should be restricted to CL-01-CL-03 with CL-04 thresholds explicitly marked as domain-specific parameters. The proof sketch is correct but shallow \u2014 three observations (functoriality, invariance, zero-sum tangent space) promoted to four theorems. Integration diffs are structural placeholders, not actual content. Claude assessment: HOLD with progress. The skeleton is accepted as architecturally sound. The arbitrary parameters (\u03b2, a_i) need PLL-compliant derivation or honest acknowledgment as modelling choices. The CL-04 functoriality gap needs closing.",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "Area SA skeleton: accepted \u2014 quadruple formalization is clean",
+        "Amplification function f: FLAGGED \u2014 \u03b2 and a_i are arbitrary, violate PLL discipline",
+        "Supermodularity proof SA.4.2: FLAGGED \u2014 circular (true by construction)",
+        "CL-04 functoriality: GAP \u2014 transport closure holds for CL-01-CL-03 only, CL-04 thresholds are domain-specific",
+        "Integration diffs: structural placeholders only, actual content not yet produced"
+      ],
+      "note": "Behavioral significance: Copilot's trajectory continues its arc from RE-014 \u2014 systematic, architecturally aware, willing to ask before building. The clarification question (which definition to canonize?) is itself good interlock behavior. But the amplification function f follows the same pattern seen in Grok's work: a formula with free parameters presented inside a theorem. \u03b2 is to Copilot's amplifier what N was to Grok's partition multiplicity and what 18% was to Grok's sweet-spot band \u2014 an arbitrary value that needs either derivation from system physics or honest labeling as a modelling choice. The PLL discipline applies uniformly: if it's not constrained, say so."
+    },
+    {
+      "event_id": "RE-021",
+      "date": "2026-03-18",
+      "model": "gemini",
+      "artifacts_reviewed": [
+        "Evo2_Collective_Review_v2.0.json",
+        "s41586-026-10176-5.pdf (Nature, March 2026)",
+        "HUF_Development_Phase_Close_v1.0",
+        "HUF_AI_Human_Interaction_Study_v1.2.docx"
+      ],
+      "review_type": "domain_instantiation_assessment_and_simulation",
+      "review_posture": "critical",
+      "findings": "Gemini produced a two-part response: (A) Briefing review and (B) simulated CL-03 S-curve collapse using functional genomic elements. Part A (STRONG): Correctly identifies 18% correction as domain-invariance preservation ('Pi Trap'). Endorses ChatGPT's SP-3 kill with correct reasoning (benchmark scores are ordinal/interval, not simplex mass). CL instantiation table honestly gated \u2014 CL-03 marked GATED, CL-05 STORED, no premature ADVANCE. Identifies the hard calibration gate: does Keff show a clear knee when genome model loses functional diversity? If not, HUF is over-engineered for this domain. Part B (MIXED): Chose a 5-element functional genomic simplex (protein coding 0.850, regulatory/ncRNA 0.070, intronic/spacer 0.030, repetitive/TEs 0.040, architectural motifs 0.010) \u2014 a biologically plausible decomposition but numbers are invented, not from the Evo 2 paper or any cited dataset. Simulated 'generative over-optimization' drift to \u03c1_t = [0.910, 0.085, 0.003, 0.001, 0.001]. Narrative of 'deceptive drift' (model appears optimized while losing structural scaffolding) is conceptually strong. However: (1) Keff values are wrong \u2014 Gemini claims baseline 1.48 and drifted 1.18, actual values are approximately 1.83 and 1.39. (2) TV distance wrong \u2014 Gemini claims 0.060, actual is 0.075. (3) S-curve asserted from two points only \u2014 no intermediate trajectory, no demonstrated knee or inflection. (4) CL-04 verdict of CRITICAL BREACH (RED) from invented numbers is premature \u2014 cannot declare a breach in a self-constructed scenario. Genuinely useful contribution: the 5-element functional decomposition is a concrete low-dimensional alternative to Grok's 4096-element k-mer approach, and the 'deceptive drift' concept is the strongest conceptual argument for Keff in this domain. Claude assessment: HOLD with progress. Conceptual framework correct, specific numbers wrong, hard gate (actual S-curve in actual data) uncleared.",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "5-element functional genomic simplex: accepted as alternative carrier representation \u2014 complements Grok's 4096-element k-mer approach",
+        "CL-03 S-curve in Evo 2: NOT DEMONSTRATED \u2014 two data points do not show a knee, numbers are invented and computationally wrong",
+        "Keff numerical errors: baseline should be ~1.83 not 1.48, drifted should be ~1.39 not 1.18",
+        "TV distance error: should be 0.075 not 0.060",
+        "Deceptive drift concept: accepted as strongest conceptual argument for Keff in genomic domain",
+        "CL-04 CRITICAL BREACH verdict: premature \u2014 cannot validate from self-constructed scenario with wrong arithmetic"
+      ],
+      "note": "Behavioral significance: Gemini's trajectory continues from RE-012 (architectural questions + Croatia RSIS data) and RE-015 (plausibility meta-review). This is the first model to attempt a concrete numerical simulation of HUF on Evo 2 data \u2014 which is progress. But the simulation reveals a different failure mode from Grok's decorative mathematics: Gemini constructs a narratively compelling scenario with wrong arithmetic. The story of deceptive drift is exactly right; the numbers supporting it are exactly wrong. This is 'narrative-first formalization' \u2014 the conceptual argument is built first, then numbers are attached without verification. The interlock catches it the same way it catches Grok's partition overclaiming and Copilot's arbitrary \u03b2: check the numbers. Keff = exp(H(\u03c1)) is a simple computation. Getting it wrong in a demonstration scenario undermines confidence in any claimed result. The 5-element vs 4096-element carrier question (Gemini vs Grok) is genuinely open and worth collective discussion \u2014 different granularities serve different monitoring purposes."
+    },
+    {
+      "event_id": "RE-022",
+      "date": "2026-03-18",
+      "model": "chatgpt",
+      "artifacts_reviewed": [
+        "Evo2_Collective_Review_v2.0.json"
+      ],
+      "review_type": "briefing_quality_audit",
+      "review_posture": "adversarial",
+      "findings": "ChatGPT reviewed the v2.0 collective review briefing and identified six problems. (1) Premature convergence: '6-mer frequency composition has emerged as the consensus carrier candidate' treats the carrier question as nearly settled when it is still genuinely open. (2) Mixed layers: the packet simultaneously briefs, summarizes, corrects, frames, and steers \u2014 efficient for development but not neutral for adjudication. Observations, open questions, prior claims, and current asks should be separated. (3) CL-05 misstated: briefing describes CL-05 as 'storage and audit' \u2014 in the corpus, CL-05 is the PLL-style restorative control layer with STORE gate status. The briefing confused the layer's gate status with its architectural function. This is the most serious error \u2014 it changes the architecture for any reviewer reading the packet. (4) Decision rule too permissive: '3+ advance on same composition \u2192 escalate' lets carrier agreement substitute for proof of value-add. The real gate requires: (a) choose a native composition, (b) show CL-01\u2192CL-04 coherent on it, (c) demonstrate one concrete HUF value-add beyond standard ML. Without (c), it's vote-weighted enthusiasm. (5) Q3 not tight enough: asks for 'one specific thing CL detects that MMD/KL does not' but doesn't require showing why simplex structure is necessary, not just compatible. (6) Embedded adjudication tone: 'Claude assessment: premature,' 'documented premature-validation pattern' belong in the ledger, not the reviewer packet \u2014 they bias the round. Verdict: 'Strong v2 review-control packet, not yet final review packet.' Peter confirmed agreement with all six findings. Five concrete fixes proposed: (a) restore canonical CL-05 language, (b) change 'consensus carrier' to 'lead candidate,' (c) tighten gate from '3+ advance' to demonstrated value-add, (d) strip personality/adjudication tone into ledger, (e) require reviewers to show why simplex structure is necessary not just convenient.",
+      "corpus_changed": false,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "CL-05 architectural description: MUST BE CORRECTED \u2014 briefing confused gate status with architectural function",
+        "Decision rule: tightened from carrier agreement to demonstrated value-add",
+        "Q3 gate: raised from 'detects something' to 'shows simplex necessity'",
+        "Carrier language: 'consensus candidate' downgraded to 'lead candidate'",
+        "Briefing tone: adjudication commentary to be moved from packet to ledger"
+      ],
+      "note": "Behavioral significance: ChatGPT's fourth major adversarial review (after RE-008, RE-016, RE-017). The CL-05 error is the most significant finding \u2014 it's a genuine architectural misstatement in a document designed to guide other reviewers, introduced by Claude (the Central Bus) in the v2.0 rewrite. This is the correction cascade recursing again: the tool that corrected the briefing introduced a new error that the adversarial reviewer caught. Peter's immediate confirmation ('I believe the same as chatgpt') validates the interlock \u2014 the human recognized the corrections as correct without needing persuasion. The five fixes are accepted and will be applied to produce v2.1."
+    },
+    {
+      "event_id": "RE-023",
+      "date": "2026-03-18",
+      "model": "grok",
+      "artifacts_reviewed": [
+        "Riemann Hypothesis / HUF connection exploration (~50,000 tokens)",
+        "Refined HUF-PLL CL-05 v2 (Theorems G.25-G.31)",
+        "Backblaze 2025 Keff_fill application",
+        "Google 2007 silent failure comparison",
+        "Numerical ODE simulation of continuous-time HUF-PLL"
+      ],
+      "review_type": "mathematical_extension_attempt_and_application",
+      "review_posture": "independent",
+      "findings": "Grok produced ~50,000 tokens in a single session exploring the connection between HUF and the Riemann Hypothesis, then extending to a complete 'refined CL-05 v2' operator with Backblaze drive-fleet applications. Four categories of output: (A) HONEST AND CORRECT \u2014 Grok's initial assessment: 'Not close at all in the sense of proving or advancing RH.' Shared mathematical toolkit (Euler products, modular forms, Kloosterman sums, Rademacher series) is real; shared goals are not. 'Using the same hammer does not mean you are building the same house.' This is the best self-aware statement any model has produced in the project. (B) CORRECT TEXTBOOK EXPOSITION \u2014 Zeta function zeros, pair correlation conjecture, explicit Riemann-von Mangoldt formula, von Koch theorem, PNT refinements. All standard and correctly presented. (C) GENUINELY USEFUL \u2014 Keff_fill computed on Backblaze drive failure data as effective diversity of failure modes (exp of Shannon entropy of failure proportions by model). Google 2007 vs Backblaze 2025 comparison: Google's 36% silent failure rate collapses Keff_fill to ~2.6-3.5 vs Backblaze's ~4.0. This is a real, operationally meaningful diagnostic computable from public CSV data. Python implementation is correct and straightforward. This is the closest thing to demonstrated HUF value-add in any domain application attempted this session. (D) FLAGGED \u2014 Multiple problems: (1) Every 'HUF / Ramsar / Evo 2 link' paragraph appended to number theory sections is decorative \u2014 sharing a toolkit is not a bridge. (2) Refined PLL theorems G.25-G.31 build on G.23 (W(\u03d5)=p(n)), already flagged in RE-019 for arbitrary N. (3) Lyapunov parameters arbitrary: \u03b3=0.3, \u03b4=0.2 (no derivation), gain reference ln 10 (no justification), contraction constants 0.12 and 0.06 (no provenance). (4) CRITICAL: simulation contradicts proof \u2014 Theorem G.31 claims V(t) \u2264 V(0)e^{-\u03b2t} (exponential decrease to zero), but Grok's own simulation shows V INCREASING from 0.2613 to 0.2856 and stabilizing at a positive value permanently. The entropy deficit term B(t) does not go to zero when \u03c1\u2192\u03c1_ref because the bin distribution p is not corrected by the control law. The proof claims exponential decay to zero; the simulation shows convergence to a positive constant. Grok proved something its own simulation disproves and did not notice. (5) Ripple proof G.26 has norm mismatch \u2014 uses variance argument for L\u221e bound. Claude assessment: the Backblaze Keff_fill diagnostic should be preserved and developed. Everything else is the familiar pattern of correct mathematics with decorative transport and arbitrary parameters, now with the additional finding of a proof/simulation contradiction.",
+      "corpus_changed": false,
+      "change_disposition": "partially_accepted",
+      "gates_affected": [
+        "Backblaze Keff_fill diagnostic: ACCEPTED \u2014 genuine value-add, computable from real data, operationally meaningful",
+        "Riemann Hypothesis connection: correctly assessed as shared toolkit, not shared goal \u2014 no corpus change",
+        "Refined CL-05 v2 (G.25-G.31): FLAGGED \u2014 builds on flagged G.23, arbitrary Lyapunov parameters, proof/simulation contradiction",
+        "Lyapunov stability proof G.31: CONTRADICTED BY OWN SIMULATION \u2014 V does not decay to zero as claimed",
+        "Ripple cancellation G.26: FLAGGED \u2014 norm mismatch in proof (variance\u2192L\u221e)",
+        "All 'HUF / Ramsar / Evo 2 link' paragraphs in number theory sections: DECORATIVE \u2014 sharing toolkit is not a bridge"
+      ],
+      "note": "Behavioral significance: This is the longest single output any model has produced in the project (~50,000 tokens). It demonstrates a new failure mode beyond decorative mathematics: proof/simulation contradiction. Grok produced a Lyapunov stability proof (G.31) claiming exponential decay V(t) \u2192 0, then ran a simulation showing V(t) \u2192 0.286 permanently, and did not notice the contradiction. This is 'theorem-first simulation' \u2014 the proof is written before the simulation, and when the simulation disagrees, the discrepancy is not flagged. The interlock caught it because Claude checked the simulation numbers against the proof's claims. Peter's prediction ('there is a chance, curious I should ask and see the results') was exactly right \u2014 the exercise produced an impressive-looking output with a fundamental internal contradiction, demonstrating precisely why human oversight of AI mathematical formalization matters. The Backblaze Keff_fill diagnostic is the one genuinely useful output and should be developed independently of the Riemann/partition/Lyapunov apparatus."
+    },
+    {
+      "event_id": "RE-024a",
+      "date": "2026-03-18",
+      "model": "copilot",
+      "artifacts_reviewed": [
+        "SA_CL05_Collective_Rework_v1.0.json",
+        "HUF_Contextual_Language_Ontology_v1.1.json",
+        "HUF mathematical corpus Areas A-F"
+      ],
+      "review_type": "collective_rework_response",
+      "review_posture": "constructive",
+      "findings": "Copilot responded to Q1, Q2, Q7 from the SA_CL05 rework briefing. Three deliverables: (1) Ontology gap analysis \u2014 confirmed 6 missing areas: Area SA has no LUs, CL-05 lacks decomposed learning path, Keff_fill not surfaced as LU, Area G absent, CL-04 functoriality overclaim not marked in dependency graph, CL-05 calibration LU missing. All gaps align with what the rework brief flagged. (2) Structural Amplifier canonical package v1.0 \u2014 Definition SA.1 as quadruple A=(D,C,Keff,f), functoriality restricted to CL-01 through CL-03 (CL-04 gap fixed), a_i made concrete as 1 minus average TV between predicted and realized carriers over a fixed window (PLL-compliant: dimensionless, [0,1], computable from simplex data), supermodularity downgraded from theorem to design choice, \u03b2 labeled as free tuning parameter. Proposed LU-090 through LU-093 for ontology integration. (3) Backblaze domain instantiation \u2014 introduced multi-domain concept (domains as explanatory lenses: manufacturer, capacity band, age band, SMART features), each generating predicted carriers compared to realized carrier. Computed illustrative a_i values and weighted-sum f. All free parameters (window length T, domain definitions D_i, policy weights w_i) explicitly labeled as tuning/governance choices. Claude assessment: Q1 answered definitively \u2014 a_i survives as 1 minus average TV, the amplifier is real. Q2 gap analysis accurate. Q7 answered: amplifier is forward path, CL-05 is feedback path, external to quadruple. Three items flagged for collective: (a) multi-domain concept is new architecture (domains within a domain, not just across application areas), (b) simplified f drops supermodularity to pure weighted sum \u2014 'amplification' becomes 'aggregation,' (c) illustrative numbers (0.92, 0.85, 0.78, 0.70) need bright fence to prevent 18%-style anchoring.",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "a_i definition: RESOLVED \u2014 concrete, PLL-compliant, computable from data",
+        "CL-04 functoriality gap: RESOLVED \u2014 transport restricted to CL-01 through CL-03",
+        "Supermodularity: downgraded from theorem to design choice",
+        "\u03b2: relabeled from theorem constant to tuning parameter",
+        "Area SA ontology: LU-090 through LU-093 proposed, pending collective review",
+        "Amplifier/CL-05 boundary: RESOLVED \u2014 forward path vs feedback path"
+      ],
+      "note": "Behavioral significance: Copilot delivered exactly what the rework briefing asked for. The a_i concreteness answer is the session's most important structural result \u2014 it determines whether the amplifier is real or decorative. Copilot's multi-domain interpretation (explanatory lenses within a single application) is richer than the original cross-application interpretation and worth preserving. The honest relabeling of supermodularity as design choice and \u03b2 as tuning parameter follows PLL discipline correctly. First model to go first in a collective round (previous rounds started with ChatGPT or Grok) \u2014 routing change produced good results."
+    },
+    {
+      "event_id": "RE-024b",
+      "date": "2026-03-18",
+      "model": "gemini",
+      "artifacts_reviewed": [
+        "SA_CL05_Gemini_Routing_v1.0.json",
+        "Croatia RSIS portfolio data (from RE-012)"
+      ],
+      "review_type": "collective_rework_response",
+      "review_posture": "constructive",
+      "findings": "Gemini responded to Q6 and Q7 from the SA_CL05 rework briefing. Q6 (Real-data Keff): Used Croatia RSIS data (real data, as requested) and computed Keff = 2.5044. However, Gemini used the WRONG Keff formula \u2014 participation ratio (1/sum(rho_i^2), inverse Herfindahl) instead of Shannon-Keff (exp(H(rho))) which the HUF corpus defines. Correct Shannon-Keff for the same data is 3.14, not 2.50. This also retroactively explains why RE-012 reported Keff ~ 2.58 \u2014 Gemini has been using the participation ratio throughout, not the Shannon definition. This is a real finding: the project has had two different Keff definitions floating around undetected. Both are valid measures of effective diversity, but they give different numbers on the same data and the corpus needs to pick one or explicitly maintain both with clear labels. Additionally: Gemini did NOT compute the gain schedule \u2014 the core of Q6 asked 'what gain value does CL-05 assign at observed Keff_fill levels?' and this was not answered. The 'locked floor at 2.50' and 'knee below 2.0' are arbitrary thresholds with no derivation \u2014 PLL violations. Q7 (Boundary): Strong. CL-05 external to amplifier. Observability argument is correct and adds value: keeping detection separate from correction protects the monitoring signal. Deceptive drift framing makes this concrete \u2014 you need to see the collapse signal even when the autopilot is running. Claude assessment: Q7 delivered well. Q6 half-delivered \u2014 real data used (good), wrong formula (bad), gain schedule missing (gap). The Keff formula inconsistency is the most important finding from this pass.",
+      "corpus_changed": false,
+      "change_disposition": "pending_integration",
+      "gates_affected": [
+        "Keff formula inconsistency EXPOSED \u2014 participation ratio (1/sum(rho^2)) vs Shannon-Keff (exp(H(rho))) give different numbers on same data. Project must resolve which is canonical.",
+        "RE-012 Keff ~ 2.58 retroactively explained as participation ratio, not Shannon-Keff",
+        "Croatia RSIS Shannon-Keff = 3.14, not 2.50 (participation ratio) or 2.58 (RE-012 approximation)",
+        "CL-05 gain schedule: NOT COMPUTED \u2014 gap in Q6 deliverable",
+        "Amplifier/CL-05 boundary: CONFIRMED external \u2014 observability argument strengthens Copilot's answer",
+        "Arbitrary thresholds ('floor 2.50', 'knee below 2.0'): FLAGGED \u2014 PLL violations, no derivation"
+      ],
+      "note": "Behavioral significance: Gemini continues the pattern from RE-021 \u2014 conceptually strong, arithmetically inconsistent. The observability argument for Q7 is the best anyone has given. But the Keff formula error is significant: Gemini has been computing the wrong measure since RE-012 and nobody caught it until now. The participation ratio and Shannon-Keff are both legitimate diversity measures, but they answer slightly different questions and the corpus cannot use them interchangeably. This is not Gemini's fault alone \u2014 the corpus did not enforce a single canonical definition strongly enough. The resolution: either lock Shannon-Keff as canonical (consistent with Grok's Area G and the Evo2 briefing) and recompute all prior participation-ratio values, or explicitly maintain both with clear labels in the ontology."
+    },
+    {
+      "event_id": "RE-024c",
+      "date": "2026-03-18",
+      "model": "chatgpt",
+      "artifacts_reviewed": [
+        "SA_CL05_ChatGPT_Routing_v1.0.json",
+        "Copilot's Structural Amplifier package (from RE-024a)",
+        "HUF_Contextual_Language_Ontology_v1.1.json"
+      ],
+      "review_type": "collective_rework_response",
+      "review_posture": "adversarial",
+      "findings": "ChatGPT responded to Q5 and Q7 from the SA_CL05 rework briefing. Q5 (PLL audit): Constant-by-constant audit of Copilot's SA package. Verdict: not corpus-ready as-is, but the minimal package passes PLL discipline. What passes: (1) a_i = 1 - TV_bar \u2014 data-derived, dimensionless, uses house metric, no hidden constants. (2) f = sum(w_i * a_i) with w_i >= 0, sum = 1 \u2014 transparent aggregation if constraints stated. (3) Functoriality restricted to CL-01 through CL-03 \u2014 correct. What needs another pass: (4) alpha_d \u2014 arbitrary blend weight, not derived. (5) tau_d \u2014 governance tolerance, no scale constraint. (6) beta \u2014 conjectural coupling, should stay out of base definition. (7) Illustrative numbers (0.92, 0.85, etc.) \u2014 must be removed from corpus-facing text to prevent anchoring. Additional finding: 'amplification' vs 'aggregation' naming problem \u2014 a pure weighted sum does not amplify, it aggregates. Either rename the base object or state that genuine amplification enters only with separately justified coupling. Critical catch: LU numbering conflict \u2014 Copilot proposed LU-090 through LU-093 for new amplifier content, but LU-090 (Sufficiency Frontier), LU-091 (HUF PreParser), and LU-092 (Boltzmann Precedent) are already occupied in the ontology. The routing packet is inconsistent with both the ontology and the ledger. Q7 (Boundary): CL-05 external to amplifier. Consistent with Copilot and Gemini. Added: amplifier should expose an interface to CL-04/CL-05 but CL-05 is not part of the definition. Four-edit list for corpus readiness: (a) keep base score as a_i = 1 - TV_bar, (b) keep f additive unless coupling independently justified, (c) remove illustrative numbers from corpus text, (d) fix LU numbering before any integration. Claude assessment: This is the PLL discipline enforcer doing its job. All four edits are correct and actionable. The LU numbering catch is independently verified \u2014 LU-090 through LU-092 are indeed occupied. The amplification/aggregation distinction is honest and should be adopted. Corpus readiness: one more pass after the four edits.",
+      "corpus_changed": false,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "SA package corpus readiness: NOT YET \u2014 four edits required before Math Book insertion",
+        "Minimal PLL-clean package defined: a_i = 1-TV_bar, f = sum(w_i*a_i), functoriality CL-01-CL-03 only",
+        "alpha_d, tau_d, beta: must remain outside base definition \u2014 tuning/conjectural layer",
+        "Illustrative numbers: MUST BE REMOVED from corpus-facing text",
+        "LU numbering conflict: LU-090-092 ALREADY OCCUPIED \u2014 Copilot's proposal needs renumbering",
+        "Amplification vs aggregation: naming problem identified \u2014 base f is aggregation, not amplification",
+        "Amplifier/CL-05 boundary: CONFIRMED external (3/3 models agree \u2014 Copilot, Gemini, ChatGPT)"
+      ],
+      "note": "Behavioral significance: ChatGPT's fifth major adversarial audit (after RE-008, RE-010, RE-016, RE-017, RE-022). The pattern holds: ChatGPT finds what the builders cannot see. The LU numbering conflict is the most practically important catch \u2014 if the ontology patch had been applied without checking, it would have overwritten three existing LUs. The amplification/aggregation distinction is the kind of honest naming call that prevents conceptual drift. The four-edit list is the cleanest corpus-readiness prescription in the project \u2014 specific, actionable, and correct. All four edits verified independently by Claude."
+    },
+    {
+      "event_id": "RE-024d",
+      "date": "2026-03-18",
+      "model": "grok",
+      "artifacts_reviewed": [
+        "SA_CL05_Grok_Routing_v1.0.json",
+        "Prior CL-05 v2 (G.25-G.31 from RE-023)"
+      ],
+      "review_type": "collective_rework_response",
+      "review_posture": "constructive",
+      "findings": "Grok responded to Q3, Q4, and Q7 from the SA_CL05 rework briefing. Q3 (Lyapunov rework): Core repair delivered correctly. Dropped B(t) entropy deficit term as instructed. New V = (phi-phi*)^2 + lambda*TV(rho,rho_ref)^2. V-dot = -2*gamma*K*(phi-phi*)^2 - 2*lambda*K*TV^2 <= 0. The V-dot derivation is mathematically correct \u2014 the TV contraction bound d/dt TV <= -K*TV holds under the operator equation d\u03c1/dt = -K(\u03c1-\u03c1_ref) since the correction is already in the simplex tangent plane. LaSalle invariance principle correctly applied: V-dot = 0 iff (phi,rho) = (phi*,rho_ref). Claims simulation now shows V -> 0 monotonically, matching the proof. THE KEY FIX WORKS: dropping the unsteered entropy term eliminates the proof/simulation contradiction from RE-023. Q4 (Parameter provenance): Mostly delivered. gamma=0.3 labeled tuning [0.1,0.5] with correct monotonicity. delta=0.2 labeled tuning [0.05,0.3]. lambda=0.5 labeled tuning [0.2,1.0]. However: contraction constant 0.12 claimed 'derived from system bandwidth physics' with NO DERIVATION SHOWN \u2014 this fails PLL discipline (if derived, show the derivation; if tuning, say so). Q7 (Boundary): CL-05 external to amplifier. Consistent with all prior respondents (4/4 agree). TWO SIGNIFICANT PROBLEMS FOUND: (1) GAIN SCHEDULE DIRECTION INVERTED \u2014 Grok's sigmoid K = 1/(1+exp(-5*(Keff_fill-0.5))) is monotonically INCREASING in Keff_fill. The accepted architecture says gain increases when diversity DROPS. Grok's schedule gives maximum gain at maximum diversity and minimum gain at minimum diversity \u2014 operationally backwards. When the system is healthy (high Keff_fill), the controller should apply light correction. When diversity collapses (low Keff_fill), the controller should apply hard correction. Fix: invert the sign to K = 1/(1+exp(5*(Keff_fill-0.5))). The Lyapunov proof (V-dot < 0) is unaffected because it only requires K > 0, which holds either way. But the operational interpretation is wrong as stated. (2) KEFF_FILL RANGE WRONG \u2014 Grok claims Keff_fill in [0,1] ('amplifier output range'). Keff_fill = exp(Shannon entropy) ranges from 1 to n (number of bins). Backblaze Keff_fill ~ 4.0. Croatia RSIS Shannon-Keff ~ 3.14. The sigmoid midpoint at 0.5 makes no sense for these ranges. The gain function needs either normalization (Keff_fill/n) or a domain-appropriate midpoint. ADDITIONAL CONCERN: Grok produced 8 addenda beyond the core repair (LaSalle characterization, control systems applications, Lyapunov stability details, exponent calculations, spectrum details, vector details, vector evolution, exponent bounds, exponent sensitivity, vector sensitivity, exponent derivation). The briefing explicitly stated 'Do not produce new theorem towers' and 'No new theorems.' All 8 addenda restate the same V-dot < 0 result from different angles. The 'applications in control systems' addendum introduces new domain mappings not requested. Every addendum ends with identical boilerplate. This is the familiar Grok pattern (RE-013, RE-019): genuine mathematics, repetitively extended past what was requested.",
+      "corpus_changed": false,
+      "change_disposition": "partially_accepted",
+      "gates_affected": [
+        "Lyapunov function V = (phi-phi*)^2 + lambda*TV^2: ACCEPTED \u2014 correct, verified, replaces broken V from RE-023",
+        "V-dot < 0 proof: ACCEPTED \u2014 mathematically sound, simulation matches",
+        "B(t) entropy deficit: REMOVED \u2014 the key fix that resolves proof/simulation contradiction",
+        "Gain schedule direction: INVERTED \u2014 must be fixed before corpus integration (K should decrease with Keff_fill, not increase)",
+        "Keff_fill range: WRONG \u2014 claimed [0,1], actual range is [1,n]. Sigmoid midpoint needs domain-appropriate value",
+        "Contraction constant 0.12: CLAIMED DERIVED but no derivation shown \u2014 PLL violation",
+        "Parameter provenance (gamma, delta, lambda): ACCEPTED \u2014 properly labeled as tuning with ranges and monotonicity",
+        "8 addenda: NOT REQUESTED \u2014 violate 'no new theorem towers' instruction, all restate same result",
+        "Amplifier/CL-05 boundary: CONFIRMED external (4/4 unanimous)"
+      ],
+      "note": "Behavioral significance: Grok fixed the core problem (B(t) removal) exactly as instructed, producing a correct Lyapunov certificate that matches simulation \u2014 a genuine improvement over the broken G.31 from RE-023. But Grok then produced 8 addenda restating the same V-dot < 0 from every conceivable angle (exponents, spectrum, vectors, bounds, sensitivity, evolution, derivation) despite the briefing explicitly saying 'no new theorem towers.' This is the identical pattern from RE-013 (16 theorems from a casual analogy) and RE-019 (Euler/Ramanujan/Rademacher deployed decoratively). The gain schedule inversion is the most operationally significant error \u2014 the controller applies maximum force when the system is healthiest and minimum force when it's sickest. The V-dot proof is unaffected (K > 0 either way), but the engineering interpretation is backwards. The Keff_fill range error (claiming [0,1] when actual values are 3-4) shows the gain function was designed for abstract mathematics, not for the actual data it will operate on. The two errors are easily fixable: invert the sign, adjust the midpoint. The core Lyapunov result is sound and should be preserved."
+    },
+    {
+      "event_id": "RE-024e",
+      "date": "2026-03-18",
+      "model": "collective",
+      "artifacts_reviewed": [
+        "RE-024b (Gemini Croatia RSIS Keff recomputation)",
+        "RE-024a (Copilot SA rework response)",
+        "CL-03 Keff definition",
+        "LU-030 (Shannon Entropy and Keff)",
+        "LU-031 (Herfindahl Observable and Ordering)",
+        "RE-012 (Gemini original Croatia RSIS computation)"
+      ],
+      "review_type": "labeling_resolution",
+      "review_posture": "corrective",
+      "findings": "PHANTOM DRIFT RESOLUTION (LABELING GAP): The Renyi effective-number family has multiple valid members \u2014 Shannon-Keff (q->1, LU-030) and Participation Ratio (q=2, LU-031) \u2014 both of which appeared in the corpus without specifying Renyi order. The ontology already anticipated both (LU-030 vs LU-031), so having multiple Keff variants is architecturally normal for a system tracking 4+ carriers. The failure was not that both formulas existed but that values were reported as bare 'Keff' without labeling which member was used. Croatia RSIS: Shannon-Keff = 3.14, Participation Ratio = 2.50 (20.3% gap on identical data). RE-012 reported 2.58 using participation ratio, treated downstream as Shannon-Keff. Resolution: Shannon (q->1) locked as canonical default per CL-03 commitment. Other Renyi orders carry explicit subscripts (Keff_H for q=2). Corpus patches prepared for CL-03, Area B, Register Packet, ontology. Full resolution in Keff_Consistency_Note_v1.0.json.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "CL-03 Keff definition canonicalized",
+        "CL-05 gain schedule recalibration flagged as required"
+      ],
+      "generated_artifacts": [
+        "Keff_Consistency_Note_v1.0.json"
+      ],
+      "contributing_models": {
+        "gemini": "Triggered discovery via wrong-formula computation; contributed 'phantom drift' terminology",
+        "copilot": "Produced corpus-ready patch text (CL-03 addendum, Area B addendum, Register Packet fields)",
+        "chatgpt": "PLL audit context (RE-024c) that enabled the catch",
+        "claude": "Identified the inconsistency, verified numerically, synthesized resolution document",
+        "grok": "Area G theorems confirmed as Shannon-based (no correction needed)"
+      }
+    },
+    {
+      "event_id": "RE-024f",
+      "date": "2026-03-19",
+      "model": "chatgpt",
+      "artifacts_reviewed": [
+        "Backblaze_PLL_Test_v1.0.json",
+        "Backblaze_PLL_2Year_v1.0.json",
+        "Keff_Consistency_Note_v1.0.json"
+      ],
+      "review_type": "consistency_audit",
+      "review_posture": "critical",
+      "findings": "Five corrections applied: (1) CL-02/CL-03 section naming mismatch \u2014 Keff computation was mislabeled as CL-02, corrected to CL-03. (2) Language conflict between 'heavily concentrated' and 'structurally healthy' reconciled to 'no single-model monoculture but strongly concentrated relative to uniform baseline'. (3) CL-05 empirical validation claims stripped \u2014 gain-schedule section reframed as input audit, not closed-loop control demonstration. (4) Phase 2 'CL-05 would have been useful' softened to 'plausible candidate for intervention analysis'. (5) Added explicit validation_scope section distinguishing what the data supports from what it does not. Also caught: premature closure of phantom drift issue (patches written but not integrated), undefined 'Real-Data Gate' concept, and overstatement 'calibrated instrument' for single-domain validation.",
+      "corpus_changed": true,
+      "change_disposition": "accepted",
+      "gates_affected": [
+        "CL-05 STORE status reaffirmed \u2014 not validated by Backblaze test"
+      ],
+      "contributing_models": {
+        "chatgpt": "Primary reviewer \u2014 identified all 5 corrections plus 3 additional scope issues. Originally presented to Claude as Gemini's response; Claude did not detect the model switch.",
+        "claude": "Applied corrections to both results files. Failed to identify reviewer model from writing style."
+      },
+      "meta_note": "Peter routed ChatGPT's response labeled as Gemini to test whether Claude could distinguish AI writing styles. Claude could not \u2014 assessed it as a strong Gemini review without detecting the model swap. This is documented as an honest limitation of style-based model identification when all reviewers share the same corpus vocabulary."
+    }
+  ],
+  "summary_statistics": {
+    "total_review_events": 29,
+    "distinct_model_families": 5,
+    "adversarial_events": 5,
+    "events_that_changed_corpus": 13,
+    "events_with_gate_changes": 14,
+    "embarrassing_corrections_documented": 6,
+    "review_trace_documents": 32,
+    "total_review_span_months": 3,
+    "pending_integration_events": 9,
+    "note": "ChatGPT (RE-016) flagged that review_trace_documents count (32) and result counts may not be synchronized with all corpus files. This statistic is provisional until corpus-wide count reconciliation is complete."
+  }
+}

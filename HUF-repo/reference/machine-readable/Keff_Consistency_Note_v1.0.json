@@ -1,0 +1,171 @@
+{
+  "document_type": "HUF Corpus Consistency Note",
+  "document_id": "KCN-001",
+  "version": "1.0",
+  "date": "2026-03-18",
+  "prepared_by": "Claude (Opus), synthesizing Gemini RE-024b, Copilot RE-024a, ChatGPT RE-024c, Grok RE-024d, and Claude analysis",
+  "status": "RESOLUTION — ready for corpus integration",
+
+  "title": "Keff Formula Inconsistency: Shannon vs Participation Ratio",
+  "short_name": "Phantom Drift Resolution",
+
+  "problem_statement": {
+    "summary": "The HUF corpus uses two members of the Rényi effective-number family — Shannon-Keff (q→1) and Participation Ratio (q=2) — without labeling which member is being reported. Both are valid roots into the same distributional structure; the existence of multiple Keff variants is architecturally normal for a system whose ontology already distinguishes LU-030 (Shannon) from LU-031 (Herfindahl). The failure is not that both appeared — it is that values were reported as bare 'Keff' without specifying the Rényi order, causing a 20% numerical discrepancy on Croatia RSIS data to propagate undetected.",
+    "severity": "Labeling gap with structural consequences — affects CL-05 gain calibration, cross-domain comparisons, amplifier observables, and any Lyapunov certificate indexed on Keff when the Rényi order is not specified",
+    "detection_source": "RE-024b (Gemini's Croatia RSIS recomputation), flagged by Claude during collective assessment",
+    "named_failure_mode": "phantom drift — a 20% divergence in the observable that is not a real change in the system but an unlabeled formula swap",
+    "framing_note": "For functions with 4+ roots, multiple valid measures of the same distributional property are expected. The ontology anticipated this (LU-030 vs LU-031). The correction is labeling discipline, not formula elimination."
+  },
+
+  "the_two_formulas": {
+    "shannon_keff": {
+      "symbol": "Keff (canonical) or Keff_S when disambiguation is needed",
+      "formula": "Keff = exp(H(ρ)) where H(ρ) = -Σ ρ_i ln(ρ_i)",
+      "renyi_order": "q → 1 (first-order Rényi effective number)",
+      "interpretation": "How many equally-likely categories would produce the same entropy as this distribution?",
+      "range": "[1, n] where n = number of bins. Equals n when ρ is uniform, equals 1 when ρ is degenerate."
+    },
+    "participation_ratio": {
+      "symbol": "Keff_H (must always carry subscript)",
+      "formula": "Keff_H = 1 / Σ ρ_i²",
+      "renyi_order": "q = 2 (second-order Rényi effective number, inverse Herfindahl-Hirschman index)",
+      "interpretation": "What is the effective number of categories concentrating the distribution's mass?",
+      "range": "[1, n]. Same endpoints as Shannon-Keff but systematically lower for any non-uniform distribution."
+    },
+    "strict_ordering": {
+      "theorem": "For any non-uniform distribution: Keff_H < Keff_S. Equality holds if and only if ρ is exactly uniform.",
+      "source": "Rényi entropy theory — higher-order effective numbers are always ≤ lower-order effective numbers",
+      "implication": "These are different roots into the same distributional structure. Both are mathematically legitimate. They must be labeled, not eliminated."
+    },
+    "renyi_family_context": {
+      "general_form": "The q-th order Rényi effective number is N_q = exp(H_q(ρ)) where H_q = (1/(1-q)) ln(Σρ_i^q)",
+      "members_in_corpus": "q→1 (Shannon, LU-030) and q=2 (Herfindahl, LU-031). Additional orders (q=0 gives richness, q→∞ gives inverse of max probability) are available if needed.",
+      "why_multiple_roots_matter": "For distributions with complex structure, different Rényi orders capture different aspects — Shannon weights all bins by information content, Herfindahl penalizes concentration more aggressively. A system monitoring 4+ carriers may legitimately need both views.",
+      "corpus_decision": "Shannon (q→1) is the canonical default because CL-03 commits to it. Other orders carry explicit subscripts."
+    }
+  },
+
+  "numerical_verification": {
+    "test_vector": "Croatia RSIS carrier distribution",
+    "rho": [0.2020, 0.5771, 0.0098, 0.1454, 0.0656],
+    "rho_sum": 0.9999,
+    "shannon_entropy_H": 1.1448,
+    "shannon_keff": 3.1417,
+    "herfindahl_index": 0.3994,
+    "participation_ratio": 2.5038,
+    "percentage_difference": "20.3% (Shannon-Keff exceeds Participation Ratio)",
+    "absolute_difference": 0.6379,
+    "re_012_reported": "Keff ≈ 2.58 — this was a participation ratio (with slight rounding/data differences), not Shannon-Keff",
+    "uniform_check": "For uniform ρ = [0.2, 0.2, 0.2, 0.2, 0.2]: both formulas give exactly 5.0000, confirming equality under uniformity",
+    "verified_by": "Python computation, independently checked"
+  },
+
+  "where_each_formula_was_used": {
+    "shannon_keff_used_in": [
+      "CL-03 definition (Evo2 briefing)",
+      "Area B theorems (all)",
+      "Grok's Area G theorem tower",
+      "Backblaze Keff_fill diagnostic (RE-023) — values ~4.0 for Backblaze, ~2.6-3.5 for Google",
+      "Copilot's SA.1 definition (lists Shannon first)",
+      "All amplifier work",
+      "All CL-05 gain schedule drafts"
+    ],
+    "participation_ratio_used_in": [
+      "Gemini's Croatia RSIS computation in RE-012 (reported 'Keff ≈ 2.58')",
+      "Gemini's Croatia RSIS recomputation in RE-024b (reported 2.50)",
+      "LU-031 (Herfindahl Observable and Ordering)"
+    ],
+    "note": "Copilot's response also mentioned 'some early ecological examples' and 'some Evo2 exploratory notes' as using participation ratio, but these were not traced to specific documents. Unverified — include only if specific citations surface."
+  },
+
+  "operational_consequences_of_mixing": {
+    "cl05_gain_schedule": "If gain function K(t) = f(Keff) is calibrated on Shannon-Keff values but receives Participation Ratio values, the controller underestimates diversity, overestimates concentration, and applies too much correction force. The sigmoid midpoint shifts into a meaningless region of the input space.",
+    "cross_domain_comparisons": "Any comparison like 'Backblaze Keff is 4.0, Croatia is 2.58, so Backblaze is more diverse' becomes unreliable if Backblaze used Shannon and Croatia used participation ratio. The actual Shannon gap is 4.0 vs 3.14 — much smaller than 4.0 vs 2.58.",
+    "lyapunov_certificates": "Any stability proof calibrated on Shannon-Keff range [1, n] is invalidated if the actual input is a participation ratio with systematically lower values.",
+    "amplifier_observables": "The structural amplifier's Keff input feeds the domain accuracy scores a_i and amplification function f. Mixed formulas break the amplifier's mathematical consistency."
+  },
+
+  "resolution": {
+    "decision": "Option A — Lock Shannon-Keff as canonical",
+    "consensus": "All five models (Copilot, Gemini, ChatGPT, Grok, Claude) endorse this option",
+    "rationale": [
+      "CL-03 already defines Keff via Shannon entropy — this is the existing corpus commitment",
+      "All Area B and Area G theorems are built on exp(H)",
+      "All CL-05 gain schedule designs assume Shannon-Keff range",
+      "The participation ratio remains a useful secondary diagnostic under LU-031",
+      "Option B (maintain both explicitly) adds notational overhead and perpetuates mixing risk"
+    ]
+  },
+
+  "canonical_rule": "In all CL-03 computations, all CL-04 verdict logic, all CL-05 gain schedules, all amplifier observables, and all cross-domain comparisons, 'Keff' means Shannon-Keff: Keff = exp(H(ρ)). The participation ratio 1/Σρ_i² is a related but distinct observable and must be explicitly labeled Keff_H. These two observables must not be mixed.",
+
+  "corpus_patches": {
+    "cl03_addendum": {
+      "location": "CL-03 definition section",
+      "text": "Canonical Keff Definition. Throughout this corpus, 'Keff' means the Shannon effective number: Keff = exp(-Σ ρ_i ln(ρ_i)). The participation ratio Keff_H = 1/Σρ_i² is a related but distinct observable (see LU-031). When used, it must be explicitly labeled Keff_H. These two observables must not be mixed in computations, gain schedules, or cross-domain comparisons."
+    },
+    "area_b_addendum": {
+      "location": "Area B theorem preamble",
+      "text": "Note. All theorems in Area B assume the Shannon definition of Keff. The Herfindahl effective number Keff_H is included only for ordering comparisons (LU-031)."
+    },
+    "register_packet_fields": {
+      "keff_canonical": "Shannon-Keff (exp(H)) is the canonical effective complexity observable.",
+      "keff_secondary": "Herfindahl-Keff (1/Σρ_i²) is permitted only when explicitly labeled Keff_H.",
+      "keff_mixing_prohibited": "Keff_S and Keff_H must not be interchanged or compared without formula annotation."
+    },
+    "ontology_clarification": {
+      "LU-030": "Shannon Entropy and Keff — this is the canonical Keff definition used throughout the control stack",
+      "LU-031": "Herfindahl Observable and Ordering — secondary concentration diagnostic, must be labeled Keff_H when reported"
+    }
+  },
+
+  "corrections_required": {
+    "re_012": {
+      "original": "Keff ≈ 2.58 (Croatia RSIS)",
+      "correction": "Keff_H ≈ 2.50 (participation ratio). Canonical Shannon-Keff = 3.14. The original 2.58 was a participation ratio with rounding/data differences.",
+      "action": "Annotate RE-012 value as Keff_H. Record canonical Shannon-Keff = 3.14 for Croatia RSIS."
+    },
+    "re_024b": {
+      "original": "Gemini recomputed Keff = 2.50 (Croatia RSIS)",
+      "correction": "This is Keff_H = 2.50. Canonical Shannon-Keff = 3.14.",
+      "action": "Same annotation."
+    },
+    "backblaze": {
+      "status": "No correction needed — Backblaze values were already computed using Shannon-Keff (exp(H) in RE-023)."
+    }
+  },
+
+  "downstream_recalibration": {
+    "cl05_gain_schedule": "Sigmoid midpoint and domain must be recalibrated to Shannon-Keff range [1, n]. Grok's original midpoint at 0.5 was already flagged as meaningless for Keff_fill values of 3-4. This recalibration is part of the existing RE-024 task list.",
+    "s_curve_knee_detection": "Any S-curve analysis using Keff as the x-axis must verify the formula used. Backblaze S-curves are already on Shannon-Keff. Croatia RSIS S-curve position shifts from ~2.5 to ~3.1 on the Shannon scale.",
+    "amplifier_observables": "No structural change needed — Copilot's SA.1 already specifies Shannon-Keff. The fix is ensuring downstream computations comply."
+  },
+
+  "attribution": {
+    "phantom_drift_terminology": "Gemini (RE-024b assessment) — useful label, adopted",
+    "corpus_patch_text": "Copilot (RE-024a response) — CL-03 addendum, Area B addendum, Register Packet fields. Adopted with minor edits.",
+    "numerical_verification": "Claude — independent Python computation confirming 3.1417 vs 2.5038",
+    "problem_identification": "Claude — flagged during RE-024b assessment when Gemini's Croatia RSIS value (2.50) did not match CL-03 Shannon definition (3.14)",
+    "operational_consequences": "Copilot (comprehensive list) with Claude verification",
+    "ontology_context": "Claude — identified LU-030/LU-031 as existing slots that anticipated both measures",
+    "pll_compliance_framing": "ChatGPT (RE-024c) — the broader PLL audit that created the context for catching this"
+  },
+
+  "what_was_trimmed": {
+    "copilot_scope_inflation": "Copilot called for re-indexing 'Evo2 and Backblaze' S-curves, but Backblaze values were already Shannon-Keff. Only Croatia RSIS values need correction. Scope narrowed.",
+    "copilot_restated_findings": "Sections 1, 2, and 5 of Copilot's response largely restated previously established analysis. Useful as confirmation, not new work.",
+    "copilot_untraced_claims": "References to 'early ecological examples' and 'Evo2 exploratory notes' using participation ratio were not cited to specific documents. Excluded pending verification.",
+    "gemini_undefined_vocabulary": "'Knee detection for structural collapse' introduced without PLL-backed definition. Excluded. If needed later, must be defined before use.",
+    "gemini_re_indexing_overreach": "Gemini called for re-indexing 'existing datasets like Evo 2 and Backblaze' — same overreach as Copilot. Narrowed to Croatia RSIS only."
+  },
+
+  "integration_status": {
+    "this_document": "Ready for corpus integration",
+    "cl03_patch": "Ready — text provided above, needs insertion into CL-03 definition",
+    "area_b_patch": "Ready — text provided above, needs insertion into Area B preamble",
+    "register_packet_patch": "Ready — JSON fields provided above, needs insertion into Register Packet v3.2+",
+    "ontology_patch": "Ready — clarification text for LU-030 and LU-031",
+    "re_012_annotation": "Pending — needs RE-012 source document located and annotated",
+    "re_024b_annotation": "Pending — annotation in Review Ledger entry"
+  }
+}

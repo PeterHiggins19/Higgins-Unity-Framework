@@ -1,0 +1,175 @@
+{
+  "briefing_type": "HUF Stacked Review — Domain Instantiation Candidate",
+  "briefing_version": "1.1",
+  "date": "2026-03-18",
+  "prepared_by": "Claude (Opus), acting as Primary Ingestor / Central Bus",
+  "intended_recipient": "ChatGPT",
+  "accompanying_document": "s41586-026-10176-5.pdf — 'Genome modelling and design across all domains of life with Evo 2' (Nature, March 2026)",
+
+  "core_claim": {
+    "original_claim": "Biological sequence space is a composition; Evo 2's performance across that composition is a ratio-state on a simplex; HUF can monitor it.",
+    "chatgpt_narrowed_claim": "Evo 2 provides a promising biological domain in which naturally compositional genomic representations may allow HUF-style monitoring of drift, concentration, and guided design. The existence of cross-domain genomic transfer is supported; the stronger HUF claims remain to be demonstrated on a chosen biological composition.",
+    "elaboration": "The Evo 2 paper describes a 40-billion-parameter foundation model trained on 9.3 trillion DNA base pairs spanning all three domains of life (Bacteria, Archaea, Eukaryota) plus viruses. The model achieves zero-shot performance across tasks it was never explicitly trained for — variant effect prediction, gene essentiality, chromatin accessibility design — by learning the statistical structure of biological sequence space itself. The natural compositional substrate in genomics (k-mer frequencies, codon usage, motif proportions) is real and non-trivial. Whether HUF's stronger machinery (structural amplifiers, theorem transport) applies remains to be demonstrated.",
+    "kill_condition": "If the isomorphism between Evo 2's cross-domain generalization and HUF's structural amplifier / simplex transport is merely metaphorical rather than mathematically grounded, this is an overclaim.",
+    "chatgpt_verdict": "HOLD — not rejected, not advanced. Peter partly overclaiming: not in spotting a real opportunity, but in implying Evo 2 already substantiates the stronger HUF machinery."
+  },
+
+  "stacked_review_context": {
+    "what_is_stacked_review": "A round-robin protocol where multiple AI models (Claude, ChatGPT, Gemini, Grok, Copilot) review and challenge the HUF corpus. Each reviewer receives accumulated context from prior rounds. The protocol has produced 16 review events to date, including 4 adversarial events and 3 embarrassing corrections. The methodology is itself documented in the HUF AI-Human Interaction Study (v1.1).",
+    "chatgpt_role_in_corpus": "ChatGPT has served as the primary adversarial reviewer. Key contributions: (1) identified 4 embarrassing errors in v2.0, (2) performed recursive ledger audit finding 8 problems in the tracking tool itself, (3) verdict on ledger: 'strong transition artifact, not yet terminal artifact.' ChatGPT's gate-change authority is the strongest in the collective — when ChatGPT kills a claim, it stays dead.",
+    "what_we_are_asking": "First-pass assessment: Is Evo 2 a legitimate candidate for HUF domain instantiation, or is Peter overclaiming? This is the shortest path to a verdict. If ChatGPT finds the mapping structurally sound, we escalate to full collective review. If ChatGPT kills it, we save everyone's time.",
+    "peter_framing": "The group study would determine whether that claim survives scrutiny — or whether it's an overclaim that ChatGPT would rightly kill."
+  },
+
+  "evo2_paper_summary": {
+    "title": "Genome modelling and design across all domains of life with Evo 2",
+    "authors": "Arc Institute, Stanford University (Nguyen, Kitano, Baid, Hie, et al.)",
+    "publication": "Nature, March 2026",
+    "architecture": "StripedHyena 2 — 40B parameters, 1M token context window (131,072 tokens native, 8× extrapolation)",
+    "training_data": "OpenGenome2 — 9.3 trillion DNA base pairs, 128,000+ genomes, all domains of life plus viruses, curated for quality and diversity",
+    "key_capabilities": [
+      "Zero-shot variant effect prediction across species (human, yeast, E. coli, phage)",
+      "Gene essentiality prediction without task-specific training",
+      "Genome-scale DNA generation (up to 1M tokens) with realistic gene structure",
+      "CRISPR guide RNA activity prediction",
+      "Chromatin accessibility element design (functional in wet-lab validation)",
+      "Cross-domain transfer — training on prokaryotic+viral data improves eukaryotic performance"
+    ],
+    "openness": "Fully open: model parameters, training code, inference code, dataset",
+    "key_finding_for_huf": "Cross-domain transfer is not just possible but essential — the model trained on all domains outperforms domain-restricted models. This means biological sequence space has a shared statistical structure that transfers across the tree of life."
+  },
+
+  "structural_parallels": {
+    "overview": "Six specific mappings between Evo 2's properties and HUF's mathematical structures. ChatGPT should assess whether each mapping is formally sound or merely suggestive.",
+    "mappings": [
+      {
+        "id": "SP-1",
+        "evo2_property": "Biological sequence space as 4-letter alphabet (A, C, G, T) with positional constraints",
+        "huf_structure": "Composition on a simplex — nucleotide frequencies at any locus form a 3-simplex",
+        "strength": "Strong — this is definitional. Nucleotide frequencies are non-negative and sum to 1. They are literally compositions in the Aitchison sense.",
+        "question_for_chatgpt": "Is the simplex structure at the nucleotide level sufficient, or does HUF require compositional structure at higher organizational levels (genes, operons, genomes) to be non-trivial?"
+      },
+      {
+        "id": "SP-2",
+        "evo2_property": "Zero-shot cross-domain generalization — training on prokaryotes improves eukaryotic variant prediction",
+        "huf_structure": "Theorem transport / structural amplifier — knowledge in one domain transfers to another because underlying structure is shared",
+        "strength": "Moderate — the empirical fact of transfer is clear, but whether it maps onto HUF's formal transport mechanism (Definition F.6, Proposition F.7 from Copilot's formalization) requires examination",
+        "question_for_chatgpt": "Does Evo 2's cross-domain transfer satisfy the structural amplifier quadruple A = (D, C, K_eff, f) with supermodular gain? Or is the transfer explainable by simpler statistical mechanisms that don't require HUF's machinery?"
+      },
+      {
+        "id": "SP-3",
+        "evo2_property": "Model performance across species/tasks as a vector of scores",
+        "huf_structure": "Ratio-state on a simplex — normalized performance across domains is a composition that HUF can track",
+        "strength": "Moderate-to-weak — requires normalization choices that may be arbitrary. Performance metrics across tasks are not naturally compositional (they don't sum to 1 without forcing).",
+        "question_for_chatgpt": "Is the normalization from raw performance scores to a simplex ratio-state principled or ad hoc? What is the correct composition: per-species performance, per-task-type performance, or something else?"
+      },
+      {
+        "id": "SP-4",
+        "evo2_property": "Inference-time guidance (classifier-free guidance for sequence generation)",
+        "huf_structure": "CL-04/CL-05 monitoring — real-time steering of generation toward desired properties",
+        "strength": "Suggestive — both involve steering a generative process, but the mathematical connection needs formalization",
+        "question_for_chatgpt": "Does classifier-free guidance in sequence space map onto HUF's control law framework, or is this a surface analogy that breaks under scrutiny?"
+      },
+      {
+        "id": "SP-5",
+        "evo2_property": "OpenGenome2 dataset curation — quality filtering, deduplication, diversity balancing across taxa",
+        "huf_structure": "Sufficiency frontier — the training data represents a boundary of what the model can learn, analogous to the frontier of sufficient domain coverage",
+        "strength": "Weak-to-moderate — the concept of a data sufficiency boundary is real but may not require HUF's specific mathematical formulation",
+        "question_for_chatgpt": "Does the sufficiency frontier add explanatory power beyond standard ML concepts of dataset coverage and distribution shift?"
+      },
+      {
+        "id": "SP-6",
+        "evo2_property": "PV/SST interneuron rebalancing in auditory cortex (from Cheung & Schreiner 2026, already in HUF corpus)",
+        "huf_structure": "Ratio portfolio under unity constraint — PV/SST suppression/facilitation ratios as compositions on a simplex, with Supp/Facil drift (3.08 → 1.20) as a detectable regime change",
+        "strength": "Strong for the neuroscience connection, but the bridge to Evo 2 is indirect — both are candidate HUF domains, and the question is whether they share formal structure beyond both being 'on a simplex'",
+        "question_for_chatgpt": "Is there a non-trivial mathematical connection between cortical interneuron ratio dynamics and biological sequence composition dynamics, or are these merely two separate simplex instantiations with no cross-domain theorem transport?"
+      }
+    ]
+  },
+
+  "specific_questions_for_chatgpt": [
+    {
+      "id": "Q-1",
+      "priority": "Critical",
+      "question": "Is the claim 'biological sequence space is a composition' trivially true (and therefore uninteresting) or substantively true (and therefore worth formalizing in HUF)?",
+      "context": "Many things can be forced onto a simplex by normalization. The question is whether the compositional structure is *natural* to the domain — whether the closure and subcompositional coherence properties that HUF exploits are present in biological sequence space in a way that generates non-trivial theorems."
+    },
+    {
+      "id": "Q-2",
+      "priority": "Critical",
+      "question": "Does Evo 2's cross-domain transfer provide empirical evidence for HUF's structural amplifier, or can it be fully explained by existing ML theory (e.g., multi-task learning, transfer learning, representation learning)?",
+      "context": "If standard ML theory already explains the transfer without needing HUF's machinery, then the HUF framing adds complexity without explanatory power. HUF's value-add must be *above* what existing frameworks provide."
+    },
+    {
+      "id": "Q-3",
+      "priority": "High",
+      "question": "What would a HUF monitoring layer (CL pipeline) look like for Evo 2? Can you sketch the control laws CL-01 through CL-05 for biological sequence generation?",
+      "context": "If the CL pipeline can be concretely specified — not just gestured at — that's evidence the domain instantiation is real. If it remains vague, that's evidence of overclaim."
+    },
+    {
+      "id": "Q-4",
+      "priority": "High",
+      "question": "What is the correct 'unit of analysis' for the HUF composition in biological sequence space? Nucleotide frequencies? Codon usage? Gene family abundances? Functional annotation proportions?",
+      "context": "HUF requires a well-defined composition. Biological sequence space offers multiple possible compositional representations at different scales. The choice is not obvious and may determine whether the instantiation is trivial or profound."
+    },
+    {
+      "id": "Q-5",
+      "priority": "Medium",
+      "question": "Does the Evo 2 domain connect to existing HUF domains (sourdough, TTC, Planck, auditory cortex) via theorem transport, or is it an isolated instantiation?",
+      "context": "An isolated instantiation is less valuable to HUF than one that enables cross-domain theorem transport. If theorems proved in biological sequence space can be transported to other HUF domains (or vice versa), that's a strong validation of the framework."
+    },
+    {
+      "id": "Q-6",
+      "priority": "Medium",
+      "question": "Is Peter overclaiming? Give a direct, honest assessment. The corpus benefits more from a clean kill of a bad idea than from polite accommodation of an overclaim.",
+      "context": "ChatGPT's role in the collective is adversarial quality control. The 'strong transition artifact' verdict on the ledger (RE-016) was exactly the right tone. Apply the same standard here."
+    }
+  ],
+
+  "huf_background_for_chatgpt": {
+    "note": "ChatGPT has extensive prior context on HUF from previous stacked review rounds. This section is a minimal refresher, not a full briefing.",
+    "core_math": "HUF operates on compositions (vectors of non-negative components summing to 1) living on a simplex. The framework provides: (1) sufficiency frontiers — boundaries where a domain has 'enough' of each component, (2) ratio portfolios — collections of component ratios under unity constraint, (3) structural amplifiers — formal quadruples enabling theorem transport across domains, (4) control laws (CL-01 through CL-05) for monitoring ratio-state trajectories.",
+    "existing_domains": [
+      "Sourdough fermentation (original domain — microbial culture ratios)",
+      "Time-Temperature-Composition (TTC) in baking",
+      "Planck-scale physics (energy density ratios in early universe)",
+      "Auditory cortex (PV/SST interneuron ratio dynamics — Cheung & Schreiner 2026)"
+    ],
+    "current_corpus_state": "v3.0 with 4th Monitoring Category (MC-4). Interaction study at v1.1 (337 paragraphs). Review ledger at 16 events. Math Book pending collective review of Grok's Theorems F.7-F.22 and Copilot's structural amplifier formalization.",
+    "key_prior_chatgpt_contributions": [
+      "RE-003: Identified 4 embarrassing errors in v2.0 — wrong integration bounds, missing absolute-continuity check, misstated CLT assumption, imprecise simplex-projection claim",
+      "RE-016: Ledger integrity audit — 8 problems, 5 fixes, 'strong transition artifact' verdict"
+    ]
+  },
+
+  "instructions_for_chatgpt": {
+    "step_1": "Read the accompanying PDF (s41586-026-10176-5.pdf) — focus on: architecture, cross-domain transfer results, zero-shot capabilities, dataset curation, inference-time guidance",
+    "step_2": "Assess each of the 6 structural parallels (SP-1 through SP-6) — rate each as 'formally sound', 'suggestive but needs formalization', or 'overclaim'",
+    "step_3": "Answer questions Q-1 through Q-6 with direct, substantive responses",
+    "step_4": "Deliver a verdict: Is Evo 2 a legitimate HUF domain instantiation candidate worth escalating to full collective review? Use the same tone as the RE-016 ledger audit — honest, specific, actionable",
+    "step_5": "If the verdict is positive, identify what the next reviewer (likely Grok or Gemini) should focus on. If negative, specify exactly where the mapping breaks down so the failure is documented in the review ledger.",
+    "output_format": "Free-form analysis is fine. If you want to produce structured output for the review ledger, use event_kind: 'review', domain: 'Evo 2 / biological sequence space', and include a clear gate_change recommendation (advance / hold / reject)."
+  },
+
+  "chatgpt_assessment_re017": {
+    "date": "2026-03-18",
+    "method": "Two-pass review — first briefing only, then with Nature PDF",
+    "sp_scores": {
+      "SP-1": "Formally sound but close to trivial at nucleotide level; strengthened by k-mer composition from paper's genome embedding figure",
+      "SP-2": "Suggestive, not proven — standard ML transfer learning explains most of it without HUF machinery",
+      "SP-3": "KILLED — benchmark scores are not naturally compositional; forcing AUROCs into sum-to-one is arbitrary",
+      "SP-4": "Suggestive but thin — guided generation is not yet a formal CL-01→CL-05 instantiation",
+      "SP-5": "Weak to moderate — sufficiency frontier risks renaming standard ML concerns in HUF language",
+      "SP-6": "Overextended — both are simplex domains, but 'both live on a simplex' is a starting point, not a transport theorem"
+    },
+    "gate_recommendation": "HOLD",
+    "next_step": "Choose one biological composition (k-mer, functional annotation, or regulatory motif composition), then construct explicit CL-01→CL-04 monitoring on that composition and compare explanatory value against ordinary ML framing. If it adds value: advance. If not: kill.",
+    "next_reviewer_instruction": "Do not do 'general plausibility.' Do one narrow job: choose the correct biological composition. If that cannot be done cleanly, kill the mapping."
+  },
+
+  "meta": {
+    "review_ledger_event": "RE-017 — recorded in HUF Review Ledger v1.0",
+    "escalation_path": "ChatGPT HOLD verdict → next reviewer chooses biological composition → if successful, Grok (mathematical formalization of CL construction) → Gemini (plausibility meta-review) → Copilot (structural completeness) → Claude (integration)",
+    "peter_note": "Peter explicitly framed this as 'if it goes anywhere then we can get more involved' — the HOLD enables exactly this: the door is open but the claim is narrowed to what the evidence supports"
+  }
+}

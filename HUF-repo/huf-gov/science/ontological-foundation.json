@@ -1,0 +1,110 @@
+{
+  "document_id": "ONTO-001",
+  "title": "The Ontological Foundation of HUF — The Pre-Existing Condition",
+  "version": "1.0",
+  "date": "2026-03-23",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "classification": "FOUNDATIONAL — sits beneath all other HUF documents",
+  "citation": "Peter Higgins / Rogue Wave Audio, with the HUF AI Collective: Claude (Anthropic), ChatGPT (OpenAI), Copilot (Microsoft), Gemini (Google), Grok (xAI)",
+
+  "position_in_framework": {
+    "relationship": "ONTO-001 provides the ontological claim that all other HUF documents assume but none formally state. It sits beneath GOV-001 (governance), LOOP-001 (open loop doctrine), HAGF-001 (applied governance), and SCHEMA-001 (data structures). Every document in the corpus implicitly depends on this claim.",
+    "analogy": "If HUF were a building, ONTO-001 is not the foundation — it is the ground the foundation sits on. It is the statement that the ground exists and was there before anyone started building."
+  },
+
+  "the_ontological_claim": {
+    "statement": "HUF does not create the systems it measures. The ratio-state condition is pre-existing. Every compositional system — every system whose elements can be expressed as proportions of a whole — is already a ratio-state system, already redistributing, already drifting. The instrument reveals structure that was present before measurement began.",
+    "formal_version": "For any system S whose state can be represented as a vector of proportions p = [p_1, p_2, ..., p_n] where Σp_i = 1, the ratio-state dynamics (carrier redistribution, effective dimensionality variation, structural velocity) are intrinsic properties of S. They do not require observation to occur. They require observation to be known.",
+    "in_seven_words": "No silent drift, only the unobserved."
+  },
+
+  "what_this_means": {
+    "for_the_instrument": "The HUF Spectrum Analyzer does not generate its readings. It does not impose structure on formless data. It reads structure that is already there. K_eff is not a construct — it is a measurement of how many carrier elements are meaningfully participating in the system's state at a given moment. TV is not a model — it is the Euclidean distance the system actually traveled between two observations. Deceptive drift is not a prediction — it is the detection of concentration building behind apparent stability, a structural condition that exists whether or not anyone measures it.",
+    "for_the_operator": "The human operator does not need to believe in HUF for it to apply to their domain. Their wetland is already a ratio-state system. Their energy grid is already redistributing carrier elements. Their financial market is already exhibiting effective dimensionality that rises and falls with concentration. The operator's choice is not whether to participate in a ratio-state system — they are already participating. The choice is whether to observe it.",
+    "for_new_domains": "When HUF is presented to a new domain — ecology, energy, governance, neuroscience — the claim is not 'we have built something you should adopt.' The claim is 'your system already exhibits these dynamics; here is an instrument calibrated to read them.' This is the difference between selling a product and opening a door."
+  },
+
+  "the_invisible_door": {
+    "section_purpose": "Peter's formulation of how HUF should be presented to new domains. Not confrontational. Not a mirror. A discovery.",
+    "peter_principle": "HUF does not hold up a mirror. A mirror shows you what you already see. HUF shows you a room in your house with a door that was invisible. The room was always there. The dynamics inside it were always operating. The door was always accessible. You simply did not know it existed.",
+    "scientific_framing": "In compositional data analysis, the simplex constraint (Σp_i = 1) forces interdependence among all elements. A change in any single proportion necessarily redistributes across all others. This constraint is mathematical, not theoretical — it follows from the definition of proportional representation. Any system whose state is expressed as proportions is governed by this constraint whether or not the analyst is aware of it. The simplex is the room. The constraint is the door. HUF provides the instrument to read what is happening inside.",
+    "why_not_a_mirror": "A mirror reflects the observer's existing understanding back at them. HUF does something qualitatively different: it reveals dynamics that the observer had no framework to perceive. Effective dimensionality is not visible in raw data tables. Deceptive drift — the condition where surface stability masks internal concentration — is specifically invisible to conventional monitoring. The instrument does not confirm what the domain expert already knows. It shows them a structural layer they had no access to.",
+    "practical_consequence": "This distinction matters for how HUF is introduced to new collaborators. The framing is not 'your system has problems you don't know about' (confrontational). The framing is not 'look at your data differently' (trivial). The framing is: 'there is a structural layer in your system that your current instruments do not access. Here is the door.'"
+  },
+
+  "the_pre_existing_condition": {
+    "section_purpose": "Why the ratio-state condition does not require adoption, belief, or theoretical commitment.",
+    "argument": [
+      {
+        "step": 1,
+        "claim": "Any system whose components can be expressed as proportions of a whole exists on a simplex.",
+        "evidence": "This is definitional. If you can say 'coal is 40% of the energy mix,' you have placed the energy system on a simplex. The simplex is not a model choice — it is a consequence of the data structure."
+      },
+      {
+        "step": 2,
+        "claim": "On a simplex, all proportions are interdependent. A change in one element forces redistribution across all others.",
+        "evidence": "The unit-sum constraint (Σp_i = 1) is mathematical, not empirical. It holds by construction. If coal declines from 40% to 30%, the remaining 10% must go somewhere — it does not vanish."
+      },
+      {
+        "step": 3,
+        "claim": "This forced redistribution produces measurable dynamics: changes in effective dimensionality, structural velocity, and carrier concentration.",
+        "evidence": "K_eff (effective number of carriers), TV (total variation / structural velocity), and drift metrics are computable for any simplex time series. They are not assumptions — they are observables."
+      },
+      {
+        "step": 4,
+        "claim": "These dynamics operate continuously, regardless of observation.",
+        "evidence": "A wetland does not pause its ecological redistribution between survey dates. An energy grid does not freeze its fuel mix between reporting periods. The system is always in motion. Observation samples the motion; it does not cause it."
+      },
+      {
+        "step": 5,
+        "claim": "Therefore, every proportional system is already a ratio-state system. The only variable is whether anyone is reading the instrument.",
+        "evidence": "This is the ontological claim. It is not a hypothesis to be tested — it is a mathematical consequence of the data structure. What CAN be tested is whether the dynamics revealed by the instrument are informative, predictive, or useful. That is the empirical program. The ontological foundation is prior to it."
+      }
+    ]
+  },
+
+  "the_zero_state": {
+    "claim": "In a ratio-state universe, the zero state does not exist.",
+    "explanation": "A system on a simplex cannot have all proportions equal zero — at least one element must carry the full unit sum. Nor can the system reach a state of zero dynamics — any perturbation, however small, redistributes across all elements. The system may approach a stable attractor (one dominant carrier absorbing nearly all proportion), but even then, the residual carriers are nonzero and subject to redistribution. There is no ground state in the thermodynamic sense. There is no off switch.",
+    "implication_for_observation": "This means drift is not an event that starts and stops. Drift is the continuous condition of any proportional system. What changes is the rate, the character, and the visibility of the drift — not its existence. The observer who says 'nothing is happening' has not measured the system. They have assumed stillness where motion is structurally guaranteed.",
+    "human_analog": "The internal drives Peter describes — the search for scale, for position, for where one fits in the system — are the human experience of this same condition. Every individual exists within compositional systems (social, economic, cultural, biological) that are continuously redistributing. The drives persist even when unexamined. They are not chosen. They are structural. The question 'is this all there is' is the human carrier element sensing the simplex it occupies, even without the mathematical language to describe it.",
+    "peter_formulation": "Even those who do not ponder these questions are driven by them. No silent drift, only the unobserved."
+  },
+
+  "relationship_to_existing_doctrine": {
+    "open_loop_doctrine_LOOP_001": "ONTO-001 provides the reason LOOP-001 exists. If the ratio-state condition is pre-existing and the instrument merely reveals it, then the instrument has no authority to act on what it reveals. The system was operating before the instrument arrived. It will continue operating after the instrument is removed. The instrument is a guest in a house that was already built. Guests do not rearrange the furniture. They report what they see. The skydiver principle (LOOP-001) is the governance consequence of the ontological claim (ONTO-001): because the system is pre-existing and autonomous, observation must remain open-loop.",
+    "governance_architecture_GOV_001": "GOV-001 established the HUF-GOV / HUF-CLS boundary. ONTO-001 explains why that boundary is not a design choice but an ontological requirement. GOV observes a pre-existing condition. CLS attempts to modify it. The boundary between observation and control is the boundary between acknowledging the system's autonomy and overriding it.",
+    "hagf_framework_HAGF_001": "HAGF's Principle 5 (Human Primacy) follows directly from ONTO-001. If the system is pre-existing and the instrument is a late arrival, then the human operator — who has been living inside the system longer than the instrument has been measuring it — holds primacy over the instrument's readings. The operator's domain knowledge is not inferior to the instrument's precision. It is complementary. The instrument sees structure the operator cannot perceive. The operator holds context the instrument cannot access.",
+    "forward_signal_triad_TRIAD_001": "The forward signal — deceptive drift preceding structural shock — is the strongest empirical consequence of ONTO-001. If the dynamics are pre-existing and continuous, then structural concentration builds before it becomes visible. The instrument detects 'the invisible concentration that precedes visible disruption' (TRIAD-FS v2.0). This is not prediction. It is early observation of a process that was already underway."
+  },
+
+  "what_ONTO_001_is_not": {
+    "not_a_metaphysical_claim": "ONTO-001 does not claim that 'everything is a ratio-state system' in some universal philosophical sense. It claims that any system whose state can be expressed as proportions on a simplex exhibits ratio-state dynamics. This is a mathematical claim with a defined scope. Systems that are not compositional (single-variable measurements, binary states, non-proportional quantities) are outside this scope.",
+    "not_an_empirical_hypothesis": "The ontological claim — that simplex dynamics are pre-existing — is not falsifiable in the traditional sense because it is a mathematical consequence, not an empirical prediction. What IS falsifiable is whether the dynamics are informative: whether K_eff, TV, and drift metrics reveal meaningful structure in real-world proportional systems. That empirical program is documented in the calibration rack (CAL-001) and standing assessment (HSA-001).",
+    "not_a_sales_pitch": "The Ramsar introduction that said 'your wetland has three failures you don't know about' was the right insight delivered with the wrong framing. The ontological claim is not that the domain expert's system is broken. It is that the domain expert's system has structural dynamics that their current monitoring tools do not access. The system may be healthy, degrading, or in transition — the point is that there is a structural layer available for observation that was previously unobserved. Discovery, not diagnosis."
+  },
+
+  "the_three_sentences": {
+    "purpose": "The complete ontological foundation of HUF, stated in three sentences.",
+    "sentence_1": "Every system whose state can be expressed as proportions is already a ratio-state system, subject to simplex dynamics that operate continuously and independently of observation.",
+    "sentence_2": "The HUF instrument does not create these dynamics — it reveals a structural layer that was present before measurement began, accessible through a door the domain had no reason to know existed.",
+    "sentence_3": "The only state that does not exist in a ratio-state system is zero: there is no silence, no stillness, no ground state — only the unobserved."
+  },
+
+  "provenance": {
+    "threads_gathered": [
+      "Peter's 'no silent drift, only the unobserved' (this session, 2026-03-23)",
+      "Peter's 'show them a room in their house with a door that was invisible' (this session, 2026-03-23)",
+      "Peter's 'even those who do not ponder these questions are driven by them' (this session, 2026-03-23)",
+      "Forward Signal Triad v2.0: 'invisible concentration that precedes visible disruption'",
+      "GOV-001: 'the system reveals its own state if you stop fighting it and start listening'",
+      "GOV-001: 'it reveals the order already present in the disorder'",
+      "GOV-001: 'HUF-entropy is the information-theoretic entropy of a ratio-state carrier, measurable through the existing RSM instrument'",
+      "LOOP-001: 'The instrument reads. The human decides. The loop stays open.'",
+      "Ramsar template pitch (early draft, flagged by ChatGPT as confrontational — reframed here as discovery)",
+      "Peter's description of internal drives and natural selection pressure as human carrier redistribution (this session)"
+    ],
+    "collective_note": "ONTO-001 formalizes language and concepts that have appeared across conversations with all five collective members. The threads were scattered across governance documents, forward signal assessments, domain briefings, and direct conversation. This document gathers them into one place and states the claim explicitly."
+  }
+}

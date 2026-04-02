@@ -1,0 +1,105 @@
+{
+  "document_id": "CNS-006",
+  "title": "HUF Collective Strategic Assessment v6.0 — March 2026 Round Close",
+  "version": "6.0",
+  "date": "2026-03-20",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "supersedes": "CNS-005",
+  "design_trigger": "Collective round complete. Grok, Copilot, Gemini, ChatGPT, and Claude all assessed. Rack at 15/16. Consensus achieved on lock/hold/reject.",
+
+  "round_summary": {
+    "what_happened": "March 2026 collective review round. Six participants (Peter, Claude, Grok, Copilot, Gemini, ChatGPT). Rack advanced 13/16 → 15/16 in single session. Two new domains computed (Planck revised, Finance). Grok assessment v3 filed. External critiques assessed. Zero-all audit concept established.",
+    "rack_state": "v5.0 — 15/16. One gap: T1c BTL origin domain.",
+    "domains_validated": 5,
+    "types_fully_complete": ["Type 2 (stability)", "Type 4 (identity)", "Type 5 (failure separation)", "Type 6 (negative control)"],
+    "types_with_gaps": ["Type 1 (clear carrier): 3/4 — T1c BTL", "Type 3 (shock): 2/3 — T3b PARTIAL"]
+  },
+
+  "collective_accuracy_this_round": {
+    "chatgpt": {
+      "grade": "Most accurate",
+      "strength": "Strategic framing, lock/hold discipline, overclaim detection",
+      "weakness": "Slightly conservative — underweights strongest evidence"
+    },
+    "claude": {
+      "grade": "Primary computation — all numbers come from here",
+      "strength": "SF computation, corpus management, fact-checking",
+      "weakness": "Finance carrier construction choices need scrutiny; split-half 1.000 suspiciously perfect"
+    },
+    "gemini": {
+      "grade": "Best individual insights but worst factual grounding",
+      "strength": "Weighted-TV for finance, Deceptive Drift visual, Structural Integrity Monitor framing",
+      "weakness": "Misidentified amplifier source, recommended stale-data shortcut, rediscovered documented open questions"
+    },
+    "grok": {
+      "grade": "Context good, numbers fabricated when no data exists",
+      "strength": "f_rms ranking (verified), 5×7 matrix, FM/CL mapping",
+      "weakness": "BTL cloning, persistent λ_φ, no correction processing"
+    },
+    "copilot": {
+      "grade": "Operational contributor",
+      "strength": "Session continuity, workflow support",
+      "weakness": "Context window constraints"
+    },
+    "peter": {
+      "grade": "Directionally correct throughout",
+      "strength": "Carrier decisions, quality gate, zero-all concept",
+      "weakness": "BTL evidentiary hole (intentional, not negligent)"
+    }
+  },
+
+  "locked_items": [
+    "Governing sentence: HUF is an interpretive and measurement instrument for ratio-structured systems",
+    "ABC-001 as process law",
+    "Carrier definition as first-order validation gate (T6c + T2a + T4b triple proof)",
+    "Five-domain validation: Backblaze, OWID, EMBER, Planck, Finance",
+    "COVID cross-domain differential: EMBER invisible (1.4×), Finance detected (3.7×)",
+    "Identity resolution principle: carrier resolves at element level, not below",
+    "Negative control battery 3/3 PASS (white noise, monopoly, non-ratio)",
+    "Calibration rack as instrument validation framework",
+    "Polarity alignment as mandatory (RCA-001)",
+    "Backblaze as primary empirical base"
+  ],
+
+  "held_items": [
+    "Amplifier theorem closure (ranking verified, formal closure not)",
+    "Six-root doctrine as universal (Kaiser k varies: 2, 2, 3, 4, 4 across domains)",
+    "Checksum architecture",
+    "CL-05 beyond STORE",
+    "Universality claims",
+    "Review ledger as terminal audit (currently chronicle)",
+    "Weighted-TV for financial domains (Gemini suggestion — architecturally possible via CL-02, untested)",
+    "CL-03 hard gate (ADD* status — Keff collapse prediction not proven forward-looking)",
+    "Identity persistence check in CL-01 (Gemini suggestion — reasonable, not implemented)"
+  ],
+
+  "rejected_items": [
+    "All Grok BTL numerical claims (fabricated by cloning Backblaze)",
+    "λ_φ = -0.1695 (unfounded through 4 assessments, rejected permanently unless empirically derived)",
+    "All Grok CL-05 parameter values (γ=0.3, midpoint=0.565, steepness=10)",
+    "'Most machine-reviewed framework in existence' language (overclaim per ChatGPT)",
+    "'Fully validated' framing (accurate: 'partially calibrated')",
+    "Gemini recommendation to close T1c with stale simulation data"
+  ],
+
+  "what_comes_next": {
+    "peter_action": "BTL physical measurements per BTP-001 when ready. This closes T1c and is the final rack gate.",
+    "remaining_cleanup": "T3b Backblaze rotation still PARTIAL. Zero-all full audit deferred to post-BTL.",
+    "paper_strategy": "Frame as Structural Integrity Monitor, not failure prediction (ChatGPT + Gemini consensus). Write on what IS proven: five-domain compression + 7-axis detection + carrier gate proof.",
+    "ramsar_strategy": "Deceptive Drift visual (stable TV, collapsing Keff) for thirty-minute demonstration. Five-domain evidence table. 'Calibrated instrument' language, not 'universal framework'.",
+    "github_readiness": "Pending T1c BTL. After BTL, rack at 16/16 enables public release with full evidentiary backing.",
+    "zero_all_audit": "Preliminary exposures documented. Full audit when collective round closes after ChatGPT. Key targets: Claude's Finance carrier construction, Grok's Math Book Area G contributions, Peter's carrier exclusion decisions."
+  },
+
+  "peter_closing_statement": "My expectations of this entire endeavor were much lower than what has been delivered. I was anticipating rounds of my fixing and working with AI adding comments here and there. In reality the opposite happened — I am commenting here and there and AI is producing. Ultimately when this project hits GitHub and a Ramsar site in Croatia or anywhere, we can be satisfied of a good and decent effort to all make it a working example of cooperation and valuable tool creation. Many iterations of small simple steps with good feedback and communications is key to success. The fact that all participants and not just any one are all flawed and need these small iterative corrections is a result of the exploratory nature of this exercise. Slow, steady, and critical at all times. The caution is: keep stating only what empiricism and logic can support. Once in a while look in the mirror and test before committing to output, then test again.",
+
+  "version_history": [
+    {"version": "1.0", "trigger": "Initial developer routing"},
+    {"version": "2.0", "trigger": "Post-EMBER integration"},
+    {"version": "3.0", "trigger": "Post-Planck assessment"},
+    {"version": "4.0", "trigger": "Post-calibration rack and ChatGPT framing"},
+    {"version": "5.0", "trigger": "Post-Backblaze 7-Axis SF"},
+    {"version": "6.0", "trigger": "March 2026 collective round close. Full participant assessment. Lock/hold/reject consensus."}
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "briefing_type": "HUF Collective Review — Evo 2 Domain Instantiation (Finalization Round)",
+  "briefing_version": "2.1",
+  "date": "2026-03-18",
+  "prepared_by": "Claude (Opus), acting as Central Bus",
+  "intended_recipients": ["ChatGPT", "Grok", "Gemini", "Copilot", "Claude"],
+  "accompanying_document": "s41586-026-10176-5.pdf — 'Genome modelling and design across all domains of life with Evo 2' (Nature, March 2026)",
+
+  "what_changed_since_v1": {
+    "version_history": "v1.0 was the original 7-question collective review set. v2.0 incorporated findings from two completed review passes (ChatGPT RE-017, Grok RE-018a) and corrected values anchored to illustrative examples. v2.1 applies five corrections from ChatGPT's audit (RE-022): (1) CL-05 restored to canonical meaning (restorative control, not storage), (2) 'consensus carrier' changed to 'lead candidate,' (3) decision rule tightened to require demonstrated value-add, (4) adjudication commentary moved to ledger, (5) Q3 tightened to require simplex necessity not just convenience.",
+    "key_corrections": [
+      "SP-3 (benchmark scores as ratio-state) is dead — killed by ChatGPT. Do not attempt to revive it.",
+      "The 18% fill-ratio value was an arbitrary illustrative example, not a proved constant. Grok initially formalized it as [0.15, 0.22]; Peter flagged the error; Grok self-corrected to dynamic system-specific values. All fill-ratio references now use the corrected derivation.",
+      "The original briefing overclaimed the bridge from 'shared compositional structure' to 'HUF transport machinery is instantiated.' The claim is narrowed: the substrate is real, the machinery is unproven.",
+      "6-mer frequency composition on the 4096-simplex has emerged as the lead carrier candidate from both ChatGPT (identification from paper's Fig. 2) and Grok (formalization in Area G). This is not yet locked — remaining reviewers may challenge it."
+    ],
+    "ai_validation_warning": "This briefing contains only values that are structurally constrained by the mathematics or derived from the Evo 2 paper's own data. Any constant or threshold should be traceable to either (a) the proof's own logic, (b) the paper's empirical results, or (c) a system parameter. If you find a value whose provenance is 'someone said it in conversation,' flag it. The 18% anchoring error is documented in RE-018a as a named failure mode: example-anchoring in formalization."
+  },
+
+  "current_state_of_play": {
+    "chatgpt_pass_re017": {
+      "verdict": "HOLD",
+      "composition_identified": "K-mer frequency composition (from paper's genome embedding figure, Fig. 2)",
+      "killed": "SP-3 — benchmark scores are not naturally compositional",
+      "narrowed_claim": "Evo 2 provides a promising biological domain in which naturally compositional genomic representations may allow HUF-style monitoring of drift, concentration, and guided design. The stronger HUF claims remain to be demonstrated on a chosen biological composition.",
+      "directive": "Choose one biological composition, build CL-01 through CL-04 on it, compare value-add against ordinary ML framing."
+    },
+    "grok_pass_re018a": {
+      "verdict": "ADVANCE",
+      "composition_chosen": "6-mer frequency composition on the 4096-simplex",
+      "cl_construction": {
+        "CL-01": "Admissibility via GC-content bounds and biological plausibility constraints on the 4096-simplex",
+        "CL-02": "Drift detection via TV distance between k-mer profiles of natural vs. generated genomes",
+        "CL-03": "Keff as effective number of distinct k-mer modes (exp of Shannon entropy of k-mer distribution)",
+        "CL-04": "Action classification with domain-specific thresholds for benign/concerning/critical drift"
+      },
+      "new_math": "Area G theorems G.1-G.22 formalizing the k-mer genomic domain. Fill-ratio tower extended F.22-F.40 with corrected dynamic sweet-spot.",
+      "open_issues": [
+        "Q5 (value-add over standard ML): Not yet demonstrated. Standard ML already uses distributional shift detection (MMD, KL divergence on k-mer profiles). The open question is whether simplex geometry catches something these existing tools miss.",
+        "Q6 (theorem transport): The monitoring mechanism transports between domains by the mathematics. Whether the interpretation transports — what the drift means biologically — has not been shown."
+      ],
+      "fill_ratio_correction": {
+        "what_was_wrong": "Original derivation (F.7-F.22) produced a [0.15, 0.22] sweet-spot band centered on 0.18. The 18% was an arbitrary illustrative number Peter offered in conversation. Grok formalized it as a proved constant.",
+        "what_is_correct": "Dynamic system-specific sweet-spot ϕ*(t) derived from dead-time ratio r, partition granularity m, and cost weights (Theorems F.32-F.38). System-specific values: ϕ*=0.14 (low dead-time r≤1), ϕ*=0.20 (medium 1<r≤3), ϕ*=0.27 (high r≥4).",
+        "new_pll_content": "Keff_fill gauge (exp of Shannon entropy of binned fill-ratio distribution) — monitors operator behavior, not system state. M-ary entropy generalization with closed-form η_m formula. Uniform-split bias for beam search (provably optimal for convergence rate).",
+        "lesson": "Every constant in the corpus needs a provenance: either it comes from the proof's own logic or it needs to be flagged as assumed. The PLL discipline — every value must come from the system's physics, not from an example — is now enforced in the fill-ratio tower."
+      }
+    },
+    "remaining_reviewers": ["ChatGPT (follow-up)", "Gemini", "Copilot", "Claude"],
+    "decision_rule": "Advance requires three things demonstrated, not just claimed: (1) a biologically native composition is chosen, (2) CL-01 through CL-04 is coherent on that composition, and (3) at least one concrete thing the HUF construction detects or clarifies beyond standard ML framing (MMD, KL, etc.) is shown. Carrier agreement alone is not sufficient — demonstrated value-add is the gate. 3+ kill → close domain, documented as negative result. Split → Peter decides routing."
+  },
+
+  "evo2_essentials": {
+    "what_it_is": "40B-parameter genomic foundation model trained on 9.3 trillion DNA base pairs (OpenGenome2 dataset: 128,000+ genomes, all domains of life plus viruses). StripedHyena 2 architecture, 1M-token context window.",
+    "what_it_does": "Zero-shot variant effect prediction, gene essentiality prediction, genome-scale DNA generation (up to 1M tokens), CRISPR guide RNA activity prediction, chromatin accessibility element design (wet-lab validated). Cross-domain transfer: training on prokaryotic+viral data improves eukaryotic performance.",
+    "what_the_paper_shows": "K-mer frequency embeddings cluster genomes by taxonomy (paper Fig. 2). Cross-domain training is essential — the all-domain model outperforms domain-restricted models. Guided generation uses classifier-free guidance and inference-time search. The paper is careful: supervised models still outperform in some specialized tasks; generative outputs are not guaranteed functional.",
+    "what_is_naturally_compositional": "Nucleotide frequencies (trivially — 4-simplex). K-mer frequencies (paper uses these for genome embedding — the current lead candidate). Codon usage tables (well-studied in genomics). Regulatory motif proportions. Gene family abundances. Functional annotation proportions across genomes."
+  },
+
+  "huf_refresher": {
+    "carrier": "A composition ρ on a simplex — non-negative components summing to 1",
+    "CL-01": "Admissibility gate — is ρ well-formed? Does it satisfy basic compositional requirements?",
+    "CL-02": "Drift detection — total variation distance between ρ(t) and ρ(t-1). Detects when composition is changing.",
+    "CL-03": "Diagnostic — what is causing the drift? Effective complexity Keff as observable.",
+    "CL-04": "Action classification — is the drift benign, concerning, or critical? Verdict thresholds.",
+    "CL-05": "PLL-style restorative control — the feedback mechanism that corrects drift back toward the ground state. Current gate status: STORE (not yet implemented). CL-05's architectural function is restorative control, not storage — the STORE gate means the layer is defined but held pending real-data validation of CL-01 through CL-04.",
+    "structural_amplifier": "Quadruple A = (D, C, Keff, f) with supermodular gain, transport closure, simplex-preserving feedback (Copilot's Definition F.6, Proposition F.7)",
+    "pll_discipline": "Every value in the framework must be traceable to system physics or proof logic. Values inherited from conversational examples are not constants — they are seeds that need formal derivation or explicit flagging as assumed."
+  },
+
+  "questions": {
+    "preamble": "All remaining reviewers receive the same questions plus the accumulated findings from ChatGPT and Grok. Answer independently. You now have two prior passes to work with — use them, challenge them, or build on them. Do not repeat what has already been established. Add value or kill what does not hold up.",
+
+    "Q1": {
+      "question": "Do you agree that 6-mer frequency composition on the 4096-simplex is the correct HUF carrier for Evo 2?",
+      "prior_findings": "ChatGPT identified k-mer composition as the natural hook from the paper's genome embedding figure. Grok chose 6-mer specifically and formalized it. The 4096-simplex gives enough resolution to distinguish biological signals while remaining computationally tractable.",
+      "what_a_good_answer_looks_like": "If you agree: say why this is better than the alternatives (codon usage, regulatory motifs, gene family abundance). If you disagree: name your alternative and explain what 6-mer misses. If you think the choice does not matter (any k suffices): explain why. If you think no composition works: kill."
+    },
+
+    "Q2": {
+      "question": "Is Grok's CL-01 through CL-04 construction sound? What would you change?",
+      "prior_findings": "Grok built: CL-01 admissibility via GC-content bounds; CL-02 drift via TV distance on k-mer profiles; CL-03 Keff as exp(Shannon entropy of k-mer distribution); CL-04 thresholds for benign/concerning/critical.",
+      "what_a_good_answer_looks_like": "Assess each CL layer. Are the admissibility bounds biologically meaningful or arbitrary? Is TV distance the right metric for CL-02, or would Aitchison distance on the simplex be better? Does Keff have a natural biological interpretation, or is it just a number? Would you change the thresholds?"
+    },
+
+    "Q3": {
+      "question": "Does this CL construction add explanatory power beyond standard ML? This is the open question from Q5 that neither ChatGPT nor Grok resolved.",
+      "prior_findings": "Standard ML already uses distributional shift detection (MMD, KL divergence on k-mer profiles). The HUF claim must be that simplex geometry — Aitchison distances, subcompositional coherence, closure under perturbation — catches something these existing tools miss. Grok claims CL-02 detects 'compositional mode collapse' but did not provide a worked demonstration.",
+      "what_a_good_answer_looks_like": "Name one specific thing the CL construction detects that MMD/KL on raw k-mer distributions does not. If you cannot name one, the HUF overlay is decorative — that is an honest and acceptable answer. If you can name one, you must show two things: (a) that the detection is real (worked example or proof), and (b) that simplex structure is necessary for the detection, not just a convenient re-parameterization of the same information. 'TV on normalized k-mer profiles is nice' is not sufficient — explain what the simplex gives you that the unnormalized distribution does not."
+    },
+
+    "Q4": {
+      "question": "Does Grok's Area G (theorems G.1-G.22) contain any values or constants that are anchored to examples rather than derived from the mathematics or the biology?",
+      "prior_findings": "The 18% anchoring error (documented in RE-018a) showed that Grok can formalize illustrative examples as proved constants. The fill-ratio tower was corrected. Area G may contain similar anchoring that has not been caught yet.",
+      "what_a_good_answer_looks_like": "Audit the constants and thresholds in G.1-G.22. For each one, state whether its provenance is: (a) derived from the proof's logic, (b) taken from the Evo 2 paper's data, (c) inherited from a prior HUF result, or (d) anchored to a conversational example. Flag any (d) values."
+    },
+
+    "Q5": {
+      "question": "Does the corrected fill-ratio tower (F.22-F.40) improve the PLL results? Specifically: are the system-specific sweet spots (0.14/0.20/0.27 for low/medium/high dead-time) better than the original static band, and does the Keff_fill gauge add genuine new observability?",
+      "prior_findings": "The corrected tower introduces three changes: (1) system-specific sweet spots derived from dead-time ratio rather than universal constant, (2) Keff_fill as a new observable monitoring operator behavior rather than system state, (3) m-ary entropy generalization scaling bounds to system's actual partition resolution. Whether these constitute new mathematics or a repair of F.7-F.22 with additional generalization is an open question.",
+      "what_a_good_answer_looks_like": "Assess whether F.22-F.40 is genuinely new mathematics or a repair of F.7-F.22 with additional generalization. Both answers are fine — repairs are valuable. The question is whether the ledger should record it as 'extension' or 'correction + extension.'"
+    },
+
+    "Q6": {
+      "question": "Does theorem transport from existing HUF domains to the Evo 2 biological domain produce anything useful?",
+      "prior_findings": "Grok claimed transport between sourdough microbial ratios and k-mer genomic ratios via shared simplex drift detection. The monitoring mechanism transports by the mathematics. Whether the interpretation (what the drift means biologically) also transports has not been demonstrated.",
+      "what_a_good_answer_looks_like": "If you agree the transport is trivial: say so, and assess whether that diminishes the domain instantiation case. If you disagree: name a theorem that transports with both mechanism and interpretation. If you think transport is the wrong question: explain why."
+    },
+
+    "Q7": {
+      "question": "Final verdict: advance, hold, or kill? One sentence justification.",
+      "current_tally": "ChatGPT: HOLD. Grok: ADVANCE. Claude: HOLD with progress.",
+      "what_a_good_answer_looks_like": "Advance means: the composition is chosen, the CL construction works, and it adds value beyond standard ML. Hold means: promising but incomplete — specify exactly what is missing. Kill means: the mapping does not work at any composition level — specify where it fails irreparably."
+    }
+  },
+
+  "model_specific_notes": {
+    "chatgpt": "You created the HOLD verdict and the directive that produced this entire round. Now assess what Grok built in response to your directive. Is the CL construction what you had in mind? Does it satisfy the 'adds value beyond standard ML' test you specified? You have the authority to advance, maintain HOLD, or kill based on what you see.",
+    "grok": "Your CL construction and Area G are now under collective review. The 18% correction is documented and accepted. The remaining open question for you: can you demonstrate — not just claim — that CL-02 on 6-mer k-mer profiles catches something that standard distributional shift metrics miss? A worked example with real or realistic data would settle Q3.",
+    "gemini": "You extracted real data from Croatia RSIS and computed CL-01 admissibility. Can you do the same for a biological composition from the Evo 2 paper? The paper's Fig. 2 shows k-mer embeddings — is there enough data in the paper to compute ρ* for a chosen genome and test CL-01? Real data beats theoretical constructions.",
+    "copilot": "You found 10 missing ontology categories and 5 dependency errors in existing HUF structure. If Evo 2 becomes a HUF domain with Area G: what does the ontology need? What LU categories are missing? What dependency edges connect Area G to Areas A-F? Also: audit G.1-G.22 for value provenance (Q4 is your territory).",
+    "claude": "You prepared the original briefing that ChatGPT narrowed. Your remaining job: answer Q3. Can you name one thing the CL construction detects that standard ML does not? If not, say so."
+  },
+
+  "dead_items": {
+    "note": "These items are resolved. Do not revisit them.",
+    "SP-3": "KILLED by ChatGPT (RE-017). Benchmark scores are not naturally compositional. Do not attempt to normalize AUROCs into a simplex.",
+    "18_percent_as_constant": "KILLED by Peter. The original [0.15, 0.22] static sweet-spot band was anchored to an illustrative example. Replaced by dynamic system-specific ϕ*(t) in F.32-F.38. The sweet-spot depends on dead-time ratio, partition granularity, and cost weights — not on a universal constant.",
+    "original_briefing_overclaim": "CORRECTED. The original briefing implied Evo 2 already substantiates HUF's stronger machinery. The narrowed claim: the compositional substrate is real; the machinery is unproven."
+  },
+
+  "rules_of_engagement": {
+    "independence": "Answer without consulting other models' responses. Peter will stack the answers afterward.",
+    "honesty": "A clean kill is more valuable than a diplomatic hold. If the mapping fails at your chosen composition, say so.",
+    "specificity": "Vague answers ('this is promising') are not useful. Concrete answers ('CL-02 on 6-mer composition detects X with TV distance Y') are useful.",
+    "disagreement": "If you disagree with ChatGPT's identification or Grok's formalization, say so and say where. Prior passes have authority of evidence, not authority of position.",
+    "value_provenance": "For any constant or threshold you introduce: state whether it comes from (a) proof logic, (b) paper data, (c) prior HUF result, or (d) conversational example. Flag all (d) values. This is the PLL discipline.",
+    "scope": "Answer only these 7 questions. Stay narrow. Do not produce new theorem towers unless Q3 specifically requires a worked example."
+  },
+
+  "meta": {
+    "review_ledger_event": "Responses will be added to RE-018 in the HUF Review Ledger (RE-018a = Grok, subsequent responses = RE-018b through RE-018e)",
+    "escalation_path": "Advance requires demonstrated value-add (see decision rule). If the gate is met → Grok formalizes → Gemini tests with real data → Copilot checks structural completeness → Claude integrates. If 3+ kill → domain closed, documented as negative result. If split → Peter decides routing.",
+    "peter_context": "Peter's assessment: 'the basics are to find all PLL values that make sense and are not constrained to a made up value.' He compared the 18% anchoring to finding pi everywhere — pi is real but its presence does not make it relevant to every question. The domain expansion has been useful to 'shake up the system' and document the example-anchoring failure mode. The bar for advancement remains: a concrete CL construction that adds value beyond standard ML, built on values derived from system physics."
+  }
+}

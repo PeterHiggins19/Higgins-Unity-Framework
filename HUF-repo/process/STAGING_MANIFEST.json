@@ -1,0 +1,280 @@
+{
+  "manifest_id": "STAGING-001",
+  "manifest_version": "1.0",
+  "description": "Tracks all file changes between Cowork sessions and GitHub pushes. Each session entry records what was added, modified, or deleted — and whether it has been pushed to the live repo.",
+  "workflow": {
+    "step_1": "Claude makes changes in HUF-repo/ during a Cowork session",
+    "step_2": "Changes are logged here with status 'staged'",
+    "step_3": "Peter copies changed files to D:\\GitHub\\HUF and pushes via GitHub Desktop",
+    "step_4": "Peter (or Claude) updates status to 'pushed' with commit hash",
+    "note": "If a session ends before push, this manifest tells you exactly what's pending"
+  },
+  "repo": {
+    "name": "Higgins-Unity-Framework",
+    "url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "local_path_windows": "D:\\GitHub\\HUF",
+    "cowork_mirror": "Claude CoWorker/HUF-repo/"
+  },
+  "sessions": [
+    {
+      "session_id": "S000",
+      "date": "2026-03-30",
+      "label": "Initial repo publish",
+      "status": "pushed",
+      "commit": "HUF new Core — March 30, 2026 11:49 AM EDT",
+      "notes": "254 files. First public commit. README original version.",
+      "files": []
+    },
+    {
+      "session_id": "S001",
+      "date": "2026-03-30",
+      "label": "README restructure (ChatGPT front-door design)",
+      "status": "pushed",
+      "commit": "README restructure — pushed by Peter same day",
+      "notes": "ChatGPT designed three-box opening. Claude drafted full replacement. 27 internal links verified. Broken kill-test link fixed.",
+      "files": [
+        {
+          "path": "README.md",
+          "action": "modified",
+          "size_bytes": 9360,
+          "lines": 159,
+          "summary": "Restructured: claims/disclaims/test-protocol at top, CLS and provenance below fold, all links verified"
+        }
+      ]
+    },
+    {
+      "session_id": "S002",
+      "date": "2026-03-30",
+      "label": "v3 Spectrum Analyzer + Triad Architecture",
+      "status": "pushed",
+      "commit": "HUF new Core — included in S000 initial push (files were already in D:\\GitHub\\HUF before first commit)",
+      "notes": "Both files were already in the local repo folder when the initial 254-file commit was made. Verified live on GitHub. No separate commit needed — content matched.",
+      "files": [
+        {
+          "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.jsx",
+          "action": "added (in S000)",
+          "size_bytes": 50054,
+          "lines": 631,
+          "summary": "DISP-001 phase display: group phase (cumulative TV + K_eff path), carrier wraps, composition ribbon. Real EMBER carrier data for DE/JP/GB/FR/AU, 2000-2025, 9 fuel types."
+        },
+        {
+          "path": "reference/machine-readable/HUF_Triad_Architecture_v1.0.json",
+          "action": "added (in S000)",
+          "size_bytes": 19993,
+          "summary": "ARCH-001: GOV (SEES) / CLS (DOES) / GEO (IS) triad. Aitchison simplex, Fisher metric, square root embedding. Research taxonomy: established / frontier / future tiers."
+        }
+      ]
+    },
+    {
+      "session_id": "S003",
+      "date": "2026-03-30",
+      "label": "Staging manifest created",
+      "status": "pushed",
+      "commit": "Pushed by Peter March 30",
+      "notes": "New process file to track all changes between Cowork sessions and GitHub pushes. First file that is genuinely NEW since the initial publish.",
+      "files": [
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "added",
+          "size_bytes": null,
+          "summary": "Session-based change log with staged/pushed status, pending items queue, and file count tracking."
+        }
+      ]
+    },
+    {
+      "session_id": "S004",
+      "date": "2026-03-30",
+      "label": "CoDaWork Packet A v3 (Claude rebuild from ChatGPT v2)",
+      "status": "pushed",
+      "commit": "Pushed by Peter March 30 — confirmed live at drafts/codawork-2026/",
+      "notes": "Claude rebuilt ChatGPT's v2 packet with: (1) proper Unicode math rendering for formulas, (2) explicit null-model caveat on p=0.0016, (3) live GitHub repo link on cover and closing, (4) new Appendix A documenting L2->TV metric correction (METRIC-001). New drafts/codawork-2026/ directory created.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/HUF_MC4_CoDaWork_Packet_v3.docx",
+          "action": "added",
+          "size_bytes": 26944,
+          "summary": "CoDaWork contact packet: CoDa primer, MC-4 methods challenge, EMBER case note, metric-correction appendix. Proper math notation throughout."
+        },
+        {
+          "path": "drafts/codawork-2026/HUF_MC4_CoDaWork_Packet_v3.pdf",
+          "action": "added",
+          "summary": "PDF export of the DOCX for direct sharing."
+        }
+      ]
+    },
+    {
+      "session_id": "S005",
+      "date": "2026-03-30",
+      "label": "CoDaWork sample datasets + Copilot language audit",
+      "status": "pushed",
+      "commit": "Pushed by Peter March 30 — confirmed via repo file count",
+      "notes": "Copilot's 5 critical warnings checked against v3 packet — all clean (no inevitability, no convergence narrative, no overconfident claims). Built CSV+YAML sample data from real EMBER proportions for 3 countries, CoDa-ready format.",
+      "files": [
+        {
+          "path": "data/codawork-samples/ember_multisite_compositions.csv",
+          "action": "added",
+          "summary": "77-row CSV: Germany (26yr), Japan (25yr), UK (26yr), 9 fuel types, proportions summing to 1. Real EMBER data."
+        },
+        {
+          "path": "data/codawork-samples/ember_multisite_metadata.yaml",
+          "action": "added",
+          "summary": "YAML metadata: carrier definitions, zero handling policy, intended CoDa analyses, provenance."
+        },
+        {
+          "path": "data/codawork-samples/README.md",
+          "action": "added",
+          "summary": "Quick-start guide with R and Python examples for loading the compositions."
+        }
+      ]
+    },
+    {
+      "session_id": "S006",
+      "date": "2026-03-31",
+      "label": "CoDaWork engagement: full conference preparation suite",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Add CoDaWork 2026 conference preparation suite: email draft, prep guide, ternary diagram, CoDa Explorer, abstract, translator, concepts table, field guide, collective survey",
+      "notes": "Egozcue (CoDaWork Scientific Committee Chair) responded same day. Accepted contribution (oral or poster TBD). Gave 4 technical comments: avoid field acronyms, use perturbation not subtraction, CoDa not tied to constant sum, Aitchison norm for concentration. Abstract sent 12:00 PM addressing all 4 points. 283 words, plain text, CoDa vocabulary throughout. Full conference preparation suite built: translator, 26-concept table, do/don't field guide, collective celebration survey.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/email_draft_committee.md",
+          "action": "added",
+          "summary": "Draft email to codawork2026@coda-association.org. Sent 1:19 AM from PeterHiggins@RogueWaveAudio.com with v3 PDF attached."
+        },
+        {
+          "path": "drafts/codawork-2026/CODAWORK_PREP_GUIDE.md",
+          "action": "added",
+          "summary": "Study guide: CoDa concepts (Aitchison geometry, log-ratios, perturbation, zeros, closure), key researchers, likely questions, reading list."
+        },
+        {
+          "path": "drafts/codawork-2026/ternary_ember.html",
+          "action": "added",
+          "summary": "Interactive ternary diagram: Fossil/Nuclear/Renewable sub-composition, 3 countries, 2000-2025. Annotated with Fukushima, German nuclear exit, UK coal collapse."
+        },
+        {
+          "path": "drafts/codawork-2026/huf_coda_explorer.html",
+          "action": "added",
+          "summary": "6-panel CoDa visualization: ternary, time prism (Toblerone), CLR transform, perturbation velocity, ILR balances, Aitchison distance matrix. Interactive country/year controls."
+        },
+        {
+          "path": "drafts/codawork-2026/abstract_v1.md",
+          "action": "added",
+          "summary": "CoDaWork abstract (283 words). Plain text, no citations, CoDa vocabulary. Perturbation-based drift detection on EMBER data. Sent to committee March 31."
+        },
+        {
+          "path": "drafts/codawork-2026/huf_coda_translator.md",
+          "action": "added",
+          "summary": "Full HUF↔CoDa vocabulary translation table with plain-language explanations. What HUF adds (governance, real-time, portability). What CoDa adds (log-ratios, zeros, coherence, nulls). 51/49 collaboration offer."
+        },
+        {
+          "path": "drafts/codawork-2026/CONFERENCE_CONCEPTS.md",
+          "action": "added",
+          "summary": "Living concept table: 26 entries with HUF perspective, CoDa perspective, and bridge. Concepts 1-17 from session discussion, 18-25 from Grok CoDa deep dive, 26 = opening line."
+        },
+        {
+          "path": "drafts/codawork-2026/CONFERENCE_DO_DONT.md",
+          "action": "added",
+          "summary": "Field guide: DOs (respect geometry, speak from experience, use their vocabulary, admit gaps), DON'Ts (never dismiss CoDa, never argue with founders, never oversell), hidden traps (R package, Dirichlet, change-point, notation), emergency fallback sentence."
+        },
+        {
+          "path": "drafts/codawork-2026/collective_moment_S006.md",
+          "action": "added",
+          "summary": "Celebratory survey from all 6 collective members + Peter reacting to Egozcue's response. Count now 7 with Egozcue as first external validator."
+        }
+      ]
+    },
+    {
+      "session_id": "S007",
+      "date": "2026-04-02",
+      "label": "Conference study guides, v3 analyzer, core explanation, Sharon letter",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Add conference study materials (formula ref, vocabulary, researchers card), battle card v2, executive summary, core explanation, v3 unified analyzer with dual metrics and crisis snapshots, letter for Sharon",
+      "notes": "Abstract formally accepted by Egozcue. Registration paid (€525 early rate, full week + introductory course + all social events). 2-year CoDa Association membership granted as courtesy. Battle card rebuilt with white-flag collaboration posture and Ramsar gateway. V3 analyzer merges original HUF dashboard with CoDa Explorer: 10 panels, dual metric engine (TV + Aitchison), 2025 crisis snapshots (France, USA, China, India, Brazil). PLL coherence chain identified as the core of HUF: 1→2→4 nested carrier groups.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/BATTLE_CARD.md",
+          "action": "added",
+          "summary": "White-flag battle card: 6 gaps table, strengths table, Ramsar play, 10 hardest questions with honest answers, collaboration posture throughout."
+        },
+        {
+          "path": "drafts/codawork-2026/EXECUTIVE_SUMMARY.md",
+          "action": "added",
+          "summary": "Cylinder projection analogy, fuel gauge metaphor, one-sentence summary, sections for CoDa colleagues and everyone else."
+        },
+        {
+          "path": "drafts/codawork-2026/FORMULA_REFERENCE.md",
+          "action": "added",
+          "summary": "Complete HUF↔CoDa formula quick reference: 10 sections covering sample space, operations, log-ratio transforms, distances, balances, concentration, time series, zeros, coherence. Seven critical formulas to memorize."
+        },
+        {
+          "path": "drafts/codawork-2026/VOCABULARY_CARD.md",
+          "action": "added",
+          "summary": "CoDa words to use vs HUF jargon to avoid. Phrases that land well vs phrases that hurt. Print-and-tape-to-mirror study card."
+        },
+        {
+          "path": "drafts/codawork-2026/RESEARCHERS_CARD.md",
+          "action": "added",
+          "summary": "Who's who at CoDaWork: 8 key researchers with what they work on, what they'll ask, what to ask them, interaction guide table."
+        },
+        {
+          "path": "drafts/codawork-2026/THE_CORE.md",
+          "action": "added",
+          "summary": "Core HUF explanation for CoDa audience: 1→2→4 coherence chain from loudspeaker to energy to wetlands. Nested simplices, group coherence as gate, open/closed loop, CoDa↔HUF contribution table."
+        },
+        {
+          "path": "drafts/codawork-2026/FOR_SHARON.md",
+          "action": "added",
+          "summary": "Plain-language explanation for Peter's wife: what he's been doing in the basement, what it means, why Coimbra matters."
+        },
+        {
+          "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
+          "action": "added",
+          "summary": "Unified v3 analyzer: 10 panels, dual metric engine (TV + Aitchison), all CoDa methods (CLR, ILR balances, Aitchison distance matrix, ternary, perturbation velocity), 2025 crisis snapshots (France, USA, China, India, Brazil), gauges sidebar, play/scrub animation. 1865 lines, zero dependencies."
+        },
+        {
+          "path": "drafts/codawork-2026/HUF_Spectrum_Analyzer_v3.html",
+          "action": "added",
+          "summary": "Copy of v3 analyzer in conference folder for easy access."
+        }
+      ]
+    }
+  ],
+  "pending_items": [
+    {
+      "item": "CoDaWork conference script",
+      "priority": "next",
+      "notes": "Build from 26-concept spine in CONFERENCE_CONCEPTS.md. Oral or poster TBD by committee. Visuals ready (ternary, explorer, v3 analyzer, perturbation velocity, Aitchison distance matrix). Script is the remaining deliverable."
+    },
+    {
+      "item": "Push S006 + S007 files to GitHub",
+      "priority": "next",
+      "notes": "S006: 9 files in drafts/codawork-2026/. S007: 7 new files in drafts/codawork-2026/ + v3 analyzer in spectrum-analyzer/ + updated manifest. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
+    },
+    {
+      "item": "BTL platform map update",
+      "priority": "when ready",
+      "notes": "Clarett+ 4Pre replaces Scarlett 2i2. Peter will provide complete hardware map when ready. Experimental protocol for prospective perturbation testing."
+    },
+    {
+      "item": "Peterson letter URL update",
+      "priority": "when ready",
+      "notes": "Letter may reference old GitHub URL — needs updating to PeterHiggins19/Higgins-Unity-Framework"
+    },
+    {
+      "item": "GitHub issue templates",
+      "priority": "when ready",
+      "notes": "ChatGPT suggested: Prior-art challenge, Replication attempt, Negative result / failure case"
+    }
+  ],
+  "file_count_tracking": {
+    "S000_published": 254,
+    "S001_after_push": 254,
+    "S002_already_in_S000": "no new files",
+    "S003_when_pushed": 255,
+    "S004_when_pushed": 257,
+    "S005_when_pushed": 260,
+    "S006_when_pushed": 269,
+    "S007_when_pushed": 278
+  }
+}

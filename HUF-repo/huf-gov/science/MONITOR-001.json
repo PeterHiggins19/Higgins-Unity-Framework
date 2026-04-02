@@ -1,0 +1,323 @@
+{
+  "document_id": "MONITOR-001",
+  "title": "The Four Monitoring Categories — Formal Taxonomy with Academic Grounding",
+  "version": "1.0",
+  "date": "2026-03-25",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "classification": "GOV — institutional reference document. This is the cornerstone taxonomy that positions MC-4 within established academic frameworks.",
+
+  "naming_convention": {
+    "official_category_name": "Composition Monitoring",
+    "abbreviation": "MC-4",
+    "note": "The official name for the fourth monitoring category is Composition Monitoring. The term 'ratio-state' describes the mathematical state the instrument reads (the normalized proportional vector on the simplex), not the category itself. Usage: 'Composition Monitoring' when referring to the category (MC-4). 'Ratio-state' when referring to the mathematical state being observed. 'Composition monitoring instrument' when describing HUF-GOV. This convention was formalized March 28, 2026, to resolve inconsistent naming across the corpus.",
+    "supersedes": "Earlier corpus documents may use 'ratio-state monitoring' as a category name. The canonical term is 'Composition Monitoring.' Ratio-state is the method; Composition is the category."
+  },
+
+  "abstract": "This document formally defines four categories of system monitoring, grounds each in established academic literature, and identifies the gap that the Higgins Unity Framework fills. The first three categories — Magnitude, Identity, and Trend — are implicitly present across multiple established frameworks (Stevens 1946, WHO surveillance, OECD DAC, UN Results-Based Management) but have never been unified into a single taxonomy of monitoring intent. The fourth category — Composition — has a 40-year mathematical foundation (Aitchison 1982, compositional data analysis on the simplex) but has never been framed as a monitoring category. HUF's contribution is not the invention of new mathematics. It is the recognition that compositional structure, already formalized as a statistical discipline, constitutes a fourth primary category of system observation that has been diagnostically invisible in standard monitoring practice.",
+
+  "section_1_the_gap": {
+    "title": "The Institutional Gap — Why No One Wrote the Taxonomy",
+    "observation": "No single authority has published a unified taxonomy of monitoring categories. The concepts of magnitude, identity, and trend exist across multiple frameworks in multiple disciplines, each maintained by different bodies. The reason no one unified them is that the first three categories were so ubiquitous as to seem self-evident — like asking 'who invented counting?' The fourth category was not self-evident. It required a mathematical framework (Aitchison 1982) that existed for 40 years in the statistical literature but was never applied as a monitoring category. The gap is not in the mathematics. The gap is in the application.",
+    "implication": "HUF is not proposing new mathematics. HUF is proposing that Aitchison's compositional data analysis, applied as a primary monitoring observable rather than a post-hoc statistical correction, constitutes a fourth category of system observation. This positions MC-4 as a recognition, not an invention."
+  },
+
+  "section_2_academic_lineage": {
+    "title": "Academic Lineage — Who Formalized What",
+
+    "measurement_theory": {
+      "authority": "Stanley Smith Stevens (1906-1973), Harvard University",
+      "publication": "Stevens, S.S. (1946). 'On the theory of scales of measurement.' Science, 103(2684), 677-680.",
+      "contribution": "Established the four scales of measurement: Nominal (categories/labels), Ordinal (rank order), Interval (equal spacing, arbitrary zero), Ratio (equal spacing, true zero). This is the foundational taxonomy of measurement types — what KIND of number you are holding.",
+      "relevance_to_huf": "Stevens' Ratio scale is the mathematical home of magnitude measurements (Category 1). His Nominal scale is the home of identity (Category 2). But Stevens describes data types, not monitoring intent. He tells you what kind of measurement you have. He does not tell you what to look for in a complex system. HUF's four categories are about monitoring intent — the WHY of observation, not the WHAT of data type.",
+      "gap": "Stevens never addressed compositional data as a distinct measurement concern. The unity constraint (Σρ=1) creates a dependent data structure that violates the assumptions of standard statistical methods applied to his Ratio scale. This gap was not filled until Aitchison (1982)."
+    },
+
+    "compositional_data_analysis": {
+      "authority": "John Aitchison (1926-2016), University of Glasgow / University of Hong Kong",
+      "publication": "Aitchison, J. (1982). 'The statistical analysis of compositional data.' Journal of the Royal Statistical Society: Series B (Methodological), 44(2), 139-177.",
+      "monograph": "Aitchison, J. (1986). 'The Statistical Analysis of Compositional Data.' Chapman & Hall, London. Reprinted 2003 with additional material.",
+      "contribution": "Formalized the mathematics of compositional data — data that represent proportions of a whole and sum to a fixed constant (typically 1). Defined the simplex as the sample space. Introduced logratio transformations (ALR, CLR, ILR) to handle the closure constraint. Proved that standard multivariate statistics applied naively to compositional data produces spurious correlations. Established compositional data analysis (CoDa) as a formal statistical discipline.",
+      "subsequent_development": {
+        "aitchison_geometry": "Pawlowsky-Glahn, V. and Egozcue, J.J. (2001). Introduced 'Aitchison geometry' — a Euclidean space structure on the simplex that provides a complete geometric framework for compositional data.",
+        "field_maturity": "40+ years of peer-reviewed literature. Dedicated conferences (CoDaWork series, biennial since 2003). Applications across geosciences, ecology, genomics, demography, economics, and food science. Textbooks by Aitchison (1986), Pawlowsky-Glahn & Buccianti (2011), Filzmoser et al. (2018).",
+        "key_journals": "Mathematical Geosciences, Journal of the Royal Statistical Society, Statistical Methodology, Compositional Data Analysis (Springer proceedings)"
+      },
+      "relevance_to_huf": "Aitchison provided the complete mathematical foundation for MC-4. The simplex, the unity constraint, the closure problem, the logratio transformations — all of this is established peer-reviewed mathematics. What Aitchison did NOT do is frame compositional data analysis as a monitoring category. He framed it as a statistical method — a way to correctly handle data that sums to a constant. HUF's contribution is applying Aitchison's mathematics as a first-class monitoring observable, not a statistical correction.",
+      "the_critical_distinction": "In Aitchison's framework, compositional structure is something you account for when analyzing data. In HUF, compositional structure is something you monitor as a primary observable. The difference is between a correction factor and an instrument reading. Aitchison built the lens. HUF points it at the system and watches what moves."
+    },
+
+    "surveillance_frameworks": {
+      "who_surveillance": {
+        "authority": "World Health Organization (WHO), 194 member states",
+        "framework": "International Health Regulations (IHR, 2005). Early Warning and Response System (EWARS).",
+        "categories": {
+          "event_based_surveillance": "Detection of signals from unstructured sources — media reports, community alerts, clinical observations. Corresponds to MC-1 (Passive monitoring: 'What happened?').",
+          "indicator_based_surveillance": "Routine collection against predefined thresholds — case counts, positivity rates, mortality rates. Corresponds to MC-2 (Mandated monitoring: 'Did we cross a boundary?')."
+        },
+        "gap": "WHO surveillance has no equivalent of MC-3 (hypothesis-driven questioning) or MC-4 (structural composition monitoring). The IHR framework monitors magnitude (case counts) and threshold crossings (alert triggers) but does not monitor the internal proportional structure of disease burden across populations. A country could maintain stable total case counts while internal composition shifts dramatically toward vulnerable subpopulations — classic deceptive drift."
+      },
+
+      "oecd_dac": {
+        "authority": "Organisation for Economic Co-operation and Development, Development Assistance Committee",
+        "framework": "OECD DAC Evaluation Criteria (1991, revised 2019). Six criteria: relevance, coherence, effectiveness, efficiency, impact, sustainability.",
+        "relevance_to_huf": "These are evaluation criteria (how to judge what happened), not monitoring categories (what to look for). They govern assessment after intervention, not real-time structural observation. They are downstream of all four monitoring categories — you need MC-1 through MC-4 data to apply OECD evaluation criteria.",
+        "gap": "No OECD criterion addresses internal proportional structure of development outcomes. A country could show improving aggregate indicators (magnitude) while internal distribution concentrates benefits in fewer regions or populations. The OECD criteria would rate this as 'effective' on magnitude. MC-4 would flag the structural hollowing."
+      },
+
+      "un_results_based_management": {
+        "authority": "United Nations Development Programme (UNDP), UN Development Group",
+        "framework": "Results-Based Management (RBM). Results chain: Inputs → Activities → Outputs → Outcomes → Impact.",
+        "publication": "UNDG Results-Based Management Handbook (2011).",
+        "relevance_to_huf": "RBM is a causal chain for programme evaluation. It tells you whether interventions produced intended results. The 'hypothesis' step — did our theory of change hold? — corresponds to MC-3 (question-driven monitoring).",
+        "gap": "RBM tracks whether targets were met (magnitude) and whether the right things happened in the right order (causal chain). It does not track whether the internal composition of outcomes shifted during the programme. A poverty reduction programme could meet its aggregate target while structural composition of remaining poverty concentrates in harder-to-reach populations. RBM declares success; MC-4 detects the residual structural problem."
+      }
+    },
+
+    "information_theory": {
+      "authority": "Claude E. Shannon (1916-2001), Bell Labs / MIT",
+      "publication": "Shannon, C.E. (1948). 'A Mathematical Theory of Communication.' Bell System Technical Journal, 27(3), 379-423.",
+      "relevance_to_huf": "Shannon entropy — H = -Σ p_i log(p_i) — is a measure of uncertainty/diversity in a probability distribution. HUF's K_eff (effective complexity) is a concentration measure on the simplex that is mathematically related to Shannon entropy. The connection is fundamental: entropy measures information content; K_eff measures structural concentration. Both operate on distributions that sum to one. Shannon provides the information-theoretic foundation for why compositional structure carries information — it is literally a measure of how much structural 'surprise' is present in the system.",
+      "gap": "Shannon formalized information content but did not frame it as a monitoring category. Entropy is used as an analytical tool, not as a primary observable in operational monitoring systems."
+    }
+  },
+
+  "section_3_the_four_categories_formal": {
+    "title": "Formal Definition of the Four Monitoring Categories",
+    "preamble": "The following taxonomy unifies concepts that have existed implicitly across multiple frameworks. Each category is defined by its monitoring intent (what question it answers), its mathematical home (where the data lives in measurement theory), its established academic foundation, and its operational implementation.",
+
+    "MC_1": {
+      "name": "Magnitude Monitoring",
+      "also_known_as": "Quantitative monitoring, volume tracking, aggregate measurement",
+      "intent": "How much? What is the total?",
+      "question": "What is the scalar quantity of the observable?",
+      "mathematical_home": "Stevens' Ratio scale. Real-valued, true zero, unbounded above.",
+      "academic_foundation": [
+        "Stevens (1946) — Ratio scale measurement",
+        "WHO IBS — case counts, mortality rates (magnitude indicators)",
+        "OECD DAC — impact assessment (aggregate outcome magnitude)",
+        "UN RBM — output and outcome indicators (did we hit the number?)"
+      ],
+      "operational_examples": ["Total GDP", "Total hectares", "Total energy generation", "Total case count", "Total revenue"],
+      "what_it_reveals": "Scale, size, total quantity. The volume knob.",
+      "what_it_misses": "Internal structure. A magnitude can remain stable while internal composition undergoes radical change. This is the definition of deceptive drift.",
+      "status": "Universally deployed. Present in every monitoring system on Earth."
+    },
+
+    "MC_2": {
+      "name": "Identity Monitoring",
+      "also_known_as": "Categorical tracking, attribution, labeling",
+      "intent": "Who or what? Which element?",
+      "question": "What are the named constituents of the system?",
+      "mathematical_home": "Stevens' Nominal scale. Categorical, unordered (or Ordinal if ranked).",
+      "academic_foundation": [
+        "Stevens (1946) — Nominal scale measurement",
+        "WHO EBS — source identification (which community, which region)",
+        "OECD DAC — relevance criterion (who are the beneficiaries?)",
+        "UN RBM — disaggregation categories (by gender, region, age)"
+      ],
+      "operational_examples": ["Country name", "Sector label", "Species ID", "Manufacturer code", "Demographic category"],
+      "what_it_reveals": "The names on the axes. Who the players are.",
+      "what_it_misses": "Internal dynamics. Identity is static. It tells you who is at the table but not how the balance of power is shifting.",
+      "status": "Universally deployed. Present in every dataset that has labels."
+    },
+
+    "MC_3": {
+      "name": "Trend Monitoring",
+      "also_known_as": "Temporal analysis, time-series projection, direction tracking",
+      "intent": "Which direction? Is it going up or down?",
+      "question": "How is the magnitude changing over time?",
+      "mathematical_home": "Stevens' Interval or Ratio scale, time-indexed. Temporal derivative of MC-1.",
+      "academic_foundation": [
+        "Classical statistics — time-series analysis (Box-Jenkins, ARIMA)",
+        "WHO IBS — trend indicators (year-over-year change, moving averages)",
+        "OECD DAC — sustainability criterion (will the trend continue?)",
+        "UN RBM — theory of change (does the causal chain produce trend?)"
+      ],
+      "operational_examples": ["GDP growth rate", "Year-over-year energy change", "Population growth trend", "Moving average of case counts", "Revenue trajectory"],
+      "what_it_reveals": "Direction and speed of aggregate change. The shadow on the wall moving.",
+      "what_it_misses": "Internal rotation. If the object rotates without translating, the shadow's total area may not change. Trend monitors the shadow's movement; it does not detect the rotation that precedes it.",
+      "status": "Universally deployed. The dominant analytical lens in policy, finance, and science."
+    },
+
+    "MC_4": {
+      "name": "Composition Monitoring (Ratio-State)",
+      "also_known_as": "Structural monitoring, proportional analysis, ratio-state observation, compositional data monitoring",
+      "intent": "What is the internal balance? How are the parts arranged relative to each other?",
+      "question": "What fraction of the conserved whole does each element hold, and how is that fraction changing?",
+      "mathematical_home": "Aitchison simplex. Bounded [0,1] per carrier, Σρ_i = 1. Compositional data in S^(D-1).",
+      "academic_foundation": [
+        "Aitchison (1982) — compositional data analysis on the simplex",
+        "Pawlowsky-Glahn & Egozcue (2001) — Aitchison geometry",
+        "Shannon (1948) — entropy as structural information measure",
+        "40+ years of CoDa literature across geosciences, ecology, genomics, economics",
+        "NO PRIOR APPLICATION AS A MONITORING CATEGORY"
+      ],
+      "operational_examples": [
+        "Energy mix: fraction of total generation from coal, gas, nuclear, renewables (Σ = 1)",
+        "GDP composition: fraction of total GDP from agriculture, industry, services (Σ = 1)",
+        "Ecosystem balance: fraction of total habitat from open water, marsh, forest, grassland (Σ = 1)",
+        "Crossover power: fraction of total acoustic output from woofer, midrange, tweeter (Σ = 1)",
+        "Portfolio weight: fraction of total investment across asset classes (Σ = 1)"
+      ],
+      "what_it_reveals": "Internal structural dynamics. Zero-sum trade-offs between carriers. Concentration, hollowing, rotation — the shape of the object casting the shadow. Deceptive drift: the structural signal that precedes the magnitude signal.",
+      "what_it_misses": "Absolute scale (deliberately removed by normalization). MC-4 cannot tell you the total — only the mix. MC-1 provides the total; MC-4 provides the structure. They are complementary, not substitutes.",
+      "status": "MATHEMATICALLY ESTABLISHED. DIAGNOSTICALLY ABSENT. The mathematics has existed since Aitchison (1982). The monitoring application has not existed in standard practice. One quarter of the observable information universe has been diagnostically invisible — not because the mathematics was missing, but because no one framed compositional structure as a primary monitoring observable.",
+      "huf_contribution": "HUF applies Aitchison's simplex mathematics as a real-time monitoring instrument. The Spectrum Analyzer reads carrier composition the way an audio analyzer reads frequency balance — continuously, visually, and with calibrated metrics (K_eff, TV distance, acceleration, phase). HUF did not invent the mathematics. HUF installed the gauge."
+    }
+  },
+
+  "section_4_why_mc4_was_invisible": {
+    "title": "Why MC-4 Was Diagnostically Invisible — The Ratio Blindness Problem",
+
+    "structural_reasons": [
+      {
+        "reason": "Aitchison's closure problem was treated as a statistical nuisance, not a signal",
+        "explanation": "When Aitchison identified the closure constraint (Σ = constant), the statistical community treated it as a problem to be corrected — compositional data needed logratio transformation before standard methods could be applied. The closure was an obstacle to analysis, not an observation to monitor. Nobody asked: what if the closure constraint itself reveals something? What if the zero-sum dynamics on the simplex carry forward-looking information? The correction was applied, and the signal was discarded with the 'nuisance.'"
+      },
+      {
+        "reason": "Magnitude dominance in institutional culture",
+        "explanation": "Every institution measures its success in magnitude terms — total GDP, total hectares, total revenue, total case counts. Institutional incentives reward magnitude growth and punish magnitude decline. Nobody is rewarded for monitoring internal composition when the total looks fine. The institutional culture selects for MC-1 attention and against MC-4 attention. This is not conspiracy; it is incentive structure."
+      },
+      {
+        "reason": "Computational cost before the digital era",
+        "explanation": "Computing carrier ratios, TV distances, and complexity metrics for large systems in real time was computationally impractical before modern computing. By the time the computation was feasible, the institutional habits were set. The monitoring frameworks had been designed around MC-1, MC-2, and MC-3, and nobody revisited the design to ask what a fourth category might add."
+      },
+      {
+        "reason": "The Primer Gap in reverse",
+        "explanation": "The mathematical community had the structure (Aitchison) but not the monitoring context. The monitoring community had the context (WHO, OECD, UN) but not the mathematical framework. Neither community had reason to read the other's literature. The gap existed at the disciplinary boundary — visible from neither side, obvious from above."
+      }
+    ],
+
+    "peter_observation": "We were looking at the data the entire time orthogonally. The shadow concept dispelled the 'magic prediction' feeling and made ratio blindness visible. The data was always there. The ratios existed inside every dataset ever collected. The instrument was never installed."
+  },
+
+  "section_5_using_existing_methods": {
+    "title": "Adopting Existing Institutional Methods to Define MC-4",
+    "purpose": "To ensure MC-4 is introduced using the same vocabulary, formatting, and institutional pathways that formalized MC-1, MC-2, and MC-3. MC-4 arrives as an extension, not a revolution.",
+
+    "method_1_indicator_specification": {
+      "source": "UN RBM Handbook (2011) — standard indicator definition format",
+      "format": {
+        "indicator_name": "Structural Concentration Index (K_eff)",
+        "definition": "The effective complexity of the carrier distribution, computed as a normalized function of carrier proportions on the unit simplex. Low K_eff indicates concentration (few carriers dominate). High K_eff indicates diversity (carriers evenly distributed).",
+        "unit_of_measurement": "Dimensionless scalar on [0, 1] (or domain-calibrated range)",
+        "disaggregation": "By carrier element (individual ρ_i), by time period, by domain",
+        "data_source": "Any dataset containing elements that sum to a finite total",
+        "frequency": "Matches the reporting frequency of the source data (annual, monthly, real-time)",
+        "baseline": "Domain-specific calibration required. Null model: Dirichlet distribution on the simplex.",
+        "target": "Not applicable — MC-4 is an instrument reading, not a target. The instrument reads; the human decides. Open-loop doctrine applies."
+      },
+      "note": "The 'target' field is deliberately marked N/A. This is a critical departure from standard RBM practice, which expects every indicator to have a target. MC-4 is diagnostic, not prescriptive. Setting targets on structural indicators would close the loop."
+    },
+
+    "method_2_oecd_criterion_extension": {
+      "source": "OECD DAC Evaluation Criteria (2019 revision)",
+      "proposal": "A seventh evaluation criterion: Structural Integrity",
+      "definition": "The degree to which the internal proportional structure of outcomes remained balanced or concentrated during the intervention period. An intervention can score high on effectiveness (magnitude target met) while scoring low on structural integrity (benefits concentrated in fewer subpopulations or regions).",
+      "evaluation_question": "Did the intervention maintain or improve the internal proportional balance of outcomes, or did it introduce structural concentration (deceptive drift) behind stable aggregate indicators?",
+      "note": "This positions MC-4 within an existing institutional framework. The OECD revises its criteria approximately every 20 years (1991 → 2019). A proposal for a seventh criterion timed to the next revision cycle would follow established institutional pathways."
+    },
+
+    "method_3_who_surveillance_extension": {
+      "source": "WHO International Health Regulations (IHR, 2005)",
+      "proposal": "A third surveillance category: Composition-Based Surveillance (CBS)",
+      "definition": "Continuous monitoring of the proportional distribution of health outcomes across subpopulations, facilities, regions, or pathogen subtypes. CBS detects structural concentration — the 'hollowing out' of health equity behind stable aggregate indicators — before magnitude-based triggers activate.",
+      "operational_example": "Total COVID case counts are declining nationally (IBS says: improving). But the ratio of cases in rural vs urban areas is concentrating — rural proportion increasing from 30% to 60% while total drops. CBS flags the structural shift. IBS misses it because the total is improving.",
+      "note": "CBS would require no new data collection. The data already exists in disaggregated form in WHO reporting systems. The computation (carrier ratios, TV distance, concentration measures) is trivially simple. The only change is pointing an existing mathematical lens at data that is already being collected."
+    },
+
+    "method_4_iso_standard_format": {
+      "concept": "An ISO standard for composition monitoring instruments",
+      "precedent": "ISO 7240 (fire detection and alarm systems), ISO 10816 (vibration monitoring), ISO 14644 (cleanroom classification). Each defines instrument specifications, calibration procedures, and measurement protocols for a class of monitoring instruments.",
+      "proposal": "A future ISO standard for composition monitoring instruments: defines the simplex constraint, carrier normalization procedure, drift metrics (TV distance, acceleration), concentration measures (K_eff), phase display modes, and calibration requirements per domain.",
+      "status": "ASPIRATIONAL — requires adoption by a standards body, which requires demonstrated use in multiple domains. The corpus currently demonstrates application across 6+ domains. ISO submission would be a Stage 3 or Stage 4 action in the staged release plan.",
+      "research_question": "RESEARCH-Q16: What is the minimum evidence base required for an ISO standard proposal in monitoring instrumentation? How many independent domain applications are needed?"
+    },
+
+    "method_5_academic_publication": {
+      "concept": "Peer-reviewed publication establishing MC-4 as a monitoring category",
+      "target_journals": [
+        {"journal": "Journal of the Royal Statistical Society (Series B)", "rationale": "Aitchison's 1982 paper was published here. A paper establishing the monitoring application of CoDa in the same journal would create a clean citation chain."},
+        {"journal": "Mathematical Geosciences", "rationale": "Primary venue for compositional data analysis. The CoDaWork community reads this journal."},
+        {"journal": "Nature Sustainability", "rationale": "For the Ramsar/ecosystem monitoring application. High impact, interdisciplinary audience."},
+        {"journal": "Risk Analysis", "rationale": "For the governance and structural fragility framing. The cost doctrine and open-loop principle would fit here."},
+        {"journal": "Perspectives on Psychological Science", "rationale": "For the Peterson convergence — ratio-state dynamics mapped to hierarchical value structures. Stevens published in Science; a measurement-theory extension could land in a psychology methods journal."}
+      ],
+      "paper_structure": {
+        "title_candidate": "The Missing Quarter: Compositional Structure as a Fourth Category of System Monitoring",
+        "sections": [
+          "1. Three categories of monitoring (literature review: Stevens, WHO, OECD, UN RBM)",
+          "2. The closure constraint as signal, not nuisance (Aitchison reframe)",
+          "3. Deceptive drift: structural lead-time in three domains (EMBER, GDP, ecosystems)",
+          "4. Scale invariance: simulation evidence (35M tests, 5.23 sigma)",
+          "5. A fourth monitoring category: formal definition and instrument specification",
+          "6. Implications for governance, ecology, and economics"
+        ]
+      },
+      "status": "READY TO DRAFT — corpus contains all necessary evidence. Requires Peter's decision on timing and co-authorship."
+    }
+  },
+
+  "section_6_citation_chain": {
+    "title": "The Citation Chain — From Stevens to HUF",
+    "purpose": "A clean academic lineage that any reviewer can follow.",
+
+    "chain": [
+      {
+        "step": 1,
+        "citation": "Stevens, S.S. (1946). 'On the theory of scales of measurement.' Science, 103(2684), 677-680.",
+        "contribution": "Established that measurement has a taxonomy. Four scales: Nominal, Ordinal, Interval, Ratio.",
+        "gap_left": "Does not address compositional data. Does not address monitoring intent."
+      },
+      {
+        "step": 2,
+        "citation": "Shannon, C.E. (1948). 'A Mathematical Theory of Communication.' Bell System Technical Journal, 27(3), 379-423.",
+        "contribution": "Established that distributions carry information. Entropy quantifies structural diversity.",
+        "gap_left": "Information theory as analytical tool, not monitoring framework."
+      },
+      {
+        "step": 3,
+        "citation": "Aitchison, J. (1982). 'The statistical analysis of compositional data.' JRSS-B, 44(2), 139-177.",
+        "contribution": "Established the mathematics of data on a simplex. Closure constraint, logratio transformations, Dirichlet models.",
+        "gap_left": "CoDa as statistical correction, not as monitoring category."
+      },
+      {
+        "step": 4,
+        "citation": "Pawlowsky-Glahn, V. & Egozcue, J.J. (2001). 'Geometric approach to statistical analysis on the simplex.' Stochastic Environmental Research and Risk Assessment, 15, 384-398.",
+        "contribution": "Aitchison geometry — complete Euclidean structure on the simplex.",
+        "gap_left": "Mathematical infrastructure, still not applied as monitoring framework."
+      },
+      {
+        "step": 5,
+        "citation": "WHO (2005). International Health Regulations. WHO (2017). EWARS Framework.",
+        "contribution": "Operational monitoring categories: Event-Based (MC-1) and Indicator-Based (MC-2) surveillance.",
+        "gap_left": "Two categories only. No composition monitoring. No structural drift detection."
+      },
+      {
+        "step": 6,
+        "citation": "OECD DAC (2019). Evaluation Criteria (revised). Six criteria for development evaluation.",
+        "contribution": "Institutional evaluation framework used globally.",
+        "gap_left": "No criterion for internal structural integrity. Magnitude success can mask compositional failure."
+      },
+      {
+        "step": 7,
+        "citation": "Higgins, P. (2025-2026). Higgins Unity Framework (HUF). 94-document research corpus. Rogue Wave Audio, Markham, Ontario.",
+        "contribution": "Applied Aitchison's compositional data analysis as a real-time monitoring category (MC-4). Demonstrated deceptive drift across 3 real-world domains. Proved scale invariance (35M tests, 5.23 sigma). Built operational instrument (Spectrum Analyzer). Established open-loop governance doctrine.",
+        "gap_filled": "The monitoring application of a 40-year-old mathematical framework. The fourth category installed."
+      }
+    ]
+  },
+
+  "pll_compliance": {
+    "reproducibility": "All citations are published, peer-reviewed, and independently verifiable. The gap analysis can be confirmed by reviewing the cited frameworks — none contains a structural composition monitoring category.",
+    "falsifiability": "If any existing framework already implements composition monitoring as a primary category (not a post-hoc correction), then MC-4 is not new and this taxonomy is incorrect. We have found no such implementation. Falsification requires producing a counterexample.",
+    "traceability": "Stevens (1946) → Shannon (1948) → Aitchison (1982) → Pawlowsky-Glahn (2001) → WHO/OECD/UN frameworks → HUF (2025-2026). Every step is published and citable."
+  },
+
+  "open_questions": [
+    {"id": "MONITOR-Q1", "question": "Is the four-category taxonomy complete, or are there additional monitoring intents orthogonal to Magnitude, Identity, Trend, and Composition?"},
+    {"id": "MONITOR-Q2", "question": "Can MC-1, MC-2, MC-3 be formally derived as projections from MC-4 (the base-layer hypothesis from RESEARCH-001)?"},
+    {"id": "RESEARCH-Q16", "question": "What is the minimum evidence base required for an ISO standard proposal in monitoring instrumentation?"}
+  ]
+}

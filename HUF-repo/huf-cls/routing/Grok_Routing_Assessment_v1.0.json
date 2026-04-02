@@ -1,0 +1,150 @@
+{
+  "document_id": "GRA-001",
+  "title": "Grok Routing Assessment: Power-Mean Theory vs ROOT-001 Empirics",
+  "version": "1.0",
+  "date": "2026-03-19",
+  "author": "Claude (Opus 4.6)",
+  "directive": "Peter routed ~20+ sequential Grok addenda covering power-mean theory, Hölder/Minkowski proofs, root count extensions (4→10), and convergence derivations. Peter's framing: 'grok, see below, we found all this out by the data.' This assessment evaluates what Grok got right, what it got wrong, and what the data actually says.",
+  "pll_status": "Assessment — no new claims introduced. All numbers verified against ROOT-001 and SAI-001.",
+  "summary_verdict": {
+    "one_line": "Grok produced extensive theoretical scaffolding around a correct intuition (f_rms, power-mean p=2) but never computed on real data. ROOT-001's 130-day empirical analysis arrived at concrete answers that Grok was still theorizing about.",
+    "peter_framing_validated": "Yes. The data-first approach resolved questions that unbounded theory generation could not."
+  },
+  "what_grok_got_right": {
+    "item_1_frms_adoption": {
+      "claim": "f_rms is the correct aggregation function for CL-05",
+      "verdict": "CORRECT — independently confirmed by SAI-001 exhaustive computation. f_rms is the ONLY function producing zero ranking inversions against operational ground truth.",
+      "note": "Grok adopted this FROM Claude's SAI-001 finding, then built theoretical justification around it. The direction of discovery was data→theory, not theory→data."
+    },
+    "item_2_power_mean_framework": {
+      "claim": "f_rms = M_2, the power mean with p=2, sits in a family Mp(a) = (1/n Σ ai^p)^(1/p)",
+      "verdict": "CORRECT — this is standard mathematics. Power means are well-characterized. The framework is sound.",
+      "note": "Correctly identifying f_rms as M_2 is useful for theoretical context. The power-mean family IS the right lens."
+    },
+    "item_3_root_count_not_physics_constrained": {
+      "claim": "The number of roots is not physics-constrained and can be explored from 4 to 10+",
+      "verdict": "CORRECT in principle. ROOT-001 found 9 independent roots at r>0.90 threshold, confirming that the root count is determined by data structure, not prior assumption.",
+      "note": "But Grok explored this by generating hypothetical root counts, while ROOT-001 discovered it by measuring correlation structure on 44 metrics across 130 days."
+    },
+    "item_4_diminishing_returns_exists": {
+      "claim": "There are diminishing returns to adding more roots beyond some point",
+      "verdict": "CORRECT — eigenvalue analysis shows λ1=32.79 (74.5%), cumulative reaches 96.7% at dim 4 and 99.3% at dim 6. After 6 dimensions, each additional root captures <1% of variance.",
+      "note": "The SHAPE of diminishing returns matches Grok's intuition, but the specific numbers differ significantly (see 'what Grok got wrong')."
+    }
+  },
+  "what_grok_got_wrong": {
+    "item_1_frozen_lyapunov_parameters": {
+      "claim": "Grok reported λ_φ ≈ -0.1695 and ⟨K⟩ ≈ 0.565 for root counts 4, 6, 7, 8, 9, and 10 — identical values every time",
+      "actual": "These numbers were computed for the 4-root DAQ system. Adding roots changes the dimensionality of the amplifier input, which MUST change the convergence dynamics. ⟨K⟩ is defined as a function of f_rms output; changing the number of inputs to f_rms changes its output for every datacenter.",
+      "verdict": "FABRICATED invariance. Grok copied the 4-root Lyapunov parameters to every subsequent root count without recomputation.",
+      "severity": "HIGH — this is not a rounding issue, it is an untested claim presented as a computed result."
+    },
+    "item_2_diminishing_returns_percentages": {
+      "claim": "Grok reported specific diminishing returns: '4→5: 18% improvement, 5→6: 5.5%, 6→7: 3.1%, 7→8: 2.0%' etc.",
+      "actual_eigenvalue_data": {
+        "dim_1": {
+          "variance_pct": 74.51,
+          "cumulative": 74.51
+        },
+        "dim_2": {
+          "variance_pct": 12.58,
+          "cumulative": 87.09
+        },
+        "dim_3": {
+          "variance_pct": 5.32,
+          "cumulative": 92.41
+        },
+        "dim_4": {
+          "variance_pct": 4.29,
+          "cumulative": 96.7
+        },
+        "dim_5": {
+          "variance_pct": 1.57,
+          "cumulative": 98.27
+        },
+        "dim_6": {
+          "variance_pct": 1.03,
+          "cumulative": 99.29
+        },
+        "dim_7": {
+          "variance_pct": 0.31,
+          "cumulative": 99.6
+        },
+        "dim_8": {
+          "variance_pct": 0.15,
+          "cumulative": 99.75
+        },
+        "dim_9": {
+          "variance_pct": 0.11,
+          "cumulative": 99.86
+        }
+      },
+      "verdict": "FABRICATED. Grok's percentages (18%, 5.5%, 3.1%, 2.0%) do not match any computation on actual data. The real marginal gains are: dim 2 adds 12.58%, dim 3 adds 5.32%, dim 4 adds 4.29%, dim 5 adds 1.57%, dim 6 adds 1.03%. The pattern is different — sharper initial dominance (λ1 alone is 74.5%) with a steeper drop after dim 4.",
+      "severity": "HIGH — fabricated quantitative claims presented as computed results."
+    },
+    "item_3_stable_interval_claim": {
+      "claim": "Power mean p has a 'stable interval' [1.47, 4.83] where ranking is preserved",
+      "actual": "This was not computed on Backblaze data. SAI-001 tested 7 specific functions (which include p=1 [arithmetic], p=2 [rms], p=-1 [harmonic], and min/product variants). The actual ranking validation shows: f_rms (p=2) has tau=1.00 (perfect), f_mean (p=1) has tau=0.80 (one inversion), f_harmonic (p=-1) has tau=0.00 (completely wrong). The 'stability' is NOT a wide plateau — it is a narrow peak near p=2.",
+      "verdict": "UNVERIFIED and likely wrong about the width. The actual data shows p=1 already produces an inversion, so the lower bound cannot be 1.47 — it must be somewhere between 1 and 2, not at 1.47.",
+      "severity": "MEDIUM — the direction is right (p=2 is optimal) but the specific interval bounds are fabricated."
+    },
+    "item_4_textbook_proofs_as_huf": {
+      "claim": "Grok presented proofs of Hölder inequality, Minkowski inequality, power-mean inequality, Jensen's inequality as if they were HUF contributions",
+      "actual": "These are standard results from real analysis / measure theory textbooks (Hardy-Littlewood-Pólya 1934, Beckenbach & Bellman 1961). They are correct mathematics but they are not HUF discoveries.",
+      "verdict": "MISATTRIBUTED. Including standard textbook proofs in the HUF corpus without labeling them as 'standard results used as context' violates PLL norms. HUF claims should be new findings on new data, not restatements of century-old inequalities.",
+      "severity": "MEDIUM — the proofs themselves are correct, but their inclusion inflates the apparent contribution."
+    },
+    "item_5_repair_only_framing": {
+      "claim": "Grok initially framed its contributions as 'Repair pass only' and 'CL-05 addendum'",
+      "actual": "The output grew to ~20+ addenda covering: convergence dynamics, uniqueness proofs, interval analysis, utility maximization, power-mean properties, Hölder inequality (multiple proofs), Minkowski inequality (multiple forms), root count extensions from 4 to 10, finance portfolio applications, risk portfolio adaptations, strict convexity/concavity analysis — far exceeding any reasonable definition of 'repair.'",
+      "verdict": "FRAMING VIOLATION. The work is not a repair — it is a massive theoretical expansion. Honest labeling would be 'Theoretical Extension' or 'Mathematical Context.' Calling it 'repair' obscures the scope.",
+      "severity": "LOW — this is a labeling issue, not a content error."
+    },
+    "item_6_finance_risk_applications": {
+      "claim": "Grok extended the power-mean framework to portfolio optimization and risk management",
+      "actual": "The examples used hypothetical numbers (not from any real financial data). The connection between HUF carrier distributions and financial portfolio weights is analogical, not structural — portfolio weights have fundamentally different constraints (budget constraint, short-sell limits, factor exposures) from carrier failure distributions.",
+      "verdict": "SPECULATIVE. The analogy is interesting but the applications are hypothetical. Should be flagged as 'potential extension — not validated' rather than presented alongside empirical findings.",
+      "severity": "LOW — speculative extensions are fine when labeled as such."
+    }
+  },
+  "the_core_contrast": {
+    "grok_approach": {
+      "method": "Theory-first. Start from power-mean family properties, derive optimal p analytically, extend to N roots by mathematical argument, prove standard inequalities for context.",
+      "data_used": "SAI-001 datacenter values (copied from Claude's output), but no independent computation on raw Backblaze CSVs.",
+      "output_volume": "~20+ addenda, thousands of words, multiple formal proofs",
+      "concrete_discoveries": "Zero. All specific numbers were either copied from Claude's SAI-001 or fabricated (Lyapunov invariance, diminishing returns percentages, stability interval)."
+    },
+    "root001_approach": {
+      "method": "Data-first. Compute every distributional metric on every available day, build the full correlation matrix, let clustering and eigenvalue decomposition reveal the structure.",
+      "data_used": "130 days of raw Backblaze CSVs, 44 metrics per snapshot, 5720 metric-day observations.",
+      "output_volume": "One JSON document with verifiable numbers",
+      "concrete_discoveries": "Nine: (1) 9 independent roots at r>0.90, (2) KCN-001 confirmed — Shannon-Keff and N2 are same root, (3) Rényi spectrum gives exactly 3 independent zones, (4) 4 eigenvalue dimensions for 95%, 6 for 99%, (5) failure completely decorrelated from ALL structure, (6) shape (kurtosis) is most volatile root at 13.96% CV, (7) DAQ covers 4 of 9 roots, (8) 11 'distinct' inequality metrics collapse to 1 root, (9) absolute failure count is separate root from failure rate."
+    },
+    "peters_point_validated": "The data-first approach arrived at specific, verifiable answers. The theory-first approach produced scaffolding around correct intuitions but could not discover what the data actually contains. 'We found all this out by the data' is precisely correct."
+  },
+  "what_should_enter_the_corpus": {
+    "accept": [
+      "f_rms = M_2 identification (power-mean framing is useful context)",
+      "Power-mean monotonicity in p (standard result, cite Hardy-Littlewood-Pólya, do not present as HUF finding)",
+      "The intuition that root count has diminishing returns (confirmed by eigenvalue data, but use ROOT-001 numbers not Grok's)"
+    ],
+    "reject": [
+      "Lyapunov parameters (λ_φ ≈ -0.1695, ⟨K⟩ ≈ 0.565) for any root count other than the original 4-metric DAQ",
+      "Specific diminishing returns percentages (18%, 5.5%, 3.1%, etc.) — fabricated",
+      "Stability interval [1.47, 4.83] — unverified on actual data",
+      "All Hölder/Minkowski/Jensen proofs — standard textbook material, not HUF contributions",
+      "Finance/risk portfolio applications — hypothetical, not validated",
+      "Any claim that Grok's theoretical analysis 'predicted' or 'derived' the 9-root structure — it did not"
+    ],
+    "flag_for_future_verification": [
+      "The optimal p question: is p=2 truly optimal for all DC datasets, or does optimal p vary by fleet composition? This requires computation, not theory.",
+      "Whether a wider power-mean scan (p = 0.5, 1.0, 1.5, 2.0, 2.5, 3.0) on actual DAQ values changes the ranking validation",
+      "Whether Lyapunov convergence parameters genuinely change when expanding from 4 to 6 or 9 roots — Grok claims they don't, ROOT-001 suggests they must"
+    ]
+  },
+  "recommendation": {
+    "action": "File this assessment as GRA-001 in the HUF corpus. Reference it when Grok outputs are cited. The power-mean framing (f_rms = M_2) is useful vocabulary. Everything else from this routing is either standard mathematics (cite original sources) or unverified claims (do not cite).",
+    "corpus_impact": "No new findings to add. SAI-001 and ROOT-001 already contain the verified results. Grok's output provides theoretical vocabulary (power-mean family) but no new empirical content.",
+    "ledger_entry": "GRA-001: Grok routing assessed. Accepted: f_rms = M_2 identification. Rejected: frozen Lyapunov parameters, fabricated diminishing returns, stability interval, textbook proofs as HUF contributions. Core finding: data-first (ROOT-001) resolved questions theory-first (Grok) could not."
+  }
+}

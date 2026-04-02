@@ -1,0 +1,171 @@
+{
+  "document_id": "CAL-002",
+  "title": "HUF Calibration Rack \u2014 T4a & T6c Computation",
+  "version": "1.0",
+  "date": "2026-03-19",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "purpose": "Advance calibration rack from 9/16 to 11/16 using data already in hand",
+  "T4a": {
+    "test_id": "T4a",
+    "test_name": "Backblaze Model Substitution Identity Test",
+    "status": "DETECTED",
+    "panel": "91 days \u00d7 29 significant models",
+    "fleet_range": "270,926 to 280,139",
+    "natural_daily_tv": {
+      "mean": 0.012587,
+      "max": 0.029069
+    },
+    "natural_keff": {
+      "mean": 17.052,
+      "range": [
+        16.825,
+        17.282
+      ]
+    },
+    "pca_compression": {
+      "k": 4,
+      "eigenvalues": [
+        9.3e-05,
+        8e-06,
+        4e-06,
+        2e-06
+      ],
+      "cumulative_var_pct": [
+        87.6,
+        94.7,
+        98.5,
+        100.0
+      ]
+    },
+    "q1_drift": {
+      "full_tv": 0.042406,
+      "pca_distance": 0.030289,
+      "keff_drift": [
+        17.282,
+        16.846
+      ]
+    },
+    "synthetic_substitution": {
+      "scenario": "All ST12000NM0008 \u2192 ST12000NM001G",
+      "drives_moved": 19449,
+      "tv_after_swap": 0.0718,
+      "pca_distance": 0.005619,
+      "ratio_to_daily_mean": 7.3,
+      "natural_daily_pca_drift": {
+        "mean": 0.000772,
+        "max": 0.008701
+      }
+    },
+    "top_model_changes": [
+      {
+        "model": "ST4000DM000",
+        "start": 11392,
+        "end": 5805,
+        "delta": -5587
+      },
+      {
+        "model": "TOSHIBA MG08ACA16TA",
+        "start": 33750,
+        "end": 38678,
+        "delta": 4928
+      },
+      {
+        "model": "WDC WUH721816ALE6L4",
+        "start": 21607,
+        "end": 26394,
+        "delta": 4787
+      },
+      {
+        "model": "WDC WUH722222ALE6L4",
+        "start": 2403,
+        "end": 6004,
+        "delta": 3601
+      },
+      {
+        "model": "ST16000NM001G",
+        "start": 27432,
+        "end": 29782,
+        "delta": 2350
+      },
+      {
+        "model": "HGST HMS5C4040ALE640",
+        "start": 1950,
+        "end": 1495,
+        "delta": -455
+      },
+      {
+        "model": "ST12000NM0008",
+        "start": 19449,
+        "end": 19361,
+        "delta": -88
+      },
+      {
+        "model": "ST8000NM0055",
+        "start": 13916,
+        "end": 13838,
+        "delta": -78
+      },
+      {
+        "model": "TOSHIBA MG07ACA14TA",
+        "start": 38025,
+        "end": 37961,
+        "delta": -64
+      },
+      {
+        "model": "ST14000NM001G",
+        "start": 10734,
+        "end": 10694,
+        "delta": -40
+      }
+    ]
+  },
+  "T6c": {
+    "test_id": "T6c",
+    "test_name": "Planck Negative Control \u2014 Raw Temperatures as Fake Simplex",
+    "status": "PASS",
+    "subsystems": 12,
+    "unit_mixing": [
+      "Kelvin",
+      "MeV",
+      "Celsius"
+    ],
+    "fake_simplex_keff": 8.03,
+    "fake_simplex_entropy": 3.006,
+    "real_carrier_keff": 4.77,
+    "real_carrier_entropy": 2.255,
+    "pca_eigenvalues": [
+      5e-06,
+      3e-06,
+      1e-06,
+      1e-06
+    ],
+    "fake_temporal_tv": {
+      "mean": 0.0035,
+      "max": 0.0075
+    },
+    "failure_modes": [
+      "Unit mixing: K, MeV, \u00b0C in same simplex",
+      "Sum has no physical meaning",
+      "Adding/removing sensor changes all shares",
+      "K_eff reflects temperature similarity, not structural complexity",
+      "PCA captures temperature magnitude hierarchy, not compositional modes"
+    ],
+    "interpretation": "HUF machinery runs on fake data and produces superficially healthy metrics. This is correct negative-control behavior: the instrument cannot prevent bad input, but the results are uninterpretable. Carrier definition is the first-order validation gate."
+  },
+  "calibration_rack_update": {
+    "previous_score": "9/16",
+    "new_score": "11/16",
+    "tests_completed_this_run": [
+      "T4a",
+      "T6c"
+    ],
+    "remaining": {
+      "T1c_btl": "Awaiting BTL measurements (BTP-001)",
+      "T2a_planck_revised": "Awaiting carrier revision (exclude radiation)",
+      "T2c_water": "CANDIDATE \u2014 needs domain selection",
+      "T3c_airline": "CANDIDATE \u2014 needs domain selection",
+      "T4b_fund_rebalancing": "CANDIDATE \u2014 needs financial data"
+    }
+  }
+}
