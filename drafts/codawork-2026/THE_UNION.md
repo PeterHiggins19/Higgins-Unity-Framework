@@ -68,7 +68,11 @@ CoDa control charts monitor single processes — one production line, one chemic
 
 ### 3. A calibrated entanglement with documented error sources
 
-The entanglement error analysis (companion document) identifies 16 error sources — 8 that CoDa knows, 4 that only appear under continuous monitoring, 4 that emerge from the union itself. Every error source has a detection test and a governance action. No existing CoDa tool or HUF tool has a published error catalogue of this kind. The union is the first compositional monitoring instrument that ships with its own calibration study.
+The entanglement error analysis (companion document) identifies 17 error sources — 12 mapped across HUF-alone, CoDa-alone, and the union, plus 5 discovered during literature cross-reference and collective review. Every error source has a detection test and a governance action. No existing CoDa tool or HUF tool has a published error catalogue of this kind. The union is the first compositional monitoring instrument that ships with its own calibration study.
+
+### 5. A calibrated zero-handling protocol (Greenacre complementarity)
+
+Greenacre's chiPower framework addresses the zero problem through power-transform methods that preserve subcompositional coherence while avoiding classical imputation artifacts. HUF's E-03 zeros-tension analysis approaches the same inadequacy from the monitoring doctrine direction: a carrier reaching exactly zero is first treated as a domain event (phase transition, extinction, market exit) before any geometric correction is applied. The two positions are complementary rather than opposing — both reject classical replacement as insufficient, one for mathematical fidelity, the other for observational fidelity. The union therefore gains a zero-handling protocol that respects both statistical rigor and monitoring priority (E-17).
 
 ### 4. Dimensionality-aware time series
 
@@ -152,7 +156,7 @@ CoDa cannot compare compositions of different dimension. Real systems change dim
 ## The Path to Deployment
 
 ### Phase 1 — Coimbra (June 2026)
-Present the union thesis. Show the 16-error calibration study. Demonstrate v3 analyzer with dual metrics on EMBER data. Identify CoDa researchers interested in continuous monitoring. Identify MEWMA-CoDa researchers (Tran, Nguyen group) for direct collaboration.
+Present the union thesis. Show the 17-error calibration study. Demonstrate v3 analyzer with dual metrics on EMBER data. Identify CoDa researchers interested in continuous monitoring. Identify MEWMA-CoDa researchers (Tran, Nguyen group) for direct collaboration.
 
 ### Phase 2 — Validation (2026–2027)
 Joint paper with CoDa co-author(s): formal comparison of MEWMA-CoDa and HUF on the same dataset (EMBER Germany, known ground truth). Quantify: does governance reference management improve detection over statistical reference estimation? Does dual-metric diagnostic catch events that single-metric charts miss? Does coherence chain diagnosis outperform neural network diagnosis in interpretability?
@@ -171,4 +175,4 @@ CoDa perfected the geometry of compositions at rest; HUF discovered what happens
 
 ---
 
-*This document is the thesis statement for CoDaWork 2026. All supporting materials are in this folder: [ENTANGLEMENT_ERROR_ANALYSIS.md](ENTANGLEMENT_ERROR_ANALYSIS.md) (16 error sources), [CODA_LITERATURE_CROSS_REFERENCE.md](CODA_LITERATURE_CROSS_REFERENCE.md) (what CoDa knows vs what HUF reveals), [THE_CORE.md](THE_CORE.md) (coherence chain), [FORMULA_REFERENCE.md](FORMULA_REFERENCE.md) (all formulas), [BATTLE_CARD.md](BATTLE_CARD.md) (honest answers to hard questions), [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) (metaphors for non-specialists).*
+*This document is the thesis statement for CoDaWork 2026. All supporting materials are in this folder: [ENTANGLEMENT_ERROR_ANALYSIS.md](ENTANGLEMENT_ERROR_ANALYSIS.md) (17 error sources), [CODA_LITERATURE_CROSS_REFERENCE.md](CODA_LITERATURE_CROSS_REFERENCE.md) (what CoDa knows vs what HUF reveals), [THE_CORE.md](THE_CORE.md) (coherence chain), [FORMULA_REFERENCE.md](FORMULA_REFERENCE.md) (all formulas), [BATTLE_CARD.md](BATTLE_CARD.md) (honest answers to hard questions), [EXECUTIVE_SUMMARY.md](EXECUTIVE_SUMMARY.md) (metaphors for non-specialists).*

@@ -294,8 +294,8 @@
       "session_id": "S008",
       "date": "2026-04-03",
       "label": "CoDa entanglement: error analysis, union thesis, instrument description, collective report, naming fixes",
-      "status": "staged",
-      "commit": null,
+      "status": "pushed",
+      "commit": "Pushed by Peter April 3, 2026 — confirmed live at drafts/codawork-2026/",
       "suggested_commit_message": "CoDa entanglement session: 16-error calibration study, union thesis, corrected instrument description, naming fixes, collective report CRPT-007",
       "notes": "Session produced the HUF-CoDa entanglement error analysis (16 error sources), CoDa literature cross-reference, union thesis (THE_UNION.md), corrected instrument description (WHAT_HUF_IS.md with phase discriminator/PLL terminology and BTL triple meaning), framework naming fixes (5 files: HERFINDAHL→HIGGINS, Unified→Unity), and collective report CRPT-007. Edward's AI film workstation spec ($50K) produced but NOT part of HUF repo.",
       "files": [
@@ -352,41 +352,94 @@
       ]
     }
   ],
+    ,
+    {
+      "session_id": "S009",
+      "date": "2026-04-03",
+      "label": "Grok collective review integration: E-17 chiPower, revised abstract, Greenacre complementarity, HUF-EXT rough diamonds",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Grok review integration: E-17 chiPower, abstract v2, 17-error catalogue, Greenacre complementarity, HUF-EXT E-18/E-19, BTL canonical correction",
+      "notes": "Grok completed full review of CRPT-007 and GitHub. Gold extracted: revised abstract (v2, 208 words), E-17 (chiPower-HUF calibration tension), expanded E-03 (event-first zero protocol), Greenacre complementarity (THE_UNION.md capability #5). Rough diamonds filed: E-18 (signed compositions), E-19 (complex CoDa). Tailings: CoDa math pipeline confirmed consistent (Aitchison, CLR, ILR, SBP, PCA all verified). BTL corrected to canonical per RWA-001. Learning Path 'Below-Threshold-of-Limited' drift corrected.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/abstract_v2.md",
+          "action": "added",
+          "summary": "Revised abstract: 208 words, union thesis + 17-error calibration framing. Replaces v1 (283 words). Stronger central claim, falsifiable."
+        },
+        {
+          "path": "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
+          "action": "modified",
+          "summary": "E-03 expanded with event-first zero protocol + chiPower complement. Table 4 added: E-13 through E-17. E-18/E-19 filed as HUF-EXT future. Error count upgraded 12→17 active + 2 future."
+        },
+        {
+          "path": "drafts/codawork-2026/THE_UNION.md",
+          "action": "modified",
+          "summary": "Added capability #5 (Greenacre chiPower complementarity). Error count references updated 16→17 throughout."
+        },
+        {
+          "path": "drafts/codawork-2026/WHAT_HUF_IS.md",
+          "action": "modified",
+          "summary": "BTL corrected to canonical: Binaural Test Lab (facility + loudspeaker, Bell Telephone Labs lineage). RWA-001 is the standard."
+        },
+        {
+          "path": "reference/HUF_Learning_Path_Engineering.md",
+          "action": "modified",
+          "summary": "BTL drift corrected: 'Below-Threshold-of-Limited' → 'Binaural Test Lab' per RWA-001 canonical."
+        },
+        {
+          "path": "process/collective-reports/CRPT-007.json",
+          "action": "modified",
+          "summary": "Added grok_review section (gold/rough diamonds/tailings). BTL triple meaning corrected to BTL correction. Conference readiness, corpus state, one_sentence all updated to 17 errors."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "modified",
+          "summary": "S009 entry added."
+        }
+      ]
+    }
+  ],
   "pending_items": [
     {
       "item": "CoDaWork conference script",
       "priority": "next",
-      "notes": "Build from union thesis (THE_UNION.md) + 26-concept spine (CONFERENCE_CONCEPTS.md) + 16-error calibration study. Oral or poster TBD by committee. Visuals ready. Script is the remaining deliverable."
+      "notes": "Build from union thesis (THE_UNION.md) + 26-concept spine (CONFERENCE_CONCEPTS.md) + 17-error calibration study. Oral or poster TBD by committee."
     },
     {
-      "item": "Abstract revision",
+      "item": "Collective review: ChatGPT, Copilot, Gemini",
       "priority": "next",
-      "notes": "Current abstract (283 words, sent March 31) predates the entanglement analysis and union thesis. May need revision to reflect the calibration study framing."
+      "notes": "Grok complete. ChatGPT next, then Copilot, then Gemini. Each reviews updated CRPT-007 with Grok's gold/diamonds/tailings visible."
     },
     {
-      "item": "Push S006 + S007 + S008 files to GitHub",
+      "item": "Push S009 files to GitHub",
       "priority": "next",
-      "notes": "S006: 9 files (status unclear — may already be pushed with S007). S007: pushed by Peter. S008: 5 new files + 5 modified files. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
+      "notes": "1 new file (abstract_v2.md) + 6 modified files. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
     },
     {
       "item": "MEWMA-CoDa collaboration contact",
       "priority": "at conference",
-      "notes": "Identify Tran/Nguyen group at Coimbra. They are building the same instrument from CoDa's side. Direct collaboration target."
+      "notes": "Identify Tran/Nguyen group at Coimbra."
+    },
+    {
+      "item": "Greenacre interaction framing",
+      "priority": "at conference",
+      "notes": "If Greenacre attends: HUF-GOV as engineering complement to chiPower, not opposing claim. E-03/E-17 as collaborative calibration."
     },
     {
       "item": "BTL platform map update",
       "priority": "when ready",
-      "notes": "Clarett+ 4Pre replaces Scarlett 2i2. Peter will provide complete hardware map when ready."
+      "notes": "Clarett+ 4Pre replaces Scarlett 2i2."
     },
     {
       "item": "Peterson letter URL update",
       "priority": "when ready",
-      "notes": "Letter may reference old GitHub URL — needs updating to PeterHiggins19/Higgins-Unity-Framework"
+      "notes": "Letter may reference old GitHub URL."
     },
     {
       "item": "GitHub issue templates",
       "priority": "when ready",
-      "notes": "ChatGPT suggested: Prior-art challenge, Replication attempt, Negative result / failure case"
+      "notes": "Prior-art challenge, Replication attempt, Negative result / failure case."
     }
   ],
   "file_count_tracking": {
@@ -399,6 +452,7 @@
     "S006_when_pushed": 269,
     "S007_when_pushed": 278,
     "S008_when_pushed": 282,
-    "S008_note": "Actual count 282 (277 pre-S008 + 5 new). Prior S007 count of 278 was off by 1 — minor discrepancy from earlier session."
+    "S009_when_pushed": 283,
+    "S009_note": "+1 new file (abstract_v2.md). All other changes are modifications to existing files."
   }
 }

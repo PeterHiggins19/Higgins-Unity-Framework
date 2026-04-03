@@ -157,9 +157,9 @@
   },
 
   "corpus_state": {
-    "s007_file_count": 278,
-    "new_files_this_session": 5,
-    "projected_count_after_push": 283,
+    "s008_file_count": 282,
+    "new_files_post_grok": 1,
+    "projected_count_s009": 283,
     "new_files": [
       "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
       "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
@@ -173,25 +173,57 @@
       "reference/technical-notes/HUF_Mathematicians_Reference_Appendix.docx (title fix)",
       "reference/technical-notes/HUF_PLL_Engineering_Precedent_Note.docx (title fix)",
       "reference/machine-readable/HUF_Internationalization_Considerations_v1.0.json (title fix)",
-      "drafts/codawork-2026/WHAT_HUF_IS.md (BTL triple meaning footnote)"
+      "drafts/codawork-2026/WHAT_HUF_IS.md (BTL corrected to canonical per RWA-001)"
     ],
     "non_huf_files": [
       "AI_Film_Workstation_Build_50K.md (Edward's workstation spec — not part of HUF repo)"
     ]
   },
 
+  "grok_review": {
+    "date": "2026-04-03",
+    "status": "COMPLETE",
+    "reviewer": "Grok",
+    "scope": "CRPT-007, GitHub drafts/codawork-2026/, full CoDa math pipeline",
+    "gold": [
+      "Revised abstract v2 (278→208 words, union thesis + 17-error calibration framing) — filed as abstract_v2.md",
+      "E-17 chiPower-HUF calibration tension (Greenacre entanglement) — added to ENTANGLEMENT_ERROR_ANALYSIS.md Table 4",
+      "E-03 expanded with event-first zero protocol and chiPower complement — updated in Table 1",
+      "Greenacre complementarity paragraph — added to THE_UNION.md as capability #5",
+      "Conference framing for Greenacre interaction: engineering complement, not opposing claim",
+      "Error catalogue upgraded from 16 to 17 active sources"
+    ],
+    "rough_diamonds": [
+      "E-18: Signed compositions (negative contributions, Class B amplifier analogy) — filed as HUF-EXT future in ENTANGLEMENT_ERROR_ANALYSIS.md",
+      "E-19: Complex CoDa extensions (complex-valued carriers, phase/magnitude separation) — filed as HUF-EXT future",
+      "CoDa signed-measure applications catalogue (net carbon budgets, financial net positions, spectral contrasts)",
+      "Complex CoDa applications catalogue (frequency-domain spectra, quantum amplitudes, cyclical flows)"
+    ],
+    "tailings": [
+      "Aitchison geometry details — confirmed consistent with pipeline, no changes needed",
+      "CLR transform computations — confirmed consistent, no changes needed",
+      "Subcompositional coherence properties — confirmed consistent, no changes needed",
+      "ILR balance computations — confirmed consistent with CoDa Explorer, no changes needed",
+      "Aitchison distance computations — confirmed consistent, no changes needed",
+      "SBP design criteria — confirmed locked, 4 criteria documented, no changes needed",
+      "SBP vs PCA contrast — PCA confirmed as external exploratory only, not in pipeline"
+    ],
+    "verification": "Grok confirmed all files live on GitHub, all PLL discipline rules satisfied, Keff_fill unchanged, open-loop doctrine preserved. No drift detected in the math pipeline. BTL triple-meaning footnote was in pre-correction version (since corrected to canonical BTL = Binaural Test Lab per RWA-001)."
+  },
+
   "conference_readiness": {
-    "thesis": "THE_UNION.md — complete",
-    "calibration_study": "ENTANGLEMENT_ERROR_ANALYSIS.md — 16 error sources, complete",
+    "thesis": "THE_UNION.md — complete, updated with Greenacre complementarity (capability #5)",
+    "calibration_study": "ENTANGLEMENT_ERROR_ANALYSIS.md — 17 error sources (upgraded from 16), E-18/E-19 filed as HUF-EXT future",
+    "abstract": "abstract_v2.md — revised with union thesis and 17-error calibration framing (208 words)",
     "literature_grounding": "CODA_LITERATURE_CROSS_REFERENCE.md — maps all errors against published work, complete",
-    "instrument_description": "WHAT_HUF_IS.md — corrected terminology, complete",
+    "instrument_description": "WHAT_HUF_IS.md — corrected terminology, BTL canonical per RWA-001",
     "demonstration_tools": "v3 analyzer (10 panels, dual metrics), ternary diagram, CoDa explorer — all from S007, complete",
     "sample_data": "EMBER multi-site compositions CSV+YAML — from S005, complete",
     "vocabulary": "Translator, vocabulary card, conference concepts table, do/don't field guide — from S006-S007, complete",
     "remaining": [
       "Conference script (oral or poster TBD)",
-      "Push S008 files to GitHub",
-      "Abstract may need revision to reflect union thesis (current abstract predates the entanglement analysis)"
+      "Push S009 files to GitHub",
+      "Collective review: ChatGPT, Copilot, Gemini still pending"
     ]
   },
 
@@ -205,8 +237,7 @@
       "GitHub issue templates (Prior-art challenge, Replication attempt, Negative result)"
     ],
     "new_this_session": [
-      "Abstract revision to reflect union thesis and 16-error calibration study",
-      "Conference script: build from union thesis + 26-concept table + calibration study",
+      "Conference script: build from union thesis + 26-concept table + 17-error calibration study",
       "Push S008 (5 new files + 6 modified files) to GitHub",
       "MEWMA-CoDa collaboration: identify Tran/Nguyen group for direct contact at Coimbra",
       "Ramsar deployment planning: begin mapping RSIS data structure to HUF carrier framework",
@@ -214,5 +245,5 @@
     ]
   },
 
-  "one_sentence": "The session that discovered HUF and CoDa are building the same instrument from opposite ends, mapped the 16 ways it breaks at the joint, and wrote the thesis for why connecting them produces something neither can build alone."
+  "one_sentence": "The session that discovered HUF and CoDa are building the same instrument from opposite ends, mapped the 17 ways it breaks at the joint (plus 2 future directions), and wrote the thesis for why connecting them produces something neither can build alone."
 }
