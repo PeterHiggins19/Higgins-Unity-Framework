@@ -289,22 +289,94 @@
         }
       ]
     }
+    ,
+    {
+      "session_id": "S008",
+      "date": "2026-04-03",
+      "label": "CoDa entanglement: error analysis, union thesis, instrument description, collective report, naming fixes",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "CoDa entanglement session: 16-error calibration study, union thesis, corrected instrument description, naming fixes, collective report CRPT-007",
+      "notes": "Session produced the HUF-CoDa entanglement error analysis (16 error sources), CoDa literature cross-reference, union thesis (THE_UNION.md), corrected instrument description (WHAT_HUF_IS.md with phase discriminator/PLL terminology and BTL triple meaning), framework naming fixes (5 files: HERFINDAHL→HIGGINS, Unified→Unity), and collective report CRPT-007. Edward's AI film workstation spec ($50K) produced but NOT part of HUF repo.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
+          "action": "added",
+          "summary": "16 error sources mapped across HUF-alone, CoDa-alone, HUF-CoDa union. Detection tests and governance actions for each. The calibration study for the combined instrument."
+        },
+        {
+          "path": "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
+          "action": "added",
+          "summary": "Maps all error sources against published CoDa literature. 8 addressed, 4 gaps (continuous monitoring), 4 new (E-13 through E-16). Specific paper citations throughout."
+        },
+        {
+          "path": "drafts/codawork-2026/THE_UNION.md",
+          "action": "added",
+          "summary": "CoDaWork 2026 thesis statement. What each brings (8 items each direction), 4 union-only capabilities, full architecture diagram, 4-phase deployment path. One sentence: CoDa+HUF = the instrument that watches compositions move and tells you when to care."
+        },
+        {
+          "path": "drafts/codawork-2026/WHAT_HUF_IS.md",
+          "action": "added",
+          "summary": "Definitive technical description. BTL = Binaural Test Lab (canonical per RWA-001, Bell Telephone Labs lineage), multichannel coherent detector, HUF-GOV = phase discriminator (not PLL), HUF-CLS = PLL, dual metric, target audiences, loudspeaker-to-universal narrative."
+        },
+        {
+          "path": "process/collective-reports/CRPT-007.json",
+          "action": "added",
+          "summary": "Collective report: CoDa entanglement session. Full audit results, conceptual developments, conference readiness assessment, corpus state."
+        },
+        {
+          "path": "huf-cls/calibration/HUF_CL05_Calibration_Study_Note.docx",
+          "action": "modified",
+          "summary": "Title fix: HERFINDAHL UNIFORMITY FRAMEWORK → HIGGINS UNITY FRAMEWORK"
+        },
+        {
+          "path": "reference/technical-notes/HUF_CL05_Calibration_Study_Note.docx",
+          "action": "modified",
+          "summary": "Title fix: HERFINDAHL UNIFORMITY FRAMEWORK → HIGGINS UNITY FRAMEWORK"
+        },
+        {
+          "path": "reference/technical-notes/HUF_Mathematicians_Reference_Appendix.docx",
+          "action": "modified",
+          "summary": "Title fix: HERFINDAHL UNIFORMITY FRAMEWORK → HIGGINS UNITY FRAMEWORK"
+        },
+        {
+          "path": "reference/technical-notes/HUF_PLL_Engineering_Precedent_Note.docx",
+          "action": "modified",
+          "summary": "Title fix: HERFINDAHL UNIFORMITY FRAMEWORK → HIGGINS UNITY FRAMEWORK"
+        },
+        {
+          "path": "reference/machine-readable/HUF_Internationalization_Considerations_v1.0.json",
+          "action": "modified",
+          "summary": "Title fix: Higgins Unified Framework → Higgins Unity Framework"
+        }
+      ]
+    }
   ],
   "pending_items": [
     {
       "item": "CoDaWork conference script",
       "priority": "next",
-      "notes": "Build from 26-concept spine in CONFERENCE_CONCEPTS.md. Oral or poster TBD by committee. Visuals ready (ternary, explorer, v3 analyzer, perturbation velocity, Aitchison distance matrix). Script is the remaining deliverable."
+      "notes": "Build from union thesis (THE_UNION.md) + 26-concept spine (CONFERENCE_CONCEPTS.md) + 16-error calibration study. Oral or poster TBD by committee. Visuals ready. Script is the remaining deliverable."
     },
     {
-      "item": "Push S006 + S007 files to GitHub",
+      "item": "Abstract revision",
       "priority": "next",
-      "notes": "S006: 9 files in drafts/codawork-2026/. S007: CoDa integration push — 10 new files, 4 modified files, 10 files moved to archive/, 1 duplicate removed. Net: archive/ folder created with README, pre-CoDa tools archived, v1 papers archived, CoDa bridge links added to wiki and learning path. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
+      "notes": "Current abstract (283 words, sent March 31) predates the entanglement analysis and union thesis. May need revision to reflect the calibration study framing."
+    },
+    {
+      "item": "Push S006 + S007 + S008 files to GitHub",
+      "priority": "next",
+      "notes": "S006: 9 files (status unclear — may already be pushed with S007). S007: pushed by Peter. S008: 5 new files + 5 modified files. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
+    },
+    {
+      "item": "MEWMA-CoDa collaboration contact",
+      "priority": "at conference",
+      "notes": "Identify Tran/Nguyen group at Coimbra. They are building the same instrument from CoDa's side. Direct collaboration target."
     },
     {
       "item": "BTL platform map update",
       "priority": "when ready",
-      "notes": "Clarett+ 4Pre replaces Scarlett 2i2. Peter will provide complete hardware map when ready. Experimental protocol for prospective perturbation testing."
+      "notes": "Clarett+ 4Pre replaces Scarlett 2i2. Peter will provide complete hardware map when ready."
     },
     {
       "item": "Peterson letter URL update",
@@ -325,6 +397,8 @@
     "S004_when_pushed": 257,
     "S005_when_pushed": 260,
     "S006_when_pushed": 269,
-    "S007_when_pushed": 278
+    "S007_when_pushed": 278,
+    "S008_when_pushed": 282,
+    "S008_note": "Actual count 282 (277 pre-S008 + 5 new). Prior S007 count of 278 was off by 1 — minor discrepancy from earlier session."
   }
 }

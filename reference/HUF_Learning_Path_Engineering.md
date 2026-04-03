@@ -63,7 +63,7 @@ This is where HUF was born. PLL control for BTL loudspeakers — the acoustic or
 | # | Document | Location |
 |---|----------|----------|
 | 13 | **Organic Digital Loudspeakers v2.6** — The full RWA paper. 17-section dual-column technical paper. PLL control, DADC-DADI correction, Cortex-matched crossover, the complete acoustic methodology that produced HUF. | `RogueWaveAudio/Organic_Digital_Loudspeakers_v2.6.docx` |
-| 14 | **BTL Build Guide v1.0** — Practical build guide for Below-Threshold-of-Limited loudspeakers. Hardware meets theory. | `RogueWaveAudio/BTL_Build_Guide_v1.0.docx` |
+| 14 | **BTL Build Guide v1.0** — Practical build guide for Binaural Test Lab loudspeakers. Hardware meets theory. | `RogueWaveAudio/BTL_Build_Guide_v1.0.docx` |
 | 15 | **DADC-DADI** — Dimension-Apportioned Diffraction Correction and Inference. The correction algorithm. | `RogueWaveAudio/Dimension-Apportioned Diffraction Correction and Inference (DADC-DADI).docx` |
 
 ---
