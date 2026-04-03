@@ -42,7 +42,7 @@
     },
     {
       "term": "HUF",
-      "status": "Internal shorthand — Higgins Unified Framework",
+      "status": "Internal shorthand — Higgins Unity Framework",
       "check": {
         "hungarian": "HUF = Hungarian Forint (currency code). Not negative but could cause confusion in financial contexts. RSM avoids this.",
         "english": "No negative connotation",
