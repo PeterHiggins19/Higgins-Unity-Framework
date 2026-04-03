@@ -1,7 +1,8 @@
-# CoDaWork 2026 Committee Email — DRAFT
+
+ CoDaWork 2026 Committee Email — DRAFT
 
 **To:** codawork2026@coda-association.org
-**From:** Peter Higgins (PeterHiggins@RogueWaveAudio.com)
+**From:** Peter Higgins (peterhiggins2016@gmail.com)
 **Subject:** Late inquiry — compositional monitoring application for CoDaWork 2026
 
 ---
@@ -25,7 +26,7 @@ I am an independent researcher, not affiliated with a university. If there is no
 Thank you for your time.
 
 Peter Higgins
-PeterHiggins@RogueWaveAudio.com
+peterhiggins2016@gmail.com
 https://github.com/PeterHiggins19/Higgins-Unity-Framework
 
 ---
@@ -38,7 +39,7 @@ https://github.com/PeterHiggins19/Higgins-Unity-Framework
 
 ## Notes for Peter (do not include in email)
 
-- **Send from:** PeterHiggins@RogueWaveAudio.com
+- **Send from:** peterhiggins2016@gmail.com
 - **Attach:** the v3 PDF from D:\GitHub\HUF\drafts\codawork-2026\HUF_MC4_CoDaWork_Packet_v3.pdf
 - **Early registration deadline:** April 1 (tomorrow) — if they say yes, register immediately
 - **Tone check:** no inevitability language, no convergence narrative, no "human-AI symbiosis" — clean on all five AI warnings

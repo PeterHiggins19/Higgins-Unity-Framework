@@ -9,6 +9,12 @@ CODES: huf, taxonomy, complete reference, wiki | ART: CM, AS, TR, EB | EVID:E1 |
 
 ---
 
+## CoDa Bridge
+
+This document uses HUF's engineering vocabulary. If you arrive from Compositional Data Analysis (CoDa), the mapping is: **ratio state** = point on the simplex S^D, **shares (ρᵢ)** = compositional coordinates, **silent drift** = perturbation on the simplex (detected via Aitchison distance), **leverage (1/ρᵢ)** = sensitivity to perturbation, **PROOF line** = rank ordering by proportion (interpretable from ILR balances), **K_eff** = effective number of carriers (exponential Shannon entropy on the simplex). For the full term-by-term translator, see [`drafts/codawork-2026/huf_coda_translator.md`](../../drafts/codawork-2026/huf_coda_translator.md). For the mathematical formula reference, see [`drafts/codawork-2026/FORMULA_REFERENCE.md`](../../drafts/codawork-2026/FORMULA_REFERENCE.md).
+
+---
+
 ## How to use this document
 
 This is the single reference for every classification system HUF uses. It is organized in eight layers. Each layer is self-contained. A reader who needs only the failure mode taxonomy can read Section 3 without reading anything else. A reader building a pilot deployment needs Sections 5, 6, 7, and 8 in sequence.

@@ -4,6 +4,8 @@
 
 All paths are relative to the `Claude CoWorker/` folder on your machine.
 
+> **Arriving from CoDa / Compositional Data Analysis?** Start with [`START_HERE.md`](../START_HERE.md) → "For CoDa / Compositional Data Analysts" section, then read [`THE_CORE.md`](../drafts/codawork-2026/THE_CORE.md) and [`FORMULA_REFERENCE.md`](../drafts/codawork-2026/FORMULA_REFERENCE.md). Come back here afterward for the full engineering depth — this path is 25–35 hours and assumes no CoDa background.
+
 ---
 
 ## Phase 1 — Why This Exists (1–2 hours)
