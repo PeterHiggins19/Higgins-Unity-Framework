@@ -8,6 +8,12 @@ CODES: huf, MC-4, monitoring, epistemology, wiki | ART: CM, AS, TR, EB | EVID:E1
 
 ---
 
+## CoDa Bridge
+
+This document describes MC-4 (Ratio State Monitoring) using HUF's governance vocabulary. In CoDa terms, MC-4 monitors the trajectory of compositions on the simplex — detecting structural change via Aitchison distance and perturbation velocity rather than individual component thresholds. For the full HUF↔CoDa term translator, see [`drafts/codawork-2026/huf_coda_translator.md`](../../drafts/codawork-2026/huf_coda_translator.md).
+
+---
+
 ## What the summary left out
 
 The first pass at this concept established the taxonomy, named the four propositions, and positioned the fourth category against the three established ones. That work is solid. What it does not yet contain is the harder argument: why this category is epistemologically coherent, what it asks of governance actors that is genuinely new, where its limits are, and what the path from concept to confirmed category actually looks like across the next twelve to twenty-four months of research.

@@ -46,6 +46,8 @@ The standard for progress is independent replication, not internal coherence.
 
 If you want to break it, the kill test is where to start.
 
+**New:** For a faster onboarding path with CoDa integration, see [`START_HERE.md`](START_HERE.md) — 60-second, 5-minute, and 30-minute entry paths plus the full repository map.
+
 ---
 
 ## The four monitoring categories
@@ -120,9 +122,19 @@ If you find a failure mode not on this list, please open an issue.
 
 | Tool | Description |
 |------|-------------|
-| [`Spectrum Analyzer v3`](huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.jsx) | React/JSX composition monitor with phase display, carrier ribbon, group phase. Real EMBER data. |
-| [`Spectrum Analyzer v2`](huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v2.html) | Self-contained HTML analyzer with JSON upload. Zero dependencies. |
+| [`Spectrum Analyzer v3 (HTML)`](huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html) | **Unified dual-metric dashboard.** 10 panels: original HUF metrics (K_eff, TV velocity, peak) + CoDa methods (CLR, ILR balances, Aitchison distance, perturbation velocity, distance matrix). Ternary simplex, carrier ribbon, complexity heatmap, 2025 crisis snapshots. Zero dependencies — open in any browser. |
+| [`Spectrum Analyzer v3 (JSX)`](huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.jsx) | React/JSX version with phase display, carrier ribbon, group phase. |
+| [`CoDa Explorer`](drafts/codawork-2026/huf_coda_explorer.html) | 6-panel CoDa visualization: ternary, time prism, CLR, perturbation velocity, ILR balances, Aitchison distance matrix. CoDaWork 2026 conference tool. |
+| [`Ternary EMBER`](drafts/codawork-2026/ternary_ember.html) | Interactive ternary diagram (Fossil/Nuclear/Renewable) for 3 countries 2000–2025. CoDaWork 2026 pedagogical tool. |
 | [`Ramsar Demo`](huf-gov/tools/ramsar-demo/Ramsar_Wetlands_Template.json) | Wetland species composition monitoring template. |
+
+Pre-CoDa tools (v2 analyzer, Universal analyzer) have been moved to [`archive/tools-pre-coda/`](archive/tools-pre-coda/). Git history preserves all prior states.
+
+### CoDaWork 2026 Conference Materials
+
+Abstract accepted by Prof. Juan Jose Egozcue, Chair of the Scientific Committee. Conference: June 1-6, 2026, Coimbra, Portugal. See [`drafts/codawork-2026/`](drafts/codawork-2026/) for the full preparation suite (18 files) including formulas, vocabulary, researcher profiles, battle card, executive summary, core explanation, and the HUF-CoDa translator.
+
+**New entry point for CoDa community:** [`START_HERE.md`](START_HERE.md) — includes a "For CoDa / Compositional Data Analysts" section with direct links to all relevant materials.
 
 ---
 
@@ -136,7 +148,7 @@ Read the CLS README before exploring: [`huf-cls/README.md`](huf-cls/README.md).
 
 ## Process and provenance
 
-This framework was developed over five months by Peter Higgins, with five AI systems (Claude, ChatGPT, Gemini, Copilot, Grok) contributing under human direction. The operator governed the process. The AI systems were the instruments. The loop stayed open.
+This framework was developed over six months by Peter Higgins, with six AI systems (Claude, ChatGPT, Gemini, Copilot, Grok, DeepSeek) contributing under human direction. The operator governed the process. The AI systems were the instruments. The loop stayed open.
 
 The complete development record — 26 collective review traces, session ledgers, voting registers, and governance documents — is in [`process/`](process/). It is included because the provenance chain is part of the claim: this was built with documented governance, not invented overnight.
 
@@ -155,4 +167,4 @@ Markham, Ontario, Canada
 
 MIT License. See [LICENSE](LICENSE).
 
-Developed with Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), Copilot (Microsoft), and Grok (xAI) under human direction. March 2026.
+Developed with Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), Copilot (Microsoft), Grok (xAI), and DeepSeek under human direction. 2025–2026.

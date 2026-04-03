@@ -186,56 +186,106 @@
     {
       "session_id": "S007",
       "date": "2026-04-02",
-      "label": "Conference study guides, v3 analyzer, core explanation, Sharon letter",
+      "label": "CoDa integration: study guides, v3 analyzer, archive cleanup, onboarding overhaul",
       "status": "staged",
       "commit": null,
-      "suggested_commit_message": "Add conference study materials (formula ref, vocabulary, researchers card), battle card v2, executive summary, core explanation, v3 unified analyzer with dual metrics and crisis snapshots, letter for Sharon",
-      "notes": "Abstract formally accepted by Egozcue. Registration paid (€525 early rate, full week + introductory course + all social events). 2-year CoDa Association membership granted as courtesy. Battle card rebuilt with white-flag collaboration posture and Ramsar gateway. V3 analyzer merges original HUF dashboard with CoDa Explorer: 10 panels, dual metric engine (TV + Aitchison), 2025 crisis snapshots (France, USA, China, India, Brazil). PLL coherence chain identified as the core of HUF: 1→2→4 nested carrier groups.",
+      "suggested_commit_message": "CoDa integration: study materials, v3 analyzer, archive pre-CoDa tools/papers, onboarding overhaul with START_HERE and CoDa bridge links",
+      "notes": "Abstract formally accepted by Egozcue. Registration paid (€525 early rate, full week). Battle card rebuilt with white-flag posture and Ramsar gateway. V3 analyzer: 10 panels, dual metrics (TV + Aitchison), 2025 crisis snapshots. PLL coherence chain identified as core of HUF: 1→2→4. CoDa cleanup: archived v2+Universal analyzers, v1.0 papers, pre-standardized Ramsar drafts. Removed duplicate v3 from drafts (canonical copy in huf-gov/tools/). Added CoDa Bridge sections to wiki_huf_taxonomy_complete.md and wiki_fourth_monitoring_category_expanded.md. Added CoDa redirect to Learning Path header. START_HERE.md created as new front door. README updated with v3 tools, CoDaWork section, archive notes, AI count correction.",
       "files": [
         {
           "path": "drafts/codawork-2026/BATTLE_CARD.md",
           "action": "added",
-          "summary": "White-flag battle card: 6 gaps table, strengths table, Ramsar play, 10 hardest questions with honest answers, collaboration posture throughout."
+          "summary": "White-flag battle card: 6 gaps, strengths, Ramsar play, 10 hardest questions, collaboration posture."
         },
         {
           "path": "drafts/codawork-2026/EXECUTIVE_SUMMARY.md",
           "action": "added",
-          "summary": "Cylinder projection analogy, fuel gauge metaphor, one-sentence summary, sections for CoDa colleagues and everyone else."
+          "summary": "Cylinder projection + fuel gauge metaphors, one-sentence summary, sections for CoDa and everyone else."
         },
         {
           "path": "drafts/codawork-2026/FORMULA_REFERENCE.md",
           "action": "added",
-          "summary": "Complete HUF↔CoDa formula quick reference: 10 sections covering sample space, operations, log-ratio transforms, distances, balances, concentration, time series, zeros, coherence. Seven critical formulas to memorize."
+          "summary": "HUF↔CoDa formula quick reference: 10 sections, 7 critical formulas to memorize."
         },
         {
           "path": "drafts/codawork-2026/VOCABULARY_CARD.md",
           "action": "added",
-          "summary": "CoDa words to use vs HUF jargon to avoid. Phrases that land well vs phrases that hurt. Print-and-tape-to-mirror study card."
+          "summary": "CoDa terms to use, HUF jargon to avoid, phrases that land/hurt."
         },
         {
           "path": "drafts/codawork-2026/RESEARCHERS_CARD.md",
           "action": "added",
-          "summary": "Who's who at CoDaWork: 8 key researchers with what they work on, what they'll ask, what to ask them, interaction guide table."
+          "summary": "8 key CoDaWork researchers: what they ask, what to ask them."
         },
         {
           "path": "drafts/codawork-2026/THE_CORE.md",
           "action": "added",
-          "summary": "Core HUF explanation for CoDa audience: 1→2→4 coherence chain from loudspeaker to energy to wetlands. Nested simplices, group coherence as gate, open/closed loop, CoDa↔HUF contribution table."
+          "summary": "Core HUF for CoDa: 1→2→4 coherence chain, nested simplices, contribution table."
         },
         {
           "path": "drafts/codawork-2026/FOR_SHARON.md",
           "action": "added",
-          "summary": "Plain-language explanation for Peter's wife: what he's been doing in the basement, what it means, why Coimbra matters."
+          "summary": "Plain-language explanation for Sharon."
         },
         {
           "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
           "action": "added",
-          "summary": "Unified v3 analyzer: 10 panels, dual metric engine (TV + Aitchison), all CoDa methods (CLR, ILR balances, Aitchison distance matrix, ternary, perturbation velocity), 2025 crisis snapshots (France, USA, China, India, Brazil), gauges sidebar, play/scrub animation. 1865 lines, zero dependencies."
+          "summary": "Unified v3 analyzer: 10 panels, dual metrics, all CoDa methods, 2025 crisis snapshots. 1865 lines, zero dependencies."
+        },
+        {
+          "path": "START_HERE.md",
+          "action": "added",
+          "summary": "Root-level onboarding: 60s/5min/30min paths, CoDa section, tools table, key concepts, repo map."
+        },
+        {
+          "path": "README.md",
+          "action": "modified",
+          "summary": "START_HERE link, v3+CoDa Explorer+Ternary in tools, archive notes, CoDaWork section, AI count=6, Ternary EMBER added."
+        },
+        {
+          "path": "archive/README.md",
+          "action": "added",
+          "summary": "Archive index explaining what was moved and why. Maps old→new for every archived file."
+        },
+        {
+          "path": "archive/tools-pre-coda/HUF_Spectrum_Analyzer_v2.html",
+          "action": "moved",
+          "summary": "Archived from huf-gov/tools/spectrum-analyzer/. Pre-CoDa metrics only. Replaced by v3."
+        },
+        {
+          "path": "archive/tools-pre-coda/HUF_Spectrum_Analyzer_Universal.html",
+          "action": "moved",
+          "summary": "Archived from huf-gov/tools/spectrum-analyzer/. Pre-CoDa generic analyzer. Replaced by v3."
+        },
+        {
+          "path": "archive/papers-v1/ (7 files)",
+          "action": "moved",
+          "summary": "All HUF_Paper_*_v1.0.docx archived from drafts/papers/. Replaced by HUF_ORG_*_v2.0.docx versions."
+        },
+        {
+          "path": "archive/ramsar-pre-standardized/ (2 files)",
+          "action": "moved",
+          "summary": "ramsar_contact_letter_v15.docx and ramsar_contact_primer_v12.docx archived. Replaced by HUF_ORG_*_v2.0.docx."
         },
         {
           "path": "drafts/codawork-2026/HUF_Spectrum_Analyzer_v3.html",
-          "action": "added",
-          "summary": "Copy of v3 analyzer in conference folder for easy access."
+          "action": "removed",
+          "summary": "Duplicate of canonical copy in huf-gov/tools/spectrum-analyzer/. Removed to eliminate confusion."
+        },
+        {
+          "path": "reference/wiki/wiki_huf_taxonomy_complete.md",
+          "action": "modified",
+          "summary": "Added CoDa Bridge section mapping HUF vocabulary to simplex/Aitchison/CLR/ILR terms. Links to translator and formula reference."
+        },
+        {
+          "path": "reference/wiki/wiki_fourth_monitoring_category_expanded.md",
+          "action": "modified",
+          "summary": "Added CoDa Bridge section explaining MC-4 in CoDa terms. Links to translator."
+        },
+        {
+          "path": "reference/HUF_Learning_Path_Engineering.md",
+          "action": "modified",
+          "summary": "Added CoDa arrival redirect at top — points to START_HERE.md, THE_CORE.md, FORMULA_REFERENCE.md before deep engineering path."
         }
       ]
     }
@@ -249,7 +299,7 @@
     {
       "item": "Push S006 + S007 files to GitHub",
       "priority": "next",
-      "notes": "S006: 9 files in drafts/codawork-2026/. S007: 7 new files in drafts/codawork-2026/ + v3 analyzer in spectrum-analyzer/ + updated manifest. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
+      "notes": "S006: 9 files in drafts/codawork-2026/. S007: CoDa integration push — 10 new files, 4 modified files, 10 files moved to archive/, 1 duplicate removed. Net: archive/ folder created with README, pre-CoDa tools archived, v1 papers archived, CoDa bridge links added to wiki and learning path. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
     },
     {
       "item": "BTL platform map update",
