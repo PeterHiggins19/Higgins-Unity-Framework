@@ -158,8 +158,9 @@
 
   "corpus_state": {
     "s008_file_count": 282,
-    "new_files_post_grok": 1,
-    "projected_count_s009": 283,
+    "s009_file_count_after_grok": 283,
+    "new_files_post_chatgpt": 2,
+    "projected_count_s010": 285,
     "new_files": [
       "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
       "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
@@ -211,6 +212,33 @@
     "verification": "Grok confirmed all files live on GitHub, all PLL discipline rules satisfied, Keff_fill unchanged, open-loop doctrine preserved. No drift detected in the math pipeline. BTL triple-meaning footnote was in pre-correction version (since corrected to canonical BTL = Binaural Test Lab per RWA-001)."
   },
 
+  "chatgpt_review": {
+    "date": "2026-04-03",
+    "status": "COMPLETE",
+    "reviewer": "ChatGPT",
+    "scope": "CRPT-007, GitHub drafts/codawork-2026/, conference readiness, strategic positioning",
+    "gold": [
+      "Consistency pass: abstract_v2.md fixed (16→17 errors, dual-metric language added)",
+      "Metric-framing mismatch identified and resolved: all docs now tell the same TV+Aitchison dual-metric story",
+      "Battle card updated: 6 gaps now show current status (implemented vs validated) alongside what's still needed",
+      "Prep guide updated: Q&A answers now reflect current toolchain state (CLR/ILR/Aitchison implemented for calibration)",
+      "Calibration-study framing sentence added to THE_UNION.md ('presented as calibration study, not finished instrument')",
+      "Coimbra Trim List created: one-page bring/keep handy/leave behind for the trip"
+    ],
+    "rough_diamonds": [
+      "CONJ-001: Winning Horse Conjecture — CoDa+HUF+Ramsar as calibrated open-loop ecological composition-monitoring standard; signed compositions next; complex CoDa later",
+      "CoDa-Ramsar bridge strategy: basics first at Coimbra, then bridge through people who engage the claim",
+      "Analyzer rename suggestion: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator' (noted, not yet applied to HTML)"
+    ],
+    "tailings": [
+      "Confirmed packet v3 is still the best front-door artifact",
+      "Confirmed executive summary is good writing but not first-contact scientific material",
+      "Confirmed posture docs (battle card, field guide, researchers card) are sharp and useful",
+      "Confirmed THE_UNION is strong but too wide for first 10 minutes — treat as follow-up memo"
+    ],
+    "key_insight": "The biggest single fix was making the abstract, packet, union memo, and analyzer all tell the same metric story and the same error-count story. ChatGPT caught that the room sees calibration OR internal velocity — and right now the documents were telling both stories depending on which file you opened. Now unified."
+  },
+
   "conference_readiness": {
     "thesis": "THE_UNION.md — complete, updated with Greenacre complementarity (capability #5)",
     "calibration_study": "ENTANGLEMENT_ERROR_ANALYSIS.md — 17 error sources (upgraded from 16), E-18/E-19 filed as HUF-EXT future",
@@ -220,10 +248,13 @@
     "demonstration_tools": "v3 analyzer (10 panels, dual metrics), ternary diagram, CoDa explorer — all from S007, complete",
     "sample_data": "EMBER multi-site compositions CSV+YAML — from S005, complete",
     "vocabulary": "Translator, vocabulary card, conference concepts table, do/don't field guide — from S006-S007, complete",
+    "coimbra_trim_list": "COIMBRA_TRIM_LIST.md — one-page bring/keep handy/leave behind. ChatGPT contribution.",
+    "conjecture": "CONJ-001-winning-horse.md — strategic forecast for union path. ChatGPT contribution. Filed as disciplined speculation.",
     "remaining": [
       "Conference script (oral or poster TBD)",
-      "Push S009 files to GitHub",
-      "Collective review: ChatGPT, Copilot, Gemini still pending"
+      "Push S010 files to GitHub",
+      "Collective review: Copilot and Gemini still pending",
+      "Analyzer title softening: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator' (ChatGPT suggestion, not yet applied)"
     ]
   },
 

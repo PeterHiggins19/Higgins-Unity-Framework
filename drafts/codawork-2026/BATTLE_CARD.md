@@ -16,16 +16,16 @@ Every gap you admit is a collaboration offer. Every strength you show is a reaso
 
 ## WHAT I CANNOT DO (and need CoDa for)
 
-| Gap | What I need | Who might help |
-|-----|-------------|----------------|
-| No log-ratio transforms | ILR/ALR implementation for time-series monitoring | Hron, Filzmoser |
-| No null model | Principled compositional null for drift detection | Egozcue, Pawlowsky-Glahn |
-| No formal zero handling | Structural vs rounded zeros in monitoring context | Palarea-Albaladejo, Martín-Fernández |
-| Subcompositional coherence untested | Does drift detection hold on sub-compositions? | The whole room |
-| No Dirichlet comparison | Model-free vs parametric — which detects better? | Anyone with simulation experience |
-| Concentration measure unformalized | K_eff ↔ Aitchison norm bridge | Egozcue (his poster topic) |
+| Gap | Current status | What I need | Who might help |
+|-----|---------------|-------------|----------------|
+| Log-ratio transforms | CLR/ILR now implemented in conference demonstrator for exploratory calibration | Validated protocol for time-series monitoring — not just implemented, but settled | Hron, Filzmoser |
+| Null model | Not yet formalized | Principled compositional null for drift detection | Egozcue, Pawlowsky-Glahn |
+| Zero handling | Event-first doctrine (flag zero as domain event before correction); chiPower explored as post-event layer (E-03/E-17) | Formal protocol for structural vs rounded zeros in monitoring context | Palarea-Albaladejo, Martín-Fernández, possibly Greenacre |
+| Subcompositional coherence | CoDa methods (CLR/ILR) used in demonstrator; coherence chain (1→2→4) provides structure | Does drift detection hold on sub-compositions under continuous monitoring? | The whole room |
+| Dirichlet comparison | Not started | Model-free vs parametric — which detects better? | Anyone with simulation experience |
+| Concentration measure | K_eff computed alongside Aitchison trajectory | K_eff ↔ Aitchison norm bridge — open question for the community | Egozcue (his poster topic) |
 
-**Say it plainly:** "These six items have me beat. I came here because you're the people who can solve them."
+**Say it plainly:** "These six gaps are why I'm here. Some are now partially addressed in the conference demonstrator — but implemented is not the same as validated. I came because you're the people who can tell me whether the implementation is sound."
 
 ---
 

@@ -400,21 +400,79 @@
       ]
     }
   ],
+    ,
+    {
+      "session_id": "S010",
+      "date": "2026-04-03",
+      "label": "ChatGPT collective review integration: consistency pass, Coimbra trim list, CONJ-001, battle card/prep guide updates",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "ChatGPT review integration: consistency pass (dual-metric + 17-error unified), Coimbra trim list, CONJ-001 conjecture, battle card and prep guide updated to current toolchain",
+      "notes": "ChatGPT identified metric-framing mismatch and error-count drift across documents. All now unified: 17 errors, dual-metric (TV+Aitchison) story consistent everywhere. Battle card gaps table now shows current status vs what's still needed. Prep guide Q&A answers updated. Coimbra Trim List and CONJ-001 winning horse conjecture filed.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/COIMBRA_TRIM_LIST.md",
+          "action": "added",
+          "summary": "One-page bring/keep handy/leave behind for Coimbra. Core posture, spoken introduction, success criteria."
+        },
+        {
+          "path": "drafts/codawork-2026/CONJ-001-winning-horse.md",
+          "action": "added",
+          "summary": "Strategic conjecture: CoDa+HUF+Ramsar as winning horse. Signed compositions next. Complex CoDa later. Disciplined speculation, not assured foundation."
+        },
+        {
+          "path": "drafts/codawork-2026/abstract_v2.md",
+          "action": "modified",
+          "summary": "16→17 error count. Dual-metric protocol language added. Matches all other documents."
+        },
+        {
+          "path": "drafts/codawork-2026/THE_UNION.md",
+          "action": "modified",
+          "summary": "Added calibration-study framing sentence near top: 'presented as calibration study with 17 active entanglement errors, not as a finished instrument.'"
+        },
+        {
+          "path": "drafts/codawork-2026/BATTLE_CARD.md",
+          "action": "modified",
+          "summary": "Gaps table now shows current status alongside what's needed. Distinguishes implemented-for-calibration from validated-as-protocol."
+        },
+        {
+          "path": "drafts/codawork-2026/CODAWORK_PREP_GUIDE.md",
+          "action": "modified",
+          "summary": "Q&A answers updated: Aitchison now computed (dual-metric), zero handling has event-first protocol, log-ratio transforms implemented in demonstrator. Vulnerabilities section updated."
+        },
+        {
+          "path": "process/collective-reports/CRPT-007.json",
+          "action": "modified",
+          "summary": "Added chatgpt_review section (gold/rough diamonds/tailings). Conference readiness updated with trim list and conjecture."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "modified",
+          "summary": "S010 entry added."
+        }
+      ]
+    }
+  ],
   "pending_items": [
     {
       "item": "CoDaWork conference script",
       "priority": "next",
-      "notes": "Build from union thesis (THE_UNION.md) + 26-concept spine (CONFERENCE_CONCEPTS.md) + 17-error calibration study. Oral or poster TBD by committee."
+      "notes": "Build from union thesis + 26-concept spine + 17-error calibration study + Coimbra trim list posture."
     },
     {
-      "item": "Collective review: ChatGPT, Copilot, Gemini",
+      "item": "Collective review: Copilot and Gemini",
       "priority": "next",
-      "notes": "Grok complete. ChatGPT next, then Copilot, then Gemini. Each reviews updated CRPT-007 with Grok's gold/diamonds/tailings visible."
+      "notes": "Grok and ChatGPT complete. Copilot next, then Gemini. CRPT-007 now carries both reviews."
     },
     {
-      "item": "Push S009 files to GitHub",
+      "item": "Push S009 + S010 files to GitHub",
       "priority": "next",
-      "notes": "1 new file (abstract_v2.md) + 6 modified files. Peter copies to D:\\GitHub\\HUF and pushes via GitHub Desktop."
+      "notes": "S009: 1 new + 6 modified. S010: 2 new + 6 modified. Peter copies to D:\\GitHub\\HUF and pushes."
+    },
+    {
+      "item": "Analyzer title softening",
+      "priority": "before conference",
+      "notes": "ChatGPT: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator'. Not yet applied to HTML."
     },
     {
       "item": "MEWMA-CoDa collaboration contact",
@@ -424,7 +482,7 @@
     {
       "item": "Greenacre interaction framing",
       "priority": "at conference",
-      "notes": "If Greenacre attends: HUF-GOV as engineering complement to chiPower, not opposing claim. E-03/E-17 as collaborative calibration."
+      "notes": "Engineering complement to chiPower. E-03/E-17 as collaborative calibration."
     },
     {
       "item": "BTL platform map update",
@@ -435,11 +493,6 @@
       "item": "Peterson letter URL update",
       "priority": "when ready",
       "notes": "Letter may reference old GitHub URL."
-    },
-    {
-      "item": "GitHub issue templates",
-      "priority": "when ready",
-      "notes": "Prior-art challenge, Replication attempt, Negative result / failure case."
     }
   ],
   "file_count_tracking": {
@@ -453,6 +506,6 @@
     "S007_when_pushed": 278,
     "S008_when_pushed": 282,
     "S009_when_pushed": 283,
-    "S009_note": "+1 new file (abstract_v2.md). All other changes are modifications to existing files."
+    "S010_when_pushed": 285
   }
 }

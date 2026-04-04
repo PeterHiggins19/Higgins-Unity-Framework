@@ -8,6 +8,8 @@
 
 ## The Problem Both Communities Have
 
+*For CoDaWork 2026, this union is being presented as a calibration study with 17 active entanglement errors, not as a finished instrument. The dual-metric protocol (TV distance + Aitchison distance) is exploratory; the metric question is not yet settled.*
+
 CoDa has spent 40 years perfecting the mathematics of compositional data — Aitchison geometry, log-ratio transformations, subcompositional coherence, robust estimation, outlier detection. The tools are precise, proven, and elegant. They work beautifully on collected datasets.
 
 HUF has spent 6 months discovering what happens when you try to monitor compositions continuously in real systems — energy grids, wetland ecosystems, transit networks, GDP — where the data never stops arriving, the system changes dimensionality, governance decisions intervene, and the question is not "what does this dataset reveal?" but "is this system drifting right now, and does anyone know?"

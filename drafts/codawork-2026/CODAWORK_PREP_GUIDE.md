@@ -61,7 +61,7 @@ d_A(x,y) = √(Σᵢ<ⱼ (ln(xᵢ/xⱼ) - ln(yᵢ/yⱼ))²) · (1/D)
 
 Or equivalently: the Euclidean distance between the CLR-transformed vectors.
 
-**Why it matters for you:** This is the "right" distance on the simplex according to CoDa theory. If someone asks "have you computed Aitchison distance between your time-period compositions?", you should know what they mean and be ready to say: "Not yet — the current implementation uses TV and L2 because of their monitoring-theory heritage, but computing Aitchison distance on the same data is a natural next step."
+**Why it matters for you:** This is the "right" distance on the simplex according to CoDa theory. The conference demonstrator now computes both TV distance and Aitchison distance side-by-side as a dual-metric protocol. If someone asks "have you computed Aitchison distance?", the answer is: "Yes — we now run both TV and Aitchison on every observation. Agreement is treated as robustness; disagreement is treated as diagnostic information (dominant vs trace carrier movement). The open question is which metric should anchor the monitoring protocol."
 
 ### 4. The Zero Problem
 
@@ -108,13 +108,13 @@ The CoDa equivalent of PCA biplots. Based on CLR-transformed data. Shows the rel
 ## Questions They Will Likely Ask You
 
 1. **"Why TV distance / L2 norm instead of Aitchison distance?"**
-   → Your monitoring protocol comes from information theory, where TV is standard. Computing Aitchison distance on the same data is a natural extension and you'd welcome that comparison.
+   → The conference demonstrator now computes both. TV distance is retained for monitoring interpretability; Aitchison distance is the simplex-native geometric metric. Agreement between them is treated as robustness; disagreement is treated as diagnostic (dominant vs trace carrier movement). The open question is which should anchor the monitoring protocol — that's exactly why I'm here.
 
 2. **"How do you handle zeros in your compositions?"**
-   → Structural zeros flagged explicitly in the metadata. You haven't applied log-ratio imputation because the zeros represent genuine absence, not measurement limits. Open to CoDa community guidance on best practice.
+   → Event-first protocol: a carrier reaching zero is treated first as a domain event (flag it, record the TV velocity spike), then CoDa zero-handling is applied only if further geometric analysis is required. Greenacre's chiPower is being explored as a post-event correction layer that preserves subcompositional coherence. Open to CoDa community guidance on best practice. This is documented as E-03/E-17 in the 17-error calibration catalogue.
 
 3. **"Have you considered log-ratio transformations?"**
-   → The current framework operates on raw proportions because monitoring applications need interpretable absolute changes. But expressing the same trajectories in ilr coordinates and comparing drift detection is exactly the kind of collaboration you're looking for.
+   → Yes. CLR and ILR are now implemented in the conference demonstrator alongside the original TV-based metrics. The conference posture is that Aitchison distance and log-ratio views are included for exploratory calibration — the open question is not whether they exist in the toolchain, but how they should anchor the monitoring protocol, what the correct null model is, and how zeros and subcompositions should be governed.
 
 4. **"What's new here? The simplex is well-studied."**
    → The math is not new. The claim is that nobody has built a formal monitoring protocol on compositional data that tracks declared-vs-observed allocation with change detection. The four defeat paths in the packet are there precisely to test this.
@@ -155,8 +155,7 @@ The CoDa equivalent of PCA biplots. Based on CLR-transformed data. Shows the rel
 
 ## Your Known Vulnerabilities
 
-- **No log-ratio analysis.** You work on raw proportions. A CoDa purist may see this as ignoring 40 years of Aitchison.
-- **No Aitchison distance.** Your metrics are TV and L2, not the simplex-native distance.
+- **Log-ratio and Aitchison distance: implemented, not validated.** The conference demonstrator now includes CLR, ILR, and Aitchison distance alongside the original TV-based metrics. But "implemented for exploratory calibration" is not "settled as validated monitoring protocol." A CoDa purist will want to know which anchors the monitoring — that question is explicitly open.
 - **No null distribution.** The p-value has no formal null model.
 - **Independent researcher.** No institutional backing. This is neither good nor bad, but it means you'll be evaluated purely on the work.
 - **AI-assisted development.** If asked, disclose matter-of-factly. Don't lead with it.
