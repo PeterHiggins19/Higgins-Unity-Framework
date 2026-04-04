@@ -460,7 +460,7 @@
         {
           "path": "drafts/codawork-2026/PRESENTATION_SCRIPT.md",
           "action": "added",
-          "summary": "13-slide presentation script with full spoken text (10-12 min). Includes white flag opening and 2-minute elevator pitch."
+          "summary": "14-slide presentation script with full spoken text (10-12 min). Slide 2 added: The Lineage (BTL physics origin, isotropic ground state, paired-measurement doctrine). Includes white flag opening and 2-minute elevator pitch."
         },
         {
           "path": "drafts/codawork-2026/POSTER_LAYOUT.md",
@@ -486,6 +486,11 @@
           "path": "drafts/codawork-2026/DEMO_DATASET_ECOLOGICAL.csv",
           "action": "added",
           "summary": "Engineered demo dataset: 5 carriers (Wetland A-F), 9 years, triggers all 5 event types (drift, disagreement, shock, zero, dimensionality change)."
+        },
+        {
+          "path": "drafts/codawork-2026/THE_LINEAGE.md",
+          "action": "added",
+          "summary": "Origin story: from BTL loudspeaker physics to CoDa. Isotropic ground state, constrained energy budget on the simplex, paired-measurement doctrine, audit trail. 'This instrument was not designed for CoDa. It was designed for physics. And the physics turned out to be compositional.'"
         },
         {
           "path": "process/collective-reports/CRPT-007.json",
@@ -549,6 +554,6 @@
     "S008_when_pushed": 282,
     "S009_when_pushed": 283,
     "S010_when_pushed": 285,
-    "S011_when_pushed": 291
+    "S011_when_pushed": 292
   }
 }

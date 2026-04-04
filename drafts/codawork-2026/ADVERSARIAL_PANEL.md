@@ -43,7 +43,7 @@
 
 **Why they ask:** Dual-metric monitoring is new and will be challenged.
 
-**Your response:** "The dual metric is a diagnostic, not a fusion. When the two disagree, that's information — not an error."
+**Your response:** "The dual metric is a diagnostic, not a fusion. When the two disagree, that's information — not an error. And this isn't a design choice we made for CoDa. HUF was built from the start on a paired-measurement doctrine: always two results, always examine both, lose nothing. When the union brought Aitchison distance alongside TV, the architecture already required it. The principle predates CoDa and was validated by it."
 
 ---
 

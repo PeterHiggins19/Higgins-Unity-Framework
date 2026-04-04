@@ -121,6 +121,12 @@
       "corpus_location": "WHAT_HUF_IS.md (BTL footnote corrected), RWA_Corporate_Reference_v1.0.json (canonical), HUF_Learning_Path_Engineering.md (corrected)"
     },
 
+    "the_lineage": {
+      "statement": "HUF was not designed for CoDa. It was designed for physics — loudspeaker radiation patterns on a constrained simplex. The isotropic ground state (omnidirectional radiation) is the barycenter. Cabinet dimensions (DADC) constrain the accessible region of the simplex. The paired-measurement doctrine (always two results, both examined, disagreement is diagnostic, lose nothing) predates the CoDa union entirely. When the union brought Aitchison distance alongside TV, the architecture already had a slot for it. Every property of compositional data — closure, ratio-scale, zero-event significance — was present in the physics from the first BTL measurement. CoDa gave HUF the mathematical name for what it was already doing.",
+      "origin": "Peter's observation: 'I am building a tool to protect myself from my own ignorance. Moments later: isotropic ground state for omnidirectional cabinets based on cabinet dimensions, DADC, a constrained energy budget on the simplex.'",
+      "corpus_location": "THE_LINEAGE.md, PRESENTATION_SCRIPT.md (Slide 2)"
+    },
+
     "the_zeros_tension": {
       "statement": "E-03 reveals a fundamental tension at the HUF-CoDa union. In HUF, a carrier going to zero is potentially the most important signal — a phase transition, a fuel type retiring, a species going extinct. In CoDa, zero is a mathematical problem: log(0) is undefined, so every zero must be replaced before analysis. CoDa's solution (zero replacement) inserts instrument-generated values into the data, giving a genuinely absent carrier a phantom presence. The union must govern this tension: treat zeros as events first, mathematical problems second.",
       "origin": "Emerged during entanglement error analysis.",
@@ -160,8 +166,8 @@
     "s008_file_count": 282,
     "s009_file_count_after_grok": 283,
     "s010_file_count_after_chatgpt": 285,
-    "new_files_post_copilot": 6,
-    "projected_count_s011": 291,
+    "new_files_post_copilot": 7,
+    "projected_count_s011": 292,
     "new_files": [
       "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
       "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
