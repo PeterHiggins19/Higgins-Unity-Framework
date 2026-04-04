@@ -159,8 +159,9 @@
   "corpus_state": {
     "s008_file_count": 282,
     "s009_file_count_after_grok": 283,
-    "new_files_post_chatgpt": 2,
-    "projected_count_s010": 285,
+    "s010_file_count_after_chatgpt": 285,
+    "new_files_post_copilot": 6,
+    "projected_count_s011": 291,
     "new_files": [
       "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
       "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
@@ -239,6 +240,45 @@
     "key_insight": "The biggest single fix was making the abstract, packet, union memo, and analyzer all tell the same metric story and the same error-count story. ChatGPT caught that the room sees calibration OR internal velocity — and right now the documents were telling both stories depending on which file you opened. Now unified."
   },
 
+  "copilot_review": {
+    "date": "2026-04-04",
+    "status": "COMPLETE",
+    "reviewer": "Copilot",
+    "scope": "CRPT-007, GitHub repo (spectrum analyzer v2 + codawork-2026 drafts), conference readiness, adversarial preparation",
+    "executive_verdict": "Repository, analyzer, and codawork-2026 documents form a coherent, technically defensible, and internally consistent package for presentation to the CoDa group in June 2026.",
+    "gold": [
+      "Full consistency verification: framework naming, GOV/CLS separation, BTL correction, 17-error catalogue, union thesis, dual-metric architecture, open-loop doctrine, dimensionality awareness — all confirmed aligned across repo, analyzer, and drafts",
+      "DA-01 through DA-08: eight devil's-advocate questions with calibrated responses covering MEWMA branding, zero fatality, governance resistance, PLL confusion, metric incompatibility, catalogue trust, ambition scope, and union failure",
+      "Audit trail of events identified as the core HUF value proposition for CoDa: 5 event types (drift, metric disagreement, structural shocks, zero events, dimensionality changes)",
+      "CoDa-audience framing guidance: emphasize error catalogue / diagnostic protocol / open-loop doctrine; avoid 'new framework' / 'replacement for CoDa' / 'unified theory'",
+      "Confirmed ChatGPT's 4 final adjustments: (1) rename analyzer to 'CoDa Calibration Demonstrator', (2) prepare 10-min instrument-first script, (3) add one clean ecological example, (4) add one-page zero protocol",
+      "Two-minute elevator pitch for CoDa scientists — concise, instrument-first, audit-trail-anchored",
+      "White flag posture validated: 'Walking in with a white flag is signal discipline, not surrender'"
+    ],
+    "rough_diamonds": [
+      "13-slide presentation script with full spoken text for 10-12 minute slot — filed as PRESENTATION_SCRIPT.md",
+      "A0 poster layout with ASCII specification (8 sections) — filed as POSTER_LAYOUT.md",
+      "Engineered demo dataset (CSV): 5 carriers, 9 years, triggers all 5 event types (drift, disagreement, shock, zero, dimensionality change) — filed as DEMO_DATASET_ECOLOGICAL.csv",
+      "Live demo script (4-5 minutes) with audience interaction questions — filed as DEMO_SCRIPT.md",
+      "Mock adversarial panel interview with rehearsal script (DA-01 through DA-08, Q&A defense sheet) — filed as ADVERSARIAL_PANEL.md",
+      "Room-control strategy for mathematicians/engineers/skeptics with universal tactics — filed as ROOM_CONTROL.md",
+      "One-page 'What HUF Is' handout text (included in Copilot's review, not separately filed — content already in WHAT_HUF_IS.md)"
+    ],
+    "tailings": [
+      "Framework naming consistency — confirmed correct, no changes needed",
+      "GOV/CLS separation — confirmed clean across repo and analyzer",
+      "BTL correction — confirmed no remaining drift",
+      "17-error catalogue — confirmed complete with correct mapping tables and governance actions",
+      "Union thesis in THE_UNION.md — confirmed matches CRPT-007 exactly",
+      "Dual-metric architecture in analyzer — confirmed computing both TV and Aitchison",
+      "Open-loop doctrine in analyzer — confirmed strictly observational, no CLS logic present",
+      "Dimensionality awareness in analyzer — confirmed checking carrier count changes",
+      "Ternary and multi-carrier projections — confirmed implemented correctly"
+    ],
+    "key_insight": "Copilot's strongest contribution was identifying the audit trail of events as the single most communicable value HUF brings to CoDa — and building a complete conference preparation package around it. The 5 event types (drift, disagreement, shocks, zeros, dimensionality) give Peter a concrete, repeatable anchor for every conversation in Coimbra.",
+    "peter_response": "Peter confirmed 'white flag' posture already decided. Noted Copilot is 'very helpful' and the deliverables 'will do the job.' Quoted Douglas Adams: 'thanks for all the fish.'"
+  },
+
   "conference_readiness": {
     "thesis": "THE_UNION.md — complete, updated with Greenacre complementarity (capability #5)",
     "calibration_study": "ENTANGLEMENT_ERROR_ANALYSIS.md — 17 error sources (upgraded from 16), E-18/E-19 filed as HUF-EXT future",
@@ -250,11 +290,18 @@
     "vocabulary": "Translator, vocabulary card, conference concepts table, do/don't field guide — from S006-S007, complete",
     "coimbra_trim_list": "COIMBRA_TRIM_LIST.md — one-page bring/keep handy/leave behind. ChatGPT contribution.",
     "conjecture": "CONJ-001-winning-horse.md — strategic forecast for union path. ChatGPT contribution. Filed as disciplined speculation.",
+    "presentation_script": "PRESENTATION_SCRIPT.md — 13-slide full spoken text for 10-12 minute slot. Copilot contribution.",
+    "poster_layout": "POSTER_LAYOUT.md — A0 format ASCII specification. Copilot contribution.",
+    "demo_script": "DEMO_SCRIPT.md — 4-5 minute live demo with audience interaction questions. Copilot contribution.",
+    "adversarial_prep": "ADVERSARIAL_PANEL.md — DA-01 through DA-08, mock panel, Q&A defense sheet. Copilot contribution.",
+    "room_control": "ROOM_CONTROL.md — Strategy for mathematicians, engineers, skeptics. Copilot contribution.",
+    "demo_dataset": "DEMO_DATASET_ECOLOGICAL.csv — Engineered to trigger all 5 event types. Copilot contribution.",
     "remaining": [
-      "Conference script (oral or poster TBD)",
-      "Push S010 files to GitHub",
-      "Collective review: Copilot and Gemini still pending",
-      "Analyzer title softening: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator' (ChatGPT suggestion, not yet applied)"
+      "Push S010 and S011 files to GitHub",
+      "Collective review: Gemini still pending",
+      "Analyzer title softening: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator' (ChatGPT suggestion, confirmed by Copilot, not yet applied to HTML)",
+      "One-page zero protocol (Copilot suggestion #4, not yet created as standalone document)",
+      "One clean ecological example with Ramsar data (Copilot suggestion #3)"
     ]
   },
 
@@ -268,13 +315,15 @@
       "GitHub issue templates (Prior-art challenge, Replication attempt, Negative result)"
     ],
     "new_this_session": [
-      "Conference script: build from union thesis + 26-concept table + 17-error calibration study",
-      "Push S008 (5 new files + 6 modified files) to GitHub",
+      "Conference script: DONE — PRESENTATION_SCRIPT.md created from Copilot review",
+      "Push S008 (5 new files + 6 modified files) to GitHub — Peter's action",
+      "Push S009/S010/S011 to GitHub — Peter's action",
       "MEWMA-CoDa collaboration: identify Tran/Nguyen group for direct contact at Coimbra",
       "Ramsar deployment planning: begin mapping RSIS data structure to HUF carrier framework",
-      "S006 still shows status 'staged' in manifest — verify push status with Peter"
+      "S006 still shows status 'staged' in manifest — verify push status with Peter",
+      "Gemini collective review: fourth and final reviewer"
     ]
   },
 
-  "one_sentence": "The session that discovered HUF and CoDa are building the same instrument from opposite ends, mapped the 17 ways it breaks at the joint (plus 2 future directions), and wrote the thesis for why connecting them produces something neither can build alone."
+  "one_sentence": "The session that discovered HUF and CoDa are building the same instrument from opposite ends, mapped the 17 ways it breaks at the joint (plus 2 future directions), wrote the thesis for why connecting them produces something neither can build alone, and — through three collective reviews (Grok, ChatGPT, Copilot) — built a complete conference preparation package anchored on the audit trail of events as HUF's core value to CoDa."
 }

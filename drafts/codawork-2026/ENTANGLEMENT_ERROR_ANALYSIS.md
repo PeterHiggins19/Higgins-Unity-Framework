@@ -33,11 +33,11 @@ This is a diagnostic tool for the diagnostic tool.
 
 | Category | HUF Alone | CoDa Alone | HUF–CoDa Union |
 |----------|-----------|------------|-----------------|
-| **Errors present** | E-01, E-02 (partial), E-06, E-07, E-08, E-11 (partial) | E-02, E-03, E-04, E-05, E-08 (partial), E-11, E-12 | All 12 error sources are relevant |
+| **Errors present** | E-01, E-02 (partial), E-06, E-07, E-08, E-11 (partial) | E-02, E-03, E-04, E-05, E-08 (partial), E-11, E-12 | All 17 error sources are relevant |
 | **Errors corrected by union** | E-01 (geometry), E-09 (subcomposition) | E-06 (stale reference — HUF governance fixes this) | — |
 | **Errors inherited at union** | — | E-02, E-03, E-05, E-12 → enter HUF pipeline | E-06, E-07, E-08 → affect CoDa metrics |
 | **Errors NEW at union only** | — | — | E-04 (partition choice matters more in continuous monitoring), E-10 (stored energy from temporal caching), E-11 amplified (dimensionality change breaks log-ratio time series) |
-| **Net instrument quality** | Reads continuously but with wrong geometry and no subcomposition coherence | Mathematically rigorous but static, no governance, no temporal framework | Strongest instrument — but needs explicit governance of 12 error sources, not 6 |
+| **Net instrument quality** | Reads continuously but with wrong geometry and no subcomposition coherence | Mathematically rigorous but static, no governance, no temporal framework | Strongest instrument — but needs explicit governance of 17 error sources, not 6 |
 
 ---
 

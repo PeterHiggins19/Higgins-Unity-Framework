@@ -350,9 +350,7 @@
           "summary": "Title fix: Higgins Unified Framework → Higgins Unity Framework"
         }
       ]
-    }
-  ],
-    ,
+    },
     {
       "session_id": "S009",
       "date": "2026-04-03",
@@ -398,9 +396,7 @@
           "summary": "S009 entry added."
         }
       ]
-    }
-  ],
-    ,
+    },
     {
       "session_id": "S010",
       "date": "2026-04-03",
@@ -451,23 +447,69 @@
           "summary": "S010 entry added."
         }
       ]
+    },
+    {
+      "session_id": "S011",
+      "date": "2026-04-04",
+      "label": "Copilot collective review integration: consistency verified, conference preparation package, audit trail framing",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Copilot review integration: full consistency verified, 6 conference prep files (presentation script, poster layout, demo script, adversarial panel, room control, ecological demo dataset), CRPT-007 updated with copilot_review",
+      "notes": "Copilot completed full consistency verification: repo, analyzer, and codawork-2026 drafts all aligned. Identified audit trail of events (5 types) as HUF's core value proposition for CoDa. Produced comprehensive conference preparation package. Confirmed ChatGPT's 4 final adjustments. Validated white flag posture.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/PRESENTATION_SCRIPT.md",
+          "action": "added",
+          "summary": "13-slide presentation script with full spoken text (10-12 min). Includes white flag opening and 2-minute elevator pitch."
+        },
+        {
+          "path": "drafts/codawork-2026/POSTER_LAYOUT.md",
+          "action": "added",
+          "summary": "A0 poster layout with ASCII specification. 8 sections: motivation, what HUF is, 17 errors, zero tension, dual metric, analyzer, union thesis, deployment path."
+        },
+        {
+          "path": "drafts/codawork-2026/DEMO_SCRIPT.md",
+          "action": "added",
+          "summary": "Live demo script (4-5 min) with audience interaction questions. 9 demo steps + 5 audience interactions."
+        },
+        {
+          "path": "drafts/codawork-2026/ADVERSARIAL_PANEL.md",
+          "action": "added",
+          "summary": "DA-01 through DA-08 devil's-advocate Q&A. Mock adversarial panel rehearsal script. Q&A defense sheet (short form)."
+        },
+        {
+          "path": "drafts/codawork-2026/ROOM_CONTROL.md",
+          "action": "added",
+          "summary": "Room-control strategy for mathematicians (invariants), engineers (failure modes), skeptics (humility). Universal tactics. Three hardest scenarios."
+        },
+        {
+          "path": "drafts/codawork-2026/DEMO_DATASET_ECOLOGICAL.csv",
+          "action": "added",
+          "summary": "Engineered demo dataset: 5 carriers (Wetland A-F), 9 years, triggers all 5 event types (drift, disagreement, shock, zero, dimensionality change)."
+        },
+        {
+          "path": "process/collective-reports/CRPT-007.json",
+          "action": "modified",
+          "summary": "Added copilot_review section (gold/rough diamonds/tailings). Conference readiness updated with 6 new files. Corpus state updated to projected 291 files. One-sentence summary updated."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "modified",
+          "summary": "S011 entry added. JSON structure fixed (malformed bracket/comma pairs from S009/S010 edits)."
+        }
+      ]
     }
   ],
   "pending_items": [
     {
-      "item": "CoDaWork conference script",
+      "item": "Collective review: Gemini",
       "priority": "next",
-      "notes": "Build from union thesis + 26-concept spine + 17-error calibration study + Coimbra trim list posture."
+      "notes": "Grok, ChatGPT, and Copilot complete. Gemini is the fourth and final reviewer. CRPT-007 now carries all three prior reviews."
     },
     {
-      "item": "Collective review: Copilot and Gemini",
+      "item": "Push S009 + S010 + S011 files to GitHub",
       "priority": "next",
-      "notes": "Grok and ChatGPT complete. Copilot next, then Gemini. CRPT-007 now carries both reviews."
-    },
-    {
-      "item": "Push S009 + S010 files to GitHub",
-      "priority": "next",
-      "notes": "S009: 1 new + 6 modified. S010: 2 new + 6 modified. Peter copies to D:\\GitHub\\HUF and pushes."
+      "notes": "S009: 1 new + 6 modified. S010: 2 new + 6 modified. S011: 6 new + 2 modified. Peter copies to D:\\GitHub\\HUF and pushes."
     },
     {
       "item": "Analyzer title softening",
@@ -506,6 +548,7 @@
     "S007_when_pushed": 278,
     "S008_when_pushed": 282,
     "S009_when_pushed": 283,
-    "S010_when_pushed": 285
+    "S010_when_pushed": 285,
+    "S011_when_pushed": 291
   }
 }

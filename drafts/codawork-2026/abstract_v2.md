@@ -35,11 +35,11 @@ The central claim is that combining standard compositional tools with an explici
 - **Dual-metric protocol added** — abstract now matches the analyzer, union memo, and WHAT_HUF_IS.md on the metric story (TV + Aitchison, disagreement as diagnostic). ChatGPT consistency fix.
 - **"Falsifiable" added** — the instrument ships with its own failure mode catalogue.
 - **Country-specific examples removed** — tightened word count. The examples are in the packet, not the abstract.
-- **"Four specific ways it could be defeated" removed** — replaced by the stronger 16-error calibration framing (which subsumes it).
+- **"Four specific ways it could be defeated" removed** — replaced by the stronger 17-error calibration framing (which subsumes it).
 - **Egozcue's four points still addressed:** no HUF acronyms, perturbation not subtraction, simplex not constant-sum, concentration measure linked to effective diversity.
 
 ## Notes for Peter (do not send)
 
 - Abstract went from 283 → 208 words. Tighter, stronger.
 - If committee already has v1 and you want to update, send a one-line note: "Revised abstract reflecting additional analysis. Same title, same data, stronger central claim."
-- The 16-error catalogue is the new centerpiece — engineers and mathematicians both respect calibration studies.
+- The 17-error catalogue is the new centerpiece — engineers and mathematicians both respect calibration studies.

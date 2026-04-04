@@ -318,7 +318,7 @@ Weiß (2024) identified that some compositions have parts with a natural order (
 
 ## The Conversation for Coimbra
 
-CoDa has spent 40 years perfecting the mathematics of static compositional analysis. HUF has spent 6 months discovering what happens when you apply that mathematics continuously, with governance, to systems that change in real time. The entanglement creates 16 error sources — 8 that CoDa already knows about, 4 that only appear under continuous monitoring, and 4 that emerge from the current state of CoDa's own internal debates.
+CoDa has spent 40 years perfecting the mathematics of static compositional analysis. HUF has spent 6 months discovering what happens when you apply that mathematics continuously, with governance, to systems that change in real time. The entanglement creates 17 error sources — 8 that CoDa already knows about, 4 that only appear under continuous monitoring, 4 that emerge from the current state of CoDa's own internal debates, and 1 (E-17) from the chiPower-HUF calibration tension discovered during collective review.
 
 The offer: HUF brings the application context that reveals which CoDa concerns matter most in practice, and surfaces new ones that static analysis will never encounter. CoDa brings the mathematical rigor that eliminates errors HUF couldn't even detect on its own.
 
