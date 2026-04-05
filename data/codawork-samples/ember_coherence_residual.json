@@ -1,0 +1,2280 @@
+{
+  "computation": "Coherence Residual on EMBER Multi-Site Electricity Compositions",
+  "date": "2026-04-05",
+  "method": "ILR balance decomposition via 8-node SBP, cross-branch coupling measurement",
+  "sbp_design": {
+    "rationale": "Physics-driven: Fossil vs Non-Fossil at root, then internal structure",
+    "balances": 8,
+    "carriers": 9,
+    "tree": {
+      "b1_fossil_vs_nonfossil": {
+        "label": "Fossil vs Non-Fossil",
+        "level": 1,
+        "group1": [
+          "Coal",
+          "Gas",
+          "Other_Fossil"
+        ],
+        "group2": [
+          "Nuclear",
+          "Hydro",
+          "Solar",
+          "Wind",
+          "Bioenergy",
+          "Other_Renew"
+        ]
+      },
+      "b2_coal_vs_other_fossil": {
+        "label": "Coal vs {Gas, Other_Fossil}",
+        "level": 2,
+        "group1": [
+          "Coal"
+        ],
+        "group2": [
+          "Gas",
+          "Other_Fossil"
+        ]
+      },
+      "b3_nuclear_vs_renewables": {
+        "label": "Nuclear vs Renewables",
+        "level": 2,
+        "group1": [
+          "Nuclear"
+        ],
+        "group2": [
+          "Hydro",
+          "Solar",
+          "Wind",
+          "Bioenergy",
+          "Other_Renew"
+        ]
+      },
+      "b4_gas_vs_other_fossil": {
+        "label": "Gas vs Other_Fossil",
+        "level": 3,
+        "group1": [
+          "Gas"
+        ],
+        "group2": [
+          "Other_Fossil"
+        ]
+      },
+      "b5_hydro_vs_new_renew": {
+        "label": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "level": 3,
+        "group1": [
+          "Hydro"
+        ],
+        "group2": [
+          "Solar",
+          "Wind",
+          "Bioenergy",
+          "Other_Renew"
+        ]
+      },
+      "b6_solar_vs_wind": {
+        "label": "Solar vs Wind",
+        "level": 4,
+        "group1": [
+          "Solar"
+        ],
+        "group2": [
+          "Wind"
+        ]
+      },
+      "b7_bio_vs_other_renew": {
+        "label": "Bioenergy vs Other_Renew",
+        "level": 4,
+        "group1": [
+          "Bioenergy"
+        ],
+        "group2": [
+          "Other_Renew"
+        ]
+      },
+      "b8_solar_wind_vs_bio_other": {
+        "label": "{Solar, Wind} vs {Bio, Other_Renew}",
+        "level": 3,
+        "group1": [
+          "Solar",
+          "Wind"
+        ],
+        "group2": [
+          "Bioenergy",
+          "Other_Renew"
+        ]
+      }
+    }
+  },
+  "zero_handling": "Multiplicative replacement with delta=1e-05",
+  "thresholds": {
+    "tv_distance": 0.05,
+    "aitchison_distance": 0.5,
+    "cr_mean": 0.4,
+    "note": "Initial thresholds \u2014 calibration pending. These are judgment calls at n=1."
+  },
+  "pattern_counts": {
+    "MILD_SHIFT": 4,
+    "COUPLING_SIGNAL": 30,
+    "STRUCTURAL": 23,
+    "STABLE": 2,
+    "COUPLED_EVENT": 14,
+    "LOCAL_EVENT": 1
+  },
+  "total_transitions": 74,
+  "sites": {
+    "Germany": [
+      {
+        "transition": "2000\u21922001",
+        "tv_distance": 0.0164,
+        "aitchison_distance": 2.7876,
+        "cr_mean": 0.3782,
+        "cr_max": 0.9603,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.6558,
+          "Coal vs {Gas, Other_Fossil}": -0.1097,
+          "Nuclear vs Renewables": -0.584,
+          "Gas vs Other_Fossil": -0.0051,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.6752,
+          "Solar vs Wind": 2.0485,
+          "Bioenergy vs Other_Renew": 0.0274,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 1.5278
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9603,
+          "Coal vs {Gas, Other_Fossil}": 0.3359,
+          "Nuclear vs Renewables": 0.3136,
+          "Gas vs Other_Fossil": 0.0725,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2916,
+          "Solar vs Wind": 0.1674,
+          "Bioenergy vs Other_Renew": 0.6906,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1939
+        }
+      },
+      {
+        "transition": "2001\u21922002",
+        "tv_distance": 0.0172,
+        "aitchison_distance": 0.5384,
+        "cr_mean": 0.564,
+        "cr_max": 0.8194,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2597,
+          "Coal vs {Gas, Other_Fossil}": 0.0525,
+          "Nuclear vs Renewables": -0.2182,
+          "Gas vs Other_Fossil": 0.0817,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.2066,
+          "Solar vs Wind": -0.0013,
+          "Bioenergy vs Other_Renew": 0.1,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3357
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7402,
+          "Coal vs {Gas, Other_Fossil}": 0.5522,
+          "Nuclear vs Renewables": 0.5547,
+          "Gas vs Other_Fossil": 0.6887,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.5701,
+          "Solar vs Wind": 0.1392,
+          "Bioenergy vs Other_Renew": 0.8194,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4472
+        }
+      },
+      {
+        "transition": "2002\u21922003",
+        "tv_distance": 0.0247,
+        "aitchison_distance": 0.7086,
+        "cr_mean": 0.6351,
+        "cr_max": 0.9243,
+        "cr_max_node": "{Solar, Wind} vs {Bio, Other_Renew}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0853,
+          "Coal vs {Gas, Other_Fossil}": -0.1199,
+          "Nuclear vs Renewables": -0.1899,
+          "Gas vs Other_Fossil": -0.0801,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.4952,
+          "Solar vs Wind": 0.253,
+          "Bioenergy vs Other_Renew": 0.3487,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0854
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6162,
+          "Coal vs {Gas, Other_Fossil}": 0.661,
+          "Nuclear vs Renewables": 0.7257,
+          "Gas vs Other_Fossil": 0.5402,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4493,
+          "Solar vs Wind": 0.6287,
+          "Bioenergy vs Other_Renew": 0.5355,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.9243
+        }
+      },
+      {
+        "transition": "2003\u21922004",
+        "tv_distance": 0.0176,
+        "aitchison_distance": 0.5818,
+        "cr_mean": 0.2707,
+        "cr_max": 0.7072,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2984,
+          "Coal vs {Gas, Other_Fossil}": -0.017,
+          "Nuclear vs Renewables": -0.2118,
+          "Gas vs Other_Fossil": -0.0008,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1339,
+          "Solar vs Wind": 0.205,
+          "Bioenergy vs Other_Renew": 0.1137,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3624
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7072,
+          "Coal vs {Gas, Other_Fossil}": 0.2881,
+          "Nuclear vs Renewables": 0.2051,
+          "Gas vs Other_Fossil": 0.0617,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.258,
+          "Solar vs Wind": 0.2085,
+          "Bioenergy vs Other_Renew": 0.28,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1568
+        }
+      },
+      {
+        "transition": "2004\u21922005",
+        "tv_distance": 0.0306,
+        "aitchison_distance": 0.8118,
+        "cr_mean": 0.4966,
+        "cr_max": 0.7909,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1599,
+          "Coal vs {Gas, Other_Fossil}": -0.1442,
+          "Nuclear vs Renewables": -0.2402,
+          "Gas vs Other_Fossil": 0.0015,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.3275,
+          "Solar vs Wind": 0.5573,
+          "Bioenergy vs Other_Renew": 0.2233,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2953
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7909,
+          "Coal vs {Gas, Other_Fossil}": 0.6623,
+          "Nuclear vs Renewables": 0.5508,
+          "Gas vs Other_Fossil": 0.068,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4716,
+          "Solar vs Wind": 0.3615,
+          "Bioenergy vs Other_Renew": 0.5711,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4967
+        }
+      },
+      {
+        "transition": "2005\u21922006",
+        "tv_distance": 0.01285,
+        "aitchison_distance": 0.5274,
+        "cr_mean": 0.3622,
+        "cr_max": 0.8358,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2183,
+          "Coal vs {Gas, Other_Fossil}": -0.0144,
+          "Nuclear vs Renewables": -0.1569,
+          "Gas vs Other_Fossil": 0.0202,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1975,
+          "Solar vs Wind": 0.3156,
+          "Bioenergy vs Other_Renew": 0.1601,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2026
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8358,
+          "Coal vs {Gas, Other_Fossil}": 0.2642,
+          "Nuclear vs Renewables": 0.3323,
+          "Gas vs Other_Fossil": 0.313,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2962,
+          "Solar vs Wind": 0.2343,
+          "Bioenergy vs Other_Renew": 0.329,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2925
+        }
+      },
+      {
+        "transition": "2006\u21922007",
+        "tv_distance": 0.04295,
+        "aitchison_distance": 0.4577,
+        "cr_mean": 0.4406,
+        "cr_max": 0.9444,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1446,
+          "Coal vs {Gas, Other_Fossil}": 0.0106,
+          "Nuclear vs Renewables": -0.3236,
+          "Gas vs Other_Fossil": 0.0291,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.142,
+          "Solar vs Wind": 0.0513,
+          "Bioenergy vs Other_Renew": 0.1832,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1628
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9444,
+          "Coal vs {Gas, Other_Fossil}": 0.2483,
+          "Nuclear vs Renewables": 0.2476,
+          "Gas vs Other_Fossil": 0.4103,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3738,
+          "Solar vs Wind": 0.6222,
+          "Bioenergy vs Other_Renew": 0.3291,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3492
+        }
+      },
+      {
+        "transition": "2007\u21922008",
+        "tv_distance": 0.03795,
+        "aitchison_distance": 0.3697,
+        "cr_mean": 0.8534,
+        "cr_max": 0.9659,
+        "cr_max_node": "Gas vs Other_Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1118,
+          "Coal vs {Gas, Other_Fossil}": -0.1036,
+          "Nuclear vs Renewables": -0.0357,
+          "Gas vs Other_Fossil": 0.1167,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1436,
+          "Solar vs Wind": 0.2349,
+          "Bioenergy vs Other_Renew": 0.0902,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1209
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9623,
+          "Coal vs {Gas, Other_Fossil}": 0.9101,
+          "Nuclear vs Renewables": 0.5693,
+          "Gas vs Other_Fossil": 0.9659,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8756,
+          "Solar vs Wind": 0.6848,
+          "Bioenergy vs Other_Renew": 0.9049,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.9543
+        }
+      },
+      {
+        "transition": "2008\u21922009",
+        "tv_distance": 0.0142,
+        "aitchison_distance": 0.4669,
+        "cr_mean": 0.3052,
+        "cr_max": 0.8424,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "STABLE",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1831,
+          "Coal vs {Gas, Other_Fossil}": 0.0142,
+          "Nuclear vs Renewables": -0.1433,
+          "Gas vs Other_Fossil": 0.0038,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1465,
+          "Solar vs Wind": 0.3177,
+          "Bioenergy vs Other_Renew": 0.1201,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1639
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8424,
+          "Coal vs {Gas, Other_Fossil}": 0.2818,
+          "Nuclear vs Renewables": 0.2501,
+          "Gas vs Other_Fossil": 0.1453,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2473,
+          "Solar vs Wind": 0.1679,
+          "Bioenergy vs Other_Renew": 0.2732,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2338
+        }
+      },
+      {
+        "transition": "2009\u21922010",
+        "tv_distance": 0.0195,
+        "aitchison_distance": 0.501,
+        "cr_mean": 0.5875,
+        "cr_max": 0.7866,
+        "cr_max_node": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.072,
+          "Coal vs {Gas, Other_Fossil}": -0.0665,
+          "Nuclear vs Renewables": -0.1105,
+          "Gas vs Other_Fossil": -0.0245,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0736,
+          "Solar vs Wind": 0.4257,
+          "Bioenergy vs Other_Renew": 0.0237,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2033
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.737,
+          "Coal vs {Gas, Other_Fossil}": 0.6304,
+          "Nuclear vs Renewables": 0.6417,
+          "Gas vs Other_Fossil": 0.3826,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7866,
+          "Solar vs Wind": 0.3269,
+          "Bioenergy vs Other_Renew": 0.7216,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4731
+        }
+      },
+      {
+        "transition": "2010\u21922011",
+        "tv_distance": 0.0538,
+        "aitchison_distance": 0.6588,
+        "cr_mean": 0.4821,
+        "cr_max": 0.8615,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1481,
+          "Coal vs {Gas, Other_Fossil}": 0.0474,
+          "Nuclear vs Renewables": -0.3591,
+          "Gas vs Other_Fossil": 0.0345,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.3369,
+          "Solar vs Wind": 0.1795,
+          "Bioenergy vs Other_Renew": 0.0824,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3566
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8615,
+          "Coal vs {Gas, Other_Fossil}": 0.4248,
+          "Nuclear vs Renewables": 0.3378,
+          "Gas vs Other_Fossil": 0.3623,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3487,
+          "Solar vs Wind": 0.4777,
+          "Bioenergy vs Other_Renew": 0.7051,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.339
+        }
+      },
+      {
+        "transition": "2011\u21922012",
+        "tv_distance": 0.03755,
+        "aitchison_distance": 0.3763,
+        "cr_mean": 0.8314,
+        "cr_max": 0.9794,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1758,
+          "Coal vs {Gas, Other_Fossil}": 0.0853,
+          "Nuclear vs Renewables": -0.2059,
+          "Gas vs Other_Fossil": -0.0954,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0724,
+          "Solar vs Wind": 0.1803,
+          "Bioenergy vs Other_Renew": 0.0942,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0728
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8095,
+          "Coal vs {Gas, Other_Fossil}": 0.8257,
+          "Nuclear vs Renewables": 0.6624,
+          "Gas vs Other_Fossil": 0.8733,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8949,
+          "Solar vs Wind": 0.708,
+          "Bioenergy vs Other_Renew": 0.9794,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8977
+        }
+      },
+      {
+        "transition": "2012\u21922013",
+        "tv_distance": 0.0221,
+        "aitchison_distance": 2.1739,
+        "cr_mean": 0.494,
+        "cr_max": 0.9529,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.6338,
+          "Coal vs {Gas, Other_Fossil}": 0.0782,
+          "Nuclear vs Renewables": -0.4918,
+          "Gas vs Other_Fossil": -0.1014,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.516,
+          "Solar vs Wind": 0.0815,
+          "Bioenergy vs Other_Renew": -1.6023,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -1.1072
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.947,
+          "Coal vs {Gas, Other_Fossil}": 0.3208,
+          "Nuclear vs Renewables": 0.4273,
+          "Gas vs Other_Fossil": 0.3653,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4172,
+          "Solar vs Wind": 0.9529,
+          "Bioenergy vs Other_Renew": 0.2367,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2848
+        }
+      },
+      {
+        "transition": "2013\u21922014",
+        "tv_distance": 0.02765,
+        "aitchison_distance": 0.6948,
+        "cr_mean": 0.4844,
+        "cr_max": 0.9879,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2749,
+          "Coal vs {Gas, Other_Fossil}": 0.0099,
+          "Nuclear vs Renewables": -0.152,
+          "Gas vs Other_Fossil": -0.0546,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.3618,
+          "Solar vs Wind": 0.0315,
+          "Bioenergy vs Other_Renew": -0.4365,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.2421
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8182,
+          "Coal vs {Gas, Other_Fossil}": 0.2009,
+          "Nuclear vs Renewables": 0.4606,
+          "Gas vs Other_Fossil": 0.4724,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2986,
+          "Solar vs Wind": 0.9879,
+          "Bioenergy vs Other_Renew": 0.2718,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.365
+        }
+      },
+      {
+        "transition": "2014\u21922015",
+        "tv_distance": 0.03475,
+        "aitchison_distance": 0.3119,
+        "cr_mean": 0.4665,
+        "cr_max": 0.8674,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0696,
+          "Coal vs {Gas, Other_Fossil}": -0.0265,
+          "Nuclear vs Renewables": -0.131,
+          "Gas vs Other_Fossil": -0.0149,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1336,
+          "Solar vs Wind": -0.1762,
+          "Bioenergy vs Other_Renew": 0.0063,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1594
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8674,
+          "Coal vs {Gas, Other_Fossil}": 0.4675,
+          "Nuclear vs Renewables": 0.3974,
+          "Gas vs Other_Fossil": 0.3502,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3936,
+          "Solar vs Wind": 0.3428,
+          "Bioenergy vs Other_Renew": 0.5525,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3603
+        }
+      },
+      {
+        "transition": "2015\u21922016",
+        "tv_distance": 0.0326,
+        "aitchison_distance": 0.4614,
+        "cr_mean": 0.6569,
+        "cr_max": 0.9908,
+        "cr_max_node": "Coal vs {Gas, Other_Fossil}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.0131,
+          "Coal vs {Gas, Other_Fossil}": -0.1401,
+          "Nuclear vs Renewables": -0.1613,
+          "Gas vs Other_Fossil": 0.1962,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0191,
+          "Solar vs Wind": -0.0047,
+          "Bioenergy vs Other_Renew": -0.2804,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.2225
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.2994,
+          "Coal vs {Gas, Other_Fossil}": 0.9908,
+          "Nuclear vs Renewables": 0.9792,
+          "Gas vs Other_Fossil": 0.8374,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3369,
+          "Solar vs Wind": 0.1674,
+          "Bioenergy vs Other_Renew": 0.7744,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8695
+        }
+      },
+      {
+        "transition": "2016\u21922017",
+        "tv_distance": 0.04885,
+        "aitchison_distance": 0.5053,
+        "cr_mean": 0.5701,
+        "cr_max": 0.9747,
+        "cr_max_node": "Nuclear vs Renewables",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.037,
+          "Coal vs {Gas, Other_Fossil}": -0.0885,
+          "Nuclear vs Renewables": -0.0747,
+          "Gas vs Other_Fossil": 0.0534,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0045,
+          "Solar vs Wind": -0.1752,
+          "Bioenergy vs Other_Renew": 0.2831,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3561
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.4999,
+          "Coal vs {Gas, Other_Fossil}": 0.7037,
+          "Nuclear vs Renewables": 0.9747,
+          "Gas vs Other_Fossil": 0.5464,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.253,
+          "Solar vs Wind": 0.6363,
+          "Bioenergy vs Other_Renew": 0.5006,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4463
+        }
+      },
+      {
+        "transition": "2017\u21922018",
+        "tv_distance": 0.023,
+        "aitchison_distance": 0.4343,
+        "cr_mean": 0.2346,
+        "cr_max": 0.7851,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "STABLE",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.18,
+          "Coal vs {Gas, Other_Fossil}": 0.0011,
+          "Nuclear vs Renewables": -0.0817,
+          "Gas vs Other_Fossil": 0.0054,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.2415,
+          "Solar vs Wind": 0.0674,
+          "Bioenergy vs Other_Renew": -0.2752,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.1046
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7851,
+          "Coal vs {Gas, Other_Fossil}": 0.0851,
+          "Nuclear vs Renewables": 0.1993,
+          "Gas vs Other_Fossil": 0.1868,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.1159,
+          "Solar vs Wind": 0.2195,
+          "Bioenergy vs Other_Renew": 0.1086,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1761
+        }
+      },
+      {
+        "transition": "2018\u21922019",
+        "tv_distance": 0.07525,
+        "aitchison_distance": 0.3576,
+        "cr_mean": 0.6419,
+        "cr_max": 0.7971,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1584,
+          "Coal vs {Gas, Other_Fossil}": -0.2513,
+          "Nuclear vs Renewables": -0.0477,
+          "Gas vs Other_Fossil": 0.1085,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0772,
+          "Solar vs Wind": -0.0812,
+          "Bioenergy vs Other_Renew": 0.0276,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1107
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7971,
+          "Coal vs {Gas, Other_Fossil}": 0.5236,
+          "Nuclear vs Renewables": 0.5148,
+          "Gas vs Other_Fossil": 0.7967,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.6553,
+          "Solar vs Wind": 0.6717,
+          "Bioenergy vs Other_Renew": 0.3919,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7846
+        }
+      },
+      {
+        "transition": "2019\u21922020",
+        "tv_distance": 0.05965,
+        "aitchison_distance": 0.3923,
+        "cr_mean": 0.7891,
+        "cr_max": 0.9924,
+        "cr_max_node": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1548,
+          "Coal vs {Gas, Other_Fossil}": -0.1983,
+          "Nuclear vs Renewables": -0.2006,
+          "Gas vs Other_Fossil": 0.0747,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1344,
+          "Solar vs Wind": 0.0292,
+          "Bioenergy vs Other_Renew": -0.1512,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.0548
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.882,
+          "Coal vs {Gas, Other_Fossil}": 0.7583,
+          "Nuclear vs Renewables": 0.825,
+          "Gas vs Other_Fossil": 0.8092,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.9924,
+          "Solar vs Wind": 0.4621,
+          "Bioenergy vs Other_Renew": 0.9502,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6338
+        }
+      },
+      {
+        "transition": "2020\u21922021",
+        "tv_distance": 0.0547,
+        "aitchison_distance": 0.2711,
+        "cr_mean": 0.8137,
+        "cr_max": 0.9458,
+        "cr_max_node": "Gas vs Other_Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.1026,
+          "Coal vs {Gas, Other_Fossil}": 0.167,
+          "Nuclear vs Renewables": 0.0857,
+          "Gas vs Other_Fossil": -0.0675,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0826,
+          "Solar vs Wind": 0.101,
+          "Bioenergy vs Other_Renew": -0.0413,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.0666
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9227,
+          "Coal vs {Gas, Other_Fossil}": 0.672,
+          "Nuclear vs Renewables": 0.8547,
+          "Gas vs Other_Fossil": 0.9458,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8393,
+          "Solar vs Wind": 0.9283,
+          "Bioenergy vs Other_Renew": 0.5935,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7536
+        }
+      },
+      {
+        "transition": "2021\u21922022",
+        "tv_distance": 0.07795,
+        "aitchison_distance": 0.7219,
+        "cr_mean": 0.6612,
+        "cr_max": 0.8613,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.0938,
+          "Coal vs {Gas, Other_Fossil}": 0.1374,
+          "Nuclear vs Renewables": -0.6565,
+          "Gas vs Other_Fossil": -0.0759,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1565,
+          "Solar vs Wind": 0.0791,
+          "Bioenergy vs Other_Renew": 0.0075,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.161
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7178,
+          "Coal vs {Gas, Other_Fossil}": 0.8049,
+          "Nuclear vs Renewables": 0.403,
+          "Gas vs Other_Fossil": 0.5981,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8256,
+          "Solar vs Wind": 0.8613,
+          "Bioenergy vs Other_Renew": 0.2646,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8139
+        }
+      },
+      {
+        "transition": "2022\u21922023",
+        "tv_distance": 0.11815,
+        "aitchison_distance": 1.5354,
+        "cr_mean": 0.6455,
+        "cr_max": 0.99,
+        "cr_max_node": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.0976,
+          "Coal vs {Gas, Other_Fossil}": -0.2734,
+          "Nuclear vs Renewables": -1.4914,
+          "Gas vs Other_Fossil": 0.001,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.14,
+          "Solar vs Wind": -0.0437,
+          "Bioenergy vs Other_Renew": 0.1176,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1169
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5593,
+          "Coal vs {Gas, Other_Fossil}": 0.846,
+          "Nuclear vs Renewables": 0.3033,
+          "Gas vs Other_Fossil": 0.0522,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.99,
+          "Solar vs Wind": 0.5646,
+          "Bioenergy vs Other_Renew": 0.9256,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.923
+        }
+      },
+      {
+        "transition": "2023\u21922024",
+        "tv_distance": 0.04635,
+        "aitchison_distance": 6.8774,
+        "cr_mean": 0.5705,
+        "cr_max": 0.9502,
+        "cr_max_node": "{Solar, Wind} vs {Bio, Other_Renew}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 1.5794,
+          "Coal vs {Gas, Other_Fossil}": -0.1282,
+          "Nuclear vs Renewables": -6.6905,
+          "Gas vs Other_Fossil": 0.0362,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0729,
+          "Solar vs Wind": 0.1006,
+          "Bioenergy vs Other_Renew": 0.0125,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0911
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8032,
+          "Coal vs {Gas, Other_Fossil}": 0.3033,
+          "Nuclear vs Renewables": 0.1109,
+          "Gas vs Other_Fossil": 0.1612,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.9419,
+          "Solar vs Wind": 0.9042,
+          "Bioenergy vs Other_Renew": 0.3894,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.9502
+        }
+      },
+      {
+        "transition": "2024\u21922025",
+        "tv_distance": 0.03665,
+        "aitchison_distance": 3.4696,
+        "cr_mean": 0.3541,
+        "cr_max": 0.9908,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.854,
+          "Coal vs {Gas, Other_Fossil}": -0.016,
+          "Nuclear vs Renewables": 0.6906,
+          "Gas vs Other_Fossil": 0.0902,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.6164,
+          "Solar vs Wind": 0.1625,
+          "Bioenergy vs Other_Renew": 2.5945,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 1.9199
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9908,
+          "Coal vs {Gas, Other_Fossil}": 0.1156,
+          "Nuclear vs Renewables": 0.2774,
+          "Gas vs Other_Fossil": 0.2746,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2936,
+          "Solar vs Wind": 0.5717,
+          "Bioenergy vs Other_Renew": 0.1431,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1663
+        }
+      }
+    ],
+    "Japan": [
+      {
+        "transition": "2000\u21922001",
+        "tv_distance": 0.0257,
+        "aitchison_distance": 0.7921,
+        "cr_mean": 0.6674,
+        "cr_max": 0.9691,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3205,
+          "Coal vs {Gas, Other_Fossil}": 0.1258,
+          "Nuclear vs Renewables": -0.2009,
+          "Gas vs Other_Fossil": 0.1164,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.2899,
+          "Solar vs Wind": -0.1289,
+          "Bioenergy vs Other_Renew": 0.0096,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.5952
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8086,
+          "Coal vs {Gas, Other_Fossil}": 0.7167,
+          "Nuclear vs Renewables": 0.7762,
+          "Gas vs Other_Fossil": 0.6893,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.6463,
+          "Solar vs Wind": 0.9691,
+          "Bioenergy vs Other_Renew": 0.2819,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.451
+        }
+      },
+      {
+        "transition": "2001\u21922002",
+        "tv_distance": 0.02095,
+        "aitchison_distance": 0.657,
+        "cr_mean": 0.52,
+        "cr_max": 0.91,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1581,
+          "Coal vs {Gas, Other_Fossil}": -0.0087,
+          "Nuclear vs Renewables": -0.1963,
+          "Gas vs Other_Fossil": -0.0935,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.2312,
+          "Solar vs Wind": -0.3612,
+          "Bioenergy vs Other_Renew": 0.028,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4178
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.91,
+          "Coal vs {Gas, Other_Fossil}": 0.188,
+          "Nuclear vs Renewables": 0.5102,
+          "Gas vs Other_Fossil": 0.6153,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4701,
+          "Solar vs Wind": 0.3761,
+          "Bioenergy vs Other_Renew": 0.7406,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3497
+        }
+      },
+      {
+        "transition": "2002\u21922003",
+        "tv_distance": 0.07435,
+        "aitchison_distance": 0.7779,
+        "cr_mean": 0.3303,
+        "cr_max": 0.7244,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "LOCAL_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1078,
+          "Coal vs {Gas, Other_Fossil}": 0.0215,
+          "Nuclear vs Renewables": -0.5146,
+          "Gas vs Other_Fossil": 0.0067,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1291,
+          "Solar vs Wind": -0.2034,
+          "Bioenergy vs Other_Renew": 0.0444,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.5178
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7244,
+          "Coal vs {Gas, Other_Fossil}": 0.2765,
+          "Nuclear vs Renewables": 0.1656,
+          "Gas vs Other_Fossil": 0.1537,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3306,
+          "Solar vs Wind": 0.2633,
+          "Bioenergy vs Other_Renew": 0.5635,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.165
+        }
+      },
+      {
+        "transition": "2003\u21922004",
+        "tv_distance": 0.0451,
+        "aitchison_distance": 0.5406,
+        "cr_mean": 0.5527,
+        "cr_max": 0.8747,
+        "cr_max_node": "Nuclear vs Renewables",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2941,
+          "Coal vs {Gas, Other_Fossil}": 0.0687,
+          "Nuclear vs Renewables": 0.0589,
+          "Gas vs Other_Fossil": 0.0214,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1794,
+          "Solar vs Wind": -0.2014,
+          "Bioenergy vs Other_Renew": -0.0131,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3523
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6594,
+          "Coal vs {Gas, Other_Fossil}": 0.6533,
+          "Nuclear vs Renewables": 0.8747,
+          "Gas vs Other_Fossil": 0.3642,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.501,
+          "Solar vs Wind": 0.4729,
+          "Bioenergy vs Other_Renew": 0.5384,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3575
+        }
+      },
+      {
+        "transition": "2004\u21922005",
+        "tv_distance": 0.02585,
+        "aitchison_distance": 0.4116,
+        "cr_mean": 0.6371,
+        "cr_max": 0.8278,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0811,
+          "Coal vs {Gas, Other_Fossil}": 0.0354,
+          "Nuclear vs Renewables": -0.0889,
+          "Gas vs Other_Fossil": -0.0743,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.3231,
+          "Solar vs Wind": -0.0192,
+          "Bioenergy vs Other_Renew": 0.1097,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1772
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8278,
+          "Coal vs {Gas, Other_Fossil}": 0.4967,
+          "Nuclear vs Renewables": 0.7858,
+          "Gas vs Other_Fossil": 0.7195,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4122,
+          "Solar vs Wind": 0.5909,
+          "Bioenergy vs Other_Renew": 0.7074,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.5565
+        }
+      },
+      {
+        "transition": "2005\u21922006",
+        "tv_distance": 0.03765,
+        "aitchison_distance": 0.3114,
+        "cr_mean": 0.6584,
+        "cr_max": 0.9536,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1552,
+          "Coal vs {Gas, Other_Fossil}": 0.0128,
+          "Nuclear vs Renewables": -0.0403,
+          "Gas vs Other_Fossil": 0.2003,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0597,
+          "Solar vs Wind": 0.0969,
+          "Bioenergy vs Other_Renew": -0.0113,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1338
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7147,
+          "Coal vs {Gas, Other_Fossil}": 0.4328,
+          "Nuclear vs Renewables": 0.6153,
+          "Gas vs Other_Fossil": 0.5844,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7485,
+          "Solar vs Wind": 0.9536,
+          "Bioenergy vs Other_Renew": 0.3257,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8925
+        }
+      },
+      {
+        "transition": "2006\u21922007",
+        "tv_distance": 0.0381,
+        "aitchison_distance": 0.3871,
+        "cr_mean": 0.7005,
+        "cr_max": 0.8255,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.0723,
+          "Coal vs {Gas, Other_Fossil}": -0.083,
+          "Nuclear vs Renewables": -0.1341,
+          "Gas vs Other_Fossil": -0.0884,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.2646,
+          "Solar vs Wind": -0.0584,
+          "Bioenergy vs Other_Renew": 0.0114,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1958
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.778,
+          "Coal vs {Gas, Other_Fossil}": 0.7904,
+          "Nuclear vs Renewables": 0.7995,
+          "Gas vs Other_Fossil": 0.8158,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.5691,
+          "Solar vs Wind": 0.8255,
+          "Bioenergy vs Other_Renew": 0.3643,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6617
+        }
+      },
+      {
+        "transition": "2007\u21922008",
+        "tv_distance": 0.03665,
+        "aitchison_distance": 0.2109,
+        "cr_mean": 0.6441,
+        "cr_max": 0.833,
+        "cr_max_node": "{Solar, Wind} vs {Bio, Other_Renew}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.017,
+          "Coal vs {Gas, Other_Fossil}": 0.0357,
+          "Nuclear vs Renewables": -0.1223,
+          "Gas vs Other_Fossil": 0.1184,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0246,
+          "Solar vs Wind": 0.0084,
+          "Bioenergy vs Other_Renew": -0.0308,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.111
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5138,
+          "Coal vs {Gas, Other_Fossil}": 0.7754,
+          "Nuclear vs Renewables": 0.7938,
+          "Gas vs Other_Fossil": 0.7086,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.5651,
+          "Solar vs Wind": 0.3309,
+          "Bioenergy vs Other_Renew": 0.6324,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.833
+        }
+      },
+      {
+        "transition": "2008\u21922009",
+        "tv_distance": 0.05225,
+        "aitchison_distance": 0.5398,
+        "cr_mean": 0.5254,
+        "cr_max": 0.9147,
+        "cr_max_node": "{Solar, Wind} vs {Bio, Other_Renew}",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3113,
+          "Coal vs {Gas, Other_Fossil}": 0.1443,
+          "Nuclear vs Renewables": 0.0565,
+          "Gas vs Other_Fossil": 0.3445,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0992,
+          "Solar vs Wind": -0.0073,
+          "Bioenergy vs Other_Renew": 0.0079,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2045
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6298,
+          "Coal vs {Gas, Other_Fossil}": 0.7213,
+          "Nuclear vs Renewables": 0.481,
+          "Gas vs Other_Fossil": 0.4668,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.637,
+          "Solar vs Wind": 0.1728,
+          "Bioenergy vs Other_Renew": 0.1796,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.9147
+        }
+      },
+      {
+        "transition": "2009\u21922010",
+        "tv_distance": 0.0213,
+        "aitchison_distance": 0.2868,
+        "cr_mean": 0.5467,
+        "cr_max": 0.9017,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1916,
+          "Coal vs {Gas, Other_Fossil}": 0.0216,
+          "Nuclear vs Renewables": -0.0773,
+          "Gas vs Other_Fossil": 0.0216,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0899,
+          "Solar vs Wind": 0.0977,
+          "Bioenergy vs Other_Renew": 0.0265,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1425
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5965,
+          "Coal vs {Gas, Other_Fossil}": 0.4984,
+          "Nuclear vs Renewables": 0.5284,
+          "Gas vs Other_Fossil": 0.499,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.49,
+          "Solar vs Wind": 0.4701,
+          "Bioenergy vs Other_Renew": 0.9017,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3892
+        }
+      },
+      {
+        "transition": "2010\u21922011",
+        "tv_distance": 0.12305,
+        "aitchison_distance": 0.8422,
+        "cr_mean": 0.7422,
+        "cr_max": 0.9817,
+        "cr_max_node": "Gas vs Other_Fossil",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.311,
+          "Coal vs {Gas, Other_Fossil}": -0.3374,
+          "Nuclear vs Renewables": -0.5853,
+          "Gas vs Other_Fossil": -0.2193,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1429,
+          "Solar vs Wind": 0.1435,
+          "Bioenergy vs Other_Renew": 0.0075,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2588
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8823,
+          "Coal vs {Gas, Other_Fossil}": 0.8213,
+          "Nuclear vs Renewables": 0.6896,
+          "Gas vs Other_Fossil": 0.9817,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7164,
+          "Solar vs Wind": 0.718,
+          "Bioenergy vs Other_Renew": 0.1643,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.9642
+        }
+      },
+      {
+        "transition": "2011\u21922012",
+        "tv_distance": 0.13635,
+        "aitchison_distance": 2.2079,
+        "cr_mean": 0.4956,
+        "cr_max": 0.803,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.6847,
+          "Coal vs {Gas, Other_Fossil}": -0.0252,
+          "Nuclear vs Renewables": -2.0775,
+          "Gas vs Other_Fossil": -0.0755,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1584,
+          "Solar vs Wind": 0.1701,
+          "Bioenergy vs Other_Renew": 0.0325,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1695
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7518,
+          "Coal vs {Gas, Other_Fossil}": 0.22,
+          "Nuclear vs Renewables": 0.1557,
+          "Gas vs Other_Fossil": 0.3806,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.564,
+          "Solar vs Wind": 0.5443,
+          "Bioenergy vs Other_Renew": 0.803,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.5452
+        }
+      },
+      {
+        "transition": "2012\u21922013",
+        "tv_distance": 0.0415,
+        "aitchison_distance": 0.6407,
+        "cr_mean": 0.764,
+        "cr_max": 0.9632,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1902,
+          "Coal vs {Gas, Other_Fossil}": 0.1681,
+          "Nuclear vs Renewables": -0.3196,
+          "Gas vs Other_Fossil": 0.1373,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1222,
+          "Solar vs Wind": 0.3433,
+          "Bioenergy vs Other_Renew": 0.0447,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3003
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9632,
+          "Coal vs {Gas, Other_Fossil}": 0.8625,
+          "Nuclear vs Renewables": 0.6913,
+          "Gas vs Other_Fossil": 0.7794,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8946,
+          "Solar vs Wind": 0.667,
+          "Bioenergy vs Other_Renew": 0.5408,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7131
+        }
+      },
+      {
+        "transition": "2013\u21922014",
+        "tv_distance": 0.05135,
+        "aitchison_distance": 6.8829,
+        "cr_mean": 0.534,
+        "cr_max": 0.8872,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 1.4359,
+          "Coal vs {Gas, Other_Fossil}": 0.0843,
+          "Nuclear vs Renewables": -6.7042,
+          "Gas vs Other_Fossil": 0.262,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1009,
+          "Solar vs Wind": 0.4409,
+          "Bioenergy vs Other_Renew": 0.0292,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.291
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8872,
+          "Coal vs {Gas, Other_Fossil}": 0.2361,
+          "Nuclear vs Renewables": 0.1607,
+          "Gas vs Other_Fossil": 0.4161,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7635,
+          "Solar vs Wind": 0.6267,
+          "Bioenergy vs Other_Renew": 0.4106,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7713
+        }
+      },
+      {
+        "transition": "2014\u21922015",
+        "tv_distance": 0.03275,
+        "aitchison_distance": 5.6812,
+        "cr_mean": 0.5163,
+        "cr_max": 0.8882,
+        "cr_max_node": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -1.6966,
+          "Coal vs {Gas, Other_Fossil}": 0.0821,
+          "Nuclear vs Renewables": 5.4114,
+          "Gas vs Other_Fossil": 0.0572,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0883,
+          "Solar vs Wind": 0.2332,
+          "Bioenergy vs Other_Renew": 0.1564,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1359
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7205,
+          "Coal vs {Gas, Other_Fossil}": 0.261,
+          "Nuclear vs Renewables": 0.1134,
+          "Gas vs Other_Fossil": 0.2179,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8882,
+          "Solar vs Wind": 0.5465,
+          "Bioenergy vs Other_Renew": 0.6672,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.716
+        }
+      },
+      {
+        "transition": "2015\u21922016",
+        "tv_distance": 0.04515,
+        "aitchison_distance": 1.3235,
+        "cr_mean": 0.627,
+        "cr_max": 0.9294,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3276,
+          "Coal vs {Gas, Other_Fossil}": -0.0351,
+          "Nuclear vs Renewables": 1.2397,
+          "Gas vs Other_Fossil": 0.1169,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0881,
+          "Solar vs Wind": 0.1517,
+          "Bioenergy vs Other_Renew": -0.1533,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1959
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9294,
+          "Coal vs {Gas, Other_Fossil}": 0.3099,
+          "Nuclear vs Renewables": 0.2476,
+          "Gas vs Other_Fossil": 0.5654,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.929,
+          "Solar vs Wind": 0.7079,
+          "Bioenergy vs Other_Renew": 0.7042,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6229
+        }
+      },
+      {
+        "transition": "2016\u21922017",
+        "tv_distance": 0.0399,
+        "aitchison_distance": 0.7716,
+        "cr_mean": 0.5882,
+        "cr_max": 0.9281,
+        "cr_max_node": "Nuclear vs Renewables",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.4245,
+          "Coal vs {Gas, Other_Fossil}": 0.2718,
+          "Nuclear vs Renewables": 0.383,
+          "Gas vs Other_Fossil": 0.388,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0914,
+          "Solar vs Wind": 0.0434,
+          "Bioenergy vs Other_Renew": -0.0064,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1836
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6784,
+          "Coal vs {Gas, Other_Fossil}": 0.7216,
+          "Nuclear vs Renewables": 0.9281,
+          "Gas vs Other_Fossil": 0.604,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.5262,
+          "Solar vs Wind": 0.3627,
+          "Bioenergy vs Other_Renew": 0.139,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.746
+        }
+      },
+      {
+        "transition": "2017\u21922018",
+        "tv_distance": 0.02855,
+        "aitchison_distance": 0.5134,
+        "cr_mean": 0.6389,
+        "cr_max": 0.8668,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2797,
+          "Coal vs {Gas, Other_Fossil}": 0.0452,
+          "Nuclear vs Renewables": 0.4053,
+          "Gas vs Other_Fossil": 0.0317,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0641,
+          "Solar vs Wind": -0.0289,
+          "Bioenergy vs Other_Renew": 0.0525,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1016
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6103,
+          "Coal vs {Gas, Other_Fossil}": 0.5883,
+          "Nuclear vs Renewables": 0.3079,
+          "Gas vs Other_Fossil": 0.493,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7744,
+          "Solar vs Wind": 0.8668,
+          "Bioenergy vs Other_Renew": 0.8558,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6149
+        }
+      },
+      {
+        "transition": "2018\u21922019",
+        "tv_distance": 0.03,
+        "aitchison_distance": 0.4703,
+        "cr_mean": 0.7129,
+        "cr_max": 0.8838,
+        "cr_max_node": "Coal vs {Gas, Other_Fossil}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2803,
+          "Coal vs {Gas, Other_Fossil}": 0.1384,
+          "Nuclear vs Renewables": 0.2565,
+          "Gas vs Other_Fossil": 0.1849,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1138,
+          "Solar vs Wind": 0.062,
+          "Bioenergy vs Other_Renew": 0.0732,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0351
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6636,
+          "Coal vs {Gas, Other_Fossil}": 0.8838,
+          "Nuclear vs Renewables": 0.7939,
+          "Gas vs Other_Fossil": 0.7647,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8391,
+          "Solar vs Wind": 0.6193,
+          "Bioenergy vs Other_Renew": 0.6727,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4658
+        }
+      },
+      {
+        "transition": "2019\u21922020",
+        "tv_distance": 0.031,
+        "aitchison_distance": 0.5926,
+        "cr_mean": 0.611,
+        "cr_max": 0.9479,
+        "cr_max_node": "Coal vs {Gas, Other_Fossil}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1937,
+          "Coal vs {Gas, Other_Fossil}": 0.1446,
+          "Nuclear vs Renewables": -0.4519,
+          "Gas vs Other_Fossil": 0.268,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0144,
+          "Solar vs Wind": -0.0017,
+          "Bioenergy vs Other_Renew": 0.0905,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0911
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8852,
+          "Coal vs {Gas, Other_Fossil}": 0.9479,
+          "Nuclear vs Renewables": 0.6757,
+          "Gas vs Other_Fossil": 0.6963,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2644,
+          "Solar vs Wind": 0.0917,
+          "Bioenergy vs Other_Renew": 0.6624,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6646
+        }
+      },
+      {
+        "transition": "2020\u21922021",
+        "tv_distance": 0.0327,
+        "aitchison_distance": 0.3512,
+        "cr_mean": 0.6968,
+        "cr_max": 0.9901,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0963,
+          "Coal vs {Gas, Other_Fossil}": -0.0432,
+          "Nuclear vs Renewables": 0.2495,
+          "Gas vs Other_Fossil": -0.192,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0722,
+          "Solar vs Wind": -0.0158,
+          "Bioenergy vs Other_Renew": 0.08,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.035
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9901,
+          "Coal vs {Gas, Other_Fossil}": 0.6908,
+          "Nuclear vs Renewables": 0.6866,
+          "Gas vs Other_Fossil": 0.6865,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7836,
+          "Solar vs Wind": 0.3669,
+          "Bioenergy vs Other_Renew": 0.8248,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.5454
+        }
+      },
+      {
+        "transition": "2021\u21922022",
+        "tv_distance": 0.02335,
+        "aitchison_distance": 0.4256,
+        "cr_mean": 0.606,
+        "cr_max": 0.8975,
+        "cr_max_node": "Nuclear vs Renewables",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.1901,
+          "Coal vs {Gas, Other_Fossil}": -0.1423,
+          "Nuclear vs Renewables": -0.1714,
+          "Gas vs Other_Fossil": -0.2832,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0916,
+          "Solar vs Wind": 0.0588,
+          "Bioenergy vs Other_Renew": 0.0567,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.0093
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7817,
+          "Coal vs {Gas, Other_Fossil}": 0.7382,
+          "Nuclear vs Renewables": 0.8975,
+          "Gas vs Other_Fossil": 0.5233,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.6563,
+          "Solar vs Wind": 0.5258,
+          "Bioenergy vs Other_Renew": 0.5161,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2091
+        }
+      },
+      {
+        "transition": "2022\u21922023",
+        "tv_distance": 0.04345,
+        "aitchison_distance": 0.5549,
+        "cr_mean": 0.5943,
+        "cr_max": 0.921,
+        "cr_max_node": "Coal vs {Gas, Other_Fossil}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3711,
+          "Coal vs {Gas, Other_Fossil}": 0.1176,
+          "Nuclear vs Renewables": 0.3351,
+          "Gas vs Other_Fossil": 0.1801,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0447,
+          "Solar vs Wind": 0.0038,
+          "Bioenergy vs Other_Renew": 0.0962,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.019
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5537,
+          "Coal vs {Gas, Other_Fossil}": 0.921,
+          "Nuclear vs Renewables": 0.6664,
+          "Gas vs Other_Fossil": 0.7443,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.5483,
+          "Solar vs Wind": 0.159,
+          "Bioenergy vs Other_Renew": 0.8039,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3573
+        }
+      },
+      {
+        "transition": "2023\u21922024",
+        "tv_distance": 0.0152,
+        "aitchison_distance": 0.3297,
+        "cr_mean": 0.5225,
+        "cr_max": 0.8431,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2186,
+          "Coal vs {Gas, Other_Fossil}": 0.1089,
+          "Nuclear vs Renewables": 0.0278,
+          "Gas vs Other_Fossil": 0.1843,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0037,
+          "Solar vs Wind": -0.1042,
+          "Bioenergy vs Other_Renew": 0.049,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0326
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5775,
+          "Coal vs {Gas, Other_Fossil}": 0.6316,
+          "Nuclear vs Renewables": 0.4352,
+          "Gas vs Other_Fossil": 0.4854,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.158,
+          "Solar vs Wind": 0.8431,
+          "Bioenergy vs Other_Renew": 0.5781,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4713
+        }
+      }
+    ],
+    "United Kingdom": [
+      {
+        "transition": "2000\u21922001",
+        "tv_distance": 0.0336,
+        "aitchison_distance": 0.3512,
+        "cr_mean": 0.69,
+        "cr_max": 0.9959,
+        "cr_max_node": "Gas vs Other_Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0707,
+          "Coal vs {Gas, Other_Fossil}": 0.1649,
+          "Nuclear vs Renewables": 0.0548,
+          "Gas vs Other_Fossil": 0.0956,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.2552,
+          "Solar vs Wind": 0.0,
+          "Bioenergy vs Other_Renew": 0.0961,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.068
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8209,
+          "Coal vs {Gas, Other_Fossil}": 0.7583,
+          "Nuclear vs Renewables": 0.6488,
+          "Gas vs Other_Fossil": 0.9959,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7144,
+          "Solar vs Wind": 0.0,
+          "Bioenergy vs Other_Renew": 0.8591,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7224
+        }
+      },
+      {
+        "transition": "2001\u21922002",
+        "tv_distance": 0.02835,
+        "aitchison_distance": 0.2893,
+        "cr_mean": 0.8222,
+        "cr_max": 0.9496,
+        "cr_max_node": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.1202,
+          "Coal vs {Gas, Other_Fossil}": -0.0721,
+          "Nuclear vs Renewables": -0.123,
+          "Gas vs Other_Fossil": 0.0546,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0702,
+          "Solar vs Wind": -0.1746,
+          "Bioenergy vs Other_Renew": 0.074,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0712
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8719,
+          "Coal vs {Gas, Other_Fossil}": 0.8381,
+          "Nuclear vs Renewables": 0.7176,
+          "Gas vs Other_Fossil": 0.7295,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.9496,
+          "Solar vs Wind": 0.6022,
+          "Bioenergy vs Other_Renew": 0.9253,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.9433
+        }
+      },
+      {
+        "transition": "2002\u21922003",
+        "tv_distance": 0.02915,
+        "aitchison_distance": 0.4599,
+        "cr_mean": 0.5537,
+        "cr_max": 0.8934,
+        "cr_max_node": "Coal vs {Gas, Other_Fossil}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.0584,
+          "Coal vs {Gas, Other_Fossil}": 0.104,
+          "Nuclear vs Renewables": 0.0299,
+          "Gas vs Other_Fossil": -0.0045,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.4185,
+          "Solar vs Wind": 0.0001,
+          "Bioenergy vs Other_Renew": 0.1189,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.0841
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7335,
+          "Coal vs {Gas, Other_Fossil}": 0.8934,
+          "Nuclear vs Renewables": 0.743,
+          "Gas vs Other_Fossil": 0.1853,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.36,
+          "Solar vs Wind": 0.0361,
+          "Bioenergy vs Other_Renew": 0.6754,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.803
+        }
+      },
+      {
+        "transition": "2003\u21922004",
+        "tv_distance": 0.0339,
+        "aitchison_distance": 0.5591,
+        "cr_mean": 0.5797,
+        "cr_max": 0.8567,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2292,
+          "Coal vs {Gas, Other_Fossil}": -0.0403,
+          "Nuclear vs Renewables": -0.2724,
+          "Gas vs Other_Fossil": 0.0754,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2364,
+          "Solar vs Wind": -0.3013,
+          "Bioenergy vs Other_Renew": 0.1327,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1192
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8567,
+          "Coal vs {Gas, Other_Fossil}": 0.4354,
+          "Nuclear vs Renewables": 0.4607,
+          "Gas vs Other_Fossil": 0.5958,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4946,
+          "Solar vs Wind": 0.4381,
+          "Bioenergy vs Other_Renew": 0.6601,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6965
+        }
+      },
+      {
+        "transition": "2004\u21922005",
+        "tv_distance": 0.0155,
+        "aitchison_distance": 0.3997,
+        "cr_mean": 0.7303,
+        "cr_max": 0.8825,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0995,
+          "Coal vs {Gas, Other_Fossil}": -0.0267,
+          "Nuclear vs Renewables": -0.1024,
+          "Gas vs Other_Fossil": -0.1167,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1262,
+          "Solar vs Wind": -0.2819,
+          "Bioenergy vs Other_Renew": 0.1402,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1002
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8825,
+          "Coal vs {Gas, Other_Fossil}": 0.422,
+          "Nuclear vs Renewables": 0.8369,
+          "Gas vs Other_Fossil": 0.8815,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.7538,
+          "Solar vs Wind": 0.5044,
+          "Bioenergy vs Other_Renew": 0.7153,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.846
+        }
+      },
+      {
+        "transition": "2005\u21922006",
+        "tv_distance": 0.0445,
+        "aitchison_distance": 0.4034,
+        "cr_mean": 0.6765,
+        "cr_max": 0.9686,
+        "cr_max_node": "Gas vs Other_Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.0067,
+          "Coal vs {Gas, Other_Fossil}": 0.0682,
+          "Nuclear vs Renewables": -0.1301,
+          "Gas vs Other_Fossil": -0.1378,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1489,
+          "Solar vs Wind": -0.2637,
+          "Bioenergy vs Other_Renew": 0.0184,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1735
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.2231,
+          "Coal vs {Gas, Other_Fossil}": 0.6811,
+          "Nuclear vs Renewables": 0.8899,
+          "Gas vs Other_Fossil": 0.9686,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8318,
+          "Solar vs Wind": 0.6249,
+          "Bioenergy vs Other_Renew": 0.4223,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7705
+        }
+      },
+      {
+        "transition": "2006\u21922007",
+        "tv_distance": 0.0673,
+        "aitchison_distance": 0.3772,
+        "cr_mean": 0.7029,
+        "cr_max": 0.956,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0585,
+          "Coal vs {Gas, Other_Fossil}": -0.0898,
+          "Nuclear vs Renewables": -0.2234,
+          "Gas vs Other_Fossil": 0.2035,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0364,
+          "Solar vs Wind": -0.1604,
+          "Bioenergy vs Other_Renew": 0.003,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1113
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7034,
+          "Coal vs {Gas, Other_Fossil}": 0.9164,
+          "Nuclear vs Renewables": 0.8101,
+          "Gas vs Other_Fossil": 0.7249,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4979,
+          "Solar vs Wind": 0.956,
+          "Bioenergy vs Other_Renew": 0.1434,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8713
+        }
+      },
+      {
+        "transition": "2007\u21922008",
+        "tv_distance": 0.0467,
+        "aitchison_distance": 2.1584,
+        "cr_mean": 0.444,
+        "cr_max": 0.9475,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.5288,
+          "Coal vs {Gas, Other_Fossil}": -0.1455,
+          "Nuclear vs Renewables": -0.643,
+          "Gas vs Other_Fossil": -0.0399,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.5707,
+          "Solar vs Wind": 1.4025,
+          "Bioenergy vs Other_Renew": 0.0381,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 1.2839
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.9475,
+          "Coal vs {Gas, Other_Fossil}": 0.4298,
+          "Nuclear vs Renewables": 0.3797,
+          "Gas vs Other_Fossil": 0.2251,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.403,
+          "Solar vs Wind": 0.2571,
+          "Bioenergy vs Other_Renew": 0.641,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2687
+        }
+      },
+      {
+        "transition": "2008\u21922009",
+        "tv_distance": 0.0591,
+        "aitchison_distance": 0.4414,
+        "cr_mean": 0.6806,
+        "cr_max": 0.9412,
+        "cr_max_node": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2933,
+          "Coal vs {Gas, Other_Fossil}": -0.0988,
+          "Nuclear vs Renewables": 0.1922,
+          "Gas vs Other_Fossil": 0.0146,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0502,
+          "Solar vs Wind": -0.2092,
+          "Bioenergy vs Other_Renew": 0.0958,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0801
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6008,
+          "Coal vs {Gas, Other_Fossil}": 0.8872,
+          "Nuclear vs Renewables": 0.5433,
+          "Gas vs Other_Fossil": 0.3414,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.9412,
+          "Solar vs Wind": 0.5207,
+          "Bioenergy vs Other_Renew": 0.7693,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8412
+        }
+      },
+      {
+        "transition": "2009\u21922010",
+        "tv_distance": 0.03195,
+        "aitchison_distance": 0.4669,
+        "cr_mean": 0.6117,
+        "cr_max": 0.8688,
+        "cr_max_node": "Coal vs {Gas, Other_Fossil}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.0003,
+          "Coal vs {Gas, Other_Fossil}": 0.0967,
+          "Nuclear vs Renewables": -0.0771,
+          "Gas vs Other_Fossil": 0.1821,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.3972,
+          "Solar vs Wind": -0.0632,
+          "Bioenergy vs Other_Renew": 0.0867,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.0165
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.0441,
+          "Coal vs {Gas, Other_Fossil}": 0.8688,
+          "Nuclear vs Renewables": 0.7438,
+          "Gas vs Other_Fossil": 0.8389,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.5924,
+          "Solar vs Wind": 0.6733,
+          "Bioenergy vs Other_Renew": 0.7885,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.344
+        }
+      },
+      {
+        "transition": "2010\u21922011",
+        "tv_distance": 0.06515,
+        "aitchison_distance": 1.8356,
+        "cr_mean": 0.5102,
+        "cr_max": 0.965,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.8601,
+          "Coal vs {Gas, Other_Fossil}": 0.1496,
+          "Nuclear vs Renewables": -0.4258,
+          "Gas vs Other_Fossil": -0.0086,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1216,
+          "Solar vs Wind": 1.0377,
+          "Bioenergy vs Other_Renew": 0.0849,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 1.152
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7036,
+          "Coal vs {Gas, Other_Fossil}": 0.5148,
+          "Nuclear vs Renewables": 0.4309,
+          "Gas vs Other_Fossil": 0.1234,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8063,
+          "Solar vs Wind": 0.276,
+          "Bioenergy vs Other_Renew": 0.965,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.262
+        }
+      },
+      {
+        "transition": "2011\u21922012",
+        "tv_distance": 0.12355,
+        "aitchison_distance": 1.6251,
+        "cr_mean": 0.7486,
+        "cr_max": 0.9938,
+        "cr_max_node": "Nuclear vs Renewables",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.4797,
+          "Coal vs {Gas, Other_Fossil}": 0.3631,
+          "Nuclear vs Renewables": -0.3264,
+          "Gas vs Other_Fossil": -0.2978,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.5018,
+          "Solar vs Wind": 1.0163,
+          "Bioenergy vs Other_Renew": 0.0794,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8903
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.983,
+          "Coal vs {Gas, Other_Fossil}": 0.8032,
+          "Nuclear vs Renewables": 0.9938,
+          "Gas vs Other_Fossil": 0.7274,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.8115,
+          "Solar vs Wind": 0.5702,
+          "Bioenergy vs Other_Renew": 0.4903,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6092
+        }
+      },
+      {
+        "transition": "2012\u21922013",
+        "tv_distance": 0.04025,
+        "aitchison_distance": 0.5729,
+        "cr_mean": 0.487,
+        "cr_max": 0.9977,
+        "cr_max_node": "Solar vs Wind",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3071,
+          "Coal vs {Gas, Other_Fossil}": -0.0153,
+          "Nuclear vs Renewables": -0.1478,
+          "Gas vs Other_Fossil": 0.0407,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.3229,
+          "Solar vs Wind": 0.0279,
+          "Bioenergy vs Other_Renew": 0.156,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2843
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6803,
+          "Coal vs {Gas, Other_Fossil}": 0.2852,
+          "Nuclear vs Renewables": 0.4351,
+          "Gas vs Other_Fossil": 0.4655,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.2944,
+          "Solar vs Wind": 0.9977,
+          "Bioenergy vs Other_Renew": 0.4236,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3137
+        }
+      },
+      {
+        "transition": "2013\u21922014",
+        "tv_distance": 0.0756,
+        "aitchison_distance": 0.7739,
+        "cr_mean": 0.6232,
+        "cr_max": 0.9925,
+        "cr_max_node": "Coal vs {Gas, Other_Fossil}",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3422,
+          "Coal vs {Gas, Other_Fossil}": -0.2512,
+          "Nuclear vs Renewables": -0.3146,
+          "Gas vs Other_Fossil": 0.008,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0186,
+          "Solar vs Wind": 0.4149,
+          "Bioenergy vs Other_Renew": 0.1989,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3281
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8003,
+          "Coal vs {Gas, Other_Fossil}": 0.9925,
+          "Nuclear vs Renewables": 0.6419,
+          "Gas vs Other_Fossil": 0.1768,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3791,
+          "Solar vs Wind": 0.5589,
+          "Bioenergy vs Other_Renew": 0.8073,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.6285
+        }
+      },
+      {
+        "transition": "2014\u21922015",
+        "tv_distance": 0.07625,
+        "aitchison_distance": 0.6876,
+        "cr_mean": 0.8028,
+        "cr_max": 0.9434,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3985,
+          "Coal vs {Gas, Other_Fossil}": -0.2563,
+          "Nuclear vs Renewables": -0.1251,
+          "Gas vs Other_Fossil": -0.0644,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.186,
+          "Solar vs Wind": 0.2732,
+          "Bioenergy vs Other_Renew": 0.1801,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2947
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7033,
+          "Coal vs {Gas, Other_Fossil}": 0.9092,
+          "Nuclear vs Renewables": 0.8834,
+          "Gas vs Other_Fossil": 0.5512,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.9284,
+          "Solar vs Wind": 0.7661,
+          "Bioenergy vs Other_Renew": 0.9434,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7375
+        }
+      },
+      {
+        "transition": "2015\u21922016",
+        "tv_distance": 0.1456,
+        "aitchison_distance": 1.0467,
+        "cr_mean": 0.528,
+        "cr_max": 0.967,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2307,
+          "Coal vs {Gas, Other_Fossil}": -0.9368,
+          "Nuclear vs Renewables": -0.0027,
+          "Gas vs Other_Fossil": 0.1678,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.2066,
+          "Solar vs Wind": 0.2862,
+          "Bioenergy vs Other_Renew": 0.0193,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.108
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.967,
+          "Coal vs {Gas, Other_Fossil}": 0.3646,
+          "Nuclear vs Renewables": 0.0704,
+          "Gas vs Other_Fossil": 0.8616,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.6116,
+          "Solar vs Wind": 0.7199,
+          "Bioenergy vs Other_Renew": 0.1867,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.4421
+        }
+      },
+      {
+        "transition": "2016\u21922017",
+        "tv_distance": 0.04765,
+        "aitchison_distance": 0.4592,
+        "cr_mean": 0.6948,
+        "cr_max": 0.9949,
+        "cr_max_node": "Nuclear vs Renewables",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3321,
+          "Coal vs {Gas, Other_Fossil}": -0.1953,
+          "Nuclear vs Renewables": -0.1155,
+          "Gas vs Other_Fossil": 0.0333,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0149,
+          "Solar vs Wind": -0.1365,
+          "Bioenergy vs Other_Renew": 0.0434,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1651
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5503,
+          "Coal vs {Gas, Other_Fossil}": 0.6978,
+          "Nuclear vs Renewables": 0.9949,
+          "Gas vs Other_Fossil": 0.5916,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3612,
+          "Solar vs Wind": 0.9149,
+          "Bioenergy vs Other_Renew": 0.616,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8319
+        }
+      },
+      {
+        "transition": "2017\u21922018",
+        "tv_distance": 0.0407,
+        "aitchison_distance": 0.3725,
+        "cr_mean": 0.7367,
+        "cr_max": 0.956,
+        "cr_max_node": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.169,
+          "Coal vs {Gas, Other_Fossil}": -0.2445,
+          "Nuclear vs Renewables": -0.1156,
+          "Gas vs Other_Fossil": -0.0659,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1419,
+          "Solar vs Wind": -0.0251,
+          "Bioenergy vs Other_Renew": 0.0773,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0772
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.7948,
+          "Coal vs {Gas, Other_Fossil}": 0.5979,
+          "Nuclear vs Renewables": 0.863,
+          "Gas vs Other_Fossil": 0.8681,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.956,
+          "Solar vs Wind": 0.4021,
+          "Bioenergy vs Other_Renew": 0.7059,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7054
+        }
+      },
+      {
+        "transition": "2018\u21922019",
+        "tv_distance": 0.05245,
+        "aitchison_distance": 0.8911,
+        "cr_mean": 0.491,
+        "cr_max": 0.8503,
+        "cr_max_node": "Gas vs Other_Fossil",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3887,
+          "Coal vs {Gas, Other_Fossil}": -0.7704,
+          "Nuclear vs Renewables": -0.1752,
+          "Gas vs Other_Fossil": -0.0579,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0442,
+          "Solar vs Wind": -0.0953,
+          "Bioenergy vs Other_Renew": 0.0612,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.0242
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6719,
+          "Coal vs {Gas, Other_Fossil}": 0.3223,
+          "Nuclear vs Renewables": 0.6504,
+          "Gas vs Other_Fossil": 0.8503,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3268,
+          "Solar vs Wind": 0.4797,
+          "Bioenergy vs Other_Renew": 0.3844,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2418
+        }
+      },
+      {
+        "transition": "2019\u21922020",
+        "tv_distance": 0.06465,
+        "aitchison_distance": 0.416,
+        "cr_mean": 0.5443,
+        "cr_max": 0.7392,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.3302,
+          "Coal vs {Gas, Other_Fossil}": 0.0142,
+          "Nuclear vs Renewables": -0.1574,
+          "Gas vs Other_Fossil": 0.0478,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.1012,
+          "Solar vs Wind": -0.114,
+          "Bioenergy vs Other_Renew": 0.0568,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1016
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5065,
+          "Coal vs {Gas, Other_Fossil}": 0.3661,
+          "Nuclear vs Renewables": 0.4439,
+          "Gas vs Other_Fossil": 0.6709,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.5536,
+          "Solar vs Wind": 0.5217,
+          "Bioenergy vs Other_Renew": 0.7392,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.5525
+        }
+      },
+      {
+        "transition": "2020\u21922021",
+        "tv_distance": 0.05055,
+        "aitchison_distance": 0.3692,
+        "cr_mean": 0.578,
+        "cr_max": 0.9334,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": 0.2825,
+          "Coal vs {Gas, Other_Fossil}": 0.0688,
+          "Nuclear vs Renewables": -0.0062,
+          "Gas vs Other_Fossil": 0.0029,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1796,
+          "Solar vs Wind": 0.0845,
+          "Bioenergy vs Other_Renew": 0.0312,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.1068
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.4927,
+          "Coal vs {Gas, Other_Fossil}": 0.9181,
+          "Nuclear vs Renewables": 0.4154,
+          "Gas vs Other_Fossil": 0.187,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.4468,
+          "Solar vs Wind": 0.6513,
+          "Bioenergy vs Other_Renew": 0.9334,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.5794
+        }
+      },
+      {
+        "transition": "2021\u21922022",
+        "tv_distance": 0.0406,
+        "aitchison_distance": 0.3091,
+        "cr_mean": 0.7433,
+        "cr_max": 0.9849,
+        "cr_max_node": "Gas vs Other_Fossil",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.0665,
+          "Coal vs {Gas, Other_Fossil}": -0.1738,
+          "Nuclear vs Renewables": -0.0277,
+          "Gas vs Other_Fossil": -0.0825,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0187,
+          "Solar vs Wind": -0.0821,
+          "Bioenergy vs Other_Renew": -0.115,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1817
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.8266,
+          "Coal vs {Gas, Other_Fossil}": 0.6996,
+          "Nuclear vs Renewables": 0.4649,
+          "Gas vs Other_Fossil": 0.9849,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3822,
+          "Solar vs Wind": 0.8007,
+          "Bioenergy vs Other_Renew": 0.9474,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.8399
+        }
+      },
+      {
+        "transition": "2022\u21922023",
+        "tv_distance": 0.0506,
+        "aitchison_distance": 0.4344,
+        "cr_mean": 0.4942,
+        "cr_max": 0.7694,
+        "cr_max_node": "Nuclear vs Renewables",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.2595,
+          "Coal vs {Gas, Other_Fossil}": -0.2765,
+          "Nuclear vs Renewables": -0.1206,
+          "Gas vs Other_Fossil": -0.1311,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0013,
+          "Solar vs Wind": 0.0104,
+          "Bioenergy vs Other_Renew": 0.0386,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1079
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6147,
+          "Coal vs {Gas, Other_Fossil}": 0.4492,
+          "Nuclear vs Renewables": 0.7694,
+          "Gas vs Other_Fossil": 0.6523,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.0788,
+          "Solar vs Wind": 0.2263,
+          "Bioenergy vs Other_Renew": 0.4354,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.7277
+        }
+      },
+      {
+        "transition": "2023\u21922024",
+        "tv_distance": 0.05005,
+        "aitchison_distance": 0.7062,
+        "cr_mean": 0.4024,
+        "cr_max": 0.6341,
+        "cr_max_node": "Bioenergy vs Other_Renew",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.4325,
+          "Coal vs {Gas, Other_Fossil}": -0.5148,
+          "Nuclear vs Renewables": -0.0467,
+          "Gas vs Other_Fossil": -0.1557,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.0091,
+          "Solar vs Wind": 0.0352,
+          "Bioenergy vs Other_Renew": 0.1348,
+          "{Solar, Wind} vs {Bio, Other_Renew}": -0.0277
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.5524,
+          "Coal vs {Gas, Other_Fossil}": 0.3137,
+          "Nuclear vs Renewables": 0.3732,
+          "Gas vs Other_Fossil": 0.5705,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.1643,
+          "Solar vs Wind": 0.3239,
+          "Bioenergy vs Other_Renew": 0.6341,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.2873
+        }
+      },
+      {
+        "transition": "2024\u21922025",
+        "tv_distance": 0.0258,
+        "aitchison_distance": 1.7441,
+        "cr_mean": 0.4026,
+        "cr_max": 0.6102,
+        "cr_max_node": "Fossil vs Non-Fossil",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Fossil vs Non-Fossil": -0.8128,
+          "Coal vs {Gas, Other_Fossil}": -1.5164,
+          "Nuclear vs Renewables": -0.1586,
+          "Gas vs Other_Fossil": -0.04,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": -0.1132,
+          "Solar vs Wind": 0.1645,
+          "Bioenergy vs Other_Renew": -0.002,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.1235
+        },
+        "cr_by_node": {
+          "Fossil vs Non-Fossil": 0.6102,
+          "Coal vs {Gas, Other_Fossil}": 0.2722,
+          "Nuclear vs Renewables": 0.4515,
+          "Gas vs Other_Fossil": 0.5966,
+          "Hydro vs {Solar, Wind, Bio, Other_Renew}": 0.3813,
+          "Solar vs Wind": 0.4598,
+          "Bioenergy vs Other_Renew": 0.0508,
+          "{Solar, Wind} vs {Bio, Other_Renew}": 0.3984
+        }
+      }
+    ]
+  },
+  "confidence": "n=1 (Opinion). First computation. Thresholds uncalibrated. SBP design is physics-driven but not ecologist-validated."
+}

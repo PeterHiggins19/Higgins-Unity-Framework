@@ -507,11 +507,11 @@
     {
       "session_id": "S012",
       "date": "2026-04-04",
-      "label": "Gemini collective review integration + Claude closing commentary + THE_LINEAGE + collective session closed",
+      "label": "Gemini review + Claude closing + THE_LINEAGE + SCALING_COHERENCE + THE_THIRD_DIAGNOSTIC + WHAT_HUF_IS origin rewrite + collective closed",
       "status": "staged",
       "commit": null,
-      "suggested_commit_message": "Collective review closed: Gemini review integrated, Claude closing commentary, THE_LINEAGE.md (BTL physics origin, DADC/DADI/ADAC arc, screwdriver and math book), presentation script updated to 14 slides, all 'you/your' formalized, FOR_SHARON.md reference removed, 16-error stragglers fixed to 17",
-      "notes": "Fourth and final collective review (Gemini) integrated. Claude closing commentary filed. THE_LINEAGE.md created with Peter: full engineering origin story from loudspeaker physics through DADC/DADI/ADAC to GOV/CLS. Presentation script expanded to 14 slides with lineage as Slide 2 and paired-measurement doctrine in Slide 9. All 'you/your' addressing CoDa replaced with institutional references. FOR_SHARON.md reference removed from WHAT_HUF_IS.md. Remaining 16-error references fixed to 17 across 4 files. ISSUE-007 closed.",
+      "suggested_commit_message": "Collective review closed: Gemini review, Claude closing, THE_LINEAGE (DADC/DADI/ADAC arc), SCALING_COHERENCE (telescoping binary balances), THE_THIRD_DIAGNOSTIC (coherence residual), WHAT_HUF_IS origin rewrite (entangled codependence), 14-slide script, you/your formalized, 16→17 fixed",
+      "notes": "Fourth and final collective review (Gemini) integrated. Claude closing commentary filed. THE_LINEAGE.md created with Peter: full engineering origin story from loudspeaker physics through DADC/DADI/ADAC to GOV/CLS. SCALING_COHERENCE.md: solution for scaling 1→2→4 to deep hierarchies via telescoping binary balances, 6 new error sources (ES-01 through ES-06). THE_THIRD_DIAGNOSTIC.md: coherence residual as the missing third metric — measures coupling leakage across SBP branches, settles Egozcue-Greenacre debate empirically, provides Ramsar early warning of structural ecological change. WHAT_HUF_IS.md origin section rewritten: active organic digital design, driver codependence, entangled system of codependence. Presentation script expanded to 14 slides. All 'you/your' addressing CoDa replaced with institutional references. FOR_SHARON.md reference removed. 16-error stragglers fixed to 17. ISSUE-007 closed.",
       "files": [
         {
           "path": "drafts/codawork-2026/THE_LINEAGE.md",
@@ -529,9 +529,19 @@
           "summary": "DA-05 response expanded with paired-measurement doctrine lineage."
         },
         {
+          "path": "drafts/codawork-2026/SCALING_COHERENCE.md",
+          "action": "added",
+          "summary": "Telescoping coherence: solution for scaling 1→2→4 to deep hierarchies (1→n1→n2→n3). SBP decomposes n-carrier simplex into (n-1) binary balances. Telescope: wide/zoom/deep zoom. 6 new error sources (ES-01 through ES-06). Ramsar: ~4 active checks in steady state for 500-species wetland."
+        },
+        {
+          "path": "drafts/codawork-2026/THE_THIRD_DIAGNOSTIC.md",
+          "action": "added",
+          "summary": "The coherence residual — missing third diagnostic. TV (what moved), Aitchison (how geometry changed), CR (coupling from other branches). Four agreement patterns. Conference offering to CoDa (empirical coherence test at scale), Ramsar (early warning of structural ecological change), both (the bridge). Settles Egozcue-Greenacre debate with data."
+        },
+        {
           "path": "drafts/codawork-2026/WHAT_HUF_IS.md",
           "action": "modified",
-          "summary": "FOR_SHARON.md link removed. '16-error' corrected to '17-error'."
+          "summary": "Origin section rewritten: 'measurement technique' → 'deeply interrelated and entangled system of codependence.' Active organic digital design, driver codependence, crossovers at perceptual minima, omnidirectional radiation, room as live variable. FOR_SHARON.md link removed. '16-error' corrected to '17-error'."
         },
         {
           "path": "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
@@ -557,6 +567,109 @@
           "path": "process/STAGING_MANIFEST.json",
           "action": "modified",
           "summary": "S009/S010/S011 marked pushed (commit 0a621fab). S012 entry added. Pending items updated."
+        }
+      ]
+    }
+    ,
+    {
+      "session_id": "S013",
+      "date": "2026-04-05",
+      "label": "Q-Inquisitor concept + 3^n Confidence Index + Ramsar Complexity Gap + Governance Declaration (dirty laundry)",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "New concepts: Q-Inquisitor (Small's Q for compositional coupling), 3^n Confidence Index (opinion→agreement→validation), Ramsar Complexity Gap (10 deployment gaps), Governance Declaration (8 known unknowns, 5 doubts, full transparency)",
+      "notes": "Peter's review-day rant produced four interlocking documents. Q_INQUISITOR.md: HUF as intersystem quality diagnostic rooted in Richard H. Small's Q parameters (1972) — measures coupling quality at boundaries, not performance within subsystems. CONFIDENCE_INDEX.md: 3^n framework where n=1 is opinion (3 checks), n=2 is agreement (9 checks), n=3 is validation (27 checks) — HUF's three diagnostics provide exactly n=3 minimum for Ramsar deployment. RAMSAR_COMPLEXITY_GAP.md: 10 specific gaps between HUF capability and Ramsar deployment (3 CRITICAL, 3 SERIOUS, 4 MODERATE) — every critical gap requires CoDa or Ramsar collaboration. GOVERNANCE_DECLARATION.md: the dirty laundry — 8 known unknowns (KU-01 through KU-08), 5 doubts (D-01 through D-05), declaration that transparency is non-negotiable. Together these form the self-assessment layer: HUF measuring HUF.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/Q_INQUISITOR.md",
+          "action": "added",
+          "summary": "HUF as Q-inquisitor: intersystem quality diagnostic rooted in Small's Q parameters. Measures coupling at boundaries between compositional subsystems. CR/Aitchison as compositional analogue of 1/Q. Three inquisitor questions: is coupling clean, where is the leak, is it growing? Proposes 'Aitchison-Small Diagnostic' naming."
+        },
+        {
+          "path": "drafts/codawork-2026/CONFIDENCE_INDEX.md",
+          "action": "added",
+          "summary": "3^n Systems Confidence Index. n=0 assertion, n=1 opinion (3 checks), n=2 agreement (9 checks), n=3 validation (27 checks), n=4 certification (81 checks), n=5 standard (243 checks). HUF at n=2 with dual metric, n=3 with coherence residual. Ramsar deployment path to n=4 and n=5. Honest caveat: framework itself is at n=1."
+        },
+        {
+          "path": "drafts/codawork-2026/RAMSAR_COMPLEXITY_GAP.md",
+          "action": "added",
+          "summary": "10-gap register: GAP-01 data heterogeneity (CRITICAL), GAP-02 zero prevalence at scale (CRITICAL), GAP-03 temporal resolution (SERIOUS), GAP-04 SBP design for ecology (SERIOUS), GAP-05 cross-site comparability (SERIOUS), GAP-06 reporting bias (MODERATE), GAP-07 computational scale (MODERATE), GAP-08 institutional adoption (MODERATE), GAP-09 CoDa acceptance (MODERATE), GAP-10 unknown unknowns (CRITICAL). No gap is HUF-internal only."
+        },
+        {
+          "path": "drafts/codawork-2026/GOVERNANCE_DECLARATION.md",
+          "action": "added",
+          "summary": "The dirty laundry. What HUF is and is not (5 'is not' declarations). 8 known unknowns: KU-01 compositional validity of ecological data, KU-02 diagnostic independence, KU-03 coherence residual interpretation, KU-04 Greenacre bridge honesty, KU-05 loudspeaker-to-ecology transfer, KU-06 AI collective strength/liability, KU-07 catalogue completeness, KU-08 confidence framework validity. 5 doubts: white flag posture, integrate vs branch, Ramsar prematurity, screwdriver framing, over-documentation. 5 beliefs despite doubts. Open invitation."
+        },
+        {
+          "path": "process/collective-reports/CRPT-007.json",
+          "action": "modified",
+          "summary": "Added the_third_diagnostic conceptual development to key_conceptual_developments. Updated corpus_state with S012 counts. Conference readiness updated with scaling_solution and third_diagnostic entries. Corpus count updated to 295. One-sentence summary expanded."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "modified",
+          "summary": "S012 updated with SCALING_COHERENCE.md, THE_THIRD_DIAGNOSTIC.md, WHAT_HUF_IS.md origin rewrite. S013 entry added. File count tracking updated."
+        }
+      ]
+    },
+    {
+      "session_id": "S014",
+      "date": "2026-04-05",
+      "label": "System Map + Document Comparison + CMSI (Complex Mixed Systems Index)",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Add SYSTEM_MAP.md (cognitive compression), S013_DOCUMENT_COMPARISON.xlsx (1/Q insight), CMSI.md (Kardashev-scale target for compositional governance)",
+      "notes": "Three outputs from April 5 review day. (1) Peter hit cognitive Nyquist (E-15 on himself) — SYSTEM_MAP.md created as 5-pillar lossless compression with zoom protocol. (2) S013_DOCUMENT_COMPARISON.xlsx: 3-sheet comparison with the 1/Q insight. (3) CMSI.md: Complex Mixed Systems Index — a Kardashev-scale logarithmic target for compositional governance. Base quantity: Governed Degrees of Freedom (GDoF = carriers × sites × diagnostics × temporal_scales, summed across domains). CMSI = log₁₀(GDoF). Five levels defined target-first: Level 0 (proof of concept, <100 GDoF) through Level 4 (universal standard, >100M GDoF). HUF today: CMSI 1.68 (Level 0). Full Ramsar: CMSI 6.78 (Level 3). Gap: 5.1 orders of magnitude. Two orthogonal axes: CMSI (how much governed) × n (how well validated). Backblaze becomes non-optional — cross-domain is the only path to Level 1. Ashby's law exactly satisfied at full Ramsar scale.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/SYSTEM_MAP.md",
+          "action": "added",
+          "summary": "Lossless compression instrument for the human operator. 5 pillars (Origin, Instrument, Math, Deploy, Honesty), Level 0-3 zoom protocol, process layer, key metrics table. 'The system that monitors compositions should be able to monitor itself.'"
+        },
+        {
+          "path": "drafts/codawork-2026/S013_DOCUMENT_COMPARISON.xlsx",
+          "action": "added",
+          "summary": "3-sheet Excel: (1) Document Comparison — 4 S013 docs across 28 dimensions in 7 categories, (2) The 1/Q Insight — Small's Q → compositional analogue CR/Aitchison, domain-independent coupling quality, (3) Self-Assessment Summary — all dirty laundry colour-coded by severity. Confidence Level: n=1 (Opinion)."
+        },
+        {
+          "path": "drafts/codawork-2026/CMSI.md",
+          "action": "added",
+          "summary": "Complex Mixed Systems Index — Kardashev-scale logarithmic target for compositional governance. CMSI = log₁₀(GDoF). Five levels. HUF today: CMSI 1.68 / Level 0. Full Ramsar: CMSI 6.78 / Level 3. Kardashev V target: CMSI 8.0. Includes NASA SCM interface-counting precedent, 7-stage geometric expansion (point → line → triangle → tetrahedron → polytope → polytope network → universal), full system assessment (48+ documented misses), Ashby's law verification, Earth-scale GDoF calculation (~10.8M across 7 domains)."
+        },
+        {
+          "path": "drafts/codawork-2026/FULL_SYSTEM_ASSESSMENT.xlsx",
+          "action": "added",
+          "summary": "3-sheet Excel workbook. Sheet 1 'Full System Assessment': W-01–W-05 (what works), M-01–M-05 (critically missing), X-01–X-05 (might be wrong), Z-01–Z-07 (zeros that matter), summary counts with formulas. Sheet 2 'Geometric Expansion': 7-stage table (point → universal polytope network) with geometry, HUF examples, CMSI values, NASA analogues. Sheet 3 'Action Priority': A-01–A-08 matrix with timelines (TODAY/THIS WEEK/BEFORE COIMBRA), what each resolves, success criteria. Recalculated with 0 formula errors."
+        },
+        {
+          "path": "drafts/codawork-2026/COMPOSITIONAL_GOVERNANCE_SCALE.md",
+          "action": "added",
+          "summary": "The Compositional Governance Scale (CGS) — supersedes CMSI levels. Renames CMSI to CGS for scientific clarity. Same base quantity (GDoF) and formula (CGS = log₁₀(GDoF)). Five levels (CGS-1 through CGS-5), each gated by four requirements: threshold, structure, evidence, institution. CGS-1 (Instrument Proof) satisfied. CGS-2 (Cross-Domain Validation) is Coimbra target — requires Backblaze PoC + CR computation + peer presentation. CGS-3 (Operational Deployment) requires Ramsar pilot, ~2028-2030. CGS-4 (Network Governance) requires full Ramsar + ISO standard, ~2032-2038. CGS-5 (Universal Standard) requires all compositional domains, treaty-level, 2040+. Includes Ashby verification at each level, realistic timeline, governance state notation (CGS-k, n), naming convention for publication. Confidence: n=1."
+        },
+        {
+          "path": "data/codawork-samples/ember_coherence_residual.json",
+          "action": "added",
+          "summary": "First empirical computation of the coherence residual on EMBER. 74 transitions across 3 countries, 8 SBP nodes each. Full results: balance deltas, CR per node, pattern classification, key event analysis. Method: ILR balance decomposition, cross-branch normalised coupling indicator, multiplicative zero replacement."
+        },
+        {
+          "path": "drafts/codawork-2026/COHERENCE_RESIDUAL_RESULTS.md",
+          "action": "added",
+          "summary": "First empirical results of the third diagnostic on EMBER. Key findings: strict coherence does not hold (mean CR ~0.58 across all sites), all four agreement patterns appear, STRUCTURAL pattern is 31% of transitions (invisible structural change), LOCAL_EVENT is rarest (1.4% — almost nothing happens in isolation in energy systems). Key events confirmed with new coupling information: Fukushima (CR=0.742, gas/fossil coupling), German nuclear exit (CR=0.646, renewable mix restructuring), UK coal collapse (CR=0.528, root balance shift). HUF on EMBER moves to (CGS-1, n=3). First quantitative evidence on Egozcue-Greenacre question."
+        },
+        {
+          "path": "data/codawork-samples/backblaze_coherence_residual.json",
+          "action": "added",
+          "summary": "Backblaze cross-domain proof-of-concept. 900,000+ drives across 4 manufacturer families (Seagate, WD, Toshiba, HGST), 8 quarters (Q1 2024–Q4 2025), 5-carrier SMART health composition (Healthy, Degraded_Sectors, Degraded_Errors, Degraded_Both, Failed). Three diagnostics applied. 35 transitions. HGST shows 100% coupled events. Cross-domain CR mean ~0.59–0.69. Combined GDoF = 264, CGS = 2.42. CGS-2 threshold reached."
+        },
+        {
+          "path": "drafts/codawork-2026/Letter_to_Dr_Peterson_Draft_v7.0.docx",
+          "action": "added",
+          "summary": "Peterson letter v7.0. Updated with: coherence residual results (31% invisible structural transitions), Backblaze cross-domain validation, Compositional Governance Scale (5 levels), CoDaWork 2026 Coimbra reference, philosophical framing (CGS as cooperation scale, not just instrument scale), updated corpus size (300+ documents, 6 AI systems). New section VI on why Peterson specifically — the coupling between disciplines requires someone who speaks the language of meaning. Three asks refined: coherence residual mapping to psychology, CGS as governance version of meaning hierarchy, engagement for Coimbra/Ramsar."
+        },
+        {
+          "path": "process/collective-reports/CRPT-008.json",
+          "action": "added",
+          "summary": "Collective distribution report for April 5 governance scale session. Covers: CGS creation and renaming, coherence residual first computation, Backblaze cross-domain validation, governance state advance (CGS-1,n=2)→(CGS-2,n=3). Includes files_for_collective_review with priority tiers, ChatGPT-specific review instructions (science first, no fluff), 7 open items for collective action. Corpus: 310 files."
         }
       ]
     }
@@ -611,6 +724,8 @@
     "S009_when_pushed": 283,
     "S010_when_pushed": 285,
     "S011_when_pushed": 292,
-    "S012_when_pushed": 293
+    "S012_when_pushed": 295,
+    "S013_when_pushed": 299,
+    "S014_when_pushed": 310
   }
 }

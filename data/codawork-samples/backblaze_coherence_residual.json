@@ -1,0 +1,1070 @@
+{
+  "computation": "Backblaze Cross-Domain Coherence Residual \u2014 Step 2 toward CGS-2",
+  "date": "2026-04-05",
+  "domain": "Data centre hard drive fleet health",
+  "method": "SMART-based health state classification \u2192 quarterly compositions \u2192 ILR balances \u2192 CR",
+  "carriers": [
+    "Healthy",
+    "Degraded_Sectors",
+    "Degraded_Errors",
+    "Degraded_Both",
+    "Failed"
+  ],
+  "sbp_design": {
+    "rationale": "Physics-driven: Healthy vs degraded at root, then failure mode structure",
+    "balances": 4,
+    "carriers": 5
+  },
+  "gdof": {
+    "ember": 72,
+    "backblaze": 192,
+    "total": 264,
+    "cgs": 2.42
+  },
+  "sites": {
+    "Fleet": [
+      {
+        "transition": "Q1_2024\u2192Q1_2025",
+        "tv_distance": 0.01117,
+        "aitchison_distance": 0.451,
+        "cr_mean": 0.7254,
+        "cr_max": 0.8466,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.2695,
+          "Failed vs Degraded": 0.3045,
+          "Sector degradation vs Error degradation": 0.1265,
+          "Coupled degradation vs Single-mode": 0.1485
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8466,
+          "Failed vs Degraded": 0.6719,
+          "Sector degradation vs Error degradation": 0.6638,
+          "Coupled degradation vs Single-mode": 0.7192
+        }
+      },
+      {
+        "transition": "Q1_2025\u2192Q2_2024",
+        "tv_distance": 0.00973,
+        "aitchison_distance": 0.306,
+        "cr_mean": 0.6624,
+        "cr_max": 0.8364,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.098,
+          "Failed vs Degraded": 0.2685,
+          "Sector degradation vs Error degradation": -0.0613,
+          "Coupled degradation vs Single-mode": -0.0906
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8364,
+          "Failed vs Degraded": 0.5318,
+          "Sector degradation vs Error degradation": 0.5782,
+          "Coupled degradation vs Single-mode": 0.7031
+        }
+      },
+      {
+        "transition": "Q2_2024\u2192Q2_2025",
+        "tv_distance": 0.00654,
+        "aitchison_distance": 0.2373,
+        "cr_mean": 0.6858,
+        "cr_max": 0.7848,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.1543,
+          "Failed vs Degraded": 0.1535,
+          "Sector degradation vs Error degradation": 0.0544,
+          "Coupled degradation vs Single-mode": 0.0773
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.7848,
+          "Failed vs Degraded": 0.6551,
+          "Sector degradation vs Error degradation": 0.5943,
+          "Coupled degradation vs Single-mode": 0.7089
+        }
+      },
+      {
+        "transition": "Q2_2025\u2192Q3_2024",
+        "tv_distance": 0.00505,
+        "aitchison_distance": 0.1748,
+        "cr_mean": 0.7216,
+        "cr_max": 0.8978,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.0542,
+          "Failed vs Degraded": 0.1426,
+          "Sector degradation vs Error degradation": -0.0313,
+          "Coupled degradation vs Single-mode": -0.0793
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8015,
+          "Failed vs Degraded": 0.6229,
+          "Sector degradation vs Error degradation": 0.5641,
+          "Coupled degradation vs Single-mode": 0.8978
+        }
+      },
+      {
+        "transition": "Q3_2024\u2192Q3_2025",
+        "tv_distance": 0.00931,
+        "aitchison_distance": 0.6278,
+        "cr_mean": 0.3344,
+        "cr_max": 0.5717,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.0014,
+          "Failed vs Degraded": -0.6183,
+          "Sector degradation vs Error degradation": 0.0389,
+          "Coupled degradation vs Single-mode": 0.1013
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.0748,
+          "Failed vs Degraded": 0.3367,
+          "Sector degradation vs Error degradation": 0.3543,
+          "Coupled degradation vs Single-mode": 0.5717
+        }
+      },
+      {
+        "transition": "Q3_2025\u2192Q4_2024",
+        "tv_distance": 0.00685,
+        "aitchison_distance": 0.3567,
+        "cr_mean": 0.4983,
+        "cr_max": 0.8114,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.191,
+          "Failed vs Degraded": -0.2943,
+          "Sector degradation vs Error degradation": -0.0235,
+          "Coupled degradation vs Single-mode": -0.0595
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8114,
+          "Failed vs Degraded": 0.3755,
+          "Sector degradation vs Error degradation": 0.3111,
+          "Coupled degradation vs Single-mode": 0.4952
+        }
+      },
+      {
+        "transition": "Q4_2024\u2192Q4_2025",
+        "tv_distance": 0.01127,
+        "aitchison_distance": 0.3963,
+        "cr_mean": 0.5122,
+        "cr_max": 0.7248,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.0852,
+          "Failed vs Degraded": -0.3778,
+          "Sector degradation vs Error degradation": 0.0303,
+          "Coupled degradation vs Single-mode": 0.0786
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.7248,
+          "Failed vs Degraded": 0.3796,
+          "Sector degradation vs Error degradation": 0.3617,
+          "Coupled degradation vs Single-mode": 0.5826
+        }
+      }
+    ],
+    "Seagate": [
+      {
+        "transition": "Q1_2024\u2192Q1_2025",
+        "tv_distance": 0.0216,
+        "aitchison_distance": 0.3987,
+        "cr_mean": 0.8612,
+        "cr_max": 0.9628,
+        "cr_max_node": "Failed vs Degraded",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.1239,
+          "Failed vs Degraded": -0.2071,
+          "Sector degradation vs Error degradation": 0.2451,
+          "Coupled degradation vs Single-mode": 0.2016
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.7541,
+          "Failed vs Degraded": 0.9628,
+          "Sector degradation vs Error degradation": 0.8218,
+          "Coupled degradation vs Single-mode": 0.906
+        }
+      },
+      {
+        "transition": "Q1_2025\u2192Q2_2024",
+        "tv_distance": 0.0182,
+        "aitchison_distance": 0.4533,
+        "cr_mean": 0.625,
+        "cr_max": 0.7231,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.0675,
+          "Failed vs Degraded": 0.4151,
+          "Sector degradation vs Error degradation": -0.1129,
+          "Coupled degradation vs Single-mode": -0.1262
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.5565,
+          "Failed vs Degraded": 0.5366,
+          "Sector degradation vs Error degradation": 0.6839,
+          "Coupled degradation vs Single-mode": 0.7231
+        }
+      },
+      {
+        "transition": "Q2_2024\u2192Q2_2025",
+        "tv_distance": 0.00796,
+        "aitchison_distance": 0.1748,
+        "cr_mean": 0.8115,
+        "cr_max": 0.9909,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.082,
+          "Failed vs Degraded": 0.0451,
+          "Sector degradation vs Error degradation": 0.0843,
+          "Coupled degradation vs Single-mode": 0.1212
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.9909,
+          "Failed vs Degraded": 0.6624,
+          "Sector degradation vs Error degradation": 0.8684,
+          "Coupled degradation vs Single-mode": 0.7241
+        }
+      },
+      {
+        "transition": "Q2_2025\u2192Q3_2024",
+        "tv_distance": 0.00518,
+        "aitchison_distance": 0.2237,
+        "cr_mean": 0.5285,
+        "cr_max": 0.9075,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "STRUCTURAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.003,
+          "Failed vs Degraded": 0.2048,
+          "Sector degradation vs Error degradation": -0.0273,
+          "Coupled degradation vs Single-mode": -0.0856
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.1691,
+          "Failed vs Degraded": 0.5249,
+          "Sector degradation vs Error degradation": 0.5124,
+          "Coupled degradation vs Single-mode": 0.9075
+        }
+      },
+      {
+        "transition": "Q3_2024\u2192Q3_2025",
+        "tv_distance": 0.00807,
+        "aitchison_distance": 1.0255,
+        "cr_mean": 0.3477,
+        "cr_max": 0.6786,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.1692,
+          "Failed vs Degraded": -1.0076,
+          "Sector degradation vs Error degradation": 0.0072,
+          "Coupled degradation vs Single-mode": 0.0872
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.6786,
+          "Failed vs Degraded": 0.2165,
+          "Sector degradation vs Error degradation": 0.1107,
+          "Coupled degradation vs Single-mode": 0.385
+        }
+      },
+      {
+        "transition": "Q3_2025\u2192Q4_2024",
+        "tv_distance": 0.0048,
+        "aitchison_distance": 0.4322,
+        "cr_mean": 0.4816,
+        "cr_max": 0.9669,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.1647,
+          "Failed vs Degraded": -0.3966,
+          "Sector degradation vs Error degradation": 0.0438,
+          "Coupled degradation vs Single-mode": -0.0216
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.9669,
+          "Failed vs Degraded": 0.2871,
+          "Sector degradation vs Error degradation": 0.3949,
+          "Coupled degradation vs Single-mode": 0.2775
+        }
+      },
+      {
+        "transition": "Q4_2024\u2192Q4_2025",
+        "tv_distance": 0.01131,
+        "aitchison_distance": 0.7364,
+        "cr_mean": 0.4626,
+        "cr_max": 0.9176,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.3051,
+          "Failed vs Degraded": 0.666,
+          "Sector degradation vs Error degradation": -0.0635,
+          "Coupled degradation vs Single-mode": 0.0411
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.9176,
+          "Failed vs Degraded": 0.2803,
+          "Sector degradation vs Error degradation": 0.3616,
+          "Coupled degradation vs Single-mode": 0.2911
+        }
+      }
+    ],
+    "WD": [
+      {
+        "transition": "Q1_2024\u2192Q1_2025",
+        "tv_distance": 0.00424,
+        "aitchison_distance": 1.083,
+        "cr_mean": 0.6681,
+        "cr_max": 0.9139,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.3308,
+          "Failed vs Degraded": -0.7847,
+          "Sector degradation vs Error degradation": 0.041,
+          "Coupled degradation vs Single-mode": 0.6678
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8151,
+          "Failed vs Degraded": 0.6721,
+          "Sector degradation vs Error degradation": 0.2713,
+          "Coupled degradation vs Single-mode": 0.9139
+        }
+      },
+      {
+        "transition": "Q1_2025\u2192Q2_2024",
+        "tv_distance": 0.0035,
+        "aitchison_distance": 1.7962,
+        "cr_mean": 0.3725,
+        "cr_max": 0.4537,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.1411,
+          "Failed vs Degraded": 1.7795,
+          "Sector degradation vs Error degradation": -0.1135,
+          "Coupled degradation vs Single-mode": -0.1639
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.4537,
+          "Failed vs Degraded": 0.2792,
+          "Sector degradation vs Error degradation": 0.3438,
+          "Coupled degradation vs Single-mode": 0.4132
+        }
+      },
+      {
+        "transition": "Q2_2024\u2192Q2_2025",
+        "tv_distance": 0.00684,
+        "aitchison_distance": 0.7084,
+        "cr_mean": 0.8698,
+        "cr_max": 0.8849,
+        "cr_max_node": "Failed vs Degraded",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.4245,
+          "Failed vs Degraded": -0.3798,
+          "Sector degradation vs Error degradation": 0.2831,
+          "Coupled degradation vs Single-mode": 0.3118
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8748,
+          "Failed vs Degraded": 0.8849,
+          "Sector degradation vs Error degradation": 0.839,
+          "Coupled degradation vs Single-mode": 0.8805
+        }
+      },
+      {
+        "transition": "Q2_2025\u2192Q3_2024",
+        "tv_distance": 0.00596,
+        "aitchison_distance": 0.6528,
+        "cr_mean": 0.8286,
+        "cr_max": 0.9885,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.4494,
+          "Failed vs Degraded": -0.1368,
+          "Sector degradation vs Error degradation": -0.3514,
+          "Coupled degradation vs Single-mode": -0.2863
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.758,
+          "Failed vs Degraded": 0.6549,
+          "Sector degradation vs Error degradation": 0.9132,
+          "Coupled degradation vs Single-mode": 0.9885
+        }
+      },
+      {
+        "transition": "Q3_2024\u2192Q3_2025",
+        "tv_distance": 0.01286,
+        "aitchison_distance": 1.664,
+        "cr_mean": 0.6081,
+        "cr_max": 0.7129,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.3834,
+          "Failed vs Degraded": -1.5334,
+          "Sector degradation vs Error degradation": 0.3185,
+          "Coupled degradation vs Single-mode": 0.4114
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.7129,
+          "Failed vs Degraded": 0.4879,
+          "Sector degradation vs Error degradation": 0.5764,
+          "Coupled degradation vs Single-mode": 0.6552
+        }
+      },
+      {
+        "transition": "Q3_2025\u2192Q4_2024",
+        "tv_distance": 0.01123,
+        "aitchison_distance": 1.692,
+        "cr_mean": 0.4759,
+        "cr_max": 0.5592,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.2185,
+          "Failed vs Degraded": 1.6447,
+          "Sector degradation vs Error degradation": -0.1613,
+          "Coupled degradation vs Single-mode": -0.2901
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.5592,
+          "Failed vs Degraded": 0.3704,
+          "Sector degradation vs Error degradation": 0.4161,
+          "Coupled degradation vs Single-mode": 0.558
+        }
+      },
+      {
+        "transition": "Q4_2024\u2192Q4_2025",
+        "tv_distance": 0.01742,
+        "aitchison_distance": 2.4806,
+        "cr_mean": 0.4688,
+        "cr_max": 0.5547,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.2197,
+          "Failed vs Degraded": -2.4184,
+          "Sector degradation vs Error degradation": 0.3024,
+          "Coupled degradation vs Single-mode": 0.4058
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.4592,
+          "Failed vs Degraded": 0.3827,
+          "Sector degradation vs Error degradation": 0.4788,
+          "Coupled degradation vs Single-mode": 0.5547
+        }
+      }
+    ],
+    "Toshiba": [
+      {
+        "transition": "Q1_2024\u2192Q1_2025",
+        "tv_distance": 0.01302,
+        "aitchison_distance": 1.3406,
+        "cr_mean": 0.3972,
+        "cr_max": 0.7581,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "MILD_SHIFT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.7357,
+          "Failed vs Degraded": 1.1149,
+          "Sector degradation vs Error degradation": -0.052,
+          "Coupled degradation vs Single-mode": 0.1014
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.7581,
+          "Failed vs Degraded": 0.2623,
+          "Sector degradation vs Error degradation": 0.2372,
+          "Coupled degradation vs Single-mode": 0.331
+        }
+      },
+      {
+        "transition": "Q1_2025\u2192Q2_2024",
+        "tv_distance": 0.00925,
+        "aitchison_distance": 0.3768,
+        "cr_mean": 0.6652,
+        "cr_max": 0.7872,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.3414,
+          "Failed vs Degraded": -0.0502,
+          "Sector degradation vs Error degradation": 0.0904,
+          "Coupled degradation vs Single-mode": -0.1213
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.5056,
+          "Failed vs Degraded": 0.6885,
+          "Sector degradation vs Error degradation": 0.6794,
+          "Coupled degradation vs Single-mode": 0.7872
+        }
+      },
+      {
+        "transition": "Q2_2024\u2192Q2_2025",
+        "tv_distance": 0.01134,
+        "aitchison_distance": 0.6018,
+        "cr_mean": 0.5502,
+        "cr_max": 0.6726,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.4698,
+          "Failed vs Degraded": 0.3275,
+          "Sector degradation vs Error degradation": -0.0414,
+          "Coupled degradation vs Single-mode": 0.1803
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.6242,
+          "Failed vs Degraded": 0.5818,
+          "Sector degradation vs Error degradation": 0.3222,
+          "Coupled degradation vs Single-mode": 0.6726
+        }
+      },
+      {
+        "transition": "Q2_2025\u2192Q3_2024",
+        "tv_distance": 0.00829,
+        "aitchison_distance": 0.6348,
+        "cr_mean": 0.5905,
+        "cr_max": 0.7497,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.4116,
+          "Failed vs Degraded": -0.4294,
+          "Sector degradation vs Error degradation": 0.0486,
+          "Coupled degradation vs Single-mode": -0.2161
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.7497,
+          "Failed vs Degraded": 0.5552,
+          "Sector degradation vs Error degradation": 0.3401,
+          "Coupled degradation vs Single-mode": 0.7169
+        }
+      },
+      {
+        "transition": "Q3_2024\u2192Q3_2025",
+        "tv_distance": 0.01083,
+        "aitchison_distance": 0.687,
+        "cr_mean": 0.5721,
+        "cr_max": 0.8269,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.4722,
+          "Failed vs Degraded": 0.4,
+          "Sector degradation vs Error degradation": 0.0081,
+          "Coupled degradation vs Single-mode": 0.2982
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.7062,
+          "Failed vs Degraded": 0.6188,
+          "Sector degradation vs Error degradation": 0.1367,
+          "Coupled degradation vs Single-mode": 0.8269
+        }
+      },
+      {
+        "transition": "Q3_2025\u2192Q4_2024",
+        "tv_distance": 0.00639,
+        "aitchison_distance": 1.3199,
+        "cr_mean": 0.5597,
+        "cr_max": 0.9968,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.5117,
+          "Failed vs Degraded": -1.1881,
+          "Sector degradation vs Error degradation": -0.0912,
+          "Coupled degradation vs Single-mode": -0.2458
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.9968,
+          "Failed vs Degraded": 0.3766,
+          "Sector degradation vs Error degradation": 0.3276,
+          "Coupled degradation vs Single-mode": 0.5378
+        }
+      },
+      {
+        "transition": "Q4_2024\u2192Q4_2025",
+        "tv_distance": 0.00804,
+        "aitchison_distance": 0.6068,
+        "cr_mean": 0.6874,
+        "cr_max": 0.964,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.127,
+          "Failed vs Degraded": -0.5078,
+          "Sector degradation vs Error degradation": 0.0854,
+          "Coupled degradation vs Single-mode": 0.295
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.655,
+          "Failed vs Degraded": 0.612,
+          "Sector degradation vs Error degradation": 0.5187,
+          "Coupled degradation vs Single-mode": 0.964
+        }
+      }
+    ],
+    "HGST": [
+      {
+        "transition": "Q1_2024\u2192Q1_2025",
+        "tv_distance": 0.02613,
+        "aitchison_distance": 0.837,
+        "cr_mean": 0.7446,
+        "cr_max": 0.8524,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.4961,
+          "Failed vs Degraded": 0.5425,
+          "Sector degradation vs Error degradation": -0.1828,
+          "Coupled degradation vs Single-mode": 0.356
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8524,
+          "Failed vs Degraded": 0.7047,
+          "Sector degradation vs Error degradation": 0.5933,
+          "Coupled degradation vs Single-mode": 0.828
+        }
+      },
+      {
+        "transition": "Q1_2025\u2192Q2_2024",
+        "tv_distance": 0.01536,
+        "aitchison_distance": 0.4105,
+        "cr_mean": 0.8492,
+        "cr_max": 0.9653,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLING_SIGNAL",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.2413,
+          "Failed vs Degraded": -0.2244,
+          "Sector degradation vs Error degradation": 0.1135,
+          "Coupled degradation vs Single-mode": -0.217
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.8755,
+          "Failed vs Degraded": 0.858,
+          "Sector degradation vs Error degradation": 0.698,
+          "Coupled degradation vs Single-mode": 0.9653
+        }
+      },
+      {
+        "transition": "Q2_2024\u2192Q2_2025",
+        "tv_distance": 0.03235,
+        "aitchison_distance": 0.5733,
+        "cr_mean": 0.8846,
+        "cr_max": 0.9979,
+        "cr_max_node": "Healthy vs {Degraded+Failed}",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.2816,
+          "Failed vs Degraded": -0.2009,
+          "Sector degradation vs Error degradation": -0.2759,
+          "Coupled degradation vs Single-mode": 0.3645
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.9979,
+          "Failed vs Degraded": 0.792,
+          "Sector degradation vs Error degradation": 0.935,
+          "Coupled degradation vs Single-mode": 0.8135
+        }
+      },
+      {
+        "transition": "Q2_2025\u2192Q3_2024",
+        "tv_distance": 0.02823,
+        "aitchison_distance": 1.366,
+        "cr_mean": 0.5039,
+        "cr_max": 0.7135,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": -0.0525,
+          "Failed vs Degraded": 1.3044,
+          "Sector degradation vs Error degradation": 0.206,
+          "Coupled degradation vs Single-mode": -0.3454
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.2913,
+          "Failed vs Degraded": 0.4597,
+          "Sector degradation vs Error degradation": 0.551,
+          "Coupled degradation vs Single-mode": 0.7135
+        }
+      },
+      {
+        "transition": "Q3_2024\u2192Q3_2025",
+        "tv_distance": 0.03083,
+        "aitchison_distance": 1.3875,
+        "cr_mean": 0.5582,
+        "cr_max": 0.7807,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.056,
+          "Failed vs Degraded": -1.294,
+          "Sector degradation vs Error degradation": -0.2802,
+          "Coupled degradation vs Single-mode": 0.4113
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.2908,
+          "Failed vs Degraded": 0.5169,
+          "Sector degradation vs Error degradation": 0.6443,
+          "Coupled degradation vs Single-mode": 0.7807
+        }
+      },
+      {
+        "transition": "Q3_2025\u2192Q4_2024",
+        "tv_distance": 0.02037,
+        "aitchison_distance": 0.3998,
+        "cr_mean": 0.7476,
+        "cr_max": 0.8169,
+        "cr_max_node": "Failed vs Degraded",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.1045,
+          "Failed vs Degraded": 0.1642,
+          "Sector degradation vs Error degradation": 0.2242,
+          "Coupled degradation vs Single-mode": -0.2678
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.6912,
+          "Failed vs Degraded": 0.8169,
+          "Sector degradation vs Error degradation": 0.774,
+          "Coupled degradation vs Single-mode": 0.7082
+        }
+      },
+      {
+        "transition": "Q4_2024\u2192Q4_2025",
+        "tv_distance": 0.02143,
+        "aitchison_distance": 1.4277,
+        "cr_mean": 0.5312,
+        "cr_max": 0.5854,
+        "cr_max_node": "Coupled degradation vs Single-mode",
+        "pattern": "COUPLED_EVENT",
+        "balance_deltas": {
+          "Healthy vs {Degraded+Failed}": 0.1975,
+          "Failed vs Degraded": -1.3682,
+          "Sector degradation vs Error degradation": -0.235,
+          "Coupled degradation vs Single-mode": 0.2683
+        },
+        "cr_by_node": {
+          "Healthy vs {Degraded+Failed}": 0.5627,
+          "Failed vs Degraded": 0.4289,
+          "Sector degradation vs Error degradation": 0.5479,
+          "Coupled degradation vs Single-mode": 0.5854
+        }
+      }
+    ]
+  },
+  "compositions": {
+    "Q1_2024": {
+      "Seagate": [
+        0.9172180917914629,
+        0.04275222967550461,
+        0.01904574431035266,
+        0.020947593161823715,
+        3.6341060856134825e-05
+      ],
+      "WD": [
+        0.9922263975716091,
+        0.004996087401432613,
+        0.002098184726247087,
+        0.0006793303007111471,
+        0.0
+      ],
+      "Toshiba": [
+        0.9764381979206777,
+        0.01589526376588371,
+        0.006357335386984983,
+        0.0013015017327685792,
+        7.701193685021178e-06
+      ],
+      "HGST": [
+        0.9509700681532901,
+        0.009856532690833425,
+        0.022594205706679697,
+        0.01655392028845101,
+        2.527316074572673e-05
+      ],
+      "Fleet": [
+        0.9517928874280309,
+        0.024002263210954517,
+        0.013037437680784164,
+        0.011147033191762775,
+        2.037848846757363e-05
+      ]
+    },
+    "Q2_2024": {
+      "Seagate": [
+        0.9152624941803281,
+        0.04555839558969078,
+        0.01683465348671573,
+        0.02229820769522494,
+        4.6249048040427834e-05
+      ],
+      "WD": [
+        0.9914621273866627,
+        0.0049102788503934906,
+        0.002284782812019828,
+        0.00130272704194113,
+        4.0083908982804e-05
+      ],
+      "Toshiba": [
+        0.9726691596909449,
+        0.018742646452686248,
+        0.007100622756465501,
+        0.0014575948560765592,
+        2.9976243826767288e-05
+      ],
+      "HGST": [
+        0.9402004113245526,
+        0.010633177263378988,
+        0.026884872883210082,
+        0.02223778059773334,
+        4.3757931125016406e-05
+      ],
+      "Fleet": [
+        0.9503520914975224,
+        0.025163438004598936,
+        0.012464316613999453,
+        0.011979670301706788,
+        4.048358217241842e-05
+      ]
+    },
+    "Q3_2024": {
+      "Seagate": [
+        0.9131059212255472,
+        0.04739733914066509,
+        0.016157899347926757,
+        0.02327626127986583,
+        6.257900599506878e-05
+      ],
+      "WD": [
+        0.9905750231889291,
+        0.0052229561060029754,
+        0.002676842819524767,
+        0.0015002770221057414,
+        2.4900863437439692e-05
+      ],
+      "Toshiba": [
+        0.9696228769952777,
+        0.020943573873630585,
+        0.007853384034858515,
+        0.001550970360044084,
+        2.919473618906511e-05
+      ],
+      "HGST": [
+        0.9360328477499474,
+        0.010562124495898604,
+        0.029482501623183634,
+        0.023757921593371922,
+        0.0001646045375984198
+      ],
+      "Fleet": [
+        0.9488562883237055,
+        0.026241965839281275,
+        0.012582031200779848,
+        0.012261294789980653,
+        5.841984625271051e-05
+      ]
+    },
+    "Q4_2024": {
+      "Seagate": [
+        0.9098827406742889,
+        0.04922283089334682,
+        0.015613368708365941,
+        0.025268334892125238,
+        1.2724831873158876e-05
+      ],
+      "WD": [
+        0.9889332704188568,
+        0.006457878392169342,
+        0.0026500894336599764,
+        0.001925841389678368,
+        3.2920365635527657e-05
+      ],
+      "Toshiba": [
+        0.9651875166861045,
+        0.023114645833040594,
+        0.00974819790071241,
+        0.0019355881237090224,
+        1.4051456433459328e-05
+      ],
+      "HGST": [
+        0.9252947010049994,
+        0.01095991248428091,
+        0.03311488482890473,
+        0.030579382687018843,
+        5.111899479608633e-05
+      ],
+      "Fleet": [
+        0.9464211749027518,
+        0.027387083993660855,
+        0.012848247730874514,
+        0.013322107765451664,
+        2.1385607261201556e-05
+      ]
+    },
+    "Q1_2025": {
+      "Seagate": [
+        0.8970785826711198,
+        0.05584347447758711,
+        0.01759077976975017,
+        0.029453039357450275,
+        3.412372409262885e-05
+      ],
+      "WD": [
+        0.9879900940191545,
+        0.0070788314449144185,
+        0.002805233513774135,
+        0.002118535726548175,
+        7.305295608786809e-06
+      ],
+      "Toshiba": [
+        0.9634231897078196,
+        0.023928612887433063,
+        0.010301265324457052,
+        0.002301507588413726,
+        4.54244918765867e-05
+      ],
+      "HGST": [
+        0.9248380780237988,
+        0.010845006778129237,
+        0.03219269057497706,
+        0.032055758671212804,
+        6.846595188212902e-05
+      ],
+      "Fleet": [
+        0.9406224772140431,
+        0.030221049971960484,
+        0.01372703687042047,
+        0.015394001392731912,
+        3.543455084395856e-05
+      ]
+    },
+    "Q2_2025": {
+      "Seagate": [
+        0.907936664165057,
+        0.04939038643717474,
+        0.01619997293340387,
+        0.02642068872184151,
+        5.228774252285282e-05
+      ],
+      "WD": [
+        0.9846194936405751,
+        0.009407896554582377,
+        0.0029333480691478096,
+        0.002993212315456948,
+        4.604942023779921e-05
+      ],
+      "Toshiba": [
+        0.9613284108295084,
+        0.025710104436905475,
+        0.010327279984035122,
+        0.0025676844275926295,
+        6.652032195835828e-05
+      ],
+      "HGST": [
+        0.9079166615989005,
+        0.010569333122514261,
+        0.039479925564650506,
+        0.04198542915871027,
+        4.8650555224461496e-05
+      ],
+      "Fleet": [
+        0.9438117972328536,
+        0.028605545206605115,
+        0.01312099498292869,
+        0.014407094303607176,
+        5.4568274005493205e-05
+      ]
+    },
+    "Q3_2025": {
+      "Seagate": [
+        0.9050785751060335,
+        0.05044865037142367,
+        0.017023584790016918,
+        0.0274277378705043,
+        2.1451862021623477e-05
+      ],
+      "WD": [
+        0.9777383044040701,
+        0.0130471299210318,
+        0.004262158979012608,
+        0.004952406695885544,
+        0.0
+      ],
+      "Toshiba": [
+        0.9587937090160389,
+        0.027856117099503433,
+        0.010325795456511584,
+        0.0029551706835994947,
+        6.920774434659238e-05
+      ],
+      "HGST": [
+        0.9062076708116221,
+        0.009676986344832635,
+        0.040147900472256456,
+        0.04391863033424042,
+        4.881203704833612e-05
+      ],
+      "Fleet": [
+        0.9395673708660789,
+        0.03068404243796178,
+        0.01392461430229772,
+        0.015790055284887302,
+        3.391710877435604e-05
+      ]
+    },
+    "Q4_2025": {
+      "Seagate": [
+        0.8985758517828599,
+        0.05303898000025173,
+        0.018404425369095416,
+        0.029949276912814186,
+        3.146593497879196e-05
+      ],
+      "WD": [
+        0.9715378231271735,
+        0.017107855866314328,
+        0.004577369768993029,
+        0.006771859613749421,
+        5.091623769736407e-06
+      ],
+      "Toshiba": [
+        0.9571560117120007,
+        0.028807521063322745,
+        0.010767039477995165,
+        0.003259081456343828,
+        1.0346290337599454e-05
+      ],
+      "HGST": [
+        0.9051741049534086,
+        0.009686120647376164,
+        0.04080431584109858,
+        0.04432319764590485,
+        1.2260912211868564e-05
+      ],
+      "Fleet": [
+        0.9351598938695713,
+        0.032843457617651166,
+        0.014762184052506634,
+        0.017217707024158636,
+        1.6757436112274822e-05
+      ]
+    }
+  },
+  "confidence": "n=1 (Opinion). First cross-domain computation. Thresholds and health categories uncalibrated."
+}
