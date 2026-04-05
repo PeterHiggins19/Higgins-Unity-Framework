@@ -32,7 +32,7 @@ Engineers test you on architecture, failure modes, stored energy, signal flow, w
 Say: "HUF-GOV is a phase discriminator — stateless, open loop. HUF-CLS is the PLL — closed loop, stored energy. Only GOV belongs in scientific monitoring." This resolves 80% of engineering objections before they form.
 
 **Move E2 — Show the error catalogue**
-Engineers love failure modes. Say: "We mapped 17 error sources. Each has a detection test and a governance action."
+Engineers love failure modes. Say: "We mapped 25 error sources. Each has a detection test and a governance action."
 
 **Move E3 — Use their metaphors**
 Terms to use: "stored energy", "loop stability", "aliasing", "dimensionality change as a topology shift".
@@ -74,7 +74,7 @@ After a strong point, pause. Let them fill the silence with agreement.
 
 ## Three Hardest Scenarios
 
-**Scenario A — A mathematician challenges the dual metric**
+**Scenario A — A mathematician challenges the three-diagnostic protocol**
 You say: "Disagreement is a diagnostic signal. We don't fuse the metrics — we compare them."
 
 **Scenario B — An engineer insists HUF is a PLL**

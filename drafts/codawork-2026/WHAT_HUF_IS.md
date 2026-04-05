@@ -160,7 +160,7 @@ Forty years of active filter crossover design. Six months of formalization. The 
 
 The mathematics already exists. Aitchison formalized the simplex geometry in 1982. Egozcue and Pawlowsky-Glahn built the Hilbert space structure. The MEWMA-CoDa researchers built statistically optimal control charts. Filzmoser built robust outlier detection.
 
-The monitoring doctrine already exists. HUF's open-loop discipline, governance reference management, kill test, coherence chain, stored energy audit, and 17-error calibration study.
+The monitoring doctrine already exists. HUF's open-loop discipline, governance reference management, kill test, coherence chain, stored energy audit, and 25-error calibration study.
 
 What doesn't exist yet is the union. The instrument that combines CoDa's mathematical rigour with HUF's monitoring architecture. The instrument that is statistically optimal AND governancially sound. The instrument that watches compositions move and tells you when to care.
 

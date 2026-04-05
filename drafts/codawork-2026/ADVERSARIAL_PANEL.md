@@ -47,7 +47,7 @@
 
 ---
 
-### DA-06 — "Why should we trust your 17-error catalogue? Where is the validation?"
+### DA-06 — "Why should we trust your 25-error catalogue? Where is the validation?"
 
 **Why they ask:** CoDa researchers value published literature and peer review.
 
@@ -76,7 +76,7 @@
 ### Q1 — "Isn't HUF just MEWMA with different branding?"
 **A:** "MEWMA stores energy. HUF-GOV is stateless. They are complementary, not redundant."
 
-### Q2 — "Why dual metrics? Isn't that mathematically inconsistent?"
+### Q2 — "Why three diagnostics? Isn't that mathematically inconsistent?"
 **A:** "It's diagnostic, not fusion. When TV and Aitchison disagree, that's information."
 
 ### Q3 — "Your instrument breaks at zero. Why should we trust it?"
@@ -97,9 +97,9 @@
 
 | Question | Answer |
 |----------|--------|
-| Why dual metrics? | Diagnostic disagreement signal. |
+| Why three diagnostics? | Diagnostic disagreement signal. |
 | Why open loop? | Prevents stored energy contamination. |
-| Why 17 errors? | Because the union inherits all errors from both sides plus new ones. |
+| Why 25 errors? | Because the union inherits all errors from both sides plus new ones. |
 | Why Ramsar? | Real ecological compositions; physical-world validation. |
 | Why not signed or complex CoDa now? | CONJ-001: too early; union must validate first. |
 | Why should CoDa care? | Because this is the first monitoring-oriented calibration study. |

@@ -19,7 +19,7 @@ Walk in narrow. Speak plainly. Show the case. Invite correction. Let CoDa do its
 | Item | Why |
 |------|-----|
 | **CoDaWork Packet v3** | Front-door document. Claim, methods challenge, EMBER case, metric correction appendix. Cleanest first-contact artifact. |
-| **Abstract v2** | 208 words. Union thesis, dual-metric protocol, 17-error calibration framing. Matches the packet. |
+| **Abstract v3 | 197 words. Three diagnostics, CR results, Backblaze cross-domain, 25-error calibration. Matches all conference artifacts. |
 | **One clean EMBER figure** | Stable total, shifting mix. Not the full analyzer — just the simplest defensible picture. |
 | **Spoken posture** | "Here is a compositional monitoring claim. Here is one public case. Here is how to break it." |
 

@@ -132,7 +132,7 @@ This is not an alliance between a framework and a theory. This is an alliance be
 
 That's what I'm here for. Not to present a framework. Not to defend an instrument. To put a screwdriver on the table next to a math book and see what we can calibrate together.
 
-*Mathematically: the HUF-CoDa union is a calibration study. CoDa provides the Aitchison geometry, the log-ratio transforms, the statistical optimization. HUF provides the monitoring doctrine, the governance architecture, the open-loop discipline, the audit trail. The union produces capabilities neither can build alone: a statistically rigorous, governancially sound, dimensionality-aware, dual-metric monitoring instrument for compositions in motion. The 17-error catalogue maps the failure modes. The calibration study tests the joint. The alliance reduces the mutual ignorance. The simplex is the same everywhere.*
+*Mathematically: the HUF-CoDa union is a calibration study. CoDa provides the Aitchison geometry, the log-ratio transforms, the statistical optimization. HUF provides the monitoring doctrine, the governance architecture, the open-loop discipline, the audit trail. The union produces capabilities neither can build alone: a statistically rigorous, governancially sound, dimensionality-aware, three-diagnostic monitoring instrument for compositions in motion. The 25-error catalogue maps the failure modes. The calibration study tests the joint. The alliance reduces the mutual ignorance. The simplex is the same everywhere.*
 
 ---
 

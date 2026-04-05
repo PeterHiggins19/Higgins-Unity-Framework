@@ -61,7 +61,7 @@ d_A(x,y) = √(Σᵢ<ⱼ (ln(xᵢ/xⱼ) - ln(yᵢ/yⱼ))²) · (1/D)
 
 Or equivalently: the Euclidean distance between the CLR-transformed vectors.
 
-**Why it matters for you:** This is the "right" distance on the simplex according to CoDa theory. The conference demonstrator now computes both TV distance and Aitchison distance side-by-side as a dual-metric protocol. If someone asks "have you computed Aitchison distance?", the answer is: "Yes — we now run both TV and Aitchison on every observation. Agreement is treated as robustness; disagreement is treated as diagnostic information (dominant vs trace carrier movement). The open question is which metric should anchor the monitoring protocol."
+**Why it matters for you:** This is the "right" distance on the simplex according to CoDa theory. The conference demonstrator now computes both TV distance and Aitchison distance side-by-side as a three-diagnostic protocol. If someone asks "have you computed Aitchison distance?", the answer is: "Yes — we now run both TV and Aitchison on every observation. Agreement is treated as robustness; disagreement is treated as diagnostic information (dominant vs trace carrier movement). The open question is which metric should anchor the monitoring protocol."
 
 ### 4. The Zero Problem
 
@@ -111,7 +111,7 @@ The CoDa equivalent of PCA biplots. Based on CLR-transformed data. Shows the rel
    → The conference demonstrator now computes both. TV distance is retained for monitoring interpretability; Aitchison distance is the simplex-native geometric metric. Agreement between them is treated as robustness; disagreement is treated as diagnostic (dominant vs trace carrier movement). The open question is which should anchor the monitoring protocol — that's exactly why I'm here.
 
 2. **"How do you handle zeros in your compositions?"**
-   → Event-first protocol: a carrier reaching zero is treated first as a domain event (flag it, record the TV velocity spike), then CoDa zero-handling is applied only if further geometric analysis is required. Greenacre's chiPower is being explored as a post-event correction layer that preserves subcompositional coherence. Open to CoDa community guidance on best practice. This is documented as E-03/E-17 in the 17-error calibration catalogue.
+   → Event-first protocol: a carrier reaching zero is treated first as a domain event (flag it, record the TV velocity spike), then CoDa zero-handling is applied only if further geometric analysis is required. Greenacre's chiPower is being explored as a post-event correction layer that preserves subcompositional coherence. Open to CoDa community guidance on best practice. This is documented as E-03/E-17 in the 25-error calibration catalogue.
 
 3. **"Have you considered log-ratio transformations?"**
    → Yes. CLR and ILR are now implemented in the conference demonstrator alongside the original TV-based metrics. The conference posture is that Aitchison distance and log-ratio views are included for exploratory calibration — the open question is not whether they exist in the toolchain, but how they should anchor the monitoring protocol, what the correct null model is, and how zeros and subcompositions should be governed.
