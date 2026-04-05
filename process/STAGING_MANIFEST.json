@@ -224,8 +224,8 @@
         },
         {
           "path": "drafts/codawork-2026/FOR_SHARON.md",
-          "action": "added",
-          "summary": "Plain-language explanation for Sharon."
+          "action": "deleted",
+          "summary": "Removed — personal document, not for scientific audience. Sharon has read it, Peter has a copy."
         },
         {
           "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
@@ -355,8 +355,8 @@
       "session_id": "S009",
       "date": "2026-04-03",
       "label": "Grok collective review integration: E-17 chiPower, revised abstract, Greenacre complementarity, HUF-EXT rough diamonds",
-      "status": "staged",
-      "commit": null,
+      "status": "pushed",
+      "commit": "0a621fabbc30d72c139792149aaf74605c3eb05d",
       "suggested_commit_message": "Grok review integration: E-17 chiPower, abstract v2, 17-error catalogue, Greenacre complementarity, HUF-EXT E-18/E-19, BTL canonical correction",
       "notes": "Grok completed full review of CRPT-007 and GitHub. Gold extracted: revised abstract (v2, 208 words), E-17 (chiPower-HUF calibration tension), expanded E-03 (event-first zero protocol), Greenacre complementarity (THE_UNION.md capability #5). Rough diamonds filed: E-18 (signed compositions), E-19 (complex CoDa). Tailings: CoDa math pipeline confirmed consistent (Aitchison, CLR, ILR, SBP, PCA all verified). BTL corrected to canonical per RWA-001. Learning Path 'Below-Threshold-of-Limited' drift corrected.",
       "files": [
@@ -401,8 +401,8 @@
       "session_id": "S010",
       "date": "2026-04-03",
       "label": "ChatGPT collective review integration: consistency pass, Coimbra trim list, CONJ-001, battle card/prep guide updates",
-      "status": "staged",
-      "commit": null,
+      "status": "pushed",
+      "commit": "0a621fabbc30d72c139792149aaf74605c3eb05d",
       "suggested_commit_message": "ChatGPT review integration: consistency pass (dual-metric + 17-error unified), Coimbra trim list, CONJ-001 conjecture, battle card and prep guide updated to current toolchain",
       "notes": "ChatGPT identified metric-framing mismatch and error-count drift across documents. All now unified: 17 errors, dual-metric (TV+Aitchison) story consistent everywhere. Battle card gaps table now shows current status vs what's still needed. Prep guide Q&A answers updated. Coimbra Trim List and CONJ-001 winning horse conjecture filed.",
       "files": [
@@ -452,8 +452,8 @@
       "session_id": "S011",
       "date": "2026-04-04",
       "label": "Copilot collective review integration: consistency verified, conference preparation package, audit trail framing",
-      "status": "staged",
-      "commit": null,
+      "status": "pushed",
+      "commit": "0a621fabbc30d72c139792149aaf74605c3eb05d",
       "suggested_commit_message": "Copilot review integration: full consistency verified, 6 conference prep files (presentation script, poster layout, demo script, adversarial panel, room control, ecological demo dataset), CRPT-007 updated with copilot_review",
       "notes": "Copilot completed full consistency verification: repo, analyzer, and codawork-2026 drafts all aligned. Identified audit trail of events (5 types) as HUF's core value proposition for CoDa. Produced comprehensive conference preparation package. Confirmed ChatGPT's 4 final adjustments. Validated white flag posture.",
       "files": [
@@ -503,18 +503,74 @@
           "summary": "S011 entry added. JSON structure fixed (malformed bracket/comma pairs from S009/S010 edits)."
         }
       ]
+    },
+    {
+      "session_id": "S012",
+      "date": "2026-04-04",
+      "label": "Gemini collective review integration + Claude closing commentary + THE_LINEAGE + collective session closed",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Collective review closed: Gemini review integrated, Claude closing commentary, THE_LINEAGE.md (BTL physics origin, DADC/DADI/ADAC arc, screwdriver and math book), presentation script updated to 14 slides, all 'you/your' formalized, FOR_SHARON.md reference removed, 16-error stragglers fixed to 17",
+      "notes": "Fourth and final collective review (Gemini) integrated. Claude closing commentary filed. THE_LINEAGE.md created with Peter: full engineering origin story from loudspeaker physics through DADC/DADI/ADAC to GOV/CLS. Presentation script expanded to 14 slides with lineage as Slide 2 and paired-measurement doctrine in Slide 9. All 'you/your' addressing CoDa replaced with institutional references. FOR_SHARON.md reference removed from WHAT_HUF_IS.md. Remaining 16-error references fixed to 17 across 4 files. ISSUE-007 closed.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/THE_LINEAGE.md",
+          "action": "added",
+          "summary": "Origin story: BTL physics to CoDa. Isotropic ground state, DADC, DADI, ADAC, GOV/CLS fork. Screwdriver and math book. Paired-measurement doctrine. 'This instrument was not designed for CoDa. It was designed for physics. And the physics turned out to be compositional.'"
+        },
+        {
+          "path": "drafts/codawork-2026/PRESENTATION_SCRIPT.md",
+          "action": "modified",
+          "summary": "Expanded to 14 slides: Slide 2 (The Lineage) inserted. Slide 9 (Dual Metric) updated with paired-measurement doctrine. All 'you/your' addressing CoDa replaced with institutional references. Slides renumbered."
+        },
+        {
+          "path": "drafts/codawork-2026/ADVERSARIAL_PANEL.md",
+          "action": "modified",
+          "summary": "DA-05 response expanded with paired-measurement doctrine lineage."
+        },
+        {
+          "path": "drafts/codawork-2026/WHAT_HUF_IS.md",
+          "action": "modified",
+          "summary": "FOR_SHARON.md link removed. '16-error' corrected to '17-error'."
+        },
+        {
+          "path": "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
+          "action": "modified",
+          "summary": "'16 error sources' corrected to '17 error sources' with E-17 note."
+        },
+        {
+          "path": "drafts/codawork-2026/abstract_v2.md",
+          "action": "modified",
+          "summary": "'16-error' corrected to '17-error' in revision notes (2 instances)."
+        },
+        {
+          "path": "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
+          "action": "modified",
+          "summary": "Table 2 scorecard: '12 error sources' corrected to '17 error sources' (2 instances)."
+        },
+        {
+          "path": "process/collective-reports/CRPT-007.json",
+          "action": "modified",
+          "summary": "Added gemini_review section, claude_closing_commentary section, the_lineage conceptual development. Updated conference readiness, open items, one-sentence summary. ISSUE-007 closed."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "modified",
+          "summary": "S009/S010/S011 marked pushed (commit 0a621fab). S012 entry added. Pending items updated."
+        }
+      ]
     }
   ],
   "pending_items": [
     {
-      "item": "Collective review: Gemini",
-      "priority": "next",
-      "notes": "Grok, ChatGPT, and Copilot complete. Gemini is the fourth and final reviewer. CRPT-007 now carries all three prior reviews."
+      "item": "Collective review: COMPLETE",
+      "priority": "done",
+      "notes": "All four reviews integrated (Grok, ChatGPT, Copilot, Gemini). Claude closing commentary filed. ISSUE-007 closed."
     },
     {
-      "item": "Push S009 + S010 + S011 files to GitHub",
-      "priority": "next",
-      "notes": "S009: 1 new + 6 modified. S010: 2 new + 6 modified. S011: 6 new + 2 modified. Peter copies to D:\\GitHub\\HUF and pushes."
+      "item": "S009 + S010 + S011 pushed to GitHub",
+      "priority": "done",
+      "notes": "Pushed by Peter on 2026-04-04. Commit 0a621fabbc30d72c139792149aaf74605c3eb05d. FOR_SHARON.md deleted from repo as planned."
     },
     {
       "item": "Analyzer title softening",
@@ -554,6 +610,7 @@
     "S008_when_pushed": 282,
     "S009_when_pushed": 283,
     "S010_when_pushed": 285,
-    "S011_when_pushed": 292
+    "S011_when_pushed": 292,
+    "S012_when_pushed": 293
   }
 }

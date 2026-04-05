@@ -173,4 +173,3 @@ One microphone. Two channels. Four drivers. One framework.
 *For the literature: [CODA_LITERATURE_CROSS_REFERENCE.md](CODA_LITERATURE_CROSS_REFERENCE.md)*
 *For the union thesis: [THE_UNION.md](THE_UNION.md)*
 *For the honest answers: [BATTLE_CARD.md](BATTLE_CARD.md)*
-*For Sharon: [FOR_SHARON.md](FOR_SHARON.md)*

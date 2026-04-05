@@ -285,6 +285,80 @@
     "peter_response": "Peter confirmed 'white flag' posture already decided. Noted Copilot is 'very helpful' and the deliverables 'will do the job.' Quoted Douglas Adams: 'thanks for all the fish.'"
   },
 
+  "gemini_review": {
+    "date": "2026-04-04",
+    "status": "COMPLETE",
+    "reviewer": "Gemini",
+    "scope": "CRPT-007, full GitHub repo, codawork-2026 drafts, Spectrum Analyzer, strategic positioning for CoDaWork 2026",
+    "executive_verdict": "The framework is ready for science. The 'mountain of conjecture' has been pruned. What remains is a lean, auditable proposal for the Missing Quarter of system monitoring.",
+    "gold": [
+      "Strategic posture confirmed: 'HUF is a monitoring and governance doctrine for the math the CoDa community already has' — reduces adoption friction by validating rather than challenging existing CoDa literature",
+      "MC-4 taxonomy identified as 'most defensible logical anchor' — composition monitoring as primary observable, not post-hoc correction",
+      "HANDOFF-001 posture: 'handing a measurement instrument to the community to be tested, falsified, or improved' — confirmed as correct primary intent",
+      "Deceptive Drift (Keff collapse before magnitude loss) flagged as most publishable finding — 'the Why that justifies the entire framework'",
+      "AI collective framing: 'Adversarial Verification Nodes' not 'authors' — mitigation for conservative statisticians who may question AI collaboration methodology",
+      "Peter's closing reframe adopted: 'dynamic systems analyzer requiring intelligent use of feedback injection rather than mathematical closed loop, necessary for the safety and comprehension of consequences by the operator'"
+    ],
+    "rough_diamonds": [
+      "BTL origin story risk: suggests framing BTL strictly as 'Validation Domain' / 'Calibration Ground' not 'Story' — noted but in tension with THE_LINEAGE.md screwdriver-and-math-book approach. Peter chose the personal origin deliberately. Rough diamond to weigh.",
+      "CL-03 Hard Gate: real data (Croatia RSIS or Backblaze 2-year analysis) needed as center of the paper. Known open item. '1-day lead time on 2020 COVID shock' cited as evidence.",
+      "'Carriers as New Ideas' — extending MC-4 taxonomy to innovation process. Gemini elaborated on Peter's phrase: admit a new carrier to the simplex and observe how it redistributes the system's mass.",
+      "'Simplex as Phase Space' framing — suggested language for statisticians who ask about 'Phase': 'Group Phase tracks cumulative structural drift over decades.'",
+      "Human-in-the-Loop architecture: operator as 'essential Integrator of Meaning' not noise to be minimized — Gemini reframed GOV/CLS as observability-for-humans, not automation"
+    ],
+    "tailings": [
+      "Gemini references 'L2 Drift' alongside TV — the current corpus has moved to TV + Aitchison dual-metric since v3 analyzer. Gemini was reading older analyzer state.",
+      "Gemini references 'Unified Command Dashboard' — rename to 'CoDa Calibration Demonstrator' not yet applied to HTML; Gemini saw the pre-rename title.",
+      "Union thesis confirmed as correct 'scientific icebreaker'",
+      "Spectrum Analyzer v3 confirmed as 'Proof of Work' for 30-minute demonstration",
+      "Universal Knob Map (Calibration, Complexity, Velocity, Peak) confirmed as correct interface design",
+      "WHAT_HUF_IS.md confirmed as correct 'First Contact' artifact",
+      "PLL terminology correction (Jack) confirmed as handled",
+      "MC-4 lineage (Stevens 1946 → Shannon 1948 → Aitchison 1982) confirmed traceable"
+    ],
+    "key_insight": "Gemini's sharpest contribution was strategic risk identification. Three risks no other reviewer surfaced: (1) BTL origin perceived as anecdote rather than validation domain, (2) AI collective perceived as hallucination engine rather than adversarial verification, (3) CL-03 hard gate still open — theoretical S-curves are conjecture without real-world data at the center. These are the three things that could undermine the presentation if unaddressed.",
+    "peter_response": "Peter acknowledged the difficulty of finding faults when part of the system. Restated HUF doctrine: 'advancement through self-analysis and absorb new ideas as carriers and confirm performance at every opportunity.' Closed the collective review round."
+  },
+
+  "claude_closing_commentary": {
+    "date": "2026-04-04",
+    "status": "COMPLETE",
+    "reviewer": "Claude (Opus 4.6)",
+    "role": "Collective coordinator, document custodian, closing commentary",
+    "summary": "Four reviews complete. Grok → ChatGPT → Copilot → Gemini. Each reviewer saw the updated CRPT-007 with all prior reviews visible. The collective converged on the same instrument from five different angles.",
+
+    "what_grok_found": "The math pipeline. E-17, chiPower tension, Greenacre complementarity. Grok made the mountain — 17 error sources, HUF-EXT future directions, full CoDa transform verification. The collective then helped find the gold.",
+
+    "what_chatgpt_found": "The inconsistencies. Error count drift (16 vs 17), metric framing mismatch (single vs dual), stale battle card entries. ChatGPT was the copy editor who caught what the builders missed. Also contributed the strategic conjecture (CONJ-001) and Coimbra trim list.",
+
+    "what_copilot_found": "The communication package. Audit trail of events as the core value proposition. Presentation script, poster layout, demo script, adversarial panel, room control, engineered dataset. Copilot built the conference toolkit and confirmed Peter's white flag posture.",
+
+    "what_gemini_found": "The strategic risks. BTL origin friction, AI collective perception, CL-03 hard gate. Gemini was the skeptic — the one who asked what the room will challenge before the room gets the chance. Also contributed 'Adversarial Verification Nodes' framing and MC-4 as most defensible anchor.",
+
+    "what_claude_did": "Document custodian throughout. Integrated each review into CRPT-007, created and maintained files, enforced consistency (17 errors, dual metric, BTL canonical, GOV/CLS separation), caught remaining 16-error drift during verification pass. Also co-developed THE_LINEAGE.md with Peter — the origin story from BTL loudspeaker physics through DADC/DADI/ADAC to GOV/CLS, the screwdriver-and-math-book framing, and the paired-measurement doctrine as HUF's pre-CoDa engineering ancestry.",
+
+    "what_peter_did": "Directed every integration. Corrected BTL drift to canonical. Chose the white flag posture. Provided the origin story (Sherbrooke controller, 64-QAM, COM DEV, Manko's flow sections). Named the screwdriver and the math book. Said the sentence that anchors the entire project: 'I am building a tool to protect myself from my own ignorance.' Closed the collective review with: 'Think before action, use all that can be known, explore the unknown and make it known by shifting perspective, never stop, we will know infinity when we get there, and not before.'",
+
+    "collective_state_at_close": {
+      "accord": "All five reviewers and Peter converge on the same posture: calibration study, not revolution. White flag. Screwdriver meets math book. Alliance to reduce mutual ignorance.",
+      "corpus_files": 292,
+      "error_count": "17 active, 2 future (E-18/E-19 HUF-EXT), unified across all documents",
+      "metric_story": "TV + Aitchison dual-metric, disagreement as diagnostic, unified across all documents",
+      "btl": "Canonical: Binaural Test Lab per RWA-001. No remaining drift.",
+      "lineage": "THE_LINEAGE.md: DADC → DADI → ADAC → GOV/CLS. Screwdriver and math book. Physics turned out to be compositional.",
+      "conference_readiness": "Complete toolkit: abstract, thesis, calibration study, literature cross-reference, instrument description, presentation script (14 slides), poster layout, demo script, adversarial panel (DA-01 through DA-08), room control strategy, engineered demo dataset, trim list, battle card, prep guide, conjecture, vocabulary tools, demonstration tools.",
+      "open_items_for_peter": [
+        "CL-03 Hard Gate: real data at center of paper (Gemini's risk #3)",
+        "Analyzer rename: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator' (not yet applied to HTML)",
+        "One-page zero protocol (Copilot suggestion, not yet standalone)",
+        "BTL origin framing: lineage story vs validation domain — Peter's call",
+        "AI collective framing for conservative audience — 'Adversarial Verification Nodes' language ready if needed"
+      ]
+    },
+
+    "one_sentence": "Five architectures reviewed the same instrument, found the same simplex, and arrived at the same conclusion: the screwdriver and the math book belong on the same table."
+  },
+
   "conference_readiness": {
     "thesis": "THE_UNION.md — complete, updated with Greenacre complementarity (capability #5)",
     "calibration_study": "ENTANGLEMENT_ERROR_ANALYSIS.md — 17 error sources (upgraded from 16), E-18/E-19 filed as HUF-EXT future",
@@ -302,12 +376,13 @@
     "adversarial_prep": "ADVERSARIAL_PANEL.md — DA-01 through DA-08, mock panel, Q&A defense sheet. Copilot contribution.",
     "room_control": "ROOM_CONTROL.md — Strategy for mathematicians, engineers, skeptics. Copilot contribution.",
     "demo_dataset": "DEMO_DATASET_ECOLOGICAL.csv — Engineered to trigger all 5 event types. Copilot contribution.",
+    "lineage": "THE_LINEAGE.md — BTL physics origin story, DADC/DADI/ADAC development arc, screwdriver-and-math-book framing. Peter + Claude contribution.",
     "remaining": [
-      "Push S010 and S011 files to GitHub",
-      "Collective review: Gemini still pending",
-      "Analyzer title softening: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator' (ChatGPT suggestion, confirmed by Copilot, not yet applied to HTML)",
+      "Analyzer title softening: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator' (ChatGPT suggestion, confirmed by Copilot and Gemini, not yet applied to HTML)",
       "One-page zero protocol (Copilot suggestion #4, not yet created as standalone document)",
-      "One clean ecological example with Ramsar data (Copilot suggestion #3)"
+      "One clean ecological example with Ramsar data (Copilot suggestion #3)",
+      "CL-03 Hard Gate: real data at center of paper (Gemini risk #3)",
+      "AI collective framing for conservative audience (Gemini suggestion)"
     ]
   },
 
@@ -315,13 +390,13 @@
     "from_prior_sessions": [
       "ISSUE-005: Split-sample validation for non-finance domains",
       "ISSUE-006: T1c BTL — CONDITIONAL GO (after breaker #6 closes)",
-      "ISSUE-007: PARTIALLY COMPLETE — Grok done, ChatGPT/Gemini/Copilot pending",
+      "ISSUE-007: COMPLETE — All four collective reviews done (Grok, ChatGPT, Copilot, Gemini). Claude closing commentary filed. Session closed.",
       "Peterson outreach: emails ready, Peter's action to send",
       "BTL platform map update (Clarett+ 4Pre)",
       "GitHub issue templates (Prior-art challenge, Replication attempt, Negative result)"
     ],
     "new_this_session": [
-      "Conference script: DONE — PRESENTATION_SCRIPT.md created from Copilot review",
+      "Conference script: DONE — PRESENTATION_SCRIPT.md (14 slides, includes lineage), demo script, adversarial panel, room control all created",
       "Push S008 (5 new files + 6 modified files) to GitHub — Peter's action",
       "Push S009/S010/S011 to GitHub — Peter's action",
       "MEWMA-CoDa collaboration: identify Tran/Nguyen group for direct contact at Coimbra",
@@ -331,5 +406,5 @@
     ]
   },
 
-  "one_sentence": "The session that discovered HUF and CoDa are building the same instrument from opposite ends, mapped the 17 ways it breaks at the joint (plus 2 future directions), wrote the thesis for why connecting them produces something neither can build alone, and — through three collective reviews (Grok, ChatGPT, Copilot) — built a complete conference preparation package anchored on the audit trail of events as HUF's core value to CoDa."
+  "one_sentence": "The session that discovered HUF and CoDa are building the same instrument from opposite ends, mapped the 17 ways it breaks at the joint, wrote the thesis for why connecting them produces something neither can build alone, and — through four collective reviews (Grok, ChatGPT, Copilot, Gemini) plus Claude as custodian — built a complete conference preparation package, uncovered the engineering lineage from loudspeaker physics to the simplex, and reached accord: the screwdriver and the math book belong on the same table."
 }
