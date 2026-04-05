@@ -181,11 +181,13 @@
   ],
 
   "corpus_state": {
-    "file_count_at_session_start": 310,
+    "file_count_at_session_start": 308,
     "new_files_this_session": 4,
     "files_reorganised": 19,
-    "file_count_at_session_end": 314,
-    "note": "Count includes CRPT-009 itself and TWO_MONTH_ROADMAP.md. Folder restructure moved 19 files into subfolders (no files deleted, all preserved)."
+    "file_count_at_session_end": 312,
+    "verified_by": "Full repo scan, April 5, 2026. find . -type f excluding .git = 312.",
+    "count_correction": "Previous counts from S009 onward were +1 due to FOR_SHARON.md deletion not being decremented. S014 had additional +1 overcount. All corrected in STAGING_MANIFEST. 312 is the verified ground truth.",
+    "note": "Folder restructure moved 19 files into subfolders (no files deleted, all preserved)."
   },
 
   "governance_state": {
@@ -233,5 +235,5 @@
     }
   ],
 
-  "one_sentence": "CRPT-009 turned ChatGPT's conference review into action: three alignment sentences enforced across all artifacts, abstract v3 written (197 words with CR results), presentation expanded to 16 slides, codawork-2026 reorganised from 46 flat files into phased subfolders (27 Coimbra core / 11 post-Coimbra / 8 archive), and a two-month validation roadmap produced that prioritises the four computations that could end the Coimbra conversation before it starts."
+  "one_sentence": "CRPT-009 turned ChatGPT's conference review into action: three alignment sentences enforced across all artifacts, abstract v3 written (197 words with CR results), presentation expanded to 16 slides, codawork-2026 reorganised from 46 flat files into phased subfolders (27 Coimbra core / 11 post-Coimbra / 8 archive), a two-month validation roadmap produced that prioritises the four computations that could end the Coimbra conversation before it starts, and all file counts corrected to verified 312 (FOR_SHARON.md deletion was never decremented from S009 onward)."
 }

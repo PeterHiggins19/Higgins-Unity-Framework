@@ -209,10 +209,10 @@
   },
 
   "corpus_state": {
-    "file_count_at_session_start": 299,
+    "file_count_at_session_start": 298,
     "new_files_this_session": 10,
-    "file_count_at_session_end": 310,
-    "note": "Count includes CRPT-008 itself. STAGING_MANIFEST tracks 309 before this report."
+    "file_count_at_session_end": 308,
+    "note": "Count corrected April 5 2026: FOR_SHARON.md deletion (S009-S011) was never decremented. Original counts were +1. Verified by full repo scan: 312 files after S015 = 308 + 4 new in S015."
   },
 
   "governance_state_change": {
