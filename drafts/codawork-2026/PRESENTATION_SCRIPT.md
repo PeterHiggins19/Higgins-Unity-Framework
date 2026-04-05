@@ -1,7 +1,8 @@
 # CoDaWork 2026 — Presentation Script (10–12 minutes)
 
-**Source:** Copilot collective review, April 4, 2026.
+**Source:** Copilot collective review, April 4, 2026. Updated April 5, 2026 (CR results, Backblaze cross-domain, 25-error count, CGS appendix slide).
 **Classification:** Rough diamond — conference preparation material.
+**Alignment check:** All three Conference Core Stack sentences present (calibration study, three diagnostics, 25-error catalogue).
 
 ---
 
@@ -35,7 +36,7 @@ Every property that defines compositional data — the closure constraint, the r
 
 ## Slide 4 — The Trigger
 
-"This began with a simple question: What source of error does CoDa bring into a monitoring instrument, and what breaks at the joint? That question triggered a full audit of transforms, metrics, stored energy, dimensionality, and governance. The result was a 17-error catalogue."
+"This began with a simple question: What source of error does CoDa bring into a monitoring instrument, and what breaks at the joint? That question triggered a full audit of transforms, metrics, stored energy, dimensionality, and governance. The result was a 25-error calibration catalogue — 17 active error sources, 2 future extensions, and 6 scaling concerns — each with a detection test and a governance action."
 
 ---
 
@@ -51,9 +52,9 @@ Every property that defines compositional data — the closure constraint, the r
 
 ---
 
-## Slide 7 — The 17 Error Sources
+## Slide 7 — The 25 Error Sources
 
-"The union inherits 12 initial errors, 4 from literature cross-reference, and 1 new concern discovered during review. Each error has a detection test and a governance action. This is the first failure-mode catalogue for a CoDa monitoring instrument."
+"The union inherits 25 documented error sources: 17 active entries covering transforms, metrics, stored energy, dimensionality, zeros, and governance; 2 future extensions for signed and complex compositions; and 6 scaling concerns for deep hierarchies. Each has a detection test and a governance action. This is the first failure-mode catalogue for a CoDa monitoring instrument."
 
 ---
 
@@ -69,33 +70,49 @@ Every property that defines compositional data — the closure constraint, the r
 
 ---
 
-## Slide 10 — Dimensionality-Aware Time Series
+## Slide 10 — The Third Diagnostic: Coherence Residual
+
+"TV and Aitchison measure magnitude of change. But they miss something: cross-branch coupling. When fossil fuel declines, does it couple to renewable growth? Or do they move independently? The coherence residual measures this — it decomposes the composition into a sequential binary partition and measures how much change in one branch predicts change in another.
+
+We computed it on all 74 year-to-year transitions in EMBER. The result: strict subcompositional coherence does not hold. Mean CR is approximately 0.58. More importantly, 31 percent of transitions show what we call invisible structural change — the TV and Aitchison distances say nothing happened, but the coherence residual detects cross-branch reorganisation underneath.
+
+This is a CoDa finding, not just a HUF finding. It provides the first quantitative evidence on the Egozcue–Greenacre question: quasi-coherence is the empirical reality."
+
+---
+
+## Slide 11 — Cross-Domain Validation (Backblaze)
+
+"One domain is an anecdote. Two domains is a pattern. We ran the same three diagnostics on Backblaze hard drive reliability data — 900,000 drives, four manufacturers, SMART health indicators as carriers on the simplex. Different physics entirely. The same pattern families emerged: COUPLING_SIGNAL, STRUCTURAL, COUPLED_EVENT. Same mathematics, different substrate. This is the beginning of domain independence."
+
+---
+
+## Slide 12 — Dimensionality-Aware Time Series
 
 "CoDa transforms assume fixed dimensionality. Monitoring does not. E-11 documents the consequences of dimensionality change. The analyzer detects this and records it in the audit trail."
 
 ---
 
-## Slide 11 — The Analyzer (Demonstrator)
+## Slide 13 — The Analyzer (Demonstrator)
 
 "This is the CoDa Calibration Demonstrator. It is open loop, stateless, and observational. It produces a full audit trail of events: drift events, metric disagreements, structural shocks, zero events, dimensionality changes. This is the value HUF brings to CoDa."
 
 ---
 
-## Slide 12 — The Union Thesis
+## Slide 14 — The Union Thesis
 
 "CoDa perfected the geometry of compositions at rest. HUF discovered what happens when compositions move. The union is the instrument that watches them move and signals when to care."
 
 ---
 
-## Slide 13 — Deployment Path
+## Slide 15 — Deployment Path
 
 "The path is simple: Coimbra, then validation, then Ramsar pilot, then standardization. We begin with calibration, not claims."
 
 ---
 
-## Slide 14 — Closing
+## Slide 16 — Closing
 
-"This is not a new framework. This is a calibration study. The union is the instrument. The audit trail is the value. Thank you."
+"This is a calibration study of a compositional monitoring instrument, not a finished framework. The instrument uses three diagnostics: total variation distance, Aitchison distance, and the coherence residual. A 25-error calibration catalogue with detection tests and governance actions makes the instrument falsifiable. The union is the instrument. The audit trail is the value. Thank you."
 
 ---
 
@@ -109,6 +126,6 @@ Every property that defines compositional data — the closure constraint, the r
 
 "CoDa has mastered the geometry of compositions at rest. But the world we measure — ecosystems, energy systems, supply chains — is not at rest. It moves. And when compositions move, we need a monitoring instrument that can detect events, track drift, identify shocks, and maintain coherence over time.
 
-HUF was built for that purpose. It is a multichannel coherent detector — stateless, open loop, and designed to produce an audit trail of events. When we combine HUF with CoDa, we get something neither can produce alone: a calibrated, dual-metric, dimensionality-aware monitoring instrument.
+This instrument uses three diagnostics: total variation distance, Aitchison distance, and the coherence residual. We computed the coherence residual on EMBER — strict subcompositional coherence does not hold. Mean CR is 0.58. Thirty-one percent of transitions show invisible structural change. We ran the same diagnostics on Backblaze hard drive data — different physics, same pattern families. Domain independence.
 
-The April entanglement session produced a 17-error catalogue — the first failure-mode study of a CoDa monitoring instrument. This is not a new framework. This is a calibration study. The union is the instrument. The audit trail is the value."
+A 25-error calibration catalogue makes the instrument falsifiable. This is not a new framework. This is a calibration study. The union is the instrument. The audit trail is the value."

@@ -1,0 +1,237 @@
+{
+  "document_id": "CRPT-009",
+  "title": "HUF Collective Distribution Report — April 5, 2026 (PM): Conference Alignment and Validation Roadmap",
+  "version": "1.0",
+  "date": "2026-04-05",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "distribution": "All collective participants (Claude, ChatGPT, Gemini, Grok, Copilot, Peter)",
+  "supersedes": "None. Extends CRPT-008 (April 5 AM: The Governance Scale Session).",
+  "purpose": "This session integrated ChatGPT's conference review into action: created the Conference Core Stack (material triage PDF), enforced three alignment sentences across all conference-facing artifacts, updated abstract to v3 (197 words, three diagnostics, 25 errors, CR results, Backblaze), expanded presentation script to 16 slides, reorganised the codawork-2026 folder into phased subfolders, and produced a two-month validation roadmap prioritising the four weaknesses that could end the Coimbra conversation before it starts.",
+
+  "what_changed_since_crpt_008": {
+    "items_resolved_from_crpt_008_open_items": [
+      {
+        "item": "Abstract v3",
+        "was": "abstract_v2.md references 17 error sources and dual metric",
+        "now": "abstract_v3.md: 197 words, three diagnostics named, CR results (mean 0.58, 31% invisible structural), Backblaze cross-domain sentence, 25-error catalogue. All three alignment sentences present.",
+        "status": "DONE"
+      },
+      {
+        "item": "Presentation script update",
+        "was": "14 slides, no CR results, no Backblaze, 17-error count",
+        "now": "16 slides. New Slide 10 (CR results, Egozcue-Greenacre question answered). New Slide 11 (Backblaze cross-domain). Error count 17→25. Closing and elevator pitch rewritten with all three alignment sentences.",
+        "status": "DONE"
+      }
+    ],
+    "items_still_open_from_crpt_008": [
+      {
+        "item": "CR method formalisation",
+        "priority": "BEFORE COIMBRA",
+        "roadmap_week": "Week 2 (April 13-19)",
+        "approach": "Simulation study: generate compositions with known coupling structure, compute ad hoc CR, verify it tracks known coupling. More tractable than information-theoretic CR in timeline."
+      },
+      {
+        "item": "Threshold calibration",
+        "priority": "BEFORE COIMBRA",
+        "roadmap_week": "Week 1 (April 6-12)",
+        "approach": "Sensitivity sweep: vary each threshold, count patterns, check if 31% STRUCTURAL is robust."
+      },
+      {
+        "item": "Diagnostic independence test",
+        "priority": "BEFORE COIMBRA — HIGHEST PRIORITY",
+        "roadmap_week": "Week 1 (April 6-12)",
+        "approach": "Compute 3x3 Spearman and Pearson correlation matrix for TV, Aitchison, CR across 74 EMBER + 35 Backblaze transitions. If r > 0.7 for any pair, n must be downgraded."
+      },
+      {
+        "item": "SBP sensitivity analysis",
+        "priority": "THIS WEEK → Roadmap Week 1",
+        "roadmap_week": "Week 1 (April 6-12)",
+        "approach": "Design one alternative SBP (Dispatchable vs Intermittent at root). Rerun CR. Compare pattern distributions."
+      },
+      {
+        "item": "Backblaze results writeup",
+        "priority": "THIS WEEK → Roadmap Week 2",
+        "roadmap_week": "Week 2 (April 13-19)"
+      }
+    ]
+  },
+
+  "new_work_this_session": {
+    "conference_core_stack": {
+      "file": "drafts/codawork-2026/CONFERENCE_CORE_STACK.pdf",
+      "description": "One-page PDF handout: material triage for CoDaWork 2026. Three zones: Front Room (scientific claim, framing, three diagnostics, cases, the ask), Second Room (CGS, 25-error catalogue, Ramsar, analyzer), Off Table (Peterson, philosophy, commercial). Three alignment sentences in boxed section. Footer: governance state.",
+      "origin": "ChatGPT reviewed CRPT-008 and the full codawork-2026 folder. Produced the Front Room / Second Room / Off Table framework. Peter: 'wow, we got something useful going.' Claude built as PDF.",
+      "significance": "This is the pocket reference for Coimbra. Prevents the most likely failure mode: leading with CGS or philosophy when the room wants the coherence residual."
+    },
+
+    "three_alignment_sentences": {
+      "description": "Every conference-facing artifact now says the same three things:",
+      "sentences": [
+        "This is a calibration study of a compositional monitoring instrument, not a finished framework.",
+        "The instrument uses three diagnostics: total variation distance, Aitchison distance, and the coherence residual.",
+        "A 25-error calibration catalogue with detection tests and governance actions makes the instrument falsifiable."
+      ],
+      "verified_in": ["abstract_v3.md", "PRESENTATION_SCRIPT.md", "THE_UNION.md", "CONFERENCE_CORE_STACK.pdf"],
+      "significance": "ChatGPT identified that abstract, packet, union memo, analyzer, and talk script were saying different things about error count (17 vs 25) and diagnostic count (dual vs three). Now unified."
+    },
+
+    "folder_restructure": {
+      "description": "codawork-2026/ reorganised from 46 flat files into phased structure:",
+      "structure": {
+        "codawork-2026/": {
+          "description": "Coimbra core — 27 files. The science, the presentation, the defense.",
+          "contents": [
+            "abstract_v3.md", "PRESENTATION_SCRIPT.md", "HUF_MC4_CoDaWork_Packet_v3.docx",
+            "COHERENCE_RESIDUAL_RESULTS.md", "THE_UNION.md", "CONFERENCE_CORE_STACK.pdf",
+            "ENTANGLEMENT_ERROR_ANALYSIS.md", "THE_THIRD_DIAGNOSTIC.md", "THE_LINEAGE.md",
+            "WHAT_HUF_IS.md", "FORMULA_REFERENCE.md", "CODA_LITERATURE_CROSS_REFERENCE.md",
+            "huf_coda_explorer.html", "ternary_ember.html",
+            "DEMO_SCRIPT.md", "DEMO_DATASET_ECOLOGICAL.csv",
+            "TWO_MONTH_ROADMAP.md",
+            "ADVERSARIAL_PANEL.md", "ROOM_CONTROL.md", "BATTLE_CARD.md",
+            "CODAWORK_PREP_GUIDE.md", "COIMBRA_TRIM_LIST.md",
+            "VOCABULARY_CARD.md", "RESEARCHERS_CARD.md", "POSTER_LAYOUT.md",
+            "CONFERENCE_DO_DONT.md", "email_draft_committee.md"
+          ]
+        },
+        "codawork-2026/post-coimbra/": {
+          "description": "Second Room and future deployment — 11 files. Real and important but not for first contact.",
+          "contents": [
+            "COMPOSITIONAL_GOVERNANCE_SCALE.md", "CMSI.md", "RAMSAR_COMPLEXITY_GAP.md",
+            "SCALING_COHERENCE.md", "CONFIDENCE_INDEX.md", "Q_INQUISITOR.md",
+            "GOVERNANCE_DECLARATION.md", "CONJ-001-winning-horse.md",
+            "FULL_SYSTEM_ASSESSMENT.xlsx", "S013_DOCUMENT_COMPARISON.xlsx",
+            "CONFERENCE_CONCEPTS.md"
+          ]
+        },
+        "codawork-2026/archive/": {
+          "description": "Superseded versions, historical documents, Off Table — 8 files.",
+          "contents": [
+            "abstract_v1.md", "abstract_v2.md", "EXECUTIVE_SUMMARY.md",
+            "collective_moment_S006.md", "THE_CORE.md", "huf_coda_translator.md",
+            "SYSTEM_MAP.md", "Letter_to_Dr_Peterson_Draft_v7.0.docx"
+          ]
+        }
+      },
+      "significance": "A reviewer opening the codawork-2026 folder now sees 27 focused conference files instead of 46 undifferentiated documents. The signal-to-noise ratio just doubled. Post-Coimbra material is preserved and accessible but does not clutter the core review."
+    },
+
+    "two_month_roadmap": {
+      "file": "drafts/codawork-2026/TWO_MONTH_ROADMAP.md",
+      "description": "Strategic validation roadmap April 6 – June 5, 2026. Ten ranked weaknesses across three threat tiers. Week-by-week calendar with exit criteria. Depth vs width decision framework. Honest achievability assessment.",
+      "tier_1_could_lose_the_room": [
+        "W-1: Diagnostic independence untested (Week 1 — computation)",
+        "W-2: CR method has no theoretical grounding (Week 2 — simulation)",
+        "W-3: Thresholds are arbitrary (Week 1 — sensitivity sweep)",
+        "W-4: SBP sensitivity unanalyzed (Week 1 — alternative SBP)"
+      ],
+      "tier_2_could_undermine_over_coffee": [
+        "W-5: Zero human domain expert review (Week 3 — one email)",
+        "W-6: No ecological data ever processed (Week 3 — pilot dataset)",
+        "W-7: Backblaze has no writeup (Week 2 — documentation)"
+      ],
+      "tier_3_strategic": [
+        "W-8: 3^n framework at n=0",
+        "W-9: CGS levels defined not derived",
+        "W-10: Cross-domain additivity assumed"
+      ],
+      "calendar_summary": "Week 1: kill the killers (independence, thresholds, SBP). Week 2: ground the CR (simulation). Week 3: seek width (ecological pilot, human review). Week 4: consolidate. Weeks 5-6: fork based on results. Weeks 7-8: presentation polish only.",
+      "what_not_to_do": "No more documentation. No CGS refinement. No Peterson follow-up. No analyzer UI polish. No new error sources. No scaling implementation. The time for cataloguing is over. The time for testing is now.",
+      "significance": "First time the project has a prioritised validation plan. The roadmap applies HUF-GOV doctrine to HUF's own development: measure first, then decide."
+    }
+  },
+
+  "documents_created_this_session": [
+    {
+      "file": "drafts/codawork-2026/CONFERENCE_CORE_STACK.pdf",
+      "action": "added"
+    },
+    {
+      "file": "drafts/codawork-2026/abstract_v3.md",
+      "action": "added"
+    },
+    {
+      "file": "drafts/codawork-2026/TWO_MONTH_ROADMAP.md",
+      "action": "added"
+    },
+    {
+      "file": "process/collective-reports/CRPT-009.json",
+      "action": "added"
+    }
+  ],
+
+  "documents_modified_this_session": [
+    {
+      "file": "drafts/codawork-2026/PRESENTATION_SCRIPT.md",
+      "change": "14→16 slides. Added CR results (Slide 10), Backblaze cross-domain (Slide 11). Error count 17→25. Closing and elevator pitch rewritten with three alignment sentences."
+    },
+    {
+      "file": "drafts/codawork-2026/THE_UNION.md",
+      "change": "Opening paragraph: three alignment sentences. Section 3b added (CR as third diagnostic). Architecture diagram: dual-metric → three-diagnostic protocol. Deployment Phase 1: 17→25 errors, dual→three diagnostics."
+    },
+    {
+      "file": "process/STAGING_MANIFEST.json",
+      "change": "S015 entry added. File count 310→313. Folder restructure noted."
+    },
+    {
+      "file": "Multiple files moved to subfolders",
+      "change": "11 files → post-coimbra/. 8 files → archive/. See folder_restructure section."
+    }
+  ],
+
+  "corpus_state": {
+    "file_count_at_session_start": 310,
+    "new_files_this_session": 4,
+    "files_reorganised": 19,
+    "file_count_at_session_end": 314,
+    "note": "Count includes CRPT-009 itself and TWO_MONTH_ROADMAP.md. Folder restructure moved 19 files into subfolders (no files deleted, all preserved)."
+  },
+
+  "governance_state": {
+    "current": "(CGS-2, n=3)",
+    "unchanged_from": "CRPT-008",
+    "note": "This session was alignment and planning, not new computation. Governance state advances when the independence test (W-1) and SBP sensitivity (W-4) are completed."
+  },
+
+  "collective_review_instructions": {
+    "for_all_reviewers": "CRPT-008 covered the science (CR results, Backblaze, CGS). CRPT-009 covers the response to ChatGPT's review and the validation plan. No need to re-debate CRPT-008 findings — focus forward on the roadmap.",
+    "what_to_review": [
+      "TWO_MONTH_ROADMAP.md — Is the priority ordering correct? Are we missing a weakness?",
+      "abstract_v3.md — Is 197 words tight enough? Is the CR result stated clearly?",
+      "CONFERENCE_CORE_STACK.pdf — Is the Front Room / Second Room / Off Table triage correct?",
+      "Folder restructure — Did the right files end up in the right subfolders?",
+      "Three alignment sentences — Are they the right three sentences for Coimbra?"
+    ],
+    "what_not_to_review": [
+      "CRPT-008 findings — already reviewed by ChatGPT, results integrated",
+      "Peterson letter — Off Table, archived",
+      "CGS level definitions — Post-Coimbra, no changes needed now",
+      "Historical documents in archive/ — preserved for the record, not for review"
+    ],
+    "peter_direction": "No need to debate the past. Review the revisions and the plan forward. Send back to the collective with these updates."
+  },
+
+  "next_session_priorities": [
+    {
+      "item": "Diagnostic independence test (W-1)",
+      "type": "computation",
+      "estimated_time": "2 hours",
+      "blocks": "Everything — if diagnostics are correlated, the 3^n framework must be recalibrated"
+    },
+    {
+      "item": "Threshold sensitivity sweep (W-3)",
+      "type": "computation",
+      "estimated_time": "3 hours",
+      "blocks": "Pattern count claims (31% STRUCTURAL)"
+    },
+    {
+      "item": "Alternative SBP for EMBER (W-4)",
+      "type": "computation",
+      "estimated_time": "4 hours",
+      "blocks": "SBP-dependence claim"
+    }
+  ],
+
+  "one_sentence": "CRPT-009 turned ChatGPT's conference review into action: three alignment sentences enforced across all artifacts, abstract v3 written (197 words with CR results), presentation expanded to 16 slides, codawork-2026 reorganised from 46 flat files into phased subfolders (27 Coimbra core / 11 post-Coimbra / 8 archive), and a two-month validation roadmap produced that prioritises the four computations that could end the Coimbra conversation before it starts."
+}

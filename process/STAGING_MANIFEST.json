@@ -673,6 +673,58 @@
         }
       ]
     }
+    ,
+    {
+      "session_id": "S015",
+      "date": "2026-04-05",
+      "label": "Conference Core Stack PDF + consistency pass (three alignment sentences across all conference artifacts)",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "Conference Core Stack PDF, abstract v3 (CR + Backblaze + 25 errors), presentation script v2 (16 slides: CR results + cross-domain + updated closing), THE_UNION consistency (25 errors, CR third diagnostic, three-diagnostic protocol)",
+      "notes": "ChatGPT produced Conference Core Stack memo (Front Room / Second Room / Off Table triage). Claude built as PDF handout. Three alignment sentences defined: (1) calibration study not framework, (2) three diagnostics (TV + Aitchison + CR), (3) 25-error catalogue. All conference-facing artifacts updated to match. Abstract v3 created (197 words, includes CR results and Backblaze). Presentation script expanded from 14 to 16 slides (added Slide 10: CR results, Slide 11: Backblaze cross-domain). THE_UNION.md updated: 17→25 error count, CR section 3b added, architecture diagram updated to three-diagnostic protocol. Closing slide and elevator pitch rewritten with all three alignment sentences.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/CONFERENCE_CORE_STACK.pdf",
+          "action": "added",
+          "summary": "One-page PDF handout: material triage for CoDaWork 2026. Front Room (scientific claim, framing, three diagnostics, cases, the ask), Second Room (CGS, 25-error catalogue, Ramsar, analyzer), Off Table (Peterson, philosophy, commercial). Three alignment sentences box. Footer: governance state (CGS-2, n=3)."
+        },
+        {
+          "path": "drafts/codawork-2026/abstract_v3.md",
+          "action": "added",
+          "summary": "Abstract v3: 197 words. Opens with 'calibration study, not framework.' Three diagnostics named (TV + Aitchison + CR). CR results included (mean 0.58, 31% invisible structural). Backblaze cross-domain validation sentence. 25-error catalogue. All three alignment sentences present."
+        },
+        {
+          "path": "drafts/codawork-2026/PRESENTATION_SCRIPT.md",
+          "action": "modified",
+          "summary": "Expanded 14→16 slides. Added Slide 10 (CR results: strict coherence does not hold, 31% invisible structural, Egozcue-Greenacre question answered), Slide 11 (Backblaze cross-domain: same patterns, different physics). Slide 7 updated 17→25 errors. Closing rewritten with three alignment sentences. Elevator pitch updated with CR results and Backblaze."
+        },
+        {
+          "path": "drafts/codawork-2026/THE_UNION.md",
+          "action": "modified",
+          "summary": "Error count 17→25 with breakdown. Section 3b added: coherence residual as third diagnostic with empirical results. Architecture diagram metric layer updated: dual-metric → three-diagnostic protocol."
+        },
+        {
+          "path": "drafts/codawork-2026/TWO_MONTH_ROADMAP.md",
+          "action": "added",
+          "summary": "Strategic roadmap April 6 – June 5, 2026. 10 ranked weaknesses across 3 tiers. Week-by-week calendar: Weeks 1-2 depth (independence, thresholds, SBP sensitivity, CR simulation), Week 3 width (ecological pilot, human review), Week 4 consolidation, Weeks 5-6 results-dependent fork, Weeks 7-8 presentation polish. Depth vs width decision framework. Honest achievability assessment. What-not-to-do list."
+        },
+        {
+          "path": "process/collective-reports/CRPT-009.json",
+          "action": "added",
+          "summary": "Collective distribution report for S015. Conference alignment session: Core Stack PDF, abstract v3, presentation v2 (16 slides), three alignment sentences, folder restructure (46→27+11+8), two-month validation roadmap. Resolves 2 of 7 CRPT-008 open items (abstract v3, presentation update). Remaining 5 mapped to roadmap weeks."
+        },
+        {
+          "path": "drafts/codawork-2026/ (folder restructure)",
+          "action": "reorganised",
+          "summary": "19 files moved to subfolders. 11 files → post-coimbra/ (CGS, CMSI, Ramsar, Scaling, Confidence, Q-Inquisitor, Governance Declaration, CONJ-001, 2 spreadsheets, Conference Concepts). 8 files → archive/ (abstract v1, abstract v2, Executive Summary, collective moment S006, THE_CORE, translator, System Map, Peterson letter v7). No files deleted."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "modified",
+          "summary": "S015 entry finalized with folder restructure and CRPT-009."
+        }
+      ]
+    }
   ],
   "pending_items": [
     {
@@ -726,6 +778,7 @@
     "S011_when_pushed": 292,
     "S012_when_pushed": 295,
     "S013_when_pushed": 299,
-    "S014_when_pushed": 310
+    "S014_when_pushed": 310,
+    "S015_when_pushed": 314
   }
 }

@@ -8,7 +8,7 @@
 
 ## The Problem Both Communities Have
 
-*For CoDaWork 2026, this union is being presented as a calibration study with 17 active entanglement errors, not as a finished instrument. The dual-metric protocol (TV distance + Aitchison distance) is exploratory; the metric question is not yet settled.*
+*For CoDaWork 2026, this union is being presented as a calibration study of a compositional monitoring instrument, not a finished framework. The instrument uses three diagnostics: total variation distance, Aitchison distance, and the coherence residual. A 25-error calibration catalogue (17 active, 2 future extensions, 6 scaling concerns) with detection tests and governance actions makes the instrument falsifiable.*
 
 CoDa has spent 40 years perfecting the mathematics of compositional data — Aitchison geometry, log-ratio transformations, subcompositional coherence, robust estimation, outlier detection. The tools are precise, proven, and elegant. They work beautifully on collected datasets.
 
@@ -70,7 +70,11 @@ CoDa control charts monitor single processes — one production line, one chemic
 
 ### 3. A calibrated entanglement with documented error sources
 
-The entanglement error analysis (companion document) identifies 17 error sources — 12 mapped across HUF-alone, CoDa-alone, and the union, plus 5 discovered during literature cross-reference and collective review. Every error source has a detection test and a governance action. No existing CoDa tool or HUF tool has a published error catalogue of this kind. The union is the first compositional monitoring instrument that ships with its own calibration study.
+The entanglement error analysis (companion document) identifies 25 error sources — 17 active entries (E-01 through E-17) mapped across HUF-alone, CoDa-alone, and the union; 2 future extensions (E-18 signed compositions, E-19 complex CoDa); and 6 scaling concerns (ES-01 through ES-06) for deep hierarchies. Every error source has a detection test and a governance action. No existing CoDa tool or HUF tool has a published error catalogue of this kind. The union is the first compositional monitoring instrument that ships with its own calibration study.
+
+### 3b. The third diagnostic: coherence residual
+
+The coherence residual (CR) measures cross-branch coupling in sequential binary partition decompositions. Where TV and Aitchison measure magnitude of change, CR measures whether change in one branch of the SBP predicts change in another. Computed on EMBER (74 transitions, 3 countries, 25 years): strict subcompositional coherence does not hold (mean CR ≈ 0.58). 31% of transitions exhibit invisible structural change — cross-branch reorganisation that TV and Aitchison classify as stable. Cross-domain validation on Backblaze hardware data (900,000+ drives, 4 manufacturers) produces the same pattern families under different physics. The instrument now uses three diagnostics: total variation distance, Aitchison distance, and the coherence residual.
 
 ### 5. A calibrated zero-handling protocol (Greenacre complementarity)
 
@@ -109,8 +113,8 @@ CoDa cannot compare compositions of different dimension. Real systems change dim
     │              METRIC LAYER (CoDa + HUF)                   │
     │                                                          │
     │  Aitchison distance    ─┐                                │
-    │  TV distance            ├─ dual-metric diagnostic        │
-    │  Metric disagreement   ─┘                                │
+    │  TV distance            ├─ three-diagnostic protocol     │
+    │  Coherence residual    ─┘                                │
     │                                                          │
     │  Perturbation velocity v(t) = d_A(x(t), x(t−1))         │
     │  K_eff = exp(−Σ xᵢ ln xᵢ)  (effective carriers)        │
@@ -158,10 +162,10 @@ CoDa cannot compare compositions of different dimension. Real systems change dim
 ## The Path to Deployment
 
 ### Phase 1 — Coimbra (June 2026)
-Present the union thesis. Show the 17-error calibration study. Demonstrate v3 analyzer with dual metrics on EMBER data. Identify CoDa researchers interested in continuous monitoring. Identify MEWMA-CoDa researchers (Tran, Nguyen group) for direct collaboration.
+Present the union thesis. Show the 25-error calibration study. Demonstrate v3 analyzer with three diagnostics on EMBER data. Present coherence residual results and Backblaze cross-domain validation. Identify CoDa researchers interested in continuous monitoring. Identify MEWMA-CoDa researchers (Tran, Nguyen group) for direct collaboration.
 
 ### Phase 2 — Validation (2026–2027)
-Joint paper with CoDa co-author(s): formal comparison of MEWMA-CoDa and HUF on the same dataset (EMBER Germany, known ground truth). Quantify: does governance reference management improve detection over statistical reference estimation? Does dual-metric diagnostic catch events that single-metric charts miss? Does coherence chain diagnosis outperform neural network diagnosis in interpretability?
+Joint paper with CoDa co-author(s): formal comparison of MEWMA-CoDa and HUF on the same dataset (EMBER Germany, known ground truth). Quantify: does governance reference management improve detection over statistical reference estimation? Does the three-diagnostic protocol catch events that single-metric charts miss? Does coherence chain diagnosis outperform neural network diagnosis in interpretability?
 
 ### Phase 3 — Ramsar Pilot (2027–2028)
 Deploy the union instrument on Ramsar Convention wetland data. 172 countries, 2,500 wetlands, compositional species data already being collected. CoDa provides the transform layer. HUF provides the governance layer. MEWMA-CoDa provides the statistical power. The coherence chain monitors species composition within wetlands AND structural change across the network.
