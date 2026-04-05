@@ -8,15 +8,17 @@
 
 ## Origin
 
-HUF began as a loudspeaker measurement technique.
-
-A BTL (Binaural Test Lab) loudspeaker system divides a single audio signal into frequency bands — each band routed to a dedicated driver. The signal enters as a whole. The crossover network partitions it. The drivers reproduce their portions. The room recombines them at the listener's ear. At every stage, the parts must sum to the whole. At every stage, the balance matters.
+HUF began because a loudspeaker is a deeply interrelated and entangled system of codependence.
 
 > **BTL** — Binaural Test Lab. The name refers to both the physical laboratory in Markham, Ontario (purpose-built by Peter Higgins for loudspeaker measurement and closed-loop validation) and the loudspeaker system itself. The lineage is deliberate: Bell Telephone Labs (BTL) developed stereo nearly a century ago. The canonical definition is in RWA-001.
 
-The crossover network is a Sequential Binary Partition. The drivers are carriers. The acoustic output at the listening position is a composition on the simplex — a vector of proportions summing to a conserved total. If the composition is correct, the sound is coherent. If a driver drifts — aging suspension, thermal compression, misalignment — the composition shifts, and the listener hears something wrong before any single measurement shows a failure.
+The BTL loudspeaker is an active organic digital design. Multiple drivers share a single constrained energy budget. Each driver's contribution must be balanced against every other — not in isolation, but as a composition, because the human auditory system receives the sum. The crossover network places frequency transitions where human perception is least sensitive. The radiation pattern is controlled for omnidirectional coherence so that the recombined signal at the listening position faithfully reproduces the original. The room environment — reflections, absorption, standing waves — is a live variable that modifies the composition after it leaves the cabinet.
 
-That observation — that compositional drift is detectable before component failure — is the origin of HUF. Everything that followed was the discovery that this property is not unique to loudspeakers.
+Nothing in this system is independent. The drivers are codependent — change one and the balance shifts across all others. The crossover frequencies are codependent with driver placement and cabinet geometry. The radiation pattern is codependent with the room. The energy budget is fixed. The parts must sum to the whole. The system is entangled at every stage.
+
+The crossover network is a Sequential Binary Partition. The drivers are carriers. The acoustic output at the listening position is a composition on the simplex. If a driver drifts — aging suspension, thermal compression, misalignment — the composition shifts, and the listener hears something wrong before any single measurement shows a failure.
+
+That observation — that compositional drift is detectable before component failure, because the human ear responds to the balance, not the parts — is the origin of HUF. The instrument was built to manage an entangled system of codependence. Everything that followed was the discovery that this property is not unique to loudspeakers.
 
 ---
 
