@@ -184,7 +184,7 @@
     "file_count_at_session_start": 308,
     "new_files_this_session": 4,
     "files_reorganised": 19,
-    "file_count_at_session_end": 312,
+    "file_count_at_session_end": 313,
     "verified_by": "Full repo scan, April 5, 2026. find . -type f excluding .git = 312.",
     "count_correction": "Previous counts from S009 onward were +1 due to FOR_SHARON.md deletion not being decremented. S014 had additional +1 overcount. All corrected in STAGING_MANIFEST. 312 is the verified ground truth.",
     "note": "Folder restructure moved 19 files into subfolders (no files deleted, all preserved)."

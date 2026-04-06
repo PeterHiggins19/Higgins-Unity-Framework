@@ -1,0 +1,358 @@
+{
+  "document_id": "REVIEW-GUIDE-001",
+  "title": "ChatGPT Review Guide — HUF Repo Structure and Priority Files",
+  "date": "2026-04-05",
+  "prepared_by": "Claude (Opus 4.6)",
+  "purpose": "Structured entry point for ChatGPT to review the Higgins Unity Framework repo after the April 5 reorganisation. Start here. Follow the tiers. Report findings against the verification checklist at the bottom.",
+  "repo_url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+
+  "repo_structure": {
+    "description": "312 verified files. 16 sessions tracked (S000–S015, all pushed). Governance state: (CGS-2, n=3).",
+    "top_level": {
+      "files": ["LICENSE", "README.md", "START_HERE.md"],
+      "note": "START_HERE.md is the onboarding document for new reviewers."
+    },
+    "directories": {
+      "drafts/codawork-2026/": {
+        "purpose": "COIMBRA CORE — 27 files. The science, the presentation, the defense. This is the focused conference material.",
+        "subfolders": {
+          "post-coimbra/": "11 files. Second Room material: CGS, Ramsar, scaling, confidence framework, governance declaration. Real and important but NOT for first contact at Coimbra.",
+          "archive/": "8 files. Superseded versions (abstract v1, v2), historical documents, Off Table items (Peterson letter). Preserved for the record."
+        }
+      },
+      "data/codawork-samples/": {
+        "purpose": "The evidence. Raw data and computed results. 5 files.",
+        "note": "This is where the numbers live. Everything in the science documents should trace back here."
+      },
+      "huf-gov/": {
+        "purpose": "The instrument architecture. Governance, science, evidence, tools. 51 files.",
+        "key_subfolders": {
+          "governance/": "Kill test, open-loop doctrine, GOV/CLS separation, safety. 7 files.",
+          "tools/spectrum-analyzer/": "The v3 HTML demonstrator. 3 files.",
+          "evidence/case-studies/": "Backblaze, energy, GDP, Planck, Ramsar, Toronto. Historical case studies."
+        }
+      },
+      "huf-cls/": "Closed-loop architecture. NOT for Coimbra. 16 files.",
+      "process/": {
+        "purpose": "Collective reports, staging manifest, governance docs, review traces. 48 files.",
+        "key_files": ["STAGING_MANIFEST.json", "collective-reports/CRPT-007.json", "collective-reports/CRPT-008.json", "collective-reports/CRPT-009.json"]
+      },
+      "reference/": "Historical reference material. 112 files. Machine-readable JSONs, technical notes, pillars, wiki. The fossil record — not the living organism.",
+      "archive/": "Pre-standardised papers and tools. 12 files.",
+      "context-books/": "4 editions of the advanced theory book (engineering, general, physics, sciences).",
+      "math-books/": "4 editions of the mathematics reference (engineering, general, physics, sciences)."
+    }
+  },
+
+  "review_tiers": {
+    "instructions": "Review in this order. Each tier builds on the previous. Do not skip to Tier 3 without reading Tier 1.",
+
+    "tier_1_the_science": {
+      "start_here": true,
+      "description": "The empirical evidence. If this is wrong, nothing else matters.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/COHERENCE_RESIDUAL_RESULTS.md",
+          "what_it_is": "First empirical computation of the coherence residual on EMBER. The spearpoint finding.",
+          "check_for": [
+            "Is the CR method sound or is the ad hoc normalised coupling indicator too fragile?",
+            "Are the thresholds (TV>0.05, Aitchison>0.5, CR>0.4) defensible or arbitrary?",
+            "Is the 31% STRUCTURAL finding robust or an artefact of threshold choice?",
+            "Is the Egozcue-Greenacre framing accurate and fair to both sides?",
+            "Are the six honest caveats sufficient or are we missing something critical?"
+          ]
+        },
+        {
+          "path": "data/codawork-samples/ember_coherence_residual.json",
+          "what_it_is": "Machine-readable CR results. 74 transitions, 3 countries, 8 SBP nodes each.",
+          "check_for": [
+            "Do the numbers match the claims in COHERENCE_RESIDUAL_RESULTS.md?",
+            "Is the SBP design physically motivated?",
+            "Are the balance deltas and Aitchison distances internally consistent?"
+          ]
+        },
+        {
+          "path": "data/codawork-samples/backblaze_coherence_residual.json",
+          "what_it_is": "Cross-domain validation. 900,000+ drives, 4 manufacturers, same three diagnostics.",
+          "check_for": [
+            "Is the SMART-based health classification defensible?",
+            "Does the GDoF calculation (264) hold?",
+            "Is CGS-2 legitimately reached?",
+            "Do the same pattern families genuinely appear or is it pattern matching?"
+          ]
+        },
+        {
+          "path": "data/codawork-samples/ember_multisite_compositions.csv",
+          "what_it_is": "Raw EMBER composition data. The input to everything.",
+          "check_for": ["Data integrity. Are the compositions proper (sum to 1)?"]
+        },
+        {
+          "path": "drafts/codawork-2026/ENTANGLEMENT_ERROR_ANALYSIS.md",
+          "what_it_is": "The 25-error calibration catalogue. E-01–E-17 active, E-18/E-19 future, ES-01–ES-06 scaling.",
+          "check_for": [
+            "Is each error source genuinely distinct?",
+            "Are the detection tests actionable?",
+            "Are there obvious missing error sources?"
+          ]
+        }
+      ]
+    },
+
+    "tier_2_conference_package": {
+      "description": "The conference-facing artifacts. Must be internally consistent and aligned with Tier 1 evidence.",
+      "files": [
+        {
+          "path": "drafts/codawork-2026/abstract_v3.md",
+          "what_it_is": "197-word abstract. Three diagnostics, CR results, Backblaze, 25 errors.",
+          "check_for": [
+            "Does it say what it needs to say in 197 words?",
+            "Are the three alignment sentences present?",
+            "Would this abstract get accepted at a CoDa conference?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/PRESENTATION_SCRIPT.md",
+          "what_it_is": "16-slide talk script. 10-12 minutes. Includes CR results (Slide 10) and Backblaze (Slide 11).",
+          "check_for": [
+            "Is the pacing right for 10-12 minutes?",
+            "Is the CR explanation on Slide 10 clear to a mathematician?",
+            "Does the closing carry all three alignment sentences?",
+            "Is the white flag posture correct or too submissive?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/THE_UNION.md",
+          "what_it_is": "The thesis statement. What CoDa brings, what HUF brings, what only the union produces.",
+          "check_for": [
+            "Does the opening paragraph carry the three alignment sentences?",
+            "Does Section 3b (CR as third diagnostic) match the empirical results?",
+            "Does the architecture diagram say 'three-diagnostic protocol' not 'dual-metric'?",
+            "Is the deployment path realistic?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/CONFERENCE_CORE_STACK.pdf",
+          "what_it_is": "One-page triage handout. Front Room / Second Room / Off Table.",
+          "check_for": [
+            "Is the Front Room / Second Room sorting correct?",
+            "Should anything move between zones?",
+            "Are the three alignment sentences in the box?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/HUF_MC4_CoDaWork_Packet_v3.docx",
+          "what_it_is": "Conference handout. 4 parts: CoDa primer, methods challenge, EMBER case, metric correction.",
+          "check_for": [
+            "CRITICAL: This predates the CR results. Does it need a v4?",
+            "Is it inconsistent with abstract_v3.md on diagnostic count or error count?",
+            "Does Part II still say 'dual-metric' instead of 'three diagnostics'?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/TWO_MONTH_ROADMAP.md",
+          "what_it_is": "Validation plan. 10 ranked weaknesses, week-by-week calendar, depth vs width framework.",
+          "check_for": [
+            "Is the priority ordering correct?",
+            "Are we missing a weakness that could kill the Coimbra conversation?",
+            "Is the depth-then-width sequencing right?"
+          ]
+        }
+      ]
+    },
+
+    "tier_3_instrument_architecture": {
+      "description": "How HUF-GOV works. The engineering that makes this more than a data analysis notebook.",
+      "files": [
+        {
+          "path": "huf-gov/governance/KILL-001-kill-test.json",
+          "what_it_is": "The kill test. How HUF can be falsified.",
+          "check_for": ["Are the kill conditions clear and testable?"]
+        },
+        {
+          "path": "huf-gov/governance/LOOP-001-open-loop-doctrine.json",
+          "what_it_is": "Open-loop doctrine. HUF-GOV reads, does not act.",
+          "check_for": ["Is the GOV/CLS separation clean?"]
+        },
+        {
+          "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
+          "what_it_is": "The demonstrator. The instrument in action.",
+          "check_for": [
+            "Does the title still say 'Unified Command Dashboard'? It should say 'CoDa Calibration Demonstrator'.",
+            "Does it behave as a lab instrument or a command system?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/THE_LINEAGE.md",
+          "what_it_is": "Origin story. Loudspeaker physics to CoDa.",
+          "check_for": ["Does the BTL physics narrative hold up? Is it compelling to a mathematician?"]
+        },
+        {
+          "path": "drafts/codawork-2026/WHAT_HUF_IS.md",
+          "what_it_is": "Instrument description. GOV/CLS fork, PLL architecture.",
+          "check_for": ["Is the instrument description consistent with THE_UNION.md and the analyzer?"]
+        },
+        {
+          "path": "drafts/codawork-2026/THE_THIRD_DIAGNOSTIC.md",
+          "what_it_is": "CR theory document. Predicted the four agreement patterns before computation.",
+          "check_for": ["Do the predictions match the empirical results in COHERENCE_RESIDUAL_RESULTS.md?"]
+        }
+      ]
+    },
+
+    "tier_4_supporting_evidence": {
+      "description": "Reference material. Consult as needed, do not review exhaustively.",
+      "files": [
+        {
+          "path": "reference/machine-readable/Metric_Correction_L2_vs_TVD_v1.0.json",
+          "what_it_is": "The L2→TV metric correction. Proves the project catches its own errors."
+        },
+        {
+          "path": "reference/machine-readable/RWA_Corporate_Reference_v1.0.json",
+          "what_it_is": "Corporate identity. Correct email: PeterHiggins@RogueWaveAudio.com."
+        },
+        {
+          "path": "reference/machine-readable/EMBER_Deceptive_Drift_Analysis_v3.0.json",
+          "what_it_is": "Original EMBER deceptive drift finding. Where the CoDa path started."
+        },
+        {
+          "path": "drafts/codawork-2026/CODA_LITERATURE_CROSS_REFERENCE.md",
+          "what_it_is": "Maps HUF concepts to published CoDa literature."
+        },
+        {
+          "path": "drafts/codawork-2026/FORMULA_REFERENCE.md",
+          "what_it_is": "All formulas in one place."
+        }
+      ]
+    },
+
+    "tier_5_collective_record": {
+      "description": "Process documents. Read CRPT-009 for current state; older reports for history.",
+      "files": [
+        {
+          "path": "process/collective-reports/CRPT-009.json",
+          "what_it_is": "Current session report. Conference alignment, folder restructure, validation roadmap."
+        },
+        {
+          "path": "process/collective-reports/CRPT-008.json",
+          "what_it_is": "Prior session. CR computation, Backblaze, CGS creation."
+        },
+        {
+          "path": "process/collective-reports/CRPT-007.json",
+          "what_it_is": "The CoDa entanglement session. All four original AI reviews."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "what_it_is": "Full file history S000–S015. Every change tracked. File count verified at 312."
+        }
+      ]
+    }
+  },
+
+  "do_not_review": {
+    "description": "These are preserved for the record but should not consume review time.",
+    "paths": [
+      "drafts/codawork-2026/archive/ — superseded versions and Off Table items",
+      "huf-cls/ — closed-loop architecture, not for Coimbra",
+      "archive/ — pre-standardised papers and old tools",
+      "context-books/ — advanced theory editions (reference only)",
+      "math-books/ — mathematics reference editions (reference only)",
+      "reference/machine-readable/ — 65 historical JSONs (the fossil record)",
+      "reference/pillars/ — original development documents",
+      "reference/technical-notes/ — 20 technical notes from pre-CoDa era",
+      "process/review-traces/ — 25+ historical trace documents",
+      "process/governance-docs/ — internal governance process documents"
+    ]
+  },
+
+  "three_alignment_sentences": {
+    "description": "Every conference-facing artifact must contain these. Verify their presence.",
+    "sentence_1": "This is a calibration study of a compositional monitoring instrument, not a finished framework.",
+    "sentence_2": "The instrument uses three diagnostics: total variation distance, Aitchison distance, and the coherence residual.",
+    "sentence_3": "A 25-error calibration catalogue with detection tests and governance actions makes the instrument falsifiable.",
+    "verified_in": ["abstract_v3.md", "PRESENTATION_SCRIPT.md", "THE_UNION.md", "CONFERENCE_CORE_STACK.pdf"],
+    "flag_if_found": "Any conference-facing file still saying '17-error', 'dual-metric protocol', or missing the coherence residual as third diagnostic."
+  },
+
+  "verification_checklist": {
+    "description": "ChatGPT: report against each of these after review.",
+    "items": [
+      {
+        "id": "V-01",
+        "check": "Do the numbers in COHERENCE_RESIDUAL_RESULTS.md match ember_coherence_residual.json?",
+        "expected": "Mean CR ~0.58, 31% STRUCTURAL, 1.4% LOCAL_EVENT"
+      },
+      {
+        "id": "V-02",
+        "check": "Does backblaze_coherence_residual.json support the CGS-2 claim?",
+        "expected": "GDoF = 264, CGS = 2.42, same pattern families as EMBER"
+      },
+      {
+        "id": "V-03",
+        "check": "Are all three alignment sentences in abstract_v3, PRESENTATION_SCRIPT, THE_UNION, and CONFERENCE_CORE_STACK?",
+        "expected": "All present. Zero stale '17-error' or 'dual-metric' references in core."
+      },
+      {
+        "id": "V-04",
+        "check": "Is HUF_MC4_CoDaWork_Packet_v3.docx consistent with abstract_v3?",
+        "expected": "Likely inconsistent — packet predates CR results. Flag for v4 consideration."
+      },
+      {
+        "id": "V-05",
+        "check": "Does THE_THIRD_DIAGNOSTIC.md predict the four patterns that COHERENCE_RESIDUAL_RESULTS.md found?",
+        "expected": "Yes — theory predicted STABLE, LOCAL_EVENT, COUPLED_EVENT, STRUCTURAL. All four appear in data."
+      },
+      {
+        "id": "V-06",
+        "check": "Does the analyzer title still say 'Unified Command Dashboard'?",
+        "expected": "Probably yes — title softening is a pending item. Flag for fix."
+      },
+      {
+        "id": "V-07",
+        "check": "Is the folder structure clean? No stale files in codawork-2026/ top level?",
+        "expected": "27 core files. CGS, CMSI, Ramsar, etc. all in post-coimbra/. Old abstracts and Peterson in archive/."
+      },
+      {
+        "id": "V-08",
+        "check": "Does TWO_MONTH_ROADMAP.md identify the right four priority weaknesses?",
+        "expected": "W-1 independence, W-2 CR grounding, W-3 thresholds, W-4 SBP sensitivity. Is anything missing?"
+      },
+      {
+        "id": "V-09",
+        "check": "Is the error count consistent everywhere in core documents?",
+        "expected": "25 in all core files. 17+2+6 breakdown where elaborated."
+      },
+      {
+        "id": "V-10",
+        "check": "File count: does STAGING_MANIFEST say 312?",
+        "expected": "Yes. Verified by full repo scan. Count correction note explains FOR_SHARON.md deletion."
+      }
+    ]
+  },
+
+  "post_coimbra_for_later": {
+    "description": "These files are in post-coimbra/ subfolder. Review only after Tier 1 and Tier 2 are complete.",
+    "files": [
+      "COMPOSITIONAL_GOVERNANCE_SCALE.md — the five-level CGS framework",
+      "RAMSAR_COMPLEXITY_GAP.md — 10 deployment gaps (3 CRITICAL, 3 SERIOUS, 4 MODERATE)",
+      "SCALING_COHERENCE.md — telescoping binary balances for deep hierarchies",
+      "CONFIDENCE_INDEX.md — 3^n systems confidence framework",
+      "Q_INQUISITOR.md — Small's Q as compositional coupling quality",
+      "GOVERNANCE_DECLARATION.md — 8 known unknowns, 5 doubts, full transparency",
+      "CONJ-001-winning-horse.md — strategic conjecture",
+      "FULL_SYSTEM_ASSESSMENT.xlsx — W/M/X/Z assessment matrix",
+      "S013_DOCUMENT_COMPARISON.xlsx — 28-dimension document comparison with 1/Q insight",
+      "CMSI.md — superseded by CGS, retained as development record",
+      "CONFERENCE_CONCEPTS.md — concept inventory"
+    ]
+  },
+
+  "governance_state": {
+    "current": "(CGS-2, n=3)",
+    "gdof": 264,
+    "cgs": 2.42,
+    "corpus": 312,
+    "sessions": 16,
+    "all_pushed": true,
+    "contact": "PeterHiggins@RogueWaveAudio.com"
+  }
+}

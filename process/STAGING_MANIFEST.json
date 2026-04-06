@@ -799,7 +799,7 @@
     "S012_when_pushed": 294,
     "S013_when_pushed": 298,
     "S014_when_pushed": 308,
-    "S015_when_pushed": 312,
+    "S015_when_pushed": 313,
     "count_correction_note": "April 5 2026: FOR_SHARON.md was deleted during S009-S011 push but file counts were not decremented. All counts from S009 onward corrected -1. S014 overcounted by additional +1 (STAGING_MANIFEST modification counted as new file). Verified by full repo scan: 312 files on disk."
   }
 }
