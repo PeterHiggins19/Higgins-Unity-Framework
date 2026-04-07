@@ -724,23 +724,79 @@
           "summary": "S015 entry finalized with folder restructure and CRPT-009."
         }
       ]
+    },
+    {
+      "session_id": "S016",
+      "date": "2026-04-07",
+      "label": "Spectral independence + impulse response + dependency chain + governance charter + proof burden register + battle card + corpus revision brief",
+      "status": "staged",
+      "commit": null,
+      "suggested_commit_message": "S016: Spectral independence test (W-1), Fukushima impulse response analysis, dependency chain, HUF Governance Charter, Proof Burden Register, Battle Card, corpus revision brief for collective",
+      "notes": "Triggered by Peter's Fukushima timezone question. Self-correction led to FFT spectral analysis (W-1 addressed), loudspeaker crossover analogy (carrier group delays, SBP phase alignment), dependency chain (forced relay through closure). ChatGPT co-developed: Proof Burden and Misunderstanding Register (9 items), live Battle Card (15 pressure points), HUF Governance Charter (9 articles: Governed Breakpoint Principle, Right to Interrupt Principle, E-Stop refinement). Three named principles: Scarborough Bluffs Principle, Governed Breakpoint Principle, Right to Interrupt Principle. Alignment sentence 2 updated: 'operating in different frequency bands of structural change.' Corpus revision brief proposes 27→10 document consolidation for Coimbra.",
+      "files": [
+        {
+          "path": "HUF_GOVERNANCE_CHARTER.md",
+          "action": "added",
+          "summary": "Formal governance charter. 9 articles. Governed Breakpoint Principle (Article II) with E-Stop refinement: de-energize correction output while observation path stays live. Right to Interrupt Principle (Article III). Open-loop priority (Article IV). 6 rights preserved (Article VIII). Declaration (Article IX)."
+        },
+        {
+          "path": "drafts/codawork-2026/PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md",
+          "action": "added",
+          "summary": "9-item register: MC-4 novelty, three diagnostics, CR grounding, null model, zeros, loudspeaker bridge, governance doctrine, Ramsar readiness, documentation volume. Each maps claim → proof burden → likely misunderstanding → safe wording. Rewrite filter: keep sentence only if it reduces misunderstanding more than it increases proof burden."
+        },
+        {
+          "path": "drafts/codawork-2026/BATTLE_CARD_LIVE.md",
+          "action": "added",
+          "summary": "Two-column live rehearsal card. 15 pressure-point questions with calibrated answers. Safe/red-flag phrase lists. Three anchor sentences. Three named principles (Scarborough Bluffs, Governed Breakpoint, Right to Interrupt)."
+        },
+        {
+          "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
+          "action": "modified",
+          "summary": "Title: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator'. Subtitle: 'Dual Metric Engine' → 'Three-Diagnostic Protocol (TV + Aitchison + CR)'. 5 occurrences replaced."
+        },
+        {
+          "path": "process/collective-reports/CRPT-010.json",
+          "action": "added",
+          "summary": "Collective distribution report for S016. Full session findings, revision proposal, governance charter announcement, collective conversation topics."
+        },
+        {
+          "path": "drafts/codawork-2026/COLLECTIVE_CONVERSATION_S016.md",
+          "action": "added",
+          "summary": "Collective conversation document: 8 topics requiring collective input before corpus consolidation. Wave mechanics reframing, 27→10 architecture, alignment sentence update, charter placement, register completeness, analysis output promotion, simulation design, cooperation lexicon."
+        },
+        {
+          "path": "process/STAGING_MANIFEST.json",
+          "action": "modified",
+          "summary": "S016 entry added. Pending items rewritten. File count updated."
+        },
+        {
+          "path": "process/REVIEW-GUIDE-CHATGPT.json",
+          "action": "modified",
+          "summary": "S016 files added to review tiers (3 analysis JSONs to Tier 1, register+battle card to Tier 2, charter to Tier 3, CRPT-010 to Tier 5). Verification checklist expanded V-11 through V-14. Governance state and file count updated."
+        }
+      ]
     }
   ],
   "pending_items": [
     {
       "item": "S000–S015 all pushed to GitHub",
       "priority": "done",
-      "notes": "All sessions pushed. S009-S011: commit 0a621fab (2026-04-04). S012-S015: pushed by Peter 2026-04-05. FOR_SHARON.md deleted. Lock file ~$S013_DOCUMENT_COMPARISON.xlsx deleted. File count corrected to 312."
+      "notes": "All sessions pushed. S009-S011: commit 0a621fab (2026-04-04). S012-S015: pushed by Peter 2026-04-05."
     },
     {
-      "item": "Folder restructure pushed",
-      "priority": "done",
-      "notes": "codawork-2026/ reorganised: 27 core, 11 post-coimbra/, 8 archive/. Public repo matches local state."
+      "item": "S016 push to GitHub",
+      "priority": "NEXT PUSH",
+      "notes": "6 files staged: HUF_GOVERNANCE_CHARTER.md, PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md, BATTLE_CARD_LIVE.md, analyzer title fix, CRPT-010.json, STAGING_MANIFEST.json. Plus Claude CoWorker analysis outputs (spectral, impulse, dependency chain JSONs/PNGs, revision brief)."
     },
     {
       "item": "Diagnostic independence test (W-1)",
-      "priority": "THIS WEEK — Roadmap Week 1",
-      "notes": "3×3 correlation matrix: TV, Aitchison, CR across 74 EMBER + 35 Backblaze transitions. If r > 0.7, downgrade n. HIGHEST PRIORITY."
+      "priority": "ADDRESSED — S016",
+      "notes": "FFT spectral analysis shows three diagnostics concentrate power in different frequency bands: CR 2-3yr, Aitchison 4-12yr, TV 3-25yr. Mean |r| = 0.231 (time), 0.286 (frequency). Result is stronger than planned correlation test — shows WHY they're independent, not just that they have low correlation. See HUF_Spectral_Independence_W1.json."
+    },
+    {
+      "item": "CR theoretical grounding (W-2)",
+      "priority": "PARTIALLY ADDRESSED — S016",
+      "notes": "Two-phase CR model established: CR correlates with group delay mismatch at impulse (r=+0.61) but not at settling (r=-0.15). SBP as filter bank interpretation. Still needs full simulation validation per roadmap Week 2."
     },
     {
       "item": "Threshold sensitivity analysis (W-3)",
@@ -753,24 +809,34 @@
       "notes": "Dispatchable vs Intermittent at root. Rerun CR. Compare patterns."
     },
     {
-      "item": "CR simulation validation (W-2)",
-      "priority": "Roadmap Week 2",
-      "notes": "Generate compositions with known coupling. Verify ad hoc CR tracks it."
-    },
-    {
       "item": "Backblaze results writeup (W-7)",
       "priority": "Roadmap Week 2",
       "notes": "BACKBLAZE_RESULTS.md — human-readable equivalent of COHERENCE_RESIDUAL_RESULTS.md."
     },
     {
       "item": "Analyzer title softening",
-      "priority": "before conference",
-      "notes": "ChatGPT: 'Unified Command Dashboard' → 'CoDa Calibration Demonstrator'. Not yet applied to HTML."
+      "priority": "DONE — S016",
+      "notes": "'Unified Command Dashboard' → 'CoDa Calibration Demonstrator'. 'Dual Metric Engine' → 'Three-Diagnostic Protocol (TV + Aitchison + CR)'. 5 occurrences replaced in HUF_Spectrum_Analyzer_v3.html."
+    },
+    {
+      "item": "Corpus consolidation: 27→10 documents",
+      "priority": "NEXT MAJOR TASK",
+      "notes": "S016 revision brief proposes Tier 1 (3 conference-facing), Tier 2 (4 supporting), Tier 3 (3 governance). Key merge: WHAT_HUF_IS + THE_LINEAGE + THE_THIRD_DIAGNOSTIC + THE_UNION → THE_INSTRUMENT.md. ChatGPT to guide rewrite. See HUF_CHATGPT_REVISION_BRIEF_S016.json."
+    },
+    {
+      "item": "HUF Governance Charter integration",
+      "priority": "with corpus consolidation",
+      "notes": "Charter created at repo root. Must be cross-referenced in consolidated documents. E-Stop refinement (Article II), Right to Interrupt (Article III), 6 rights preserved (Article VIII)."
+    },
+    {
+      "item": "Cooperation lexicon development",
+      "priority": "with corpus consolidation",
+      "notes": "ChatGPT recommended three-level vocabulary ladder: (1) native CoDa, (2) bridge terms, (3) HUF-specific. Universal translator for the data disassembler. See revision brief."
     },
     {
       "item": "HUF_MC4_CoDaWork_Packet v4 consideration",
       "priority": "before conference",
-      "notes": "Packet v3 predates CR results. May need v4 incorporating third diagnostic. ChatGPT should flag if inconsistent with abstract v3."
+      "notes": "Packet v3 predates CR results and spectral independence findings. May need v4 incorporating third diagnostic, W-1 results, and impulse response analysis."
     },
     {
       "item": "MEWMA-CoDa collaboration contact",
@@ -800,6 +866,8 @@
     "S013_when_pushed": 298,
     "S014_when_pushed": 308,
     "S015_when_pushed": 313,
-    "count_correction_note": "April 5 2026: FOR_SHARON.md was deleted during S009-S011 push but file counts were not decremented. All counts from S009 onward corrected -1. S014 overcounted by additional +1 (STAGING_MANIFEST modification counted as new file). Verified by full repo scan: 312 files on disk."
+    "S016_when_pushed": "317 (tracked) / 318 (disk count — 1-file discrepancy under investigation)",
+    "S016_new_files": "HUF_GOVERNANCE_CHARTER.md (+1), PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md (+1), BATTLE_CARD_LIVE.md (+1), CRPT-010.json (+1), COLLECTIVE_CONVERSATION_S016.md (+1) = +5 new. Analyzer title and REVIEW-GUIDE modified (not new). Net: 312 + 5 = 317.",
+    "count_correction_note": "April 5 2026: FOR_SHARON.md was deleted during S009-S011 push but file counts were not decremented. All counts from S009 onward corrected -1. S014 overcounted by additional +1 (STAGING_MANIFEST modification counted as new file). Verified by full repo scan: 312 files on disk. S016 adds 5 new files: charter, register, battle card, CRPT-010, collective conversation document."
   }
 }

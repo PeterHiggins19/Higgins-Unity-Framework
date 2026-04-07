@@ -7,14 +7,14 @@
   "repo_url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
 
   "repo_structure": {
-    "description": "312 verified files. 16 sessions tracked (S000–S015, all pushed). Governance state: (CGS-2, n=3).",
+    "description": "316 files (312 verified + 4 S016 staged). 17 sessions tracked (S000–S016, S000-S015 pushed, S016 staged). Governance state: (CGS-2, n=3).",
     "top_level": {
       "files": ["LICENSE", "README.md", "START_HERE.md"],
       "note": "START_HERE.md is the onboarding document for new reviewers."
     },
     "directories": {
       "drafts/codawork-2026/": {
-        "purpose": "COIMBRA CORE — 27 files. The science, the presentation, the defense. This is the focused conference material.",
+        "purpose": "COIMBRA CORE — 29 files (27 + 2 S016 additions: PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md, BATTLE_CARD_LIVE.md). The science, the presentation, the defense.",
         "subfolders": {
           "post-coimbra/": "11 files. Second Room material: CGS, Ramsar, scaling, confidence framework, governance declaration. Real and important but NOT for first contact at Coimbra.",
           "archive/": "8 files. Superseded versions (abstract v1, v2), historical documents, Off Table items (Peterson letter). Preserved for the record."
@@ -34,8 +34,8 @@
       },
       "huf-cls/": "Closed-loop architecture. NOT for Coimbra. 16 files.",
       "process/": {
-        "purpose": "Collective reports, staging manifest, governance docs, review traces. 48 files.",
-        "key_files": ["STAGING_MANIFEST.json", "collective-reports/CRPT-007.json", "collective-reports/CRPT-008.json", "collective-reports/CRPT-009.json"]
+        "purpose": "Collective reports, staging manifest, governance docs, review traces. 49 files.",
+        "key_files": ["STAGING_MANIFEST.json", "collective-reports/CRPT-008.json", "collective-reports/CRPT-009.json", "collective-reports/CRPT-010.json"]
       },
       "reference/": "Historical reference material. 112 files. Machine-readable JSONs, technical notes, pillars, wiki. The fossil record — not the living organism.",
       "archive/": "Pre-standardised papers and tools. 12 files.",
@@ -93,6 +93,35 @@
             "Is each error source genuinely distinct?",
             "Are the detection tests actionable?",
             "Are there obvious missing error sources?"
+          ]
+        },
+        {
+          "path": "Claude CoWorker/HUF_Spectral_Independence_W1.json",
+          "what_it_is": "S016 NEW: FFT spectral independence test addressing W-1. Three diagnostics in different frequency bands.",
+          "check_for": [
+            "Is the FFT methodology sound for annual time series (N=25-26)?",
+            "Do the dominant periods (CR 2-3yr, Aitchison 4-12yr, TV 3-25yr) make physical sense?",
+            "Is the W-1 concern genuinely addressed or does the small N undermine the spectral claim?",
+            "Does this evidence support updating alignment sentence 2 to mention 'frequency bands'?"
+          ]
+        },
+        {
+          "path": "Claude CoWorker/HUF_Impulse_Response_Fukushima.json",
+          "what_it_is": "S016 NEW: Carrier impulse response analysis using Fukushima as natural impulse. Group delays, SBP phase alignment, two-phase CR model.",
+          "check_for": [
+            "Is it legitimate to treat an annual energy transition as an 'impulse response'?",
+            "Are the group delay values (1-7yr) meaningful or artefacts of coarse temporal resolution?",
+            "Does the two-phase CR model (r=+0.61 at impulse, r=-0.15 at settling) survive scrutiny?",
+            "Is the SBP-as-filter-bank claim mathematical equivalence or analogy?"
+          ]
+        },
+        {
+          "path": "Claude CoWorker/HUF_Dependency_Chain_Fukushima.json",
+          "what_it_is": "S016 NEW: Dependency chain analysis. Five-stage forced relay through closure constraint.",
+          "check_for": [
+            "Is the relay chain (Nuclear→Other_Fossil→Gas→Coal→Solar) genuine or a reading of noise?",
+            "Does the finding that CR drops during handoffs make theoretical sense?",
+            "Is this evidence for the 'compositional disassembler' framing?"
           ]
         }
       ]
@@ -152,9 +181,28 @@
           "path": "drafts/codawork-2026/TWO_MONTH_ROADMAP.md",
           "what_it_is": "Validation plan. 10 ranked weaknesses, week-by-week calendar, depth vs width framework.",
           "check_for": [
-            "Is the priority ordering correct?",
+            "Is the priority ordering correct? W-1 is now addressed — does this change the sequence?",
             "Are we missing a weakness that could kill the Coimbra conversation?",
             "Is the depth-then-width sequencing right?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md",
+          "what_it_is": "S016 NEW: 9-item register mapping every major claim to its proof burden, likely misunderstanding, and safe wording.",
+          "check_for": [
+            "Are the 9 items complete? Should the wave-mechanics/filter-bank claim be item 10?",
+            "Is the 'safe wording' for each item actually safe?",
+            "Does the rewrite filter (proof burden vs misunderstanding) work in practice?"
+          ]
+        },
+        {
+          "path": "drafts/codawork-2026/BATTLE_CARD_LIVE.md",
+          "what_it_is": "S016 NEW: 15 pressure-point questions with calibrated live answers. Replaces/extends BATTLE_CARD.md.",
+          "check_for": [
+            "Are the 15 answers calibrated correctly — neither too defensive nor overclaiming?",
+            "Are there likely questions missing from the card?",
+            "Do the three anchor sentences match the three alignment sentences?",
+            "Is BATTLE_CARD.md (original) now superseded and should move to archive?"
           ]
         }
       ]
@@ -182,9 +230,19 @@
           ]
         },
         {
+          "path": "HUF_GOVERNANCE_CHARTER.md",
+          "what_it_is": "S016 NEW: 9-article formal governance charter. Governed Breakpoint Principle, Right to Interrupt, E-Stop refinement, 6 preserved rights.",
+          "check_for": [
+            "Is the E-Stop refinement in Article II technically accurate?",
+            "Does the charter belong at repo root or in huf-gov/governance/?",
+            "Is it Front Room or Second Room for Coimbra?",
+            "Does it overlap with or supersede GOVERNANCE_DECLARATION.md in post-coimbra/?"
+          ]
+        },
+        {
           "path": "drafts/codawork-2026/THE_LINEAGE.md",
-          "what_it_is": "Origin story. Loudspeaker physics to CoDa.",
-          "check_for": ["Does the BTL physics narrative hold up? Is it compelling to a mathematician?"]
+          "what_it_is": "Origin story. Loudspeaker physics to CoDa. S016 reframes as methodological, not biographical.",
+          "check_for": ["Does the BTL physics narrative hold up? Is it compelling to a mathematician? After S016, does this need rewriting to incorporate filter-bank and group-delay evidence?"]
         },
         {
           "path": "drafts/codawork-2026/WHAT_HUF_IS.md",
@@ -226,23 +284,27 @@
     },
 
     "tier_5_collective_record": {
-      "description": "Process documents. Read CRPT-009 for current state; older reports for history.",
+      "description": "Process documents. Read CRPT-010 for current state; older reports for history.",
       "files": [
         {
+          "path": "process/collective-reports/CRPT-010.json",
+          "what_it_is": "S016 NEW: Current session report. Wave mechanics session: spectral independence, impulse response, dependency chain, governance charter, proof burden register, corpus revision brief. 8 collective conversation topics."
+        },
+        {
           "path": "process/collective-reports/CRPT-009.json",
-          "what_it_is": "Current session report. Conference alignment, folder restructure, validation roadmap."
+          "what_it_is": "Prior session. Conference alignment, folder restructure, validation roadmap."
         },
         {
           "path": "process/collective-reports/CRPT-008.json",
-          "what_it_is": "Prior session. CR computation, Backblaze, CGS creation."
-        },
-        {
-          "path": "process/collective-reports/CRPT-007.json",
-          "what_it_is": "The CoDa entanglement session. All four original AI reviews."
+          "what_it_is": "CR computation, Backblaze, CGS creation."
         },
         {
           "path": "process/STAGING_MANIFEST.json",
-          "what_it_is": "Full file history S000–S015. Every change tracked. File count verified at 312."
+          "what_it_is": "Full file history S000–S016. Every change tracked. File count 316 (312 pushed + 4 S016 staged)."
+        },
+        {
+          "path": "Claude CoWorker/HUF_CHATGPT_REVISION_BRIEF_S016.json",
+          "what_it_is": "S016 NEW: Comprehensive revision brief for corpus consolidation. Proposed 27→10 architecture, cooperation lexicon recommendation, S016 findings summary."
         }
       ]
     }
@@ -304,7 +366,7 @@
       {
         "id": "V-06",
         "check": "Does the analyzer title still say 'Unified Command Dashboard'?",
-        "expected": "Probably yes — title softening is a pending item. Flag for fix."
+        "expected": "FIXED in S016. Now says 'CoDa Calibration Demonstrator' with 'Three-Diagnostic Protocol'. Verify 5 occurrences replaced."
       },
       {
         "id": "V-07",
@@ -323,8 +385,28 @@
       },
       {
         "id": "V-10",
-        "check": "File count: does STAGING_MANIFEST say 312?",
-        "expected": "Yes. Verified by full repo scan. Count correction note explains FOR_SHARON.md deletion."
+        "check": "File count: does STAGING_MANIFEST say 316?",
+        "expected": "312 verified (pushed) + 4 S016 staged = 316. S016 new files: HUF_GOVERNANCE_CHARTER.md, PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md, BATTLE_CARD_LIVE.md, CRPT-010.json."
+      },
+      {
+        "id": "V-11",
+        "check": "Does the spectral independence analysis (W-1) address the diagnostic independence concern?",
+        "expected": "Yes — FFT shows different frequency bands. But verify: is N=25-26 sufficient for spectral claims? Is mean |r|=0.231 convincingly low?"
+      },
+      {
+        "id": "V-12",
+        "check": "Is the governance charter consistent with the open-loop doctrine in LOOP-001?",
+        "expected": "Charter Article IV establishes open-loop priority. Should be consistent. Verify no contradictions."
+      },
+      {
+        "id": "V-13",
+        "check": "Does BATTLE_CARD_LIVE.md supersede BATTLE_CARD.md?",
+        "expected": "Yes — BATTLE_CARD_LIVE.md is more comprehensive (15 vs 10 pressure points, includes named principles). Original BATTLE_CARD.md should be considered for archive/."
+      },
+      {
+        "id": "V-14",
+        "check": "Are the proof burden register's 9 items consistent with the battle card's 15 answers?",
+        "expected": "Every register item should have at least one corresponding battle card Q&A. Check for gaps."
       }
     ]
   },
@@ -350,9 +432,12 @@
     "current": "(CGS-2, n=3)",
     "gdof": 264,
     "cgs": 2.42,
-    "corpus": 312,
-    "sessions": 16,
-    "all_pushed": true,
+    "corpus": 316,
+    "sessions": 17,
+    "all_pushed": false,
+    "s016_staged": true,
+    "w1_status": "ADDRESSED — spectral independence confirmed via FFT",
+    "w2_status": "PARTIALLY ADDRESSED — two-phase CR model, simulation still needed",
     "contact": "PeterHiggins@RogueWaveAudio.com"
   }
 }
