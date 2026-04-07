@@ -154,6 +154,22 @@ This register exists to apply that rule in practice. It is not a confession of w
 
 ---
 
+### 10. Cross-Domain Analogical Transfer
+
+**Current claim:** The same locked pipeline (SBP filter-bank, group delays, CR, Keff_fill) produces identical structural signatures across energy, finance, ecology, and other compositional domains.
+
+**Proof burden:** Must compute group delays, CR, and spectral independence in each new domain from that domain's own data. Domain-specific SBP design required — the energy SBP cannot be borrowed for finance or ecology. Each cross-domain application is a new empirical claim, not a logical consequence of the EMBER result.
+
+**Most likely misunderstanding:** "They showed it works on energy and then declared it works everywhere," or "the cross-domain claim is just analogy dressed as mathematics."
+
+**Safe wording:** "The pipeline is designed to accept any simplex carrier. Cross-domain application requires domain-specific computation and validation, not transfer by analogy. EMBER and Backblaze are computed results. Other domains remain proposals awaiting their own computation."
+
+**Answer discipline:** Never say "observationally identical" for a domain where the observation has not been computed. Distinguish between "the pipeline can process this data" (true by design) and "the pipeline reveals meaningful structure in this data" (requires evidence). Each new domain is a new W-1 through W-4.
+
+**Origin:** Added April 7, 2026 following Grok's S016 review, which applied the pipeline conceptually to financial markets, Okavango Delta, and Amazon Rainforest without running computations. Claude flagged the proof burden gap.
+
+---
+
 ## Red-Flag Phrases to Avoid
 
 Avoid these unless formal proof is in hand:
@@ -164,6 +180,8 @@ Avoid these unless formal proof is in hand:
 - "This shows universal validity..."
 - "This is ready for institutional adoption..."
 - "The loudspeaker independently derived CoDa..."
+- "This is observationally identical to..."  (unless computed in that domain)
+- "The pattern holds across all domains..."  (unless each domain has its own computation)
 
 Prefer:
 

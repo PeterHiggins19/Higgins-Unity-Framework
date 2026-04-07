@@ -729,8 +729,8 @@
       "session_id": "S016",
       "date": "2026-04-07",
       "label": "Spectral independence + impulse response + dependency chain + governance charter + proof burden register + battle card + corpus revision brief",
-      "status": "staged",
-      "commit": null,
+      "status": "pushed",
+      "commit": "2d349c0 — 'HUF Governance' — pushed by PeterHiggins19, April 7, 2026",
       "suggested_commit_message": "S016: Spectral independence test (W-1), Fukushima impulse response analysis, dependency chain, HUF Governance Charter, Proof Burden Register, Battle Card, corpus revision brief for collective",
       "notes": "Triggered by Peter's Fukushima timezone question. Self-correction led to FFT spectral analysis (W-1 addressed), loudspeaker crossover analogy (carrier group delays, SBP phase alignment), dependency chain (forced relay through closure). ChatGPT co-developed: Proof Burden and Misunderstanding Register (9 items), live Battle Card (15 pressure points), HUF Governance Charter (9 articles: Governed Breakpoint Principle, Right to Interrupt Principle, E-Stop refinement). Three named principles: Scarborough Bluffs Principle, Governed Breakpoint Principle, Right to Interrupt Principle. Alignment sentence 2 updated: 'operating in different frequency bands of structural change.' Corpus revision brief proposes 27→10 document consolidation for Coimbra.",
       "files": [

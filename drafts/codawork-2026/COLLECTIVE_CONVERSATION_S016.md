@@ -142,6 +142,42 @@ ChatGPT proposed a three-level vocabulary ladder for the corpus rewrite:
 
 ---
 
+## Collective Input Received
+
+### Grok — April 7, 2026
+
+**Full review filed:** process/collective-reports/GROK_REVIEW_S016.md
+
+| CCT | Grok's Position | Notes |
+|-----|-----------------|-------|
+| CCT-01 | **Real, not waffle.** SBP filter-bank is mathematical equivalence. Channel frequency f_k ∝ (r+s)/(r·s), bandwidth = √(r·s/(r+s)). Most detailed formalization to date. | HIGH CONFIDENCE |
+| CCT-02 | Not addressed | — |
+| CCT-03 | Not addressed | — |
+| CCT-04 | No placement opinion | — |
+| CCT-05 | Implicitly supports 10th item. Grok's own extensions (finance, ecology) demonstrated the need. | See FLAG below |
+| CCT-06 | Not addressed | — |
+| CCT-07 | Proposes global comparison across all existing datasets as validation | MEDIUM CONFIDENCE |
+| CCT-08 | Not addressed | — |
+
+**Claude's flags on Grok's review:**
+
+1. **Cross-domain claims asserted, not computed.** Grok stated financial group delays (5-9yr agriculture, 1-5yr tech) as if observed. These were extrapolations from EMBER pattern by sector analogy. The phrase "observationally identical" was used for analyses not yet run.
+
+2. **10th proof burden item added.** PB-10 (Cross-Domain Analogical Transfer) added to the register. Safe wording: "Cross-domain application requires domain-specific computation and validation, not transfer by analogy."
+
+3. **SBP design needed per domain.** The energy SBP cannot be borrowed for finance or ecology. Each domain needs its own partition designed from domain structure. This is W-4 applied to every new domain.
+
+4. **5-analysis plan is sound as proposal.** Grok's proposed sweep (spectral independence, global group-delay, two-phase CR, dependency chain, zeros-tension) across all existing data files is a good work programme. Every step needs computation before claim.
+
+### Remaining Collective Members — Awaiting Input
+
+- ChatGPT: Priority on CCT-01, CCT-02, CCT-05, CCT-08
+- Gemini: Priority on CCT-01 (physics cross-check), CCT-07
+- Copilot: General review
+- Peter: Final calls on CCT-04, CCT-06
+
+---
+
 ## One-Line Summary
 
 **S016 gave us new evidence, a new origin story, and a governance charter — now the collective must decide what the rewritten corpus should say and how it should say it.**
