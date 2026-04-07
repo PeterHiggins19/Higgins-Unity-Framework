@@ -169,11 +169,45 @@ ChatGPT proposed a three-level vocabulary ladder for the corpus rewrite:
 
 4. **5-analysis plan is sound as proposal.** Grok's proposed sweep (spectral independence, global group-delay, two-phase CR, dependency chain, zeros-tension) across all existing data files is a good work programme. Every step needs computation before claim.
 
+### Copilot — April 7, 2026
+
+**Full review filed:** process/collective-reports/COPILOT_REVIEW_S016.md
+**Master JSON package:** process/collective-reports/COPILOT_MASTER_PACKAGE_S016.json
+
+| CCT | Copilot's Position | Notes |
+|-----|-------------------|-------|
+| CCT-01 | **Real but language too hot.** Soften "IS isomorphic" to "empirically behaves as." Move bridge to second room. | HIGH CONFIDENCE |
+| CCT-02 | **Split the merge.** THE_INSTRUMENT.md + THE_LINEAGE_AND_BRIDGE.md (4 Tier-1 docs, not 3). | STRONG RECOMMENDATION |
+| CCT-03 | **New sentence proposed:** "Three diagnostics — TV, Aitchison, and CR — each sensitive to different temporal patterns of structural change in the present sample." | LOW PROOF BURDEN |
+| CCT-04 | Keep charter at repo root. Second room only for Coimbra. | AGREES WITH PETER |
+| CCT-05 | PB-10 confirmed necessary and correctly added. | AGREES WITH CLAUDE |
+| CCT-06 | **Promote all S016 JSONs** to data/codawork-samples/S016/. Reproducibility requirement. | STRONG RECOMMENDATION |
+| CCT-07 | **Write explicit falsifiable predictions before simulation.** Phase 1: CR↑ with mismatch. Phase 2: CR↓ during handoffs. Null: no phase separation. ≥500 runs. | CONCRETE DESIGN |
+| CCT-08 | **Standalone COOPERATION_LEXICON.md**, not embedded. Built before rewrite. Three-level ladder confirmed. | AGREES WITH CHATGPT |
+
+**Additional deliverables from Copilot:**
+- Proposed table of contents for consolidated corpus (12 docs + data, revised from 10)
+- 4-phase risk-reduction rewrite plan (pre-rewrite → rewrite → validation → release)
+- Draft cooperation lexicon (7 native CoDa + 7 bridge + 7 HUF-specific terms)
+- Coimbra-ready alignment sentence (low proof burden)
+
+**Copilot's three structural issues:**
+1. Wave-mechanics language too hot — dial down verbs, keep reframing
+2. Tier-1 merge too aggressive — split into two documents
+3. S016 evidence not in repo — promote JSONs immediately
+
+### Emerging Consensus (Grok + Copilot)
+
+| CCT | Grok | Copilot | Convergence |
+|-----|------|---------|-------------|
+| CCT-01 | Real (high confidence) | Real but soften language | **CONSENSUS: Real. Language discipline needed.** |
+| CCT-05 | Supports PB-10 | Confirms PB-10 | **CONSENSUS: 10th item stays.** |
+| CCT-06 | Not addressed | Promote JSONs | **Copilot leads. Awaiting Peter.** |
+
 ### Remaining Collective Members — Awaiting Input
 
 - ChatGPT: Priority on CCT-01, CCT-02, CCT-05, CCT-08
 - Gemini: Priority on CCT-01 (physics cross-check), CCT-07
-- Copilot: General review
 - Peter: Final calls on CCT-04, CCT-06
 
 ---

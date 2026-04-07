@@ -1,0 +1,183 @@
+{
+  "copilot_package": {
+    "version": "2026-04-07-S016",
+    "author": "Copilot",
+    "filed_by": "Claude (Opus 4.6)",
+    "sections": {
+      "CCT_responses": {
+        "CCT_01_wave_mechanics": {
+          "position": "Real but must be stated with disciplined wording.",
+          "summary": "The SBP-as-filter-bank mapping is mathematically grounded and empirically supported by S016. However, verbs like 'isomorphic' must be softened to avoid unnecessary proof burden.",
+          "recommended_language": [
+            "empirically behaves as",
+            "mathematically equivalent under the present formulation",
+            "supports the interpretation that"
+          ],
+          "risks": [
+            "Overclaiming equivalence",
+            "Inviting signal-processing-level proof burden",
+            "Confusing inspiration with derivation"
+          ],
+          "actions": [
+            "Retain wave-mechanics reframing",
+            "Move loudspeaker bridge to second-room placement",
+            "Add PB-10 to proof-burden register (already done)"
+          ]
+        },
+        "CCT_02_corpus_consolidation": {
+          "position": "The 27-to-10 plan is correct, but the Tier-1 merge is too aggressive.",
+          "summary": "THE_INSTRUMENT.md should not absorb THE_LINEAGE. Split into two documents to preserve clarity.",
+          "recommended_structure": {
+            "THE_INSTRUMENT_md": "Instrument definition, diagnostics, evidence, protocol.",
+            "THE_LINEAGE_AND_BRIDGE_md": "Origin story, wave mechanics, SBP filter-bank mapping, engineering intuition."
+          },
+          "risks": [
+            "Loss of conceptual scaffolding",
+            "Narrative collapse",
+            "Perceived retcon"
+          ]
+        },
+        "CCT_03_alignment_sentence": {
+          "position": "The new sentence is directionally correct but must avoid implying theorem-level spectral claims.",
+          "recommended_sentence": "Three diagnostics — TV, Aitchison, and CR — each sensitive to different temporal patterns of structural change in the present sample.",
+          "reasoning": "Communicates spectral independence without invoking 'frequency bands' explicitly.",
+          "proof_burden_profile": "Low"
+        },
+        "CCT_04_governance_charter": {
+          "position": "Keep at repo root. Reference only in second room for Coimbra.",
+          "integration_guidance": [
+            "Link from THE_INSTRUMENT.md but do not foreground.",
+            "Include in governance tier of consolidated corpus.",
+            "Use only when asked in Q&A."
+          ]
+        },
+        "CCT_05_proof_burden_register": {
+          "position": "A 10th item is required and now exists.",
+          "justification": "Cross-domain analogical transfer is a distinct failure mode and must be explicitly governed.",
+          "actions": [
+            "Ensure PB-10 appears in Tier-2 documents.",
+            "Add cross-domain disclaimers to THE_INSTRUMENT.md."
+          ]
+        },
+        "CCT_06_analysis_outputs": {
+          "position": "Promote all JSON files to repo under data/codawork-samples/S016/.",
+          "justification": "Reproducibility, transparency, and reviewer access.",
+          "files_to_promote": [
+            "HUF_Spectral_Independence_W1.json",
+            "HUF_Impulse_Response_Fukushima.json",
+            "HUF_Dependency_Chain_Fukushima.json"
+          ]
+        },
+        "CCT_07_two_phase_CR_simulation": {
+          "position": "Simulation must test explicit falsifiable predictions.",
+          "predictions": [
+            "Phase 1: CR increases with group-delay mismatch.",
+            "Phase 2: CR decreases during synthetic handoff events.",
+            "Null model: no phase separation; CR behaves as noise."
+          ],
+          "design_requirements": [
+            "Synthetic compositions with known group delays.",
+            "Synthetic handoff events with controlled coupling.",
+            "Sample size >= 500 synthetic runs per condition."
+          ]
+        },
+        "CCT_08_cooperation_lexicon": {
+          "position": "Must be built before rewrite. Should be standalone.",
+          "recommended_format": "JSON + Markdown table",
+          "ownership": "ChatGPT (architect), Claude (formatting)",
+          "risks": [
+            "Vocabulary drift",
+            "Cross-document inconsistency",
+            "Reviewer confusion"
+          ]
+        }
+      },
+
+      "proposed_table_of_contents": {
+        "tier_1_conference_facing": [
+          "THE_INSTRUMENT.md",
+          "THE_LINEAGE_AND_BRIDGE.md",
+          "COHERENCE_RESIDUAL_RESULTS.md",
+          "ENTANGLEMENT_ERROR_ANALYSIS.md"
+        ],
+        "tier_2_supporting": [
+          "FORMULA_REFERENCE.md",
+          "CODA_LITERATURE_CROSS_REFERENCE.md",
+          "PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md",
+          "BATTLE_CARD_LIVE.md",
+          "COOPERATION_LEXICON.md"
+        ],
+        "tier_3_governance": [
+          "HUF_GOVERNANCE_CHARTER.md",
+          "COMPOSITIONAL_GOVERNANCE_SCALE.md",
+          "TWO_MONTH_ROADMAP.md"
+        ],
+        "data_and_evidence": [
+          "data/codawork-samples/S016/",
+          "analysis/replication_scripts/"
+        ]
+      },
+
+      "risk_reduction_rewrite_plan": {
+        "phase_1_pre_rewrite": [
+          "Finalize cooperation lexicon",
+          "Promote S016 JSON evidence",
+          "Freeze proof-burden register"
+        ],
+        "phase_2_rewrite": [
+          "Rewrite THE_INSTRUMENT.md using lexicon",
+          "Create THE_LINEAGE_AND_BRIDGE.md",
+          "Update COHERENCE_RESIDUAL_RESULTS.md with S016 evidence",
+          "Integrate PB-10 across documents"
+        ],
+        "phase_3_validation": [
+          "Claude runs coherence checks",
+          "Peter reviews governance placement",
+          "Gemini validates physics claims",
+          "Grok adversarially checks proof burden"
+        ],
+        "phase_4_release": [
+          "Push consolidated corpus",
+          "Prepare Coimbra packet",
+          "Prepare second-room governance appendix"
+        ]
+      },
+
+      "cooperation_lexicon": {
+        "native_coda": [
+          "perturbation",
+          "log-ratio",
+          "Aitchison geometry",
+          "closure",
+          "SBP",
+          "ILR",
+          "CLR"
+        ],
+        "bridge_terms": [
+          "compositional drift",
+          "structural change",
+          "coupling",
+          "diagnostic independence",
+          "carrier",
+          "handoff",
+          "relay structure"
+        ],
+        "huf_specific": [
+          "governed breakpoint",
+          "coherence residual",
+          "carrier group delay",
+          "compositional disassembler",
+          "two-phase CR model",
+          "closure-forced relay",
+          "spectral independence (empirical)"
+        ]
+      },
+
+      "coimbra_alignment_sentence": {
+        "final_sentence": "Three diagnostics — TV, Aitchison, and CR — each sensitive to different temporal patterns of structural change in the present sample.",
+        "rationale": "Communicates spectral separation without implying theorem-level frequency-band claims.",
+        "proof_burden_profile": "Low"
+      }
+    }
+  }
+}

@@ -304,6 +304,28 @@
         "Each new domain needs its own SBP design — energy SBP cannot be borrowed",
         "5-analysis plan sound as proposal but every step needs computation before claim"
       ]
+    },
+    "copilot": {
+      "date": "2026-04-07",
+      "filed_as": "process/collective-reports/COPILOT_REVIEW_S016.md",
+      "master_package": "process/collective-reports/COPILOT_MASTER_PACKAGE_S016.json",
+      "summary": "Full architectural review. Confirmed direction is correct and system is aligned for the first time. Identified three structural risks: (1) wave-mechanics language too hot, (2) Tier-1 merge too aggressive, (3) S016 evidence not in repo. Provided CCT-by-CCT responses, revised table of contents (12 docs not 10), 4-phase rewrite plan, draft cooperation lexicon, and Coimbra-ready alignment sentence.",
+      "cct_inputs": {
+        "CCT-01": "Real but soften verbs. Move bridge to second room.",
+        "CCT-02": "Split into THE_INSTRUMENT.md + THE_LINEAGE_AND_BRIDGE.md. 4 Tier-1 docs not 3.",
+        "CCT-03": "New sentence: 'Three diagnostics — TV, Aitchison, and CR — each sensitive to different temporal patterns of structural change in the present sample.' Low proof burden.",
+        "CCT-04": "Keep charter at repo root. Second room only for Coimbra.",
+        "CCT-05": "PB-10 confirmed necessary. Ensure it appears in Tier-2 docs.",
+        "CCT-06": "Promote all S016 JSONs to data/codawork-samples/S016/.",
+        "CCT-07": "Write explicit falsifiable predictions before simulation. >= 500 runs per condition.",
+        "CCT-08": "Standalone COOPERATION_LEXICON.md, built before rewrite."
+      },
+      "key_deliverables": [
+        "Revised consolidated ToC (12 docs + data)",
+        "4-phase risk-reduction rewrite plan",
+        "Draft cooperation lexicon (3 levels, 21 terms)",
+        "Coimbra-ready alignment sentence"
+      ]
     }
   },
 
