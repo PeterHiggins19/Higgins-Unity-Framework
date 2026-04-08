@@ -1,0 +1,190 @@
+{
+  "test_id": "TWEETER_CALIBRATION_001",
+  "title": "HUF-GOV Tweeter Calibration \u2014 European Daily Electricity Price Compositions",
+  "date": "2026-04-07",
+  "data_source": "EMBER European wholesale electricity price data (daily)",
+  "temporal_resolution": "daily",
+  "date_range": "2015-01-01 to 2026-03-18",
+  "trading_days": 4089,
+  "carriers": [
+    "Germany",
+    "France",
+    "Spain",
+    "Italy",
+    "Netherlands",
+    "Poland",
+    "Austria",
+    "Sweden"
+  ],
+  "carrier_count": 8,
+  "sbp_design": {
+    "B1": {
+      "plus": [
+        "Germany",
+        "France",
+        "Netherlands",
+        "Austria"
+      ],
+      "minus": [
+        "Spain",
+        "Italy",
+        "Poland",
+        "Sweden"
+      ],
+      "label": "Western Core vs Southern/Eastern"
+    },
+    "B2": {
+      "plus": [
+        "Germany",
+        "France"
+      ],
+      "minus": [
+        "Netherlands",
+        "Austria"
+      ],
+      "label": "Franco-German vs Benelux/Alpine"
+    },
+    "B3": {
+      "plus": [
+        "Spain",
+        "Italy"
+      ],
+      "minus": [
+        "Poland",
+        "Sweden"
+      ],
+      "label": "Mediterranean vs Nordic/Visegrad"
+    },
+    "B4": {
+      "plus": [
+        "Germany"
+      ],
+      "minus": [
+        "France"
+      ],
+      "label": "Germany vs France"
+    },
+    "B5": {
+      "plus": [
+        "Netherlands"
+      ],
+      "minus": [
+        "Austria"
+      ],
+      "label": "Netherlands vs Austria"
+    },
+    "B6": {
+      "plus": [
+        "Spain"
+      ],
+      "minus": [
+        "Italy"
+      ],
+      "label": "Spain vs Italy"
+    },
+    "B7": {
+      "plus": [
+        "Poland"
+      ],
+      "minus": [
+        "Sweden"
+      ],
+      "label": "Poland vs Sweden"
+    }
+  },
+  "spectral_independence": {
+    "time_domain_correlations": {
+      "TV_Aitchison": 0.8729,
+      "TV_CR": 0.8674,
+      "Aitchison_CR": 0.8616,
+      "mean_abs_r": 0.8673
+    },
+    "frequency_domain_correlations": {
+      "TV_Aitchison": 0.9436,
+      "TV_CR": 0.9291,
+      "Aitchison_CR": 0.9162,
+      "mean_abs_r": 0.9297
+    },
+    "dominant_periods_days": {
+      "TV": [
+        {
+          "period_days": 2044.0,
+          "power": 0.04236
+        },
+        {
+          "period_days": 4088.0,
+          "power": 0.032474
+        },
+        {
+          "period_days": 7.0,
+          "power": 0.027797
+        },
+        {
+          "period_days": 817.6,
+          "power": 0.022153
+        },
+        {
+          "period_days": 1362.7,
+          "power": 0.012649
+        }
+      ],
+      "Aitchison": [
+        {
+          "period_days": 2044.0,
+          "power": 0.046424
+        },
+        {
+          "period_days": 4088.0,
+          "power": 0.021819
+        },
+        {
+          "period_days": 7.0,
+          "power": 0.016613
+        },
+        {
+          "period_days": 817.6,
+          "power": 0.015055
+        },
+        {
+          "period_days": 1362.7,
+          "power": 0.014748
+        }
+      ],
+      "CR": [
+        {
+          "period_days": 2044.0,
+          "power": 0.029906
+        },
+        {
+          "period_days": 4088.0,
+          "power": 0.026235
+        },
+        {
+          "period_days": 1362.7,
+          "power": 0.019361
+        },
+        {
+          "period_days": 817.6,
+          "power": 0.014391
+        },
+        {
+          "period_days": 7.0,
+          "power": 0.013758
+        }
+      ]
+    }
+  },
+  "comparison_to_annual_ember": {
+    "annual_mean_abs_r_time": 0.231,
+    "daily_mean_abs_r_time": 0.8673,
+    "annual_mean_abs_r_freq": 0.286,
+    "daily_mean_abs_r_freq": 0.9297,
+    "annual_group_delay_unit": "years (1-7)",
+    "daily_group_delay_unit": "weeks"
+  },
+  "calibration_analogy": {
+    "loudspeaker_equivalent": "Tweeter alignment test \u2014 highest frequency channel",
+    "test_purpose": "Verify three-diagnostic pipeline maintains spectral independence at daily resolution",
+    "result": "ALIGNMENT NEEDS INVESTIGATION"
+  }
+}

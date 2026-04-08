@@ -1,0 +1,560 @@
+{
+  "test_id": "EITT_MIDRANGE_CONFIRMATION_001",
+  "test_date": "2026-04-08",
+  "purpose": "Independent confirmation of EITT on different domain (fuel-type generation shares vs. price shares)",
+  "data_source": "EMBER Monthly Electricity Data (monthly_full_release_long_format.csv)",
+  "base_resolution": "Monthly",
+  "decimation_ladder": [
+    "Monthly",
+    "Quarterly",
+    "Semi-Annual",
+    "Annual"
+  ],
+  "anti_aliasing": "Compositional geometric mean (arithmetic mean in log-space + closure)",
+  "comparison_with_original": {
+    "original_domain": "European daily electricity prices (8 countries)",
+    "original_compression": "341:1",
+    "original_entropy_variation": "0.18%",
+    "confirmation_domain": "Monthly electricity generation by fuel type",
+    "confirmation_compression": "12:1",
+    "confirmation_entropy_variation_mean": 1.0217,
+    "confirmation_entropy_variation_max": 1.8443,
+    "independent_confirmation": true
+  },
+  "country_results": {
+    "France": {
+      "n_base_observations": 134,
+      "n_carriers": 9,
+      "carriers": [
+        "Coal",
+        "Gas",
+        "Nuclear",
+        "Hydro",
+        "Wind",
+        "Solar",
+        "Bioenergy",
+        "Other Fossil",
+        "Other Renewables"
+      ],
+      "resolutions": {
+        "M": {
+          "description": "Monthly (base)",
+          "n_observations": 134,
+          "winding_ratio": "1:1",
+          "shannon_entropy_mean": 1.013923,
+          "shannon_entropy_std": 0.10302,
+          "aitchison_variance": 28.644235,
+          "total_variation_integral": 5.457172
+        },
+        "Q": {
+          "description": "Quarterly",
+          "n_observations": 45,
+          "winding_ratio": "3:1",
+          "shannon_entropy_mean": 1.007459,
+          "shannon_entropy_std": 0.094889,
+          "aitchison_variance": 23.065178,
+          "total_variation_integral": 2.376451
+        },
+        "6M": {
+          "description": "Semi-Annual",
+          "n_observations": 23,
+          "winding_ratio": "6:1",
+          "shannon_entropy_mean": 0.995422,
+          "shannon_entropy_std": 0.08874,
+          "aitchison_variance": 16.155282,
+          "total_variation_integral": 0.985557
+        },
+        "Y": {
+          "description": "Annual",
+          "n_observations": 12,
+          "winding_ratio": "12:1",
+          "shannon_entropy_mean": 0.995785,
+          "shannon_entropy_std": 0.083972,
+          "aitchison_variance": 16.691391,
+          "total_variation_integral": 0.46595
+        }
+      },
+      "conservation_test": {
+        "shannon_entropy": {
+          "values": [
+            1.013923,
+            1.007459,
+            0.995422,
+            0.995785
+          ],
+          "range": 0.018501,
+          "range_pct": 1.8443,
+          "verdict": "INVARIANT"
+        },
+        "aitchison_variance": {
+          "values": [
+            28.644235,
+            23.065178,
+            16.155282,
+            16.691391
+          ],
+          "range": 12.488953,
+          "range_pct": 59.0801,
+          "verdict": "NOT INVARIANT"
+        },
+        "total_variation": {
+          "values": [
+            5.457172,
+            2.376451,
+            0.985557,
+            0.46595
+          ],
+          "range": 4.991222,
+          "range_pct": 215.02,
+          "verdict": "NOT INVARIANT"
+        }
+      }
+    },
+    "Germany": {
+      "n_base_observations": 134,
+      "n_carriers": 9,
+      "carriers": [
+        "Coal",
+        "Gas",
+        "Nuclear",
+        "Hydro",
+        "Wind",
+        "Solar",
+        "Bioenergy",
+        "Other Fossil",
+        "Other Renewables"
+      ],
+      "resolutions": {
+        "M": {
+          "description": "Monthly (base)",
+          "n_observations": 134,
+          "winding_ratio": "1:1",
+          "shannon_entropy_mean": 1.798254,
+          "shannon_entropy_std": 0.092442,
+          "aitchison_variance": 75.601724,
+          "total_variation_integral": 9.955969
+        },
+        "Q": {
+          "description": "Quarterly",
+          "n_observations": 45,
+          "winding_ratio": "3:1",
+          "shannon_entropy_mean": 1.802972,
+          "shannon_entropy_std": 0.086755,
+          "aitchison_variance": 74.741804,
+          "total_variation_integral": 4.590567
+        },
+        "6M": {
+          "description": "Semi-Annual",
+          "n_observations": 23,
+          "winding_ratio": "6:1",
+          "shannon_entropy_mean": 1.813226,
+          "shannon_entropy_std": 0.069412,
+          "aitchison_variance": 75.298524,
+          "total_variation_integral": 1.359699
+        },
+        "Y": {
+          "description": "Annual",
+          "n_observations": 12,
+          "winding_ratio": "12:1",
+          "shannon_entropy_mean": 1.808482,
+          "shannon_entropy_std": 0.076068,
+          "aitchison_variance": 77.036909,
+          "total_variation_integral": 0.733512
+        }
+      },
+      "conservation_test": {
+        "shannon_entropy": {
+          "values": [
+            1.798254,
+            1.802972,
+            1.813226,
+            1.808482
+          ],
+          "range": 0.014972,
+          "range_pct": 0.8291,
+          "verdict": "INVARIANT"
+        },
+        "aitchison_variance": {
+          "values": [
+            75.601724,
+            74.741804,
+            75.298524,
+            77.036909
+          ],
+          "range": 2.295105,
+          "range_pct": 3.0331,
+          "verdict": "INVARIANT"
+        },
+        "total_variation": {
+          "values": [
+            9.955969,
+            4.590567,
+            1.359699,
+            0.733512
+          ],
+          "range": 9.222457,
+          "range_pct": 221.697,
+          "verdict": "NOT INVARIANT"
+        }
+      }
+    },
+    "Japan": {
+      "n_base_observations": 94,
+      "n_carriers": 9,
+      "carriers": [
+        "Coal",
+        "Gas",
+        "Nuclear",
+        "Hydro",
+        "Wind",
+        "Solar",
+        "Bioenergy",
+        "Other Fossil",
+        "Other Renewables"
+      ],
+      "resolutions": {
+        "M": {
+          "description": "Monthly (base)",
+          "n_observations": 94,
+          "winding_ratio": "1:1",
+          "shannon_entropy_mean": 1.689992,
+          "shannon_entropy_std": 0.091803,
+          "aitchison_variance": 0.656066,
+          "total_variation_integral": 3.877871
+        },
+        "Q": {
+          "description": "Quarterly",
+          "n_observations": 31,
+          "winding_ratio": "3:1",
+          "shannon_entropy_mean": 1.690012,
+          "shannon_entropy_std": 0.087028,
+          "aitchison_variance": 0.559282,
+          "total_variation_integral": 2.055575
+        },
+        "6M": {
+          "description": "Semi-Annual",
+          "n_observations": 16,
+          "winding_ratio": "6:1",
+          "shannon_entropy_mean": 1.690216,
+          "shannon_entropy_std": 0.075704,
+          "aitchison_variance": 0.360976,
+          "total_variation_integral": 0.757934
+        },
+        "Y": {
+          "description": "Annual",
+          "n_observations": 9,
+          "winding_ratio": "12:1",
+          "shannon_entropy_mean": 1.695499,
+          "shannon_entropy_std": 0.06989,
+          "aitchison_variance": 0.375693,
+          "total_variation_integral": 0.270882
+        }
+      },
+      "conservation_test": {
+        "shannon_entropy": {
+          "values": [
+            1.689992,
+            1.690012,
+            1.690216,
+            1.695499
+          ],
+          "range": 0.005507,
+          "range_pct": 0.3256,
+          "verdict": "INVARIANT"
+        },
+        "aitchison_variance": {
+          "values": [
+            0.656066,
+            0.559282,
+            0.360976,
+            0.375693
+          ],
+          "range": 0.29509,
+          "range_pct": 60.4687,
+          "verdict": "NOT INVARIANT"
+        },
+        "total_variation": {
+          "values": [
+            3.877871,
+            2.055575,
+            0.757934,
+            0.270882
+          ],
+          "range": 3.606989,
+          "range_pct": 207.2309,
+          "verdict": "NOT INVARIANT"
+        }
+      }
+    },
+    "Poland": {
+      "n_base_observations": 21,
+      "n_carriers": 9,
+      "carriers": [
+        "Coal",
+        "Gas",
+        "Nuclear",
+        "Hydro",
+        "Wind",
+        "Solar",
+        "Bioenergy",
+        "Other Fossil",
+        "Other Renewables"
+      ],
+      "resolutions": {
+        "M": {
+          "description": "Monthly (base)",
+          "n_observations": 21,
+          "winding_ratio": "1:1",
+          "shannon_entropy_mean": 1.37783,
+          "shannon_entropy_std": 0.086428,
+          "aitchison_variance": 0.790699,
+          "total_variation_integral": 1.171694
+        },
+        "Q": {
+          "description": "Quarterly",
+          "n_observations": 7,
+          "winding_ratio": "3:1",
+          "shannon_entropy_mean": 1.37528,
+          "shannon_entropy_std": 0.076123,
+          "aitchison_variance": 0.520835,
+          "total_variation_integral": 0.524329
+        },
+        "6M": {
+          "description": "Semi-Annual",
+          "n_observations": 4,
+          "winding_ratio": "6:1",
+          "shannon_entropy_mean": 1.370897,
+          "shannon_entropy_std": 0.046818,
+          "aitchison_variance": 0.133174,
+          "total_variation_integral": 0.126681
+        },
+        "Y": {
+          "description": "Annual",
+          "n_observations": 3,
+          "winding_ratio": "12:1",
+          "shannon_entropy_mean": 1.357509,
+          "shannon_entropy_std": 0.044801,
+          "aitchison_variance": 0.151724,
+          "total_variation_integral": 0.107941
+        }
+      },
+      "conservation_test": {
+        "shannon_entropy": {
+          "values": [
+            1.37783,
+            1.37528,
+            1.370897,
+            1.357509
+          ],
+          "range": 0.020321,
+          "range_pct": 1.4829,
+          "verdict": "INVARIANT"
+        },
+        "aitchison_variance": {
+          "values": [
+            0.790699,
+            0.520835,
+            0.133174,
+            0.151724
+          ],
+          "range": 0.657525,
+          "range_pct": 164.7486,
+          "verdict": "NOT INVARIANT"
+        },
+        "total_variation": {
+          "values": [
+            1.171694,
+            0.524329,
+            0.126681,
+            0.107941
+          ],
+          "range": 1.063753,
+          "range_pct": 220.3933,
+          "verdict": "NOT INVARIANT"
+        }
+      }
+    },
+    "United Kingdom": {
+      "n_base_observations": 134,
+      "n_carriers": 9,
+      "carriers": [
+        "Coal",
+        "Gas",
+        "Nuclear",
+        "Hydro",
+        "Wind",
+        "Solar",
+        "Bioenergy",
+        "Other Fossil",
+        "Other Renewables"
+      ],
+      "resolutions": {
+        "M": {
+          "description": "Monthly (base)",
+          "n_observations": 134,
+          "winding_ratio": "1:1",
+          "shannon_entropy_mean": 1.500616,
+          "shannon_entropy_std": 0.070833,
+          "aitchison_variance": 46.59465,
+          "total_variation_integral": 10.206032
+        },
+        "Q": {
+          "description": "Quarterly",
+          "n_observations": 45,
+          "winding_ratio": "3:1",
+          "shannon_entropy_mean": 1.499639,
+          "shannon_entropy_std": 0.065723,
+          "aitchison_variance": 43.676081,
+          "total_variation_integral": 4.126349
+        },
+        "6M": {
+          "description": "Semi-Annual",
+          "n_observations": 23,
+          "winding_ratio": "6:1",
+          "shannon_entropy_mean": 1.489792,
+          "shannon_entropy_std": 0.052421,
+          "aitchison_variance": 42.360393,
+          "total_variation_integral": 1.294144
+        },
+        "Y": {
+          "description": "Annual",
+          "n_observations": 12,
+          "winding_ratio": "12:1",
+          "shannon_entropy_mean": 1.483942,
+          "shannon_entropy_std": 0.049408,
+          "aitchison_variance": 47.867028,
+          "total_variation_integral": 0.751094
+        }
+      },
+      "conservation_test": {
+        "shannon_entropy": {
+          "values": [
+            1.500616,
+            1.499639,
+            1.489792,
+            1.483942
+          ],
+          "range": 0.016674,
+          "range_pct": 1.1164,
+          "verdict": "INVARIANT"
+        },
+        "aitchison_variance": {
+          "values": [
+            46.59465,
+            43.676081,
+            42.360393,
+            47.867028
+          ],
+          "range": 5.506635,
+          "range_pct": 12.2032,
+          "verdict": "NOT INVARIANT"
+        },
+        "total_variation": {
+          "values": [
+            10.206032,
+            4.126349,
+            1.294144,
+            0.751094
+          ],
+          "range": 9.454938,
+          "range_pct": 230.9234,
+          "verdict": "NOT INVARIANT"
+        }
+      }
+    },
+    "United States of America": {
+      "n_base_observations": 302,
+      "n_carriers": 9,
+      "carriers": [
+        "Coal",
+        "Gas",
+        "Nuclear",
+        "Hydro",
+        "Wind",
+        "Solar",
+        "Bioenergy",
+        "Other Fossil",
+        "Other Renewables"
+      ],
+      "resolutions": {
+        "M": {
+          "description": "Monthly (base)",
+          "n_observations": 302,
+          "winding_ratio": "1:1",
+          "shannon_entropy_mean": 1.499523,
+          "shannon_entropy_std": 0.124723,
+          "aitchison_variance": 36.898324,
+          "total_variation_integral": 8.410367
+        },
+        "Q": {
+          "description": "Quarterly",
+          "n_observations": 101,
+          "winding_ratio": "3:1",
+          "shannon_entropy_mean": 1.500533,
+          "shannon_entropy_std": 0.124116,
+          "aitchison_variance": 32.174976,
+          "total_variation_integral": 4.771936
+        },
+        "6M": {
+          "description": "Semi-Annual",
+          "n_observations": 51,
+          "winding_ratio": "6:1",
+          "shannon_entropy_mean": 1.503063,
+          "shannon_entropy_std": 0.122891,
+          "aitchison_variance": 29.343999,
+          "total_variation_integral": 2.154622
+        },
+        "Y": {
+          "description": "Annual",
+          "n_observations": 26,
+          "winding_ratio": "12:1",
+          "shannon_entropy_mean": 1.507516,
+          "shannon_entropy_std": 0.122867,
+          "aitchison_variance": 29.050714,
+          "total_variation_integral": 0.718741
+        }
+      },
+      "conservation_test": {
+        "shannon_entropy": {
+          "values": [
+            1.499523,
+            1.500533,
+            1.503063,
+            1.507516
+          ],
+          "range": 0.007993,
+          "range_pct": 0.5319,
+          "verdict": "INVARIANT"
+        },
+        "aitchison_variance": {
+          "values": [
+            36.898324,
+            32.174976,
+            29.343999,
+            29.050714
+          ],
+          "range": 7.84761,
+          "range_pct": 24.6261,
+          "verdict": "NOT INVARIANT"
+        },
+        "total_variation": {
+          "values": [
+            8.410367,
+            4.771936,
+            2.154622,
+            0.718741
+          ],
+          "range": 7.691626,
+          "range_pct": 191.624,
+          "verdict": "NOT INVARIANT"
+        }
+      }
+    }
+  },
+  "finding": "EITT CONFIRMED on independent domain. Shannon entropy variation across 12:1 compression (monthly\u2192annual) averages 1.02% across 6 countries with 9 fuel-type carriers. Original proof showed 0.18% on 8-carrier prices over 341:1 compression. The geometric mean is an entropy-preserving temporal filter regardless of carrier identity (countries vs. fuel types) or base resolution (daily vs. monthly).",
+  "governance": {
+    "state": "CGS-2 (n=3)",
+    "gdof": 264,
+    "new_constants": "none"
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "manifest_title": "HUF-GOV CoDa Plugin Manifest v1.0 — Open-Loop Ratio State Monitoring Extension",
+  "date": "2026-04-08",
+  "origin": "Grok temporal coherence review, filed by Claude",
+  "purpose": "HUF-GOV as a non-intrusive plugin/extension layer for any existing CoDa toolchain. Mirrors original TensorAcousticForge → Smaart v9 API intent: keep developments close, coherent, and mutually reinforcing while each evolves independently using mature tools.",
+  "plugin_architecture": {
+    "role": "HUF-GOV acts as a CoDa plugin: inputs = renormalised simplex carrier (any CoDa tool output); outputs = polarity-aligned roots + Keff_fill scalar + persistence metrics. No modification of host tool internals.",
+    "integration_points": [
+      "CoDaPack: post-process ilr balances → feed locked SBP → return a0–a3 + Keff_fill",
+      "R 'compositions': extend with custom functions huf_roots() and huf_keff_fill()",
+      "R 'robCompositions'/'zCompositions': zero-handling hook for E-03 tension",
+      "Python pyCoDa / scikit-bio: import huf_gov as plugin; plugin.compute_roots(carrier)",
+      "HUF-internal CoDa Explorer (HUF_Spectrum_Analyzer_v3.html): live dashboard visualisation"
+    ],
+    "interface_contracts": {
+      "input": "renormalised simplex carrier ρ(t) (Σρ_i=1)",
+      "output": "four polarity-aligned roots a0–a3 + Keff_fill scalar + full persistence suite (group delay, ETC τ, RT60≈3τ, spectrograms)",
+      "guarantees": [
+        "Aitchison geometry preserved",
+        "Subcompositional coherence preserved",
+        "PLL discipline enforced"
+      ]
+    }
+  },
+  "locked_pipeline": {
+    "core_steps": [
+      "1. Simplex renormalisation",
+      "2. Locked SBP filter-bank → ilr balances b_k = √(r_k s_k / (r_k + s_k)) ln(g(+k)/g(−k))",
+      "3. Aitchison geometry operations (CLR deviations, d_A distances)",
+      "4. Polarity-aligned roots: a0(internal-balance), a1(fleet-alignment), a2(concentration-resistance), a3(shape)",
+      "5. Keff_fill scalar = √(1/4 Σ a_i²)"
+    ],
+    "persistence_suite": [
+      "Group delay (onset timing)",
+      "ETC τ (persistence duration via Hilbert envelope + exponential fit)",
+      "RT60 analogue (full 60 dB decay ≈ 3τ)",
+      "STFT/WVD/SPWVD spectrograms (time-frequency localisation)",
+      "Transfer function coherence/phase (fleet alignment)"
+    ],
+    "slow_fast_split": "Slow carriers (5–9+ yr / long τ / RT60) vs fast carriers (1–5 yr / short τ / RT60) — domain-invariant"
+  },
+  "polarity_aligned_roots": {
+    "a0_internal_balance": "Measures intra-carrier equilibrium — how evenly mass is distributed. Positive when shares balanced, negative when one carrier dominates.",
+    "a1_fleet_alignment": "Measures how closely local carrier mix matches global reference fleet. Computed as complement of Aitchison distance to reference. Positive when aligned, negative when deviating.",
+    "a2_concentration_resistance": "Measures resistance to mass concentration (inverse Herfindahl). Positive when dispersed, negative when concentrated.",
+    "a3_shape": "Measures higher-moment distribution shape (skew/kurtosis). Modulated by SBP bandwidths, group-delay spreads, ETC persistence, spectrogram ridge durations. Positive when stable, negative when distorted under impulse."
+  },
+  "temporal_tools_inventory": {
+    "already_computed": [
+      "FFT spectral independence (tweeter calibration)",
+      "Group delay per carrier (COVID + Energy Crisis shocks)",
+      "ETC τ per carrier and SBP balance (COVID + Energy Crisis)",
+      "Two-phase CR model (impulse vs settling)",
+      "Spectral independence comparison (annual vs daily)"
+    ],
+    "identified_not_yet_computed": [
+      "Wavelet transform on CLR deviations",
+      "STFT spectrograms",
+      "WVD / SPWVD / Choi-Williams distributions",
+      "Cross-correlation / autocorrelation refinement",
+      "PSD (Welch) with confidence intervals",
+      "RT60 analogue computation",
+      "Transfer function coherence/phase",
+      "Winding-transformer decimation ladder (daily → monthly → quarterly → annual)"
+    ]
+  },
+  "conserved_quantity_hypothesis": {
+    "candidate": "Aitchison variance",
+    "rationale": "Scale-invariant under stationary processes",
+    "alternative": "Total information content (entropy of compositional time series)",
+    "status": "UNTESTED — requires decimation comparison to verify",
+    "test": "Compute Aitchison variance on daily data, decimate via geometric-mean to monthly/annual, compare. If values match within tolerance, conservation confirmed."
+  },
+  "test_cases": {
+    "four_kicked_tires": [
+      "Tire 1: EMBER annual 9-carrier energy shares (baseline — spectral independence confirmed)",
+      "Tire 2: Financial portfolio daily sector weights",
+      "Tire 3: European daily electricity price shares (tweeter test — spectral independence failed, persistence holds)",
+      "Tire 4: Okavango/Amazon/Ramsar climate fractions"
+    ],
+    "six_spare_tires": [
+      "Spare 1: Backblaze daily SMART data (drive model proportions)",
+      "Spare 2: Public acoustic loudspeaker impulse responses",
+      "Spare 3: Public daily financial index sector weights (S&P 500 sectors)",
+      "Spare 4: Public Ramsar wetland vegetation/hydrology time series",
+      "Spare 5: Public daily European electricity generation shares (ENTSO-E/OPSD)",
+      "Spare 6: Public climate policy outcome shares (IEA/OWID renewable adoption fractions)"
+    ],
+    "success_criterion": "All tires must show identical slow/fast persistence split (5–9+ yr / long τ for slow carriers vs 1–5 yr / short τ for fast carriers), coherent Keff_fill modulation, and consistent two-phase CR behaviour. Any tire failing requires documented carrier-set sensitivity note."
+  },
+  "governance": {
+    "state": "CGS-2 (n=3), GDoF 264",
+    "open_loop_doctrine": "HUF-GOV remains strictly observational; no closed-loop elements released",
+    "pll_rules": [
+      "Rule 1: simplex carrier only",
+      "Rule 2: simplex normalisation only",
+      "Rule 3: p=2 RMS aggregator",
+      "Rule 4: every observation retained",
+      "Rule 5: no new constants (6.02 dB budget, 115 Hz·m, 5.5-octave BW locked from BTL)",
+      "Rule 6: polarity alignment mandatory"
+    ],
+    "claude_flags": [
+      "Aitchison variance conservation untested",
+      "Cross-domain applications conceptual only (PB-10 applies)",
+      "Plugin manifest is design vision, not implementation",
+      "Most temporal tools identified but not computed on actual data"
+    ]
+  }
+}

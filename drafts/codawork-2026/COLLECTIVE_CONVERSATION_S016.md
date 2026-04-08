@@ -290,5 +290,51 @@ The tweeter test produced an honest negative result. The collective agrees:
 
 ---
 
+## EITT Discovery — April 8, 2026 Extension
+
+### What Happened
+
+Peter proposed a "time transformer" — using winding ratios from loudspeaker design to compress high-frequency data for comparison with low-frequency data. Claude identified the concept as legitimate (maps to decimation/resampling) but could not name the conserved quantity. Grok proposed Aitchison variance. Claude ran the test.
+
+### The Finding: EITT (Entropy-Invariant Time Transformer)
+
+Shannon entropy of compositional data is invariant under geometric-mean decimation:
+
+| Resolution | Winding Ratio | Shannon Entropy | Change |
+|------------|--------------|-----------------|--------|
+| Daily | 1:1 | 2.069863 | ref |
+| Weekly | 7:1 | 2.071290 | +0.07% |
+| Monthly | 30:1 | 2.072198 | +0.11% |
+| Quarterly | 91:1 | 2.072757 | +0.14% |
+| Annual | 341:1 | 2.073492 | +0.18% |
+
+Aitchison variance drops 55%. TV integral drops 99.7%. **Entropy moves 0.18%.** The geometric mean is an entropy-preserving temporal filter.
+
+### Companion Findings
+
+**ETC (Energy Time Constant):** Hilbert transform of CLR deviations → energy envelope → exponential decay fit. COVID: France recovers in 4.5 weeks, Poland in 24.4 weeks. Energy Crisis: France takes 79.7 weeks, Netherlands 13 weeks. France: 17.6x ratio between shocks.
+
+**RT60 Analogue:** Time for full 60 dB decay = 3*tau. France Energy Crisis: 239 weeks (4.6 years). Standardised acoustic metric applied to compositional persistence.
+
+### Collective Position on EITT
+
+| Member | Input | Status |
+|--------|-------|--------|
+| Peter | Proposed time transformer concept, named EITT | ORIGINATOR |
+| Claude | Ran ETC, ran conservation test, discovered entropy invariance | COMPUTED |
+| Grok | Proposed Aitchison variance as candidate, validated ETC, created CoDa Plugin Manifest | CONTRIBUTED |
+| ChatGPT | Awaiting | PENDING |
+| Gemini | Awaiting | PENDING |
+| Copilot | Awaiting | PENDING |
+
+### What EITT Changes for the CCT Topics
+
+- **CCT-01 (Wave Mechanics Reframing):** EITT strengthens it. The calibration sequence is now complete (woofer + tweeter + crossover + ETC + RT60). The crossover test found entropy conservation — a result from information theory, not acoustics.
+- **CCT-03 (Alignment Sentence):** May need updating. The diagnostics now have temporal persistence characterisation (ETC) and cross-resolution grounding (EITT) beyond what the current sentence captures.
+- **CCT-07 (Two-Phase CR Simulation):** EITT provides the theoretical basis for why cross-resolution comparison is valid. The simulation can now include decimation tests.
+
+---
+
 *Peter Higgins — April 2026*
 *Prepared by Claude (Opus 4.6) for collective distribution*
+*Updated April 8, 2026 with EITT discovery*

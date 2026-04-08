@@ -1,0 +1,113 @@
+{
+  "test_id": "EITT_ADVERSARIAL_001",
+  "test_date": "2026-04-08",
+  "purpose": "Adversarial testing of EITT \u2014 attempting to find failure modes and boundary conditions",
+  "scorecard": {
+    "real_world_pass": 10,
+    "real_world_fail": 1,
+    "synthetic_pass": 0,
+    "synthetic_fail": 6,
+    "total_pass": 10,
+    "total_fail": 7
+  },
+  "real_world_tests": {
+    "japan_post_fukushima": {
+      "entropy_pct": 0.3254,
+      "verdict": "INVARIANT",
+      "note": "Post-regime-change. Nuclear permanently reduced. EITT holds within new equilibrium."
+    },
+    "norway_92pct_hydro": {
+      "entropy_pct": 1.5986,
+      "verdict": "INVARIANT",
+      "note": "Extreme concentration (86.2% of max). Still holds."
+    },
+    "france_71pct_nuclear_D9": {
+      "entropy_pct": 1.8443,
+      "verdict": "INVARIANT"
+    },
+    "poland_73pct_coal_D9": {
+      "entropy_pct": 1.6414,
+      "verdict": "INVARIANT"
+    },
+    "estonia_70pct_oil_shale_D9": {
+      "entropy_pct": 8.4262,
+      "verdict": "FAILED",
+      "note": "Borderline. Small secondary carriers fluctuate wildly in relative terms. Log-space averaging amplifies these."
+    },
+    "france_D3": {
+      "entropy_pct": 0.5377,
+      "verdict": "INVARIANT"
+    },
+    "germany_D3": {
+      "entropy_pct": 1.3272,
+      "verdict": "INVARIANT"
+    },
+    "japan_D3": {
+      "entropy_pct": 0.721,
+      "verdict": "INVARIANT"
+    },
+    "poland_D3": {
+      "entropy_pct": 1.1707,
+      "verdict": "INVARIANT"
+    },
+    "uk_D3": {
+      "entropy_pct": 0.3823,
+      "verdict": "INVARIANT"
+    },
+    "usa_D3": {
+      "entropy_pct": 0.5969,
+      "verdict": "INVARIANT"
+    }
+  },
+  "synthetic_tests": {
+    "oscillating_extremes": {
+      "entropy_pct": 73.0049,
+      "verdict": "FAILED",
+      "description": "Alternating [0.9,0.05,0.05] and [0.05,0.9,0.05]"
+    },
+    "monotonic_drift": {
+      "entropy_pct": 15.1438,
+      "verdict": "FAILED",
+      "description": "Linear drift from 80% coal to 80% solar over 120 months"
+    },
+    "step_function": {
+      "entropy_pct": 45.1907,
+      "verdict": "FAILED",
+      "description": "Complete composition flip at midpoint"
+    },
+    "increasing_concentration": {
+      "entropy_pct": 5.3987,
+      "verdict": "FAILED",
+      "description": "D=5, equal proportions to 90% dominance"
+    },
+    "dirichlet_noise_alpha1": {
+      "entropy_pct": 23.2971,
+      "verdict": "FAILED",
+      "description": "iid Dirichlet(1,1,1,1,1) random compositions"
+    },
+    "dirichlet_noise_alpha01": {
+      "entropy_pct": 98.8759,
+      "verdict": "FAILED",
+      "description": "iid Dirichlet(0.1,...,0.1) near-vertex random"
+    }
+  },
+  "japan_regime_change_detail": {
+    "pre_fukushima_mean_entropy": 1.596197,
+    "post_fukushima_mean_entropy": 1.500062,
+    "level_shift_pct": 6.02,
+    "note": "Entropy LEVEL shifts permanently. EITT cross-resolution invariance still holds within each regime."
+  },
+  "boundary_condition": {
+    "statement": "EITT holds for compositional time series with reasonable temporal autocorrelation. It does NOT hold for arbitrary simplex-valued sequences.",
+    "physical_interpretation": "The system being observed must have structural persistence \u2014 compositions at adjacent time points must be similar. Real-world monitored systems satisfy this. Synthetic noise and oscillating extremes do not.",
+    "estonia_interpretation": "Borderline failure (8.4%) occurs when dominant carrier is extreme AND secondary carriers are very small with high relative variance. Log-space averaging amplifies near-zero components."
+  },
+  "what_this_means_for_codawork": {
+    "honest_claim": "EITT is a property of compositional time series, not of the geometric mean in isolation. The geometric mean preserves entropy when applied to temporally correlated compositions \u2014 which is the case that matters for monitoring.",
+    "what_to_present": "Show both the confirmations AND the adversarial failures. The failures define the boundary conditions. This is what separates a calibration study from a sales pitch."
+  },
+  "governance": {
+    "state": "CGS-2 (n=3)",
+    "gdof": 264
+  }
+}

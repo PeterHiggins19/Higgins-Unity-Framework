@@ -1,0 +1,314 @@
+{
+  "COVID_lockdown": {
+    "description": "European COVID lockdowns",
+    "impulse_date": "2020-03-15",
+    "post_shock_weeks": 68,
+    "carrier_etc": {
+      "Germany": {
+        "tau_weeks": null,
+        "r_squared": null,
+        "peak_week": 50,
+        "peak_energy": 0.01077,
+        "decay_class": "FIT_FAILED"
+      },
+      "France": {
+        "tau_weeks": 4.54,
+        "r_squared": 0.5885,
+        "peak_week": 55,
+        "peak_energy": 0.011259,
+        "decay_class": "FAST",
+        "amplitude": 0.006785,
+        "floor": 0.002762
+      },
+      "Spain": {
+        "tau_weeks": 5.44,
+        "r_squared": 0.6363,
+        "peak_week": 47,
+        "peak_energy": 0.078967,
+        "decay_class": "FAST",
+        "amplitude": 0.052655,
+        "floor": 0.002829
+      },
+      "Italy": {
+        "tau_weeks": null,
+        "r_squared": null,
+        "peak_week": 14,
+        "peak_energy": 0.00952,
+        "decay_class": "FIT_FAILED"
+      },
+      "Netherlands": {
+        "tau_weeks": 11.44,
+        "r_squared": 0,
+        "peak_week": 41,
+        "peak_energy": 0.007774,
+        "decay_class": "FAST",
+        "amplitude": 0.003877,
+        "floor": 0.002217
+      },
+      "Poland": {
+        "tau_weeks": 24.35,
+        "r_squared": 0,
+        "peak_week": 42,
+        "peak_energy": 0.023285,
+        "decay_class": "MEDIUM",
+        "amplitude": 0.004874,
+        "floor": 0.007759
+      },
+      "Austria": {
+        "tau_weeks": null,
+        "r_squared": null,
+        "peak_week": 58,
+        "peak_energy": 0.006932,
+        "decay_class": "FIT_FAILED"
+      },
+      "Sweden": {
+        "tau_weeks": null,
+        "r_squared": null,
+        "peak_week": 57,
+        "peak_energy": 0.037977,
+        "decay_class": "FIT_FAILED"
+      }
+    },
+    "balance_etc": {
+      "B1": {
+        "label": "Western Core vs Southern/Eastern",
+        "tau_weeks": null,
+        "r_squared": null,
+        "peak_week": 67,
+        "decay_class": "FIT_FAILED"
+      },
+      "B2": {
+        "label": "Franco-German vs Benelux/Alpine",
+        "tau_weeks": 8.11,
+        "r_squared": 0.4765,
+        "peak_week": 40,
+        "decay_class": "FAST"
+      },
+      "B3": {
+        "label": "Mediterranean vs Nordic/Visegrad",
+        "tau_weeks": 34.76,
+        "r_squared": 0,
+        "peak_week": 48,
+        "decay_class": "SLOW"
+      },
+      "B4": {
+        "label": "Germany vs France",
+        "tau_weeks": 6.08,
+        "r_squared": 0.3954,
+        "peak_week": 55,
+        "decay_class": "FAST"
+      },
+      "B5": {
+        "label": "Netherlands vs Austria",
+        "tau_weeks": 4.5,
+        "r_squared": 0.6617,
+        "peak_week": 58,
+        "decay_class": "FAST"
+      },
+      "B6": {
+        "label": "Spain vs Italy",
+        "tau_weeks": 4.87,
+        "r_squared": 0.4729,
+        "peak_week": 48,
+        "decay_class": "FAST"
+      },
+      "B7": {
+        "label": "Poland vs Sweden",
+        "tau_weeks": 35.65,
+        "r_squared": 0.0439,
+        "peak_week": 19,
+        "decay_class": "SLOW"
+      }
+    },
+    "diagnostic_etc": {
+      "TV": {
+        "tau_weeks": 1.54,
+        "r_squared": 0.8162,
+        "peak_week": 59
+      },
+      "Aitchison": {
+        "tau_weeks": 1.76,
+        "r_squared": 0.5067,
+        "peak_week": 59
+      }
+    },
+    "etc_summary": {
+      "valid_carrier_fits": 4,
+      "mean_tau_weeks": 11.4,
+      "std_tau_weeks": 7.9,
+      "tau_range_weeks": [
+        4.5,
+        24.4
+      ],
+      "range_ratio": 5.4,
+      "hierarchy_pattern": "leaf_slower",
+      "diversity_cv": 0.691,
+      "diversity_class": "HIGH"
+    }
+  },
+  "Energy_crisis_2022": {
+    "description": "Russia-Ukraine energy crisis",
+    "impulse_date": "2022-02-24",
+    "post_shock_weeks": 106,
+    "carrier_etc": {
+      "Germany": {
+        "tau_weeks": 33.12,
+        "r_squared": 0,
+        "peak_week": 43,
+        "peak_energy": 0.100582,
+        "decay_class": "SLOW",
+        "amplitude": 0.029282,
+        "floor": 0.009562
+      },
+      "France": {
+        "tau_weeks": 79.73,
+        "r_squared": 0,
+        "peak_week": 6,
+        "peak_energy": 0.117265,
+        "decay_class": "SLOW",
+        "amplitude": 0.040603,
+        "floor": 0.025139
+      },
+      "Spain": {
+        "tau_weeks": 59.72,
+        "r_squared": 0,
+        "peak_week": 43,
+        "peak_energy": 0.684523,
+        "decay_class": "SLOW",
+        "amplitude": 0.113407,
+        "floor": 0.077574
+      },
+      "Italy": {
+        "tau_weeks": 67.02,
+        "r_squared": 0,
+        "peak_week": 44,
+        "peak_energy": 0.248539,
+        "decay_class": "SLOW",
+        "amplitude": 0.021964,
+        "floor": 0.023464
+      },
+      "Netherlands": {
+        "tau_weeks": 13.01,
+        "r_squared": 0.1019,
+        "peak_week": 70,
+        "peak_energy": 0.406602,
+        "decay_class": "MEDIUM",
+        "amplitude": 0.028349,
+        "floor": 0.009555
+      },
+      "Poland": {
+        "tau_weeks": null,
+        "r_squared": null,
+        "peak_week": 105,
+        "peak_energy": 0.334868,
+        "decay_class": "FIT_FAILED"
+      },
+      "Austria": {
+        "tau_weeks": 36.36,
+        "r_squared": 0.3531,
+        "peak_week": 20,
+        "peak_energy": 0.108824,
+        "decay_class": "SLOW",
+        "amplitude": 0.034408,
+        "floor": 0.010265
+      },
+      "Sweden": {
+        "tau_weeks": 51.34,
+        "r_squared": 0,
+        "peak_week": 23,
+        "peak_energy": 0.968089,
+        "decay_class": "SLOW",
+        "amplitude": 0.107329,
+        "floor": 0.085226
+      }
+    },
+    "balance_etc": {
+      "B1": {
+        "label": "Western Core vs Southern/Eastern",
+        "tau_weeks": 52.23,
+        "r_squared": 0.1398,
+        "peak_week": 20,
+        "decay_class": "SLOW"
+      },
+      "B2": {
+        "label": "Franco-German vs Benelux/Alpine",
+        "tau_weeks": 13.14,
+        "r_squared": 0.0785,
+        "peak_week": 70,
+        "decay_class": "MEDIUM"
+      },
+      "B3": {
+        "label": "Mediterranean vs Nordic/Visegrad",
+        "tau_weeks": null,
+        "r_squared": null,
+        "peak_week": 105,
+        "decay_class": "FIT_FAILED"
+      },
+      "B4": {
+        "label": "Germany vs France",
+        "tau_weeks": 80.07,
+        "r_squared": 0,
+        "peak_week": 6,
+        "decay_class": "SLOW"
+      },
+      "B5": {
+        "label": "Netherlands vs Austria",
+        "tau_weeks": 9.43,
+        "r_squared": 0.0426,
+        "peak_week": 70,
+        "decay_class": "FAST"
+      },
+      "B6": {
+        "label": "Spain vs Italy",
+        "tau_weeks": 37.31,
+        "r_squared": 0.3799,
+        "peak_week": 26,
+        "decay_class": "SLOW"
+      },
+      "B7": {
+        "label": "Poland vs Sweden",
+        "tau_weeks": 91.82,
+        "r_squared": 0.0138,
+        "peak_week": 23,
+        "decay_class": "SLOW"
+      }
+    },
+    "diagnostic_etc": {
+      "TV": {
+        "tau_weeks": null,
+        "peak_week": 44
+      },
+      "Aitchison": {
+        "tau_weeks": 28.47,
+        "r_squared": 0.0337,
+        "peak_week": 70
+      }
+    },
+    "etc_summary": {
+      "valid_carrier_fits": 7,
+      "mean_tau_weeks": 48.6,
+      "std_tau_weeks": 21.0,
+      "tau_range_weeks": [
+        13.0,
+        79.7
+      ],
+      "range_ratio": 6.1,
+      "hierarchy_pattern": "leaf_slower",
+      "diversity_cv": 0.433,
+      "diversity_class": "MODERATE"
+    }
+  },
+  "findings": [
+    "COVID_lockdown: Carriers show >2x range in decay time (5 to 24 weeks) \u2014 evidence of structural diversity",
+    "Energy_crisis_2022: Carriers show >2x range in decay time (13 to 80 weeks) \u2014 evidence of structural diversity",
+    "COVID_lockdown: Leaf balances decay slower than root \u2014 local structure more persistent than macro",
+    "Energy_crisis_2022: Leaf balances decay slower than root \u2014 local structure more persistent than macro"
+  ],
+  "methodology": {
+    "analogy": "ETC from loudspeaker impulse response measurement",
+    "computation": "Hilbert transform \u2192 energy envelope \u2192 exponential decay fit",
+    "units": "weeks (time constant \u03c4)",
+    "interpretation": "\u03c4 = time for energy to decay to 1/e of peak; higher \u03c4 = slower recovery",
+    "added_value_over_group_delay": "Group delay = onset timing; ETC = persistence duration. Different information."
+  }
+}

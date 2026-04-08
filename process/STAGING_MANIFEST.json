@@ -779,14 +779,14 @@
   ],
   "pending_items": [
     {
-      "item": "S000–S015 all pushed to GitHub",
+      "item": "S000–S016 all pushed to GitHub",
       "priority": "done",
-      "notes": "All sessions pushed. S009-S011: commit 0a621fab (2026-04-04). S012-S015: pushed by Peter 2026-04-05."
+      "notes": "All sessions through S016 pushed. S016: commits 2d349c0 through 3732655."
     },
     {
-      "item": "S016 push to GitHub",
+      "item": "S016-ext push to GitHub (EITT discovery)",
       "priority": "NEXT PUSH",
-      "notes": "6 files staged: HUF_GOVERNANCE_CHARTER.md, PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md, BATTLE_CARD_LIVE.md, analyzer title fix, CRPT-010.json, STAGING_MANIFEST.json. Plus Claude CoWorker analysis outputs (spectral, impulse, dependency chain JSONs/PNGs, revision brief)."
+      "notes": "6 new files + 3 modified files staged. New: EITT_FINDING.md, S016 data folder (3 JSONs), GROK_TEMPORAL_REVIEW_S016.md, HUF_GOV_CoDa_Plugin_Manifest_v1.0.json. Modified: CRPT-010.json, COLLECTIVE_CONVERSATION_S016.md, STAGING_MANIFEST.json."
     },
     {
       "item": "Diagnostic independence test (W-1)",
@@ -868,6 +868,7 @@
     "S015_when_pushed": 313,
     "S016_when_pushed": "317 (tracked) / 318 (disk count — 1-file discrepancy under investigation)",
     "S016_new_files": "HUF_GOVERNANCE_CHARTER.md (+1), PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md (+1), BATTLE_CARD_LIVE.md (+1), CRPT-010.json (+1), COLLECTIVE_CONVERSATION_S016.md (+1) = +5 new. Analyzer title and REVIEW-GUIDE modified (not new). Net: 312 + 5 = 317.",
+    "S016_ext_staged": "EITT discovery session. +6 new files: EITT_FINDING.md, data/codawork-samples/S016/HUF_Tweeter_Calibration_001.json, data/codawork-samples/S016/HUF_ETC_Analysis_001.json, data/codawork-samples/S016/HUF_Aitchison_Variance_Conservation_001.json, GROK_TEMPORAL_REVIEW_S016.md, HUF_GOV_CoDa_Plugin_Manifest_v1.0.json. +1 new folder: data/codawork-samples/S016/. Modified: CRPT-010.json, COLLECTIVE_CONVERSATION_S016.md, STAGING_MANIFEST.json. Expected count after push: 317 + 6 = 323 (tracked).",
     "count_correction_note": "April 5 2026: FOR_SHARON.md was deleted during S009-S011 push but file counts were not decremented. All counts from S009 onward corrected -1. S014 overcounted by additional +1 (STAGING_MANIFEST modification counted as new file). Verified by full repo scan: 312 files on disk. S016 adds 5 new files: charter, register, battle card, CRPT-010, collective conversation document."
   }
 }

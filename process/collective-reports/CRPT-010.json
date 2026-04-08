@@ -373,5 +373,98 @@
     }
   },
 
-  "one_sentence": "S016 began with a Fukushima timezone self-correction and cascaded into four quantitative findings (spectral independence addressing W-1, carrier impulse response with two-phase CR model partially addressing W-2, dependency chain revealing closure-forced relay, and SBP-as-filter-bank reframing HUF as a compositional disassembler derived from wave mechanics), three governance documents (9-article charter with E-Stop refinement, 9-item proof burden register, 15-question battle card), a corpus revision brief proposing 27-to-10 consolidation, and 8 collective conversation topics requiring collective input before the rewrite begins."
+  "one_sentence": "S016 began with a Fukushima timezone self-correction and cascaded into four quantitative findings (spectral independence addressing W-1, carrier impulse response with two-phase CR model partially addressing W-2, dependency chain revealing closure-forced relay, and SBP-as-filter-bank reframing HUF as a compositional disassembler derived from wave mechanics), three governance documents (9-article charter with E-Stop refinement, 9-item proof burden register, 15-question battle card), a corpus revision brief proposing 27-to-10 consolidation, and 8 collective conversation topics requiring collective input before the rewrite begins.",
+
+  "s016_extension_april_08": {
+    "date": "2026-04-08",
+    "title": "EITT Discovery — Entropy-Invariant Time Transformer",
+    "sequence_of_events": [
+      "1. Peter proposed winding-ratio concept for cross-resolution comparison (time transformer)",
+      "2. Claude assessed: analogy holds for temporal compression, breaks at conservation — could not name the conserved quantity",
+      "3. Claude ran ETC (Energy Time Constant) on tweeter calibration data — confirmed: adds persistence info beyond group delay",
+      "4. Peter sent ETC + time transformer brief to Grok for mathematical formalization",
+      "5. Grok returned 25 addendums: validated ETC, proposed Aitchison variance as conserved quantity, added RT60 analogue, identified full Smaart v9 toolkit mapping, created CoDa Plugin Manifest",
+      "6. Claude ran Aitchison variance conservation test across decimation ladder (daily→weekly→monthly→quarterly→annual)",
+      "7. Aitchison variance is approximately conserved (CV=0.285) but drops 55%",
+      "8. Shannon entropy is essentially invariant: 0.2% variation across 341:1 compression ratio",
+      "9. EITT named: Entropy-Invariant Time Transformer — the geometric mean is an entropy-preserving temporal filter"
+    ],
+
+    "eitt_finding": {
+      "name": "EITT — Entropy-Invariant Time Transformer",
+      "statement": "Shannon entropy of compositional data is invariant under geometric-mean decimation across temporal resolutions.",
+      "measured_variation": "0.18% across 341:1 compression (daily to annual)",
+      "entropy_values": {
+        "daily": 2.069863,
+        "weekly": 2.071290,
+        "monthly": 2.072198,
+        "quarterly": 2.072757,
+        "annual": 2.073492
+      },
+      "comparison": {
+        "aitchison_variance_change": "-55.1% (approximately conserved, not invariant)",
+        "tv_integral_change": "-99.7% (not conserved at all)",
+        "entropy_change": "+0.18% (effectively invariant)"
+      },
+      "significance": "The geometric mean — the fundamental operation of CoDa — is an entropy-preserving temporal filter. Cross-resolution comparison of compositional time series is mathematically grounded when decimation uses geometric-mean anti-aliasing.",
+      "codawork_significance": "At a CoDa conference, the DUT (Device Under Test) is Aitchison variance — the native CoDa dispersion measure. The finding that Shannon entropy (also native to the simplex) is the invariant connects CoDa directly to information theory via its own fundamental operation.",
+      "evidence_file": "data/codawork-samples/S016/HUF_Aitchison_Variance_Conservation_001.json"
+    },
+
+    "etc_finding": {
+      "name": "ETC — Energy Time Constant",
+      "statement": "Hilbert transform of CLR deviations produces energy envelopes whose exponential decay constants measure persistence per carrier.",
+      "covid_tau_range": "4.5–24.4 weeks (France fastest, Poland slowest)",
+      "energy_crisis_tau_range": "13.0–79.7 weeks (Netherlands fastest, France slowest)",
+      "cross_shock_highlight": "France: 17.6x ratio between COVID (4.5 wks) and Energy Crisis (79.7 wks) persistence",
+      "hierarchy_finding": "Leaf SBP balances decay slower than root — local bilateral coupling more persistent than macro-regional structure",
+      "evidence_file": "data/codawork-samples/S016/HUF_ETC_Analysis_001.json"
+    },
+
+    "rt60_finding": {
+      "name": "RT60 Analogue",
+      "statement": "Time for compositional energy envelope to decay 60 dB, approximately 3*tau.",
+      "highlight": "France Energy Crisis: RT60 = 239 weeks (4.6 years). France COVID: RT60 = 13.6 weeks.",
+      "source": "Computed from ETC results, analogous to acoustic reverberation time"
+    },
+
+    "grok_temporal_review": {
+      "scope": "25 addendums covering ETC validation, time transformer, wavelets, STFT, WVD, SPWVD, Choi-Williams, RT60, cross-domain applications, Smaart v9 mapping, CoDa Plugin Manifest",
+      "key_contributions": [
+        "Validated ETC on CLR coordinates",
+        "Proposed Aitchison variance as conserved quantity (superseded by entropy finding)",
+        "Added RT60 analogue = 3*tau",
+        "Identified full temporal tool inventory",
+        "Created CoDa Plugin Manifest v1.0 — HUF-GOV as extension to existing CoDa tools",
+        "4 kicked tires + 6 spare tires test case structure"
+      ],
+      "claude_flags": [
+        "Most temporal tools identified but not computed — conceptual only",
+        "Cross-domain applications asserted without data (PB-10 applies)",
+        "Plugin manifest is design vision, not implementation"
+      ],
+      "filed_as": [
+        "process/collective-reports/GROK_TEMPORAL_REVIEW_S016.md",
+        "process/collective-reports/HUF_GOV_CoDa_Plugin_Manifest_v1.0.json"
+      ]
+    },
+
+    "new_files_added": [
+      "data/codawork-samples/S016/HUF_Tweeter_Calibration_001.json",
+      "data/codawork-samples/S016/HUF_ETC_Analysis_001.json",
+      "data/codawork-samples/S016/HUF_Aitchison_Variance_Conservation_001.json",
+      "drafts/codawork-2026/EITT_FINDING.md",
+      "process/collective-reports/GROK_TEMPORAL_REVIEW_S016.md",
+      "process/collective-reports/HUF_GOV_CoDa_Plugin_Manifest_v1.0.json"
+    ],
+
+    "calibration_programme_status": {
+      "woofer": "DONE — EMBER annual generation shares, spectral independence confirmed",
+      "tweeter": "DONE — European daily prices, spectral independence failed on prices, persistence holds",
+      "crossover": "DONE — EITT, entropy conserved across all resolutions",
+      "etc": "DONE — Hilbert envelope + exponential decay, both shocks",
+      "rt60": "DONE — 3*tau, both shocks",
+      "midrange": "PENDING — monthly/quarterly resolution test"
+    }
+  }
 }
