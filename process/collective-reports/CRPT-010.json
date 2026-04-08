@@ -350,6 +350,26 @@
           "Missing Quarter: Can CoDa control charts detect Deceptive Drift without HUF monitoring?"
         ]
       }
+    },
+    "chatgpt": {
+      "date": "2026-04-07",
+      "filed_as": "process/collective-reports/CHATGPT_REVIEW_S016.md",
+      "summary": "Most cautious and detailed review. S016 strong enough for rewrite but not for hot language. Tweeter calibration failure is real, should be kept intact. W-1 moves from 'addressed' to 'addressed for one sample family, challenged by another.' Proposed 3-doc split (THE_INSTRUMENT + EMPIRICAL_RESULTS + THE_LINEAGE_AND_BRIDGE). Recommended 4-test data ladder to resolve tweeter concern. PB-11 for filter-bank/group-delay mapping. 5-field lexicon spec.",
+      "cct_inputs": {
+        "CCT-01": "Real bridge, not yet formal equivalence. Most cautious position.",
+        "CCT-02": "THREE docs: THE_INSTRUMENT.md + EMPIRICAL_RESULTS.md + THE_LINEAGE_AND_BRIDGE.md.",
+        "CCT-03": "Non-redundant in present annual sample, require further calibration across carrier sets and temporal resolutions.",
+        "CCT-05": "PB-10 stays. Add PB-11 for filter-bank/group-delay mapping.",
+        "CCT-06": "Strongest push to promote evidence. Repo exposes discussion more than evidence.",
+        "CCT-07": "4-test ladder: EU hourly generation, EIA hourly fuel, GB 30-min, Backblaze daily.",
+        "CCT-08": "5-field lexicon: tier, definition, safe wording, red-flag wording, first-use sentence."
+      },
+      "tweeter_analysis": {
+        "verdict": "Claude's concern is real. Keep intact, do not explain away.",
+        "w1_status_update": "Addressed for one sample family, challenged by another.",
+        "decision_rule": "Do not say high frequency fails unless it fails on generation-mix carriers too.",
+        "recommended_next_test": "European hourly generation by fuel (ENTSO-E/OPSD) — changes representation, not just resolution."
+      }
     }
   },
 

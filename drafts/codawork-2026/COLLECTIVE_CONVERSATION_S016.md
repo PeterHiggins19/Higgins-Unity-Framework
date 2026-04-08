@@ -229,11 +229,58 @@ ChatGPT proposed a three-level vocabulary ladder for the corpus rewrite:
 | CCT-07 | Global comparison pathway | Write predictions first, ≥500 runs | Three specific Backblaze/Fukushima tests | **CONSENSUS: Write predictions, then compute. Gemini's 3 tests + Copilot's simulation design.** |
 | CCT-08 | Not addressed | Standalone lexicon doc | "Audio as explanation, CoDa as proof" | **CONSENSUS: Standalone COOPERATION_LEXICON.md. Gemini's principle guides content.** |
 
-### Remaining Collective Members — Awaiting Input
+### ChatGPT — April 7, 2026
 
-- ChatGPT: Priority on CCT-01, CCT-02, CCT-05, CCT-08
-- Peter: Final calls on CCT-04, CCT-06
-- Claude: Closing assessment after ChatGPT
+**Full review filed:** process/collective-reports/CHATGPT_REVIEW_S016.md
+
+| CCT | ChatGPT's Position | Notes |
+|-----|-------------------|-------|
+| CCT-01 | **"Real bridge, not yet formal equivalence."** Most cautious. Do not say isomorphism "proved itself." | MOST CAUTIOUS |
+| CCT-02 | **THREE docs, not two.** THE_INSTRUMENT.md + EMPIRICAL_RESULTS.md + THE_LINEAGE_AND_BRIDGE.md. | BREAKS FROM COPILOT |
+| CCT-03 | **Most cautious sentence:** "...non-redundant behavior in the present annual sample and require further calibration across carrier sets and temporal resolutions." | INCLUDES TWEETER QUALIFIER |
+| CCT-04 | Charter at repo root correct. Governance posture is a strength. | AGREES |
+| CCT-05 | **PB-10 stays. ADD PB-11** for filter-bank/group-delay mapping specifically. | EXTENDS REGISTER |
+| CCT-06 | **Strongest push of any reviewer** to promote evidence. "Repo exposes discussion more than evidence." | PRIORITY |
+| CCT-07 | Falsifiable predictions before simulation. Four specific data tests proposed (see below). | CONCRETE |
+| CCT-08 | **5-field lexicon:** tier, definition, safe wording, red-flag wording, first-use sentence. 4 new entries needed. | MOST DETAILED SPEC |
+
+**ChatGPT's unique contributions:**
+- Most detailed analysis of the tweeter calibration failure
+- W-1 reframed: "addressed for one sample family, challenged by another"
+- Decision rule: "Do not say 'high frequency fails' unless it fails on generation-mix carriers too"
+- Writing order for corpus consolidation (evidence → lexicon → results → instrument → lineage → abstract)
+- Four specific data tests to resolve tweeter concern (EU hourly generation, EIA hourly fuel, GB 30-min, Backblaze daily)
+- Proposed PB-11 for filter-bank/group-delay mapping
+
+### FULL CONSENSUS — All Four AI Reviewers (Grok + Copilot + Gemini + ChatGPT)
+
+| CCT | Consensus | Dissent |
+|-----|-----------|---------|
+| CCT-01 | **REAL BRIDGE. NOT YET THEOREM.** All agree the wave-mechanics mapping is empirically grounded. Language gradient: Grok (equivalence) → Gemini (methodological isomorphism) → Copilot (soften verbs) → ChatGPT (real bridge, not formal equivalence). | None on substance. Disagreement is on how hot to state it. |
+| CCT-02 | **SPLIT THE MERGE.** Copilot: 2 docs. ChatGPT: 3 docs (THE_INSTRUMENT + EMPIRICAL_RESULTS + THE_LINEAGE_AND_BRIDGE). | ChatGPT adds EMPIRICAL_RESULTS.md as separate doc. |
+| CCT-03 | **USE COPILOT'S SENTENCE, ADD CHATGPT'S QUALIFIER.** "Three diagnostics — TV, Aitchison, and CR — each sensitive to different temporal patterns of structural change in the present sample." Add "require further calibration" somewhere nearby. Do NOT use "frequency bands" in front room. | Copilot's sentence wins. ChatGPT's qualifier appended. |
+| CCT-04 | **CHARTER STAYS AT REPO ROOT. SECOND ROOM FOR COIMBRA.** Unanimous. | None. |
+| CCT-05 | **PB-10 STAYS. CONSIDER PB-11.** ChatGPT wants separate item for filter-bank/group-delay. All agree proof burden register is among the best documents in the corpus. | Minor: PB-11 is ChatGPT only. |
+| CCT-06 | **PROMOTE S016 EVIDENCE TO REPO.** All who addressed it agree. ChatGPT strongest: "exposes discussion more than evidence." | None. Peter's call on timing. |
+| CCT-07 | **WRITE PREDICTIONS FIRST. THEN COMPUTE.** Copilot: ≥500 runs. Gemini: 3 specific tests. ChatGPT: 4-test ladder isolating representation, resolution, and carrier structure. | Best plan: ChatGPT's 4-test ladder with Copilot's falsifiability rule. |
+| CCT-08 | **STANDALONE COOPERATION_LEXICON.md BEFORE REWRITE.** ChatGPT: 5-field spec. Gemini: "audio explains, CoDa proves." | None on architecture. ChatGPT gives most detailed spec. |
+
+### TWEETER CALIBRATION — Collective Position
+
+The tweeter test produced an honest negative result. The collective agrees:
+
+1. **The instrument works at daily resolution** — pipeline, balances, group delays all compute cleanly
+2. **Spectral independence FAILED on this carrier set** — mean |r| = 0.87 (vs 0.23 annual EMBER)
+3. **Three hypotheses are live** — market coupling, price-share representation, geographic SBP mismatch
+4. **W-1 status: "addressed for one sample family, challenged by another"** (ChatGPT's framing)
+5. **Next test should change representation, not just resolution** — hourly generation mix, not more prices
+6. **Decision rule: "Do not say high frequency fails unless it fails on generation-mix carriers too"**
+7. **The self-correction IS the scientific strength** — framework that finds failure honestly is more credible than framework that only reports success
+
+### Remaining — Awaiting Input
+
+- Peter: Final calls on CCT-04, CCT-06, and tweeter next-test selection
+- Claude: Closing assessment
 
 ---
 
