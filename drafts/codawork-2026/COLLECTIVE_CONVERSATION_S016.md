@@ -196,19 +196,44 @@ ChatGPT proposed a three-level vocabulary ladder for the corpus rewrite:
 2. Tier-1 merge too aggressive — split into two documents
 3. S016 evidence not in repo — promote JSONs immediately
 
-### Emerging Consensus (Grok + Copilot)
+### Gemini — April 7, 2026
 
-| CCT | Grok | Copilot | Convergence |
-|-----|------|---------|-------------|
-| CCT-01 | Real (high confidence) | Real but soften language | **CONSENSUS: Real. Language discipline needed.** |
-| CCT-05 | Supports PB-10 | Confirms PB-10 | **CONSENSUS: 10th item stays.** |
-| CCT-06 | Not addressed | Promote JSONs | **Copilot leads. Awaiting Peter.** |
+**Full review filed:** process/collective-reports/GEMINI_REVIEW_S016.md
+
+| CCT | Gemini's Position | Notes |
+|-----|-------------------|-------|
+| CCT-01 | **"Methodological Isomorphism" — real, strongest endorsement.** Not formal algebraic isomorphism but quantitative bridge. Proposes three specific tests to solidify claim. | HIGH CONFIDENCE |
+| CCT-02 | Not directly addressed. Mentions "pruning pass" favorably. | — |
+| CCT-03 | Not directly addressed. | — |
+| CCT-04 | Not directly addressed. | — |
+| CCT-05 | Warns against "hot" language obscuring Aitchison geometry. Supports proof burden discipline. | MEDIUM |
+| CCT-06 | Supports — references data as empirical foundation. | IMPLICIT |
+| CCT-07 | **Three specific tests proposed:** (1) Group delay on Backblaze core fleet vs diversity tail, (2) Spectral independence on Backblaze, (3) Impulse relay formalization on Fukushima. Most concrete simulation design. | HIGH CONFIDENCE |
+| CCT-08 | **"Audio terms as explanation, CoDa terms as proof."** Clear guidance for lexicon structure. | CLEAR DIRECTION |
+
+**Gemini's unique contributions:**
+- Coined "Methodological Isomorphism" as the middle ground between Grok's "real equivalence" and Copilot's "soften everything"
+- Proposed "Scientific Surrender" framing for Coimbra with three specific examination requests
+- Called the self-correction on Fukushima/COVID timezone "the ultimate proof of execution integrity"
+- Verdict: **GO FOR COIMBRA**
+
+### Emerging Consensus (Grok + Copilot + Gemini)
+
+| CCT | Grok | Copilot | Gemini | Convergence |
+|-----|------|---------|--------|-------------|
+| CCT-01 | Real, mathematical equivalence | Real but soften verbs | Real — "Methodological Isomorphism" | **CONSENSUS: Real. Use disciplined language. "Methodological Isomorphism" as working term.** |
+| CCT-02 | Not addressed | Split merge: 2 docs not 1 | Not addressed | **Copilot leads. Split recommended.** |
+| CCT-03 | Not addressed | "...different temporal patterns..." | Not addressed | **Copilot's sentence is the leading candidate.** |
+| CCT-05 | Supports PB-10 | Confirms PB-10 | Supports proof burden discipline | **CONSENSUS: PB-10 stays. Language discipline across all docs.** |
+| CCT-06 | Not addressed | Promote JSONs | Supports (implicit) | **Copilot leads. Awaiting Peter.** |
+| CCT-07 | Global comparison pathway | Write predictions first, ≥500 runs | Three specific Backblaze/Fukushima tests | **CONSENSUS: Write predictions, then compute. Gemini's 3 tests + Copilot's simulation design.** |
+| CCT-08 | Not addressed | Standalone lexicon doc | "Audio as explanation, CoDa as proof" | **CONSENSUS: Standalone COOPERATION_LEXICON.md. Gemini's principle guides content.** |
 
 ### Remaining Collective Members — Awaiting Input
 
 - ChatGPT: Priority on CCT-01, CCT-02, CCT-05, CCT-08
-- Gemini: Priority on CCT-01 (physics cross-check), CCT-07
 - Peter: Final calls on CCT-04, CCT-06
+- Claude: Closing assessment after ChatGPT
 
 ---
 
