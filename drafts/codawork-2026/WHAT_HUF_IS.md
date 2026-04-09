@@ -36,6 +36,8 @@ HUF works the same way, except the "transmitter" is a physical system (an energy
 
 HUF compares the observed composition against the reference and outputs the difference. That difference is the signal. Drift magnitude, drift direction, drift velocity, which carrier group moved, whether the change was authorized — all of that is readable from the difference, provided the reference is correct.
 
+The temporal structure of that difference has three layers. Perturbation velocity — the Aitchison distance between consecutive observations — gives the scalar speed of compositional change: how fast the system is moving on the simplex. The ILR balance trajectory gives the structural path: where the composition is heading in terms of interpretable group contrasts (fossil vs. renewable, coal vs. gas). The balance derivative dB/dt gives the directed rate: how fast each partition is shifting, which direction, and whether that rate is accelerating. In raw proportions, the zero-sum constraint (Σ dx_i/dt = 0) forces every gain to be financed by losses elsewhere — this IS the relay chain that HUF monitors. In ILR coordinates, the balance derivatives are free and independent, decomposing that relay into measurable structural rates.
+
 If the reference is wrong — stale, unauthorized, never properly declared — the output is noise. Just like an unlocked receiver.
 
 ---
@@ -162,7 +164,7 @@ The mathematics already exists. Aitchison formalized the simplex geometry in 198
 
 The monitoring doctrine already exists. HUF's open-loop discipline, governance reference management, kill test, coherence chain, stored energy audit, and 25-error calibration study.
 
-What doesn't exist yet is the union. The instrument that combines CoDa's mathematical rigour with HUF's monitoring architecture. The instrument that is statistically optimal AND governancially sound. The instrument that watches compositions move and tells you when to care.
+What doesn't exist yet is the union. The instrument that combines CoDa's mathematical rigour with HUF's monitoring architecture. The instrument that is statistically optimal AND governancially sound. The instrument that watches compositions move — at the speed shown by perturbation velocity, along the structural path shown by balance trajectory, at the directed rate shown by dB/dt — and tells you when to care. EITT connects: the information content of that motion survives temporal compression under the geometric mean. The derivative describes the dynamics. The invariant describes what is conserved. Together, they form the temporal analysis framework that CoDa's spatial geometry has not yet developed.
 
 That union is the purpose of CoDaWork 2026.
 

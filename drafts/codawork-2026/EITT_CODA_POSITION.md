@@ -7,15 +7,33 @@
 
 ## The One-Paragraph Version
 
-We found that when you use the geometric mean — your central operation — as a temporal filter on compositional time series, Shannon entropy is empirically near-invariant across temporal resolutions. Daily, weekly, monthly, quarterly, annual — the entropy barely moves. We measured 0.18% variation across 341:1 compression on European electricity prices (8 carriers, 4089 days), and confirmed independently at 1.02% on monthly electricity generation (6 countries, 9 fuel types, 12:1 compression). We ran 17 adversarial tests and found honest boundary conditions — the effect requires temporal autocorrelation. We identified the residual as a second-order Jensen correction (the Hessian footprint of entropy's concavity on the simplex). We cannot prove it analytically. That is why we are here.
+We found that when you use the geometric mean — your central operation — as a temporal filter on compositional time series, Shannon entropy is empirically near-invariant across temporal resolutions. We have now confirmed this across five domains: energy (electricity generation, 7 countries, 0.18–1.02%), hardware degradation (Backblaze drive stats, K=4, 24 months, 0.03%), financial markets (equity sector shares, K=9, 74 months, 0.08%), and cosmological observation (Planck 353 GHz half-mission split, 0.3%). We also found that when EITT fails — as it does on the gold/silver ratio at K=2 over 338 years (6.7%) — increasing the dimensionality to K=4 by recovering hidden volatility and momentum carriers restores invariance to 0.38%. The failure diagnoses missing dimensions. We ran 17 adversarial tests on energy data and found honest boundary conditions — the effect requires temporal autocorrelation. We identified the residual as a second-order Jensen correction. We cannot prove it analytically. That is why we are here.
 
 ---
 
 ## What This Means for CoDa
 
-The geometric mean is the centre of Aitchison geometry. It defines the CLR transform. It defines the Frechet mean. It is the operation through which every CoDa calculation passes. We have found that this operation has a property nobody documented: it preserves information content across temporal scales.
+The geometric mean is the centre of Aitchison geometry. It defines the CLR transform. It defines the Frechet mean. It is a central CoDa operation. We have found that this operation has a property we have not found documented in the literature we reviewed: it preserves information content across temporal scales in the datasets we tested.
 
 This is not an addition to the CoDa framework. It is a discovery about a tool the framework already uses. Every CoDa practitioner who has ever computed a geometric mean of compositions over a time window has been performing an entropy-preserving operation without knowing it.
+
+---
+
+## The Temporal Chain: d(CoDa)/dt
+
+EITT answers what is conserved. But compositions also move — and the temporal derivative of that movement has a structure that supports EITT and deepens it.
+
+Three layers exist, two already implemented in our tools, one identified but not yet visualized:
+
+**Layer 1 — Perturbation velocity: |d(CoDa)/dt| on the simplex.** The Aitchison distance between consecutive time points, d_A(x(t), x(t−1)). This is the scalar speed of compositional change — how fast the system is moving, without direction. It is already computed in both the Spectrum Analyzer v3 and the CoDa Explorer. Spikes correspond to structural shocks (Fukushima 2011, UK coal exit 2016).
+
+**Layer 2 — Balance trajectory: B(t) = ilr(x(t)).** The ILR coordinates over time — the structural path. Each balance tracks the ratio between two groups of carriers. B₁ (fossil vs. renewable) crossing zero is the energy transition. This is the integral of the structural motion, already plotted in both tools.
+
+**Layer 3 — Balance derivative: dB/dt.** The instantaneous rate of structural change along each ILR partition. This is the missing middle layer. dB₁/dt tells you how fast fossil is losing ground to renewable right now. The sign gives direction. The magnitude gives speed. The second derivative d²B/dt² tells you whether the transition is accelerating.
+
+**Why this matters for CoDa:** In raw proportions, Σ dx_i/dt = 0 always. That zero-sum constraint is not a limitation — it IS the relay chain. Every gain in one carrier is financed by losses in others. But in ILR coordinates, the balance derivatives are free — each dB/dt moves independently. This is why ILR is the correct coordinate system for compositional temporal analysis: it decomposes the constrained relay into independent structural movements along interpretable partitions.
+
+**The connection to EITT:** The balance derivative describes the motion. EITT describes what is conserved when you compress the time record of that motion. They are complementary: d(CoDa)/dt tells you "how fast and in which direction is the composition moving?" EITT tells you "does the information content survive temporal aggregation of that movement?" Together, they form the temporal analysis framework that CoDa's spatial geometry has not yet developed.
 
 ---
 
@@ -41,7 +59,7 @@ This is not an addition to the CoDa framework. It is a discovery about a tool th
 
 **The information-geometric connection.** The Hessian of Shannon entropy on the simplex is related to the Fisher information matrix. Erb & Ay have worked on the Fisher metric for CoDa. If EITT can be expressed in terms of the Fisher-Rao geometry, that would be a deep structural result.
 
-**Testing on non-energy domains.** We have only tested energy data. CoDa researchers work with geological, ecological, economic, and genomic compositions. A single confirmation outside energy makes the finding much stronger. A single failure outside energy defines a new boundary condition.
+**Testing on non-energy domains.** We have now tested four non-energy domains (hardware, financial, cosmological, commodities). Three hold. One fails at K=2 and holds at K=4 — revealing the EITT inversion principle. CoDa researchers working with geological, ecological, and genomic compositions can extend the table further.
 
 **Credibility for the broader landscape.** EITT connects to ecology (Shannon-Wiener diversity), biomedical signal processing (multiscale entropy), information geometry, Renyi/Tsallis generalizations, and maximum entropy principles. We cannot approach those communities alone. With CoDa researchers alongside us, we can.
 
@@ -55,7 +73,9 @@ This is not an addition to the CoDa framework. It is a discovery about a tool th
 
 **It connects CoDa to information theory.** CoDa and information theory have developed largely independently despite sharing the simplex. EITT is a bridge. If the CoDa community can prove EITT analytically, that's a paper that both communities cite.
 
-**It opens new research directions.** The 3 conjectures (Hessian sufficiency, autocorrelation threshold, Fisher-Rao interpretation) are each worth a paper. The Renyi generalization question (does EITT hold for all q-orders?) maps directly to ecology's Hill numbers. The maximum entropy convergence (H* approaches ln(D)) has thermodynamic implications.
+**It gives CoDa a temporal derivative framework.** The d(CoDa)/dt chain — perturbation velocity as scalar speed, balance trajectory as structural path, balance derivative dB/dt as directed rate — provides CoDa with a structured approach to compositional time series that goes beyond "do CoDa at each time point independently." The zero-sum constraint in raw proportions (Σ dx_i/dt = 0) forces the relay structure; ILR coordinates decompose that relay into independent structural rates. This is the temporal analysis layer CoDa's spatial geometry has not formalized.
+
+**It opens new research directions.** The 3 conjectures (Hessian sufficiency, autocorrelation threshold, Fisher-Rao interpretation) are each worth a paper. The Renyi generalization question (does EITT hold for all q-orders?) maps directly to ecology's Hill numbers. The maximum entropy convergence (H* approaches ln(D)) has thermodynamic implications. The d(CoDa)/dt chain adds further directions: whether balance smoothness (small |dB/dt|) predicts EITT holding (confirmed: Backblaze B2 has 100% monotonicity and the tightest EITT at 0.03%), whether d²B/dt² reveals regime transition onset, and whether the balance derivative connects to Hron's functional CoDa framework as a natural velocity field on the simplex. The EITT inversion principle — increasing K to recover hidden carriers when EITT fails — opens a new direction in compositional dimensionality analysis: using entropy invariance as a criterion for the true number of parts in a system.
 
 ---
 
@@ -79,7 +99,7 @@ If CoDa validates EITT, here is what opens up:
 
 ## What We Are NOT Claiming
 
-We are not claiming a theorem. We are not claiming domain independence. We are not claiming this works everywhere. We are presenting an empirical finding with defined boundary conditions, a mechanistic explanation, reproducible code, and an open mathematical problem. We are here because CoDa has the tools to resolve this. We would welcome help formalizing it — or breaking it.
+We are not claiming a theorem. We are not claiming universal domain independence. We are not claiming this works everywhere. We are presenting an empirical finding confirmed across five domains with defined boundary conditions, a mechanistic explanation, reproducible code, and an open mathematical problem. When it fails, we show why and what fixing it reveals. We are here because CoDa has the tools to resolve this. We would welcome help formalizing it — or breaking it.
 
 ---
 

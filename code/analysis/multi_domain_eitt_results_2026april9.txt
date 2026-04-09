@@ -1,0 +1,101 @@
+================================================================================
+  HUF MULTI-DOMAIN CoDa + EITT + d(CoDa)/dt RESULTS
+  Run: 2026-04-09
+  Domains tested: BackBlaze, Commodities, Financial, Energy
+================================================================================
+
+CROSS-DOMAIN EITT SUMMARY
+══════════════════════════
+
+Domain                    K     Time span       Max compress  EITT Δ%    Verdict
+─────────────────────────────────────────────────────────────────────────────────
+BackBlaze (hardware)      4     24 months       12:1          0.0275%    HOLDS
+Financial (sector shares) 9     74 months       30:1          0.0797%    HOLDS
+Energy (global electric)  7     25 years        12:1          3.2187%    MARGINAL
+Commodities (Au/Ag)       2     338 years       50:1          6.6993%    FAILS
+─────────────────────────────────────────────────────────────────────────────────
+
+INTERPRETATION
+══════════════
+
+1. TWO NEW DOMAIN CONFIRMATIONS
+   BackBlaze (hardware degradation, K=4): HOLDS at 0.0275% — first non-energy test
+   Financial (equity sector shares, K=9): HOLDS at 0.0797% — second non-energy test
+   Both show monotonic decimation ladders. Both have near-perfect zero-sum closure.
+
+2. EITT FAILURE IS DIAGNOSTIC (Gold/Silver)
+   The gold/silver ratio has 104% entropy range over 338 years — massive secular drift.
+   At SHORT windows (2:1 = 0.12%, 4:1 = 0.44%) EITT holds.
+   At LONG windows (50:1 = 6.7%) it fails.
+   → EITT breakdown marks the scale at which stationarity breaks.
+   → The failure is informative: it tells you WHERE the system's structural memory ends.
+   Monotonicity only 56% over 50 years — the ratio swings between gold and silver
+   dominance decade to decade. No temporal persistence → no EITT.
+
+3. ENERGY MARGINAL — ACTIVE STRUCTURAL TRANSITION
+   Global electricity generation is in the middle of the fastest energy transition
+   in history. Solar: 0% → 7.1%, Wind: 0.2% → 8.4%, Coal: -6.6 pp, Nuclear: -9 pp.
+   At 5:1 compression: 0.08% (holds). At 12:1: 1.04% (marginal).
+   The secular trend overwhelms invariance at longer compression windows.
+   Country-level tests (Ember per-country) may hold better since they capture
+   individual trajectories without mixing fast-transitioning and slow countries.
+
+4. WHAT PREDICTS EITT HOLDING
+   Pattern across all 4 domains:
+   - Low base entropy range → EITT holds (BackBlaze 1.0%, Financial 1.8%)
+   - High base entropy range → EITT fails (Commodities 104%, Energy 21.7%)
+   - High balance monotonicity → EITT holds (BackBlaze B2: 100%)
+   - Low balance monotonicity → EITT fails (Commodities B1: 56%)
+
+   Hypothesis: EITT requires temporal autocorrelation in the balance coordinates.
+   When the system's structural trajectory is smooth and persistent, geometric-mean
+   decimation preserves entropy. When the trajectory oscillates or undergoes
+   secular drift, the geometric mean smears across structural regimes.
+
+KEY RELAY CHAINS
+════════════════
+
+BackBlaze:   Electronic → Media + Offline (fleet aging)
+Financial:   COVID relay: Energy+Industrials → Healthcare+Consumer Defensive
+             Post-COVID: Healthcare → Financial Services + Communication
+Energy:      Coal + Nuclear + Hydro → Solar + Wind + Gas
+
+NEW DISCOVERIES
+═══════════════
+
+1. Financial sector shares are compositional with EITT holding at 0.08%.
+   This is the first financial-domain confirmation. The COVID crash of March 2020
+   shows the largest perturbation velocity (d_A = 0.35) — a sharp compositional
+   relay from cyclical to defensive sectors.
+
+2. EITT failure on gold/silver gives us a DIAGNOSTIC TOOL: the compression ratio
+   at which EITT breaks tells you the system's structural memory length.
+   For gold/silver: ~4-6 year memory. For energy: ~5 year memory.
+   For hardware and financial: > 6 years (within available data).
+
+3. Four-domain comparison establishes that EITT is NOT universal across all
+   compositional systems — it requires temporal persistence. This is the honest
+   result. We can now state precisely: "EITT holds when balance trajectories
+   are temporally autocorrelated. The compression ratio at which it breaks
+   diagnoses the persistence scale."
+
+DOMAINS NOT TESTED (AND WHY)
+═════════════════════════════
+
+ESA-Planck:   FITS sky maps — spatial, not temporal. Different CoDa application.
+World Bank:   244 files requiring per-indicator extraction. Future work.
+Regimes:      Categorical descriptions, not numerical compositions.
+
+FOLDERS CHECKED
+═══════════════
+✓ BackBlaze       — full CoDa + EITT + d(CoDa)/dt
+✓ Commodities     — full CoDa + EITT + d(CoDa)/dt
+✓ Financial data  — full CoDa + EITT + d(CoDa)/dt
+✓ Energy          — full CoDa + EITT + d(CoDa)/dt
+○ ESA-Planck      — assessed, not temporal
+○ ESA             — duplicate of ESA-Planck data
+○ World Bank      — assessed, needs per-indicator extraction
+○ Regimes         — assessed, categorical only
+
+Governance: CGS-2 (n=3), GDoF 264. No new constants.
+HUF:1.1.8 | OP_MIN=0.51 | TOOL_MAX=0.49
