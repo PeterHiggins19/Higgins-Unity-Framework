@@ -26,7 +26,7 @@ You still have the gaps. You also have a gift.
 
 **What you bring him:** "Your geometric mean — the centre of your geometry — preserves Shannon entropy under temporal decimation. We measured 0.18% variation across 341:1 compression. We confirmed it on a second domain at 1.02%. We ran 17 adversarial tests; 7 broke it. The boundary condition is temporal autocorrelation."
 
-**What you ask him:** "You wrote that Shannon entropy doesn't satisfy CoDa's scale invariance. You were right — spatially. But temporally, under geometric-mean decimation, it's invariant. These are orthogonal properties. We can't prove the temporal one. Can you?"
+**What you ask him:** "You wrote that Shannon entropy doesn't satisfy CoDa's scale invariance. You were right — spatially. But temporally, under geometric-mean decimation, it's invariant. These are distinct properties — yours is spatial, ours is temporal. We can't prove the temporal one. Can you?"
 
 **Why he'll care:** His poster is on the Aitchison norm as a concentration measure. K_eff is exp(Shannon entropy). You just showed his geometric mean preserves the thing his norm measures. This connects his poster to your finding.
 
@@ -42,7 +42,7 @@ You still have the gaps. You also have a gift.
 
 ### Erb & Ay (if present, or via reference) — The Information Geometry Dance
 
-**What you bring:** "You proved Aitchison distance is the unique information-monotone metric on the simplex. That's spatial — amalgamation preserves information ordering. We found the temporal companion: Shannon entropy is invariant under geometric-mean decimation. Amalgamation monotonicity is spatial coarsening. EITT is temporal coarsening. Same geometry, orthogonal directions."
+**What you bring:** "You proved Aitchison distance is the unique information-monotone metric on the simplex. That's spatial — amalgamation preserves information ordering. We found the temporal companion: Shannon entropy is invariant under geometric-mean decimation. Amalgamation monotonicity is spatial coarsening. EITT is temporal coarsening. Same geometry, distinct directions — one spatial, one temporal."
 
 **What you ask:** "Does your uniqueness theorem extend to temporal operators? Is there a class of temporal coarsening operators on the simplex for which the Fisher metric predicts entropy invariance?"
 
@@ -125,7 +125,7 @@ Use these:
 - "We found this empirically..."
 - "The boundary condition is..."
 - "We can't prove it — can you?"
-- "This is orthogonal to, not contradicting..."
+- "This is distinct from, not contradicting..."
 - "In 17 adversarial tests, 7 broke it. Here's why..."
 - "The geometric mean is yours. We found a new property of it."
 

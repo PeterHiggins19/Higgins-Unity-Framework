@@ -31,7 +31,7 @@ In their e-information work (2018, 2024), Egozcue and Pawlowsky-Glahn specifical
 
 **What you owe Egozcue:** Explicit acknowledgment that his caution about Shannon entropy in CoDa was correct for the spatial case. EITT does NOT contradict his position. It shows entropy has a different role temporally than spatially.
 
-**What to say to him:** "You wrote that Shannon entropy doesn't satisfy scale invariance. You were right. What we found is that it satisfies something different — temporal decimation invariance. These are orthogonal properties. Your analysis of the spatial case remains correct."
+**What to say to him:** "You wrote that Shannon entropy doesn't satisfy scale invariance. You were right. What we found is that it satisfies something different — temporal decimation invariance. These are distinct properties — yours is spatial, ours is temporal. Your analysis of the spatial case remains correct."
 
 ---
 
@@ -78,13 +78,13 @@ The ILR transformation and sequential binary partition are their inventions. HUF
 
 **What to say:** "Your ILR framework gave us the structure to detect this. The SBP provides the physical filter bank. Your e-information work defined the question — what's the right information measure on the simplex? We found that Shannon entropy has a role you hadn't expected."
 
-**Critical:** Egozcue accepted your abstract. He is the door. Do not present EITT as contradicting his position on entropy. Present it as finding a different, orthogonal property.
+**Critical:** Egozcue accepted your abstract. He is the door. Do not present EITT as contradicting his position on entropy. Present it as finding a different, distinct temporal property.
 
 ### Erb & Ay (2021) — the Fisher information metric
 
 They proved the Aitchison distance is the unique information-monotone Riemannian metric on the simplex. This is the "mirrors" you saw — their information geometry and HUF's signal processing arrive at the same structure. EITT's entropy invariance is the temporal companion to their spatial amalgamation monotonicity.
 
-**What to say:** "Erb and Ay showed Aitchison distance is information-monotone under spatial coarsening. EITT shows Shannon entropy is invariant under temporal coarsening. Same geometry, orthogonal directions."
+**What to say:** "Erb and Ay showed Aitchison distance is information-monotone under spatial coarsening. EITT shows Shannon entropy is invariant under temporal coarsening. Same geometry, distinct directions — one spatial, one temporal."
 
 ### Grok — the Aitchison variance candidate
 
@@ -159,7 +159,7 @@ No data, no result. The EMBER dataset is open, well-documented, and comprehensiv
 | Question | Answer |
 |----------|--------|
 | Who do you owe most? | Aitchison. His geometric mean is the engine. Say his name first. |
-| Who is your host? | Egozcue. He opened the door. Present EITT as orthogonal to his work, not contradicting it. |
+| Who is your host? | Egozcue. He opened the door. Present EITT as distinct from his work, not contradicting it. |
 | Who benefits from your failures? | Greenacre (data matters more than exact algebra), Egozcue (entropy caution was right spatially), control chart people (independence assumption is safe). |
 | Who is challenged by your success? | Anyone comparing resolutions with arithmetic means. Anyone treating CoDa as purely spatial. |
 | Hardest attack? | "It's just Jensen's." Have the geometric-mean distinction ready. |
