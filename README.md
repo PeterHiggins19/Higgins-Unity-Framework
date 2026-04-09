@@ -8,6 +8,30 @@ HUF is presented here as an **open-loop framework**. The instrument reads. The h
 
 ---
 
+## New Discovery: Entropy-Invariant Time Transformer (EITT)
+
+**April 2026.** Shannon entropy is empirically near-invariant under geometric-mean temporal decimation of compositional time series.
+
+Measured: **0.18% variation** across a 341:1 compression ratio (daily → annual European electricity compositions, 8 carriers, 4089 trading days). Confirmed independently on 6 countries at **1.02% mean variation**, then driven to **0.029%** on a third independent test (EMBER monthly data, Copilot calibrator suite).
+
+For comparison, Aitchison variance drops 55% and total variation drops 99.7% across the same ladder. Shannon entropy barely moves.
+
+This means the geometric mean — the fundamental operation of CoDa — appears to be an entropy-preserving temporal filter. Temporal resolution becomes a free parameter. Information content is stable.
+
+| What to read | File | Time |
+|--------------|------|------|
+| The finding, the numbers, the mechanism | [`EITT_FINDING.md`](drafts/codawork-2026/EITT_FINDING.md) | 10 min |
+| Plain-language explanation of everything | [`EITT_COMPLETE_EXPLANATION.md`](drafts/codawork-2026/EITT_COMPLETE_EXPLANATION.md) | 15 min |
+| What this offers CoDa specifically | [`EITT_CODA_POSITION.md`](drafts/codawork-2026/EITT_CODA_POSITION.md) | 10 min |
+| How EITT relates to 10 entropy territories | [`EITT_ENTROPY_LANDSCAPE.md`](drafts/codawork-2026/EITT_ENTROPY_LANDSCAPE.md) | 20 min |
+| Adversarial testing (10 pass, 7 fail, boundary mapped) | [`EITT_Adversarial_001.json`](data/codawork-samples/S016/EITT_Adversarial_001.json) | 10 min |
+| Copilot's calibrator lab and boundary condition | [`data/eitt_lab/`](data/eitt_lab/) | 30 min |
+| The residual explained (Hessian footprint) | [`EITT_Residual_Analysis_001.json`](data/codawork-samples/S016/EITT_Residual_Analysis_001.json) | 15 min |
+
+**Posture:** We found this empirically. We can't prove it. Can you?
+
+---
+
 ## What HUF claims
 
 - Composition can be monitored directly, rather than treated only as a statistical correction or secondary view.
@@ -107,7 +131,12 @@ If you find a failure mode not on this list, please open an issue.
 | [`context-books/`](context-books/) | Four audience-specific editions of the core theory (general, engineering, physics, sciences). |
 | [`math-books/`](math-books/) | Formal mathematical foundations. 42 numbered items with full proofs. |
 | [`process/`](process/) | How this was built — collective review traces, session ledgers, governance documents. |
-| [`drafts/`](drafts/) | Submission papers (pre-validation), the Human-AI Accord. Work in progress. |
+| [`drafts/`](drafts/) | Submission papers (pre-validation), the Human-AI Accord, EITT materials. Work in progress. |
+| [`data/`](data/) | Reproducible datasets: EMBER energy, CoDaWork samples, EITT lab (calibration, adversarial, residual). |
+| [`code/`](code/) | Analysis scripts (Backblaze, energy, HellTest stress tests), diagnostic tools. |
+| [`src/`](src/) | Document generation build system (JS builders + shared modules + Python validation). |
+| [`notebooks/`](notebooks/) | Onboarding Jupyter series (5 interactive tutorials). |
+| [`docs/`](docs/) | Generated canonical documents: explorations, governance, 7 academic paper drafts, reference. |
 
 ### Governance documents
 
@@ -132,9 +161,11 @@ Pre-CoDa tools (v2 analyzer, Universal analyzer) have been moved to [`archive/to
 
 ### CoDaWork 2026 Conference Materials
 
-Abstract accepted by Prof. Juan Jose Egozcue, Chair of the Scientific Committee. Conference: June 1-6, 2026, Coimbra, Portugal. See [`drafts/codawork-2026/`](drafts/codawork-2026/) for the full preparation suite (18 files) including formulas, vocabulary, researcher profiles, battle card, executive summary, core explanation, and the HUF-CoDa translator.
+Abstract accepted by Prof. Juan Jose Egozcue, Chair of the Scientific Committee. Conference: June 1-6, 2026, Coimbra, Portugal. See [`drafts/codawork-2026/`](drafts/codawork-2026/) for the full preparation suite including formulas, vocabulary, researcher profiles, battle card, executive summary, core explanation, the HUF-CoDa translator, and all EITT materials.
 
-**New entry point for CoDa community:** [`START_HERE.md`](START_HERE.md) — includes a "For CoDa / Compositional Data Analysts" section with direct links to all relevant materials.
+**New in April 2026 — EITT:** The Entropy-Invariant Time Transformer discovery. Shannon entropy near-invariant under geometric-mean temporal decimation. Full finding, adversarial testing, residual analysis, calibration lab, boundary conditions, and an entropy landscape mapping EITT against 10 existing entropy territories. See [`EITT_FINDING.md`](drafts/codawork-2026/EITT_FINDING.md) and [`data/eitt_lab/`](data/eitt_lab/).
+
+**Entry point for CoDa community:** [`START_HERE.md`](START_HERE.md) — includes a "For CoDa / Compositional Data Analysts" section with direct links to all relevant materials including EITT.
 
 ---
 
