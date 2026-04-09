@@ -13,9 +13,27 @@ We found that when you use the geometric mean — your central operation — as 
 
 ## What This Means for CoDa
 
-The geometric mean is the centre of Aitchison geometry. It defines the CLR transform. It defines the Frechet mean. It is the operation through which every CoDa calculation passes. We have found that this operation has a property nobody documented: it preserves information content across temporal scales.
+The geometric mean is the centre of Aitchison geometry. It defines the CLR transform. It defines the Frechet mean. It is a central CoDa operation. We have found that this operation has a property we have not found documented in the literature we reviewed: it preserves information content across temporal scales in the datasets we tested.
 
 This is not an addition to the CoDa framework. It is a discovery about a tool the framework already uses. Every CoDa practitioner who has ever computed a geometric mean of compositions over a time window has been performing an entropy-preserving operation without knowing it.
+
+---
+
+## The Temporal Chain: d(CoDa)/dt
+
+EITT answers what is conserved. But compositions also move — and the temporal derivative of that movement has a structure that supports EITT and deepens it.
+
+Three layers exist, two already implemented in our tools, one identified but not yet visualized:
+
+**Layer 1 — Perturbation velocity: |d(CoDa)/dt| on the simplex.** The Aitchison distance between consecutive time points, d_A(x(t), x(t−1)). This is the scalar speed of compositional change — how fast the system is moving, without direction. It is already computed in both the Spectrum Analyzer v3 and the CoDa Explorer. Spikes correspond to structural shocks (Fukushima 2011, UK coal exit 2016).
+
+**Layer 2 — Balance trajectory: B(t) = ilr(x(t)).** The ILR coordinates over time — the structural path. Each balance tracks the ratio between two groups of carriers. B₁ (fossil vs. renewable) crossing zero is the energy transition. This is the integral of the structural motion, already plotted in both tools.
+
+**Layer 3 — Balance derivative: dB/dt.** The instantaneous rate of structural change along each ILR partition. This is the missing middle layer. dB₁/dt tells you how fast fossil is losing ground to renewable right now. The sign gives direction. The magnitude gives speed. The second derivative d²B/dt² tells you whether the transition is accelerating.
+
+**Why this matters for CoDa:** In raw proportions, Σ dx_i/dt = 0 always. That zero-sum constraint is not a limitation — it IS the relay chain. Every gain in one carrier is financed by losses in others. But in ILR coordinates, the balance derivatives are free — each dB/dt moves independently. This is why ILR is the correct coordinate system for compositional temporal analysis: it decomposes the constrained relay into independent structural movements along interpretable partitions.
+
+**The connection to EITT:** The balance derivative describes the motion. EITT describes what is conserved when you compress the time record of that motion. They are complementary: d(CoDa)/dt tells you "how fast and in which direction is the composition moving?" EITT tells you "does the information content survive temporal aggregation of that movement?" Together, they form the temporal analysis framework that CoDa's spatial geometry has not yet developed.
 
 ---
 
@@ -55,7 +73,9 @@ This is not an addition to the CoDa framework. It is a discovery about a tool th
 
 **It connects CoDa to information theory.** CoDa and information theory have developed largely independently despite sharing the simplex. EITT is a bridge. If the CoDa community can prove EITT analytically, that's a paper that both communities cite.
 
-**It opens new research directions.** The 3 conjectures (Hessian sufficiency, autocorrelation threshold, Fisher-Rao interpretation) are each worth a paper. The Renyi generalization question (does EITT hold for all q-orders?) maps directly to ecology's Hill numbers. The maximum entropy convergence (H* approaches ln(D)) has thermodynamic implications.
+**It gives CoDa a temporal derivative framework.** The d(CoDa)/dt chain — perturbation velocity as scalar speed, balance trajectory as structural path, balance derivative dB/dt as directed rate — provides CoDa with a structured approach to compositional time series that goes beyond "do CoDa at each time point independently." The zero-sum constraint in raw proportions (Σ dx_i/dt = 0) forces the relay structure; ILR coordinates decompose that relay into independent structural rates. This is the temporal analysis layer CoDa's spatial geometry has not formalized.
+
+**It opens new research directions.** The 3 conjectures (Hessian sufficiency, autocorrelation threshold, Fisher-Rao interpretation) are each worth a paper. The Renyi generalization question (does EITT hold for all q-orders?) maps directly to ecology's Hill numbers. The maximum entropy convergence (H* approaches ln(D)) has thermodynamic implications. The d(CoDa)/dt chain adds further directions: whether balance smoothness (small |dB/dt|) predicts EITT holding, whether d²B/dt² reveals regime transition onset, and whether the balance derivative connects to Hron's functional CoDa framework as a natural velocity field on the simplex.
 
 ---
 

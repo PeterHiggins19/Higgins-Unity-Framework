@@ -31,7 +31,7 @@ In their e-information work (2018, 2024), Egozcue and Pawlowsky-Glahn specifical
 
 **What you owe Egozcue:** Explicit acknowledgment that his caution about Shannon entropy in CoDa was correct for the spatial case. EITT does NOT contradict his position. It shows entropy has a different role temporally than spatially.
 
-**What to say to him:** "You wrote that Shannon entropy doesn't satisfy scale invariance. You were right. What we found is that it satisfies something different — temporal decimation invariance. These are orthogonal properties. Your analysis of the spatial case remains correct."
+**What to say to him:** "You wrote that Shannon entropy doesn't satisfy scale invariance. You were right. What we found is that it satisfies something different — temporal decimation invariance. These are distinct properties — yours is spatial, ours is temporal. Your analysis of the spatial case remains correct."
 
 ---
 
@@ -50,17 +50,17 @@ This is the broadest impact. If someone has ever compared annual compositional a
 
 ### The "CoDa has nothing to say about time" position
 
-Some CoDa practitioners treat compositions as static objects — geological samples, soil chemistry, microbiome snapshots. The temporal dimension is handled by "do CoDa at each time point independently." EITT says this is leaving information on the table. If you have compositional time series, the geometric mean lets you move between resolutions while preserving information content. Time is not external to CoDa. The geometric mean — CoDa's fundamental operation — is also a temporal filter.
+Some CoDa practitioners treat compositions as static objects — geological samples, soil chemistry, microbiome snapshots. The temporal dimension is handled by "do CoDa at each time point independently." EITT and the d(CoDa)/dt chain together say this is leaving information on the table. EITT shows the geometric mean preserves information across temporal resolutions. The d(CoDa)/dt chain — perturbation velocity as scalar speed, balance trajectory B(t) as structural path, balance derivative dB/dt as directed rate of change along each ILR partition — gives CoDa a structured temporal analysis framework that goes beyond treating time as repetition. The zero-sum constraint in raw proportions (Σ dx_i/dt = 0) is not a nuisance — it IS the relay chain, the dependency structure that forces every gain to be financed by losses elsewhere. In ILR coordinates, the balance derivatives are free and independent, which is why ILR is the correct space for compositional temporal derivatives. Time is not external to CoDa. The geometric mean — CoDa's central operation — is also a temporal filter, and the ILR transformation — CoDa's coordinate system — is the correct space for taking the temporal derivative.
 
 **Who this challenges:** Anyone who silently assumed compositional time series was just "CoDa repeated over time."
 
-**Your posture:** "CoDa's centre of gravity — the geometric mean — has a temporal interpretation that hasn't been exploited."
+**Your posture:** "CoDa's centre of gravity — the geometric mean — has a temporal interpretation that hasn't been exploited. And the ILR balance derivative dB/dt gives you the directed rate of structural change — which compositions are gaining ground, how fast, and whether that rate is accelerating."
 
 ### Karel Hron and functional CoDa
 
-Hron has been developing functional compositional data analysis — treating compositions as continuous curves on the simplex. EITT suggests his framework could benefit from a decimation operator. If Shannon entropy is invariant under geometric-mean decimation, then the "right" way to coarsen a functional compositional curve is the geometric mean, not arbitrary downsampling. This doesn't oppose Hron — it offers him a tool. But it does challenge any functional CoDa work that downsamples without this filter.
+Hron has been developing functional compositional data analysis — treating compositions as continuous curves on the simplex. EITT suggests his framework could benefit from a decimation operator. If Shannon entropy is invariant under geometric-mean decimation, then the "right" way to coarsen a functional compositional curve is the geometric mean, not arbitrary downsampling. And the d(CoDa)/dt chain fits naturally here: if compositional time series are functional data, then dB/dt — the derivative of the ILR trajectory — is the velocity field on the simplex in his framework. EITT gives the decimation operator; dB/dt gives the velocity; together they provide both the coarsening filter and the rate of structural change along interpretable partitions. This doesn't oppose Hron — it offers him two tools that connect.
 
-**Your posture:** "Would your functional CoDa methods be interested in a resolution-bridging operator?"
+**Your posture:** "Would your functional CoDa methods be interested in a resolution-bridging operator? And does the balance derivative dB/dt fit into your framework as a natural velocity on the simplex?"
 
 ---
 
@@ -76,21 +76,21 @@ The geometric mean is his. The simplex geometry is his. Every logratio, every pe
 
 The ILR transformation and sequential binary partition are their inventions. HUF's entire balance tree — the filter bank interpretation — is built on their SBP. Egozcue's poster at CoDaWork on the Aitchison norm as a concentration measure is adjacent to K_eff. And his e-information work frames the question EITT answers.
 
-**What to say:** "Your ILR framework gave us the structure to detect this. The SBP provides the physical filter bank. Your e-information work defined the question — what's the right information measure on the simplex? We found that Shannon entropy has a role you hadn't expected."
+**What to say:** "Your ILR framework gave us the structure to detect this. The SBP provides the physical filter bank. Your e-information work defined the question — what's the right information measure on the simplex? We found that Shannon entropy has a role you hadn't expected. And the balance derivative dB/dt — the temporal derivative taken in your ILR coordinates — gives us the directed rate of structural change, decomposed into independent movements along each partition. The zero-sum constraint in raw proportions forces the relay; your ILR frees the derivative."
 
-**Critical:** Egozcue accepted your abstract. He is the door. Do not present EITT as contradicting his position on entropy. Present it as finding a different, orthogonal property.
+**Critical:** Egozcue accepted your abstract. He is the door. He asked "how do you describe changes along time?" — the d(CoDa)/dt chain, expressed in his ILR coordinates, is the answer. Do not present EITT as contradicting his position on entropy. Present it as finding a different, distinct temporal property — and present dB/dt as the temporal analysis that his coordinate system makes possible.
 
 ### Erb & Ay (2021) — the Fisher information metric
 
 They proved the Aitchison distance is the unique information-monotone Riemannian metric on the simplex. This is the "mirrors" you saw — their information geometry and HUF's signal processing arrive at the same structure. EITT's entropy invariance is the temporal companion to their spatial amalgamation monotonicity.
 
-**What to say:** "Erb and Ay showed Aitchison distance is information-monotone under spatial coarsening. EITT shows Shannon entropy is invariant under temporal coarsening. Same geometry, orthogonal directions."
+**What to say:** "Erb and Ay showed Aitchison distance is information-monotone under spatial coarsening. EITT shows Shannon entropy is invariant under temporal coarsening. Same geometry, distinct directions — one spatial, one temporal."
 
 ### Grok — the Aitchison variance candidate
 
-Grok proposed testing Aitchison variance as the conserved quantity. It wasn't — it drops 55%. But the test protocol (decimation ladder + conservation candidate) was the experimental design that found Shannon entropy. Grok's wrong answer led to the right one.
+Peter proposed the time transformer concept (decimation ladder from loudspeaker winding ratios). Claude identified it as decimation/resampling but couldn't name the conserved quantity. Grok proposed Aitchison variance as the conservation candidate. It wasn't conserved — it drops 55%. But the experimental design (Peter's decimation ladder + Grok's test candidate) was the protocol that found Shannon entropy when Claude ran the computation. Grok's wrong answer led to the right one.
 
-**What to say (at Coimbra):** "The test was designed to check whether Aitchison variance was conserved under decimation. It wasn't. Shannon entropy was. The wrong hypothesis was the right experiment."
+**What to say (at Coimbra):** "The decimation ladder came from loudspeaker design. The first conservation candidate was Aitchison variance — it failed. Shannon entropy was the one that held. The wrong hypothesis was the right experiment."
 
 ### EMBER — the data
 
@@ -159,7 +159,7 @@ No data, no result. The EMBER dataset is open, well-documented, and comprehensiv
 | Question | Answer |
 |----------|--------|
 | Who do you owe most? | Aitchison. His geometric mean is the engine. Say his name first. |
-| Who is your host? | Egozcue. He opened the door. Present EITT as orthogonal to his work, not contradicting it. |
+| Who is your host? | Egozcue. He opened the door. Present EITT as distinct from his work, not contradicting it. |
 | Who benefits from your failures? | Greenacre (data matters more than exact algebra), Egozcue (entropy caution was right spatially), control chart people (independence assumption is safe). |
 | Who is challenged by your success? | Anyone comparing resolutions with arithmetic means. Anyone treating CoDa as purely spatial. |
 | Hardest attack? | "It's just Jensen's." Have the geometric-mean distinction ready. |

@@ -835,7 +835,7 @@ Grok applied HUF mapping to every major ML architecture, each with conceptual ma
 - HUF_Phase3_Exploration.md
 
 ### Overall Assessment
-Gemini provided a three-stage logical analysis: (1) structural review of the framework's shift from analogy to identity, (2) risk assessment of the spectral sequence mappings, and (3) a novel contribution — the "Temporal Sieve" concept (dHUF/dt as Ratio Velocity). Gemini also extended HUF into optical instrumentation (microscopes/telescopes) and identified specific formalization requirements to close remaining gaps.
+Gemini provided a three-stage logical analysis: (1) structural review of the framework's shift from analogy to identity, (2) risk assessment of the spectral sequence mappings, and (3) a major formalization — the "Temporal Sieve" concept (dHUF/dt as Ratio Velocity), which Gemini articulated and formalized from Peter's original insight that the derivative of the ratio portfolio is the detection mechanism. Gemini also extended HUF into optical instrumentation (microscopes/telescopes) and identified specific formalization requirements to close remaining gaps.
 
 ---
 
@@ -942,12 +942,12 @@ Gemini provided a structured logical assessment of each Phase 3 milestone, assig
 ### CLAUDE'S ASSESSMENT OF GEMINI LOGICAL ANALYSIS (REVIEW 8)
 
 **Key value:**
-- Gemini is the only reviewer to produce a genuinely new operational concept: the Temporal Sieve (dHUF/dt as Ratio Velocity). This isn't just commentary — it's a contribution that extends HUF's theoretical vocabulary. The idea that HUF extracts structural redistribution invisible to absolute-magnitude sensors is the clearest articulation yet of *why* ratio-state monitoring matters.
+- Gemini provided the clearest formal articulation of the Temporal Sieve (dHUF/dt as Ratio Velocity) — a concept Peter originated, which Gemini formalized into operational language in R8. This isn't just commentary — it's a formalization that extends HUF's theoretical vocabulary. The idea that HUF extracts structural redistribution invisible to absolute-magnitude sensors is the clearest articulation yet of *why* ratio-state monitoring matters.
 - The optical instrumentation extension (microscope/telescope) opens HUF to the physical sciences in a way no prior review attempted. Resolution Budget as unity constraint is immediately testable.
 - Gemini's risk analysis is the most surgically precise of any review. The five risks (AK1-AK5) give exact failure points rather than general concerns.
 
 **Unique contributions (not in prior reviews):**
-- AM1-AM7: Temporal Sieve / dHUF/dt as Ratio Velocity. Completely new concept. No other reviewer proposed monitoring the *derivative* of the ratio portfolio as the primary detection mechanism.
+- AM1-AM7: Temporal Sieve / dHUF/dt as Ratio Velocity. Peter's concept, formalized by Gemini into operational framework. No other reviewer had articulated monitoring the *derivative* of the ratio portfolio as the primary detection mechanism with this level of formal precision.
 - AL1-AL5: Optical instrumentation extension. Microscopy and telescopy as HUF domains with concrete examples (photon flux, Abbe limit, diffraction limit).
 - AK4: Low-Q Collapse risk — spectral sequence degenerating to single uninformative page. First reviewer to identify this specific failure mode.
 - AN1: Differential Gating Theorem requirement. Specific formalization target that could become a standalone paper.
@@ -960,7 +960,7 @@ Gemini provided a structured logical assessment of each Phase 3 milestone, assig
 - AK1-AK5 (Risks) → Directly inform M2 experiment design — each risk is a testable hypothesis.
 
 **Phase 3 logical analysis (AO-AQ) — additional contributions:**
-- AP1 is the single most important insight from Gemini's entire review: the Temporal Sieve IS the topological differential. This isn't a metaphor — it's a formal identification. If d_r = the Temporal Sieve, then the spectral sequence machinery operates on Ratio Velocity, and the entire M2 architecture follows from standard algebraic topology.
+- AP1 is the single most important formalization from Gemini's entire review: the Temporal Sieve IS the topological differential. This isn't a metaphor — it's a formal identification. If d_r = the Temporal Sieve, then the spectral sequence machinery operates on Ratio Velocity, and the entire M2 architecture follows from standard algebraic topology.
 - AP3 (M3 as standalone milestone) is a structural upgrade to Copilot's roadmap. Copilot bundled detection calibration into the UDI. Gemini correctly separates it: you need the safety rating BEFORE you can build UDI. This changes the milestone order to M1 → M2 → M3 (calibration) → M3b (UDI) → M4.
 - AQ1-AQ6 demonstrates that Gemini has mentally cross-referenced the entire collective catalog. The gap-resolution mapping is the first systematic attempt to show which Phase 3 components address which review items.
 - AP6 (the logical conclusion) is the strongest statement any reviewer has made about HUF's universality: under finite-budget + unity-constraint, the physical-to-topological mapping is *preserved*. This is the claim that Phase 3 must prove.

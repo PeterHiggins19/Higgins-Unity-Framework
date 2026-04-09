@@ -1,0 +1,224 @@
+{
+  "review_id": "CLAUDE_WEB_TOOLS_AND_DATA_REVIEW_S017",
+  "date": "2026-04-09",
+  "from": "Claude (Opus 4.6)",
+  "to": "Peter Higgins and the HUF Collective",
+  "subject": "Comprehensive Review of Public Web Tools, Data, and CoDa-Facing Usability",
+  "brief_received_from": "ChatGPT (via Peter)",
+
+  "executive_summary": "The repo now has a real public front door and three functioning browser tools. The tools are mathematically serious, zero-dependency, and self-contained. The Spectrum Analyzer v3 is the clear flagship. The Ternary EMBER is the cleanest teaching artifact. The CoDa Explorer has a mathematical inconsistency in its ILR balance implementation that needs fixing before Coimbra. The front-door narrative (README → START_HERE → tools → EITT) is coherent. One formula discrepancy found. Several label and framing improvements recommended.",
+
+  "deliverable_1_tool_ranking": {
+    "rank_1_strongest": {
+      "tool": "HUF Spectrum Analyzer v3",
+      "path": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
+      "size": "71 KB, 1865 lines, zero dependencies",
+      "verdict": "This is the flagship. It feels like an instrument, not a demo.",
+      "strengths": [
+        "10 panels covering the full diagnostic chain: complexity (K_eff) → composition ribbon → dual velocity (TV + Aitchison) → ternary → CLR → ILR balances → perturbation velocity → distance matrix → complexity heatmap → crisis snapshot",
+        "ILR balances are implemented correctly with proper √(r*s/(r+s)) scaling and geometric means within groups — mathematically sound CoDa",
+        "Interactive controls (country selector, year range, metric toggle, play/pause animation, time scrubber) make it feel like a real monitoring instrument",
+        "Gauge sidebar with status classification (STABLE / VELOCITY SPIKE / COMPLEXITY DECLINING / DECEPTIVE DRIFT) demonstrates the operational monitoring concept",
+        "All formulas match documented specifications: Aitchison distance uses pairwise log-ratio differences, CLR uses geometric mean, K_eff uses Shannon entropy → exp(H)",
+        "Event annotations (Fukushima 2011, UK Coal Collapse 2016, Germany Nuclear Exit 2023) ground the math in real-world events",
+        "Zero external dependencies — opens in any browser, anywhere, no CDN required"
+      ],
+      "weaknesses": [
+        "Panel density may overwhelm a first-time visitor. 10 panels is a lot to parse without guidance",
+        "The gauge sidebar status labels (DECEPTIVE DRIFT, VELOCITY SPIKE) use HUF vocabulary that a CoDa newcomer won't recognize — these need brief inline definitions or tooltips",
+        "The subtitle reads 'Three-Diagnostic Protocol (TV + Aitchison + CR)' but CR (carrier ratio) is not explained anywhere on the page",
+        "No explicit link back to the EITT finding from within the tool — a CoDa researcher using this tool doesn't get pointed toward entropy invariance"
+      ],
+      "coda_mathematician_reaction": "Will recognize the Aitchison distance, CLR, and ILR implementations as correct. Will appreciate that both simplex-native (Aitchison) and information-theoretic (TV, K_eff) metrics are shown side by side. Will likely want to inspect the ILR balance partition tree more closely — the choice of Fossil(3)/Renewable(5) as the first split is interpretable and defensible."
+    },
+
+    "rank_2_middle": {
+      "tool": "Ternary EMBER",
+      "path": "drafts/codawork-2026/ternary_ember.html",
+      "size": "19 KB, 320 lines, SVG-based, zero dependencies",
+      "verdict": "The cleanest teaching artifact. Simple, correct, and immediately legible.",
+      "strengths": [
+        "One job, done well: show compositional trajectories on the ternary simplex",
+        "SVG rendering is crisp and resolution-independent",
+        "Barycentric coordinate projection is mathematically correct",
+        "Event annotations (Fukushima, Nuclear Exit, Coal Collapse) provide narrative anchors without cluttering",
+        "Directional arrows on trajectories show time progression intuitively",
+        "Point size grows with year — early history is small, recent is large. Good visual encoding",
+        "EMBER data attribution (CC BY 4.0) is clearly shown",
+        "Can stand alone as a pedagogical artifact — no private context needed"
+      ],
+      "weaknesses": [
+        "Static — no interactivity. Cannot scrub years, select countries, or zoom. This limits exploration",
+        "Only shows the 3-part sub-composition (Fossil/Nuclear/Renewable). A CoDa purist may ask: what about the full 9-carrier simplex? The sub-composition is defensible but the choice should be documented",
+        "No numerical readout — you see the trajectory but cannot read exact coordinates for a specific year"
+      ],
+      "coda_mathematician_reaction": "Will recognize it instantly as a standard ternary diagram. Will appreciate the sub-composition closure being handled correctly. Will likely use this as the conversation starter: 'show me where Japan went after Fukushima.'"
+    },
+
+    "rank_3_weakest": {
+      "tool": "CoDa Explorer",
+      "path": "drafts/codawork-2026/huf_coda_explorer.html",
+      "size": "32 KB, 739 lines, canvas-based, zero dependencies",
+      "verdict": "Has a mathematical inconsistency that must be fixed before Coimbra. Also partially redundant with Spectrum Analyzer v3.",
+
+      "critical_finding": {
+        "issue": "ILR BALANCE IMPLEMENTATION MISMATCH",
+        "severity": "HIGH — will be caught by any CoDa mathematician who inspects the code",
+        "detail": "The CoDa Explorer's 'Balance Time Series' panel (Panel 5) computes B1 as ln((Coal+Gas+OtherFossil) / (Hydro+Solar+Wind+Bio+OtherRenew)) — a log-ratio of ARITHMETIC SUMS. The Spectrum Analyzer v3 computes B1 as √(3*5/8) * ln(∛(Coal*Gas*OtherFossil) / ⁵√(Hydro*Solar*Wind*Bio*OtherRenew)) — the proper ILR balance with GEOMETRIC MEANS within groups and the √(r*s/(r+s)) scaling factor.",
+        "why_it_matters": "The CoDa Explorer labels this as 'ILR balances via sequential binary partition' in its method note, but the implementation is NOT a proper ILR. It is a simple log-ratio of sub-composition totals. These are different quantities. A CoDa researcher checking the code will see this immediately and it will undermine trust in the entire tool layer.",
+        "fix": "Either (a) implement proper ILR with geometric means and scaling to match v3, or (b) relabel as 'log-ratio of sub-composition totals' and remove the ILR claim. Option (a) is recommended — match v3's correct implementation.",
+        "also_note": "B2 and B3 in the Explorer use ln(Coal/Gas) and ln(Wind/Solar) without the √(1/2) scaling factor. These are log-ratios, not scaled ILR coordinates. The v3 correctly includes √(1*1/(1+1)) = √(1/2) ≈ 0.707. The shapes of the curves will be identical but the y-axis values will differ by a constant factor between the two tools."
+      },
+
+      "strengths": [
+        "The Toblerone (3D ternary × time prism) is a unique visualization not found in the other tools — it shows compositional drift extruded through time in isometric projection. This is genuinely novel",
+        "6 panels provide a focused CoDa method tour: ternary, time prism, CLR, perturbation velocity, balances, distance matrix",
+        "Per-panel method notes explain each CoDa technique in 1-2 sentences — good for a newcomer",
+        "Aitchison distance and CLR implementations are correct and match v3"
+      ],
+      "weaknesses": [
+        "The ILR inconsistency is the dealbreaker (see critical finding above)",
+        "Significant panel overlap with Spectrum Analyzer v3: ternary, CLR, perturbation velocity, Aitchison distance matrix, and balances are all in both tools. Only the Toblerone is unique to the Explorer",
+        "Controls are minimal (country selector and year range only) — less instrument-like than v3",
+        "The method notes claim 'ILR balances via sequential binary partition' but the implementation does not match this description"
+      ],
+      "coda_mathematician_reaction": "Will notice the ILR discrepancy. Will appreciate the Toblerone concept. Will likely ask: 'why does this tool exist alongside the Spectrum Analyzer?' The answer needs to be: 'this is the CoDa-teaching version.' But if the ILR is wrong, the teaching is wrong."
+    }
+  },
+
+  "deliverable_2_consistency_audit": {
+    "what_aligns": [
+      "All three tools use the same EMBER dataset: Germany, Japan, UK, 2000-2025, 9 carriers. Data values are consistent across tools.",
+      "Aitchison distance formula is implemented identically in v3 and Explorer (pairwise log-ratio sum, √(sum/D)).",
+      "CLR transform is implemented identically in both (geometric mean centered).",
+      "Ternary sub-composition grouping is consistent: Fossil = Coal+Gas+OtherFossil, Nuclear alone, Renewable = Hydro+Solar+Wind+Bio+OtherRenew.",
+      "K_eff = exp(Shannon entropy) is correctly implemented in v3.",
+      "README and START_HERE descriptions of tool capabilities match actual tool functionality.",
+      "Event annotations (Fukushima, Coal Collapse, Nuclear Exit) are consistent across all three tools."
+    ],
+    "what_conflicts": [
+      "CRITICAL: ILR balance computation differs between v3 (correct: geometric means + scaling) and Explorer (incorrect: arithmetic sums, no scaling). Labels in Explorer claim ILR but implementation is not ILR.",
+      "v3 subtitle references 'CR' (carrier ratio) diagnostic but CR is never defined on the page or in the method notes.",
+      "START_HERE says the CoDa Explorer has '6 panels' — this is correct. But the description 'ternary, time prism, CLR, perturbation velocity, ILR balances, Aitchison distance matrix' is only accurate if the ILR implementation is fixed.",
+      "README says the CoDa Explorer has 'perturbation velocity' — the Explorer actually shows Aitchison distance bars (year-over-year), which is functionally perturbation velocity but the panel title just says 'Perturbation Velocity' without defining it as v(t) = d_A(x_t, x_{t-1})/Δt."
+    ],
+    "what_is_missing": [
+      "None of the tools compute or display EITT directly. The entropy invariance finding — the centerpiece of the Coimbra presentation — has no visual tool. A decimation ladder visualization (daily → weekly → monthly → quarterly → annual entropy values) would be the most powerful single addition.",
+      "None of the tools show the d(CoDa)/dt concept — the balance derivative over time. Adding slope indicators or instantaneous rate-of-change annotations to the balance panels would connect to the temporal derivative discussion ChatGPT surfaced.",
+      "No tool shows the Hessian footprint or Jensen correction visually. The mechanism behind EITT has no instrument.",
+      "The tools do not link to each other. A visitor using the Ternary tool has no way to navigate to the Spectrum Analyzer or vice versa."
+    ]
+  },
+
+  "deliverable_3_coda_acceptance_audit": {
+    "what_a_coda_mathematician_will_respect": [
+      "The Aitchison distance implementation is correct — pairwise log-ratio formula, properly handles zeros with epsilon replacement.",
+      "The ILR balance implementation in v3 uses proper geometric means and √(r*s/(r+s)) scaling — this is textbook CoDa (Egozcue et al. 2003).",
+      "The CLR transform is correctly implemented as ln(x_i / geometric_mean).",
+      "The ternary sub-composition is properly closed to sum=1.",
+      "Using real EMBER data with CC BY 4.0 attribution shows scientific seriousness.",
+      "Event annotations ground the mathematics in verifiable real-world events.",
+      "The zero-dependency approach (no external libraries) means the code IS the documentation — anyone can read it."
+    ],
+    "what_a_coda_mathematician_will_question": [
+      "The ILR discrepancy in the CoDa Explorer — this will be the first thing they check. If 'ILR' is claimed, it must be ILR.",
+      "The choice of SBP (sequential binary partition) is interpretable for energy (Fossil vs Renewable makes physical sense) but is not the only valid partition. A CoDa expert may ask why this partition and not another.",
+      "Shannon entropy (K_eff) is presented alongside Aitchison distance without discussion of Egozcue's caution about entropy on the simplex. The v3 tool treats them as complementary diagnostics, which is defensible, but should be stated explicitly.",
+      "The 'DECEPTIVE DRIFT' gauge label in v3 presumes a monitoring interpretation that goes beyond CoDa mathematics — it is an operational judgment, not a mathematical property."
+    ],
+    "what_a_coda_mathematician_will_dismiss": [
+      "If the ILR discrepancy is not fixed: the entire CoDa Explorer. One wrong formula with a confident label destroys credibility for the whole tool.",
+      "Any label that implies theorem-level confidence about entropy (but the current temperature-controlled docs handle this well).",
+      "The 'CR' diagnostic referenced in v3's subtitle — if it's undefined, it looks like an internal acronym that leaked into a public tool."
+    ]
+  },
+
+  "deliverable_4_edit_list": {
+    "critical_fix": {
+      "file": "drafts/codawork-2026/huf_coda_explorer.html",
+      "location": "Lines 584-594 (drawBalances function)",
+      "current": "B1 = ln((Coal+Gas+OtherFossil) / (Hydro+Solar+Wind+Bio+OtherRenew)) — arithmetic sums, no scaling",
+      "should_be": "B1 = √(3*5/8) * ln(∛(Coal*Gas*OtherFossil) / ⁵√(Hydro*Solar*Wind*Bio*OtherRenew)) — geometric means with ILR scaling",
+      "also_fix": "B2 should include √(1/2) scaling: √(1/2) * ln(Coal/Gas). B3 same: √(1/2) * ln(Wind/Solar).",
+      "priority": "MUST FIX BEFORE COIMBRA"
+    },
+    "high_priority": [
+      {
+        "file": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
+        "issue": "Subtitle references 'CR' diagnostic without defining it",
+        "fix": "Either spell out 'Carrier Ratio' or replace with 'Peak Change' which is the actual third metric implemented"
+      },
+      {
+        "file": "huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html",
+        "issue": "Gauge labels (DECEPTIVE DRIFT, VELOCITY SPIKE) use HUF jargon without definitions",
+        "fix": "Add 1-line tooltips or parenthetical definitions visible on hover or below the gauge"
+      }
+    ],
+    "medium_priority": [
+      {
+        "issue": "No cross-links between tools",
+        "fix": "Add a small nav bar or footer links: 'See also: [Spectrum Analyzer v3] | [CoDa Explorer] | [Ternary Diagram]'"
+      },
+      {
+        "issue": "CoDa Explorer's Toblerone is the only unique panel — consider whether the Explorer should become a single-panel Toblerone tool instead of a 6-panel semi-duplicate of v3",
+        "rationale": "Reduces redundancy, gives the Toblerone its own stage, and eliminates the risk of formula inconsistencies between parallel implementations"
+      },
+      {
+        "issue": "No EITT visualization exists in any tool",
+        "suggestion": "Consider a simple decimation ladder chart: one line showing H(daily), H(weekly), H(monthly), H(quarterly), H(annual) as near-flat, with Aitchison variance dropping steeply beside it. This would be the most powerful single panel for Coimbra."
+      }
+    ],
+    "low_priority": [
+      {
+        "issue": "Ternary EMBER is static",
+        "suggestion": "Add a year-highlight on hover or click so visitors can read exact coordinates. Not essential but would improve pedagogical value."
+      }
+    ]
+  },
+
+  "deliverable_5_flagship_recommendation": {
+    "flagship": "HUF Spectrum Analyzer v3",
+    "reason": "It is the only tool that feels like an instrument rather than a visualization. It has the deepest diagnostic chain (10 panels), the most interactive controls, correct CoDa implementations, and the gauge/status system that demonstrates what MC-4 monitoring actually looks like in practice. If you put one tool in front of Coimbra attendees, this is it.",
+    "teaching_companion": "Ternary EMBER as the gateway. Show the ternary first (30 seconds — 'see Japan after Fukushima?'), then open v3 for depth.",
+    "coda_explorer_recommendation": "Fix the ILR implementation. Then either (a) keep as CoDa-teaching companion with explicit role distinction from v3, or (b) extract the Toblerone as a standalone panel and retire the rest of the Explorer to archive. The Toblerone is genuinely novel and should survive in some form."
+  },
+
+  "deliverable_6_collective_summary": {
+    "what_is_real_and_valuable": "The HUF repository now has three functioning browser-based analysis tools that implement correct CoDa mathematics on real EMBER data, with zero external dependencies. The Spectrum Analyzer v3 is a genuine 10-panel monitoring instrument. The Ternary EMBER is a clean teaching diagram. The repo front door leads visitors coherently from claim to evidence to tools to EITT materials. The temperature of the prose has been properly controlled. The governance trail is visible but not dominant. One formula inconsistency was found (ILR in CoDa Explorer) and must be fixed. No EITT-specific visualization exists yet — building one would close the gap between the written finding and the tool layer.",
+    "one_sentence": "The tools are real, the math is mostly right, the front door works, one ILR formula needs fixing, and the biggest missing piece is a visual instrument for the EITT finding itself."
+  },
+
+  "dcoda_dt_observation": {
+    "context": "Peter injected the observation 'just like d(CoDa)/dt' during a ChatGPT session, recognizing the temporal derivative concept in the data. ChatGPT produced an initial result that sounded negative — Peter read it, saw the inverse, and asked ChatGPT to explore the opposite concept. ChatGPT then ran with the testing and produced the hits. The concept originated with Peter; the formalization, testing framework, and elaboration were ChatGPT's contribution. Peter flagged it to Claude as important and said 'the negative result is the key.'",
+    "the_negative_result": "The 'negative result' that matters is the zero-sum constraint: Σ dx_i/dt = 0 for any composition. This is not a limitation — it is the chain itself. Every increase in one carrier must be financed by decreases in others. The constraint IS the relay, the handoff, the dependency structure. In CoDa terms: the proper temporal derivative is d/dt(ilr(x(t))), not d/dt(x(t)). The balance derivative tells you which side of each partition is gaining structural ground and how fast.",
+    "connection_to_tools": "The balance time series panels (Panel 6 in v3, Panel 5 in Explorer) are already showing the integral of this derivative — the balance trajectory over time. Adding slope annotations (instantaneous d(balance)/dt) would make the temporal derivative visible. When B1 = ln(Fossil/Renewable) crosses zero with negative slope, that IS the energy transition — the derivative tells you the speed of the structural handoff.",
+    "connection_to_eitt": "EITT is about what survives when you compress the time axis. d(CoDa)/dt is about what happens along the time axis. They are complementary: the derivative describes the motion, EITT describes what is conserved under temporal coarsening of that motion. Together they answer: 'how fast is the composition moving?' and 'does the information content survive temporal aggregation of that movement?'",
+    "what_to_look_for_next": "The balance derivatives may reveal which partitions are most temporally stable (small |d(balance)/dt|) vs most dynamic (large |d(balance)/dt|). The EITT boundary condition (temporal autocorrelation) may be visible as smoothness of the balance trajectories — smooth = persistent = EITT holds; noisy = no persistence = EITT fails. This is testable with the existing tool data."
+  },
+
+  "chatgpt_prediction_accuracy": {
+    "predicted_correctly": [
+      "Spectrum Analyzer v3 is the flagship — confirmed",
+      "Ternary is the cleanest entry object — confirmed",
+      "CoDa Explorer's separate existence would be questioned — confirmed, plus found the ILR discrepancy",
+      "Temperature control still needed in some labels — confirmed (gauge labels, CR reference)",
+      "Tools teach more than they impress in some panels — confirmed (balance panels are pedagogically strong)"
+    ],
+    "predicted_but_not_fully_confirmed": [
+      "README/START_HERE hot language — we already fixed this in the prior round, current versions are properly cooled",
+      "HUF-CLS distraction — the 'Not part of the Coimbra / CoDaWork ask' note handles this adequately"
+    ],
+    "not_predicted": [
+      "The ILR implementation discrepancy between the two tools — this is a concrete formula bug, not a framing issue",
+      "The missing EITT visualization — no tool currently shows the finding that is the centerpiece of the presentation",
+      "The d(CoDa)/dt connection to balance derivatives already present in the tools"
+    ]
+  },
+
+  "governance": {
+    "classification": "CGS-2",
+    "components": 3,
+    "gdof": 264,
+    "new_constants": 0
+  }
+}
