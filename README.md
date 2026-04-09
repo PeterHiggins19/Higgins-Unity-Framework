@@ -16,7 +16,7 @@ Measured: **0.18% variation** across a 341:1 compression ratio (daily → annual
 
 For comparison, Aitchison variance drops 55% and total variation drops 99.7% across the same ladder. Shannon entropy barely moves.
 
-In the tested energy datasets, entropy changed very little across the decimation ladders we ran. The geometric mean — a central CoDa operation — appears to act as an entropy-preserving temporal filter on these domains.
+This means the geometric mean — the fundamental operation of CoDa — appears to be an entropy-preserving temporal filter. Temporal resolution becomes a free parameter. Information content is stable.
 
 | What to read | File | Time |
 |--------------|------|------|
