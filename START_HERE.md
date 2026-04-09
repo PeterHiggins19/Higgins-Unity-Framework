@@ -28,7 +28,22 @@ Start with the [HUF Learning Path — Engineering Edition](reference/HUF_Learnin
 
 ## For CoDa / Compositional Data Analysts
 
-Start with the [CoDaWork 2026 conference materials](drafts/codawork-2026/). Key files:
+**Start here — the new finding (April 2026):**
+
+Shannon entropy is empirically near-invariant under geometric-mean temporal decimation in the energy datasets we tested. The geometric mean — a central operation in CoDa — appears to preserve this quantity remarkably well across the temporal ladders we examined. We measured 0.18% variation across 341:1 compression, confirmed on 6 countries (1.02% mean), then drove the residual to 0.029% on a third independent test. We mapped a boundary condition (temporal autocorrelation required), linked the residual to a second-order Jensen correction (the Hessian footprint), and adversarial-tested the result (10 pass, 7 fail).
+
+We found this empirically. We can't prove it. We think CoDa may be able to.
+
+| Priority | File | What it covers | Time |
+|----------|------|---------------|------|
+| 1 | [`EITT_FINDING.md`](drafts/codawork-2026/EITT_FINDING.md) | The discovery: numbers, mechanism, convergence table, boundary condition | 10 min |
+| 2 | [`EITT_CODA_POSITION.md`](drafts/codawork-2026/EITT_CODA_POSITION.md) | What EITT offers CoDa, what we need from CoDa, why you should care | 10 min |
+| 3 | [`EITT_COMPLETE_EXPLANATION.md`](drafts/codawork-2026/EITT_COMPLETE_EXPLANATION.md) | Plain-language walkthrough of the full discovery story | 15 min |
+| 4 | [`data/eitt_lab/`](data/eitt_lab/) | Reproducible calibration suite (Copilot), residual analysis (Claude), boundary formalization | 30 min |
+| 5 | [`EITT_ENTROPY_LANDSCAPE.md`](drafts/codawork-2026/EITT_ENTROPY_LANDSCAPE.md) | How EITT relates to 10 existing entropy territories in the literature | 20 min |
+| 6 | [`DANCE_CARD.md`](drafts/codawork-2026/DANCE_CARD.md) | Conference strategy, 8 potential research partnerships, open bounty of 16 inventions | 15 min |
+
+**Then the broader HUF framework:**
 
 | File | What it covers |
 |------|---------------|
@@ -36,7 +51,7 @@ Start with the [CoDaWork 2026 conference materials](drafts/codawork-2026/). Key 
 | [`huf_coda_translator.md`](drafts/codawork-2026/huf_coda_translator.md) | Full HUF↔CoDa vocabulary translation table |
 | [`FORMULA_REFERENCE.md`](drafts/codawork-2026/FORMULA_REFERENCE.md) | Every CoDa formula (CLR, ILR, Aitchison distance, perturbation, balances) mapped to HUF equivalents |
 | [`EXECUTIVE_SUMMARY.md`](drafts/codawork-2026/EXECUTIVE_SUMMARY.md) | The cylinder analogy — what HUF does in plain language |
-| [`abstract_v1.md`](drafts/codawork-2026/abstract_v1.md) | The CoDaWork 2026 accepted abstract |
+| [`abstract_v3.md`](drafts/codawork-2026/abstract_v3.md) | The CoDaWork 2026 accepted abstract |
 | [`HUF_Spectrum_Analyzer_v3.html`](huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html) | Unified analyzer with CoDa methods (CLR, ILR balances, Aitchison distance matrix, perturbation velocity) |
 
 ## For Everyone Else
@@ -66,6 +81,8 @@ Pre-CoDa tools (v2, Universal) are in [`archive/tools-pre-coda/`](archive/tools-
 | Silent drift | Composition changed but no governance decision was logged |
 | MC-4 | Composition Monitoring — the fourth monitoring category, diagnostically invisible in standard practice |
 | Coherence chain | Nested carrier groups (1→2→4) where group coherence gates inter-group analysis |
+| d(CoDa)/dt | Temporal derivative of compositional data — three layers: perturbation velocity (speed), balance trajectory (path), balance derivative dB/dt (directed structural rate) |
+| Zero-sum relay | In raw proportions, Σ dx_i/dt = 0 — every gain financed by losses elsewhere. ILR coordinates decompose this into independent structural rates |
 
 ## CoDa Methods in HUF (new in v3)
 
@@ -79,15 +96,20 @@ The v3 analyzer implements Compositional Data Analysis methods alongside origina
 | Perturbation velocity | v(t) = d_A(x(t), x(t−1)) | Panel 7 |
 | Aitchison distance matrix | Pairwise d_A for all year pairs | Panel 8 |
 | Ternary sub-composition | Closure of Fossil/Nuclear/Renewable | Panel 4 |
+| Balance derivative dB/dt | Bₖ(t) − Bₖ(t−1) — directed rate of structural change per partition | Derived from Panel 6 |
 
-These complement HUF's original metrics (TV distance, K_eff complexity, peak carrier change) to provide dual-metric monitoring — both information-theoretic and simplex-native measures on the same data.
+These complement HUF's original metrics (TV distance, K_eff complexity, peak carrier change) to provide dual-metric monitoring — both information-theoretic and simplex-native measures on the same data. The d(CoDa)/dt chain — perturbation velocity as scalar speed, balance trajectory as structural path, balance derivative dB/dt as directed rate — connects to EITT: the derivative describes the compositional motion, EITT describes what is conserved when you compress the time record of that motion.
 
 ## Repository Map
 
 ```
-HUF-repo/
-├── README.md                    ← What HUF claims and how to test it
+HUF/
+├── README.md                    ← What HUF claims, EITT discovery, how to test it
 ├── START_HERE.md                ← You are here
+├── CITATION.cff                 ← Academic citation metadata
+├── CONTRIBUTING.md              ← 5-AI collective development model
+├── REPO_MAP.md                  ← Canonical folder structure guide
+├── VERSION_MANIFEST.json        ← Machine-readable version tracking
 ├── LICENSE                      ← MIT
 │
 ├── huf-gov/                     ← The open-loop instrument
@@ -97,39 +119,55 @@ HUF-repo/
 │   └── tools/spectrum-analyzer/ ← v3 HTML analyzer + JSX source
 │
 ├── huf-cls/                     ← The closed-loop actuator (published for transparency)
-│   ├── architecture/            ← CL-01 through CL-05
-│   ├── formulas/                ← Sigmoid actuator, K_eff, amplifier
-│   └── calibration/             ← CL-05 sensitivity analysis
 │
-├── reference/                   ← Foundation
-│   ├── machine-readable/        ← 68 JSON specifications
-│   ├── pillars/                 ← Theory, methodology, architecture (.docx)
-│   ├── technical-notes/         ← PLL, calibration, architecture, interaction studies
-│   └── wiki/                    ← 4 quick-reference articles
+├── reference/                   ← Foundation (68 JSON specs, pillars, technical notes, wiki)
 │
-├── drafts/codawork-2026/        ← CoDaWork 2026 conference materials (18 files)
-│   ├── THE_CORE.md              ← Core explanation of HUF for CoDa community
+├── data/                        ← Reproducible datasets
+│   ├── codawork-samples/S016/   ← EITT adversarial, midrange confirmation, residual analysis
+│   └── eitt_lab/                ← ★ EITT calibration lab (Copilot + Claude)
+│       ├── copilot_outputs/     ← Calibrator suite, boundary condition, PCA variants
+│       └── claude_analysis/     ← Residual analysis (Hessian footprint)
+│
+├── drafts/codawork-2026/        ← CoDaWork 2026 conference materials
+│   ├── EITT_FINDING.md          ← ★ The EITT discovery
+│   ├── EITT_CODA_POSITION.md    ← ★ What EITT offers CoDa
+│   ├── EITT_ENTROPY_LANDSCAPE.md← ★ EITT vs 10 entropy territories
+│   ├── EITT_COMPLETE_EXPLANATION.md ← ★ Plain-language full walkthrough
+│   ├── DANCE_CARD.md            ← Conference strategy + 8 union territories
+│   ├── THE_CORE.md              ← Core explanation for CoDa community
 │   ├── FORMULA_REFERENCE.md     ← HUF↔CoDa formula quick reference
-│   ├── VOCABULARY_CARD.md       ← CoDa vocabulary cheat sheet
 │   ├── BATTLE_CARD.md           ← 10 hardest questions with honest answers
-│   ├── EXECUTIVE_SUMMARY.md     ← Cylinder + fuel gauge metaphors
-│   ├── RESEARCHERS_CARD.md      ← Who's who at CoDaWork
 │   └── ...                      ← Abstract, translator, explorer, ternary, etc.
 │
+├── docs/                        ← Generated canonical documents
+│   ├── explorations/            ← Case studies (Backblaze, energy, CDN, Planck, TTC)
+│   ├── governance/              ← Review catalog, governance explainer, provenance
+│   └── papers/                  ← 7 academic submissions (CBD, CoDa, GEOBON, IEEE, etc.)
+│
+├── src/                         ← Document build system
+│   ├── builders/                ← JS scripts organized by pillars/volumes/governance/explorations
+│   ├── shared/                  ← Styles, glossary, citations, cross-references
+│   └── validation/              ← validate.py (docx integrity checker)
+│
+├── code/                        ← Analysis tools (Backblaze, energy, HellTest stress tests)
+├── notebooks/                   ← 5 onboarding Jupyter tutorials
 ├── context-books/               ← 4 audience editions (general, engineering, physics, sciences)
 ├── math-books/                  ← Formal proofs (42 numbered items)
-├── data/                        ← Sample datasets
-├── archive/                     ← Superseded files (v1 papers, pre-CoDa tools)
-└── process/                     ← Development record (26 collective review traces)
+├── process/                     ← Development record (collective reviews, session ledgers)
+└── archive/                     ← Preserved history (HUFv4, concepts, legacy builders, pre-CoDa tools)
 ```
+
+★ = New in S016 (April 2026). These are the EITT materials — start here if you're from CoDa.
 
 ## What's New (April 2026)
 
+- **EITT Discovery.** Shannon entropy near-invariant under geometric-mean temporal decimation. 0.18% variation at 341:1 compression. Confirmed on 6 countries (1.02%), driven to 0.029% on third test. Residual identified as second-order Jensen correction (Hessian footprint). Boundary condition mapped: temporal autocorrelation required. Adversarial-tested: 10 pass, 7 fail at the boundary. Full materials in [`EITT_FINDING.md`](drafts/codawork-2026/EITT_FINDING.md) and [`data/eitt_lab/`](data/eitt_lab/).
+- **Cross-Domain Confirmation (April 9, 2026).** EITT tested on five domains: energy (holds), hardware degradation (Backblaze K=4, 0.03%), 120-stock price-level portfolio (K=9, 0.08% — price-level weighted, not market-cap), Planck CMB temporal split (0.3% — spatial claim retracted due to HEALPix NESTED ordering), and gold/silver commodities (K=2 fails at 6.7%, K=4 holds at 0.38%, validated out-of-sample). Bootstrap CIs computed. Arithmetic-mean control tested. The EITT inversion principle: failure diagnoses missing compositional dimensions. Results and honesty tests in [`code/analysis/`](code/analysis/).
+- **Entropy Landscape Mapped.** EITT's position relative to 10 existing entropy territories (CoDa, Information Geometry, Multiscale Entropy, Ecology/Shannon-Wiener, Jensen Refinements, Renyi/Tsallis, Maximum Entropy, Entropy Rate, Entropy Power, Rate-Distortion). 8 productive research partnerships identified. See [`EITT_ENTROPY_LANDSCAPE.md`](drafts/codawork-2026/EITT_ENTROPY_LANDSCAPE.md).
 - **CoDaWork 2026 accepted.** Abstract accepted by Prof. Egozcue (Scientific Committee Chair). Conference June 1-6, Coimbra, Portugal.
 - **v3 Spectrum Analyzer.** 10 panels, dual metrics (TV + Aitchison distance), CoDa methods (CLR, ILR, perturbation velocity, Aitchison distance matrix), 2025 crisis snapshots.
-- **CoDa integration.** Full translation between HUF vocabulary and Compositional Data Analysis terminology. Aitchison geometry formalized as the geometric foundation of HUF's monitoring architecture.
-- **18 conference preparation files** covering formulas, vocabulary, researchers, battle card, executive summary, core explanation, and the HUF↔CoDa translator.
-- **Coherence chain formalized.** The 1→2→4 nested carrier group hierarchy identified as the core of HUF — from loudspeaker drivers to energy carriers to wetland species.
+- **CoDa integration.** Full translation between HUF vocabulary and CoDa terminology. Aitchison geometry formalized as the geometric foundation.
+- **Repo reorganized.** Legacy working directories (HUFv4, concepts) archived with provenance notes. Build system (src/), analysis tools (code/), academic papers (docs/papers/), onboarding notebooks all retained at top level.
 
 ## How to Test HUF on a New Domain
 

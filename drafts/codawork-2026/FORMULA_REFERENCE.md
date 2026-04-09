@@ -128,11 +128,30 @@ Where:
 | Regime boundary | t* where v(t*) >> mean(v) | Structural break |
 | Distance matrix | M_ij = d_A(x(tᵢ), x(tⱼ)) | Pairwise year×year Aitchison distances |
 
+### The d(CoDa)/dt Chain — Three Layers of Temporal Analysis
+
+| Layer | Formula | What it tells you |
+|-------|---------|-------------------|
+| **Perturbation velocity** (scalar speed) | v(t) = d_A(x(t), x(t−1)) | How fast the composition is moving on the simplex. No direction — just speed. |
+| **Balance trajectory** (structural path) | B(t) = ilr(x(t)) = (B₁(t), B₂(t), ..., B_{D-1}(t)) | Where the composition is in ILR coordinates at each time. The integral of the structural motion. |
+| **Balance derivative** (directed rate) | dBₖ/dt ≈ Bₖ(t) − Bₖ(t−1) | How fast and in which direction each partition is changing. dB₁/dt < 0 means fossil losing to renewable. |
+| **Balance acceleration** | d²Bₖ/dt² ≈ dBₖ/dt(t) − dBₖ/dt(t−1) | Whether the rate of structural change is itself increasing or decreasing. Transition accelerating or decelerating. |
+
+**The zero-sum constraint:** In raw proportions, Σ dx_i/dt = 0 always (because Σ x_i = 1). This is not a limitation — it IS the relay chain. Every gain in one carrier must be financed by losses in others. The constraint forces the handoff.
+
+**Why ILR:** In ILR coordinates, the balance derivatives are free — each dBₖ/dt moves independently. No zero-sum constraint. This is why ILR is the correct coordinate system for taking the temporal derivative: it decomposes the constrained relay into independent structural movements along interpretable partitions.
+
+**Connection to EITT:** The balance derivative describes the compositional motion. EITT describes what is conserved when you compress the time record of that motion. d(CoDa)/dt tells you "how fast and in which direction." EITT tells you "does the information survive temporal aggregation of that movement." They are complementary: one is about the dynamics, the other is about the invariant.
+
 **What to look for:**
 - Perturbation velocity spike → sudden structural change (Fukushima 2011)
 - Sustained high velocity → ongoing transition (German Energiewende)
 - Block structure in distance matrix → distinct regimes
 - CLR time series crossing zero → component going from below-average to above-average share
+- dB₁/dt consistently negative → fossil losing structural ground to renewable (energy transition in progress)
+- d²B₁/dt² < 0 while dB₁/dt < 0 → energy transition accelerating
+- Smooth balance trajectories (small |dB/dt|) → high temporal persistence → EITT likely to hold
+- Noisy/erratic balance trajectories → low persistence → EITT may fail
 
 ---
 
@@ -183,7 +202,19 @@ v(t) = d_A(x(t), x(t−1))
 **K_eff:**
 K_eff = exp(−Σ xᵢ ln(xᵢ))
 
-These seven formulas are the entire mathematical vocabulary of the conference. Everything else is built from them.
+**Balance derivative (d(CoDa)/dt in ILR):**
+dBₖ/dt ≈ Bₖ(t) − Bₖ(t−1)
+
+**Zero-sum relay constraint (raw space):**
+Σ dxᵢ/dt = 0 always — every gain financed by losses elsewhere
+
+**EITT inversion criterion:**
+If EITT fails at K parts, find K* = min{K' : EITT holds at K' parts}. The K'−K added carriers are the hidden state variables. K* is the system's true compositional dimensionality.
+
+**EITT spatial extension (conceptual — not yet validated):**
+Replace temporal decimation with spatial coarse-graining (geometric mean of spatially adjacent compositions). **Note:** The Planck spatial test was incorrectly implemented (HEALPix NESTED ordering does not preserve spatial locality). Proper spatial EITT requires spatially coherent decimation (e.g., HEALPix ud_grade or RING ordering). The concept remains open but has no valid empirical test yet.
+
+These eleven formulas are the entire mathematical vocabulary of the conference. Everything else is built from them.
 
 ---
 

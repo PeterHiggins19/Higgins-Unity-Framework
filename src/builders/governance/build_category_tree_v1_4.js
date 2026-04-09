@@ -816,7 +816,7 @@ function buildContent() {
   children.push(P([
     'Categories ',
     { text: 'AD, AE, Y, AJ, AT, AM', bold: true },
-    ' define HUF\u2019s extension into topological data analysis. The Temporal Sieve (dHUF/dt as Ratio Velocity) is the most significant new concept to emerge from the review process. The consensus strategy: start with persistence diagrams, promote to full spectral sequence formalism only if the page-by-page algebra adds clear value beyond what TDA alone provides.'
+    ' define HUF\u2019s extension into topological data analysis. The Temporal Sieve (dHUF/dt as Ratio Velocity), Peter\u2019s concept formalized by Gemini in R8, is the most significant new concept to emerge from the review process. The consensus strategy: start with persistence diagrams, promote to full spectral sequence formalism only if the page-by-page algebra adds clear value beyond what TDA alone provides.'
   ]));
 
   children.push(H2('4.5 The Detection Gap'));
@@ -918,7 +918,7 @@ function buildContent() {
   children.push(treeLine('\u2502'));
   children.push(treeLine('\u251C\u2500\u2500 IV. EXTENSIONS & NEW DOMAINS'));
   children.push(treeLine('\u2502   \u251C\u2500\u2500 Spectral: [AD] [AE] [Y] [AJ] [AT] . R6/R7/R8/R9'));
-  children.push(treeLine('\u2502   \u251C\u2500\u2500 [AM] Temporal Sieve \u2605 .............. R8/Gemini    [KEYSTONE]'));
+  children.push(treeLine('\u2502   \u251C\u2500\u2500 [AM] Temporal Sieve \u2605 .............. Peter/R8-Gemini [KEYSTONE]'));
   children.push(treeLine('\u2502   \u251C\u2500\u2500 [AL] Optical Instrumentation ........ R8/Gemini'));
   children.push(treeLine('\u2502   \u251C\u2500\u2500 [AH] Network Packet Demo ........... R7/Grok'));
   children.push(treeLine('\u2502   \u2514\u2500\u2500 [BW] Kinetic Governance Reframing ... R13/ChatGPT'));
