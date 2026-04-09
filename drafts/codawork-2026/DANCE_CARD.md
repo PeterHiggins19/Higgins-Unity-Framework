@@ -163,6 +163,25 @@ Never say:
 
 ---
 
+## THE BROADER LANDSCAPE — 8 UNION TERRITORIES
+
+EITT connects to 8 established research communities beyond CoDa. These are not claims. They are dance invitations for after Coimbra — if CoDa engages.
+
+| Territory | Their Question | Our Answer | The Union |
+|---|---|---|---|
+| **Ecology (Shannon-Wiener)** | How does diversity change under temporal aggregation? | It doesn't — if you use the geometric mean. | Species composition IS compositional data. Shannon-Wiener IS Shannon entropy. Immediate test domain. |
+| **Multiscale Entropy** | What's the right coarse-graining for complexity analysis? | On the simplex, geometric mean. And entropy is invariant. | We're the compositional version of Costa et al. (2002). |
+| **Information Geometry** | How does the Fisher-Rao metric structure the simplex? | The Hessian footprint IS the Fisher structure. | Erb & Ay's uniqueness theorem may extend temporally. |
+| **Jensen Refinements** | How tight is the second-order bound? | 0.03% — and it's deterministic (Hessian footprint). | Concrete empirical case for their theory. |
+| **Renyi / Tsallis** | Does entropy generalize beyond Shannon? | Does EITT hold for all q-orders? Open question. | If yes, entire diversity profile is invariant. |
+| **Maximum Entropy** | What maximizes entropy on the simplex? | H* approaches ln(D). Geometric mean may drive toward max entropy. | Thermodynamic interpretation of EITT. |
+| **Entropy Rate** | What tools describe stationary process entropy? | Spectral/Wiener-Khinchin for the closed-form EITT bound. | We borrow their tools for the proof. |
+| **CoDa (home)** | How does the geometric mean structure the simplex? | It preserves Shannon entropy under temporal decimation. | The geometric mean has a new property. |
+
+**Strategy:** CoDa first. Earn engagement. Then approach broader landscape with CoDa researchers alongside us.
+
+---
+
 ## THE CLOSE
 
 If you get a chance to make a final statement:

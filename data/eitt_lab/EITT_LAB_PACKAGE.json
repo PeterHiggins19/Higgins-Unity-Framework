@@ -12,6 +12,7 @@
       "copilot": {
         "contribution": "Built the entire VAR(1)/Lyapunov/PCA/bootstrap calibration toolkit from scratch. Five Python scripts, proper CLI interface, batch processing. The theoretical bounds were 10,000x too loose — but that gap IS the finding. Copilot proved that linear autoregressive structure cannot explain EITT. That rules out the most obvious explanation and defines the open mathematical problem.",
         "key_insight": "The spectral radius rho_eff = 1.0185 (non-stationary) means the standard linear framework breaks down. The process that preserves entropy is not captured by VAR(1). Something deeper is at work.",
+        "second_contribution": "After reviewing the residual analysis, Copilot returned with a formalized boundary condition (3 operational tests with quantitative thresholds), the open mathematical problem stated precisely, 3 testable conjectures, and a 3-track discovery roadmap (empirical/simulation/analytic) with concrete deliverables. This transforms a vague 'needs autocorrelation' into a reproducible research programme.",
         "files": [
           "copilot_outputs/eitt_ar1_calibrator_suite.json",
           "copilot_outputs/europe_monthly_full_release_long_format_eitt_summary.json",
@@ -171,7 +172,13 @@
       "EITT_Residual_Analysis_001.json": "Residual analysis summary — Hessian footprint, e-duality, direction predictions",
       "eitt_residual_analysis.py": "Full computational analysis script (reproducible)"
     },
-    "this_file": "EITT_LAB_PACKAGE.json — you are reading it"
+    "this_file": "EITT_LAB_PACKAGE.json — you are reading it",
+    "copilot_roadmap": {
+      "EITT_Boundary_and_Discovery_Roadmap_v1.1.json": "Copilot's formalized boundary condition (3 operational tests with thresholds), open mathematical problem statement, 3 conjectures, 3-track discovery plan (empirical/simulation/analytic), presentation slide structure"
+    },
+    "explanation": {
+      "../../drafts/codawork-2026/EITT_COMPLETE_EXPLANATION.md": "Plain-language explanation of everything accomplished — for Peter and anyone he needs to brief"
+    }
   },
 
   "governance": {

@@ -1,7 +1,7 @@
 {
   "document_id": "SESSION-S016",
   "title": "HUF Session Ledger — S016 EITT Discovery and Calibration",
-  "version": "1.0",
+  "version": "1.1",
   "date": "2026-04-09",
   "prepared_by": "Claude (Opus 4.6)",
   "directed_by": "Peter Higgins",
@@ -12,7 +12,7 @@
     "governance": "CGS-2 (n=3), GDoF 264 — unchanged throughout",
     "key_finding": "EITT — Entropy-Invariant Time Transformer. Shannon entropy is empirically near-invariant under geometric-mean temporal decimation. 0.18% variation on original proof. 1.02% mean on independent confirmation. Systematic residual identified as second-order Jensen correction (Hessian footprint).",
     "calibration_programme": "COMPLETE — all six steps (Woofer, Tweeter, Midrange, Crossover, ETC, RT60) now DONE",
-    "collective_contributions": "Copilot (VAR(1) calibration lab), ChatGPT (4-error review), Claude (proofs, analysis, packaging), Grok (v-core/e connection)"
+    "collective_contributions": "Copilot (VAR(1) calibration lab + boundary condition formalization + discovery roadmap), ChatGPT (4-error review), Claude (proofs, analysis, residual theory, packaging, explanation doc), Grok (v-core/e connection)"
   },
 
   "documents_created": [
@@ -174,7 +174,12 @@
       "drafts/codawork-2026/EITT_FINDING.md (residual analysis section added, adversarial and eitt_lab file refs added)",
       "data/codawork-samples/S016/HUF_Aitchison_Variance_Conservation_001.json (rewritten as negative control)"
     ],
-    "suggested_commit_message": "EITT calibration lab: Copilot theoretical bounds, Claude residual analysis, ChatGPT corrections, adversarial tests, Dance Card posture — S016 complete package"
+    "suggested_commit_message": "EITT calibration lab: Copilot theoretical bounds + discovery roadmap, Claude residual analysis, ChatGPT corrections, adversarial tests, Dance Card, complete explanation — S016 full package",
+    "late_additions_v1_1": [
+      "data/eitt_lab/copilot_outputs/EITT_Boundary_and_Discovery_Roadmap_v1.1.json (Copilot's formalized boundary condition and research plan)",
+      "drafts/codawork-2026/EITT_COMPLETE_EXPLANATION.md (plain-language explanation of all accomplishments)",
+      "EITT_LAB_PACKAGE.json updated with Copilot second contribution and file manifest additions"
+    ]
   },
 
   "pending_collective_actions": [
