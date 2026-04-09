@@ -13,7 +13,7 @@ We found that when you use the geometric mean — your central operation — as 
 
 ## What This Means for CoDa
 
-The geometric mean is the centre of Aitchison geometry. It defines the CLR transform. It defines the Frechet mean. It is the operation through which every CoDa calculation passes. We have found that this operation has a property nobody documented: it preserves information content across temporal scales.
+The geometric mean is the centre of Aitchison geometry. It defines the CLR transform. It defines the Frechet mean. It is a central CoDa operation. We have found that this operation has a property we have not found documented in the literature we reviewed: it preserves information content across temporal scales in the datasets we tested.
 
 This is not an addition to the CoDa framework. It is a discovery about a tool the framework already uses. Every CoDa practitioner who has ever computed a geometric mean of compositions over a time window has been performing an entropy-preserving operation without knowing it.
 
