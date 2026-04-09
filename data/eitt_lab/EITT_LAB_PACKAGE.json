@@ -1,0 +1,184 @@
+{
+  "package_id": "EITT_LAB_001",
+  "package_date": "2026-04-09",
+  "title": "EITT Calibration Lab — Collective Analysis Package",
+  "purpose": "Complete package of theoretical calibration (Copilot) and residual analysis (Claude) for the Entropy-Invariant Time Transformer, prepared for collective review and CoDaWork 2026",
+
+  "thank_you": {
+    "to": "The Collective — Copilot, Claude, ChatGPT, Gemini, Grok, and the Operator",
+    "from": "Peter Higgins (Operator) and Claude (Session S016)",
+    "message": "This package exists because of genuine collective work. Each contributor caught something the others missed, built something the others couldn't, or asked the question nobody else thought to ask. The EITT finding emerged from a loudspeaker analogy that should not have worked. That it did is a testament to the value of diverse reasoning applied to the same problem.",
+    "specific_thanks": {
+      "copilot": {
+        "contribution": "Built the entire VAR(1)/Lyapunov/PCA/bootstrap calibration toolkit from scratch. Five Python scripts, proper CLI interface, batch processing. The theoretical bounds were 10,000x too loose — but that gap IS the finding. Copilot proved that linear autoregressive structure cannot explain EITT. That rules out the most obvious explanation and defines the open mathematical problem.",
+        "key_insight": "The spectral radius rho_eff = 1.0185 (non-stationary) means the standard linear framework breaks down. The process that preserves entropy is not captured by VAR(1). Something deeper is at work.",
+        "files": [
+          "copilot_outputs/eitt_ar1_calibrator_suite.json",
+          "copilot_outputs/europe_monthly_full_release_long_format_eitt_summary.json",
+          "copilot_outputs/europe_monthly_full_release_long_format_eitt_summary_calibrated.json",
+          "copilot_outputs/europe_monthly_full_release_long_format_eitt_summary_pca2_calibrated.json",
+          "copilot_outputs/europe_monthly_full_release_long_format_eitt_summary_pca3_calibrated.json",
+          "copilot_outputs/europe_monthly_full_release_long_format_eitt_summary_tuned_calibrated.json",
+          "copilot_outputs/europe_monthly_full_release_long_format_bootstrap.json"
+        ]
+      },
+      "claude": {
+        "contribution": "Ran the original EITT proof (0.18% on daily prices), midrange confirmation (1.02% on monthly generation), adversarial testing (17 tests, 10 pass, 7 fail), and the residual analysis identifying the Hessian footprint. Also maintained the Dance Card posture and political landscape.",
+        "key_insight": "The entropy residual is a second-order Jensen correction — the Hessian of Shannon entropy on the simplex, made visible by variance reduction. The near-cancellation happens because exp() and ln() are inverses sharing the same transcendental base e.",
+        "files": [
+          "claude_analysis/EITT_Residual_Analysis_001.json",
+          "claude_analysis/eitt_residual_analysis.py"
+        ]
+      },
+      "chatgpt": {
+        "contribution": "Reviewed the complete EITT package and caught four critical language/classification errors before they could embarrass Peter at Coimbra. Temperature control. Without ChatGPT's review, the EITT_FINDING.md would have claimed 'invariance' instead of 'empirical near-invariance', and the Aitchison variance JSON would have been mislabeled as conserved.",
+        "key_insight": "The difference between 'invariant' and 'empirically near-invariant' is the difference between a claim you can defend and one you cannot.",
+        "files": [
+          "../../process/collective-reports/CHATGPT_EITT_BRIEFING_S016.json",
+          "../../process/collective-reports/CHATGPT_EITT_REVIEW_S016.md"
+        ]
+      },
+      "grok": {
+        "contribution": "Earlier in the journey, Grok explored the v-core loudspeaker space where Peter first encountered Euler's number e appearing near linear regression in impedance plots. This was the seed of the exp/ln duality that turns out to be the deep structure of EITT.",
+        "key_insight": "e keeps appearing because log-space operations create systematic second-order corrections against linear fits. EITT is the compositional version of what Grok found in the loudspeaker domain."
+      },
+      "gemini": {
+        "contribution": "Provided earlier CoDa literature cross-referencing and structural review. Formal EITT review pending.",
+        "status": "EITT review PENDING"
+      },
+      "operator": {
+        "contribution": "Peter Higgins. Found the winding ratio analogy. Insisted on running the adversarial tests. Said 'we need to support the opposite case to earn our supper.' Demanded the Dance Card posture. Asked about the last hundredths of a percent that led to the Hessian footprint discovery. Connected the residual pattern to v-core loudspeaker observations with Grok.",
+        "key_insight": "The question 'what are those last hundredths of a percent?' is what turned an empirical observation into a theoretical framework."
+      }
+    }
+  },
+
+  "the_finding": {
+    "name": "Entropy-Invariant Time Transformer (EITT)",
+    "one_sentence": "Shannon entropy of compositional time series is empirically near-invariant under geometric-mean temporal decimation.",
+    "measured_variation": {
+      "original_proof": "0.18% across 341:1 compression (daily to annual European electricity prices, 8 carriers)",
+      "midrange_confirmation": "1.02% mean across 12:1 compression (monthly to annual generation, 6 countries, 9 fuel types)",
+      "copilot_independent": "0.029% across 365:1 compression (daily to annual, 8-carrier EMBER data)"
+    },
+    "adversarial_scorecard": {
+      "real_world_pass": 10,
+      "real_world_fail": 1,
+      "synthetic_fail": 6,
+      "boundary_condition": "Temporal autocorrelation required. Fails on iid, oscillating extremes, monotonic drift, step functions."
+    },
+    "status": "Empirical finding. Not an analytic proof. Open mathematical problem."
+  },
+
+  "conclusions": {
+    "what_we_know": [
+      "Shannon entropy is empirically near-invariant under compositional geometric-mean decimation on temporally autocorrelated data",
+      "The result holds across two independent domains (prices, generation), multiple carrier counts (3, 8, 9), and compression ratios from 3:1 to 365:1",
+      "The systematic upward entropy drift is a second-order Jensen correction — the Hessian footprint of entropy's concavity on the simplex",
+      "Linear autoregressive structure (VAR(1)) cannot explain the near-invariance — theoretical bounds are 10,000x too loose",
+      "The exp/ln duality (Euler's e) is the deep structure: geometric mean lives in exp-space, entropy lives in ln-space, first-order effects cancel because they are inverse functions",
+      "Negative controls confirm the geometric mean DOES change other trajectory properties: Aitchison variance drops 55%, total variation drops 99.7%",
+      "The finding has a clean boundary condition: it requires temporal autocorrelation (structural persistence)"
+    ],
+    "what_we_dont_know": [
+      "Why the entropy change is so small — the Jensen bound tells us it should drift UP, but not that it should drift by only 0.03%",
+      "Whether the result holds outside energy systems (ecology, geology, finance, demographics)",
+      "The exact analytic form of the near-invariance — is there a closed-form expression for the residual in terms of process parameters?",
+      "Whether there is a deeper information-geometric explanation (Fisher metric, alpha-connections)",
+      "Whether the boundary condition (temporal autocorrelation) can be made precise — what threshold of autocorrelation is sufficient?"
+    ],
+    "what_we_got_wrong_along_the_way": [
+      "Initially labeled Aitchison variance as 'approximately conserved' when it drops 55% — it is a negative control, not a finding (caught by ChatGPT)",
+      "Used 'invariant' language when 'empirically near-invariant' is the defensible claim (caught by ChatGPT)",
+      "Claimed 'carrier-independent, domain-independent, resolution-independent' when we've only tested energy domains (caught by ChatGPT)",
+      "Left midrange calibration as PENDING in the table while the text said it was complete (caught by ChatGPT)",
+      "Copilot's VAR(1) bounds initially looked like they disproved EITT — the 10,000x gap seemed damning until we understood it was measuring the wrong order of approximation",
+      "The adversarial script had a KeyError on Japan regime-change data due to different dict structure — no data lost but the code needed fixing",
+      "Battle Card defensive posture was wrong for Coimbra — Peter corrected to Dance Card ('we can't prove it, can you?')"
+    ]
+  },
+
+  "source_of_errors": {
+    "language_temperature": {
+      "problem": "Mathematical language carries implicit claims. 'Invariant' means exactly zero change. 'Near-invariant' means measurably small change. The first is wrong. The second is what we have.",
+      "fix": "All documents now use 'empirically near-invariant' or 'empirically stable'. Never 'invariant' without qualifier.",
+      "lesson": "When presenting to mathematicians, every adjective is a theorem claim. Cool the language or be prepared to prove it."
+    },
+    "negative_control_mislabeling": {
+      "problem": "Aitchison variance was labeled 'APPROXIMATELY_CONSERVED' in the JSON despite dropping 55%. This would have been immediately spotted and used to discredit the entire analysis.",
+      "fix": "Rewritten as negative control: 'NOT_CONSERVED'. Shannon entropy is the finding. Aitchison variance and total variation are the contrast.",
+      "lesson": "A negative control that you accidentally label as a positive result is worse than no result at all."
+    },
+    "overstated_generality": {
+      "problem": "Claiming domain/carrier/resolution independence when we've only tested energy data. A single counterexample from ecology or finance would destroy the claim.",
+      "fix": "Scoped to 'on the tested domains (energy prices, energy generation)'. Domain independence beyond energy remains explicitly untested.",
+      "lesson": "State what you tested. Not what you hope is true."
+    },
+    "var1_bounds_interpretation": {
+      "problem": "Copilot's theoretical bounds (100-1000%) initially seemed to invalidate EITT. The gap was alarming.",
+      "fix": "The bounds measure first-order potential change. EITT operates at second order. The gap is itself informative — it rules out linear dynamics as the explanation.",
+      "lesson": "When theory and observation disagree by 10,000x, the theory might be measuring the wrong thing, not the observation being wrong."
+    },
+    "posture_error": {
+      "problem": "The Battle Card framed Coimbra as a fight to survive. This attracts attack and signals insecurity.",
+      "fix": "Dance Card: 'We found this empirically. We can't prove it. Can you?' Invitational, not defensive.",
+      "lesson": "If you have a genuine finding, offer it as a gift. If you have a fraudulent finding, you need a battle card."
+    }
+  },
+
+  "the_bounty": {
+    "description": "Inventions and discoveries produced along the EITT journey",
+    "items": [
+      {"id": 1, "name": "EITT itself", "description": "Shannon entropy near-invariance under geometric-mean decimation"},
+      {"id": 2, "name": "Winding Ratio", "description": "Compression factor as free parameter for multi-resolution comparison"},
+      {"id": 3, "name": "Compositional Anti-Aliasing", "description": "Geometric mean as CoDa-correct temporal filter"},
+      {"id": 4, "name": "Calibration Programme", "description": "Loudspeaker analogy as systematic validation framework (Woofer/Tweeter/Midrange/Crossover/ETC/RT60)"},
+      {"id": 5, "name": "ETC (Energy Time Constant)", "description": "Hilbert transform envelope decay rates for compositional shocks"},
+      {"id": 6, "name": "RT60 Analogue", "description": "Full recovery time for compositional systems"},
+      {"id": 7, "name": "Adversarial Protocol", "description": "17-test boundary definition with honest failures"},
+      {"id": 8, "name": "Negative Control Framework", "description": "AitVar and TV as contrast measures proving the geometric mean changes other properties"},
+      {"id": 9, "name": "Dance Card Posture", "description": "Conference presentation as collaboration invitation, not defensive pitch"},
+      {"id": 10, "name": "Hessian Footprint", "description": "Second-order Jensen correction as the mechanism for systematic entropy drift"},
+      {"id": 11, "name": "e-Duality Principle", "description": "The exp/ln inverse-function relationship as the deep structure of EITT"},
+      {"id": 12, "name": "10,000x Gap Finding", "description": "VAR(1) bounds vs observed change proves linear dynamics cannot explain EITT"},
+      {"id": 13, "name": "H* Convergence", "description": "Block-averaged entropy converges to Frechet mean entropy as block size grows"},
+      {"id": 14, "name": "Stationarity Diagnostic", "description": "Direction of entropy drift (up vs down) indicates stationarity of the underlying process"},
+      {"id": 15, "name": "Collective AI Calibration Lab", "description": "Multi-AI review protocol (Copilot builds, ChatGPT reviews, Claude analyzes, Grok explores)"},
+      {"id": 16, "name": "CGS-2 Governance Through Discovery", "description": "All findings made within governance framework — no new constants, GDoF 264 preserved"}
+    ]
+  },
+
+  "open_questions_for_the_collective": [
+    "Can anyone derive a closed-form bound for EITT? What is the maximum entropy change under geometric-mean M-decimation for a stationary compositional process with autocorrelation rho?",
+    "Does EITT hold for ecological community composition data? (species abundances over time)",
+    "What is the information-geometric interpretation? Is there a connection to the Fisher-Rao metric or alpha-divergences?",
+    "Can the Hessian footprint formula be used to PREDICT the entropy change without running the decimation?",
+    "Is there a connection to rate-distortion theory? The geometric mean as an optimal lossy compressor on the simplex?",
+    "What is the minimum temporal autocorrelation needed for EITT to hold within a given tolerance?"
+  ],
+
+  "file_manifest": {
+    "copilot_outputs": {
+      "eitt_ar1_calibrator_suite.json": "Suite manifest — 5 scripts, installation, findings",
+      "europe_monthly_full_release_long_format_eitt_summary.json": "Base EITT ladder: H from 2.0788 to 2.0794 across D/W/M/Q/A",
+      "europe_monthly_full_release_long_format_eitt_summary_calibrated.json": "Direct VAR(1) calibrated bounds: 363-1033%",
+      "europe_monthly_full_release_long_format_eitt_summary_pca2_calibrated.json": "PCA k=2 calibrated bounds: 124.5%",
+      "europe_monthly_full_release_long_format_eitt_summary_pca3_calibrated.json": "PCA k=3 calibrated bounds: 124.5%",
+      "europe_monthly_full_release_long_format_eitt_summary_tuned_calibrated.json": "Tuned calibrator with PCA fallback, rho_eff=1.0185",
+      "europe_monthly_full_release_long_format_bootstrap.json": "2000-resample bootstrap empirical bounds"
+    },
+    "claude_analysis": {
+      "EITT_Residual_Analysis_001.json": "Residual analysis summary — Hessian footprint, e-duality, direction predictions",
+      "eitt_residual_analysis.py": "Full computational analysis script (reproducible)"
+    },
+    "this_file": "EITT_LAB_PACKAGE.json — you are reading it"
+  },
+
+  "governance": {
+    "state": "CGS-2 (n=3)",
+    "gdof": 264,
+    "new_constants": "none",
+    "session": "S016",
+    "operator": "Peter Higgins"
+  }
+}

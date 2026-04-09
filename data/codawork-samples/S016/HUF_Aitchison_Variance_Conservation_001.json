@@ -1,7 +1,8 @@
 {
   "test_id": "AITCHISON_VARIANCE_CONSERVATION_001",
-  "title": "Aitchison Variance Conservation Test \u2014 Time Transformer DUT",
+  "title": "Decimation Ladder — Three Conservation Candidates Tested",
   "date": "2026-04-08",
+  "revision_note": "Revised after ChatGPT review. Original version incorrectly labeled Aitchison variance as APPROXIMATELY_CONSERVED. Reframed: AitVar is a NEGATIVE CONTROL. Shannon entropy is the conserved quantity. This file documents the experiment that led to the EITT discovery.",
   "data_source": "EMBER European wholesale electricity price data (daily)",
   "carriers": [
     "Germany",
@@ -68,35 +69,24 @@
   },
   "conservation_analysis": {
     "aitchison_variance": {
-      "Daily": {
-        "ratio_to_daily": 1.0,
-        "pct_change": 0.0,
-        "conservation_status": "STRONG"
-      },
-      "Weekly": {
-        "ratio_to_daily": 0.7607,
-        "pct_change": -23.9,
-        "conservation_status": "WEAK"
-      },
-      "Monthly": {
-        "ratio_to_daily": 0.6232,
-        "pct_change": -37.7,
-        "conservation_status": "WEAK"
-      },
-      "Quarterly": {
-        "ratio_to_daily": 0.5391,
-        "pct_change": -46.1,
-        "conservation_status": "WEAK"
-      },
-      "Annual": {
-        "ratio_to_daily": 0.4495,
-        "pct_change": -55.1,
-        "conservation_status": "NOT CONSERVED"
-      }
+      "daily_to_annual_change": "-55.1%",
+      "cv_across_resolutions": 0.2852,
+      "verdict": "NOT_CONSERVED",
+      "note": "AitVar drops monotonically with decimation. This is expected: geometric-mean averaging smooths trajectory dispersion. AitVar measures geometric spread, which is resolution-dependent."
     },
-    "cv_across_resolutions": 0.2852,
-    "verdict": "APPROXIMATELY_CONSERVED",
-    "significance_for_codawork": "Aitchison variance is the native CoDa dispersion measure. Its conservation under decimation means the time transformer preserves the fundamental geometric structure of the simplex across resolutions."
+    "tv_integral": {
+      "daily_to_annual_change": "-99.7%",
+      "verdict": "NOT_CONSERVED",
+      "note": "TV integral collapses under decimation. Expected: fewer observations means fewer transitions."
+    },
+    "shannon_entropy": {
+      "daily_value": 2.069863,
+      "annual_value": 2.073492,
+      "daily_to_annual_change": "+0.18%",
+      "verdict": "NEAR_INVARIANT",
+      "note": "Shannon entropy is empirically stable across 341:1 compression. This is the EITT finding. See EITT_FINDING.md and EITT_Midrange_Confirmation_001.json for independent confirmation."
+    },
+    "summary": "Of three conservation candidates, only Shannon entropy survives decimation. Aitchison variance and TV integral are negative controls — they demonstrate that the geometric mean DOES change trajectory properties, making entropy's stability the surprising result."
   },
   "spectral_independence_by_resolution": {
     "Daily": {
@@ -142,74 +132,19 @@
   },
   "rt60_analogue": {
     "COVID_lockdown": {
-      "France": {
-        "etc_tau_weeks": 4.54,
-        "rt60_weeks": 13.6,
-        "rt60_months": 3.1,
-        "decay_class": "FAST"
-      },
-      "Spain": {
-        "etc_tau_weeks": 5.44,
-        "rt60_weeks": 16.3,
-        "rt60_months": 3.8,
-        "decay_class": "FAST"
-      },
-      "Netherlands": {
-        "etc_tau_weeks": 11.44,
-        "rt60_weeks": 34.3,
-        "rt60_months": 7.9,
-        "decay_class": "FAST"
-      },
-      "Poland": {
-        "etc_tau_weeks": 24.35,
-        "rt60_weeks": 73.1,
-        "rt60_months": 16.9,
-        "decay_class": "MEDIUM"
-      }
+      "France": { "etc_tau_weeks": 4.54, "rt60_weeks": 13.6, "rt60_months": 3.1, "decay_class": "FAST" },
+      "Spain": { "etc_tau_weeks": 5.44, "rt60_weeks": 16.3, "rt60_months": 3.8, "decay_class": "FAST" },
+      "Netherlands": { "etc_tau_weeks": 11.44, "rt60_weeks": 34.3, "rt60_months": 7.9, "decay_class": "FAST" },
+      "Poland": { "etc_tau_weeks": 24.35, "rt60_weeks": 73.1, "rt60_months": 16.9, "decay_class": "MEDIUM" }
     },
     "Energy_crisis_2022": {
-      "Germany": {
-        "etc_tau_weeks": 33.12,
-        "rt60_weeks": 99.4,
-        "rt60_months": 22.9,
-        "decay_class": "SLOW"
-      },
-      "France": {
-        "etc_tau_weeks": 79.73,
-        "rt60_weeks": 239.2,
-        "rt60_months": 55.2,
-        "decay_class": "SLOW"
-      },
-      "Spain": {
-        "etc_tau_weeks": 59.72,
-        "rt60_weeks": 179.2,
-        "rt60_months": 41.4,
-        "decay_class": "SLOW"
-      },
-      "Italy": {
-        "etc_tau_weeks": 67.02,
-        "rt60_weeks": 201.1,
-        "rt60_months": 46.4,
-        "decay_class": "SLOW"
-      },
-      "Netherlands": {
-        "etc_tau_weeks": 13.01,
-        "rt60_weeks": 39.0,
-        "rt60_months": 9.0,
-        "decay_class": "MEDIUM"
-      },
-      "Austria": {
-        "etc_tau_weeks": 36.36,
-        "rt60_weeks": 109.1,
-        "rt60_months": 25.2,
-        "decay_class": "SLOW"
-      },
-      "Sweden": {
-        "etc_tau_weeks": 51.34,
-        "rt60_weeks": 154.0,
-        "rt60_months": 35.6,
-        "decay_class": "SLOW"
-      }
+      "Germany": { "etc_tau_weeks": 33.12, "rt60_weeks": 99.4, "rt60_months": 22.9, "decay_class": "SLOW" },
+      "France": { "etc_tau_weeks": 79.73, "rt60_weeks": 239.2, "rt60_months": 55.2, "decay_class": "SLOW" },
+      "Spain": { "etc_tau_weeks": 59.72, "rt60_weeks": 179.2, "rt60_months": 41.4, "decay_class": "SLOW" },
+      "Italy": { "etc_tau_weeks": 67.02, "rt60_weeks": 201.1, "rt60_months": 46.4, "decay_class": "SLOW" },
+      "Netherlands": { "etc_tau_weeks": 13.01, "rt60_weeks": 39.0, "rt60_months": 9.0, "decay_class": "MEDIUM" },
+      "Austria": { "etc_tau_weeks": 36.36, "rt60_weeks": 109.1, "rt60_months": 25.2, "decay_class": "SLOW" },
+      "Sweden": { "etc_tau_weeks": 51.34, "rt60_weeks": 154.0, "rt60_months": 35.6, "decay_class": "SLOW" }
     }
   },
   "yearly_aitchison_variance": {
@@ -227,15 +162,17 @@
     "2026": 0.153378
   },
   "findings": [
-    "Aitchison variance MODERATELY CONSERVED across resolutions (CV = 0.2852)",
-    "Spectral independence IMPROVES at Quarterly resolution (mean |r| = 0.850 vs daily 0.867)",
-    "TIME TRANSFORMER has its conserved quantity: Aitchison variance survives decimation via geometric-mean anti-aliasing. The winding ratio is mathematically grounded.",
-    "TV integral is NOT conserved (daily/annual ratio = 315.5x). This confirms TV is resolution-dependent as expected."
+    "Aitchison variance is NOT conserved under decimation (drops 55% daily→annual). It is a negative control.",
+    "TV integral is NOT conserved (drops 99.7%). Also a negative control.",
+    "Shannon entropy IS near-invariant (+0.18% across 341:1 compression). This is the EITT finding.",
+    "The geometric mean smooths trajectory dispersion (AitVar, TV) while preserving compositional information content (entropy).",
+    "Spectral independence does not hold on this dataset at any resolution — diagnostics are correlated (mean |r| > 0.85)."
   ],
   "time_transformer_status": {
-    "conserved_quantity": "Aitchison variance",
+    "conserved_quantity": "Shannon entropy (not Aitchison variance as originally hypothesized)",
     "anti_aliasing_filter": "Compositional geometric mean",
-    "winding_ratio": "Variable (365:52:12:4:1 for daily\u2192weekly\u2192monthly\u2192quarterly\u2192annual)",
-    "theorem_or_tool": "APPROXIMATE_THEOREM"
+    "winding_ratio": "Variable (365:52:12:4:1 for daily→weekly→monthly→quarterly→annual)",
+    "status": "EMPIRICAL_FINDING — near-invariance demonstrated, not analytically proven",
+    "boundary_condition": "Temporal autocorrelation required. Fails on iid random compositions and oscillating extremes."
   }
 }

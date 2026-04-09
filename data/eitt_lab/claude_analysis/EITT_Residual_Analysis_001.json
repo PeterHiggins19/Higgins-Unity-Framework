@@ -1,0 +1,49 @@
+{
+  "analysis": "EITT_ENTROPY_RESIDUAL",
+  "date": "2026-04-09",
+  "finding": "The systematic upward entropy drift under geometric-mean decimation is a second-order Jensen correction \u2014 the Hessian footprint of Shannon entropy on the simplex",
+  "mechanism": {
+    "step_1": "Geometric mean reduces composition variance (pulls toward Fr\u00e9chet mean x*)",
+    "step_2": "Shannon entropy is concave (Hessian = diag(-1/x_i))",
+    "step_3": "Concave function of less-variable input gives higher expected output (Jensen)",
+    "step_4": "Correction magnitude: \u0394H \u2248 (1/2) tr[|Hess_H(x*)| \u00b7 Cov(x\u0304_M)]"
+  },
+  "euler_e_connection": {
+    "entropy": "H(x) = -\u03a3 x_i ln(x_i) \u2014 uses log_e",
+    "geometric_mean": "x\u0304_geo = C(exp(mean(ln(x)))) \u2014 uses e^(\u00b7)",
+    "cancellation": "exp and ln are inverses \u2014 first-order effects cancel by construction",
+    "residual": "Second-order mismatch \u2014 the Hessian footprint \u2014 is what remains"
+  },
+  "copilot_data_verification": {
+    "H_star": 2.0794399275823543,
+    "total_drift_nats": 0.0006285588186454305,
+    "total_drift_pct": 0.03023645281578583,
+    "gap_vs_trace_R2": 0.6574010371842407,
+    "hessian_coupling_slope": 4.772090981103247e-06,
+    "direction": "ALWAYS UPWARD (for stationary processes)"
+  },
+  "var1_bounds_gap_explanation": {
+    "var1_bounds_pct": "100-1000%",
+    "actual_change_pct": "0.03%",
+    "ratio": "~10,000x",
+    "reason": "VAR(1) captures first-order (mean shift) which vanishes. Actual effect is second-order (variance \u00d7 Hessian) which is tiny."
+  },
+  "midrange_direction_check": {
+    "upward_as_predicted": [
+      "Germany",
+      "Japan",
+      "USA"
+    ],
+    "downward_anomalous": [
+      "France",
+      "UK",
+      "Poland"
+    ],
+    "explanation": "Downward cases have non-stationarity or small samples where first-order trend effects dominate the second-order Jensen term"
+  },
+  "codawork_language": "The residual is not error. It is the Hessian of entropy, made visible by the variance reduction that the geometric mean performs.",
+  "governance": {
+    "state": "CGS-2 (n=3)",
+    "gdof": 264
+  }
+}

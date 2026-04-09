@@ -1,0 +1,187 @@
+{
+  "document_id": "SESSION-S016",
+  "title": "HUF Session Ledger — S016 EITT Discovery and Calibration",
+  "version": "1.0",
+  "date": "2026-04-09",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins",
+  "purpose": "Session ledger for S016: EITT discovery, midrange confirmation, adversarial testing, Copilot calibration lab analysis, residual analysis (Hessian footprint), Dance Card posture, collective packaging for push.",
+
+  "session_summary": {
+    "duration": "Multi-day session (2026-04-07 through 2026-04-09)",
+    "governance": "CGS-2 (n=3), GDoF 264 — unchanged throughout",
+    "key_finding": "EITT — Entropy-Invariant Time Transformer. Shannon entropy is empirically near-invariant under geometric-mean temporal decimation. 0.18% variation on original proof. 1.02% mean on independent confirmation. Systematic residual identified as second-order Jensen correction (Hessian footprint).",
+    "calibration_programme": "COMPLETE — all six steps (Woofer, Tweeter, Midrange, Crossover, ETC, RT60) now DONE",
+    "collective_contributions": "Copilot (VAR(1) calibration lab), ChatGPT (4-error review), Claude (proofs, analysis, packaging), Grok (v-core/e connection)"
+  },
+
+  "documents_created": [
+    {
+      "id": "EITT-FIND-001",
+      "file": "drafts/codawork-2026/EITT_FINDING.md",
+      "title": "EITT Finding — Master Document",
+      "status": "Updated through v3 (residual analysis added 2026-04-09)"
+    },
+    {
+      "id": "EITT-MID-001",
+      "file": "data/codawork-samples/S016/EITT_Midrange_Confirmation_001.json",
+      "title": "EITT Midrange Confirmation — 6 Countries, 9 Fuel Types",
+      "key_finding": "1.02% mean entropy variation across 12:1 compression"
+    },
+    {
+      "id": "EITT-ADV-001",
+      "file": "data/codawork-samples/S016/EITT_Adversarial_001.json",
+      "title": "EITT Adversarial Test Suite — 17 Tests",
+      "key_finding": "10 pass, 7 fail. Boundary condition: temporal autocorrelation required"
+    },
+    {
+      "id": "EITT-RES-001",
+      "file": "data/codawork-samples/S016/EITT_Residual_Analysis_001.json",
+      "title": "EITT Residual Analysis — Hessian Footprint",
+      "key_finding": "Systematic upward entropy drift is second-order Jensen correction. e-duality: exp/ln inverse functions create near-cancellation"
+    },
+    {
+      "id": "AITVAR-001-REWRITE",
+      "file": "data/codawork-samples/S016/HUF_Aitchison_Variance_Conservation_001.json",
+      "title": "Aitchison Variance — REWRITTEN as Negative Control",
+      "key_change": "Was mislabeled APPROXIMATELY_CONSERVED despite 55% drop. Now correctly labeled NOT_CONSERVED as negative control"
+    },
+    {
+      "id": "DANCE-001",
+      "file": "drafts/codawork-2026/DANCE_CARD.md",
+      "title": "Dance Card — Conference Posture",
+      "key_content": "Replaces Battle Card. 'We can't prove it. Can you?' Per-researcher invitations."
+    },
+    {
+      "id": "POLIT-001",
+      "file": "drafts/codawork-2026/EITT_POLITICAL_LANDSCAPE.md",
+      "title": "EITT Political Landscape — Debts, Allies, Opponents",
+      "key_content": "6 sections: supporters, opponents, debts, attack vectors, one-liners, implications"
+    },
+    {
+      "id": "CGPT-BRIEF-001",
+      "file": "process/collective-reports/CHATGPT_EITT_BRIEFING_S016.json",
+      "title": "ChatGPT EITT Briefing JSON",
+      "key_content": "Complete EITT package for ChatGPT review"
+    },
+    {
+      "id": "CGPT-REV-001",
+      "file": "process/collective-reports/CHATGPT_EITT_REVIEW_S016.md",
+      "title": "ChatGPT EITT Review — 4 Corrections",
+      "key_content": "Documents all 4 issues flagged and fixed"
+    },
+    {
+      "id": "EITT-LAB-001",
+      "file": "data/eitt_lab/EITT_LAB_PACKAGE.json",
+      "title": "EITT Calibration Lab Master Package",
+      "key_content": "Thank-you, findings, error sources, bounty (16 inventions), open questions"
+    },
+    {
+      "id": "EITT-LAB-README",
+      "file": "data/eitt_lab/README.md",
+      "title": "EITT Lab README"
+    }
+  ],
+
+  "copilot_contributions_filed": {
+    "location": "data/eitt_lab/copilot_outputs/",
+    "files": [
+      "eitt_ar1_calibrator_suite.json",
+      "europe_monthly_full_release_long_format_eitt_summary.json",
+      "europe_monthly_full_release_long_format_eitt_summary_calibrated.json",
+      "europe_monthly_full_release_long_format_eitt_summary_pca2_calibrated.json",
+      "europe_monthly_full_release_long_format_eitt_summary_pca3_calibrated.json",
+      "europe_monthly_full_release_long_format_eitt_summary_tuned_calibrated.json",
+      "europe_monthly_full_release_long_format_bootstrap.json"
+    ],
+    "description": "Copilot's VAR(1)/Lyapunov/PCA/bootstrap calibration toolkit outputs"
+  },
+
+  "claude_analysis_filed": {
+    "location": "data/eitt_lab/claude_analysis/",
+    "files": [
+      "EITT_Residual_Analysis_001.json",
+      "eitt_residual_analysis.py"
+    ],
+    "description": "Claude's Hessian footprint analysis — second-order Jensen correction derivation and numerical verification"
+  },
+
+  "errors_caught_and_fixed": [
+    {
+      "error": "Language temperature — 'invariant' used without qualifier",
+      "caught_by": "ChatGPT",
+      "fix": "All instances changed to 'empirically near-invariant'",
+      "impact": "Would have been attacked as overstated claim at CoDaWork"
+    },
+    {
+      "error": "Aitchison variance labeled APPROXIMATELY_CONSERVED despite 55% drop",
+      "caught_by": "ChatGPT",
+      "fix": "Complete JSON rewrite — now labeled NOT_CONSERVED as negative control",
+      "impact": "Would have been immediately discredited by any reviewer"
+    },
+    {
+      "error": "Claimed domain/carrier/resolution independence beyond tested scope",
+      "caught_by": "ChatGPT",
+      "fix": "Scoped to 'on the tested domains (energy prices, energy generation)'",
+      "impact": "A single counterexample from ecology would have destroyed the claim"
+    },
+    {
+      "error": "Midrange PENDING in calibration table but text said complete",
+      "caught_by": "ChatGPT",
+      "fix": "Table updated to DONE with full details",
+      "impact": "Internal inconsistency that undermines credibility"
+    },
+    {
+      "error": "Adversarial script KeyError on Japan regime-change data",
+      "caught_by": "Claude (runtime)",
+      "fix": "Results extracted from stdout, summary built separately",
+      "impact": "No data lost — code issue only"
+    },
+    {
+      "error": "Battle Card defensive posture",
+      "caught_by": "Peter Higgins",
+      "fix": "Replaced with Dance Card — invitational posture",
+      "impact": "Defensive posture signals insecurity and attracts attack"
+    }
+  ],
+
+  "the_bounty": {
+    "inventions_count": 16,
+    "description": "See data/eitt_lab/EITT_LAB_PACKAGE.json 'the_bounty' for full list",
+    "highlights": [
+      "EITT itself — Shannon entropy near-invariance under geometric-mean decimation",
+      "Hessian Footprint — second-order Jensen correction as the drift mechanism",
+      "e-Duality Principle — exp/ln inverse relationship as deep EITT structure",
+      "10,000x Gap Finding — VAR(1) bounds ruling out linear dynamics",
+      "Adversarial Protocol — 17 tests defining honest boundary conditions",
+      "Collective AI Calibration Lab — multi-AI review protocol"
+    ]
+  },
+
+  "push_readiness": {
+    "new_files_for_push": [
+      "data/eitt_lab/ (entire directory — 10 files)",
+      "data/codawork-samples/S016/EITT_Adversarial_001.json",
+      "data/codawork-samples/S016/EITT_Midrange_Confirmation_001.json",
+      "data/codawork-samples/S016/EITT_Residual_Analysis_001.json",
+      "drafts/codawork-2026/DANCE_CARD.md",
+      "drafts/codawork-2026/EITT_POLITICAL_LANDSCAPE.md",
+      "process/collective-reports/CHATGPT_EITT_BRIEFING_S016.json",
+      "process/collective-reports/CHATGPT_EITT_REVIEW_S016.md",
+      "process/session-ledgers/HUF_Session_Ledger_S016_20260409.json"
+    ],
+    "modified_files_for_push": [
+      "drafts/codawork-2026/EITT_FINDING.md (residual analysis section added, adversarial and eitt_lab file refs added)",
+      "data/codawork-samples/S016/HUF_Aitchison_Variance_Conservation_001.json (rewritten as negative control)"
+    ],
+    "suggested_commit_message": "EITT calibration lab: Copilot theoretical bounds, Claude residual analysis, ChatGPT corrections, adversarial tests, Dance Card posture — S016 complete package"
+  },
+
+  "pending_collective_actions": [
+    "Gemini formal EITT review",
+    "Copilot formal EITT review (has contributed lab, but no review document filed)",
+    "Grok formal EITT review",
+    "Test EITT on non-energy domains (ecology, finance, demographics)",
+    "Seek analytic proof or closed-form bound for EITT"
+  ]
+}
