@@ -577,19 +577,23 @@ function drawBalances() {
   const pts = getCountryData(site);
   if (pts.length === 0) return;
 
-  // Balances:
-  // B1 = ln(Fossil / Renewable) — energy transition
-  // B2 = ln(Coal / Gas) — within fossil
-  // B3 = ln(Wind / Solar) — within renewable
+  // ILR balances (proper normalisation: sqrt(r*s/(r+s)) * ln(geomean(group1)/geomean(group2)))
+  // SBP: B1 = Fossil(3) vs Renewable(5)  |  B2 = Coal vs Gas  |  B3 = Wind vs Solar
+  // Indices: 0=Coal 1=Gas 2=Nuclear 3=Hydro 4=Solar 5=Wind 6=Bio 7=Other_Fossil 8=Other_Renew
   const balances = pts.map(d => {
     const c = d.c.map(v => Math.max(v, EPSILON));
-    const fossil = c[0] + c[1] + c[7];
-    const renew = c[3] + c[4] + c[5] + c[6] + c[8];
+    // Geometric means for each group
+    const fossilParts = [c[0], c[1], c[7]]; // Coal, Gas, Other_Fossil
+    const renewParts  = [c[3], c[4], c[5], c[6], c[8]]; // Hydro, Solar, Wind, Bio, Other_Renew
+    const geoMean = arr => Math.exp(arr.reduce((s, v) => s + Math.log(v), 0) / arr.length);
+    const r1 = fossilParts.length, s1 = renewParts.length;
+    const r2 = 1, s2 = 1; // Coal vs Gas (single parts)
+    const r3 = 1, s3 = 1; // Wind vs Solar (single parts)
     return {
       y: d.y,
-      b1: Math.log(fossil / renew),
-      b2: Math.log(c[0] / Math.max(c[1], EPSILON)),
-      b3: Math.log(Math.max(c[5], EPSILON) / Math.max(c[4], EPSILON))
+      b1: Math.sqrt(r1*s1/(r1+s1)) * Math.log(geoMean(fossilParts) / geoMean(renewParts)),
+      b2: Math.sqrt(r2*s2/(r2+s2)) * Math.log(c[0] / c[1]),
+      b3: Math.sqrt(r3*s3/(r3+s3)) * Math.log(c[5] / c[4])
     };
   });
 
@@ -618,9 +622,9 @@ function drawBalances() {
 
   // Draw balances
   const bDefs = [
-    { key: 'b1', color: '#e8d44a', label: 'B1: ln(Fossil/Renew)' },
-    { key: 'b2', color: '#e8824a', label: 'B2: ln(Coal/Gas)' },
-    { key: 'b3', color: '#4ae8cc', label: 'B3: ln(Wind/Solar)' },
+    { key: 'b1', color: '#e8d44a', label: 'B1: ILR Fossil|Renew' },
+    { key: 'b2', color: '#e8824a', label: 'B2: ILR Coal|Gas' },
+    { key: 'b3', color: '#4ae8cc', label: 'B3: ILR Wind|Solar' },
   ];
 
   bDefs.forEach(({ key, color, label }) => {

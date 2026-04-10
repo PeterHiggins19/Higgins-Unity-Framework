@@ -9,13 +9,13 @@
 
 ## The One-Sentence Version
 
-We discovered that Shannon entropy — a measure of how evenly spread a composition is — barely changes when you average compositional time series data across different time scales using the geometric mean, and we now understand why.
+We discovered that Shannon entropy — and in fact the entire Renyi entropy family from q=0.1 to q=5.0 — barely changes when you average compositional time series data across different time scales using the geometric mean. Shannon is not special. The phenomenon lives in the Aitchison geometry, not in any specific entropy functional. When it fails, the failure is bidirectionally diagnostic: upward inversion identifies hidden dimensions, downward inversion identifies non-stationarity.
 
 ---
 
 ## How We Got Here
 
-This started with a loudspeaker analogy. In an electrical transformer, power is conserved when you change the winding ratio — voltage goes up, current goes down, but their product stays the same. Peter asked: when we compress compositional time series from daily to weekly to monthly to annual using the geometric mean, is anything conserved?
+This started with a loudspeaker — not an analogy, but the actual physical system. In December 2024, Peter built DADC-DADI-ADAC for the Rogue Wave Audio Binaural Test Lab: a diffraction correction system where the total 6.02 dB gain budget is apportioned among cabinet dimensions as a composition on the simplex, and the inverse (DADI) reconstructs geometry from acoustic response without the probe touching the object. In November 2025, working with Grok, the generalization clicked: if dimensional inversion works for a loudspeaker, it works for any system where parts sum to a whole. Then the transformer analogy emerged: in an electrical transformer, power is conserved when you change the winding ratio. Peter asked: when we compress compositional time series from daily to weekly to monthly to annual using the geometric mean, is anything conserved?
 
 The answer turned out to be yes. Shannon entropy — the information content of the composition — is empirically near-invariant under this operation. We called it the Entropy-Invariant Time Transformer, or EITT.
 

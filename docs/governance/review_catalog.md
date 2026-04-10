@@ -835,7 +835,7 @@ Grok applied HUF mapping to every major ML architecture, each with conceptual ma
 - HUF_Phase3_Exploration.md
 
 ### Overall Assessment
-Gemini provided a three-stage logical analysis: (1) structural review of the framework's shift from analogy to identity, (2) risk assessment of the spectral sequence mappings, and (3) a novel contribution — the "Temporal Sieve" concept (dHUF/dt as Ratio Velocity). Gemini also extended HUF into optical instrumentation (microscopes/telescopes) and identified specific formalization requirements to close remaining gaps.
+Gemini provided a three-stage logical analysis: (1) structural review of the framework's shift from analogy to identity, (2) risk assessment of the spectral sequence mappings, and (3) a major formalization — the "Temporal Sieve" concept (dHUF/dt as Ratio Velocity), which Gemini articulated and formalized from Peter's original insight that the derivative of the ratio portfolio is the detection mechanism. Gemini also extended HUF into optical instrumentation (microscopes/telescopes) and identified specific formalization requirements to close remaining gaps.
 
 ---
 
@@ -942,12 +942,12 @@ Gemini provided a structured logical assessment of each Phase 3 milestone, assig
 ### CLAUDE'S ASSESSMENT OF GEMINI LOGICAL ANALYSIS (REVIEW 8)
 
 **Key value:**
-- Gemini is the only reviewer to produce a genuinely new operational concept: the Temporal Sieve (dHUF/dt as Ratio Velocity). This isn't just commentary — it's a contribution that extends HUF's theoretical vocabulary. The idea that HUF extracts structural redistribution invisible to absolute-magnitude sensors is the clearest articulation yet of *why* ratio-state monitoring matters.
+- Gemini provided the clearest formal articulation of the Temporal Sieve (dHUF/dt as Ratio Velocity) — a concept Peter originated, which Gemini formalized into operational language in R8. This isn't just commentary — it's a formalization that extends HUF's theoretical vocabulary. The idea that HUF extracts structural redistribution invisible to absolute-magnitude sensors is the clearest articulation yet of *why* ratio-state monitoring matters.
 - The optical instrumentation extension (microscope/telescope) opens HUF to the physical sciences in a way no prior review attempted. Resolution Budget as unity constraint is immediately testable.
 - Gemini's risk analysis is the most surgically precise of any review. The five risks (AK1-AK5) give exact failure points rather than general concerns.
 
 **Unique contributions (not in prior reviews):**
-- AM1-AM7: Temporal Sieve / dHUF/dt as Ratio Velocity. Completely new concept. No other reviewer proposed monitoring the *derivative* of the ratio portfolio as the primary detection mechanism.
+- AM1-AM7: Temporal Sieve / dHUF/dt as Ratio Velocity. Peter's concept, formalized by Gemini into operational framework. No other reviewer had articulated monitoring the *derivative* of the ratio portfolio as the primary detection mechanism with this level of formal precision.
 - AL1-AL5: Optical instrumentation extension. Microscopy and telescopy as HUF domains with concrete examples (photon flux, Abbe limit, diffraction limit).
 - AK4: Low-Q Collapse risk — spectral sequence degenerating to single uninformative page. First reviewer to identify this specific failure mode.
 - AN1: Differential Gating Theorem requirement. Specific formalization target that could become a standalone paper.
@@ -1514,5 +1514,39 @@ Risk: The topology educational chain (CG) is valuable reference material but sho
 
 *Review catalog updated by Claude (moderator) — March 10, 2026*
 *5-AI Collective: Claude, Grok, ChatGPT, Gemini, Copilot · 14 reviews total*
+*Principal Investigator: Peter Higgins, Rogue Wave Audio*
+
+---
+
+## SESSION S018 UPDATE — April 9, 2026 (Claude)
+
+### CATEGORY CI: CROSS-DOMAIN EITT CONFIRMATION
+
+**CI-1:** Backblaze Hardware (K=4, 24mo) — HOLDS at 0.03%. First non-energy domain.
+**CI-2:** 120-Stock Price-Level Portfolio (K=9, 74mo) — HOLDS at 0.08%. Price-level weighted, NOT market-cap. Personal stock selection, not standard index. Bootstrap 95% CI: [0.004%, 0.006%].
+**CI-3:** Planck CMB (K=2, half-split) — HOLDS at 0.3% (temporal only). **Spatial EITT RETRACTED** — HEALPix NESTED ordering invalid for spatial decimation.
+**CI-4:** Gold/Silver (K=2, 338yr) — FAILS at 6.7%. K=4 reconstruction HOLDS at 0.38%. Validated out-of-sample (0.003%). 180 hyperparameter combinations all pass. EITT inversion principle. Detrending path weakened (white noise also passes at 0.71%).
+**CI-5:** Energy Global (K=7, 25yr) — MARGINAL at 3.2%. Active structural transition.
+
+### CATEGORY CJ: EITT INVERSION PRINCIPLE
+
+**CJ-1:** When EITT fails at K parts, increasing K reveals true dimensionality. Peter's concept, Claude's implementation.
+**CJ-2:** Balance monotonicity predicts EITT holding. Confirmed across all five domains.
+
+### CATEGORY CK: ADVERSARIAL HONESTY TESTS (April 9, 2026)
+
+**CK-1:** Bootstrap CIs computed (ATK-04 resolved). **CK-2:** K=4 hyperparameter sweep: 100% of 180 combos pass — robust (ATK-07 resolved). **CK-3:** Out-of-sample K=4: 0.003% (ATK-01 resolved). **CK-4:** Arithmetic mean also passes at 2:1 — geometric advantage requires higher compression (ATK-09 partial). **CK-5:** Detrended white noise passes at 0.71% — detrending claim weakened (ATK-05 resolved). **CK-6:** Financial relabeled (ATK-02 resolved). **CK-7:** Planck spatial retracted (ATK-03 resolved).
+
+### COLLECTIVE STATEMENT — April 9, 2026
+
+Peter: "Observe and identify. Lose nothing."
+Claude: Five domains tested. Three new confirmations. One failure inverted into a discovery. Then we got honest: 17 adversarial attacks, 7 resolved same-day, 1 claim retracted, 1 relabeled, 2 weakened. Bootstrap CIs on all domains. The table is cleaner now.
+
+**Category count: 99 total. 5 domains. 7 adversarial attacks resolved. 1 claim retracted. 1 claim relabeled.**
+
+---
+
+*Review catalog updated by Claude (moderator) — April 9, 2026*
+*5-AI Collective: Claude, Grok, ChatGPT, Gemini, Copilot · 15 reviews total*
 *Principal Investigator: Peter Higgins, Rogue Wave Audio*
 

@@ -835,7 +835,7 @@ Grok applied HUF mapping to every major ML architecture, each with conceptual ma
 - HUF_Phase3_Exploration.md
 
 ### Overall Assessment
-Gemini provided a three-stage logical analysis: (1) structural review of the framework's shift from analogy to identity, (2) risk assessment of the spectral sequence mappings, and (3) a novel contribution — the "Temporal Sieve" concept (dHUF/dt as Ratio Velocity). Gemini also extended HUF into optical instrumentation (microscopes/telescopes) and identified specific formalization requirements to close remaining gaps.
+Gemini provided a three-stage logical analysis: (1) structural review of the framework's shift from analogy to identity, (2) risk assessment of the spectral sequence mappings, and (3) a major formalization — the "Temporal Sieve" concept (dHUF/dt as Ratio Velocity), which Gemini articulated and formalized from Peter's original insight that the derivative of the ratio portfolio is the detection mechanism. Gemini also extended HUF into optical instrumentation (microscopes/telescopes) and identified specific formalization requirements to close remaining gaps.
 
 ---
 
@@ -942,12 +942,12 @@ Gemini provided a structured logical assessment of each Phase 3 milestone, assig
 ### CLAUDE'S ASSESSMENT OF GEMINI LOGICAL ANALYSIS (REVIEW 8)
 
 **Key value:**
-- Gemini is the only reviewer to produce a genuinely new operational concept: the Temporal Sieve (dHUF/dt as Ratio Velocity). This isn't just commentary — it's a contribution that extends HUF's theoretical vocabulary. The idea that HUF extracts structural redistribution invisible to absolute-magnitude sensors is the clearest articulation yet of *why* ratio-state monitoring matters.
+- Gemini provided the clearest formal articulation of the Temporal Sieve (dHUF/dt as Ratio Velocity) — a concept Peter originated, which Gemini formalized into operational language in R8. This isn't just commentary — it's a formalization that extends HUF's theoretical vocabulary. The idea that HUF extracts structural redistribution invisible to absolute-magnitude sensors is the clearest articulation yet of *why* ratio-state monitoring matters.
 - The optical instrumentation extension (microscope/telescope) opens HUF to the physical sciences in a way no prior review attempted. Resolution Budget as unity constraint is immediately testable.
 - Gemini's risk analysis is the most surgically precise of any review. The five risks (AK1-AK5) give exact failure points rather than general concerns.
 
 **Unique contributions (not in prior reviews):**
-- AM1-AM7: Temporal Sieve / dHUF/dt as Ratio Velocity. Completely new concept. No other reviewer proposed monitoring the *derivative* of the ratio portfolio as the primary detection mechanism.
+- AM1-AM7: Temporal Sieve / dHUF/dt as Ratio Velocity. Peter's concept, formalized by Gemini into operational framework. No other reviewer had articulated monitoring the *derivative* of the ratio portfolio as the primary detection mechanism with this level of formal precision.
 - AL1-AL5: Optical instrumentation extension. Microscopy and telescopy as HUF domains with concrete examples (photon flux, Abbe limit, diffraction limit).
 - AK4: Low-Q Collapse risk — spectral sequence degenerating to single uninformative page. First reviewer to identify this specific failure mode.
 - AN1: Differential Gating Theorem requirement. Specific formalization target that could become a standalone paper.
@@ -960,7 +960,7 @@ Gemini provided a structured logical assessment of each Phase 3 milestone, assig
 - AK1-AK5 (Risks) → Directly inform M2 experiment design — each risk is a testable hypothesis.
 
 **Phase 3 logical analysis (AO-AQ) — additional contributions:**
-- AP1 is the single most important insight from Gemini's entire review: the Temporal Sieve IS the topological differential. This isn't a metaphor — it's a formal identification. If d_r = the Temporal Sieve, then the spectral sequence machinery operates on Ratio Velocity, and the entire M2 architecture follows from standard algebraic topology.
+- AP1 is the single most important formalization from Gemini's entire review: the Temporal Sieve IS the topological differential. This isn't a metaphor — it's a formal identification. If d_r = the Temporal Sieve, then the spectral sequence machinery operates on Ratio Velocity, and the entire M2 architecture follows from standard algebraic topology.
 - AP3 (M3 as standalone milestone) is a structural upgrade to Copilot's roadmap. Copilot bundled detection calibration into the UDI. Gemini correctly separates it: you need the safety rating BEFORE you can build UDI. This changes the milestone order to M1 → M2 → M3 (calibration) → M3b (UDI) → M4.
 - AQ1-AQ6 demonstrates that Gemini has mentally cross-referenced the entire collective catalog. The gap-resolution mapping is the first systematic attempt to show which Phase 3 components address which review items.
 - AP6 (the logical conclusion) is the strongest statement any reviewer has made about HUF's universality: under finite-budget + unity-constraint, the physical-to-topological mapping is *preserved*. This is the claim that Phase 3 must prove.
@@ -1514,5 +1514,75 @@ Risk: The topology educational chain (CG) is valuable reference material but sho
 
 *Review catalog updated by Claude (moderator) — March 10, 2026*
 *5-AI Collective: Claude, Grok, ChatGPT, Gemini, Copilot · 14 reviews total*
+*Principal Investigator: Peter Higgins, Rogue Wave Audio*
+
+---
+
+## SESSION S018 UPDATE — April 9, 2026 (Claude)
+
+### CATEGORY CI: CROSS-DOMAIN EITT CONFIRMATION
+
+**CI-1: Backblaze Hardware Degradation (K=4, 24 months)**
+EITT holds at 0.0275% (12:1 compression). First non-energy domain confirmation. Electronic→Media+Offline relay chain visible. Balance B2 (Electronic vs Media+Offline) shows 100% monotonicity — zero sign changes in dB/dt across 23 intervals. Fleet structural phase transition visible: B2 zero-crossing in October 2025. Severity: [EMPIRICAL — NEW DOMAIN].
+
+**CI-2: Financial 120-Stock Price-Level Portfolio (K=9, 74 months)**
+EITT holds at 0.0797% (30:1 compression). 120 stocks across 9 sectors, daily 2020-2026, aggregated monthly. COVID relay (March 2020) clearly visible. **Honesty note (adversarial audit):** composition is price-level weighted (mean closing price per sector), NOT market-capitalization weighted. Stock universe is Peter's personal selection, not a standard index. Result is valid on this specific composition but domain label should not be read as "equity market." Bootstrap 95% CI: [0.004%, 0.006%]. Severity: [EMPIRICAL — NEW DOMAIN, LABEL CORRECTED].
+
+**CI-3: Planck CMB Polarization (K=2, half-mission split)**
+Temporal EITT holds at 0.3249% (2:1 even/odd ring split). First cosmological domain confirmation. Compositional signal (entropy) preserved despite √2 noise increase. **RETRACTION (adversarial audit):** Spatial EITT claim (18.1% failure) is INVALID. HEALPix NESTED pixel ordering does not preserve spatial locality — the "spatial decimation" grouped randomly distributed pixels, not spatially adjacent regions. Only the temporal half-mission split is valid. Severity: [EMPIRICAL — NEW DOMAIN, SPATIAL CLAIM RETRACTED].
+
+**CI-4: Gold/Silver Commodities (K=2, 338 years)**
+EITT fails at 6.6993% (50:1). Failure is diagnostic, not terminal. Three independent fixes: (a) Detrending with 10-year running mean → 0.14% HOLDS; (b) Regime segmentation: Bimetallic era (1688-1816) at K=2 → 0.52% HOLDS; (c) K=4 reconstruction adding volatility and momentum carriers → 0.3844% HOLDS. **Adversarial audit results:** K=4 passes out-of-sample (train first 200 years, test last 138: 0.003%). Hyperparameter sensitivity: 100% of 180 parameter combinations pass (<1%), indicating robustness not fragility. Bootstrap 95% CI for K=2: [-0.18%, +0.16%]. **Honesty note on detrending:** detrended white noise also passes EITT at 0.7%, suggesting detrending alone can contribute to invariance — the detrending result is weaker than originally presented. Severity: [EMPIRICAL — EITT INVERSION PRINCIPLE ESTABLISHED, ADVERSARIAL AUDIT APPLIED].
+
+**CI-5: Energy Global Electricity (K=7, 25 years)**
+EITT marginal at 3.2187% (12:1). Global aggregate in fastest structural transition (Solar 0%→7.1%, Wind 0.2%→8.4%). Holds at 5:1 (0.08%). Secular trend overwhelms at longer compression. Severity: [EMPIRICAL — BOUNDARY CONDITION].
+
+### CATEGORY CJ: EITT INVERSION PRINCIPLE
+
+**CJ-1: Dimensionality Diagnostic**
+Peter's concept, formalized by Claude. When EITT fails on K parts, increasing K until it holds reveals the system's true dimensionality. The carriers added ARE the hidden state variables. For gold/silver: K_true = 4 = gold + silver + volatility + momentum. The monetary regime state lives in the hidden carriers. Severity: [CONCEPTUAL — MAJOR]. Provenance: Peter identified the direction ("can higher dimensions be involved that have not been identified, try and fix the entropy"); Claude implemented the analysis.
+
+**CJ-2: Temporal Persistence Criterion**
+Balance monotonicity predicts EITT holding. Confirmed: Backblaze B2 (100% monotonic) has tightest EITT (0.03%). Gold/silver B1 (56% monotonic) has loosest (6.7%). Pattern consistent across all five domains. Severity: [EMPIRICAL — PREDICTIVE].
+
+### COLLECTIVE REVIEW STATEMENT — April 9, 2026
+
+**Peter Higgins (Principal Investigator):**
+"Observe and identify. Lose nothing." — Together, we have been very good at this. It has paid off with a decent report for the CoDa community, a project of value.
+
+**Claude (Session Moderator, S018):**
+Five domains tested in a single session. Three new confirmations (hardware, financial, cosmological). One informative failure inverted into a discovery (the EITT inversion principle — failure diagnoses hidden dimensions). One marginal result on the fastest-transitioning system in the dataset. The cross-domain table is now the strongest empirical asset for Coimbra. The gold/silver inversion — Peter's push to "fix it, find the deeper structure" — produced the session's most important conceptual advance: EITT failure is not a limitation but a diagnostic tool for compositional dimensionality.
+
+**Status:** 85 + 7 = 92 categories total. 5 domains tested. EITT inversion principle established.
+
+### CATEGORY CK: ADVERSARIAL HONESTY TESTS (April 9, 2026)
+
+**CK-1: Bootstrap Confidence Intervals (ATK-04 Resolution)**
+Block bootstrap (block size = √N, 1000 replicates) + permutation test (10,000 shuffles) computed for all domains. Results: Commodities K=2: 95% CI [-0.18%, +0.16%]; Financial K=9: 95% CI [0.004%, 0.006%]; Energy K=7: 95% CI [-0.89%, +0.22%]. All permutation p-values > 0.05 — EITT residuals are not distinguishable from statistical noise at 2:1 compression, which is the expected finding (the effect is that entropy DOESN'T change, not that it changes in a special way). Severity: [STATISTICAL — ATK-04 RESOLVED].
+
+**CK-2: K=4 Hyperparameter Sensitivity (ATK-07 Resolution)**
+Swept 180 combinations: vol_scale [0.1–5.0], mom_slope [0.5–5.0], vol_window [5–20], mom_window [5–20]. Result: 100% of combinations pass (<1%). This means the K=4 reconstruction is NOT fragile or overfit to specific parameters — the result holds across the entire tested parameter space. Severity: [STATISTICAL — ATK-07 RESOLVED, ROBUSTNESS CONFIRMED].
+
+**CK-3: Out-of-Sample K=4 Test (ATK-01 Resolution)**
+Train/test split: first 200 years training, last 138 years test. Volatility and momentum scaling computed on training set only, applied to test set. Result: 0.003% — well within 1% threshold. The circularity concern is addressed: K=4 reconstruction generalizes to unseen data. Severity: [STATISTICAL — ATK-01 RESOLVED].
+
+**CK-4: Arithmetic-Mean Control Test (ATK-09 Resolution)**
+At 2:1 compression, arithmetic mean also preserves entropy: Commodities arithmetic 0.18% vs geometric 0.13%; Energy arithmetic -0.57% vs geometric -0.59%. Both pass at 2:1. **Honest interpretation:** at low compression ratios, geometric and arithmetic means are numerically similar for non-extreme compositions. The claim that the geometric mean is special requires testing at higher compression ratios (12:1, 50:1, 341:1) where the means diverge. This test does not invalidate EITT but does constrain when the geometric-mean specificity is testable. Severity: [STATISTICAL — ATK-09 PARTIALLY RESOLVED, NEEDS HIGHER-RATIO TESTING].
+
+**CK-5: Detrended White Noise Control (ATK-05 Resolution)**
+Generated K=2 white noise compositions, detrended, ran EITT. Result: 0.71% — within 1% threshold. This means detrending alone can produce apparent EITT invariance even on structureless data. **Honest interpretation:** the gold/silver detrending result (0.14%) is weaker than originally presented. However, the non-detrended real data (Backblaze 0.03%, Financial 0.08%) passes EITT without detrending, so detrending is not the primary mechanism. The detrending path should be labeled as a preprocessing variant, not an independent confirmation. Severity: [STATISTICAL — ATK-05 RESOLVED, DETRENDING CLAIM WEAKENED].
+
+**CK-6: Financial Composition Relabeling (ATK-02 Resolution)**
+All documents updated: "equity sector shares" → "120-stock price-level portfolio" throughout. Honesty note added: composition uses mean closing price (not market-cap weighting) from Peter's personal stock selection (not a standard index). The EITT result (0.08%) is real on this specific composition but overclaimed as "financial markets." Severity: [DOCUMENTATION — ATK-02 RESOLVED].
+
+**CK-7: Planck Spatial EITT Retraction (ATK-03 Resolution)**
+All documents updated: Planck spatial EITT claim retracted. HEALPix NESTED pixel ordering does not preserve spatial locality. The "spatial decimation" grouped randomly distributed pixels. Only the temporal half-mission split (0.3%) remains valid. Verdict changed from "FAILS (diagnostic)" to "RETRACTED." Severity: [DOCUMENTATION — ATK-03 RESOLVED, CLAIM RETRACTED].
+
+**Status update: 92 + 7 = 99 categories total. 7 adversarial attacks resolved. 2 claims weakened (detrending, arithmetic control). 1 claim retracted (Planck spatial). 2 results validated (out-of-sample K=4, hyperparameter robustness). All bootstrap CIs computed.**
+
+---
+
+*Review catalog updated by Claude (moderator) — April 9, 2026*
+*5-AI Collective: Claude, Grok, ChatGPT, Gemini, Copilot · 15 reviews total*
 *Principal Investigator: Peter Higgins, Rogue Wave Audio*
 

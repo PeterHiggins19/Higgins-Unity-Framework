@@ -124,7 +124,7 @@ HUF has not been validated on any ecological dataset. Proposing Ramsar deploymen
 
 ### D-04: Is the Screwdriver-and-Math-Book Framing Patronising?
 
-The framing: "I picked up the screwdriver first. The CoDa community picked up the math book first. Neither side was wrong. Neither side was complete." This is intended to convey mutual respect and complementarity. But it could be read as: an engineer telling mathematicians that their work is incomplete and needs his practical contribution. The audience's reaction will determine whether the framing lands as alliance or as condescension.
+The framing: "I picked up the screwdriver first. The CoDa community picked up the math book first. Neither side was complete. Both were necessary." This is intended to convey mutual respect and complementarity. But it could be read as: an engineer telling mathematicians that their work is incomplete and needs his practical contribution. The audience's reaction will determine whether the framing lands as alliance or as condescension.
 
 ### D-05: Are We Overthinking This?
 

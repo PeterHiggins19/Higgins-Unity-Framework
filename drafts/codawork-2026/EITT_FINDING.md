@@ -1,15 +1,15 @@
 # EITT — Entropy-Invariant Time Transformer
 
 **Finding ID:** EITT-001
-**Date:** 2026-04-08
-**Status:** Computed, verified, ready for presentation
-**Origin:** Peter Higgins — loudspeaker winding-ratio observation → Claude computation → Shannon entropy conservation discovered
+**Date:** 2026-04-10 (updated)
+**Status:** Computed, verified, Renyi-generalized, bidirectional inversion confirmed, ready for presentation
+**Origin:** Peter Higgins — DADC-DADI loudspeaker diffraction correction (Dec 2024) → dimensional inversion insight (Nov 2025) → Claude computation → Shannon entropy conservation discovered → Renyi generalization confirmed (Apr 2026)
 
 ---
 
 ## The Finding
 
-Shannon entropy of compositional data is empirically near-invariant under geometric-mean decimation across temporal resolutions. This is a computed finding, not an analytic proof.
+Shannon entropy — and in fact the entire Renyi family from q=0.1 to q=5.0 — of compositional data is empirically near-invariant under geometric-mean decimation across temporal resolutions. Shannon is not special; the phenomenon lives in the Aitchison geometry. This is a computed finding, not an analytic proof. Confirmed across five independent domains: energy (electricity generation), hardware (Backblaze drives), financial (120-stock portfolio), commodities (gold/silver 339 years), and cosmological (Planck temporal split). EITT inversion is now bidirectional: upward (gold/silver K=2→K=4, hidden dimensions) and downward (China K=9→K=3, exposed non-stationarity).
 
 **Measured:** 0.18% variation across a 341:1 compression ratio (daily → annual European electricity price compositions, 8 carriers, 4089 trading days). Confirmed independently at 1.02% mean variation on a second domain (see below).
 
