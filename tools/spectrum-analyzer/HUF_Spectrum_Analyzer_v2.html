@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUF Spectrum Analyzer v2</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0a0a1a; color: #e0e0e0; font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; }
+  .container { max-width: 1200px; margin: 0 auto; padding: 16px; }
+
+  /* Header */
+  .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 14px; }
+  .header h1 { font-size: 20px; color: #60a5fa; letter-spacing: 2px; font-weight: 600; }
+  .header .sub { font-size: 11px; color: #888; margin-top: 2px; }
+  .header .right { text-align: right; font-size: 11px; color: #666; }
+
+  /* Upload zone */
+  .upload-zone { border: 2px dashed #444; border-radius: 8px; padding: 40px; text-align: center; margin-bottom: 20px; cursor: pointer; transition: border-color 0.2s; }
+  .upload-zone:hover, .upload-zone.drag { border-color: #60a5fa; }
+  .upload-zone h2 { color: #60a5fa; font-size: 16px; margin-bottom: 8px; }
+  .upload-zone p { color: #888; font-size: 12px; }
+  .upload-zone .or { color: #555; margin: 10px 0; font-size: 11px; }
+  .upload-zone button { padding: 8px 20px; background: #1e3a5f; border: 1px solid #60a5fa; color: #60a5fa; border-radius: 4px; cursor: pointer; font-size: 12px; }
+  .upload-zone button:hover { background: #264d7a; }
+
+  /* Controls */
+  .controls { display: flex; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; align-items: center; }
+  .btn-group { display: flex; gap: 3px; }
+  .btn { padding: 4px 10px; font-size: 11px; border: 1px solid #444; background: #1a1a2e; color: #888; border-radius: 3px; cursor: pointer; transition: all 0.15s; }
+  .btn:hover { border-color: #666; color: #bbb; }
+  .btn.active-blue { border-color: #60a5fa; background: #1e3a5f; color: #60a5fa; }
+  .btn.active-purple { border-color: #a78bfa; background: #2d1b69; color: #a78bfa; }
+  .btn.active-green { border-color: #22c55e; background: #14532d; color: #22c55e; }
+
+  /* Main grid */
+  .main-grid { display: grid; grid-template-columns: 200px 1fr; gap: 12px; margin-bottom: 12px; }
+  @media (max-width: 768px) { .main-grid { grid-template-columns: 1fr; } }
+
+  /* Panels */
+  .panel { background: #111127; border: 1px solid #333; border-radius: 4px; padding: 10px; }
+  .panel-label { font-size: 10px; color: #888; margin-bottom: 6px; letter-spacing: 0.5px; }
+  .panel-sm { padding: 6px 10px; }
+
+  /* Gauges */
+  .gauge-val { font-size: 24px; font-weight: bold; text-align: center; }
+  .gauge-bar { height: 8px; background: #222; border-radius: 4px; margin-top: 6px; overflow: hidden; }
+  .gauge-fill { height: 100%; border-radius: 4px; transition: width 0.3s; }
+  .gauge-labels { display: flex; justify-content: space-between; font-size: 9px; color: #666; margin-top: 2px; }
+  .mini-bar { height: 4px; background: #222; border-radius: 2px; margin-top: 2px; }
+  .mini-fill { height: 100%; border-radius: 2px; transition: width 0.3s; }
+
+  /* Status badge */
+  .status-badge { font-size: 11px; padding: 3px 8px; border-radius: 10px; display: inline-block; margin-top: 4px; }
+
+  /* Year display */
+  .year-display { font-size: 28px; font-weight: bold; color: #60a5fa; text-align: center; }
+
+  /* Calibration */
+  .cal-row { display: flex; justify-content: space-between; align-items: center; }
+  .cal-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 4px; }
+
+  /* Charts */
+  .chart-container { position: relative; }
+  .chart-title { font-size: 10px; color: #888; margin-bottom: 4px; padding-left: 4px; }
+  canvas { width: 100% !important; }
+
+  /* Scrubber */
+  .scrubber { background: #111127; border: 1px solid #333; border-radius: 4px; padding: 8px 12px; margin-bottom: 12px; }
+  .scrubber input { width: 100%; accent-color: #60a5fa; }
+  .scrubber-labels { display: flex; justify-content: space-between; font-size: 9px; color: #666; }
+
+  /* Narrative */
+  .narrative { font-size: 12px; line-height: 1.6; color: #ccc; }
+  .narrative-footer { margin-top: 8px; font-size: 10px; color: #666; border-top: 1px solid #222; padding-top: 6px; }
+
+  /* Legend */
+  .legend { display: flex; gap: 16px; margin-top: 8px; font-size: 9px; color: #666; flex-wrap: wrap; }
+  .footer { margin-top: 12px; font-size: 9px; color: #444; text-align: center; line-height: 1.8; }
+
+  /* Drift text */
+  .drift-row { font-size: 9px; line-height: 1.6; }
+  .clear { color: #22c55e; }
+  .detected { color: #ef4444; }
+  .shock-label { font-size: 10px; color: #ef4444; margin-top: 4px; }
+
+  /* Metric row */
+  .metric-row { display: flex; justify-content: space-between; font-size: 9px; margin-bottom: 2px; }
+
+  /* Hidden file input */
+  #fileInput { display: none; }
+
+  /* Carrier ribbon message */
+  .carrier-message { color: #888; font-size: 11px; padding: 8px; text-align: center; }
+
+  /* Carrier legend */
+  .carrier-legend { display: flex; gap: 12px; margin-top: 8px; font-size: 9px; flex-wrap: wrap; }
+  .carrier-legend-item { display: flex; align-items: center; gap: 4px; }
+  .carrier-swatch { width: 12px; height: 12px; border-radius: 2px; }
+
+  /* Heatmap legend */
+  .heatmap-legend { display: flex; gap: 16px; margin-top: 6px; font-size: 9px; align-items: center; }
+  .heatmap-swatch { width: 16px; height: 16px; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div class="container" id="app">
+
+  <!-- Header -->
+  <div class="header">
+    <div>
+      <h1>HUF SPECTRUM ANALYZER — Command Dashboard</h1>
+      <div class="sub">Composition Monitoring — Structural Concentration Display</div>
+    </div>
+    <div class="right">
+      <div id="domainLabel">No data loaded</div>
+      <div>HUF-GOV — KNOB-001 Standard</div>
+    </div>
+  </div>
+
+  <!-- Upload Zone (shown when no data loaded) -->
+  <div id="uploadZone" class="upload-zone">
+    <h2>Load HUF Data File</h2>
+    <p>Drop a .json file here to configure the analyzer for any domain</p>
+    <div class="or">— or —</div>
+    <button onclick="document.getElementById('fileInput').click()">Choose File</button>
+    <input type="file" id="fileInput" accept=".json" />
+    <p style="margin-top: 16px; font-size: 11px; color: #555;">
+      The JSON tells the instrument what it's looking at.<br>
+      Source, Calibration, Complexity, Velocity, Peak — five readings, every domain, same language.
+    </p>
+    <div style="margin-top: 16px;">
+      <button onclick="loadDemo()" style="background: #1a2e1a; border-color: #22c55e; color: #22c55e;">Load Demo (EMBER Electricity)</button>
+    </div>
+  </div>
+
+  <!-- Analyzer (hidden until data loaded) -->
+  <div id="analyzer" style="display:none;">
+
+    <!-- Controls -->
+    <div class="controls">
+      <div class="btn-group" id="datasetBtns"></div>
+      <div class="btn-group">
+        <button class="btn active-purple" data-metric="both" onclick="setMetric('both')">Velocity + Peak</button>
+        <button class="btn" data-metric="tvd" onclick="setMetric('tvd')">Velocity only</button>
+        <button class="btn" data-metric="l2" onclick="setMetric('l2')">Peak only</button>
+      </div>
+      <button class="btn" id="playBtn" onclick="togglePlay()">&#9654; PLAY</button>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="main-grid">
+
+      <!-- Left Panel -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <!-- Year + Status -->
+        <div class="panel" style="text-align:center;">
+          <div class="year-display" id="yearVal">—</div>
+          <div id="statusBadge" class="status-badge">STABLE</div>
+          <div id="shockLabel" class="shock-label" style="display:none;"></div>
+        </div>
+
+        <!-- Calibration -->
+        <div class="panel panel-sm cal-row">
+          <div style="font-size:10px;color:#888;">CALIBRATION</div>
+          <div style="font-size:10px;color:#22c55e;display:flex;align-items:center;gap:4px;">
+            <span class="cal-dot" style="background:#22c55e;box-shadow:0 0 6px #22c55e;"></span>
+            &#931; = 1.000
+          </div>
+        </div>
+
+        <!-- Complexity -->
+        <div class="panel">
+          <div class="panel-label">COMPLEXITY</div>
+          <div class="gauge-val" id="complexityVal" style="color:#22c55e;">—</div>
+          <div class="gauge-bar"><div class="gauge-fill" id="complexityBar" style="width:50%;background:linear-gradient(90deg,#ef4444,#eab308,#22c55e);"></div></div>
+          <div class="gauge-labels">
+            <span id="complexityMin">—</span>
+            <span>concentrated &#8592; &#8594; diverse</span>
+            <span id="complexityMax">—</span>
+          </div>
+        </div>
+
+        <!-- Velocity + Peak -->
+        <div class="panel">
+          <div class="panel-label">STRUCTURAL CHANGE</div>
+          <div id="velocityGauge">
+            <div class="metric-row"><span style="color:#a78bfa;">Velocity</span><span style="color:#a78bfa;" id="velVal">—</span></div>
+            <div class="mini-bar"><div class="mini-fill" id="velBar" style="background:#a78bfa;width:0%;"></div></div>
+          </div>
+          <div id="peakGauge" style="margin-top:6px;">
+            <div class="metric-row"><span style="color:#f97316;">Peak</span><span style="color:#f97316;" id="peakVal">—</span></div>
+            <div class="mini-bar"><div class="mini-fill" id="peakBar" style="background:#f97316;width:0%;"></div></div>
+          </div>
+        </div>
+
+        <!-- Drift Detection -->
+        <div class="panel">
+          <div class="panel-label">DRIFT DETECTION</div>
+          <div class="drift-row">Velocity: <span id="driftVel" class="clear">clear</span></div>
+          <div class="drift-row">Peak: <span id="driftPeak" class="clear">clear</span></div>
+          <div style="font-size:8px;color:#555;margin-top:6px;">Complexity falling + Velocity calm = quiet structural concentration</div>
+        </div>
+      </div>
+
+      <!-- Right Panel — Charts -->
+      <div style="display:flex;flex-direction:column;gap:8px;">
+        <div class="panel">
+          <div class="chart-title">COMPLEXITY — structural diversity over time</div>
+          <canvas id="complexityChart" height="160"></canvas>
+        </div>
+        <div class="panel">
+          <div class="chart-title" id="velChartTitle">VELOCITY + PEAK — dual trace</div>
+          <canvas id="velocityChart" height="130"></canvas>
+        </div>
+        <div class="panel">
+          <div class="chart-title">DECEPTIVE DRIFT SIGNATURE — Complexity falling (red) while Velocity stays calm</div>
+          <canvas id="driftChart" height="100"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carrier Composition Ribbon -->
+    <div class="panel" id="carrierPanel" style="display:none; margin-bottom:12px;">
+      <div class="chart-title">CARRIER COMPOSITION RIBBON — Proportional makeup of source elements over time</div>
+      <canvas id="carrierChart" height="120"></canvas>
+      <div class="carrier-legend" id="carrierLegend"></div>
+    </div>
+
+    <!-- Carrier No Data Message -->
+    <div id="carrierMessage" class="panel" style="display:none; margin-bottom:12px;">
+      <div class="carrier-message">No carrier snapshots in this dataset.</div>
+    </div>
+
+    <!-- Complexity Heatmap -->
+    <div class="panel" id="heatmapPanel" style="margin-bottom:12px;">
+      <div class="chart-title">COMPLEXITY HEATMAP — Year-over-year change temporal memory</div>
+      <canvas id="heatmapChart" height="40"></canvas>
+      <div class="heatmap-legend">
+        <div><span class="heatmap-swatch" style="background:#22c55e;"></span>Rising</div>
+        <div><span class="heatmap-swatch" style="background:#ef4444;"></span>Falling</div>
+        <div><span class="heatmap-swatch" style="background:#444;"></span>Neutral/First</div>
+      </div>
+    </div>
+
+    <!-- Scrubber -->
+    <div class="scrubber">
+      <input type="range" id="scrubber" min="0" max="1" value="0" oninput="scrub(this.value)" />
+      <div class="scrubber-labels">
+        <span id="scrubMin">—</span>
+        <span>DRAG TO SCRUB THROUGH TIME</span>
+        <span id="scrubMax">—</span>
+      </div>
+    </div>
+
+    <!-- Narrative -->
+    <div class="panel" id="narrativePanel">
+      <div style="font-size:10px;color:#60a5fa;margin-bottom:6px;letter-spacing:1px;" id="narrativeTitle">DOMAIN NARRATIVE</div>
+      <div class="narrative" id="narrativeText"></div>
+      <div class="narrative-footer">
+        Shocks marked with red dashed lines. The forward signal pattern: Complexity falling + Velocity calm &#8594; structural event follows.
+        The carrier IS the signal. When Complexity drops while Velocity stays stable, something is concentrating underneath.
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="legend">
+      <span><span style="color:#22c55e;">&#9679;</span> Calibration (&#931;=1)</span>
+      <span><span style="color:#60a5fa;">&#9473;</span> Complexity</span>
+      <span><span style="color:#a78bfa;">&#9473;</span> Velocity (total change)</span>
+      <span><span style="color:#f97316;">&#9473;</span> Peak (dominant change)</span>
+      <span><span style="color:#ef4444;">&#9482;</span> Known shock</span>
+      <span><span style="color:#22c55e;">&#9632;</span> Complexity rising</span>
+      <span><span style="color:#ef4444;">&#9632;</span> Complexity falling</span>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      HUF-GOV Spectrum Analyzer v2.0 — Command Dashboard — KNOB-001 Standard — Peter Higgins / Rogue Wave Audio & HUF AI Collective — 2026<br>
+      Five readings: Source, Calibration, Complexity, Velocity, Peak. One instrument. Every domain. Same language.<br>
+      <button onclick="document.getElementById('fileInput').click()" style="margin-top:6px;padding:3px 10px;background:#1a1a2e;border:1px solid #444;color:#888;border-radius:3px;cursor:pointer;font-size:10px;">Load different data file</button>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ============================================================
+// HUF SPECTRUM ANALYZER v2 — Command Dashboard
+// Adds Carrier Composition Ribbon + Complexity Heatmap
+// No external dependencies. One file. Every domain.
+// ============================================================
+
+let DATA = null;
+let currentDataset = null;
+let currentMetric = "both";
+let currentIdx = 0;
+let playing = false;
+let playInterval = null;
+
+const STATUS = {
+  normal:  { label: "STABLE",          color: "#22c55e" },
+  caution: { label: "COMPLEXITY DECLINING", color: "#eab308" },
+  drift:   { label: "DECEPTIVE DRIFT",  color: "#ef4444" },
+  spike:   { label: "VELOCITY SPIKE",   color: "#8b5cf6" }
+};
+
+// Element colors for carrier ribbon (cycles if more than 9 elements)
+const ELEMENT_COLORS = [
+  "#60a5fa", "#22c55e", "#f97316", "#a78bfa", "#ef4444",
+  "#eab308", "#ec4899", "#14b8a6", "#6366f1"
+];
+
+// File handling
+const fileInput = document.getElementById("fileInput");
+const uploadZone = document.getElementById("uploadZone");
+
+fileInput.addEventListener("change", e => { if (e.target.files[0]) loadFile(e.target.files[0]); });
+uploadZone.addEventListener("dragover", e => { e.preventDefault(); uploadZone.classList.add("drag"); });
+uploadZone.addEventListener("dragleave", () => uploadZone.classList.remove("drag"));
+uploadZone.addEventListener("drop", e => { e.preventDefault(); uploadZone.classList.remove("drag"); if (e.dataTransfer.files[0]) loadFile(e.dataTransfer.files[0]); });
+
+function loadFile(file) {
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const json = JSON.parse(e.target.result);
+      initAnalyzer(json);
+    } catch (err) {
+      alert("Error reading JSON: " + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+function initAnalyzer(json) {
+  DATA = json;
+  document.getElementById("uploadZone").style.display = "none";
+  document.getElementById("analyzer").style.display = "block";
+  document.getElementById("domainLabel").textContent = "Source: " + (json.domain?.name || "Unknown");
+
+  // Build dataset buttons
+  const keys = Object.keys(json.datasets);
+  const container = document.getElementById("datasetBtns");
+  container.innerHTML = "";
+  keys.forEach((key, i) => {
+    const btn = document.createElement("button");
+    btn.className = "btn" + (i === 0 ? " active-blue" : "");
+    btn.textContent = json.datasets[key].name || key;
+    btn.onclick = () => selectDataset(key);
+    btn.dataset.key = key;
+    container.appendChild(btn);
+  });
+
+  selectDataset(keys[0]);
+}
+
+function selectDataset(key) {
+  currentDataset = key;
+  currentIdx = DATA.datasets[key].labels.length - 1;
+
+  // Update buttons
+  document.querySelectorAll("#datasetBtns .btn").forEach(b => {
+    b.className = "btn" + (b.dataset.key === key ? " active-blue" : "");
+  });
+
+  // Setup scrubber
+  const d = DATA.datasets[key];
+  const scrubber = document.getElementById("scrubber");
+  scrubber.max = d.labels.length - 1;
+  scrubber.value = currentIdx;
+  document.getElementById("scrubMin").textContent = d.labels[0];
+  document.getElementById("scrubMax").textContent = d.labels[d.labels.length - 1];
+
+  // Complexity range
+  const keffs = d.complexity.filter(v => v != null);
+  document.getElementById("complexityMin").textContent = Math.min(...keffs).toFixed(1);
+  document.getElementById("complexityMax").textContent = Math.max(...keffs).toFixed(1);
+
+  // Narrative
+  document.getElementById("narrativeTitle").textContent = "DOMAIN NARRATIVE — " + (d.name || key).toUpperCase();
+  document.getElementById("narrativeText").textContent = d.narrative || "No narrative provided for this dataset.";
+
+  // Check for carriers data
+  if (d.carriers && d.carriers.length > 0) {
+    document.getElementById("carrierPanel").style.display = "block";
+    document.getElementById("carrierMessage").style.display = "none";
+    buildCarrierLegend(d);
+  } else {
+    document.getElementById("carrierPanel").style.display = "none";
+    document.getElementById("carrierMessage").style.display = "block";
+  }
+
+  drawAllCharts();
+  updateGauges();
+}
+
+function buildCarrierLegend(d) {
+  // Collect all element names from carriers
+  const elements = new Set();
+  d.carriers.forEach(carrier => {
+    Object.keys(carrier).forEach(el => elements.add(el));
+  });
+  const elementsList = Array.from(elements).sort();
+
+  const legend = document.getElementById("carrierLegend");
+  legend.innerHTML = "";
+  elementsList.forEach((el, i) => {
+    const color = ELEMENT_COLORS[i % ELEMENT_COLORS.length];
+    const item = document.createElement("div");
+    item.className = "carrier-legend-item";
+    item.innerHTML = `<span class="carrier-swatch" style="background:${color};"></span>${el}`;
+    legend.appendChild(item);
+  });
+}
+
+function setMetric(m) {
+  currentMetric = m;
+  document.querySelectorAll("[data-metric]").forEach(b => {
+    b.className = "btn" + (b.dataset.metric === m ? " active-purple" : "");
+  });
+  const titles = { both: "VELOCITY + PEAK — dual trace", tvd: "VELOCITY — total structural change", l2: "PEAK — dominant element change" };
+  document.getElementById("velChartTitle").textContent = titles[m];
+  document.getElementById("velocityGauge").style.display = (m === "l2") ? "none" : "block";
+  document.getElementById("peakGauge").style.display = (m === "tvd") ? "none" : "block";
+  drawAllCharts();
+}
+
+function scrub(val) {
+  currentIdx = parseInt(val);
+  updateGauges();
+  drawAllCharts();
+}
+
+function togglePlay() {
+  if (playing) {
+    clearInterval(playInterval);
+    playing = false;
+    document.getElementById("playBtn").innerHTML = "&#9654; PLAY";
+    document.getElementById("playBtn").className = "btn";
+    return;
+  }
+  playing = true;
+  currentIdx = 0;
+  document.getElementById("playBtn").innerHTML = "&#9632; STOP";
+  document.getElementById("playBtn").className = "btn active-green";
+  playInterval = setInterval(() => {
+    const d = DATA.datasets[currentDataset];
+    currentIdx++;
+    if (currentIdx >= d.labels.length) { togglePlay(); return; }
+    document.getElementById("scrubber").value = currentIdx;
+    updateGauges();
+    drawAllCharts();
+  }, 600);
+}
+
+function getStatus(d, i) {
+  const vel = d.velocity[i];
+  const validVel = d.velocity.filter(v => v != null);
+  const velMedian = validVel.length ? validVel.slice().sort((a,b) => a-b)[Math.floor(validVel.length/2)] : 0;
+
+  if (vel != null && velMedian > 0 && vel > velMedian * 2) return "spike";
+  if (i >= 2 && d.complexity[i] != null && d.complexity[i-1] != null && d.complexity[i-2] != null) {
+    if (d.complexity[i] < d.complexity[i-1] && d.complexity[i-1] < d.complexity[i-2]) {
+      if (vel != null && vel < velMedian) return "drift";
+    }
+  }
+  if (i >= 1 && d.complexity[i] != null && d.complexity[i-1] != null && d.complexity[i] < d.complexity[i-1]) return "caution";
+  return "normal";
+}
+
+function updateGauges() {
+  const d = DATA.datasets[currentDataset];
+  const i = currentIdx;
+
+  // Year
+  document.getElementById("yearVal").textContent = d.labels[i] || "—";
+
+  // Status
+  const status = getStatus(d, i);
+  const s = STATUS[status];
+  const badge = document.getElementById("statusBadge");
+  badge.textContent = s.label;
+  badge.style.background = s.color + "22";
+  badge.style.color = s.color;
+  badge.style.border = "1px solid " + s.color + "44";
+
+  // Shock
+  const shock = d.shocks?.find(sh => sh.label === d.labels[i]);
+  const shockEl = document.getElementById("shockLabel");
+  if (shock) { shockEl.style.display = "block"; shockEl.textContent = "\u26A1 " + shock.event; }
+  else { shockEl.style.display = "none"; }
+
+  // Complexity gauge
+  const keffs = d.complexity.filter(v => v != null);
+  const kMin = Math.min(...keffs), kMax = Math.max(...keffs), kRange = kMax - kMin;
+  const kNorm = kRange > 0 ? (d.complexity[i] - kMin) / kRange : 0.5;
+  const kColor = kNorm > 0.6 ? "#22c55e" : kNorm > 0.3 ? "#eab308" : "#ef4444";
+  document.getElementById("complexityVal").textContent = d.complexity[i] != null ? d.complexity[i].toFixed(2) : "—";
+  document.getElementById("complexityVal").style.color = kColor;
+  document.getElementById("complexityBar").style.width = (kNorm * 100) + "%";
+
+  // Velocity
+  const vel = d.velocity[i];
+  document.getElementById("velVal").textContent = vel != null ? vel.toFixed(4) : "—";
+  document.getElementById("velBar").style.width = Math.min((vel || 0) / 0.15 * 100, 100) + "%";
+
+  // Peak
+  const peak = d.peak[i];
+  document.getElementById("peakVal").textContent = peak != null ? peak.toFixed(4) : "—";
+  document.getElementById("peakBar").style.width = Math.min((peak || 0) / 0.2 * 100, 100) + "%";
+
+  // Drift detection
+  const label = d.labels[i];
+  const dv = d.drift_velocity?.includes(label);
+  const dp = d.drift_peak?.includes(label);
+  const dvEl = document.getElementById("driftVel");
+  const dpEl = document.getElementById("driftPeak");
+  dvEl.textContent = dv ? "DRIFT DETECTED" : "clear";
+  dvEl.className = dv ? "detected" : "clear";
+  dpEl.textContent = dp ? "DRIFT DETECTED" : "clear";
+  dpEl.className = dp ? "detected" : "clear";
+}
+
+// ============================================================
+// CHARTS — lightweight canvas rendering, zero dependencies
+// ============================================================
+
+function drawAllCharts() {
+  drawComplexityChart();
+  drawVelocityChart();
+  drawDriftChart();
+  drawCarrierChart();
+  drawHeatmapChart();
+}
+
+function getCtx(id) {
+  const canvas = document.getElementById(id);
+  const rect = canvas.parentElement.getBoundingClientRect();
+  canvas.width = rect.width - 16;
+  return canvas.getContext("2d");
+}
+
+function chartLayout(ctx, w, h) {
+  return { l: 40, r: 10, t: 5, b: 20, plotW: w - 50, plotH: h - 25 };
+}
+
+function drawGrid(ctx, layout, w, h, yMin, yMax, labels, interval) {
+  const { l, r, t, b, plotW, plotH } = layout;
+  ctx.strokeStyle = "#222";
+  ctx.lineWidth = 0.5;
+  // Horizontal grid
+  for (let i = 0; i <= 4; i++) {
+    const y = t + plotH * (1 - i/4);
+    ctx.beginPath(); ctx.moveTo(l, y); ctx.lineTo(l + plotW, y); ctx.stroke();
+    ctx.fillStyle = "#666"; ctx.font = "9px sans-serif"; ctx.textAlign = "right";
+    ctx.fillText((yMin + (yMax - yMin) * i/4).toFixed(yMax < 1 ? 3 : 1), l - 4, y + 3);
+  }
+  // Labels
+  ctx.fillStyle = "#666"; ctx.font = "9px sans-serif"; ctx.textAlign = "center";
+  const step = Math.max(1, Math.floor(labels.length / 6));
+  for (let i = 0; i < labels.length; i += step) {
+    const x = l + (i / (labels.length - 1)) * plotW;
+    ctx.fillText(labels[i], x, h - 2);
+  }
+}
+
+function drawLine(ctx, layout, data, labels, yMin, yMax, color, lineWidth) {
+  const { l, t, plotW, plotH } = layout;
+  ctx.strokeStyle = color;
+  ctx.lineWidth = lineWidth || 2;
+  ctx.beginPath();
+  let started = false;
+  for (let i = 0; i < data.length; i++) {
+    if (data[i] == null) continue;
+    const x = l + (i / (data.length - 1)) * plotW;
+    const y = t + plotH * (1 - (data[i] - yMin) / (yMax - yMin));
+    if (!started) { ctx.moveTo(x, y); started = true; } else { ctx.lineTo(x, y); }
+  }
+  ctx.stroke();
+}
+
+function drawShocks(ctx, layout, d, yMin, yMax) {
+  const { l, t, plotW, plotH } = layout;
+  if (!d.shocks) return;
+  d.shocks.forEach(s => {
+    const idx = d.labels.indexOf(s.label);
+    if (idx < 0) return;
+    const x = l + (idx / (d.labels.length - 1)) * plotW;
+    ctx.strokeStyle = "#ef4444";
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath(); ctx.moveTo(x, t); ctx.lineTo(x, t + plotH); ctx.stroke();
+    ctx.setLineDash([]);
+  });
+}
+
+function drawPlayhead(ctx, layout, d) {
+  const { l, t, plotW, plotH } = layout;
+  const x = l + (currentIdx / (d.labels.length - 1)) * plotW;
+  ctx.strokeStyle = "#ffffff44";
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(x, t); ctx.lineTo(x, t + plotH); ctx.stroke();
+}
+
+function drawComplexityChart() {
+  const ctx = getCtx("complexityChart");
+  const d = DATA.datasets[currentDataset];
+  const w = ctx.canvas.width, h = ctx.canvas.height;
+  ctx.clearRect(0, 0, w, h);
+
+  const vals = d.complexity.filter(v => v != null);
+  const yMin = Math.min(...vals) * 0.95, yMax = Math.max(...vals) * 1.05;
+  const layout = chartLayout(ctx, w, h);
+
+  drawGrid(ctx, layout, w, h, yMin, yMax, d.labels);
+  drawShocks(ctx, layout, d);
+  drawLine(ctx, layout, d.complexity, d.labels, yMin, yMax, "#60a5fa", 2);
+  drawPlayhead(ctx, layout, d);
+}
+
+function drawVelocityChart() {
+  const ctx = getCtx("velocityChart");
+  const d = DATA.datasets[currentDataset];
+  const w = ctx.canvas.width, h = ctx.canvas.height;
+  ctx.clearRect(0, 0, w, h);
+
+  const allVals = [];
+  if (currentMetric !== "l2") d.velocity.forEach(v => { if (v != null) allVals.push(v); });
+  if (currentMetric !== "tvd") d.peak.forEach(v => { if (v != null) allVals.push(v); });
+  if (!allVals.length) return;
+
+  const yMin = 0, yMax = Math.max(...allVals) * 1.1;
+  const layout = chartLayout(ctx, w, h);
+
+  drawGrid(ctx, layout, w, h, yMin, yMax, d.labels);
+  drawShocks(ctx, layout, d);
+  if (currentMetric !== "l2") drawLine(ctx, layout, d.velocity, d.labels, yMin, yMax, "#a78bfa", 1.5);
+  if (currentMetric !== "tvd") drawLine(ctx, layout, d.peak, d.labels, yMin, yMax, "#f97316", 1.5);
+  drawPlayhead(ctx, layout, d);
+}
+
+function drawDriftChart() {
+  const ctx = getCtx("driftChart");
+  const d = DATA.datasets[currentDataset];
+  const w = ctx.canvas.width, h = ctx.canvas.height;
+  ctx.clearRect(0, 0, w, h);
+
+  const changes = d.complexity.map((v, i) => i > 0 && v != null && d.complexity[i-1] != null ? v - d.complexity[i-1] : 0);
+  const maxAbs = Math.max(0.01, ...changes.map(Math.abs));
+  const yMin = -maxAbs * 1.2, yMax = maxAbs * 1.2;
+  const layout = chartLayout(ctx, w, h);
+
+  drawGrid(ctx, layout, w, h, yMin, yMax, d.labels);
+  drawShocks(ctx, layout, d);
+
+  // Zero line
+  const { l, t, plotW, plotH } = layout;
+  const zeroY = t + plotH * (1 - (0 - yMin) / (yMax - yMin));
+  ctx.strokeStyle = "#444"; ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(l, zeroY); ctx.lineTo(l + plotW, zeroY); ctx.stroke();
+
+  // Bars
+  const barW = Math.max(2, plotW / changes.length * 0.7);
+  changes.forEach((c, i) => {
+    if (i === 0) return;
+    const x = l + (i / (changes.length - 1)) * plotW - barW / 2;
+    const barH = Math.abs(c) / (yMax - yMin) * plotH;
+    const y = c >= 0 ? zeroY - barH : zeroY;
+    ctx.fillStyle = c >= 0 ? "#22c55e99" : "#ef444499";
+    ctx.fillRect(x, y, barW, barH);
+  });
+
+  drawPlayhead(ctx, layout, d);
+}
+
+function drawCarrierChart() {
+  const d = DATA.datasets[currentDataset];
+  if (!d.carriers || d.carriers.length === 0) return;
+
+  const ctx = getCtx("carrierChart");
+  const w = ctx.canvas.width, h = ctx.canvas.height;
+  ctx.clearRect(0, 0, w, h);
+
+  // Collect all element names
+  const elements = new Set();
+  d.carriers.forEach(carrier => {
+    Object.keys(carrier).forEach(el => elements.add(el));
+  });
+  const elementsList = Array.from(elements).sort();
+
+  // Layout
+  const l = 40, r = 10, t = 5, b = 20, plotW = w - 50, plotH = h - 25;
+
+  // Draw bars
+  const barW = Math.max(3, plotW / d.carriers.length * 0.8);
+  d.carriers.forEach((carrier, idx) => {
+    const x = l + (idx / (d.carriers.length - 1)) * plotW - barW / 2;
+    let currentY = t;
+
+    // Highlight current scrubber position
+    const isCurrentBar = idx === currentIdx;
+    if (isCurrentBar) {
+      ctx.fillStyle = "#ffffff22";
+      ctx.fillRect(x - barW/2, t, barW * 2, plotH);
+    }
+
+    // Stack bars for each element
+    elementsList.forEach((el, elIdx) => {
+      const proportion = carrier[el] || 0;
+      const segmentH = proportion * plotH;
+      const color = ELEMENT_COLORS[elIdx % ELEMENT_COLORS.length];
+      ctx.fillStyle = color;
+      ctx.fillRect(x, currentY, barW, segmentH);
+      currentY += segmentH;
+    });
+
+    // Border
+    ctx.strokeStyle = "#333";
+    ctx.lineWidth = 0.5;
+    ctx.strokeRect(x, t, barW, plotH);
+  });
+
+  // Labels at bottom
+  ctx.fillStyle = "#666"; ctx.font = "9px sans-serif"; ctx.textAlign = "center";
+  const step = Math.max(1, Math.floor(d.labels.length / 6));
+  for (let i = 0; i < d.labels.length; i += step) {
+    const x = l + (i / (d.labels.length - 1)) * plotW;
+    ctx.fillText(d.labels[i], x, h - 2);
+  }
+}
+
+function drawHeatmapChart() {
+  const d = DATA.datasets[currentDataset];
+  const ctx = getCtx("heatmapChart");
+  const w = ctx.canvas.width, h = ctx.canvas.height;
+  ctx.clearRect(0, 0, w, h);
+
+  // Compute year-over-year complexity changes
+  const changes = d.complexity.map((v, i) => {
+    if (i === 0) return null;
+    if (v == null || d.complexity[i-1] == null) return null;
+    if (v > d.complexity[i-1]) return "up";
+    if (v < d.complexity[i-1]) return "down";
+    return "neutral";
+  });
+
+  const l = 40, r = 10, cellW = Math.max(8, (w - 50) / changes.length);
+  const cellH = h - 20;
+
+  // Draw cells
+  changes.forEach((change, idx) => {
+    const x = l + idx * cellW;
+    let color = "#444"; // neutral/gray
+
+    if (change === "up") color = "#22c55e";
+    if (change === "down") color = "#ef4444";
+
+    ctx.fillStyle = color;
+    ctx.fillRect(x, 5, cellW - 1, cellH);
+
+    // Border
+    ctx.strokeStyle = "#1a1a2e";
+    ctx.lineWidth = 0.5;
+    ctx.strokeRect(x, 5, cellW - 1, cellH);
+  });
+
+  // Labels below
+  ctx.fillStyle = "#666"; ctx.font = "9px sans-serif"; ctx.textAlign = "center";
+  const step = Math.max(1, Math.floor(d.labels.length / 6));
+  for (let i = 0; i < d.labels.length; i += step) {
+    const x = l + i * cellW + cellW / 2;
+    ctx.fillText(d.labels[i], x, h - 2);
+  }
+}
+
+// ============================================================
+// DEMO DATA — EMBER Electricity + Ramsar Template
+// ============================================================
+
+function loadDemo() {
+  const demo = {
+    huf_version: "1.0",
+    domain: {
+      name: "EMBER Electricity",
+      description: "Global electricity generation by fuel type — 5 countries",
+      app_note: "AN-001",
+      source_type: "Fuel types",
+      observation_cadence: "Annual",
+      data_source: "EMBER Global Electricity Review (CC BY 4.0)"
+    },
+    source_elements: ["Coal","Gas","Nuclear","Hydro","Solar","Wind","Bioenergy","Other Fossil","Other Renewables"],
+    datasets: {
+      Germany: {
+        name: "Germany",
+        labels: ["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024","2025"],
+        complexity: [3.49,3.62,3.69,3.83,4.01,4.25,4.40,4.59,4.81,4.95,5.11,5.31,5.40,5.37,5.50,5.65,5.82,6.00,6.08,6.49,6.66,6.58,6.22,6.10,5.92,5.85],
+        velocity: [null,0.0163,0.0172,0.0246,0.0176,0.0306,0.0128,0.0430,0.0381,0.0142,0.0195,0.0538,0.0375,0.0221,0.0277,0.0347,0.0325,0.0489,0.0230,0.0752,0.0597,0.0546,0.0779,0.1181,0.0464,0.0367],
+        peak: [null,0.0176,0.0178,0.0189,0.0199,0.0280,0.0137,0.0479,0.0417,0.0122,0.0158,0.0550,0.0323,0.0219,0.0230,0.0387,0.0365,0.0542,0.0205,0.0864,0.0591,0.0608,0.0757,0.1069,0.0438,0.0358],
+        shocks: [{label:"2022",event:"Gas crisis (Ukraine)"},{label:"2023",event:"Nuclear phase-out"},{label:"2020",event:"COVID-19"}],
+        drift_velocity: [], drift_peak: [],
+        narrative: "Germany diversified steadily 2000-2020 (Complexity rising from 3.5 to 6.7). After 2020, the gas crisis and nuclear exit reversed this. Monthly data shows 15 months of deceptive drift starting August 2018 — the carrier was quietly concentrating years before the visible crisis (p=0.0016)."
+      },
+      Japan: {
+        name: "Japan",
+        labels: ["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],
+        complexity: [4.91,4.86,4.91,5.03,5.01,4.98,4.98,4.99,4.94,4.79,4.88,4.95,4.18,4.18,3.94,4.20,4.26,4.21,4.47,4.58,4.47,4.79,4.89,5.14,5.17],
+        velocity: [null,0.0257,0.0209,0.0743,0.0452,0.0258,0.0377,0.0380,0.0367,0.0523,0.0213,0.1231,0.1364,0.0415,0.0514,0.0327,0.0451,0.0398,0.0286,0.0299,0.0310,0.0326,0.0234,0.0437,0.0152],
+        peak: [null,0.0306,0.0208,0.0837,0.0522,0.0243,0.0380,0.0389,0.0375,0.0630,0.0194,0.1366,0.1525,0.0474,0.0544,0.0281,0.0389,0.0453,0.0284,0.0268,0.0274,0.0373,0.0207,0.0389,0.0125],
+        shocks: [{label:"2011",event:"Fukushima"},{label:"2020",event:"COVID-19"}],
+        drift_velocity: ["2005"], drift_peak: ["2005"],
+        narrative: "Fukushima (2011) demonstrates EXTERNAL shock — no preceding drift. Complexity was stable around 5.0, then crashed to 3.9 as nuclear dropped and gas/coal surged. The massive Velocity spikes at 2011-2012 ARE the disruption, not a forward signal. The framework correctly identifies this as external forcing. No forward signal for earthquakes."
+      },
+      "United Kingdom": {
+        name: "UK",
+        labels: ["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024","2025"],
+        complexity: [3.71,3.66,3.68,3.65,3.71,3.84,3.88,3.79,3.80,4.03,3.90,4.29,4.50,4.79,5.25,5.72,5.20,5.28,5.33,5.11,5.23,5.13,5.09,5.19,5.32,5.24],
+        velocity: [null,0.0336,0.0283,0.0292,0.0339,0.0155,0.0445,0.0674,0.0467,0.0590,0.0320,0.0650,0.1237,0.0402,0.0756,0.0763,0.1455,0.0477,0.0407,0.0525,0.0647,0.0506,0.0406,0.0506,0.0501,0.0258],
+        peak: [null,0.0354,0.0329,0.0337,0.0347,0.0171,0.0492,0.0777,0.0488,0.0683,0.0300,0.0701,0.1576,0.0404,0.0781,0.0820,0.1850,0.0483,0.0352,0.0477,0.0689,0.0527,0.0437,0.0524,0.0525,0.0252],
+        shocks: [{label:"2016",event:"Coal collapse"},{label:"2020",event:"COVID-19"}],
+        drift_velocity: ["2022"], drift_peak: ["2022"],
+        narrative: "UK coal collapse (2016) shows as the highest Velocity spike in the series. Complexity peaked at 5.72 in 2015 (maximum fuel diversity), then dropped sharply as coal's share halved. Post-2019 shows Complexity declining — the mix is reconcentrating as wind/solar grow and gas shrinks."
+      },
+      France: {
+        name: "France",
+        labels: ["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024","2025"],
+        complexity: [2.27,2.46,2.35,2.38,2.37,2.40,2.42,2.42,2.44,2.38,2.47,2.43,2.38,2.43,2.41,2.43,2.48,2.44,2.48,2.52,2.55,2.65,2.95,2.81,2.88,2.67],
+        velocity: [null,0.0141,0.0231,0.0134,0.0078,0.0065,0.0111,0.0042,0.0087,0.0094,0.0098,0.0108,0.0091,0.0049,0.0059,0.0062,0.0099,0.0058,0.0093,0.0073,0.0111,0.0146,0.0331,0.0163,0.0148,0.0283],
+        peak: [null,0.0163,0.0262,0.0152,0.0094,0.0066,0.0112,0.0041,0.0089,0.0107,0.0107,0.0119,0.0094,0.0046,0.0060,0.0054,0.0106,0.0068,0.0096,0.0074,0.0127,0.0157,0.0396,0.0173,0.0160,0.0327],
+        shocks: [{label:"2022",event:"Nuclear fleet crisis"},{label:"2020",event:"COVID-19"}],
+        drift_velocity: ["2025"], drift_peak: [],
+        narrative: "France is nuclear-dominated (Complexity around 2.4 — low diversity). The 2022 corrosion crisis shows as a Velocity spike and Complexity jump (more diverse as nuclear dropped). Velocity detects one drift year (2025) that Peak misses — the first metric divergence finding."
+      },
+      Australia: {
+        name: "Australia",
+        labels: ["2000","2001","2002","2003","2004","2005","2006","2007","2008","2009","2010","2011","2012","2013","2014","2015","2016","2017","2018","2019","2020","2021","2022","2023","2024"],
+        complexity: [1.87,1.89,1.88,1.93,1.93,1.89,1.93,2.05,2.06,2.10,2.17,2.22,2.26,2.35,2.54,2.63,2.69,2.76,3.04,3.29,3.43,3.57,3.86,4.09,4.48],
+        velocity: [null,0.0114,0.0069,0.0233,0.0083,0.0090,0.0287,0.0297,0.0083,0.0227,0.0127,0.0260,0.0186,0.0095,0.0353,0.0229,0.0255,0.0161,0.0506,0.0474,0.0344,0.0346,0.0501,0.0519,0.0527],
+        peak: [null,0.0115,0.0081,0.0246,0.0091,0.0087,0.0302,0.0334,0.0082,0.0247,0.0132,0.0277,0.0199,0.0096,0.0363,0.0242,0.0270,0.0170,0.0551,0.0518,0.0375,0.0379,0.0530,0.0554,0.0566],
+        shocks: [{label:"2020",event:"Bushfire/COVID"}],
+        drift_velocity: ["2005"], drift_peak: ["2005"],
+        narrative: "Australia shows a clean diversification trend — Complexity rising from 1.87 to 4.48 as solar and wind grow against the coal base. This is a healthy transition. Bushfire/COVID: MISS — external forcing, no preceding concentration."
+      }
+    }
+  };
+  initAnalyzer(demo);
+}
+
+// Handle window resize
+window.addEventListener("resize", () => { if (DATA) drawAllCharts(); });
+</script>
+</body>
+</html>

@@ -31,7 +31,7 @@ In their e-information work (2018, 2024), Egozcue and Pawlowsky-Glahn specifical
 
 **What you owe Egozcue:** Explicit acknowledgment that his caution about Shannon entropy in CoDa was correct for the spatial case. EITT does NOT contradict his position. It shows entropy has a different role temporally than spatially.
 
-**What to say to him:** "You wrote that Shannon entropy doesn't satisfy scale invariance. You were right. What we found is that it satisfies something different — temporal decimation invariance. These are orthogonal properties. Your analysis of the spatial case remains correct."
+**What to say to him:** "You wrote that Shannon entropy doesn't satisfy scale invariance. You were right. What we found is that it satisfies something different — temporal decimation invariance. These are distinct properties — yours is spatial, ours is temporal. Your analysis of the spatial case remains correct."
 
 ---
 
@@ -46,21 +46,21 @@ This is the broadest impact. If someone has ever compared annual compositional a
 - Environmental monitoring frameworks that compare seasonal with annual data
 - The Ramsar Convention's indicators, which mix monitoring resolutions
 
-**Your posture:** NOT "you were wrong." Instead: "Here's the correct filter, and it preserves more than you might expect."
+**Your posture:** NOT "you were incomplete." Instead: "Here's the correct filter, and it preserves more than you might expect."
 
 ### The "CoDa has nothing to say about time" position
 
-Some CoDa practitioners treat compositions as static objects — geological samples, soil chemistry, microbiome snapshots. The temporal dimension is handled by "do CoDa at each time point independently." EITT says this is leaving information on the table. If you have compositional time series, the geometric mean lets you move between resolutions while preserving information content. Time is not external to CoDa. The geometric mean — CoDa's fundamental operation — is also a temporal filter.
+Some CoDa practitioners treat compositions as static objects — geological samples, soil chemistry, microbiome snapshots. The temporal dimension is handled by "do CoDa at each time point independently." EITT suggests the geometric mean may preserve information across temporal resolutions in datasets with temporal autocorrelation. The d(CoDa)/dt chain — perturbation velocity, balance trajectory, balance derivative dB/dt — has been operationalized as the tap controller for adaptive decimation. The maximum balance velocity across ILR coordinates determines the maximum safe averaging window. Tested: gold/silver adaptive decimation rescued a 10:1 fixed failure (+1.39%) to a pass (−0.43%); solar|rest balance rescued at 3.6:1 effective compression. Germany failed — confirming that when the entire series is non-stationary, no averaging is safe. The formal optimality of the adaptive block-width function remains open.
 
 **Who this challenges:** Anyone who silently assumed compositional time series was just "CoDa repeated over time."
 
-**Your posture:** "CoDa's centre of gravity — the geometric mean — has a temporal interpretation that hasn't been exploited."
+**Your posture:** "The geometric mean may have a temporal interpretation. The ILR balance derivative dB/dt is our attempt to describe the rate of structural change — we've implemented it, we think it's promising, but we haven't proved anything about it yet."
 
 ### Karel Hron and functional CoDa
 
-Hron has been developing functional compositional data analysis — treating compositions as continuous curves on the simplex. EITT suggests his framework could benefit from a decimation operator. If Shannon entropy is invariant under geometric-mean decimation, then the "right" way to coarsen a functional compositional curve is the geometric mean, not arbitrary downsampling. This doesn't oppose Hron — it offers him a tool. But it does challenge any functional CoDa work that downsamples without this filter.
+Hron has been developing functional compositional data analysis — treating compositions as continuous curves on the simplex. If EITT holds, geometric-mean decimation could be the natural coarsening operator for functional compositional curves. And dB/dt — the derivative of the ILR trajectory — might fit his framework as a velocity field on the simplex. Both are conjectural, but they're questions worth asking.
 
-**Your posture:** "Would your functional CoDa methods be interested in a resolution-bridging operator?"
+**Your posture:** "Would your functional CoDa methods be interested in a resolution-bridging operator? We have an empirical candidate, not a proof."
 
 ---
 
@@ -68,7 +68,7 @@ Hron has been developing functional compositional data analysis — treating com
 
 ### John Aitchison (1986) — the deepest debt
 
-The geometric mean is his. The simplex geometry is his. Every logratio, every perturbation, every closure — Aitchison. EITT is a new property of his fundamental operation. Without the geometric mean being the centre of CoDa, there is no EITT.
+The geometric mean is his. The simplex geometry is his. Every logratio, every perturbation, every closure — Aitchison. EITT is a new property of his central operation. Without the geometric mean being the centre of CoDa, there is no EITT.
 
 **What to say:** Name him first. Always. "Aitchison's geometric mean turns out to have a temporal property that, to our knowledge, hasn't been reported."
 
@@ -76,21 +76,21 @@ The geometric mean is his. The simplex geometry is his. Every logratio, every pe
 
 The ILR transformation and sequential binary partition are their inventions. HUF's entire balance tree — the filter bank interpretation — is built on their SBP. Egozcue's poster at CoDaWork on the Aitchison norm as a concentration measure is adjacent to K_eff. And his e-information work frames the question EITT answers.
 
-**What to say:** "Your ILR framework gave us the structure to detect this. The SBP provides the physical filter bank. Your e-information work defined the question — what's the right information measure on the simplex? We found that Shannon entropy has a role you hadn't expected."
+**What to say:** "Your ILR framework gave us the structure to detect this. The SBP provides the physical filter bank. Your e-information work defined the question — what's the right information measure on the simplex? We found that Shannon entropy has a role you hadn't expected. And the balance derivative dB/dt — the temporal derivative taken in your ILR coordinates — gives us the directed rate of structural change, decomposed into independent movements along each partition. The zero-sum constraint in raw proportions forces the relay; your ILR frees the derivative."
 
-**Critical:** Egozcue accepted your abstract. He is the door. Do not present EITT as contradicting his position on entropy. Present it as finding a different, orthogonal property.
+**Critical:** Egozcue accepted your abstract. He is the door. He asked "how do you describe changes along time?" — the d(CoDa)/dt chain, expressed in his ILR coordinates, is our attempt at an answer. It's exploratory, not settled. Do not present EITT as contradicting his position on entropy. Present it as finding a different, distinct temporal property — and present dB/dt as a direction we're exploring in his coordinate system, not a finished framework.
 
 ### Erb & Ay (2021) — the Fisher information metric
 
 They proved the Aitchison distance is the unique information-monotone Riemannian metric on the simplex. This is the "mirrors" you saw — their information geometry and HUF's signal processing arrive at the same structure. EITT's entropy invariance is the temporal companion to their spatial amalgamation monotonicity.
 
-**What to say:** "Erb and Ay showed Aitchison distance is information-monotone under spatial coarsening. EITT shows Shannon entropy is invariant under temporal coarsening. Same geometry, orthogonal directions."
+**What to say:** "Erb and Ay showed Aitchison distance is information-monotone under spatial coarsening. EITT shows Shannon entropy is invariant under temporal coarsening. Same geometry, distinct directions — one spatial, one temporal."
 
 ### Grok — the Aitchison variance candidate
 
-Grok proposed testing Aitchison variance as the conserved quantity. It wasn't — it drops 55%. But the test protocol (decimation ladder + conservation candidate) was the experimental design that found Shannon entropy. Grok's wrong answer led to the right one.
+Peter proposed the time transformer concept (decimation ladder from loudspeaker winding ratios). Claude identified it as decimation/resampling but couldn't name the conserved quantity. Grok proposed Aitchison variance as the conservation candidate. It wasn't conserved — it drops 55%. But the experimental design (Peter's decimation ladder + Grok's test candidate) was the protocol that found Shannon entropy when Claude ran the computation. Grok's wrong answer led to the right one.
 
-**What to say (at Coimbra):** "The test was designed to check whether Aitchison variance was conserved under decimation. It wasn't. Shannon entropy was. The wrong hypothesis was the right experiment."
+**What to say (at Coimbra):** "The decimation ladder came from loudspeaker design. The first conservation candidate was Aitchison variance — it failed. Shannon entropy was the one that held. The wrong hypothesis was the right experiment."
 
 ### EMBER — the data
 
@@ -114,11 +114,11 @@ No data, no result. The EMBER dataset is open, well-documented, and comprehensiv
 
 **The claim:** "This might be specific to electricity generation mixes. Have you tested on geochemical data? Microbiome? Budget allocations?"
 
-**The truth:** Fair point. We tested two energy sub-domains (prices and generation) plus synthetic adversarial. We have Backblaze (hardware) and GDP (economic) data in the repo but haven't run EITT on them yet. The honest answer is: no, we haven't tested all domains. We know the boundary condition (temporal autocorrelation), and we can state it, but we can't claim universality without more domains.
+**The truth:** No longer true as of April 9, 2026. We have now tested five domains: energy (electricity generation, 7 countries — holds at 0.18–1.02%), hardware degradation (Backblaze drive stats, K=4, 24 months — 0.03%), a 120-stock price-level portfolio (K=9, 74 months — 0.08%; note: price-level weighted, not market-cap), cosmological observation (Planck 353 GHz half-mission split — 0.3%), and commodities (gold/silver ratio, K=2, 338 years — fails at 6.7%, holds at 0.38% when reconstructed to K=4). The K=4 reconstruction passes out-of-sample and is robust across 180 hyperparameter combinations. Bootstrap CIs computed for all domains. Honesty note: the Planck spatial decimation claim has been retracted (HEALPix NESTED ordering issue). At 2:1 compression, arithmetic mean also preserves entropy — the geometric mean's advantage appears at higher compression ratios. The gold/silver failure revealed the EITT inversion principle.
 
-**Your defence:** "You're right. We tested two energy domains plus synthetic adversarial. The boundary condition is temporal autocorrelation. Any system with physical persistence should satisfy it. We welcome tests on other domains — geochemistry, microbiome, economic — and we publish our code."
+**Your defence:** "We've tested five domains. Three non-energy domains hold. One fails at K=2 over 338 years and holds at K=4 — the failure revealed hidden state variables. We publish code, data, bootstrap confidence intervals, and an honest disclosure of limitations for all five. The financial composition is price-level, not market-cap. The Planck spatial claim was retracted. We show the warts."
 
-**Who will attack with this:** Applied practitioners from other domains. Geoscientists especially — they have different data characteristics (slower, noisier, fewer time points).
+**Who will attack with this:** Applied practitioners from other domains. But the attack has weakened. Hardware, finance, and cosmology are structurally different from energy. Geoscientists can still ask — and should test.
 
 ### Attack 3: "Your proof is empirical, not analytic"
 
@@ -159,7 +159,7 @@ No data, no result. The EMBER dataset is open, well-documented, and comprehensiv
 | Question | Answer |
 |----------|--------|
 | Who do you owe most? | Aitchison. His geometric mean is the engine. Say his name first. |
-| Who is your host? | Egozcue. He opened the door. Present EITT as orthogonal to his work, not contradicting it. |
+| Who is your host? | Egozcue. He opened the door. Present EITT as distinct from his work, not contradicting it. |
 | Who benefits from your failures? | Greenacre (data matters more than exact algebra), Egozcue (entropy caution was right spatially), control chart people (independence assumption is safe). |
 | Who is challenged by your success? | Anyone comparing resolutions with arithmetic means. Anyone treating CoDa as purely spatial. |
 | Hardest attack? | "It's just Jensen's." Have the geometric-mean distinction ready. |
@@ -170,12 +170,28 @@ No data, no result. The EMBER dataset is open, well-documented, and comprehensiv
 
 ## Part 6: What This Means For The Presentation
 
-Walk in carrying both the success and the failure. Present the 10 passes AND the 7 failures. Name who you owe before you name what you found. Frame EITT as a question you answered empirically but can't prove analytically — and offer the proof as a collaboration opportunity.
+Walk in carrying both the success and the failure. Present the passes AND the failures across five domains. Name who you owe before you name what you found. Frame EITT as a question you answered empirically but can't prove analytically — and offer the proof as a collaboration opportunity.
 
-The adversarial scorecard isn't a weakness. It's the reason they should take you seriously. Anyone who only shows wins hasn't tested anything. You tested 17 cases, showed them all, and defined the boundary condition. That's what a calibration study looks like.
+The adversarial scorecard isn't a weakness. It's the reason they should take you seriously. The gold/silver failure isn't a weakness — it's a discovery. Anyone who only shows wins hasn't tested anything. You tested across five domains, showed every result, and defined the boundary condition. That's what a calibration study looks like.
+
+---
+
+## Part 7: Cross-Domain EITT Scorecard (April 9, 2026)
+
+| Domain | K | Span | EITT Δ% | Verdict | Key Finding |
+|---|---|---|---|---|---|
+| BackBlaze (hardware) | 4 | 24 mo | 0.03% | HOLDS | Electronic→Media relay, B2 100% monotonic |
+| Financial (120-stock price-level) | 9 | 74 mo | 0.08% | HOLDS | Price-level weighted, not market-cap. COVID relay visible |
+| Planck CMB (temporal) | 2 | half-split | 0.3% | HOLDS | Survives √2 noise increase |
+| Energy (global) | 7 | 25 yr | 3.2% | MARGINAL | Active structural transition |
+| Gold/Silver (K=2) | 2 | 338 yr | 6.7% | FAILS | Non-stationary across regimes |
+| Gold/Silver (K=4) | 4 | 338 yr | 0.38% | HOLDS | Hidden volatility + momentum carriers recovered |
+| Gold/Silver detrended | 2 | 338 yr | 0.14% | HOLDS | Secular drift was the failure, not the composition |
+| Planck CMB (spatial) | 2 | 4096:1 | 18.1% | RETRACTED | Invalid: HEALPix NESTED ordering is not spatially coherent. Random pixel grouping, not spatial decimation. |
 
 ---
 
 *"I fought entropy to find it." — Peter Higgins, 2026-04-08, upon discovering EITT*
+*"Observe and identify. Lose nothing." — Peter Higgins, 2026-04-09*
 
 *Governance: CGS-2 (n=3), GDoF 264. No new constants. No new claims beyond what the data shows.*

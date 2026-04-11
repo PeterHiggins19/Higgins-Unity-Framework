@@ -26,11 +26,13 @@ You still have the gaps. You also have a gift.
 
 **What you bring him:** "Your geometric mean — the centre of your geometry — preserves Shannon entropy under temporal decimation. We measured 0.18% variation across 341:1 compression. We confirmed it on a second domain at 1.02%. We ran 17 adversarial tests; 7 broke it. The boundary condition is temporal autocorrelation."
 
-**What you ask him:** "You wrote that Shannon entropy doesn't satisfy CoDa's scale invariance. You were right — spatially. But temporally, under geometric-mean decimation, it's invariant. These are orthogonal properties. We can't prove the temporal one. Can you?"
+**What you ask him:** "You wrote that Shannon entropy doesn't satisfy CoDa's scale invariance. You were right — spatially. But temporally, under geometric-mean decimation, it's invariant. These are distinct properties — yours is spatial, ours is temporal. We can't prove the temporal one. Can you?"
 
-**Why he'll care:** His poster is on the Aitchison norm as a concentration measure. K_eff is exp(Shannon entropy). You just showed his geometric mean preserves the thing his norm measures. This connects his poster to your finding.
+**The d(CoDa)/dt connection (exploratory):** He asked in his initial reply: "how do you describe changes along time?" We have a partial answer, implemented but not validated: perturbation velocity (scalar speed), ILR balance trajectory (structural path), and balance derivative dB/dt (directed rate of change in his coordinates). This is work in progress. Don't present it as a finished framework — present it as a direction we're exploring in his coordinate system.
 
-**How to read his response:** If he asks for the data, you're in. If he asks for the proof structure, he's thinking about it. If he says "interesting" and changes the subject, park it and revisit later.
+**Why he'll care:** His poster is on the Aitchison norm as a concentration measure. K_eff is exp(Shannon entropy). You showed his geometric mean may preserve the thing his norm measures. The temporal question lives in his ILR coordinates — not foreign territory.
+
+**How to read his response:** If he asks for the data, you're in. If he asks for the proof structure, he's thinking about it. If he asks about dB/dt specifically, he's already seeing the three-layer chain. If he says "interesting" and changes the subject, park it and revisit later.
 
 ### Pawlowsky-Glahn — The Geometry Dance
 
@@ -42,7 +44,7 @@ You still have the gaps. You also have a gift.
 
 ### Erb & Ay (if present, or via reference) — The Information Geometry Dance
 
-**What you bring:** "You proved Aitchison distance is the unique information-monotone metric on the simplex. That's spatial — amalgamation preserves information ordering. We found the temporal companion: Shannon entropy is invariant under geometric-mean decimation. Amalgamation monotonicity is spatial coarsening. EITT is temporal coarsening. Same geometry, orthogonal directions."
+**What you bring:** "You proved Aitchison distance is the unique information-monotone metric on the simplex. That's spatial — amalgamation preserves information ordering. We found the temporal companion: Shannon entropy is invariant under geometric-mean decimation. Amalgamation monotonicity is spatial coarsening. EITT is temporal coarsening. Same geometry, distinct directions — one spatial, one temporal."
 
 **What you ask:** "Does your uniqueness theorem extend to temporal operators? Is there a class of temporal coarsening operators on the simplex for which the Fisher metric predicts entropy invariance?"
 
@@ -56,9 +58,11 @@ You still have the gaps. You also have a gift.
 
 ### Hron — The Functional CoDa Dance
 
-**What you bring:** "If compositional time series are functional data on the simplex, EITT gives you a principled decimation operator. The geometric mean is the correct coarsening filter — it preserves information content."
+**What you bring:** "If compositional time series are functional data on the simplex, EITT may give you a principled decimation operator — in the tested datasets, the geometric mean preserved information content under temporal coarsening. We've also been exploring dB/dt — the derivative of the ILR trajectory — as a temporal analysis tool, but it's not validated yet."
 
-**What you ask:** "Would your functional CoDa framework predict this invariance, or is it a surprise?"
+**What you ask:** "Would your functional CoDa framework predict EITT's invariance, or is it a surprise? Does the balance derivative dB/dt fit into your functional analysis?"
+
+**Why this is a question, not a claim:** Hron's functional CoDa treats compositions as continuous curves. If he already has the machinery for functional derivatives on the simplex, then dB/dt might be native to his framework. We don't know yet — we're asking.
 
 ### Filzmoser — The Robustness Dance
 
@@ -78,7 +82,9 @@ You still have the gaps. You also have a gift.
 
 ### 1. "What is actually new here?"
 
-Two things. First, the monitoring architecture — continuous compositional drift detection with governance. Second, EITT — the geometric mean preserves Shannon entropy under temporal decimation. The architecture is engineering. EITT is an empirical finding we can't prove. We brought both.
+Five things. First, the monitoring architecture — continuous compositional drift detection with governance (MC-4, the fourth monitoring category). Second, EITT — the geometric mean preserves Shannon entropy under temporal decimation, confirmed across five domains (energy, hardware, financial, cosmological, commodities). Third, the Renyi generalization — the invariance holds for ALL Renyi entropies q=0.1 to 5.0; Shannon is not special; the phenomenon lives in the Aitchison geometry, not any specific functional. Fourth, bidirectional EITT inversion — upward (gold/silver K=2 to K=4, hidden dimensions) AND downward (China K=9 to K=3, exposed non-stationarity); the direction of the fix is itself diagnostic. Fifth, d(CoDa)/dt as the operationalized tap controller for adaptive decimation — the maximum balance velocity across ILR coordinates determines the maximum safe averaging window at each time step, with empirical validation on two datasets.
+
+The architecture is engineering. EITT is an empirical finding we can't prove. The d(CoDa)/dt chain connects them — the derivative describes the compositional motion, EITT describes what is conserved when you compress the time axis of that motion. The inversion principle turns EITT failures into a discovery tool. And in raw proportions, the zero-sum constraint (Σ dx_i/dt = 0) IS the relay chain — every gain financed by losses elsewhere. In ILR coordinates, the balances move independently, which is why ILR is the right space for the temporal derivative.
 
 ### 2. "Isn't this just Jensen's inequality?"
 
@@ -94,7 +100,7 @@ Egozcue is right that it doesn't satisfy scale invariance — spatially. But Erb
 
 ### 5. "You only tested energy data."
 
-True. Two energy sub-domains plus synthetic adversarial. The boundary condition is temporal autocorrelation. We welcome tests on geochemistry, microbiome, economics — and we publish our code and data.
+No longer true. As of April 9, 2026, EITT has been tested on five domains: energy (electricity generation, 7 countries), hardware degradation (Backblaze drive stats, K=4, 24 months — 0.03%), a 120-stock price-level portfolio (K=9, 74 months — 0.08%; price-level weighted, not market-cap), cosmological observation (Planck 353 GHz half-mission split — 0.3%), and commodities (gold/silver ratio, K=2, 338 years — fails globally at 6.7%, holds under K=4 reconstruction at 0.4%, validated out-of-sample). Bootstrap CIs computed for all. Honesty: Planck spatial claim retracted (NESTED ordering issue). Financial composition honestly labeled. We publish code, data, and warts.
 
 ### 6. "Estonia failed. What about my data?"
 
@@ -125,9 +131,13 @@ Use these:
 - "We found this empirically..."
 - "The boundary condition is..."
 - "We can't prove it — can you?"
-- "This is orthogonal to, not contradicting..."
+- "When EITT fails, it diagnoses missing dimensions. The gold/silver ratio isn't K=2 — it's K=4."
+- "Five domains. Three hold. One marginal. One fails and tells you why."
+- "This is distinct from, not contradicting..."
 - "In 17 adversarial tests, 7 broke it. Here's why..."
 - "The geometric mean is yours. We found a new property of it."
+- "We're exploring a temporal derivative — dB/dt in ILR coordinates — but it's not validated yet."
+- "The zero-sum closure is a mathematical identity, not an empirical finding. The relay pattern is the finding."
 
 ---
 
@@ -143,13 +153,17 @@ Never say:
 
 ---
 
-## THREE ANCHOR SENTENCES
+## FOUR ANCHOR SENTENCES
 
 1. **"The geometric mean preserves Shannon entropy under temporal decimation. We measured it. We can't prove it. We're here because you can."**
 
 2. **"We ran 17 adversarial tests and showed you the 7 failures. The boundary condition is temporal autocorrelation. Real-world compositions satisfy it. Synthetic noise does not."**
 
 3. **"Aitchison's geometric mean has a temporal property that connects your geometry to information theory. We brought the measurement. We need the theorem."**
+
+4. **"d(CoDa)/dt — the maximum balance velocity in ILR coordinates — is now the tap controller for adaptive decimation. It determines when to compress and when to hold. On gold/silver, it rescued a 10:1 fixed failure to a pass. On Germany, it correctly refused — because nothing is safe when the whole series is non-stationary."**
+
+5. **"When EITT fails, it diagnoses missing dimensions. The gold/silver ratio fails at K=2 over 338 years. Add volatility and momentum as hidden carriers — K=4 — and it holds at 0.38%. The failure was the discovery."**
 
 ---
 
@@ -173,12 +187,15 @@ EITT connects to 8 established research communities beyond CoDa. These are not c
 | **Multiscale Entropy** | What's the right coarse-graining for complexity analysis? | On the simplex, geometric mean. And entropy is invariant. | We're the compositional version of Costa et al. (2002). |
 | **Information Geometry** | How does the Fisher-Rao metric structure the simplex? | The Hessian footprint IS the Fisher structure. | Erb & Ay's uniqueness theorem may extend temporally. |
 | **Jensen Refinements** | How tight is the second-order bound? | 0.03% — and it's deterministic (Hessian footprint). | Concrete empirical case for their theory. |
-| **Renyi / Tsallis** | Does entropy generalize beyond Shannon? | Does EITT hold for all q-orders? Open question. | If yes, entire diversity profile is invariant. |
+| **Renyi / Tsallis** | Does entropy generalize beyond Shannon? | YES — confirmed for q=0.1 to 5.0. Shannon is not special. | Entire diversity profile IS invariant. The geometry is the cause. |
 | **Maximum Entropy** | What maximizes entropy on the simplex? | H* approaches ln(D). Geometric mean may drive toward max entropy. | Thermodynamic interpretation of EITT. |
 | **Entropy Rate** | What tools describe stationary process entropy? | Spectral/Wiener-Khinchin for the closed-form EITT bound. | We borrow their tools for the proof. |
 | **CoDa (home)** | How does the geometric mean structure the simplex? | It preserves Shannon entropy under temporal decimation. | The geometric mean has a new property. |
+| **Hardware/IT** | Can compositional analysis detect fleet degradation? | Backblaze 24mo, K=4: EITT holds at 0.03%. Relay chain visible. | Electronic→Media+Offline failure mode transition as fleet ages. |
+| **Finance** | Do price-level compositions have structure? | 120-stock portfolio, K=9, 74mo: EITT holds at 0.08%. (Price-level, not market-cap.) | COVID relay visible. Needs market-cap retest. |
+| **Cosmology** | Does polarization composition survive temporal splitting? | Planck 353 GHz half-mission: EITT holds at 0.3%. | Spatial claim RETRACTED (NESTED ordering). Temporal valid. |
 
-**Strategy:** CoDa first. Earn engagement. Then approach broader landscape with CoDa researchers alongside us.
+**Strategy:** CoDa first. Earn engagement. Then approach broader landscape with CoDa researchers alongside us. We now have five domains to show, not one.
 
 ---
 
@@ -186,7 +203,7 @@ EITT connects to 8 established research communities beyond CoDa. These are not c
 
 If you get a chance to make a final statement:
 
-> "I came here with a monitoring protocol, an empirical result I can't prove, and 7 adversarial failures I'm showing you on purpose. You have the geometry. I have the application. The geometric mean — your geometric mean — preserves information across time in ways nobody has formalized. If we can prove it together, the next conversation is with Ramsar, because there are 2,500 wetlands that need compositional monitoring and nobody is doing it yet. We can't prove it. Can you?"
+> "I came here with a monitoring protocol, an empirical result I can't prove, 7 adversarial failures I'm showing you on purpose, and an honesty audit that retracted one claim and weakened two others. You have the geometry. I have the application. The geometric mean — your geometric mean — appears to preserve information across time in the datasets we tested. We're also exploring a temporal derivative in your ILR coordinates, but that's not validated yet. We can't prove any of it. Can you?"
 
 ---
 
@@ -198,6 +215,27 @@ Short answers. Open hands. Show the failures. Say thank you. Dance.
 
 ---
 
+## CROSS-DOMAIN EITT RESULTS (April 9, 2026)
+
+| Domain | K | Type | Span | EITT Δ% | Verdict |
+|---|---|---|---|---|---|
+| BackBlaze (hardware) | 4 | Temporal | 24 months | 0.0275% | HOLDS |
+| Financial (120-stock price-level) | 9 | Temporal | 74 months | 0.0797% | HOLDS (price-level, not market-cap) |
+| Planck CMB (polarization) | 2 | Temporal | half-split | 0.3249% | HOLDS |
+| Energy (global electricity) | 7 | Temporal | 25 years | 3.2187% | MARGINAL |
+| Gold/Silver (K=2) | 2 | Temporal | 338 years | 6.6993% | FAILS |
+| Gold/Silver (K=4 reconstructed) | 4 | Temporal | 338 years | 0.3844% | HOLDS (out-of-sample validated) |
+| Planck CMB (spatial) | 2 | Spatial | 4096:1 | 18.117% | RETRACTED |
+
+*Planck spatial claim retracted: HEALPix NESTED ordering does not preserve spatial locality. The decimation grouped randomly distributed pixels, not spatially adjacent ones. Only the temporal half-mission split is valid.
+
+**The EITT Inversion Principle (Bidirectional):** When EITT fails, the direction of the fix is diagnostic. Upward inversion (gold/silver K=2 to K=4): too few dimensions — hidden structure needs to be exposed. Downward inversion (China K=9 to K=3): too many non-stationary dimensions — amalgamation masks the volatility. The direction tells you whether the problem is missing complexity or exposed non-stationarity. This is the compositional analogue of Simpson's paradox.
+
+**ISO Positioning:** An ISO positioning document has been drafted targeting ISO/TC 69 (Applications of Statistical Methods). MC-4 fills a documented gap: magnitude (ISO 17025), identity (ISO 22400), and trend (ISO 7870) all have ISO standards. Composition monitoring has none. CoDa would become the required mathematical foundation for an entire ISO measurement category.
+
+---
+
 *Peter Higgins — Coimbra 2026*
 *Developed with the HUF AI Collective*
 *"I fought entropy to find it." — April 8, 2026*
+*"Observe and identify. Lose nothing." — April 9, 2026*

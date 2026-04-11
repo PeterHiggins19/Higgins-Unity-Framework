@@ -4,15 +4,41 @@
 
 ---
 
+> **Terminology Key — CoDa vs HUF**
+>
+> *Standard CoDa terms* (Aitchison, Egozcue, Pawlowsky-Glahn et al.): simplex, closure constraint, Aitchison geometry/distance/metric, log-ratio transforms (ILR, CLR, ALR), perturbation, powering, subcompositional coherence, Sequential Binary Partition (SBP), geometric mean / Fréchet mean, compositional data analysis (CoDa), barycenter.
+>
+> *HUF terms* (Higgins, Rogue Wave Audio): MC-4 (Composition Monitoring), EITT (Entropy Invariance under Temporal Transformation), DADC-DADI-ADAC (loudspeaker diffraction correction chain), HUF-GOV (open-loop governance) / HUF-CLS (closed-loop system), carriers, K_eff (effective number of carriers), Total Variation (TV), d(CoDa)/dt (balance velocity), deceptive drift, the Isotropic Principle, "HUF is inert," the screwdriver-and-math-book framing.
+
+---
+
+## Part Zero — The Isotropic Principle
+
+Before the loudspeaker. Before the cabinet. Before the signal.
+
+Paint the inside of a sphere with radiation. Uniform. Every point on the interior surface receives the same energy. No direction is privileged. No part is heavier than any other. This is the ground state — the isotropic condition. In a language I did not yet have, this is the barycenter of the simplex: the composition (1/D, 1/D, ..., 1/D), maximum entropy, maximum ignorance, the state where the system has no opinion about where its energy belongs.
+
+The geometry of that sphere exists whether or not anything is radiating. The structure is there before the signal. The simplex is there before the measurement. The number of parts, the closure constraint, the distances between possible configurations — all of it is determined by the geometry alone, independent of what flows through it.
+
+This is the design principle that precedes everything else in HUF: the architecture is isotropic. The ground state is uniform. Every departure from isotropy is a signal — a compositional event that the geometry was already prepared to receive. Every return toward isotropy is relaxation. The geometry does not care what kind of energy paints the sphere — acoustic radiation, electricity generation shares, financial portfolio weights, wetland habitat proportions. The sphere is the same sphere.
+
+And the deepest part: a sound present or not is not required for the geometry to be discovered. The structure is discoverable spatially — the cabinet dimensions determine the radiation pattern before any signal is applied. Dimensionally — the number of parts constrains the simplex regardless of what flows through them. Temporally — EITT reads the geometry's information-preserving properties by compressing time. Three different probes, same underlying structure. Add the signal and you tune to the structure — you don't create it. You reveal what was always there.
+
+This is why HUF is inert. Not as a design choice. As a consequence. If the geometry precedes the signal, then the measurement system's job is to couple to the geometry without disturbing it. The probe reads the departure from isotropy. It does not create the departure. It does not add its own signature. The errors it finds were always there. The geometry was always there. HUF just made them readable.
+
+*The Aitchison geometry is not a correction you apply to data. It is the geometry the data already lives in. The isotropic principle says: that geometry was there before the data arrived.*
+
+---
+
 ## It Started with a Speaker in a Room
 
-I measure loudspeakers. That's the origin. Not statistics, not ecology, not compositional data analysis. Loudspeakers.
+I measure loudspeakers. That's the practical origin. Not statistics, not ecology, not compositional data analysis. Loudspeakers.
 
 A cabinet sits in a room. Feed it a signal. It radiates sound — not equally in every direction, because the cabinet has dimensions, and dimensions interact with wavelength. At low frequencies, where the wavelength is much longer than the cabinet, the sound goes everywhere equally. Omnidirectional. Isotropic. Every direction gets the same share of the energy.
 
-That's the ground state. In CoDa language, that's the barycenter of the simplex. I didn't know that word yet. I just knew that when a speaker radiates equally in all directions, it's doing the simplest possible thing with a fixed energy budget.
+That's the ground state realized physically. The sphere I painted in my mind, built out of wood and drivers and crossover networks. In CoDa language, the barycenter of the simplex. I didn't know that word yet. I just knew that when a speaker radiates equally in all directions, it's doing the simplest possible thing with a fixed energy budget — and that any departure from that simplicity is information.
 
-*Mathematically: at frequency f where wavelength λ >> cabinet dimensions, the directional energy distribution approaches the uniform composition* **p** = (1/D, 1/D, ..., 1/D) *on the D-directional simplex. Total radiated power is the closure constraint.*
+*Mathematically: at frequency f where wavelength λ >> cabinet dimensions, the directional energy distribution approaches the uniform composition* **p** = (1/D, 1/D, ..., 1/D) *on the D-directional simplex. Total radiated power is the closure constraint. The isotropic state is the maximum-entropy composition. Every physical system that distributes a conserved budget among D parts begins here, whether or not it knows it.*
 
 ---
 
@@ -20,11 +46,13 @@ That's the ground state. In CoDa language, that's the barycenter of the simplex.
 
 As frequency rises, wavelength shrinks. When it gets close to the cabinet dimensions, the pattern changes. Energy concentrates forward. The sides lose power. The back drops off. The composition moves away from the barycenter — and it moves in a way that the cabinet geometry dictates.
 
-I called this DADC. The cabinet dimensions constrain how the energy can redistribute itself. The simplex doesn't change — the total power is still the total power — but the region of the simplex the composition can actually reach is physically bounded by the geometry of the box.
+I called this DADC — Dimension-Apportioned Diffraction Correction. The total baffle step correction is exactly 6.02 dB (the 2-pi to 4-pi radiation transition). That 6.02 dB must be apportioned among the physical dimensions: height gets 3.21 dB, width gets 1.48 dB, depth gets 1.33 dB. They always sum to 6.02. The corner frequency for each dimension is 115/dimension (Hz*m constant). The gains are proportional shares of a fixed total — a composition on the simplex, enforced by physics.
 
-I didn't have a word for simplex yet. I just knew the speaker couldn't put energy where the physics wouldn't let it.
+Then I built the inverse: DADI — Dimension-Apportioned Diffraction Inference. Give the system only the acoustic response, and it reconstructs the physical dimensions from the gain ratios. Non-contact. The probe reads the geometry without touching the object, without imprinting its own signature on the result. That design requirement — the measurement must be inert — carried forward unchanged into everything that followed.
 
-*Mathematically: DADC defines a constraint polytope within the simplex* **S**^D*. The realizable compositions at frequency f form a subset of* **S**^D *determined by the radiation physics of the cabinet geometry. The isotropic state sits at the centroid; real radiation patterns occupy a constrained region that narrows with increasing frequency.*
+I didn't have a word for simplex yet. I just knew the gains had to sum to 6.02, the ratios carried the structural information, and the probe must not contaminate its own reading.
+
+*Mathematically: DADC maps cabinet dimensions to a composition on* **S**^3 *with closure constraint kappa = 6.02 dB. The gain vector (G_H, G_W, G_D) / 6.02 = (0.533, 0.246, 0.221) is a three-part simplex composition. The dominance index max/min is a pairwise log-ratio. DADI inverts this mapping — reconstructing geometry from acoustic response — which is the prototype of EITT inversion.*
 
 ---
 
@@ -120,7 +148,7 @@ I picked up the screwdriver first. I built the cabinet. I measured the radiation
 
 The CoDa community picked up the math book first. Aitchison named the simplex and gave it a metric. Egozcue and Pawlowsky-Glahn proved the isometry and built the Hilbert space. Forty years of published literature formalized the geometry of compositions at rest. The theorems were enough to describe the space. The screwdriver was not in the room.
 
-Neither side was wrong. Neither side was complete.
+Neither side was complete. Both were necessary.
 
 The screwdriver without the math book builds instruments that work but can't explain why they work. I had a paired-measurement doctrine that produced diagnostic disagreements — I couldn't explain why the disagreements classified the type of compositional change until Aitchison geometry gave me the language.
 

@@ -1,3 +1,28 @@
+# === HUF Project Additions ===
+
+# Jupyter artifacts
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# LibreOffice lock files
+.~lock.*
+
+# Temporary files
+*.tmp
+*~
+
+# === Node.js (original template) ===
+
 # Logs
 logs
 *.log

@@ -9,7 +9,7 @@ Title: Compositional monitoring of energy-mix drift on the simplex
 
 Author: Peter Higgins
 
-Affiliation: Independent researcher, Markham, Ontario, Canada
+Affiliation: Independent Researcher, Rogue Wave Audio, Markham, Ontario, Canada
 
 Keywords: compositional time series, perturbation, drift detection, energy mix
 

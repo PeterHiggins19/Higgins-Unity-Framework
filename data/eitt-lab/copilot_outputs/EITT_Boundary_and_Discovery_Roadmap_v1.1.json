@@ -1,0 +1,168 @@
+{
+  "title": "EITT Boundary Condition and Discovery Roadmap (Concise JSON for Claude)",
+  "version": "1.1",
+  "author": "Copilot (for Claude coworker)",
+  "purpose": "Make the temporal-autocorrelation boundary explicit, state the open mathematical problem clearly, and provide a concrete, reproducible discovery plan (empirical, simulation, analytic) suitable for inclusion in a presentation or handed to collaborators.",
+  "clear_boundary_condition": {
+    "plain_statement": "EITT (empirical near-invariance of Shannon entropy under geometric-mean temporal decimation) is observed only when the compositional time series exhibits nontrivial temporal persistence at the decimation scale. Without temporal persistence the effect disappears or is not reliably upward.",
+    "operational_tests": [
+      {
+        "name": "CLR lag-1 ACF test",
+        "description": "Compute CLR transform of the composition, compute per-component lag-1 autocorrelations, and report the mean and distribution. Require mean(lag1_acf) > tau_1 (suggested tau_1 = 0.1) as a minimal persistence indicator."
+      },
+      {
+        "name": "Block variance reduction test",
+        "description": "For block size M, compute nonoverlapping block means and their covariance Cov_emp. Compare to iid null by permuting time order or resampling; compute block_variance_ratio = Var_iid(block_means) / Var_emp(block_means). Require ratio > R (suggested R = 1.5) to indicate meaningful persistence."
+      },
+      {
+        "name": "Direction consistency test",
+        "description": "Compute pct_change_H across many independent windows; require sign consistency (majority upward) and nonzero mean with bootstrap CI not crossing zero."
+      }
+    ],
+    "recommended_thresholds": {
+      "lag1_acf_mean": 0.10,
+      "block_variance_ratio": 1.5,
+      "pct_change_H_tolerance": 0.001
+    },
+    "diagnostic_output_fields": [
+      "clr_lag1_acf_mean",
+      "block_variance_ratio",
+      "observed_pct_change_H_mean",
+      "observed_pct_change_H_CI",
+      "eitt_flag (true/false)"
+    ]
+  },
+  "open_mathematical_problem": {
+    "concise_statement": "Derive a closed-form expression or tight asymptotic bound for the expected entropy change delta_H under M-block geometric decimation for a stationary compositional stochastic process, expressed in terms of the process's autocovariance structure and the Frechet/CLR center.",
+    "target_formula_template": "delta_H(M) = E[H(geom_mean_M(X))] - H(x_bar) = LeadingTerm(Sigma(h), M, x_star) + Remainder(Sigma(h), M), with LeadingTerm = (1/2) tr(|Hess_H(x_star)| * Cov(x_bar_M)) under mild regularity.",
+    "desired_properties_of_solution": [
+      "Explicit dependence on lag-h covariances Sigma(h) or an effective autocorrelation scalar rho_eff.",
+      "Asymptotic correctness as M -> infinity and small-Cov expansion validity conditions.",
+      "A bound on the remainder term with clear assumptions (mixing rates, moment bounds).",
+      "Practical computability from estimated covariances."
+    ],
+    "why_this_matters": "A closed form or tight bound would (a) explain the small magnitude of observed delta_H, (b) convert the qualitative boundary into quantitative thresholds, and (c) connect EITT to information-geometric or spectral process properties."
+  },
+  "conjectures_and_hypotheses": {
+    "conjecture_1": {
+      "text": "Second-order Hessian approximation suffices: for stationary, weakly dependent compositional processes with bounded moments, the leading term of entropy change under geometric decimation is delta_H = (1/2) tr( |Hess_H(x_star)| * Cov(x_bar_M) ) + o(||Cov||).",
+      "implication": "If true, one can predict delta_H from estimated Cov(x_bar_M) and x_star without running decimation."
+    },
+    "conjecture_2": {
+      "text": "There exists a threshold function f(M, rho_eff) such that if rho_eff >= f(M) then EITT holds within tolerance epsilon (|delta_H| <= epsilon).",
+      "implication": "This would convert the qualitative boundary condition into a quantitative threshold for autocorrelation required at each M."
+    },
+    "conjecture_3": {
+      "text": "Information-geometric interpretation: delta_H can be expressed as a quadratic form in the tangent space at x_star under the Fisher-Rao metric (or an Aitchison-compatible metric), linking Hessian footprint to curvature of the simplex.",
+      "implication": "A geometric derivation could produce tighter, interpretable bounds and connect to rate-distortion or optimal compression."
+    }
+  },
+  "discovery_direction_and_plan": {
+    "overview": "Three parallel tracks: empirical mapping, controlled simulation, and analytic derivation. Each track produces artifacts that cross-validate the others.",
+    "empirical_track": {
+      "goal": "Map where EITT holds across real datasets and quantify predictive power of the Hessian approximation.",
+      "steps": [
+        "For each dataset and M in {1,7,30,91,365}: compute CLR, estimate x_star, compute Cov(x_bar_M), compute Hessian prediction delta_H_hess = 0.5 * tr(|Hess_H(x_star)| * Cov(x_bar_M)), compute observed delta_H and bootstrap CI, compute diagnostics (lag1_acf_mean, block_variance_ratio).",
+        "Produce a per-dataset table: {dataset, M, lag1_acf_mean, block_variance_ratio, observed delta_H (pct, CI), predicted delta_H_hess (pct), bootstrap percentiles, EITT_flag}.",
+        "Flag datasets where Hessian prediction explains > 80% of observed delta_H."
+      ]
+    },
+    "simulation_track": {
+      "goal": "Control process parameters to map delta_H as a function of autocorrelation and noise scale; validate analytic approximations.",
+      "designs": [
+        {
+          "name": "CLR-Gaussian VAR(1)",
+          "spec": "Simulate Z_t in CLR space as VAR(1), vary spectral radius rho in [0,0.99], vary innovation covariance scale, map back to simplex via inverse CLR, compute delta_H(M)."
+        },
+        {
+          "name": "Dirichlet autoregressive",
+          "spec": "Simulate compositional autoregressive processes to test non-Gaussian behavior."
+        },
+        {
+          "name": "IID null and permutation",
+          "spec": "Resample marginals iid and confirm delta_H approximately 0 or no consistent upward drift."
+        }
+      ],
+      "sweeps": {
+        "rho_values": [0.0, 0.2, 0.4, 0.6, 0.8, 0.95],
+        "M_values": [1, 7, 30, 91, 365],
+        "noise_scales": ["small", "medium", "large"],
+        "n_repeats": 200
+      }
+    },
+    "analytic_track": {
+      "goal": "Prove the leading term and bound the remainder under clear assumptions.",
+      "first_steps": [
+        "Write Taylor expansion of H around x_star for geometric mean of M samples; express geometric mean in terms of log-space averages and propagate via multivariate Taylor expansion.",
+        "Express Cov(x_bar_M) in terms of Sigma(h): Cov(x_bar_M) = (1/M^2) sum_{i,j=0}^{M-1} Sigma(i-j) and substitute into the Hessian term.",
+        "Use mixing conditions or spectral density to bound remainder terms; derive conditions under which remainder = o(||Cov||)."
+      ],
+      "mathematical_tools": [
+        "Matrix calculus for Hessian and trace manipulations",
+        "Lyapunov sums for linear VAR covariance aggregation",
+        "Spectral density / Wiener-Khinchin theorem for stationary processes",
+        "Cumulant/Edgeworth expansions for dependent data"
+      ],
+      "concrete_first_proofs_to_try": [
+        "Prove that for a CLR-Gaussian VAR(1) with spectral radius rho<1 and small innovation covariance, the leading term of E[H(geom_mean)] - H(x_bar) equals 0.5 tr(|Hess_H(x_star)| * Cov(x_bar_M)) + o(||Cov||).",
+        "Show that Cov(x_bar_M) = (1/M^2) sum_{h=-(M-1)}^{M-1} (M-|h|) Sigma(h) and substitute into the Hessian formula to get an explicit dependence on Sigma(h)."
+      ]
+    }
+  },
+  "presentation_snippets_for_slides": {
+    "slide_1": {
+      "title": "EITT - Statement and Boundary",
+      "bullets": [
+        "Empirical near-invariance: Shannon entropy changes very little under geometric-mean decimation for autocorrelated compositional time series.",
+        "Boundary condition: requires temporal persistence at the decimation scale (diagnostic thresholds provided)."
+      ]
+    },
+    "slide_2": {
+      "title": "Mechanism (Hessian Footprint)",
+      "bullets": [
+        "Geometric mean reduces variance; entropy is concave.",
+        "Leading correction: delta_H = 0.5 * tr(|Hess_H(x_star)| * Cov(block_mean)).",
+        "This explains systematic upward drift and its small magnitude."
+      ]
+    },
+    "slide_3": {
+      "title": "Open Problem",
+      "bullets": [
+        "Derive closed form or tight bound for delta_H(M) in terms of Sigma(h) and x_star.",
+        "Desired: asymptotic correctness, computability from estimated covariances, and explicit remainder bounds."
+      ]
+    },
+    "slide_4": {
+      "title": "Discovery Roadmap (Actionable)",
+      "bullets": [
+        "Empirical sweep across datasets (produce master CSV).",
+        "Simulation grid (rho, M, noise) and plots delta_H vs rho.",
+        "Analytic derivation of leading term and remainder bound.",
+        "Deliverables: master CSV, simulation plots, technical note."
+      ]
+    },
+    "slide_5": {
+      "title": "Invitation",
+      "bullets": [
+        "We provide data and scripts. Can you derive the closed form or tighten the bound?",
+        "Contact: repository and scripts included in the package."
+      ]
+    }
+  },
+  "expected_timeline_and_priorities": {
+    "priority_order": [
+      "Empirical sweep (fast, high value) - 1-3 days",
+      "Simulation grid (medium effort) - 3-7 days",
+      "Analytic derivation (research effort) - open ended"
+    ],
+    "quick_wins": [
+      "Run empirical sweep and produce master CSV and a one-page summary.",
+      "Run CLR VAR(1) simulation for a small rho grid and produce delta_H vs rho plots for M=365 and M=30."
+    ]
+  },
+  "governance": {
+    "state": "CGS-2 (n=3)",
+    "gdof": 264,
+    "session": "S016"
+  }
+}

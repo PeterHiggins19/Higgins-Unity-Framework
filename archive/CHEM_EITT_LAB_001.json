@@ -1,0 +1,192 @@
+{
+  "experiment_id": "CHEM_EITT_LAB_001",
+  "version": "1.0",
+  "title": "EITT Entropy-Invariance Test on Chemical Mixture Compositions",
+  "author": "Peter Higgins, Rogue Wave Audio",
+  "contact": "PeterHiggins@RogueWaveAudio.com",
+  "date": "2026-04-10",
+  "status": "DRAFT — awaiting first run",
+  "repository": "github.com/PeterHiggins19/Higgins-Unity-Framework",
+  "rwa_standard": "RWA-001",
+
+  "purpose": "Test whether Shannon entropy of chemical mixture compositions exhibits near-invariance under geometric-mean temporal decimation, extending EITT from energy/financial domains into chemistry where hard physical constraints (mass balance, stoichiometry, phase rules) govern the simplex.",
+
+  "hypothesis": {
+    "H1": "Shannon entropy of mixture mole-fraction compositions is near-invariant (|delta_M| < 2%) under geometric-mean block decimation along a condition axis (temperature or concentration path), provided the system is near-stationary.",
+    "H0_null": "Entropy drifts significantly (|delta_M| > 5%) because chemical constraint geometry differs fundamentally from temporal autocorrelation in energy systems.",
+    "boundary_hypothesis": "Phase boundaries, miscibility gaps, and reaction discontinuities will break EITT — these are the chemistry equivalent of non-stationarity."
+  },
+
+  "data_sources": [
+    {
+      "rank": 1,
+      "name": "CheMixHub",
+      "repo": "github.com/chemcognition-lab/chemixhub",
+      "description": "Standardised benchmark for chemical mixture property prediction. ~500k data points, 7 public datasets, all compositions as mole fractions.",
+      "suitability": "EXCELLENT — compositions already in mole fractions (simplex-native), multiple domains, temperature-varying conditions, CSV format.",
+      "datasets": [
+        {
+          "name": "Miscible Solvents — Density",
+          "points": "~19000",
+          "components": "binary and ternary mixtures",
+          "axis": "temperature (K) or mole fraction sweep",
+          "property": "density (g/cm³)",
+          "constraint": "mole fractions sum to 1, miscibility constraint"
+        },
+        {
+          "name": "Miscible Solvents — Enthalpy of Mixing",
+          "points": "~19000",
+          "components": "binary and ternary",
+          "axis": "temperature or composition sweep",
+          "property": "enthalpy of mixing (J/mol)",
+          "constraint": "thermodynamic consistency, Gibbs-Duhem"
+        },
+        {
+          "name": "ILThermo — Viscosity",
+          "points": "75992",
+          "components": "binary ionic liquid mixtures, 699 distinct molecules",
+          "axis": "temperature at fixed composition, or composition at fixed T",
+          "property": "viscosity (Pa·s)",
+          "constraint": "mole fractions sum to 1, Arrhenius-type T dependence"
+        },
+        {
+          "name": "ILThermo — Transport (large-scale)",
+          "points": "116896",
+          "components": "binary/ternary ionic liquid mixtures",
+          "axis": "temperature sweep per mixture",
+          "property": "transport properties",
+          "constraint": "mass balance, phase stability"
+        },
+        {
+          "name": "NIST Organic Viscosity",
+          "points": "variable",
+          "components": "binary organic mixtures",
+          "axis": "temperature and composition",
+          "property": "viscosity",
+          "constraint": "mole fraction closure"
+        },
+        {
+          "name": "Drug Solubility",
+          "points": "variable",
+          "components": "drug + solvent mixtures",
+          "axis": "solvent composition ratio",
+          "property": "solubility (mg/mL)",
+          "constraint": "solubility limit = phase boundary"
+        },
+        {
+          "name": "Solid Polymer Electrolyte",
+          "points": "variable",
+          "components": "polymer-salt compositions",
+          "axis": "salt concentration, temperature",
+          "property": "ionic conductivity (S/cm)",
+          "constraint": "crystallisation boundary, percolation threshold"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "name": "ChemKED-database",
+      "repo": "github.com/pr-omethe-us/ChemKED-database",
+      "description": "YAML-format combustion kinetics experiments. Fuel/oxidizer/diluent mole fractions with ignition delay times at various T, P.",
+      "suitability": "MODERATE — compositions are simplex-native (mole fractions of fuel mixtures), but data is per-experiment not time-series. Need to construct pseudo-time axis from T or P sweeps.",
+      "notes": "Good for testing EITT on stoichiometrically constrained systems. PyKED Python package available for parsing."
+    },
+    {
+      "rank": 3,
+      "name": "InterMat (NIST)",
+      "repo": "github.com/usnistgov/intermat",
+      "description": "DFT interface calculations for material heterostructures. Atomic coordinates and lattice parameters.",
+      "suitability": "POOR — not naturally compositional data. Crystal structures, not mixture compositions. Would need heavy reframing to map to CoDa.",
+      "notes": "Reject for EITT testing. Retain as reference for future atomic-scale CoDa work if someone converts site-occupancy data to compositions."
+    }
+  ],
+
+  "primary_experiment": {
+    "dataset": "CheMixHub — ILThermo Viscosity",
+    "why": "Largest single dataset (75,992 points), binary mixtures with clear T-sweep axes, hard physical constraints, mole fractions pre-computed.",
+    "protocol": {
+      "step_1": "Clone chemixhub repo, load ILThermo viscosity processed_data.csv",
+      "step_2": "For each unique mixture (fixed component pair), extract mole-fraction composition vector and sort by temperature (ascending) to create a pseudo-time series",
+      "step_3": "Filter to mixtures with >= 10 data points along T axis (sufficient for decimation)",
+      "step_4": "Apply CLR transform to mole-fraction compositions",
+      "step_5": "Compute Shannon entropy H(x) at each temperature point",
+      "step_6": "Apply geometric-mean block decimation at M = 2, 3, 5 (replace blocks of M consecutive compositions with their geometric mean, re-close)",
+      "step_7": "Compute delta_M = [mean H(decimated) - mean H(original)] / mean H(original) × 100%",
+      "step_8": "Compute bootstrap 95% CI on delta_M",
+      "step_9": "Compare with Aitchison variance and TV distance under same decimation",
+      "step_10": "Identify boundary cases: mixtures near phase transitions, miscibility gaps"
+    },
+    "expected_results": {
+      "if_EITT_holds": "|delta_M| < 2% for well-behaved mixtures along smooth T-sweeps. Aitchison distance expands. TV distance changes. Shannon entropy near-invariant.",
+      "if_EITT_fails": "|delta_M| > 5% — chemical constraint geometry fundamentally different from temporal autocorrelation. This is a valuable boundary finding.",
+      "boundary_cases": "Phase transitions, precipitation events, miscibility gaps should break EITT. Document these as the chemistry equivalent of non-stationarity (solar fast/nuclear break in energy domain)."
+    },
+    "metrics": {
+      "primary": "delta_M (EITT residual)",
+      "secondary": ["Aitchison variance ratio", "TV distance", "K_eff (effective carriers)"],
+      "diagnostic": ["lag-1 autocorrelation in CLR coordinates", "block variance ratio"]
+    }
+  },
+
+  "secondary_experiments": [
+    {
+      "id": "CHEM_EITT_002",
+      "dataset": "CheMixHub — Miscible Solvents (Density)",
+      "description": "Binary/ternary solvent mixtures. Test EITT along composition sweep at fixed T (mole fraction of component A from 0→1). This is a composition-axis decimation rather than T-axis.",
+      "interest": "Does EITT hold when the 'time' axis is actually composition ratio? This tests whether the invariance is about the simplex geometry itself."
+    },
+    {
+      "id": "CHEM_EITT_003",
+      "dataset": "CheMixHub — Drug Solubility",
+      "description": "Drug in mixed solvents. Composition sweep with hard solubility boundary.",
+      "interest": "Natural phase boundary test. Solubility limit = the point where EITT should break. Can we detect the boundary from entropy drift?"
+    },
+    {
+      "id": "CHEM_EITT_004",
+      "dataset": "CheMixHub — Solid Polymer Electrolyte",
+      "description": "Polymer-salt compositions with ionic conductivity. Percolation threshold.",
+      "interest": "Another phase-like boundary. Does EITT break at the percolation threshold? Does K_eff detect the transition?"
+    },
+    {
+      "id": "CHEM_EITT_005",
+      "dataset": "ChemKED — Combustion Mixtures",
+      "description": "Fuel/oxidizer/diluent mole fractions. Group by fuel type, sweep T or P.",
+      "interest": "Stoichiometric constraints are the hardest chemical constraint. If EITT holds here, the simplex geometry argument is very strong."
+    }
+  ],
+
+  "coda_mapping": {
+    "composition": "Mole fractions of mixture components → point on the simplex S^D",
+    "closure": "Mole fractions sum to 1 by definition (physical constraint, not arbitrary normalisation)",
+    "perturbation": "Changing mixture ratios = perturbation in Aitchison geometry",
+    "time_axis": "Temperature sweep, pressure sweep, or composition sweep (pseudo-time)",
+    "decimation": "Geometric-mean block averaging of neighbouring compositions along axis",
+    "constraints": {
+      "mass_balance": "Total mass conserved — atoms are neither created nor destroyed",
+      "charge_balance": "For ionic systems, net charge = 0",
+      "stoichiometry": "Reaction networks conserve atoms per element",
+      "phase_rule": "Gibbs phase rule F = C - P + 2 limits degrees of freedom",
+      "solubility": "Phase boundaries impose hard limits on composition space"
+    }
+  },
+
+  "what_this_proves_if_it_works": "EITT is not a quirk of energy-market autocorrelation. The near-invariance of Shannon entropy under geometric-mean decimation is a property of the Aitchison geometry on the simplex itself, observable in any domain where compositions evolve smoothly under physical constraints. Chemistry provides the hardest test because the constraints are fundamental laws of nature, not market conventions.",
+
+  "what_this_proves_if_it_fails": "EITT requires temporal autocorrelation (persistence), not just compositional structure. Chemical systems that jump across phase boundaries or undergo discontinuous reactions violate the smoothness assumption. This maps precisely to the energy-domain finding that solar (fast) and nuclear (discrete event) break EITT. The failure mode tells us exactly what EITT needs to work.",
+
+  "honest_disclosures": [
+    "Temperature sweep is a pseudo-time axis, not true temporal data. Results must be interpreted accordingly.",
+    "Binary mixtures (D=2) live on S^1, which is trivially 1-dimensional. Ternary and higher are more interesting for CoDa.",
+    "CheMixHub data is curated for ML benchmarking, not specifically for CoDa analysis. Some preprocessing choices may affect compositional structure.",
+    "ILThermo data quality varies by publication source. Outlier filtering needed.",
+    "This is exploratory. We are testing whether EITT extends to chemistry, not claiming it does."
+  ],
+
+  "tools_required": {
+    "python_packages": ["pandas", "numpy", "scipy", "scikit-bio or custom CLR", "matplotlib", "seaborn"],
+    "data_access": "git clone chemixhub repo → datasets/*/processed_data/processed_data.csv",
+    "compute": "Laptop-scale. No GPU needed."
+  },
+
+  "governance": "HUF-GOV. Measure, report, file. If it works, report. If it fails, report the failure mode. No intervention on the data."
+}

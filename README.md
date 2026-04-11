@@ -1,170 +1,121 @@
 # Higgins Unity Framework (HUF)
 
-*A proposal to treat compositional structure as an open-loop monitoring signal.*
+*Compositional structure as an open-loop monitoring signal.*
 
-HUF proposes that **composition** — the internal proportional balance of a system's parts — can be monitored as a primary observable alongside magnitude, identity, and trend. The claim is not new mathematics. The claim is a **monitoring application**: when a meaningful whole is divided into parts and expressed as proportions, the resulting ratio-state may reveal structural drift, concentration, hollowing, or redistribution that headline totals do not show.
-
-HUF is presented here as an **open-loop framework**. The instrument reads. The human expert decides.
+HUF proposes that **composition** — the internal proportional balance of a system's parts — can be monitored as a primary observable alongside magnitude, identity, and trend. The instrument reads. The human expert decides.
 
 ---
 
-## What HUF claims
+## The Discovery: EITT
 
-- Composition can be monitored directly, rather than treated only as a statistical correction or secondary view.
-- In some systems, meaningful structural change may appear in ratio-state before conventional magnitude-based indicators visibly fail.
-- This proposal can be tested across domains where a conserved or interpretable whole can be divided into meaningful parts.
+**Entropy Invariance under Temporal Transformation.** Shannon entropy appears empirically near-invariant under geometric-mean block decimation of compositional time series.
 
-## What HUF does not claim
+Measured: **0.18% variation** across a 341:1 compression ratio (daily to annual European electricity compositions, 8 carriers, 4089 trading days). Confirmed across energy, hardware degradation, cosmological observation, commodities, and chemistry.
 
-- HUF does **not** claim new simplex or compositional mathematics. The mathematical foundations are Aitchison (1982), Stevens (1946), Shannon (1948), and Amari (1985).
-- HUF does **not** claim universal validity across all domains. Cross-domain validity must be earned domain by domain.
-- HUF does **not** claim that every compositional change is harmful, actionable, or predictive.
-- HUF does **not** replace domain expertise, causal explanation, or policy judgment.
-- HUF does **not** justify autonomous intervention on the basis of compositional readings alone.
-- HUF is a monitoring proposal, not a settled scientific result.
+**April 2026: Chemistry extension.** EITT tested on 500,000 chemical mixture data points (CheMixHub benchmark, 7 datasets). Four diagnostic lenses applied simultaneously. Interior compositions pass at 54-82%. Boundary compositions reveal simplex curvature effects. First empirical decomposition of geometric vs. dynamic contributions to the invariance.
 
-## How to test HUF
+This produced three new frameworks:
 
-1. Choose a domain with a meaningful whole and clearly defined parts.
-2. Normalize the parts into proportions.
-3. Compare compositional signals against standard indicators and expert judgment.
-4. Check whether HUF-style monitoring adds earlier, clearer, or more reliable signal.
-5. Publish negative results, failure cases, and domain limits alongside positive findings.
+| Framework | What It Does | Document |
+|-----------|-------------|----------|
+| **EITT Findings** | Raw science. Four-lens results, failure taxonomy, multi-modal simplex | [`science/chemistry/`](science/chemistry/EITT_Chemistry_Findings.docx) |
+| **HUF-IDX** | Development index. What residuals mean. Domain distance from ground zero | [`science/chemistry/`](science/chemistry/HUF_Development_Index.docx) |
+| **PRISM** | Operational layer. Ranked resource allocation targets from residual analysis | [`science/chemistry/`](science/chemistry/PRISM_Chemistry_Analysis.docx) |
 
-The standard for progress is independent replication, not internal coherence.
+**Posture:** We found this empirically. We can't prove it. Can you?
 
 ---
 
-## Start here
-
-| Time | Read | File |
-|------|------|------|
-| 5 min | The scientist handoff — the coldest summary of what this is | [`HANDOFF-001.docx`](huf-gov/governance/HANDOFF-001.docx) |
-| 15 min | The monitoring taxonomy — what the four categories are and why the fourth was missing | [`MONITOR-001.json`](huf-gov/science/MONITOR-001.json) |
-| 30 min | A reproducible case — Germany electricity, EMBER dataset, p = 0.0016 | [`energy/`](huf-gov/evidence/case-studies/energy/) |
-| 30 min | The kill test — 19 documented failure modes, the things this framework cannot do | [`KILL-001-kill-test.json`](huf-gov/governance/KILL-001-kill-test.json) |
-
-If you want to break it, the kill test is where to start.
-
-**New:** For a faster onboarding path with CoDa integration, see [`START_HERE.md`](START_HERE.md) — 60-second, 5-minute, and 30-minute entry paths plus the full repository map.
-
----
-
-## The four monitoring categories
+## The Four Monitoring Categories
 
 | Category | Name | Question | Status |
 |----------|------|----------|--------|
 | MC-1 | Magnitude Monitoring | How much? | Universally deployed |
 | MC-2 | Identity Monitoring | Who or what? | Universally deployed |
 | MC-3 | Trend Monitoring | Which direction? | Universally deployed |
-| **MC-4** | **Composition Monitoring** | **What is the internal balance?** | **Diagnostically invisible in standard practice** |
-
-The mathematics is not new. Compositional data analysis on the simplex was formalized by John Aitchison in 1982 (Journal of the Royal Statistical Society). The measurement taxonomy was formalized by Stanley Smith Stevens at Harvard in 1946. What is new is the application: treating compositional structure as a primary monitoring observable rather than a post-hoc statistical correction.
+| **MC-4** | **Composition Monitoring** | **What is the balance?** | **Proposed (HUF)** |
 
 ---
 
-## Evidence
+## Repository Structure
 
-Each case below is reproducible from files in this repository.
-
-- **Electricity generation (EMBER):** Germany — structural concentration p = 0.0016 behind stable total generation. See [`ember-drift-analysis.json`](huf-gov/evidence/case-studies/energy/ember-drift-analysis.json) and [`HUF_Energy_Case_Study_v1.0.docx`](huf-gov/evidence/case-studies/energy/HUF_Energy_Case_Study_v1.0.docx).
-- **GDP composition (World Bank):** Japan p = 0.0098, China p = 0.0196 — internal drift behind stable headline GDP. See [`GDP_Deceptive_Drift_Analysis_v2.0.json`](huf-gov/evidence/case-studies/gdp/GDP_Deceptive_Drift_Analysis_v2.0.json).
-- **Scale invariance:** 35 million tests, 10 to 10 million elements, zero violations, 5.23 sigma. See [`RSM_Scale_Invariance_Simulation_v1.0.json`](huf-gov/evidence/scale-invariance/RSM_Scale_Invariance_Simulation_v1.0.json).
-- **Ecosystem monitoring (Ramsar template):** Structural thinning of habitat diversity behind stable total-area figures. See [`ramsar/`](huf-gov/evidence/case-studies/ramsar/).
-
-**Limitations:** The forward signal findings are conditional on internal concentration regimes. HUF does not detect external shocks (earthquakes, pandemics, policy interventions). Negative cases — Fukushima, COVID-19, Australian bushfires — are documented alongside the positive findings.
-
----
-
-## Documented failure modes
-
-The full kill test is in [`KILL-001-kill-test.json`](huf-gov/governance/KILL-001-kill-test.json). Key failure modes include:
-
-- **KILL-1.1:** Carrier admitted without domain justification — the instrument reads noise as structure.
-- **KILL-1.2:** Fewer than 3 carriers — the simplex is too low-dimensional for meaningful composition.
-- **KILL-3.3:** Fabricated or synthetic data — garbage in, structurally plausible garbage out.
-- **KILL-4.1:** Automated actuation without human review — the loop closes without consent.
-- **KILL-4.4:** Framework applied to a domain where proportional structure has no physical meaning.
-
-If you find a failure mode not on this list, please open an issue.
-
----
-
-## Repository structure
-
-### Core framework
-
-| Directory | Function | Description |
-|-----------|----------|-------------|
-| [`huf-gov/`](huf-gov/) | **Observation** | The open-loop instrument. Science, evidence, governance, tools. |
-| [`huf-cls/`](huf-cls/) | **Control** | The closed-loop actuator. Published for transparency, not for deployment. |
-| [`reference/`](reference/) | **Foundation** | 68 machine-readable JSON specifications, technical notes, pillar documents. |
-
-### Supporting material
-
-| Directory | Description |
-|-----------|-------------|
-| [`context-books/`](context-books/) | Four audience-specific editions of the core theory (general, engineering, physics, sciences). |
-| [`math-books/`](math-books/) | Formal mathematical foundations. 42 numbered items with full proofs. |
-| [`process/`](process/) | How this was built — collective review traces, session ledgers, governance documents. |
-| [`drafts/`](drafts/) | Submission papers (pre-validation), the Human-AI Accord. Work in progress. |
-
-### Governance documents
-
-| Document | What it does |
-|----------|-------------|
-| [`LOOP-001`](huf-gov/governance/LOOP-001-open-loop-doctrine.json) | Open-loop doctrine — the instrument reads, the human decides. |
-| [`KILL-001`](huf-gov/governance/KILL-001-kill-test.json) | Kill test — 19 failure modes. |
-| [`SAFE-001`](huf-gov/governance/SAFE-001.json) | Safe operations doctrine — 7 principles. |
-| [`HAGF-001`](huf-gov/governance/HAGF-001.json) | Human-AI governance framework. |
-
-### Tools
-
-| Tool | Description |
-|------|-------------|
-| [`Spectrum Analyzer v3 (HTML)`](huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.html) | **Unified dual-metric dashboard.** 10 panels: original HUF metrics (K_eff, TV velocity, peak) + CoDa methods (CLR, ILR balances, Aitchison distance, perturbation velocity, distance matrix). Ternary simplex, carrier ribbon, complexity heatmap, 2025 crisis snapshots. Zero dependencies — open in any browser. |
-| [`Spectrum Analyzer v3 (JSX)`](huf-gov/tools/spectrum-analyzer/HUF_Spectrum_Analyzer_v3.jsx) | React/JSX version with phase display, carrier ribbon, group phase. |
-| [`CoDa Explorer`](drafts/codawork-2026/huf_coda_explorer.html) | 6-panel CoDa visualization: ternary, time prism, CLR, perturbation velocity, ILR balances, Aitchison distance matrix. CoDaWork 2026 conference tool. |
-| [`Ternary EMBER`](drafts/codawork-2026/ternary_ember.html) | Interactive ternary diagram (Fossil/Nuclear/Renewable) for 3 countries 2000–2025. CoDaWork 2026 pedagogical tool. |
-| [`Ramsar Demo`](huf-gov/tools/ramsar-demo/Ramsar_Wetlands_Template.json) | Wetland species composition monitoring template. |
-
-Pre-CoDa tools (v2 analyzer, Universal analyzer) have been moved to [`archive/tools-pre-coda/`](archive/tools-pre-coda/). Git history preserves all prior states.
-
-### CoDaWork 2026 Conference Materials
-
-Abstract accepted by Prof. Juan Jose Egozcue, Chair of the Scientific Committee. Conference: June 1-6, 2026, Coimbra, Portugal. See [`drafts/codawork-2026/`](drafts/codawork-2026/) for the full preparation suite (18 files) including formulas, vocabulary, researcher profiles, battle card, executive summary, core explanation, and the HUF-CoDa translator.
-
-**New entry point for CoDa community:** [`START_HERE.md`](START_HERE.md) — includes a "For CoDa / Compositional Data Analysts" section with direct links to all relevant materials.
+```
+HUF/
+├── science/                    # The unified front
+│   ├── chemistry/              # EITT chemistry results, HUF-IDX, PRISM
+│   ├── core/                   # EITT mathematics, complete explanation, formulas
+│   └── methodology/            # Compositional governance scale, confidence index
+│
+├── huf-gov/                    # Active governance
+│   ├── governance/             # Standards, protocols, kill tests
+│   ├── science/                # Monitoring taxonomy, ontological foundation
+│   └── evidence/               # Case studies (energy, backblaze, planck, ramsar)
+│
+├── tools/                      # Everything runnable
+│   ├── pipeline/               # EITT pipeline, preparsers, analysis scripts
+│   ├── diagnostics/            # Validators, dashboards, diagnostic JSX
+│   ├── spectrum-analyzer/      # HUF Spectrum Analyzer (all versions)
+│   └── shared/                 # Build utilities, styles, glossary
+│
+├── drafts/codawork-2026/       # CoDaWork 2026 conference materials
+│
+├── data/                       # Datasets (energy, backblaze, toronto, eitt-lab)
+│
+└── archive/                    # Development history (everything pre-restructure)
+```
 
 ---
 
-## On HUF-CLS being public
+## Start Here
 
-The closed-loop system was originally held behind engineered breakers. The decision to publish it under MIT license was made on March 29, 2026. The reasoning: suppression does not prevent misuse — it prevents understanding. If someone will close the loop, it is better that the architecture, the failure modes, and the governance principles are public knowledge than that they are reinvented without them.
+| Time | What | Where |
+|------|------|-------|
+| 5 min | What HUF is, in plain language | [`science/core/WHAT_HUF_IS.md`](science/core/WHAT_HUF_IS.md) |
+| 10 min | The EITT finding and the numbers | [`science/core/EITT_Finding.md`](science/core/EITT_Finding.md) |
+| 15 min | Full explanation with CoDa mathematics | [`science/core/EITT_CODA_MATHEMATICS.md`](science/core/EITT_CODA_MATHEMATICS.md) |
+| 20 min | Chemistry results (the new frontier) | [`science/chemistry/`](science/chemistry/) |
+| 30 min | The kill test — 19 documented failure modes | [`huf-gov/governance/`](huf-gov/governance/) |
 
-Read the CLS README before exploring: [`huf-cls/README.md`](huf-cls/README.md).
-
----
-
-## Process and provenance
-
-This framework was developed over six months by Peter Higgins, with six AI systems (Claude, ChatGPT, Gemini, Copilot, Grok, DeepSeek) contributing under human direction. The operator governed the process. The AI systems were the instruments. The loop stayed open.
-
-The complete development record — 26 collective review traces, session ledgers, voting registers, and governance documents — is in [`process/`](process/). It is included because the provenance chain is part of the claim: this was built with documented governance, not invented overnight.
+If you want to break it, the kill test is where to start.
 
 ---
 
-## Contact
+## What HUF Claims
 
-Peter Higgins
-Rogue Wave Audio
-Markham, Ontario, Canada
-[PeterHiggins@RogueWaveAudio.com](mailto:PeterHiggins@RogueWaveAudio.com)
+- Composition can be monitored directly, not only as a statistical correction.
+- In some systems, structural change appears in ratio-state before magnitude-based indicators visibly fail.
+- This can be tested across any domain where a conserved whole divides into meaningful parts.
+
+## What HUF Does Not Claim
+
+- New simplex mathematics. The foundations are Aitchison (1982), Shannon (1948), Stevens (1946), Amari (1985).
+- Universal validity. Cross-domain validity must be earned domain by domain.
+- That every compositional change is harmful, actionable, or predictive.
+- That HUF replaces domain expertise, causal explanation, or policy judgment.
+- That autonomous intervention is justified on compositional readings alone.
+
+---
+
+## Governance
+
+**Standard:** RWA-001 (Rogue Wave Audio Corporate Reference)
+
+**Protocol:** HUF-GOV. Measure, report, file. No intervention on the data.
+
+**Multi-AI Review:** All core findings subjected to adversarial review by Claude, ChatGPT, Grok, Gemini, and Copilot.
 
 ---
 
 ## License
 
-MIT License. See [LICENSE](LICENSE).
+MIT. See [LICENSE](LICENSE).
 
-Developed with Claude (Anthropic), ChatGPT (OpenAI), Gemini (Google), Copilot (Microsoft), Grok (xAI), and DeepSeek under human direction. 2025–2026.
+## Citation
+
+See [CITATION.cff](CITATION.cff).
+
+## Contact
+
+Peter Higgins | Rogue Wave Audio | PeterHiggins@RogueWaveAudio.com
+
+Repository: [github.com/PeterHiggins19/Higgins-Unity-Framework](https://github.com/PeterHiggins19/Higgins-Unity-Framework)

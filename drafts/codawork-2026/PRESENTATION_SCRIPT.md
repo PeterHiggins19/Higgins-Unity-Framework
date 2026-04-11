@@ -18,13 +18,13 @@
 
 "Before I show the union, let me explain where this instrument came from. It was not designed for CoDa. It was designed for loudspeakers.
 
-A loudspeaker cabinet radiates acoustic energy. At any given frequency, that energy distributes itself across directions — forward, backward, up, down. The total is fixed. It is a constrained energy budget. The directional distribution is a composition. It lives on a simplex.
+In December 2024, I was building a diffraction correction system for an omnidirectional loudspeaker cabinet — the Binaural Test Lab. The cabinet has three dimensions: height 0.8 metres, width 0.368, depth 0.330. The total baffle step correction is exactly 6.02 dB — 20 log base 10 of 2 — and it must be apportioned among these three dimensions in proportion to their contribution. Height gets 3.21 dB, width 1.48, depth 1.33. They always sum to 6.02.
 
-At low frequencies, the radiation is omnidirectional — the isotropic ground state. Equal energy in all directions. The barycenter of the simplex. As frequency rises and wavelength meets the cabinet dimensions, the pattern breaks isotropy. Energy concentrates. Carriers become unequal. The composition moves.
+I called the forward correction DADC — Dimension-Apportioned Diffraction Correction. Then I built the inverse: DADI — give the system only the acoustic response, and it reconstructs the physical dimensions. Non-contact. The probe reads the geometry without touching the object. Without imprinting its own signature on the result.
 
-I built an instrument to watch it move — because I was building a tool to protect myself from my own ignorance. Two measurements, always. Both examined, always. Disagreement is a diagnostic. Departure from isotropy is an event. Lose nothing. Discard nothing.
+I did not know the word 'simplex' at that time. But the DADC gain vector IS a composition: 0.533, 0.246, 0.221, summing to 1. The dominance index — max dimension over min — is a pairwise log-ratio. The inverse inference is what we now call EITT inversion. The design requirement that the probe must be inert is what became 'HUF is inert.' The mathematics was already there in the physics. I just didn't know its name.
 
-Every property that defines compositional data — the closure constraint, the ratio-scale information, the zero-event significance — was already present in the physics. The simplex was already there. I just didn't know its name."
+Every property that defines compositional data — the closure constraint, the ratio-scale information, the zero-event significance — was present in the loudspeaker acoustics before I ever heard of Aitchison."
 
 ---
 
@@ -106,7 +106,7 @@ This is a CoDa finding, not just a HUF finding. It provides the first quantitati
 
 ## Slide 15 — Deployment Path
 
-"The path is simple: Coimbra, then validation, then Ramsar pilot, then standardization. We begin with calibration, not claims."
+"The path is clear: Coimbra for peer review and the formal proof. Ramsar Convention for the operational pilot — their 3-year reporting cycle is a temporal decimation that EITT can validate. Then ISO standardization through TC 69 — because magnitude, identity, and trend all have ISO standards, but composition monitoring has none. MC-4 fills that gap. CoDa becomes the required mathematical foundation. We begin with calibration, not claims."
 
 ---
 
