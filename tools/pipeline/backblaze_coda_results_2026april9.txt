@@ -1,0 +1,74 @@
+================================================================================
+  HUF BACKBLAZE — FULL CoDa + EITT + d(CoDa)/dt ANALYSIS RESULTS
+  Run: 2026-04-09
+  24 Monthly Snapshots · Jan 2024 – Dec 2025 · K=4 Carriers
+  Tool: analyze_backblaze_coda.py
+================================================================================
+
+KEY FINDINGS
+============
+
+1. EITT CONFIRMED ON NON-ENERGY DATA
+   Monthly entropy mean:  1.221620
+   Annual entropy mean:   1.221955
+   EITT residual:         0.0275% at 12:1 compression
+   Decimation ladder:     0.0011% (2:1) → 0.0021% (3:1) → 0.0038% (4:1)
+                          → 0.0107% (6:1) → 0.0275% (12:1)
+   VERDICT: EITT holds. First non-energy domain confirmation.
+   Comparison: Tighter than some energy results. Monotonic ladder.
+
+2. RELAY CHAIN — ELECTRONIC IS THE SOLE DONOR
+   Electronic:  net Δρ = -1.70 pp (↓)
+   Media:       net Δρ = +0.79 pp (↑)
+   Offline:     net Δρ = +0.59 pp (↑)
+   Mechanical:  net Δρ = +0.32 pp (↑)
+   Closure: Σ = 0.000023 (machine zero)
+   Physical meaning: Electronic failures replaced by Media+Offline as fleet
+   ages and technology shifts. Drives that used to fail electronically now
+   fail through media degradation or go offline.
+
+3. B2 PERFECT MONOTONICITY — 100%
+   Balance B2 (Electronic vs Media+Offline) has ZERO sign changes in dB/dt
+   across 23 intervals. dB2/dt is negative in every single month.
+   B2 trajectory: +0.44 → -0.04 (crossed zero ~Oct 2025)
+   The October 2025 zero-crossing marks when Electronic failures became
+   less common than Media+Offline combined — a structural phase transition.
+
+   B1 (Mech vs rest): 59% monotonicity (9 sign changes)
+   B3 (Media vs Offline): 59% monotonicity (9 sign changes)
+
+   Implication: B2's perfect smoothness is a concrete example of the temporal
+   persistence that EITT requires. Smoothest balance = strongest EITT.
+
+4. VELOCITY DECELERATION
+   Peak velocity: 0.0697 (Apr→May 2024)
+   Late 2025 range: 0.006–0.019
+   The fleet composition is settling. Structural transition decelerating.
+   Cumulative 24-month drift: d_A = 0.4799
+
+5. d²B/dt² ON B2 — CONSTANT RATE DECLINE
+   B2 acceleration is small and mixed-sign. The Electronic decline proceeds
+   at roughly constant rate — consistent with fleet procurement cycles,
+   not sudden failure events.
+
+6. DUAL-METRIC AGREEMENT — 100%
+   All 23 consecutive intervals show TV and Aitchison agreeing on direction.
+   No trace-only or dominant-only signals detected. Every shift is structural.
+
+SIGNIFICANCE FOR CODAWORK 2026
+==============================
+
+- Directly answers Attack 2 ("You only tested energy data")
+- B2's 100% monotonicity is a visual proof of temporal autocorrelation
+- The relay chain has clear physical interpretation (fleet aging)
+- EITT residual (0.0275%) is competitive with energy domain results
+- Zero-sum relay verification (Σ=0.000023) confirms CoDa closure holds
+
+FULL OUTPUT
+===========
+
+[See console output saved separately or re-run analyze_backblaze_coda.py]
+
+Governance: CGS-2 (n=3), GDoF 264. No new constants.
+Data: Backblaze Drive Stats, CC BY 4.0 equivalent
+HUF:1.1.8 | OP_MIN=0.51 | TOOL_MAX=0.49
