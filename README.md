@@ -70,6 +70,7 @@ HUF/
 
 | Time | What | Where |
 |------|------|-------|
+| 15 min | **User Handbook** — fast summary + guided links into the full document set | [`science/core/HUF_USER_HANDBOOK.md`](science/core/HUF_USER_HANDBOOK.md) |
 | 5 min | What HUF is, in plain language | [`science/core/WHAT_HUF_IS.md`](science/core/WHAT_HUF_IS.md) |
 | 10 min | The EITT finding and the numbers | [`science/core/EITT_Finding.md`](science/core/EITT_Finding.md) |
 | 15 min | Full explanation with CoDa mathematics | [`science/core/EITT_CODA_MATHEMATICS.md`](science/core/EITT_CODA_MATHEMATICS.md) |
