@@ -21,7 +21,7 @@ jobs:
         run: |
           echo "=== HUF Document Inventory ==="
           count=0
-          for docx in $(find docs -name '*.docx' -type f | sort); do
+          for docx in $(find science huf-gov -name '*.docx' -type f 2>/dev/null | sort); do
             size=$(stat --format=%s "$docx")
             kb=$((size / 1024))
             echo "  OK: $docx (${kb} KB)"
@@ -30,7 +30,43 @@ jobs:
           echo ""
           echo "Total: $count documents found"
           if [ $count -eq 0 ]; then
-            echo "WARNING: No .docx files found in docs/"
+            echo "WARNING: No .docx files found in science/ or huf-gov/"
             exit 1
           fi
           echo "All documents present."
+
+      - name: Verify core science documents
+        run: |
+          echo "=== Core Science Check ==="
+          missing=0
+          for doc in \
+            "science/chemistry/EITT_Chemistry_Findings.docx" \
+            "science/chemistry/HUF_Development_Index.docx" \
+            "science/chemistry/PRISM_Chemistry_Analysis.docx"; do
+            if [ -f "$doc" ]; then
+              echo "  OK: $doc"
+            else
+              echo "  MISSING: $doc"
+              missing=$((missing + 1))
+            fi
+          done
+          if [ $missing -gt 0 ]; then
+            echo "ERROR: $missing core document(s) missing"
+            exit 1
+          fi
+          echo "All core science documents present."
+
+      - name: Verify tools
+        run: |
+          echo "=== Tools Check ==="
+          for tool in \
+            "tools/pipeline/chem_eitt_pipeline.py" \
+            "tools/pipeline/huf_preparser.py" \
+            "tools/diagnostics/validate.py"; do
+            if [ -f "$tool" ]; then
+              echo "  OK: $tool"
+            else
+              echo "  MISSING: $tool"
+            fi
+          done
+          echo "Tools check complete."
