@@ -1,0 +1,449 @@
+================================================================================
+MULTI-TAP BALANCE TRANSFORMER TEST — 2026-04-10
+Does EITT hold across ALL valid SBP trees, or just the one we wired?
+If all trees preserve balance means: invariance is a simplex property.
+If some break: which ones break tells us about compositional structure.
+================================================================================
+
+================================================================================
+ENERGY WORLD K=7: N=25, 2000→2024
+Components: 0=Coal 1=Gas 2=Nuclear 3=Hydro 4=Wind 5=Solar 6=Other_Renew
+================================================================================
+
+─── PART A: BALANCE MEAN PRESERVATION ───
+Does each tap (ILR balance) preserve its mean under decimation?
+
+
+  T1: Fossil|Renew:
+    2:1 decimation:
+      ✓ B1: Fossil|Renew: mean +6.8461 → +6.9003 (shift=+0.0542, 0.79%, var ratio=0.9472)
+      ✓ B2: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9211)
+      ✓ B3: Wind|Solar: mean +1.3539 → +1.4056 (shift=+0.0518, 3.82%, var ratio=0.9389)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9470)
+    All taps preserved: YES
+    3:1 decimation:
+      ✓ B1: Fossil|Renew: mean +6.8461 → +6.9003 (shift=+0.0542, 0.79%, var ratio=0.9392)
+      ✓ B2: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9153)
+      ✓ B3: Wind|Solar: mean +1.3539 → +1.4056 (shift=+0.0518, 3.82%, var ratio=0.9302)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9397)
+    All taps preserved: YES
+    5:1 decimation:
+      ✓ B1: Fossil|Renew: mean +6.8461 → +6.8461 (shift=+0.0000, 0.00%, var ratio=0.9652)
+      ✓ B2: Coal|Gas: mean +0.4000 → +0.4000 (shift=+0.0000, 0.00%, var ratio=0.9376)
+      ✓ B3: Wind|Solar: mean +1.3539 → +1.3539 (shift=+0.0000, 0.00%, var ratio=0.9637)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.1563 (shift=-0.0000, 0.00%, var ratio=0.9626)
+    All taps preserved: YES
+
+  T2: Thermal|NonThermal:
+    2:1 decimation:
+      ✓ B1: Thermal|NonThermal: mean +7.3790 → +7.4448 (shift=+0.0658, 0.89%, var ratio=0.9512)
+      ✓ B2: Fossil|Nuclear: mean +0.7179 → +0.7097 (shift=-0.0082, 1.14%, var ratio=0.9844)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9211)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9470)
+    All taps preserved: YES
+    3:1 decimation:
+      ✓ B1: Thermal|NonThermal: mean +7.3790 → +7.4448 (shift=+0.0658, 0.89%, var ratio=0.9433)
+      ✓ B2: Fossil|Nuclear: mean +0.7179 → +0.7097 (shift=-0.0082, 1.14%, var ratio=0.9772)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9153)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9397)
+    All taps preserved: YES
+    5:1 decimation:
+      ✓ B1: Thermal|NonThermal: mean +7.3790 → +7.3790 (shift=+0.0000, 0.00%, var ratio=0.9645)
+      ✓ B2: Fossil|Nuclear: mean +0.7179 → +0.7179 (shift=+0.0000, 0.00%, var ratio=0.9462)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4000 (shift=+0.0000, 0.00%, var ratio=0.9376)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.1563 (shift=-0.0000, 0.00%, var ratio=0.9626)
+    All taps preserved: YES
+
+  T3: Dispatch|Variable:
+    2:1 decimation:
+      ✓ B1: Dispatch|Variable: mean +9.6063 → +9.6932 (shift=+0.0869, 0.91%, var ratio=0.9495)
+      ✓ B2: Fossil|Clean: mean +0.7383 → +0.7321 (shift=-0.0062, 0.84%, var ratio=0.9744)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9211)
+      ✓ B4: Wind|SolarOther: mean +6.0465 → +6.0451 (shift=-0.0014, 0.02%, var ratio=1.0137)
+    All taps preserved: YES
+    3:1 decimation:
+      ✓ B1: Dispatch|Variable: mean +9.6063 → +9.6932 (shift=+0.0869, 0.91%, var ratio=0.9418)
+      ✓ B2: Fossil|Clean: mean +0.7383 → +0.7321 (shift=-0.0062, 0.84%, var ratio=0.9675)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9153)
+      ✓ B4: Wind|SolarOther: mean +6.0465 → +6.0451 (shift=-0.0014, 0.02%, var ratio=0.9345)
+    All taps preserved: YES
+    5:1 decimation:
+      ✓ B1: Dispatch|Variable: mean +9.6063 → +9.6063 (shift=-0.0000, 0.00%, var ratio=0.9640)
+      ✓ B2: Fossil|Clean: mean +0.7383 → +0.7383 (shift=-0.0000, 0.00%, var ratio=0.9292)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4000 (shift=+0.0000, 0.00%, var ratio=0.9376)
+      ✓ B4: Wind|SolarOther: mean +6.0465 → +6.0465 (shift=-0.0000, 0.00%, var ratio=0.7127)
+    All taps preserved: YES
+
+  T4: Carbon|ZeroCarbon:
+    2:1 decimation:
+      ✓ B1: Carbon|Zero: mean +5.8793 → +5.9218 (shift=+0.0425, 0.72%, var ratio=0.9436)
+      ✓ B2: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9211)
+      ✓ B3: Nuclear|Renew: mean +4.5165 → +4.5675 (shift=+0.0510, 1.13%, var ratio=0.9572)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9470)
+    All taps preserved: YES
+    3:1 decimation:
+      ✓ B1: Carbon|Zero: mean +5.8793 → +5.9218 (shift=+0.0425, 0.72%, var ratio=0.9356)
+      ✓ B2: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9153)
+      ✓ B3: Nuclear|Renew: mean +4.5165 → +4.5675 (shift=+0.0510, 1.13%, var ratio=0.9493)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9397)
+    All taps preserved: YES
+    5:1 decimation:
+      ✓ B1: Carbon|Zero: mean +5.8793 → +5.8793 (shift=+0.0000, 0.00%, var ratio=0.9657)
+      ✓ B2: Coal|Gas: mean +0.4000 → +0.4000 (shift=+0.0000, 0.00%, var ratio=0.9376)
+      ✓ B3: Nuclear|Renew: mean +4.5165 → +4.5165 (shift=+0.0000, 0.00%, var ratio=0.9630)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.1563 (shift=-0.0000, 0.00%, var ratio=0.9626)
+    All taps preserved: YES
+
+  T5: Coal|Rest:
+    2:1 decimation:
+      ✓ B1: Coal|Rest: mean +4.1006 → +4.1311 (shift=+0.0305, 0.74%, var ratio=0.9450)
+      ✓ B2: Gas|NonFossil: mean +4.2322 → +4.2620 (shift=+0.0298, 0.70%, var ratio=0.9415)
+      ✓ B3: Nuclear|Renew: mean +4.5165 → +4.5675 (shift=+0.0510, 1.13%, var ratio=0.9572)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9470)
+    All taps preserved: YES
+    3:1 decimation:
+      ✓ B1: Coal|Rest: mean +4.1006 → +4.1311 (shift=+0.0305, 0.74%, var ratio=0.9369)
+      ✓ B2: Gas|NonFossil: mean +4.2322 → +4.2620 (shift=+0.0298, 0.70%, var ratio=0.9337)
+      ✓ B3: Nuclear|Renew: mean +4.5165 → +4.5675 (shift=+0.0510, 1.13%, var ratio=0.9493)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9397)
+    All taps preserved: YES
+    5:1 decimation:
+      ✓ B1: Coal|Rest: mean +4.1006 → +4.1006 (shift=-0.0000, 0.00%, var ratio=0.9686)
+      ✓ B2: Gas|NonFossil: mean +4.2322 → +4.2322 (shift=+0.0000, 0.00%, var ratio=0.9619)
+      ✓ B3: Nuclear|Renew: mean +4.5165 → +4.5165 (shift=+0.0000, 0.00%, var ratio=0.9630)
+      ✓ B4: Hydro|VarRenew: mean +6.1563 → +6.1563 (shift=-0.0000, 0.00%, var ratio=0.9626)
+    All taps preserved: YES
+
+  T6: Solar|Rest:
+    2:1 decimation:
+      ✗ B1: Solar|Rest: mean -1.2640 → -1.3853 (shift=-0.1213, 9.60%, var ratio=0.9462)
+      ✓ B2: Fossil|Clean: mean +5.7478 → +5.7594 (shift=+0.0115, 0.20%, var ratio=0.9338)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9211)
+      ✓ B4: Nuclear|RenewExSol: mean +4.7325 → +4.7557 (shift=+0.0231, 0.49%, var ratio=0.9686)
+    All taps preserved: NO
+    3:1 decimation:
+      ✗ B1: Solar|Rest: mean -1.2640 → -1.3853 (shift=-0.1213, 9.60%, var ratio=0.9386)
+      ✓ B2: Fossil|Clean: mean +5.7478 → +5.7594 (shift=+0.0115, 0.20%, var ratio=0.9214)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4041 (shift=+0.0041, 1.03%, var ratio=0.9153)
+      ✓ B4: Nuclear|RenewExSol: mean +4.7325 → +4.7557 (shift=+0.0231, 0.49%, var ratio=0.9599)
+    All taps preserved: NO
+    5:1 decimation:
+      ✓ B1: Solar|Rest: mean -1.2640 → -1.2640 (shift=+0.0000, 0.00%, var ratio=0.9659)
+      ✓ B2: Fossil|Clean: mean +5.7478 → +5.7478 (shift=-0.0000, 0.00%, var ratio=0.9606)
+      ✓ B3: Coal|Gas: mean +0.4000 → +0.4000 (shift=+0.0000, 0.00%, var ratio=0.9376)
+      ✓ B4: Nuclear|RenewExSol: mean +4.7325 → +4.7325 (shift=-0.0000, 0.00%, var ratio=0.9577)
+    All taps preserved: YES
+
+  T7: Renew|Fossil (reversed):
+    2:1 decimation:
+      ✓ B1: Renew|Fossil: mean -6.8461 → -6.9003 (shift=-0.0542, 0.79%, var ratio=0.9472)
+      ✓ B2: Solar|Wind: mean -1.3539 → -1.4056 (shift=-0.0518, 3.82%, var ratio=0.9389)
+      ✓ B3: Gas|Coal: mean -0.4000 → -0.4041 (shift=-0.0041, 1.03%, var ratio=0.9211)
+      ✓ B4: VarRenew|Hydro: mean -6.1563 → -6.2132 (shift=-0.0568, 0.92%, var ratio=0.9470)
+    All taps preserved: YES
+    3:1 decimation:
+      ✓ B1: Renew|Fossil: mean -6.8461 → -6.9003 (shift=-0.0542, 0.79%, var ratio=0.9392)
+      ✓ B2: Solar|Wind: mean -1.3539 → -1.4056 (shift=-0.0518, 3.82%, var ratio=0.9302)
+      ✓ B3: Gas|Coal: mean -0.4000 → -0.4041 (shift=-0.0041, 1.03%, var ratio=0.9153)
+      ✓ B4: VarRenew|Hydro: mean -6.1563 → -6.2132 (shift=-0.0568, 0.92%, var ratio=0.9397)
+    All taps preserved: YES
+    5:1 decimation:
+      ✓ B1: Renew|Fossil: mean -6.8461 → -6.8461 (shift=-0.0000, 0.00%, var ratio=0.9652)
+      ✓ B2: Solar|Wind: mean -1.3539 → -1.3539 (shift=+0.0000, 0.00%, var ratio=0.9637)
+      ✓ B3: Gas|Coal: mean -0.4000 → -0.4000 (shift=-0.0000, 0.00%, var ratio=0.9376)
+      ✓ B4: VarRenew|Hydro: mean -6.1563 → -6.1563 (shift=+0.0000, 0.00%, var ratio=0.9626)
+    All taps preserved: YES
+
+  T8: Sequential peel:
+    2:1 decimation:
+      ✓ B1: Coal|Rest: mean +4.1006 → +4.1311 (shift=+0.0305, 0.74%, var ratio=0.9450)
+      ✓ B2: Gas|Rest: mean +4.2322 → +4.2620 (shift=+0.0298, 0.70%, var ratio=0.9415)
+      ✓ B3: Nuclear|Rest: mean +4.5165 → +4.5675 (shift=+0.0510, 1.13%, var ratio=0.9572)
+      ✓ B4: Hydro|Rest: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9470)
+    All taps preserved: YES
+    3:1 decimation:
+      ✓ B1: Coal|Rest: mean +4.1006 → +4.1311 (shift=+0.0305, 0.74%, var ratio=0.9369)
+      ✓ B2: Gas|Rest: mean +4.2322 → +4.2620 (shift=+0.0298, 0.70%, var ratio=0.9337)
+      ✓ B3: Nuclear|Rest: mean +4.5165 → +4.5675 (shift=+0.0510, 1.13%, var ratio=0.9493)
+      ✓ B4: Hydro|Rest: mean +6.1563 → +6.2132 (shift=+0.0568, 0.92%, var ratio=0.9397)
+    All taps preserved: YES
+    5:1 decimation:
+      ✓ B1: Coal|Rest: mean +4.1006 → +4.1006 (shift=-0.0000, 0.00%, var ratio=0.9686)
+      ✓ B2: Gas|Rest: mean +4.2322 → +4.2322 (shift=+0.0000, 0.00%, var ratio=0.9619)
+      ✓ B3: Nuclear|Rest: mean +4.5165 → +4.5165 (shift=+0.0000, 0.00%, var ratio=0.9630)
+      ✓ B4: Hydro|Rest: mean +6.1563 → +6.1563 (shift=-0.0000, 0.00%, var ratio=0.9626)
+    All taps preserved: YES
+
+
+─── PART B: TOTAL ILR VARIANCE STRUCTURE ───
+Does the variance distribution across taps change with tree choice?
+If total_var_ratio is the same for all trees: tree-invariant property.
+
+
+  2:1 decimation — Total ILR Variance Ratios:
+  Tree                                  Orig Var    Agg Var    Ratio  Max Prop Shift
+  ──────────────────────────────────────────────────────────────────────────────
+  T1: Fossil|Renew                        2.4237     2.2896   0.9447          0.0018
+  T2: Thermal|NonThermal                  2.2134     2.1026   0.9499          0.0013
+  T3: Dispatch|Variable                   2.2167     2.1064   0.9502          0.0008
+  T4: Carbon|ZeroCarbon                   2.2134     2.1026   0.9499          0.0028
+  T5: Coal|Rest                           2.2134     2.1026   0.9499          0.0028
+  T6: Solar|Rest                          4.3022     4.0747   0.9471          0.0010
+  T7: Renew|Fossil (reversed)             2.4237     2.2896   0.9447          0.0018
+  T8: Sequential peel                     2.2134     2.1026   0.9499          0.0028
+
+  Spread of total_var_ratio across trees: 0.005531
+  Tree-invariant: YES (spread < 0.01)
+
+  3:1 decimation — Total ILR Variance Ratios:
+  Tree                                  Orig Var    Agg Var    Ratio  Max Prop Shift
+  ──────────────────────────────────────────────────────────────────────────────
+  T1: Fossil|Renew                        2.4237     2.2704   0.9368          0.0020
+  T2: Thermal|NonThermal                  2.2134     2.0855   0.9423          0.0011
+  T3: Dispatch|Variable                   2.2167     2.0879   0.9419          0.0002
+  T4: Carbon|ZeroCarbon                   2.2134     2.0855   0.9423          0.0027
+  T5: Coal|Rest                           2.2134     2.0855   0.9423          0.0027
+  T6: Solar|Rest                          4.3022     4.0415   0.9394          0.0010
+  T7: Renew|Fossil (reversed)             2.4237     2.2704   0.9368          0.0020
+  T8: Sequential peel                     2.2134     2.0855   0.9423          0.0027
+
+  Spread of total_var_ratio across trees: 0.005473
+  Tree-invariant: YES (spread < 0.01)
+
+  5:1 decimation — Total ILR Variance Ratios:
+  Tree                                  Orig Var    Agg Var    Ratio  Max Prop Shift
+  ──────────────────────────────────────────────────────────────────────────────
+  T1: Fossil|Renew                        2.4237     2.3358   0.9638          0.0005
+  T2: Thermal|NonThermal                  2.2134     2.1323   0.9634          0.0007
+  T3: Dispatch|Variable                   2.2167     2.1307   0.9612          0.0028
+  T4: Carbon|ZeroCarbon                   2.2134     2.1323   0.9634          0.0005
+  T5: Coal|Rest                           2.2134     2.1323   0.9634          0.0006
+  T6: Solar|Rest                          4.3022     4.1535   0.9654          0.0004
+  T7: Renew|Fossil (reversed)             2.4237     2.3358   0.9638          0.0005
+  T8: Sequential peel                     2.2134     2.1323   0.9634          0.0006
+
+  Spread of total_var_ratio across trees: 0.004218
+  Tree-invariant: YES (spread < 0.01)
+
+
+─── PART C: VARIANCE PROPORTION STABILITY ───
+How each tap's share of total variance changes under decimation.
+Stable proportions = balanced transformer holds shape.
+
+
+  T1: Fossil|Renew:
+    2:1  Variance proportions:
+      B1: Fossil|Renew: 0.3375 → 0.3384 (Δ=+0.0009)
+      B2: Coal|Gas: 0.0023 → 0.0022 (Δ=-0.0001)
+      B3: Wind|Solar: 0.2847 → 0.2829 (Δ=-0.0018)
+      B4: Hydro|VarRenew: 0.3755 → 0.3764 (Δ=+0.0009)
+    3:1  Variance proportions:
+      B1: Fossil|Renew: 0.3375 → 0.3384 (Δ=+0.0009)
+      B2: Coal|Gas: 0.0023 → 0.0022 (Δ=-0.0001)
+      B3: Wind|Solar: 0.2847 → 0.2827 (Δ=-0.0020)
+      B4: Hydro|VarRenew: 0.3755 → 0.3767 (Δ=+0.0012)
+
+  T2: Thermal|NonThermal:
+    2:1  Variance proportions:
+      B1: Thermal|NonThermal: 0.5703 → 0.5711 (Δ=+0.0008)
+      B2: Fossil|Nuclear: 0.0160 → 0.0165 (Δ=+0.0006)
+      B3: Coal|Gas: 0.0025 → 0.0024 (Δ=-0.0001)
+      B4: Hydro|VarRenew: 0.4112 → 0.4099 (Δ=-0.0013)
+    3:1  Variance proportions:
+      B1: Thermal|NonThermal: 0.5703 → 0.5709 (Δ=+0.0006)
+      B2: Fossil|Nuclear: 0.0160 → 0.0166 (Δ=+0.0006)
+      B3: Coal|Gas: 0.0025 → 0.0024 (Δ=-0.0001)
+      B4: Hydro|VarRenew: 0.4112 → 0.4101 (Δ=-0.0011)
+
+  T3: Dispatch|Variable:
+    2:1  Variance proportions:
+      B1: Dispatch|Variable: 0.9794 → 0.9786 (Δ=-0.0008)
+      B2: Fossil|Clean: 0.0087 → 0.0089 (Δ=+0.0002)
+      B3: Coal|Gas: 0.0025 → 0.0024 (Δ=-0.0001)
+      B4: Wind|SolarOther: 0.0094 → 0.0101 (Δ=+0.0006)
+    3:1  Variance proportions:
+      B1: Dispatch|Variable: 0.9794 → 0.9793 (Δ=-0.0001)
+      B2: Fossil|Clean: 0.0087 → 0.0089 (Δ=+0.0002)
+      B3: Coal|Gas: 0.0025 → 0.0024 (Δ=-0.0001)
+      B4: Wind|SolarOther: 0.0094 → 0.0094 (Δ=-0.0001)
+
+  T4: Carbon|ZeroCarbon:
+    2:1  Variance proportions:
+      B1: Carbon|Zero: 0.2186 → 0.2171 (Δ=-0.0015)
+      B2: Coal|Gas: 0.0025 → 0.0024 (Δ=-0.0001)
+      B3: Nuclear|Renew: 0.3677 → 0.3706 (Δ=+0.0028)
+      B4: Hydro|VarRenew: 0.4112 → 0.4099 (Δ=-0.0013)
+    3:1  Variance proportions:
+      B1: Carbon|Zero: 0.2186 → 0.2170 (Δ=-0.0015)
+      B2: Coal|Gas: 0.0025 → 0.0024 (Δ=-0.0001)
+      B3: Nuclear|Renew: 0.3677 → 0.3705 (Δ=+0.0027)
+      B4: Hydro|VarRenew: 0.4112 → 0.4101 (Δ=-0.0011)
+
+  T5: Coal|Rest:
+    2:1  Variance proportions:
+      B1: Coal|Rest: 0.1144 → 0.1138 (Δ=-0.0006)
+      B2: Gas|NonFossil: 0.1066 → 0.1057 (Δ=-0.0009)
+      B3: Nuclear|Renew: 0.3677 → 0.3706 (Δ=+0.0028)
+      B4: Hydro|VarRenew: 0.4112 → 0.4099 (Δ=-0.0013)
+    3:1  Variance proportions:
+      B1: Coal|Rest: 0.1144 → 0.1138 (Δ=-0.0007)
+      B2: Gas|NonFossil: 0.1066 → 0.1056 (Δ=-0.0010)
+      B3: Nuclear|Renew: 0.3677 → 0.3705 (Δ=+0.0027)
+      B4: Hydro|VarRenew: 0.4112 → 0.4101 (Δ=-0.0011)
+
+  T6: Solar|Rest:
+    2:1  Variance proportions:
+      B1: Solar|Rest: 0.9455 → 0.9446 (Δ=-0.0009)
+      B2: Fossil|Clean: 0.0077 → 0.0076 (Δ=-0.0001)
+      B3: Coal|Gas: 0.0013 → 0.0013 (Δ=-0.0000)
+      B4: Nuclear|RenewExSol: 0.0455 → 0.0465 (Δ=+0.0010)
+    3:1  Variance proportions:
+      B1: Solar|Rest: 0.9455 → 0.9447 (Δ=-0.0008)
+      B2: Fossil|Clean: 0.0077 → 0.0075 (Δ=-0.0001)
+      B3: Coal|Gas: 0.0013 → 0.0013 (Δ=-0.0000)
+      B4: Nuclear|RenewExSol: 0.0455 → 0.0465 (Δ=+0.0010)
+
+  T7: Renew|Fossil (reversed):
+    2:1  Variance proportions:
+      B1: Renew|Fossil: 0.3375 → 0.3384 (Δ=+0.0009)
+      B2: Solar|Wind: 0.2847 → 0.2829 (Δ=-0.0018)
+      B3: Gas|Coal: 0.0023 → 0.0022 (Δ=-0.0001)
+      B4: VarRenew|Hydro: 0.3755 → 0.3764 (Δ=+0.0009)
+    3:1  Variance proportions:
+      B1: Renew|Fossil: 0.3375 → 0.3384 (Δ=+0.0009)
+      B2: Solar|Wind: 0.2847 → 0.2827 (Δ=-0.0020)
+      B3: Gas|Coal: 0.0023 → 0.0022 (Δ=-0.0001)
+      B4: VarRenew|Hydro: 0.3755 → 0.3767 (Δ=+0.0012)
+
+  T8: Sequential peel:
+    2:1  Variance proportions:
+      B1: Coal|Rest: 0.1144 → 0.1138 (Δ=-0.0006)
+      B2: Gas|Rest: 0.1066 → 0.1057 (Δ=-0.0009)
+      B3: Nuclear|Rest: 0.3677 → 0.3706 (Δ=+0.0028)
+      B4: Hydro|Rest: 0.4112 → 0.4099 (Δ=-0.0013)
+    3:1  Variance proportions:
+      B1: Coal|Rest: 0.1144 → 0.1138 (Δ=-0.0007)
+      B2: Gas|Rest: 0.1066 → 0.1056 (Δ=-0.0010)
+      B3: Nuclear|Rest: 0.3677 → 0.3705 (Δ=+0.0027)
+      B4: Hydro|Rest: 0.4112 → 0.4101 (Δ=-0.0011)
+
+
+================================================================================
+ENERGY GERMANY K=7: N=36, 1990→2025
+================================================================================
+
+─── BALANCE MEAN PRESERVATION (all trees) ───
+
+  Tree                                   2:1    3:1    5:1
+  ─────────────────────────────────────────────────────
+  T1: Fossil|Renew                       4/4    4/4    4/4
+  T2: Thermal|NonThermal                 4/4    4/4    2/4
+  T3: Dispatch|Variable                  4/4    4/4    2/4
+  T4: Carbon|ZeroCarbon                  4/4    4/4    3/4
+  T5: Coal|Rest                          4/4    4/4    3/4
+  T6: Solar|Rest                         4/4    4/4    2/4
+  T7: Renew|Fossil (reversed)            4/4    4/4    4/4
+  T8: Sequential peel                    4/4    4/4    3/4
+
+  Failures (|shift| >= 0.1):
+    T2: Thermal|NonThermal @ 5:1 — B1: Thermal|NonThermal: shift=+0.1871
+    T2: Thermal|NonThermal @ 5:1 — B2: Fossil|Nuclear: shift=-0.2493
+    T3: Dispatch|Variable @ 5:1 — B1: Dispatch|Variable: shift=+0.1655
+    T3: Dispatch|Variable @ 5:1 — B2: Fossil|Clean: shift=-0.1486
+    T4: Carbon|ZeroCarbon @ 5:1 — B3: Nuclear|Renew: shift=+0.3099
+    T5: Coal|Rest @ 5:1 — B3: Nuclear|Renew: shift=+0.3099
+    T6: Solar|Rest @ 5:1 — B1: Solar|Rest: shift=-0.1756
+    T6: Solar|Rest @ 5:1 — B4: Nuclear|RenewExSol: shift=+0.2708
+    T8: Sequential peel @ 5:1 — B3: Nuclear|Rest: shift=+0.3099
+
+
+================================================================================
+FINANCIAL K=9 (price-level, NOT market-cap): N=74, 2020-01→2026-02
+Sectors: Basic Materials, Communication Services, Consumer Cyclical, Consumer Defensive, Energy, Financial Services, Healthcare, Industrials, Technology
+================================================================================
+
+─── BALANCE MEAN PRESERVATION (all trees) ───
+
+
+  T1: FirstHalf|SecondHalf:
+    2:1:
+      ✓ B1: First|Second: shift=+0.000000 (var ratio=0.9817)
+      ✓ B2: Q1|Q2: shift=-0.000000 (var ratio=0.9862)
+    All preserved: YES
+    3:1:
+      ✓ B1: First|Second: shift=+0.001040 (var ratio=0.9803)
+      ✓ B2: Q1|Q2: shift=-0.003740 (var ratio=0.9598)
+    All preserved: YES
+    5:1:
+      ✓ B1: First|Second: shift=+0.003137 (var ratio=0.9541)
+      ✓ B2: Q1|Q2: shift=-0.007447 (var ratio=0.9439)
+    All preserved: YES
+
+  T2: Odd|Even:
+    2:1:
+      ✓ B1: Odd|Even: shift=+0.000000 (var ratio=0.9900)
+    All preserved: YES
+    3:1:
+      ✓ B1: Odd|Even: shift=-0.004697 (var ratio=0.9736)
+    All preserved: YES
+    5:1:
+      ✓ B1: Odd|Even: shift=-0.008214 (var ratio=0.9428)
+    All preserved: YES
+
+  T3: Sector0|Rest:
+    2:1:
+      ✓ B1: S0|Rest: shift=-0.000000 (var ratio=0.9391)
+      ✓ B2: S1|Rest: shift=+0.000000 (var ratio=0.9883)
+    All preserved: YES
+    3:1:
+      ✓ B1: S0|Rest: shift=+0.001831 (var ratio=0.8581)
+      ✓ B2: S1|Rest: shift=-0.004784 (var ratio=0.9849)
+    All preserved: YES
+    5:1:
+      ✓ B1: S0|Rest: shift=+0.005298 (var ratio=0.6567)
+      ✓ B2: S1|Rest: shift=-0.010134 (var ratio=0.9631)
+    All preserved: YES
+
+  T4: LastSector|Rest:
+    2:1:
+      ✓ B1: Last|Rest: shift=+0.000000 (var ratio=0.9530)
+      ✓ B2: SecondLast|Rest: shift=+0.000000 (var ratio=0.9381)
+    All preserved: YES
+    3:1:
+      ✓ B1: Last|Rest: shift=+0.001645 (var ratio=0.9048)
+      ✓ B2: SecondLast|Rest: shift=-0.001830 (var ratio=0.8340)
+    All preserved: YES
+    5:1:
+      ✓ B1: Last|Rest: shift=-0.000479 (var ratio=0.8118)
+      ✓ B2: SecondLast|Rest: shift=-0.002107 (var ratio=0.6686)
+    All preserved: YES
+
+
+================================================================================
+GRAND SUMMARY — MULTI-TAP BALANCE TRANSFORMER TEST
+================================================================================
+
+Question: Is EITT balance preservation a property of the simplex geometry,
+          or does it depend on which SBP tree (tap configuration) we choose?
+
+Total tap measurements: 213
+Taps preserving mean (<0.1 shift): 202 (94.8%)
+Taps failing: 11 (5.2%)
+
+Failed taps (|shift| >= 0.1):
+  Energy World | T6: Solar|Rest | 2:1 | B1: Solar|Rest | shift=-0.1213
+  Energy World | T6: Solar|Rest | 3:1 | B1: Solar|Rest | shift=-0.1213
+  Energy Germany | T2: Thermal|NonThermal | 5:1 | B1: Thermal|NonThermal | shift=+0.1871
+  Energy Germany | T2: Thermal|NonThermal | 5:1 | B2: Fossil|Nuclear | shift=-0.2493
+  Energy Germany | T3: Dispatch|Variable | 5:1 | B1: Dispatch|Variable | shift=+0.1655
+  Energy Germany | T3: Dispatch|Variable | 5:1 | B2: Fossil|Clean | shift=-0.1486
+  Energy Germany | T4: Carbon|ZeroCarbon | 5:1 | B3: Nuclear|Renew | shift=+0.3099
+  Energy Germany | T5: Coal|Rest | 5:1 | B3: Nuclear|Renew | shift=+0.3099
+  Energy Germany | T6: Solar|Rest | 5:1 | B1: Solar|Rest | shift=-0.1756
+  Energy Germany | T6: Solar|Rest | 5:1 | B4: Nuclear|RenewExSol | shift=+0.2708
+  Energy Germany | T8: Sequential peel | 5:1 | B3: Nuclear|Rest | shift=+0.3099
+
+VERDICT: Balance preservation is MOSTLY tree-invariant, with edge-case failures.
+         Failures likely occur at taps involving fast-changing subcompositions.
+
+Date: 2026-04-10
