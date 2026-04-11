@@ -26,7 +26,7 @@ The Aitchison geometry equips $\mathcal{S}^D$ with:
 
 The geometric mean of a set of compositions $\{\mathbf{x}(t)\}_{t=1}^N$ is the Fréchet mean in Aitchison geometry:
 
-$$\bar{\mathbf{x}}_G = \mathcal{C}\!\left(\prod_{t=1}^N x_1(t)^{1/N},\ \ldots,\ \prod_{t=1}^N x_D(t)^{1/N}\right) = \frac{1}{N} \odot \bigoplus_{t=1}^N \mathbf{x}(t)$$
+$$\bar{\mathbf{x}}_G = \mathcal{C}\left(\prod_{t=1}^N x_1(t)^{1/N},\ \ldots,\ \prod_{t=1}^N x_D(t)^{1/N}\right) = \frac{1}{N} \odot \bigoplus_{t=1}^N \mathbf{x}(t)$$
 
 Shannon entropy of a composition $\mathbf{x} \in \mathcal{S}^D$ with $\kappa = 1$:
 
@@ -50,11 +50,11 @@ with $r_k = |G_k^+|$, $s_k = |G_k^-|$ the group sizes, and $g(\cdot)$ the geomet
 
 Let $\{\mathbf{x}(t)\}_{t=1}^N$ be a compositional time series on $\mathcal{S}^D$. For block width $M \geq 2$, define the **geometric-mean block decimation** operator $\mathcal{D}_M$:
 
-$$\mathcal{D}_M\!\left[\{\mathbf{x}(t)\}\right] = \left\{\bar{\mathbf{x}}_G^{(b)}\right\}_{b=1}^{\lfloor N/M \rfloor}$$
+$$\mathcal{D}_M\left[\{\mathbf{x}(t)\}\right] = \left\{\bar{\mathbf{x}}_G^{(b)}\right\}_{b=1}^{\lfloor N/M \rfloor}$$
 
 where
 
-$$\bar{\mathbf{x}}_G^{(b)} = \mathcal{C}\!\left(\prod_{t=(b-1)M+1}^{bM} x_i(t)^{1/M}\right)_{i=1}^D$$
+$$\bar{\mathbf{x}}_G^{(b)} = \mathcal{C}\left(\prod_{t=(b-1)M+1}^{bM} x_i(t)^{1/M}\right)_{i=1}^D$$
 
 Each block of $M$ consecutive compositions is replaced by their Aitchison-geometric mean. The decimated series has $\lfloor N/M \rfloor$ elements.
 
@@ -97,7 +97,7 @@ Tested on:
 
 This is an empirical observation, not a proved theorem. A second-order Taylor expansion of $H$ around the Fréchet mean $\mathbf{x}^*$ gives:
 
-$$\Delta H_M \approx \frac{1}{2} \text{tr}\!\left[|\text{Hess}\,H(\mathbf{x}^*)| \cdot \text{Cov}(\bar{\mathbf{x}}_G^{(b)})\right]$$
+$$\Delta H_M \approx \frac{1}{2} \text{tr}\left[|\text{Hess}\,H(\mathbf{x}^*)| \cdot \text{Cov}(\bar{\mathbf{x}}_G^{(b)})\right]$$
 
 The Hessian of $H$ on $\mathcal{S}^D$ is diagonal with $\partial^2 H / \partial x_i^2 = -1/x_i$. The geometric-mean decimation reduces $\text{Cov}(\bar{\mathbf{x}}_G^{(b)})$ relative to $\text{Cov}(\mathbf{x}(t))$, making $\Delta H_M$ small when the series is near-stationary. The first-order term vanishes because $\exp$ and $\ln$ (in the geometric mean and entropy respectively) share base $e$.
 
@@ -151,7 +151,7 @@ Total: 213 tap measurements, 202 pass (94.8%).
 
 Because $\mathcal{D}_M$ computes the arithmetic mean in CLR space (Def. 1.1 Remark), and the ILR transform is a linear isometry from CLR to balance coordinates:
 
-$$\text{ilr}_k(\bar{\mathbf{x}}_G^{(b)}) = \text{ilr}_k\!\left(\text{clr}^{-1}\!\left(\frac{1}{M}\sum_{t \in \text{block}} \text{clr}(\mathbf{x}(t))\right)\right) = \frac{1}{M}\sum_{t \in \text{block}} y_k(t)$$
+$$\text{ilr}_k(\bar{\mathbf{x}}_G^{(b)}) = \text{ilr}_k\left(\text{clr}^{-1}\left(\frac{1}{M}\sum_{t \in \text{block}} \text{clr}(\mathbf{x}(t))\right)\right) = \frac{1}{M}\sum_{t \in \text{block}} y_k(t)$$
 
 The block-level balance IS the arithmetic mean of the within-block balances. The mean of block means approaches the grand mean as block boundaries become symmetric.
 
@@ -161,7 +161,7 @@ The block-level balance IS the arithmetic mean of the within-block balances. The
 
 The ILR balance variance ratio under decimation is:
 
-$$\frac{\text{Var}(\tilde{y}_k)}{\text{Var}(y_k)} \approx 0.92\text{--}0.96 \quad \text{at } M = 2$$
+$$\frac{\text{Var}(\tilde{y}_k)}{\text{Var}(y_k)} \approx 0.92\text{-}0.96 \quad \text{at } M = 2$$
 
 This ratio is approximately constant across all balances and all SBP trees (spread < 0.006 across 8 trees). The variance reduction is **SBP-invariant**, consistent with it being a property of the Aitchison inner product structure.
 
@@ -195,7 +195,7 @@ for all tested pairs, at $M = 2$. The mean pairwise log-ratio is preserved.
 
 ### Observation 4.3 (Variance Reduction)
 
-$$\frac{\text{Var}(\lambda_{ij} \text{ after } \mathcal{D}_M)}{\text{Var}(\lambda_{ij} \text{ original})} \approx 0.82\text{--}0.99$$
+$$\frac{\text{Var}(\lambda_{ij} \text{ after } \mathcal{D}_M)}{\text{Var}(\lambda_{ij} \text{ original})} \approx 0.82\text{-}0.99$$
 
 Variance of pairwise log-ratios shrinks under decimation. The "exchange rates" between parts become smoother while their means hold.
 
@@ -281,7 +281,7 @@ $$V(t) = \max_{k=1,\ldots,D-1} v_k(t)$$
 
 Given thresholds $0 < \theta_L < \theta_H$ and maximum block width $M_{\max}$, define:
 
-$$M(t) = \begin{cases} M_{\max} & \text{if } V(t) \leq \theta_L \\ 2 & \text{if } V(t) \geq \theta_H \\ \text{round}\!\left(M_{\max} - \frac{V(t) - \theta_L}{\theta_H - \theta_L}(M_{\max} - 2)\right) & \text{otherwise} \end{cases}$$
+$$M(t) = \begin{cases} M_{\max} & \text{if } V(t) \leq \theta_L \\ 2 & \text{if } V(t) \geq \theta_H \\ \text{round}\left(M_{\max} - \frac{V(t) - \theta_L}{\theta_H - \theta_L}(M_{\max} - 2)\right) & \text{otherwise} \end{cases}$$
 
 The adaptive decimation operator $\mathcal{D}_{\text{adapt}}$ applies variable-width blocks: starting at $t$, consume $M(t)$ consecutive compositions, compute their geometric mean, advance to $t + M(t)$, repeat.
 
@@ -366,7 +366,7 @@ Empirically discriminating them requires either: (a) high compression ratios on 
 
 Consecutive Aitchison distances **grow** under decimation:
 
-$$\frac{\bar{d}_A(\bar{\mathbf{x}}_G^{(b)}, \bar{\mathbf{x}}_G^{(b+1)})}{\bar{d}_A(\mathbf{x}(t), \mathbf{x}(t+1))} \approx M^{0.5\text{--}1.0}$$
+$$\frac{\bar{d}_A(\bar{\mathbf{x}}_G^{(b)}, \bar{\mathbf{x}}_G^{(b+1)})}{\bar{d}_A(\mathbf{x}(t), \mathbf{x}(t+1))} \approx M^{0.5\text{-}1.0}$$
 
 Decimation is NOT a contraction mapping on $(\mathcal{S}^D, d_A)$.
 
@@ -380,7 +380,7 @@ This is physically natural: decimated compositions span longer time intervals an
 
 | Property | Status | Evidence |
 |----------|--------|----------|
-| $\|\delta_M\| < 2\%$ at $M = 2\text{:}1$ for stationary series | **Empirical** | 4 domains, bootstrap CIs |
+| $\lvert\delta_M\rvert < 2\%$ at $M = 2{:}1$ for stationary series | **Empirical** | 4 domains, bootstrap CIs |
 | ILR balance means preserved under $\mathcal{D}_M$ | **Mathematical** (from linearity of CLR averaging) + **Empirical** (8 SBP trees, 213 measurements, 94.8% pass) |
 | Balance preservation is SBP-invariant | **Mathematical** (from isometry of ILR) + **Empirical** (variance ratio spread < 0.006 across trees) |
 | Pairwise log-ratio means preserved | **Mathematical** (from CLR linearity) + **Empirical** |
