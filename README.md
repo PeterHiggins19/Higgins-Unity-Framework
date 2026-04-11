@@ -42,6 +42,7 @@ This produced three new frameworks:
 ```
 HUF/
 ├── science/                    # The unified front
+│   ├── reference/              # Core reference collection (start here, 9 docs, ~105 min)
 │   ├── chemistry/              # EITT chemistry results, HUF-IDX, PRISM
 │   ├── core/                   # EITT mathematics, complete explanation, formulas
 │   └── methodology/            # Compositional governance scale, confidence index
@@ -70,10 +71,9 @@ HUF/
 
 | Time | What | Where |
 |------|------|-------|
-| 15 min | **User Handbook** — fast summary + guided links into the full document set | [`science/core/HUF_USER_HANDBOOK.md`](science/core/HUF_USER_HANDBOOK.md) |
-| 5 min | What HUF is, in plain language | [`science/core/WHAT_HUF_IS.md`](science/core/WHAT_HUF_IS.md) |
-| 10 min | The EITT finding and the numbers | [`science/core/EITT_Finding.md`](science/core/EITT_Finding.md) |
-| 15 min | Full explanation with CoDa mathematics | [`science/core/EITT_CODA_MATHEMATICS.md`](science/core/EITT_CODA_MATHEMATICS.md) |
+| 5 min | The cylinder problem and fuel gauge — one-page HUF | [`science/reference/`](science/reference/01_EXECUTIVE_SUMMARY.md) |
+| 105 min | **Reference Collection** — 9 documents, full learning path | [`science/reference/INDEX.md`](science/reference/INDEX.md) |
+| 15 min | **User Handbook** — fast summary + guided links | [`science/core/HUF_USER_HANDBOOK.md`](science/core/HUF_USER_HANDBOOK.md) |
 | 20 min | Chemistry results (the new frontier) | [`science/chemistry/`](science/chemistry/) |
 | 30 min | The kill test — 19 documented failure modes | [`huf-gov/governance/`](huf-gov/governance/) |
 
