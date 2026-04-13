@@ -1,0 +1,169 @@
+================================================================================
+EITT ADVERSARIAL ATTACK HONESTY TESTS
+Testing 5 attacks on EITT entropy invariance
+Date: 2026-04-09
+================================================================================
+
+
+================================================================================
+ATK-04: BOOTSTRAP CONFIDENCE INTERVALS (1000 replicates, 10000 permutations)
+================================================================================
+
+COMMODITIES (Gold/Silver K=2): 339 annual observations
+Period: 1688 → 2026
+
+  Base EITT Δ% (2:1):     +0.126496%
+  95% Bootstrap CI:       [-0.182229%, 0.162754%]
+  CI width:               0.344983%
+  Permutation p-value:    1.000000
+  VERDICT: PASSES (within 1%, p > 0.05)
+
+FINANCIAL (120-Stock Price-Level K=9, NOT market-cap): 74 monthly observations
+Period: 2020-01 → 2026-02
+
+  Base EITT Δ% (2:1):     +0.004257%
+  95% Bootstrap CI:       [0.003526%, 0.005838%]
+  Permutation p-value:    1.000000
+  VERDICT: PASSES
+
+ENERGY (Generation by Source K=7): 25 annual observations
+Period: 2000 → 2024
+
+  Base EITT Δ% (2:1):     -0.589071%
+  95% Bootstrap CI:       [-0.894645%, 0.221096%]
+  Permutation p-value:    0.970003
+  VERDICT: PASSES
+
+
+================================================================================
+ATK-02/ATK-07: SENSITIVITY SWEEP (K=4 Hyperparameters)
+Testing combinations of vol_scale, mom_slope, vol_window, mom_window
+================================================================================
+
+Total parameter combinations tested: 180
+Combinations passing (<1%): 180 (100.0%)
+
+Sample results (sorted by |EITT Δ%|):
+vol_w  mom_w  vol_s  mom_s  EITT%      Pass  
+────────────────────────────────────────
+5      10     0.10   0.5      -0.0004% YES   
+5      20     0.10   0.5      -0.0007% YES   
+5      10     0.10   1.0      -0.0009% YES   
+5      10     0.10   2.0      -0.0009% YES   
+5      10     0.10   5.0      -0.0009% YES   
+5      20     0.10   1.0      -0.0011% YES   
+5      20     0.10   2.0      -0.0011% YES   
+5      20     0.10   5.0      -0.0011% YES   
+20     10     0.50   0.5      -0.0031% YES   
+20     20     0.50   0.5      -0.0034% YES   
+
+... (middle results omitted) ...
+
+5      20     2.00   2.0      -0.0776% YES   
+5      20     2.00   5.0      -0.0776% YES   
+5      10     5.00   0.5      -0.0811% YES   
+5      20     5.00   0.5      -0.0813% YES   
+5      10     5.00   1.0      -0.0824% YES   
+5      10     5.00   2.0      -0.0825% YES   
+5      10     5.00   5.0      -0.0825% YES   
+5      20     5.00   1.0      -0.0825% YES   
+5      20     5.00   2.0      -0.0826% YES   
+5      20     5.00   5.0      -0.0826% YES   
+
+VERDICT: SUSPICIOUS - majority of parameter combinations pass
+
+
+================================================================================
+ATK-09: ARITHMETIC MEAN COMPARISON (Control Test)
+Testing if arithmetic mean ALSO preserves entropy (geometric mean not special)
+================================================================================
+
+COMMODITIES (Gold/Silver K=2):
+
+Geometric Mean (EITT):
+  Base entropy:          0.180661
+  2:1 decimation H:      0.180889
+  Δ entropy:             +0.000229
+  % change:              +0.126496%
+
+Arithmetic Mean (Control):
+  Base entropy:          0.180661
+  2:1 decimation H:      0.180979
+  Δ entropy:             +0.000318
+  % change:              +0.176100%
+
+Comparison:
+  Geometric mean passes: YES
+  Arithmetic mean passes: YES
+
+VERDICT: SUSPICIOUS - BOTH pass, averaging aggregation may be universal
+
+
+ENERGY (Generation K=7):
+
+Geometric Mean:
+  % change (2:1):        -0.589071%
+Arithmetic Mean:
+  % change (2:1):        -0.565203%
+
+
+================================================================================
+ATK-01: OUT-OF-SAMPLE K=4 TEST (Train/Test Split)
+Training: first 200 years of gold/silver data
+Testing: remaining 138 years
+================================================================================
+
+Gold/Silver Data (K=4 with training-derived vol/mom):
+
+  Test set size:         139 years
+  Base entropy:          0.758187
+  2:1 decimation H:      0.758211
+  Δ entropy:             +0.000024
+  % change:              +0.003193%
+
+VERDICT: PASSES - EITT holds on out-of-sample test
+
+
+================================================================================
+ATK-05: DETRENDED WHITE NOISE CONTROL
+If detrended white noise also passes EITT, detrending is doing all work
+================================================================================
+
+Detrended White Noise (K=2, N=338):
+
+  Base entropy:          0.683358
+  2:1 decimation H:      0.688193
+  Δ entropy:             +0.004835
+  % change:              +0.707517%
+
+VERDICT: FAILS - white noise detrending also preserves entropy!
+         This suggests detrending (not geometry) causes invariance
+
+Comparison to commodities:
+  Commodities EITT Δ%:  -0.589071%
+  White noise EITT Δ%:  +0.707517%
+  Difference:            1.296587%
+
+
+================================================================================
+HONESTY TEST SUMMARY
+================================================================================
+
+ATK-04 (Bootstrap CI):    Tests statistical significance via permutation test
+                          PASS if p-value > 0.05 and |Δ%| < 1%
+
+ATK-02/07 (Sensitivity):  Tests robustness to K=4 hyperparameter choices
+                          PASS if few parameter combinations pass (<5%)
+
+ATK-09 (Arithmetic):      Control test - arithmetic mean should NOT preserve entropy
+                          PASS if arithmetic mean breaks but geometric preserves
+
+ATK-01 (Out-of-sample):   Tests generalization to unseen data
+                          PASS if EITT holds on test set (|Δ%| < 1%)
+
+ATK-05 (White noise):     Tests if result is specific to real data
+                          PASS if white noise breaks EITT
+
+================================================================================
+Analysis complete. Results saved.
+================================================================================
