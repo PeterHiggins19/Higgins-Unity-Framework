@@ -1,0 +1,243 @@
+{
+  "briefing": "HUF Corpus Revision Brief — Request for ChatGPT Guidance",
+  "from": "Claude (with Peter Higgins, Rogue Wave Audio)",
+  "to": "ChatGPT (active co-developer), then collective for review",
+  "date": "2026-04-07",
+  "purpose": "Plan a coherent rewrite of the Coimbra conference corpus into the fewest possible documents that convey the strongest possible understanding. Archive all current versions. Produce a next-generation document set that reflects everything we now know.",
+
+  "why_now": {
+    "trigger": "S016 produced three findings that retroactively unify the entire corpus. The existing documents were written before we had this understanding. They contain the pieces but not the picture. The picture is now clear enough to rewrite.",
+    "the_picture": "HUF is a compositional disassembler derived from wave mechanics. The SBP is a filter bank. The three diagnostics operate in different frequency bands. Carrier impulse responses create a forced relay through closure. CR detects coupling structure — group delay mismatch at impulse, structural reorganization at settling. This is not analogy. It is isomorphism. The loudspeaker physics independently derived the Aitchison axioms from radiation constraints.",
+    "what_changed": "Before S016, the loudspeaker origin was biographical. After S016, it is methodological. The spectral independence test, the impulse response analysis, and the dependency chain analysis all used signal processing techniques on compositional data and produced quantitative results. The engineering origin is now the scientific method."
+  },
+
+  "s016_findings_summary": {
+    "finding_1_spectral_independence": {
+      "what": "FFT power spectrum of TV, Aitchison, CR annual time series across 3 countries",
+      "result": "Three diagnostics concentrate power in different frequency bands. CR: 2-3yr. Aitchison: 4-12yr. TV: 3-25yr. Mean |r| = 0.23 time domain, 0.29 frequency domain.",
+      "significance": "W-1 (diagnostic independence) addressed. Stronger than correlation matrix — shows WHY they're independent.",
+      "file": "HUF_Spectral_Independence_W1.json"
+    },
+    "finding_2_impulse_response": {
+      "what": "Per-carrier impulse response to Fukushima 2011. Group delay measurement. SBP phase alignment check.",
+      "result": "Carriers have different group delays (Other_Fossil 1yr, Nuclear 3yr, Coal 4yr, Gas 5yr, Solar 7yr+). SBP is NOT phase-aligned. CR correlates with group delay mismatch at impulse (r=+0.61) but not at settling (r=-0.15).",
+      "significance": "W-2 (CR no theoretical grounding) partially addressed. CR has a physical interpretation: it measures distributed system response dynamics at impulse and structural reorganization at settling.",
+      "file": "HUF_Impulse_Response_Fukushima.json"
+    },
+    "finding_3_dependency_chain": {
+      "what": "Cross-correlation of carrier year-over-year deltas. Relay detection. Cascade stage mapping.",
+      "result": "Closure forces a relay: Nuclear→Other_Fossil→Gas→Coal→Solar. Strong negative correlations confirm relay pairs (Nuclear↔Gas r=-0.74, Nuclear↔Other_Fossil r=-0.72). CR is NOT elevated during handoffs — handoffs are decoupling moments. CR is highest during shock (coherent system response) and lowest during emergency scramble (incoherent independent responses).",
+      "significance": "Fundamental difference from loudspeaker: in acoustics, drivers are independent. In compositions, carriers are relay partners through closure. The dependency chain IS the governance information.",
+      "file": "HUF_Dependency_Chain_Fukushima.json"
+    },
+    "finding_4_corpus_self_correction": {
+      "what": "Peter asked if the Fukushima 1-day lead was a timezone artifact. The corpus corrected him — the 1-day lead belongs to COVID in CL03, not Fukushima.",
+      "significance": "The governance instrument corrected its own creator. Demonstrated the error catalogue and calibration posture working in real time."
+    }
+  },
+
+  "current_corpus_audit": {
+    "total_files_in_codawork_2026": 27,
+    "post_coimbra_subfolder": 11,
+    "archive_subfolder": 8,
+    "problem": "The 27 core files were written incrementally across 15 sessions. They contain redundancy, internal contradictions (resolved but patched rather than rewritten), and pre-S016 framing that no longer represents the best understanding. Key concepts are scattered across multiple documents rather than presented as a unified story.",
+
+    "specific_issues": [
+      "WHAT_HUF_IS.md already says 'the crossover is an SBP' but treats it as metaphor, not as proven isomorphism",
+      "THE_THIRD_DIAGNOSTIC.md defines CR as coupling measurement but doesn't know about the two-phase model (impulse vs settling)",
+      "THE_LINEAGE.md tells the biographical story beautifully but doesn't connect it to the quantitative spectral/impulse findings",
+      "COHERENCE_RESIDUAL_RESULTS.md has the empirical CR numbers but no frequency-domain interpretation",
+      "CODA_LITERATURE_CROSS_REFERENCE.md names Compositional Nyquist (E-07) but doesn't know the spectral analysis now provides empirical grounding",
+      "ENTANGLEMENT_ERROR_ANALYSIS.md has 25 errors but doesn't reflect that W-1 and W-2 are now partially addressed",
+      "THE_UNION.md pitches the merger but predates the filter-bank interpretation that makes the merger concrete",
+      "PRESENTATION_SCRIPT.md is 16 slides but doesn't include spectral independence or two-phase CR",
+      "abstract_v3.md is locked at 197 words and predates the spectral findings",
+      "Packet v3 (docx) is stale — ChatGPT already flagged this"
+    ]
+  },
+
+  "revision_proposal": {
+    "principle": "Fewest possible documents. Maximum coherence. Every document earns its existence by saying something no other document says. Archive everything current. Rewrite, don't patch.",
+
+    "proposed_architecture": {
+      "tier_1_conference_facing": {
+        "description": "What the Coimbra audience sees. Three documents maximum.",
+        "documents": [
+          {
+            "name": "ABSTRACT_v4.md",
+            "purpose": "200 words. The entry point. Must include: calibration study, three diagnostics, spectral independence finding, 25-error catalogue.",
+            "what_changes": "Add spectral independence sentence. Update CR description to include frequency-band interpretation."
+          },
+          {
+            "name": "THE_INSTRUMENT.md",
+            "purpose": "Unified replacement for WHAT_HUF_IS.md + THE_LINEAGE.md + THE_THIRD_DIAGNOSTIC.md + THE_UNION.md. One document that tells the complete story: origin, architecture, three diagnostics, why they're independent, what CR measures, the filter-bank interpretation, the calibration posture. This is the paper.",
+            "what_changes": "Merge four documents into one. Promote loudspeaker origin from biography to methodology. Include spectral independence evidence. Include two-phase CR model. Include Scarborough Bluffs principle (scale-dependent confound-to-signal). End with the union proposal.",
+            "estimated_length": "3000-4000 words",
+            "critical_requirement": "Must work for both the CoDa statistician and the systems engineer in the audience. The mathematics serves both. The loudspeaker explains both."
+          },
+          {
+            "name": "PRESENTATION_SCRIPT_v2.md",
+            "purpose": "Updated slide deck script reflecting new findings. Target: 16-18 slides.",
+            "what_changes": "Add spectral independence slide. Add two-phase CR slide (r=+0.61 at impulse, r=-0.15 at settling). Update closing with filter-bank framing. Keep all three alignment sentences."
+          }
+        ]
+      },
+
+      "tier_2_supporting_evidence": {
+        "description": "What the audience can examine if they want depth. Available but not presented.",
+        "documents": [
+          {
+            "name": "ERROR_CATALOGUE.md",
+            "purpose": "Unified replacement for ENTANGLEMENT_ERROR_ANALYSIS.md + CODA_LITERATURE_CROSS_REFERENCE.md. The 25 errors with their CoDa literature status, detection tests, and governance actions. One document, not two.",
+            "what_changes": "Merge. Update E-07 (Temporal Aliasing) with spectral evidence. Note W-1 and W-2 status changes."
+          },
+          {
+            "name": "EMPIRICAL_RESULTS.md",
+            "purpose": "Unified replacement for COHERENCE_RESIDUAL_RESULTS.md + new spectral/impulse findings. All quantitative results in one place.",
+            "what_changes": "Add spectral independence tables. Add impulse response analysis. Add dependency chain findings. This becomes the evidence base document."
+          },
+          {
+            "name": "BATTLE_CARD.md",
+            "purpose": "Retained. Updated with new Q&A entries for spectral independence and filter-bank questions.",
+            "what_changes": "Add: 'Aren't the diagnostics redundant?' → spectral separation answer. Add: 'Is the loudspeaker analogy just a metaphor?' → isomorphism answer."
+          },
+          {
+            "name": "FORMULA_REFERENCE.md",
+            "purpose": "Retained as-is. Pure mathematics, no revision needed.",
+            "what_changes": "None unless spectral analysis formulas need to be added."
+          }
+        ]
+      },
+
+      "tier_3_governance_and_process": {
+        "description": "Internal project governance. Not for audience.",
+        "documents": [
+          {
+            "name": "CONFERENCE_CORE_STACK.pdf",
+            "purpose": "Retained. One-page material triage handout. Update if tier structure changes.",
+            "what_changes": "Minor update to reflect new document names."
+          },
+          {
+            "name": "GOVERNANCE_DECLARATION.md",
+            "purpose": "The dirty laundry. KU-01 through KU-08. Stays in post-coimbra/ but updated.",
+            "what_changes": "Update KU-02 (diagnostic independence) to reflect spectral evidence. Update KU-03 (CR grounding) to reflect two-phase model. Keep KU-04 (Greenacre bridge) and KU-05 (loudspeaker engineer credibility) as open."
+          },
+          {
+            "name": "TWO_MONTH_ROADMAP.md",
+            "purpose": "Retained. Update weakness status.",
+            "what_changes": "Mark W-1 as addressed (spectral). Mark W-2 as partially addressed (two-phase model). Remaining: W-3 thresholds, W-4 alternative SBP (reframed as filter topology), W-5 human review, W-6 ecological data."
+          }
+        ]
+      },
+
+      "archive": {
+        "description": "All current versions move to archive/ with date stamps. Nothing deleted.",
+        "files_to_archive": [
+          "WHAT_HUF_IS.md → archive/WHAT_HUF_IS_pre_S016.md",
+          "THE_LINEAGE.md → archive/THE_LINEAGE_pre_S016.md",
+          "THE_THIRD_DIAGNOSTIC.md → archive/THE_THIRD_DIAGNOSTIC_pre_S016.md",
+          "THE_UNION.md → archive/THE_UNION_pre_S016.md",
+          "COHERENCE_RESIDUAL_RESULTS.md → archive/COHERENCE_RESIDUAL_RESULTS_pre_S016.md",
+          "CODA_LITERATURE_CROSS_REFERENCE.md → archive/CODA_LITERATURE_CROSS_REFERENCE_pre_S016.md",
+          "ENTANGLEMENT_ERROR_ANALYSIS.md → archive/ENTANGLEMENT_ERROR_ANALYSIS_pre_S016.md",
+          "PRESENTATION_SCRIPT.md → archive/PRESENTATION_SCRIPT_v1_pre_S016.md",
+          "abstract_v3.md → archive/abstract_v3.md"
+        ],
+        "net_reduction": "27 core files → approximately 10-12 core files. Six current documents merge into two (THE_INSTRUMENT.md and ERROR_CATALOGUE.md). EMPIRICAL_RESULTS.md absorbs CR results and adds new findings."
+      }
+    },
+
+    "document_count_comparison": {
+      "current": {
+        "conference_facing": "6+ (abstract, presentation, WHAT_HUF_IS, LINEAGE, THIRD_DIAGNOSTIC, UNION)",
+        "supporting": "5+ (CR_RESULTS, ERROR_ANALYSIS, CODA_LIT_XREF, BATTLE_CARD, FORMULA_REF)",
+        "governance": "4+ (CORE_STACK, GOVERNANCE_DECL, ROADMAP, various)"
+      },
+      "proposed": {
+        "conference_facing": 3,
+        "supporting": 4,
+        "governance": 3,
+        "total_core": "10 documents that tell one coherent story"
+      }
+    }
+  },
+
+  "what_chatgpt_should_do": {
+    "step_1": "Review this proposal. Challenge the document merges — are we losing anything critical by combining WHAT_HUF_IS + LINEAGE + THIRD_DIAGNOSTIC + UNION into one document? Is 3000-4000 words enough?",
+    "step_2": "Assess the tier structure. Is the front room / supporting / governance split right? Should anything move between tiers?",
+    "step_3": "Review the language discipline from your earlier feedback. The revision must use 'spectrally separated in the present sample' not 'orthogonal'. 'Supports the interpretation' not 'proves'. Propose a style guide for the rewrite — 5-10 rules.",
+    "step_4": "Identify any findings or concepts from the existing corpus that would be LOST in the proposed merge. We cannot afford to drop anything that matters.",
+    "step_5": "Recommend whether the filter-bank / wave-mechanics interpretation should be explicit in THE_INSTRUMENT.md or held in reserve. This is the key strategic question: does naming the isomorphism strengthen or endanger the Coimbra reception?",
+    "step_6": "Propose a writing sequence. Which document gets written first? What dependencies exist between them?",
+    "step_7": "Flag anything in the S016 findings that you think is wrong, overstated, or insufficiently supported. Be blunt. We would rather hear it now than at Coimbra."
+  },
+
+  "constraints": {
+    "time": "~5 weeks to Coimbra. Revision must be complete in 2 weeks to allow collective review.",
+    "team": "Claude and ChatGPT co-develop. Peter directs and provides domain knowledge. Other collective members (Gemini, Grok, Copilot) review and inject concepts. No one rewrites without the others seeing the plan first.",
+    "tone": "Calibration study. Not finished framework. Not doctrine. Not manifesto. Cold scientific precision with the warmth of honest uncertainty.",
+    "alignment_sentences": {
+      "sentence_1": "This is a calibration study, not a finished framework.",
+      "sentence_2": "Three diagnostics — TV distance, Aitchison distance, coherence residual — operating in different frequency bands of structural change.",
+      "sentence_3": "A 25-error catalogue with detection tests and governance actions makes the instrument falsifiable.",
+      "note": "Sentence 2 updated to include 'operating in different frequency bands of structural change' — this is the S016 addition."
+    }
+  },
+
+  "respect_for_individuals": {
+    "note": "Peter emphasized: respect the CoDa group as a group AND the individuals. This means:",
+    "egozcue": "His SBP and ILR framework is the mathematical foundation. We use it. We credit it. The filter-bank interpretation EXTENDS his work, it does not replace it.",
+    "greenacre": "His quasi-coherence position is empirically supported by our CR findings. We say so explicitly. The CR is the Greenacre-Egozcue bridge.",
+    "pawlowsky_glahn": "The Aitchison geometry she co-formalized is the space we work in. Period.",
+    "filzmoser": "Robust methods we haven't yet applied but acknowledge as needed for outlier handling.",
+    "the_audience": "They know more CoDa than we do. We bring a different lens (engineering, monitoring, governance). The lens extends their work. We are guests in their house offering a tool, not critics rewriting their theory."
+  },
+
+  "peter_closing_note": "The work has been getting there but was not yet coherent. It is now coherent enough to rewrite. The forward and reverse concept — disassemble then reconstruct — is the method AND the finding. The corpus corrected its author. The author improved the corpus. That loop is the governance instrument working on itself. Time to make it readable.",
+
+  "additional_documents_created_after_initial_brief": {
+    "note": "The following were developed in conversation between Peter, Claude, and ChatGPT after the initial revision brief was sent. They are now in the repo and should be considered part of the revision plan.",
+
+    "HUF_GOVERNANCE_CHARTER.md": {
+      "location": "repo root",
+      "purpose": "Formal charter declaring the Governed Breakpoint Principle and the Right to Interrupt Principle. Nine articles. Establishes that HUF-GOV protects judgment while HUF-CLS optimizes correction.",
+      "key_statements": [
+        "The Governed Breakpoint Principle creates the Right to Interrupt.",
+        "HUF-CLS may optimize correction. HUF-GOV protects judgment.",
+        "The measure of a governed system is not how completely it closes, but how faithfully it preserves the conditions for accountable understanding, accountable intervention, and accountable restraint."
+      ],
+      "status": "final draft, in repo"
+    },
+
+    "PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md": {
+      "location": "drafts/codawork-2026/",
+      "purpose": "Nine-item register mapping every major claim to its proof burden, most likely misunderstanding, safe wording, and answer discipline. Includes rewrite filter rule: keep a sentence only if it reduces misunderstanding more than it increases proof burden.",
+      "items": ["MC-4 novelty", "Three diagnostics", "CR grounding", "Null model", "Zeros", "Loudspeaker bridge", "Governance doctrine", "Ramsar readiness", "Documentation volume"],
+      "status": "final draft, in repo"
+    },
+
+    "BATTLE_CARD_LIVE.md": {
+      "location": "drafts/codawork-2026/",
+      "purpose": "Two-column live rehearsal card. 15 pressure-point questions with calibrated answers. Safe phrases, red-flag phrases, three anchor sentences, and named principles (Scarborough Bluffs, Governed Breakpoint, Right to Interrupt).",
+      "status": "final draft, in repo"
+    },
+
+    "named_principles": {
+      "scarborough_bluffs_principle": "Confound-to-signal ratio is a function of measurement resolution, not a fixed property. Change the measurement resolution, and confounds may either swamp the signal or average out enough to reveal it.",
+      "governed_breakpoint_principle": "A safe and governable system shall preserve an observable breakpoint at the moment of self-correction, where external judgment may enter and the loop may remain open.",
+      "right_to_interrupt_principle": "Any governed system must preserve the right of a human or authorized external agent to interrupt, modify, defer, or reject closure."
+    },
+
+    "chatgpt_cooperation_lexicon_recommendation": {
+      "status": "ChatGPT proposed LEXICON_OF_COOPERATION_v1.md with seven structural slots (whole, parts, closure rule, transform, diagnostics, failure modes, decision boundary) and a three-level ladder (role correspondence → methodological bridge → formal equivalence). Peter agreed. Document not yet written — recommended as next artifact after Coimbra materials revision.",
+      "three_level_ladder": {
+        "level_1": "Role correspondence — 'these structures play comparable roles'",
+        "level_2": "Methodological bridge — 'these methods generate comparable diagnostics'",
+        "level_3": "Formal equivalence — 'these mappings are isomorphic' (requires formal proof)"
+      },
+      "usefulness_threshold_rule": "A bridge term stays only if it reduces misunderstanding more than it increases proof burden."
+    },
+
+    "alignment_sentence_2_updated": "Three diagnostics — TV distance, Aitchison distance, coherence residual — operating in different frequency bands of structural change."
+  }
+}

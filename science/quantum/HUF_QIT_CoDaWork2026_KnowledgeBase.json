@@ -1,0 +1,476 @@
+{
+  "metadata": {
+    "title": "HUF-QIT-CoDa Knowledge Base",
+    "author": "Peter Higgins — Rogue Wave Audio",
+    "email": "PeterHiggins@roguewaveaudio.com",
+    "created": "2026-04-13",
+    "purpose": "Complete knowledge transfer for AI assistant continuity. Covers CoDaWork 2026 presentation focus, full HUF framework, quantum correspondence, and all empirical results.",
+    "usage": "Load this JSON as context when working on any HUF, CoDa, quantum-CoDa, or energy-mix research."
+  },
+
+  "codawork_2026": {
+    "conference": {
+      "name": "11th International Workshop on Compositional Data Analysis (CoDaWork 2026)",
+      "dates": "1-5 June 2026",
+      "location": "Coimbra, Portugal",
+      "organiser": "Instituto Politécnico de Castelo Branco",
+      "scientific_committee_chair": "Juan José Egozcue (Technical University of Catalonia)",
+      "isbn": "978-84-947240-6-0"
+    },
+
+    "accepted_abstract": {
+      "title": "Compositional monitoring of energy-mix drift on the simplex",
+      "page_in_proceedings": 25,
+      "central_claim": "No existing monitoring framework performs compositional change detection at the carrier level with formal perturbation-based drift measurement.",
+      "claim_is_falsifiable": true,
+      "four_defeat_conditions": [
+        "A published system using the Aitchison metric on energy-mix compositions to detect drift",
+        "A published system measuring change as perturbation (compositional ratio) rather than arithmetic difference",
+        "A published system at individual carrier level within the simplex (not aggregated to fossil/clean)",
+        "A theoretical proof that CoDa adds no information beyond percentage-based monitoring"
+      ],
+      "keywords": ["compositional time series", "perturbation", "drift detection", "energy mix", "Aitchison distance", "effective diversity"]
+    },
+
+    "protocol": {
+      "name": "Perturbation-based compositional drift monitoring",
+      "tools_used": {
+        "perturbation_difference": {
+          "formula": "Δ(t) = C( x₁(t+1)/x₁(t), …, xD(t+1)/xD(t) )",
+          "description": "Compositional ratio between consecutive periods, closed to the simplex. The Aitchison-group analogue of subtraction."
+        },
+        "aitchison_distance": {
+          "formula": "d_A(x, y) = ‖clr(x) − clr(y)‖",
+          "description": "Natural metric on the simplex. Invariant under perturbation, permutation, and subcomposition. Equals the Aitchison norm of the perturbation difference.",
+          "clr_definition": "clr(x) = ( ln(xᵢ) − (1/D)Σln(xⱼ) ) for i=1..D"
+        },
+        "effective_diversity": {
+          "formula": "N_eff = exp(H(x)) where H(x) = −Σxᵢln(xᵢ)",
+          "description": "Effective number of carriers. Equals D when all carriers contribute equally, approaches 1 when one dominates."
+        },
+        "drift_flag": {
+          "rule": "Flag when d_A(t→t+1) > μ + 2σ",
+          "description": "Self-calibrated from each country's own distribution of year-on-year distances. No external threshold needed."
+        }
+      },
+      "zero_replacement": {
+        "method": "Multiplicative",
+        "delta": 1e-6,
+        "reference": "Martín-Fernández, Barceló-Vidal & Pawlowsky-Glahn (2003)"
+      }
+    },
+
+    "data": {
+      "source": "EMBER Global Electricity Review",
+      "licence": "CC BY 4.0",
+      "countries": ["Germany", "Japan", "United Kingdom"],
+      "carriers": ["Coal", "Gas", "Nuclear", "Hydro", "Solar", "Wind", "Bioenergy", "Other Fossil", "Other Renewables"],
+      "D": 9,
+      "simplex_dimension": 8,
+      "year_range": {
+        "Germany": "2000-2025 (26 years)",
+        "Japan": "2000-2024 (25 years)",
+        "United_Kingdom": "2000-2025 (26 years)"
+      }
+    },
+
+    "results": {
+      "Germany": {
+        "mean_dA": 1.3871,
+        "std_dA": 2.0882,
+        "threshold_2sigma": 5.5634,
+        "max_dA": 9.0712,
+        "total_cumulative_drift": 34.6768,
+        "shift_from_2000": 17.8466,
+        "N_eff_trend": "3.49 → 5.85",
+        "drift_flags": [
+          {"period": "2023→2024", "d_A": 9.0712, "sigma_excess": 3.68, "interpretation": "Final nuclear shutdown (April 2023), full-year effect. Nuclear 1.4% → 0.0%"},
+          {"period": "2024→2025", "d_A": 5.7331, "sigma_excess": 2.08, "interpretation": "Post-nuclear rebalancing continues"}
+        ],
+        "key_compositions": {
+          "2000": {"Coal": 0.521, "Gas": 0.086, "Nuclear": 0.298, "Solar": 0.000, "Wind": 0.016},
+          "2025": {"Coal": 0.206, "Gas": 0.165, "Nuclear": 0.000, "Solar": 0.179, "Wind": 0.272}
+        }
+      },
+      "Japan": {
+        "mean_dA": 1.2823,
+        "std_dA": 2.2043,
+        "threshold_2sigma": 5.6909,
+        "max_dA": 9.0477,
+        "total_cumulative_drift": 30.7761,
+        "shift_from_2000": 7.2484,
+        "N_eff_trend": "4.91 → 5.17",
+        "drift_flags": [
+          {"period": "2013→2014", "d_A": 9.0477, "sigma_excess": 3.52, "interpretation": "Near-total nuclear shutdown post-Fukushima"},
+          {"period": "2014→2015", "d_A": 7.8460, "sigma_excess": 2.98, "interpretation": "Nuclear fleet fully offline"}
+        ],
+        "note": "Fukushima disaster March 2011; compositional shock fully absorbed by 2013-2014 annual data"
+      },
+      "United_Kingdom": {
+        "mean_dA": 1.0118,
+        "std_dA": 0.8945,
+        "threshold_2sigma": 2.8008,
+        "max_dA": 3.2579,
+        "total_cumulative_drift": 25.2962,
+        "shift_from_2000": 12.9529,
+        "N_eff_trend": "3.71 → 5.24",
+        "drift_flags": [
+          {"period": "2004→2005", "d_A": 2.9812, "sigma_excess": 2.20, "interpretation": "Dash-for-gas acceleration"},
+          {"period": "2017→2018", "d_A": 3.2263, "sigma_excess": 2.48, "interpretation": "Coal collapse phase accelerates"},
+          {"period": "2019→2020", "d_A": 3.2579, "sigma_excess": 2.51, "interpretation": "COVID demand shock + coal near-zero"}
+        ],
+        "key_compositions": {
+          "2000": {"Coal": 0.318, "Gas": 0.393, "Nuclear": 0.226, "Wind": 0.002},
+          "2025": {"Coal": 0.001, "Gas": 0.311, "Nuclear": 0.124, "Wind": 0.295}
+        }
+      }
+    },
+
+    "strategic_neighbours_at_codawork": {
+      "Ascari_Fiori_et_al": {
+        "title": "Compositional k-prototypes: CoDa clustering with zeros",
+        "page": 9,
+        "relevance": "Energy mix clustering with essential zeros. Complementary — they solve zeros, we monitor drift.",
+        "affiliation": "University of Milano-Bicocca"
+      },
+      "Vega_Baquero_Santolino": {
+        "title": "Proportionality between allocations in asset management",
+        "page": 57,
+        "relevance": "Portfolio allocation as composition using Aitchison geometry. Independently confirms the Wall Street CoDa-finance insight.",
+        "affiliation": "University of Barcelona"
+      },
+      "Narayana_Chotirmall": {
+        "title": "The cost of ignoring compositionality: CoDa unmasks treatment effects in COPD clinical trials",
+        "page": 29,
+        "relevance": "Closest methodological neighbour. Uses perturbation and Aitchison norm on longitudinal microbiome data. Clinical trial, not monitoring protocol.",
+        "affiliation": "Nanyang Technological University, Singapore"
+      }
+    },
+
+    "open_question": {
+      "question": "What is the formal relationship between effective diversity N_eff = exp(H) and the Aitchison norm ‖x‖_A = ‖clr(x)‖?",
+      "observation": "Both quantify how 'spread' a composition is. They are correlated but not identical. A clean inequality relating them likely involves dimension D.",
+      "status": "Posed to the CoDa community at CoDaWork 2026"
+    }
+  },
+
+  "eitt": {
+    "name": "Entropy-Invariant Time Transformer",
+    "acronym": "EITT",
+    "core_principle": "Valid decimation of compositional time series must preserve Shannon entropy",
+    "decimation_methods": {
+      "geometric_mean_closed": {
+        "formula": "x̄_G = C( ∏ x(t)^(1/k) )",
+        "is_valid_coda_operation": true,
+        "description": "Aitchison barycenter (Fréchet mean under Aitchison metric). Equivalent to averaging in CLR space and back-transforming.",
+        "entropy_preservation": "Within 5% on NGFS Phase 4 data"
+      },
+      "arithmetic_mean": {
+        "formula": "x̄_A = (1/k) Σ x(t)",
+        "is_valid_coda_operation": false,
+        "description": "Standard average. Not a valid CoDa operation — does not respect simplex geometry.",
+        "entropy_preservation": "Destroys 20-40% of entropy structure"
+      }
+    },
+    "empirical_evidence": {
+      "dataset": "35 NGFS Phase 4 scenario trajectories",
+      "carriers": 6,
+      "period": "2020-2100",
+      "results": {
+        "geometric_5yr": {"mean_delta_H": "1.8%", "max_delta_H": "4.7%"},
+        "geometric_10yr": {"mean_delta_H": "2.3%", "max_delta_H": "4.9%"},
+        "arithmetic_5yr": {"mean_delta_H": "14.2%", "max_delta_H": "28.6%"},
+        "arithmetic_10yr": {"mean_delta_H": "21.7%", "max_delta_H": "41.3%"}
+      }
+    },
+    "why_it_works": [
+      "clr(x̄_G) = (1/k)Σclr(x(t)) — CLR coordinates average linearly under geometric mean",
+      "Shannon entropy is concave on the simplex; Jensen's inequality applies differently to geometric vs arithmetic means",
+      "Near-preservation holds because compositions within a window are locally similar (small perturbation steps)"
+    ],
+    "quantum_analogue": "Unitarity — time evolution in quantum mechanics preserves |ψ|² = 1 and von Neumann entropy. EITT is the compositional analogue.",
+    "status": "Empirical finding. Not yet formally proved. Seeded at CoDaWork 2026 Slide 15."
+  },
+
+  "huf_framework": {
+    "name": "Higgins Unity Framework",
+    "acronym": "HUF",
+    "origin": "DADC/DADI governance research",
+    "core_metrics": {
+      "chi_bar": {
+        "symbol": "χ̄",
+        "definition": "Geometric mean of proportional shares within a compositional group",
+        "formula": "χ̄ = (∏ xᵢ)^(1/D)"
+      },
+      "cv_chi": {
+        "symbol": "CV(χ)",
+        "definition": "Coefficient of variation of the compositional parts",
+        "interpretation": "Measures concentration/dispersion within the composition"
+      },
+      "W": {
+        "symbol": "W",
+        "name": "Winding ratio",
+        "definition": "Ratio of path length to displacement in compositional space"
+      },
+      "governance_efficiency": {
+        "definition": "Derived from W — measures how directly a system moves toward its stated goal"
+      },
+      "k1_distance": {
+        "definition": "Distance metric in the HUF framework"
+      }
+    },
+    "carrier_gate": "T6c",
+    "monitoring_category": "MC-4 (fourth monitoring category)",
+    "doctrine": "Open-loop: HUF-GOV (observation) not HUF-CLS (control). Instrument reads, human decides, loop stays open."
+  },
+
+  "coda_foundations": {
+    "name": "Compositional Data Analysis",
+    "key_references": [
+      "Aitchison, J. (1986). The Statistical Analysis of Compositional Data. Chapman & Hall.",
+      "Pawlowsky-Glahn, V., Egozcue, J.J. & Tolosana-Delgado, R. (2015). Modeling and Analysis of Compositional Data. Wiley.",
+      "Egozcue, J.J., Pawlowsky-Glahn, V., Mateu-Figueras, G. & Barceló-Vidal, C. (2003). Isometric logratio transformations. Mathematical Geology, 35(3), 279-300.",
+      "Filzmoser, P., Hron, K. & Templ, M. (2018). Applied Compositional Data Analysis. Springer.",
+      "Martín-Fernández, J.A., Barceló-Vidal, C. & Pawlowsky-Glahn, V. (2003). Dealing with zeros. Mathematical Geology, 35(3), 253-278.",
+      "Jost, L. (2006). Entropy and diversity. Oikos, 113(2), 363-375."
+    ],
+    "simplex": {
+      "definition": "S^D = { x ∈ ℝ^D : xᵢ > 0, Σxᵢ = κ }",
+      "closure": "C(x) = x / Σxᵢ",
+      "perturbation": "x ⊕ y = C(x₁y₁, …, xDyD)",
+      "powering": "α ⊙ x = C(x₁^α, …, xD^α)",
+      "aitchison_inner_product": "⟨x,y⟩_A = (1/D) Σᵢ<ⱼ ln(xᵢ/xⱼ)·ln(yᵢ/yⱼ)"
+    },
+    "log_ratio_transforms": {
+      "ALR": "alr(x) = ( ln(x₁/xD), …, ln(x_{D-1}/xD) ) — additive log-ratio, asymmetric",
+      "CLR": "clr(x) = ( ln(xᵢ) − (1/D)Σln(xⱼ) ) — centred log-ratio, symmetric but singular",
+      "ILR": "ilr(x) = Ψ·clr(x) — isometric log-ratio, orthonormal basis in S^D"
+    },
+    "variation_matrix": "T = [var(ln(xᵢ/xⱼ))]_{i,j} — the fundamental dispersion measure for compositions"
+  },
+
+  "quantum_correspondence": {
+    "name": "HUF-QIT (Quantum Information Theory correspondence)",
+    "core_insight": "The simplex constraint Σxᵢ = 1 is structurally identical to the Hilbert norm Σ|ψᵢ|² = 1. CoDa operations map formally to quantum operations.",
+    
+    "nine_isomorphisms": [
+      {
+        "quantum": "Basis ambiguity",
+        "coda": "Log-ratio choice (ALR, CLR, ILR)",
+        "explanation": "Just as quantum states can be expressed in different bases, compositions can be expressed in different log-ratio coordinate systems."
+      },
+      {
+        "quantum": "Pointer states (decoherence selects preferred basis)",
+        "coda": "Balances (physically meaningful ILR coordinates)",
+        "explanation": "Decoherence selects pointer states; domain knowledge selects meaningful balances."
+      },
+      {
+        "quantum": "Partial trace (tracing out subsystem)",
+        "coda": "Closure of subcomposition",
+        "explanation": "Removing carriers and re-closing is the compositional analogue of tracing out a quantum subsystem."
+      },
+      {
+        "quantum": "Unitarity (probability and entropy preservation)",
+        "coda": "EITT (entropy-invariant decimation)",
+        "explanation": "Valid time evolution preserves total probability and entropy in both frameworks."
+      },
+      {
+        "quantum": "External interference / noise",
+        "coda": "Subcompositional recalculation after adding/removing parts",
+        "explanation": "Adding a new carrier forces all other shares to adjust — like environmental decoherence."
+      },
+      {
+        "quantum": "No-go theorem (no-cloning, no-broadcasting)",
+        "coda": "Subcompositional incoherence",
+        "explanation": "You cannot extract a subcomposition and expect it to behave identically to the full composition — information is lost."
+      },
+      {
+        "quantum": "Multiple observers",
+        "coda": "Multiple Integrated Assessment Models (IAMs)",
+        "explanation": "Different models observing the same system yield different compositions, like different observers in QM."
+      },
+      {
+        "quantum": "Non-contact injection",
+        "coda": "Perturbation ⊕",
+        "explanation": "Perturbation alters a composition without breaking the simplex constraint, like a unitary operation."
+      },
+      {
+        "quantum": "Ground state (lowest energy configuration)",
+        "coda": "Isotropic barycenter (1/D, …, 1/D)",
+        "explanation": "The uniform composition is the maximum-entropy state — the compositional 'ground state'."
+      }
+    ],
+
+    "spooky_action_reinterpretation": {
+      "claim": "Spooky action at a distance is constraint propagation, not a mysterious force.",
+      "mechanism": "In QM: Σ|ψᵢ|² = 1, so measuring one component instantly constrains others. In CoDa: Σxᵢ = 1, so changing one carrier's share forces all others to adjust. Not hidden variables — a global topological property of the normalisation constraint.",
+      "consistent_with": "Bell's theorem. No hidden variables needed. The correlations arise from the constraint itself."
+    },
+
+    "aes256_safety": {
+      "question": "Does the CoDa-quantum correspondence threaten encryption?",
+      "answer": "No. Simplex is polynomial-dimensional (D-1). Quantum computing power comes from exponential dimensionality (2^n qubits). Same correlation mathematics, different computational scale. The correspondence is mathematical, not computational.",
+      "simplex_dimension": "D-1 (polynomial)",
+      "hilbert_dimension": "2^n (exponential)"
+    },
+
+    "bell_test": {
+      "name": "Compositional CHSH-analogue Bell test",
+      "method": "Cross-group log-ratios spanning fossil/clean divide",
+      "formula": "S = |E(a,b) + E(a,b') + E(a',b) − E(a',b')|",
+      "classical_bound": "S ≤ 2",
+      "tsirelson_bound": "S ≤ 2√2 ≈ 2.828",
+      "result": {
+        "dataset": "NGFS Phase 4, 35 scenarios",
+        "best_S": 2.2018,
+        "scenario": "MESSAGEix Net Zero",
+        "violation_percent": "12.31% above classical bound",
+        "all_35_significant": true,
+        "p_value": "< 0.001 (Monte Carlo null, 10000 permutations)"
+      },
+      "key_finding": "Gas acts as crossover frequency / entangling gate — all top Bell violation configurations involve Gas bridging fossil and clean subcompositions.",
+      "closure_boost": "1.00× for individual log-ratios (Aitchison's theorem — ln(xᵢ/xⱼ) cancels closure divisor). Entanglement appears in correlation COMBINATIONS, not individual log-ratios."
+    },
+
+    "five_qtm_tools": {
+      "name": "HUF-QTM (Quantum Toolkit for Monitoring)",
+      "tools": [
+        {
+          "name": "Entanglement Entropy",
+          "method": "CLR → correlation matrix |R| → density matrix ρ → eigenvalues → von Neumann S(ρ) = −Σλᵢln(λᵢ)",
+          "returns": ["S_vn", "S_max", "n_eff", "mutual_information I(F:C)"],
+          "applied_to": "35 NGFS scenarios"
+        },
+        {
+          "name": "Leggett-Garg Inequality",
+          "description": "Temporal Bell test. Dichotomic observable Q = sign(ln(ΣFossil/ΣClean))",
+          "bound": "K₃ ≤ 1 for classically evolving systems",
+          "scans": "All triples of time points for K₃ > 1"
+        },
+        {
+          "name": "Schmidt Decomposition",
+          "method": "Cross-correlation matrix M (Fossil×Clean), SVD, Schmidt coefficients",
+          "returns": ["Schmidt coefficients", "Schmidt rank", "participation ratio"]
+        },
+        {
+          "name": "GHZ Tripartite",
+          "method": "Three groups: A=Fossil, B=Bridge(Nuclear,Hydro,Biomass), C=Renewable(Solar,Wind,Geo)",
+          "returns": "Mermin inequality M₃"
+        },
+        {
+          "name": "Compositional Fidelity",
+          "method": "F(ρ,σ) = (Tr√(√ρ σ √ρ))² on CLR density matrices",
+          "description": "Measures similarity between two compositional states"
+        }
+      ]
+    }
+  },
+
+  "wall_street_application": {
+    "insight": "Portfolio allocation (Σwᵢ = 1) is a composition. All HUF-QTM tools apply directly to finance.",
+    "portfolio_as_simplex": "n assets with weights w₁, …, wₙ where Σwᵢ = 1 form a composition on S^n",
+    "rebalancing_is_perturbation": true,
+    "tracking_error_is_aitchison_distance": true,
+    "style_drift_is_compositional_drift": true,
+    "confirmed_by": "Vega Baquero & Santolino (CoDaWork 2026, p.57) — Aitchison geometry on IBEX 35 portfolios"
+  },
+
+  "ngfs_data": {
+    "name": "NGFS Phase 4 scenario data",
+    "n_results": 35,
+    "scope": "World-level energy-mix projections 2020-2100",
+    "carriers": ["Coal", "Gas", "Nuclear", "Hydro", "Solar", "Wind"],
+    "json_file": "huf_ngfs_results.json",
+    "structure": {
+      "per_result": ["model", "scenario", "n_parts", "parts", "chi_bar", "cv_chi", "W", "gov_efficiency", "k1_distance", "total_path_length", "start_2020", "end_2100", "chi_timeseries", "years"]
+    },
+    "used_for": ["Bell test (v2)", "Five QTM tools", "EITT validation"]
+  },
+
+  "three_book_series": {
+    "Book_0": {
+      "title": "HUF-QIT Primer",
+      "file": "Book0_HUF_QIT_Primer.docx",
+      "content": "Standalone foundations: CoDa geometry, HUF framework, quantum essentials, the bridge. 16 sections + 2 appendices, notation guide with 30+ symbols.",
+      "purpose": "Shared prerequisite for Books 1 and 2"
+    },
+    "Book_1": {
+      "title": "The Observer Problem in Compositional Data Analysis",
+      "file": "Book1_HUF_QIT_Observer_Problem.docx",
+      "content": "Full IMRAD theoretical paper: nine isomorphisms, compositional Bell test, spooky action as constraint propagation, open-loop doctrine.",
+      "purpose": "Theoretical correspondence paper"
+    },
+    "Book_2": {
+      "title": "HUF-QTM Toolkit and Empirical Results",
+      "file": "Book2_HUF_QTM_Toolkit_Results.docx",
+      "content": "Full IMRAD empirical paper: all 5 quantum tools applied to 35 NGFS scenarios, financial compositions section, AES-256 boundary statement.",
+      "purpose": "Empirical results and cross-domain application"
+    }
+  },
+
+  "files_manifest": {
+    "codawork_presentation": "CoDaWork2026_Higgins_Talk.pptx",
+    "codawork_extended_paper": "CoDaWork2026_Higgins_Extended_Results.docx",
+    "eitt_coffee_table": "CoDaWork2026_EITT_CoffeeTable.docx",
+    "qa_preparation": "CoDaWork2026_QA_Preparation.docx",
+    "ember_protocol_script": "Energy/codawork_ember_protocol.py",
+    "ember_results_json": "Energy/codawork2026_results.json",
+    "ngfs_results_json": "huf_ngfs_results.json",
+    "bell_test_v2": "bell_test_v2.py",
+    "qtm_toolkit": "huf_qtm_toolkit.py",
+    "book0": "Book0_HUF_QIT_Primer.docx",
+    "book1": "Book1_HUF_QIT_Observer_Problem.docx",
+    "book2": "Book2_HUF_QTM_Toolkit_Results.docx",
+    "codawork_abstracts_pdf": "External_Published_Papers/book-of-abstracts-codawork-2026-draft.pdf"
+  },
+
+  "presentation_strategy": {
+    "show": [
+      "The monitoring protocol (perturbation, Aitchison distance, effective diversity)",
+      "EMBER data: Germany, Japan, UK, 9 carriers, 2000-2025",
+      "Three showcase results with drift flags",
+      "Falsifiable claim with four defeat conditions",
+      "Open question (N_eff vs Aitchison norm)",
+      "EITT seed on Slide 15 (2 minutes, end of talk)"
+    ],
+    "keep_in_back_pocket": [
+      "HUF framework and governance metrics",
+      "Quantum correspondence (Books 1 & 2)",
+      "Bell test results on NGFS data",
+      "Five QTM tools",
+      "Financial portfolio applications",
+      "Full EITT theory"
+    ],
+    "deflection_phrases": {
+      "quantum": "That's a different paper for a different venue. Happy to discuss at the break.",
+      "eitt_detail": "I have the empirical results — happy to walk through them over coffee.",
+      "finance": "Vega Baquero here at CoDaWork is presenting on exactly that — portfolio allocation as composition."
+    }
+  },
+
+  "time_series_landscape_codawork2026": {
+    "summary": "Nobody else at CoDaWork 2026 is presenting a compositional time-series monitoring protocol with perturbation-based drift detection.",
+    "closest_neighbours": [
+      {
+        "who": "Narayana & Chotirmall (p.29)",
+        "what": "Perturbation + Aitchison norm on longitudinal microbiome (COPD trial)",
+        "difference": "Clinical before/after, not running monitoring protocol"
+      },
+      {
+        "who": "Creus-Martí et al. (p.14)",
+        "what": "Longitudinal microbiome with PCA + mixed effects",
+        "difference": "Dimensionality reduction, not drift detection"
+      },
+      {
+        "who": "Oviedo Caro / Dumuid et al. (p.38)",
+        "what": "Trajectory clustering of weekly time-use compositions",
+        "difference": "Clustering trajectories with Euclidean distance, not Aitchison"
+      },
+      {
+        "who": "Mondon / Thomas-Agnan et al. (p.33)",
+        "what": "FANOVA of temperature densities over time (Vietnam)",
+        "difference": "Density-valued functional data, not simplex compositions"
+      }
+    ]
+  }
+}

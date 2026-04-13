@@ -1,0 +1,2063 @@
+{
+  "document": "HUF-INSTRUMENT-V2",
+  "title": "HUF Instrument v2 \u2014 Full Energy Dataset with CV(\u03c7)",
+  "date": "2026-04-12",
+  "author": "Peter Higgins \u2014 Rogue Wave Audio",
+  "diagnostics": [
+    "chi_bar (magnitude)",
+    "W (frequency)",
+    "cv_chi (uniformity)"
+  ],
+  "owid_yearly": {
+    "n_countries": 201,
+    "fuels": [
+      "Coal",
+      "Gas",
+      "Oil",
+      "Nuclear",
+      "Hydro",
+      "Solar",
+      "Wind",
+      "Biofuel"
+    ],
+    "key_countries": {
+      "Germany": {
+        "D": 8,
+        "N": 36,
+        "chi_bar": 0.55129,
+        "W": 0.056714,
+        "cv_chi": 0.7572,
+        "crossings": 3,
+        "path_length": 52.8966,
+        "perp_fraction": 0.55129,
+        "par_fraction": 0.44871,
+        "regime": {
+          "class": "B",
+          "name": "Perpendicular-dominant, transitional",
+          "uniformity": "moderate",
+          "extended": "B-M"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "1990-2025"
+      },
+      "Japan": {
+        "D": 8,
+        "N": 25,
+        "chi_bar": 0.449327,
+        "W": 0.127716,
+        "cv_chi": 0.5011,
+        "crossings": 5,
+        "path_length": 39.1494,
+        "perp_fraction": 0.449327,
+        "par_fraction": 0.550673,
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "uniformity": "moderate",
+          "extended": "C-M"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "2000-2024"
+      },
+      "United Kingdom": {
+        "D": 8,
+        "N": 36,
+        "chi_bar": 0.421085,
+        "W": 0.033011,
+        "cv_chi": 1.1238,
+        "crossings": 1,
+        "path_length": 30.293,
+        "perp_fraction": 0.421085,
+        "par_fraction": 0.578915,
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "uniformity": "burst-driven",
+          "extended": "C-B"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "1990-2025"
+      },
+      "United States": {
+        "D": 8,
+        "N": 25,
+        "chi_bar": 0.332278,
+        "W": 0.097675,
+        "cv_chi": 0.6516,
+        "crossings": 1,
+        "path_length": 10.238,
+        "perp_fraction": 0.332278,
+        "par_fraction": 0.667722,
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "uniformity": "moderate",
+          "extended": "C-M"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "2000-2024"
+      },
+      "China": {
+        "D": 8,
+        "N": 25,
+        "chi_bar": 0.350969,
+        "W": 0.369739,
+        "cv_chi": 0.477,
+        "crossings": 5,
+        "path_length": 13.5231,
+        "perp_fraction": 0.350969,
+        "par_fraction": 0.649031,
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "uniformity": "uniform",
+          "extended": "C-U"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "2000-2024"
+      },
+      "India": {
+        "D": 8,
+        "N": 25,
+        "chi_bar": 0.378048,
+        "W": 0.426668,
+        "cv_chi": 0.7538,
+        "crossings": 6,
+        "path_length": 14.0625,
+        "perp_fraction": 0.378048,
+        "par_fraction": 0.621952,
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "uniformity": "moderate",
+          "extended": "C-M"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "2000-2024"
+      },
+      "France": {
+        "D": 8,
+        "N": 36,
+        "chi_bar": 0.433586,
+        "W": 0.198433,
+        "cv_chi": 0.6622,
+        "crossings": 7,
+        "path_length": 35.2764,
+        "perp_fraction": 0.433586,
+        "par_fraction": 0.566414,
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "uniformity": "moderate",
+          "extended": "C-M"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "1990-2025"
+      },
+      "Brazil": {
+        "D": 8,
+        "N": 25,
+        "chi_bar": 0.467487,
+        "W": 0.213593,
+        "cv_chi": 0.7962,
+        "crossings": 7,
+        "path_length": 32.7726,
+        "perp_fraction": 0.467487,
+        "par_fraction": 0.532513,
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "uniformity": "moderate",
+          "extended": "C-M"
+        },
+        "state_size": "2x8+7 = 23",
+        "years": "2000-2024"
+      }
+    },
+    "cv_stats": {
+      "mean": 0.8669,
+      "median": 0.6664,
+      "min": 0,
+      "max": 4.6904,
+      "pct_burst_driven": 22.4,
+      "pct_uniform": 23.9
+    },
+    "regime_distribution": {
+      "C-U": 35,
+      "C-M": 105,
+      "C-B": 34,
+      "A-M": 2,
+      "A-B": 11,
+      "A-U": 13,
+      "B-M": 1
+    },
+    "most_nonuniform_top10": [
+      [
+        "Djibouti",
+        0.144856,
+        0.061307,
+        4.6904
+      ],
+      [
+        "Solomon Islands",
+        0.130698,
+        0.066662,
+        4.6904
+      ],
+      [
+        "Kiribati",
+        0.138971,
+        0.062598,
+        4.5826
+      ],
+      [
+        "American Samoa",
+        0.285665,
+        0.068799,
+        3.8165
+      ],
+      [
+        "Gibraltar",
+        0.312976,
+        0.060108,
+        3.7975
+      ],
+      [
+        "Falkland Islands",
+        0.313588,
+        0.059925,
+        3.6528
+      ],
+      [
+        "Tonga",
+        0.137624,
+        0.063734,
+        2.8299
+      ],
+      [
+        "Turkmenistan",
+        0.129434,
+        0.100446,
+        2.7881
+      ],
+      [
+        "Bahamas",
+        0.140471,
+        0.077455,
+        2.7822
+      ],
+      [
+        "Saint Lucia",
+        0.131132,
+        0.071811,
+        2.3061
+      ]
+    ],
+    "most_uniform_top10": [
+      [
+        "East Timor",
+        0,
+        0,
+        0
+      ],
+      [
+        "Gambia",
+        0,
+        0,
+        0
+      ],
+      [
+        "Grenada",
+        0,
+        0,
+        0
+      ],
+      [
+        "Guinea-Bissau",
+        0,
+        0,
+        0
+      ],
+      [
+        "Lesotho",
+        0,
+        0,
+        0
+      ],
+      [
+        "Montserrat",
+        0,
+        0,
+        0
+      ],
+      [
+        "Nauru",
+        0,
+        0,
+        0
+      ],
+      [
+        "Saint Helena",
+        0,
+        0,
+        0
+      ],
+      [
+        "Saint Pierre and Miquelon",
+        0,
+        0,
+        0
+      ],
+      [
+        "Turks and Caicos Islands",
+        0,
+        0,
+        0
+      ]
+    ],
+    "all_countries": {
+      "Afghanistan": {
+        "chi_bar": 0.232313,
+        "W": 0.235548,
+        "cv_chi": 0.393,
+        "regime": "C-U"
+      },
+      "Albania": {
+        "chi_bar": 0.287248,
+        "W": 0.052028,
+        "cv_chi": 0.8064,
+        "regime": "C-M"
+      },
+      "Algeria": {
+        "chi_bar": 0.273504,
+        "W": 0.141916,
+        "cv_chi": 0.5757,
+        "regime": "C-M"
+      },
+      "American Samoa": {
+        "chi_bar": 0.285665,
+        "W": 0.068799,
+        "cv_chi": 3.8165,
+        "regime": "C-B"
+      },
+      "Angola": {
+        "chi_bar": 0.219026,
+        "W": 0.155782,
+        "cv_chi": 0.4582,
+        "regime": "C-U"
+      },
+      "Antigua and Barbuda": {
+        "chi_bar": 0.234267,
+        "W": 0.070655,
+        "cv_chi": 1.9048,
+        "regime": "C-B"
+      },
+      "Argentina": {
+        "chi_bar": 0.482249,
+        "W": 0.117873,
+        "cv_chi": 0.8956,
+        "regime": "C-M"
+      },
+      "Armenia": {
+        "chi_bar": 0.196215,
+        "W": 0.168685,
+        "cv_chi": 0.6718,
+        "regime": "C-M"
+      },
+      "Aruba": {
+        "chi_bar": 0.174277,
+        "W": 0.033416,
+        "cv_chi": 1.0232,
+        "regime": "C-B"
+      },
+      "Australia": {
+        "chi_bar": 0.05451,
+        "W": 0.091305,
+        "cv_chi": 0.6682,
+        "regime": "A-M"
+      },
+      "Austria": {
+        "chi_bar": 0.220298,
+        "W": 0.105385,
+        "cv_chi": 0.8744,
+        "regime": "C-M"
+      },
+      "Azerbaijan": {
+        "chi_bar": 0.276258,
+        "W": 0.039319,
+        "cv_chi": 0.5228,
+        "regime": "C-M"
+      },
+      "Bahamas": {
+        "chi_bar": 0.140471,
+        "W": 0.077455,
+        "cv_chi": 2.7822,
+        "regime": "A-B"
+      },
+      "Bahrain": {
+        "chi_bar": 0.237682,
+        "W": 0.07634,
+        "cv_chi": 0.9611,
+        "regime": "C-M"
+      },
+      "Bangladesh": {
+        "chi_bar": 0.229598,
+        "W": 0.099434,
+        "cv_chi": 0.6982,
+        "regime": "C-M"
+      },
+      "Barbados": {
+        "chi_bar": 0.234103,
+        "W": 0.158872,
+        "cv_chi": 0.3464,
+        "regime": "C-U"
+      },
+      "Belarus": {
+        "chi_bar": 0.373137,
+        "W": 0.075613,
+        "cv_chi": 0.7588,
+        "regime": "C-M"
+      },
+      "Belgium": {
+        "chi_bar": 0.401536,
+        "W": 0.121199,
+        "cv_chi": 1.1114,
+        "regime": "C-B"
+      },
+      "Belize": {
+        "chi_bar": 0.249634,
+        "W": 0.027065,
+        "cv_chi": 0.5358,
+        "regime": "C-M"
+      },
+      "Benin": {
+        "chi_bar": 0.191792,
+        "W": 0.027136,
+        "cv_chi": 1.1603,
+        "regime": "C-B"
+      },
+      "Bermuda": {
+        "chi_bar": 0.381129,
+        "W": 1.761957,
+        "cv_chi": 0.3873,
+        "regime": "C-U"
+      },
+      "Bhutan": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Bolivia": {
+        "chi_bar": 0.266015,
+        "W": 0.064974,
+        "cv_chi": 0.7133,
+        "regime": "C-M"
+      },
+      "Botswana": {
+        "chi_bar": 0.252584,
+        "W": 0.066964,
+        "cv_chi": 0.4385,
+        "regime": "C-U"
+      },
+      "Brazil": {
+        "chi_bar": 0.467487,
+        "W": 0.213593,
+        "cv_chi": 0.7962,
+        "regime": "C-M"
+      },
+      "British Virgin Islands": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Brunei": {
+        "chi_bar": 0.202471,
+        "W": 0.285093,
+        "cv_chi": 0.2969,
+        "regime": "C-U"
+      },
+      "Bulgaria": {
+        "chi_bar": 0.418988,
+        "W": 0.147644,
+        "cv_chi": 0.8214,
+        "regime": "C-M"
+      },
+      "Burkina Faso": {
+        "chi_bar": 0.225844,
+        "W": 0.269131,
+        "cv_chi": 0.3289,
+        "regime": "C-U"
+      },
+      "Burundi": {
+        "chi_bar": 0.223981,
+        "W": 0.011015,
+        "cv_chi": 1.2199,
+        "regime": "C-B"
+      },
+      "Cambodia": {
+        "chi_bar": 0.210231,
+        "W": 0.017223,
+        "cv_chi": 0.6249,
+        "regime": "C-M"
+      },
+      "Cameroon": {
+        "chi_bar": 0.232225,
+        "W": 0.020643,
+        "cv_chi": 0.69,
+        "regime": "C-M"
+      },
+      "Canada": {
+        "chi_bar": 0.412878,
+        "W": 0.251945,
+        "cv_chi": 0.5015,
+        "regime": "C-M"
+      },
+      "Cape Verde": {
+        "chi_bar": 0.285568,
+        "W": 0.045648,
+        "cv_chi": 0.4403,
+        "regime": "C-U"
+      },
+      "Cayman Islands": {
+        "chi_bar": 0.141033,
+        "W": 0.071755,
+        "cv_chi": 2.0331,
+        "regime": "A-B"
+      },
+      "Central African Republic": {
+        "chi_bar": 0.421925,
+        "W": 0.116404,
+        "cv_chi": 1.3448,
+        "regime": "C-B"
+      },
+      "Chad": {
+        "chi_bar": 0.164619,
+        "W": 0.03445,
+        "cv_chi": 1.3198,
+        "regime": "C-B"
+      },
+      "Chile": {
+        "chi_bar": 0.268396,
+        "W": 0.081541,
+        "cv_chi": 1.4161,
+        "regime": "C-B"
+      },
+      "China": {
+        "chi_bar": 0.350969,
+        "W": 0.369739,
+        "cv_chi": 0.477,
+        "regime": "C-U"
+      },
+      "Colombia": {
+        "chi_bar": 0.256606,
+        "W": 0.088706,
+        "cv_chi": 0.8532,
+        "regime": "C-M"
+      },
+      "Comoros": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Congo": {
+        "chi_bar": 0.223632,
+        "W": 0.01319,
+        "cv_chi": 0.6915,
+        "regime": "C-M"
+      },
+      "Cook Islands": {
+        "chi_bar": 0.144866,
+        "W": 0.056188,
+        "cv_chi": 2.188,
+        "regime": "A-B"
+      },
+      "Costa Rica": {
+        "chi_bar": 0.225339,
+        "W": 0.093206,
+        "cv_chi": 0.434,
+        "regime": "C-U"
+      },
+      "Cote d'Ivoire": {
+        "chi_bar": 0.235096,
+        "W": 0.19764,
+        "cv_chi": 0.3495,
+        "regime": "C-U"
+      },
+      "Croatia": {
+        "chi_bar": 0.225683,
+        "W": 0.096766,
+        "cv_chi": 0.9532,
+        "regime": "C-M"
+      },
+      "Cuba": {
+        "chi_bar": 0.227254,
+        "W": 0.174494,
+        "cv_chi": 0.8736,
+        "regime": "C-M"
+      },
+      "Cyprus": {
+        "chi_bar": 0.215761,
+        "W": 0.021275,
+        "cv_chi": 1.1813,
+        "regime": "C-B"
+      },
+      "Czechia": {
+        "chi_bar": 0.420489,
+        "W": 0.020877,
+        "cv_chi": 0.7861,
+        "regime": "C-M"
+      },
+      "Democratic Republic of Congo": {
+        "chi_bar": 0.253498,
+        "W": 0.028668,
+        "cv_chi": 0.3485,
+        "regime": "C-U"
+      },
+      "Denmark": {
+        "chi_bar": 0.246457,
+        "W": 0.032011,
+        "cv_chi": 0.753,
+        "regime": "C-M"
+      },
+      "Djibouti": {
+        "chi_bar": 0.144856,
+        "W": 0.061307,
+        "cv_chi": 4.6904,
+        "regime": "A-B"
+      },
+      "Dominica": {
+        "chi_bar": 0.29712,
+        "W": 1.796673,
+        "cv_chi": 0.6622,
+        "regime": "C-M"
+      },
+      "Dominican Republic": {
+        "chi_bar": 0.282267,
+        "W": 0.01642,
+        "cv_chi": 0.9286,
+        "regime": "C-M"
+      },
+      "East Timor": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Ecuador": {
+        "chi_bar": 0.24266,
+        "W": 0.035768,
+        "cv_chi": 0.5152,
+        "regime": "C-M"
+      },
+      "Egypt": {
+        "chi_bar": 0.159076,
+        "W": 0.072221,
+        "cv_chi": 0.8747,
+        "regime": "C-M"
+      },
+      "El Salvador": {
+        "chi_bar": 0.234325,
+        "W": 0.029789,
+        "cv_chi": 0.4673,
+        "regime": "C-U"
+      },
+      "Equatorial Guinea": {
+        "chi_bar": 0.230616,
+        "W": 0.992699,
+        "cv_chi": 0.4978,
+        "regime": "C-U"
+      },
+      "Eritrea": {
+        "chi_bar": 0.155044,
+        "W": 0.064735,
+        "cv_chi": 1.7819,
+        "regime": "C-B"
+      },
+      "Estonia": {
+        "chi_bar": 0.233536,
+        "W": 0.039105,
+        "cv_chi": 0.6664,
+        "regime": "C-M"
+      },
+      "Eswatini": {
+        "chi_bar": 0.233361,
+        "W": 0.101111,
+        "cv_chi": 0.4308,
+        "regime": "C-U"
+      },
+      "Ethiopia": {
+        "chi_bar": 0.214851,
+        "W": 0.060379,
+        "cv_chi": 0.5999,
+        "regime": "C-M"
+      },
+      "Falkland Islands": {
+        "chi_bar": 0.313588,
+        "W": 0.059925,
+        "cv_chi": 3.6528,
+        "regime": "C-B"
+      },
+      "Faroe Islands": {
+        "chi_bar": 0.21784,
+        "W": 0.105941,
+        "cv_chi": 0.4058,
+        "regime": "C-U"
+      },
+      "Fiji": {
+        "chi_bar": 0.246454,
+        "W": 0.05352,
+        "cv_chi": 0.5596,
+        "regime": "C-M"
+      },
+      "Finland": {
+        "chi_bar": 0.414148,
+        "W": 0.304646,
+        "cv_chi": 1.1434,
+        "regime": "C-B"
+      },
+      "France": {
+        "chi_bar": 0.433586,
+        "W": 0.198433,
+        "cv_chi": 0.6622,
+        "regime": "C-M"
+      },
+      "French Polynesia": {
+        "chi_bar": 0.193235,
+        "W": 0.060864,
+        "cv_chi": 0.4492,
+        "regime": "C-U"
+      },
+      "Gabon": {
+        "chi_bar": 0.124413,
+        "W": 0.891972,
+        "cv_chi": 0.5434,
+        "regime": "A-M"
+      },
+      "Gambia": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Georgia": {
+        "chi_bar": 0.224895,
+        "W": 0.059649,
+        "cv_chi": 0.422,
+        "regime": "C-U"
+      },
+      "Germany": {
+        "chi_bar": 0.55129,
+        "W": 0.056714,
+        "cv_chi": 0.7572,
+        "regime": "B-M"
+      },
+      "Ghana": {
+        "chi_bar": 0.213213,
+        "W": 0.075718,
+        "cv_chi": 0.6427,
+        "regime": "C-M"
+      },
+      "Gibraltar": {
+        "chi_bar": 0.312976,
+        "W": 0.060108,
+        "cv_chi": 3.7975,
+        "regime": "C-B"
+      },
+      "Greece": {
+        "chi_bar": 0.266349,
+        "W": 0.056941,
+        "cv_chi": 0.9493,
+        "regime": "C-M"
+      },
+      "Greenland": {
+        "chi_bar": 0.26786,
+        "W": 2.461628,
+        "cv_chi": 0.6245,
+        "regime": "C-M"
+      },
+      "Grenada": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Guam": {
+        "chi_bar": 0.16175,
+        "W": 0.065749,
+        "cv_chi": 1.394,
+        "regime": "C-B"
+      },
+      "Guatemala": {
+        "chi_bar": 0.288322,
+        "W": 0.092418,
+        "cv_chi": 0.7768,
+        "regime": "C-M"
+      },
+      "Guinea": {
+        "chi_bar": 0.190275,
+        "W": 0.326504,
+        "cv_chi": 0.5408,
+        "regime": "C-M"
+      },
+      "Guinea-Bissau": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Guyana": {
+        "chi_bar": 0.239328,
+        "W": 0.09665,
+        "cv_chi": 0.2814,
+        "regime": "C-U"
+      },
+      "Haiti": {
+        "chi_bar": 0.315485,
+        "W": 0.0,
+        "cv_chi": 0.6216,
+        "regime": "C-M"
+      },
+      "Honduras": {
+        "chi_bar": 0.237952,
+        "W": 0.038519,
+        "cv_chi": 0.6745,
+        "regime": "C-M"
+      },
+      "Hong Kong": {
+        "chi_bar": 0.239356,
+        "W": 0.222669,
+        "cv_chi": 0.4591,
+        "regime": "C-U"
+      },
+      "Hungary": {
+        "chi_bar": 0.404276,
+        "W": 0.07583,
+        "cv_chi": 1.1419,
+        "regime": "C-B"
+      },
+      "Iceland": {
+        "chi_bar": 0.21595,
+        "W": 0.092568,
+        "cv_chi": 0.983,
+        "regime": "C-M"
+      },
+      "India": {
+        "chi_bar": 0.378048,
+        "W": 0.426668,
+        "cv_chi": 0.7538,
+        "regime": "C-M"
+      },
+      "Indonesia": {
+        "chi_bar": 0.3337,
+        "W": 0.095755,
+        "cv_chi": 0.9307,
+        "regime": "C-M"
+      },
+      "Iran": {
+        "chi_bar": 0.378956,
+        "W": 0.138855,
+        "cv_chi": 0.8102,
+        "regime": "C-M"
+      },
+      "Iraq": {
+        "chi_bar": 0.225773,
+        "W": 0.249844,
+        "cv_chi": 0.6223,
+        "regime": "C-M"
+      },
+      "Ireland": {
+        "chi_bar": 0.269929,
+        "W": 0.266615,
+        "cv_chi": 0.9584,
+        "regime": "C-M"
+      },
+      "Israel": {
+        "chi_bar": 0.246562,
+        "W": 0.010085,
+        "cv_chi": 0.9562,
+        "regime": "C-M"
+      },
+      "Italy": {
+        "chi_bar": 0.234979,
+        "W": 0.136984,
+        "cv_chi": 1.1352,
+        "regime": "C-B"
+      },
+      "Jamaica": {
+        "chi_bar": 0.261248,
+        "W": 0.020486,
+        "cv_chi": 0.65,
+        "regime": "C-M"
+      },
+      "Japan": {
+        "chi_bar": 0.449327,
+        "W": 0.127716,
+        "cv_chi": 0.5011,
+        "regime": "C-M"
+      },
+      "Jordan": {
+        "chi_bar": 0.229132,
+        "W": 0.099533,
+        "cv_chi": 0.5974,
+        "regime": "C-M"
+      },
+      "Kazakhstan": {
+        "chi_bar": 0.303,
+        "W": 0.077206,
+        "cv_chi": 0.5053,
+        "regime": "C-M"
+      },
+      "Kenya": {
+        "chi_bar": 0.20494,
+        "W": 0.056865,
+        "cv_chi": 0.6122,
+        "regime": "C-M"
+      },
+      "Kiribati": {
+        "chi_bar": 0.138971,
+        "W": 0.062598,
+        "cv_chi": 4.5826,
+        "regime": "A-B"
+      },
+      "Kuwait": {
+        "chi_bar": 0.194784,
+        "W": 0.109839,
+        "cv_chi": 0.4032,
+        "regime": "C-U"
+      },
+      "Kyrgyzstan": {
+        "chi_bar": 0.211789,
+        "W": 0.238691,
+        "cv_chi": 0.5835,
+        "regime": "C-M"
+      },
+      "Laos": {
+        "chi_bar": 0.262722,
+        "W": 0.044063,
+        "cv_chi": 0.9282,
+        "regime": "C-M"
+      },
+      "Latvia": {
+        "chi_bar": 0.238772,
+        "W": 0.092754,
+        "cv_chi": 0.5405,
+        "regime": "C-M"
+      },
+      "Lebanon": {
+        "chi_bar": 0.280742,
+        "W": 0.078117,
+        "cv_chi": 0.3631,
+        "regime": "C-U"
+      },
+      "Lesotho": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Liberia": {
+        "chi_bar": 0.144546,
+        "W": 0.060521,
+        "cv_chi": 1.941,
+        "regime": "A-B"
+      },
+      "Libya": {
+        "chi_bar": 0.178013,
+        "W": 0.453314,
+        "cv_chi": 0.6019,
+        "regime": "C-M"
+      },
+      "Lithuania": {
+        "chi_bar": 0.260297,
+        "W": 0.067938,
+        "cv_chi": 0.8938,
+        "regime": "C-M"
+      },
+      "Luxembourg": {
+        "chi_bar": 0.284868,
+        "W": 0.065598,
+        "cv_chi": 0.7197,
+        "regime": "C-M"
+      },
+      "Macao": {
+        "chi_bar": 0.242326,
+        "W": 0.028816,
+        "cv_chi": 0.5371,
+        "regime": "C-M"
+      },
+      "Madagascar": {
+        "chi_bar": 0.235056,
+        "W": 0.210454,
+        "cv_chi": 0.6657,
+        "regime": "C-M"
+      },
+      "Malawi": {
+        "chi_bar": 0.255737,
+        "W": 0.039511,
+        "cv_chi": 0.6061,
+        "regime": "C-M"
+      },
+      "Malaysia": {
+        "chi_bar": 0.214922,
+        "W": 0.045393,
+        "cv_chi": 0.8555,
+        "regime": "C-M"
+      },
+      "Maldives": {
+        "chi_bar": 0.161078,
+        "W": 0.065729,
+        "cv_chi": 1.309,
+        "regime": "C-B"
+      },
+      "Mali": {
+        "chi_bar": 0.231255,
+        "W": 0.056922,
+        "cv_chi": 0.3393,
+        "regime": "C-U"
+      },
+      "Malta": {
+        "chi_bar": 0.293648,
+        "W": 0.016632,
+        "cv_chi": 0.5968,
+        "regime": "C-M"
+      },
+      "Mauritania": {
+        "chi_bar": 0.253454,
+        "W": 0.042127,
+        "cv_chi": 0.3947,
+        "regime": "C-U"
+      },
+      "Mauritius": {
+        "chi_bar": 0.277644,
+        "W": 0.144253,
+        "cv_chi": 0.5962,
+        "regime": "C-M"
+      },
+      "Mexico": {
+        "chi_bar": 0.36743,
+        "W": 0.342179,
+        "cv_chi": 0.6226,
+        "regime": "C-M"
+      },
+      "Moldova": {
+        "chi_bar": 0.254047,
+        "W": 0.060496,
+        "cv_chi": 0.5575,
+        "regime": "C-M"
+      },
+      "Mongolia": {
+        "chi_bar": 0.233982,
+        "W": 0.022926,
+        "cv_chi": 0.5177,
+        "regime": "C-M"
+      },
+      "Montserrat": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Morocco": {
+        "chi_bar": 0.292601,
+        "W": 0.056055,
+        "cv_chi": 0.8829,
+        "regime": "C-M"
+      },
+      "Mozambique": {
+        "chi_bar": 0.245145,
+        "W": 0.043976,
+        "cv_chi": 0.4007,
+        "regime": "C-U"
+      },
+      "Myanmar": {
+        "chi_bar": 0.253853,
+        "W": 0.089198,
+        "cv_chi": 0.6439,
+        "regime": "C-M"
+      },
+      "Namibia": {
+        "chi_bar": 0.254446,
+        "W": 0.015479,
+        "cv_chi": 0.5135,
+        "regime": "C-M"
+      },
+      "Nauru": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Nepal": {
+        "chi_bar": 0.289348,
+        "W": 0.038146,
+        "cv_chi": 0.4098,
+        "regime": "C-U"
+      },
+      "Netherlands": {
+        "chi_bar": 0.424725,
+        "W": 0.109249,
+        "cv_chi": 0.7636,
+        "regime": "C-M"
+      },
+      "New Caledonia": {
+        "chi_bar": 0.225071,
+        "W": 0.107795,
+        "cv_chi": 0.4352,
+        "regime": "C-U"
+      },
+      "New Zealand": {
+        "chi_bar": 0.282624,
+        "W": 0.309182,
+        "cv_chi": 0.8792,
+        "regime": "C-M"
+      },
+      "Nicaragua": {
+        "chi_bar": 0.253153,
+        "W": 0.028639,
+        "cv_chi": 0.5985,
+        "regime": "C-M"
+      },
+      "Niger": {
+        "chi_bar": 0.215101,
+        "W": 0.210778,
+        "cv_chi": 0.3723,
+        "regime": "C-U"
+      },
+      "Nigeria": {
+        "chi_bar": 0.219846,
+        "W": 0.128043,
+        "cv_chi": 0.4382,
+        "regime": "C-U"
+      },
+      "North Korea": {
+        "chi_bar": 0.219566,
+        "W": 0.260367,
+        "cv_chi": 0.5062,
+        "regime": "C-M"
+      },
+      "North Macedonia": {
+        "chi_bar": 0.337109,
+        "W": 0.068225,
+        "cv_chi": 1.0644,
+        "regime": "C-B"
+      },
+      "Norway": {
+        "chi_bar": 0.275003,
+        "W": 0.117632,
+        "cv_chi": 0.6505,
+        "regime": "C-M"
+      },
+      "Oman": {
+        "chi_bar": 0.231744,
+        "W": 0.109005,
+        "cv_chi": 0.2961,
+        "regime": "C-U"
+      },
+      "Pakistan": {
+        "chi_bar": 0.423321,
+        "W": 0.060141,
+        "cv_chi": 0.6976,
+        "regime": "C-M"
+      },
+      "Palestine": {
+        "chi_bar": 0.169832,
+        "W": 0.06136,
+        "cv_chi": 1.4078,
+        "regime": "C-B"
+      },
+      "Panama": {
+        "chi_bar": 0.32075,
+        "W": 0.08699,
+        "cv_chi": 0.9156,
+        "regime": "C-M"
+      },
+      "Papua New Guinea": {
+        "chi_bar": 0.24607,
+        "W": 0.218278,
+        "cv_chi": 0.5127,
+        "regime": "C-M"
+      },
+      "Paraguay": {
+        "chi_bar": 0.176806,
+        "W": 0.032034,
+        "cv_chi": 1.1398,
+        "regime": "C-B"
+      },
+      "Peru": {
+        "chi_bar": 0.310687,
+        "W": 0.026215,
+        "cv_chi": 0.9347,
+        "regime": "C-M"
+      },
+      "Philippines": {
+        "chi_bar": 0.277688,
+        "W": 0.085178,
+        "cv_chi": 1.1295,
+        "regime": "C-B"
+      },
+      "Poland": {
+        "chi_bar": 0.252943,
+        "W": 0.026823,
+        "cv_chi": 0.8108,
+        "regime": "C-M"
+      },
+      "Portugal": {
+        "chi_bar": 0.205342,
+        "W": 0.069815,
+        "cv_chi": 1.4134,
+        "regime": "C-B"
+      },
+      "Puerto Rico": {
+        "chi_bar": 0.336281,
+        "W": 0.028483,
+        "cv_chi": 0.8681,
+        "regime": "C-M"
+      },
+      "Qatar": {
+        "chi_bar": 0.170253,
+        "W": 0.045775,
+        "cv_chi": 1.1804,
+        "regime": "C-B"
+      },
+      "Romania": {
+        "chi_bar": 0.34095,
+        "W": 0.051869,
+        "cv_chi": 0.6604,
+        "regime": "C-M"
+      },
+      "Russia": {
+        "chi_bar": 0.409761,
+        "W": 0.022095,
+        "cv_chi": 0.7126,
+        "regime": "C-M"
+      },
+      "Rwanda": {
+        "chi_bar": 0.224136,
+        "W": 0.06438,
+        "cv_chi": 0.6026,
+        "regime": "C-M"
+      },
+      "Saint Helena": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Saint Kitts and Nevis": {
+        "chi_bar": 0.235243,
+        "W": 0.069706,
+        "cv_chi": 2.1307,
+        "regime": "C-B"
+      },
+      "Saint Lucia": {
+        "chi_bar": 0.131132,
+        "W": 0.071811,
+        "cv_chi": 2.3061,
+        "regime": "A-B"
+      },
+      "Saint Pierre and Miquelon": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Saint Vincent and the Grenadines": {
+        "chi_bar": 0.337959,
+        "W": 1.080461,
+        "cv_chi": 0.6704,
+        "regime": "C-M"
+      },
+      "Samoa": {
+        "chi_bar": 0.206273,
+        "W": 0.152973,
+        "cv_chi": 0.831,
+        "regime": "C-M"
+      },
+      "Sao Tome and Principe": {
+        "chi_bar": 0.300591,
+        "W": 0.071402,
+        "cv_chi": 0.8414,
+        "regime": "C-M"
+      },
+      "Senegal": {
+        "chi_bar": 0.29293,
+        "W": 0.043515,
+        "cv_chi": 0.6187,
+        "regime": "C-M"
+      },
+      "Serbia": {
+        "chi_bar": 0.298783,
+        "W": 0.159838,
+        "cv_chi": 0.7639,
+        "regime": "C-M"
+      },
+      "Seychelles": {
+        "chi_bar": 0.253623,
+        "W": 0.020457,
+        "cv_chi": 1.1631,
+        "regime": "C-B"
+      },
+      "Sierra Leone": {
+        "chi_bar": 0.268523,
+        "W": 0.126566,
+        "cv_chi": 0.6386,
+        "regime": "C-M"
+      },
+      "Slovakia": {
+        "chi_bar": 0.474198,
+        "W": 0.078263,
+        "cv_chi": 1.1443,
+        "regime": "C-B"
+      },
+      "Slovenia": {
+        "chi_bar": 0.398913,
+        "W": 0.014341,
+        "cv_chi": 0.6733,
+        "regime": "C-M"
+      },
+      "Solomon Islands": {
+        "chi_bar": 0.130698,
+        "W": 0.066662,
+        "cv_chi": 4.6904,
+        "regime": "A-B"
+      },
+      "Somalia": {
+        "chi_bar": 0.164009,
+        "W": 0.033905,
+        "cv_chi": 2.0236,
+        "regime": "C-B"
+      },
+      "South Africa": {
+        "chi_bar": 0.297025,
+        "W": 0.067304,
+        "cv_chi": 0.9172,
+        "regime": "C-M"
+      },
+      "South Korea": {
+        "chi_bar": 0.350969,
+        "W": 0.188146,
+        "cv_chi": 0.5548,
+        "regime": "C-M"
+      },
+      "Spain": {
+        "chi_bar": 0.337017,
+        "W": 0.104321,
+        "cv_chi": 0.7567,
+        "regime": "C-M"
+      },
+      "Sudan": {
+        "chi_bar": 0.203096,
+        "W": 0.324653,
+        "cv_chi": 0.5887,
+        "regime": "C-M"
+      },
+      "Suriname": {
+        "chi_bar": 0.253864,
+        "W": 0.143873,
+        "cv_chi": 0.6611,
+        "regime": "C-M"
+      },
+      "Sweden": {
+        "chi_bar": 0.351993,
+        "W": 0.072833,
+        "cv_chi": 1.1577,
+        "regime": "C-B"
+      },
+      "Switzerland": {
+        "chi_bar": 0.285346,
+        "W": 0.056275,
+        "cv_chi": 1.2107,
+        "regime": "C-B"
+      },
+      "Syria": {
+        "chi_bar": 0.240953,
+        "W": 0.204306,
+        "cv_chi": 0.4828,
+        "regime": "C-U"
+      },
+      "Taiwan": {
+        "chi_bar": 0.458769,
+        "W": 0.164548,
+        "cv_chi": 0.6976,
+        "regime": "C-M"
+      },
+      "Tajikistan": {
+        "chi_bar": 0.302466,
+        "W": 0.07537,
+        "cv_chi": 0.1652,
+        "regime": "C-U"
+      },
+      "Tanzania": {
+        "chi_bar": 0.217559,
+        "W": 0.035481,
+        "cv_chi": 0.6027,
+        "regime": "C-M"
+      },
+      "Thailand": {
+        "chi_bar": 0.271213,
+        "W": 0.13428,
+        "cv_chi": 0.96,
+        "regime": "C-M"
+      },
+      "Togo": {
+        "chi_bar": 0.219935,
+        "W": 0.146231,
+        "cv_chi": 0.5638,
+        "regime": "C-M"
+      },
+      "Tonga": {
+        "chi_bar": 0.137624,
+        "W": 0.063734,
+        "cv_chi": 2.8299,
+        "regime": "A-B"
+      },
+      "Trinidad and Tobago": {
+        "chi_bar": 0.230685,
+        "W": 0.135208,
+        "cv_chi": 0.4485,
+        "regime": "C-U"
+      },
+      "Tunisia": {
+        "chi_bar": 0.242968,
+        "W": 0.099981,
+        "cv_chi": 0.5114,
+        "regime": "C-M"
+      },
+      "Turkey": {
+        "chi_bar": 0.246363,
+        "W": 0.135003,
+        "cv_chi": 1.163,
+        "regime": "C-B"
+      },
+      "Turkmenistan": {
+        "chi_bar": 0.129434,
+        "W": 0.100446,
+        "cv_chi": 2.7881,
+        "regime": "A-B"
+      },
+      "Turks and Caicos Islands": {
+        "chi_bar": 0,
+        "W": 0,
+        "cv_chi": 0,
+        "regime": "A-U"
+      },
+      "Uganda": {
+        "chi_bar": 0.232107,
+        "W": 0.092299,
+        "cv_chi": 0.6302,
+        "regime": "C-M"
+      },
+      "Ukraine": {
+        "chi_bar": 0.392424,
+        "W": 0.060886,
+        "cv_chi": 0.9414,
+        "regime": "C-M"
+      },
+      "United Kingdom": {
+        "chi_bar": 0.421085,
+        "W": 0.033011,
+        "cv_chi": 1.1238,
+        "regime": "C-B"
+      },
+      "United States": {
+        "chi_bar": 0.332278,
+        "W": 0.097675,
+        "cv_chi": 0.6516,
+        "regime": "C-M"
+      },
+      "United States Virgin Islands": {
+        "chi_bar": 0.148645,
+        "W": 0.070495,
+        "cv_chi": 1.309,
+        "regime": "A-B"
+      },
+      "Uruguay": {
+        "chi_bar": 0.211497,
+        "W": 0.008645,
+        "cv_chi": 0.723,
+        "regime": "C-M"
+      },
+      "Uzbekistan": {
+        "chi_bar": 0.222779,
+        "W": 0.243292,
+        "cv_chi": 0.5522,
+        "regime": "C-M"
+      },
+      "Vanuatu": {
+        "chi_bar": 0.256538,
+        "W": 0.036726,
+        "cv_chi": 1.6695,
+        "regime": "C-B"
+      },
+      "Venezuela": {
+        "chi_bar": 0.242952,
+        "W": 0.247031,
+        "cv_chi": 0.6066,
+        "regime": "C-M"
+      },
+      "Vietnam": {
+        "chi_bar": 0.252593,
+        "W": 0.132046,
+        "cv_chi": 0.8535,
+        "regime": "C-M"
+      },
+      "Yemen": {
+        "chi_bar": 0.163512,
+        "W": 0.029622,
+        "cv_chi": 1.0105,
+        "regime": "C-B"
+      },
+      "Zambia": {
+        "chi_bar": 0.234839,
+        "W": 0.062843,
+        "cv_chi": 0.3257,
+        "regime": "C-U"
+      },
+      "Zimbabwe": {
+        "chi_bar": 0.224702,
+        "W": 0.080726,
+        "cv_chi": 0.4366,
+        "regime": "C-U"
+      }
+    }
+  },
+  "ember_global_monthly": {
+    "Germany": {
+      "D": 9,
+      "N": 135,
+      "chi_bar": 0.173997,
+      "W": 0.26576,
+      "cv_chi": 1.0267,
+      "crossings": 26,
+      "path_length": 97.8326,
+      "perp_fraction": 0.173997,
+      "par_fraction": 0.826003,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "burst-driven",
+        "extended": "C-B"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2015-01 to 2026-03"
+    },
+    "Japan": {
+      "D": 9,
+      "N": 95,
+      "chi_bar": 0.273953,
+      "W": 0.319455,
+      "cv_chi": 0.6075,
+      "crossings": 13,
+      "path_length": 40.6943,
+      "perp_fraction": 0.273953,
+      "par_fraction": 0.726047,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2018-04 to 2026-02"
+    },
+    "United Kingdom": {
+      "D": 9,
+      "N": 135,
+      "chi_bar": 0.148459,
+      "W": 0.152956,
+      "cv_chi": 1.469,
+      "crossings": 31,
+      "path_length": 202.6722,
+      "perp_fraction": 0.148459,
+      "par_fraction": 0.851541,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, transitional",
+        "uniformity": "burst-driven",
+        "extended": "A-B"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2015-01 to 2026-03"
+    },
+    "China": {
+      "D": 9,
+      "N": 134,
+      "chi_bar": 0.215392,
+      "W": 0.107982,
+      "cv_chi": 0.6048,
+      "crossings": 5,
+      "path_length": 46.3042,
+      "perp_fraction": 0.215392,
+      "par_fraction": 0.784608,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2015-01 to 2026-02"
+    },
+    "India": {
+      "D": 9,
+      "N": 86,
+      "chi_bar": 0.234541,
+      "W": 0.310435,
+      "cv_chi": 0.7937,
+      "crossings": 17,
+      "path_length": 54.7618,
+      "perp_fraction": 0.234541,
+      "par_fraction": 0.765459,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2019-01 to 2026-02"
+    },
+    "France": {
+      "D": 9,
+      "N": 135,
+      "chi_bar": 0.131119,
+      "W": 0.192422,
+      "cv_chi": 1.1765,
+      "crossings": 35,
+      "path_length": 181.8924,
+      "perp_fraction": 0.131119,
+      "par_fraction": 0.868881,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, transitional",
+        "uniformity": "burst-driven",
+        "extended": "A-B"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2015-01 to 2026-03"
+    },
+    "Brazil": {
+      "D": 9,
+      "N": 99,
+      "chi_bar": 0.066577,
+      "W": 0.340937,
+      "cv_chi": 0.6772,
+      "crossings": 18,
+      "path_length": 52.7957,
+      "perp_fraction": 0.066577,
+      "par_fraction": 0.933423,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, oscillatory",
+        "uniformity": "moderate",
+        "extended": "A-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2018-01 to 2026-03"
+    },
+    "South Korea": {
+      "D": 9,
+      "N": 85,
+      "chi_bar": 0.204518,
+      "W": 0.349697,
+      "cv_chi": 0.7418,
+      "crossings": 17,
+      "path_length": 48.6136,
+      "perp_fraction": 0.204518,
+      "par_fraction": 0.795482,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2019-01 to 2026-01"
+    },
+    "Australia": {
+      "D": 9,
+      "N": 327,
+      "chi_bar": 0.197097,
+      "W": 0.026832,
+      "cv_chi": 0.8239,
+      "crossings": 29,
+      "path_length": 1080.8144,
+      "perp_fraction": 0.197097,
+      "par_fraction": 0.802903,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "1999-01 to 2026-03"
+    },
+    "Italy": {
+      "D": 9,
+      "N": 123,
+      "chi_bar": 0.056865,
+      "W": 0.390476,
+      "cv_chi": 0.7374,
+      "crossings": 28,
+      "path_length": 71.7074,
+      "perp_fraction": 0.056865,
+      "par_fraction": 0.943135,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, oscillatory",
+        "uniformity": "moderate",
+        "extended": "A-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2016-01 to 2026-03"
+    },
+    "Spain": {
+      "D": 9,
+      "N": 135,
+      "chi_bar": 0.332225,
+      "W": 0.196331,
+      "cv_chi": 0.7991,
+      "crossings": 24,
+      "path_length": 122.2423,
+      "perp_fraction": 0.332225,
+      "par_fraction": 0.667775,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2015-01 to 2026-03"
+    },
+    "Poland": {
+      "D": 9,
+      "N": 135,
+      "chi_bar": 0.1981,
+      "W": 0.050937,
+      "cv_chi": 0.9416,
+      "crossings": 11,
+      "path_length": 215.9519,
+      "perp_fraction": 0.1981,
+      "par_fraction": 0.8019,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x9+7 = 25",
+      "dates": "2015-01 to 2026-03"
+    }
+  },
+  "ember_europe_monthly": {
+    "Belgium": {
+      "D": 11,
+      "N": 135,
+      "chi_bar": 0.181092,
+      "W": 0.055931,
+      "cv_chi": 0.9574,
+      "crossings": 25,
+      "path_length": 446.9829,
+      "perp_fraction": 0.181092,
+      "par_fraction": 0.818908,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2015-01 to 2026-03"
+    },
+    "Bulgaria": {
+      "D": 11,
+      "N": 112,
+      "chi_bar": 0.101161,
+      "W": 0.29024,
+      "cv_chi": 0.7021,
+      "crossings": 23,
+      "path_length": 79.2448,
+      "perp_fraction": 0.101161,
+      "par_fraction": 0.898839,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, transitional",
+        "uniformity": "moderate",
+        "extended": "A-M"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2016-12 to 2026-03"
+    },
+    "Cyprus": {
+      "D": 11,
+      "N": 109,
+      "chi_bar": 0.261752,
+      "W": 0.222126,
+      "cv_chi": 0.4714,
+      "crossings": 19,
+      "path_length": 85.537,
+      "perp_fraction": 0.261752,
+      "par_fraction": 0.738248,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "uniform",
+        "extended": "C-U"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2017-01 to 2026-01"
+    },
+    "Czechia": {
+      "D": 11,
+      "N": 135,
+      "chi_bar": 0.127337,
+      "W": 0.224334,
+      "cv_chi": 1.475,
+      "crossings": 36,
+      "path_length": 160.4753,
+      "perp_fraction": 0.127337,
+      "par_fraction": 0.872663,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, transitional",
+        "uniformity": "burst-driven",
+        "extended": "A-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2015-01 to 2026-03"
+    },
+    "Finland": {
+      "D": 11,
+      "N": 111,
+      "chi_bar": 0.202054,
+      "W": 0.039506,
+      "cv_chi": 1.0585,
+      "crossings": 18,
+      "path_length": 455.6306,
+      "perp_fraction": 0.202054,
+      "par_fraction": 0.797946,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "burst-driven",
+        "extended": "C-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2017-01 to 2026-03"
+    },
+    "France": {
+      "D": 11,
+      "N": 35,
+      "chi_bar": 0.16653,
+      "W": 0.150985,
+      "cv_chi": 1.1335,
+      "crossings": 13,
+      "path_length": 86.1015,
+      "perp_fraction": 0.16653,
+      "par_fraction": 0.83347,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "burst-driven",
+        "extended": "C-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2023-05 to 2026-03"
+    },
+    "Germany": {
+      "D": 11,
+      "N": 135,
+      "chi_bar": 0.185239,
+      "W": 0.176508,
+      "cv_chi": 0.9111,
+      "crossings": 20,
+      "path_length": 113.3092,
+      "perp_fraction": 0.185239,
+      "par_fraction": 0.814761,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2015-01 to 2026-03"
+    },
+    "Hungary": {
+      "D": 11,
+      "N": 111,
+      "chi_bar": 0.195443,
+      "W": 0.162222,
+      "cv_chi": 1.4138,
+      "crossings": 33,
+      "path_length": 203.4254,
+      "perp_fraction": 0.195443,
+      "par_fraction": 0.804557,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "burst-driven",
+        "extended": "C-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2017-01 to 2026-03"
+    },
+    "Italy": {
+      "D": 11,
+      "N": 47,
+      "chi_bar": 0.228385,
+      "W": 0.09826,
+      "cv_chi": 0.8949,
+      "crossings": 18,
+      "path_length": 183.1881,
+      "perp_fraction": 0.228385,
+      "par_fraction": 0.771615,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2022-05 to 2026-03"
+    },
+    "Malta": {
+      "D": 11,
+      "N": 85,
+      "chi_bar": 0.280475,
+      "W": 0.021872,
+      "cv_chi": 0.8094,
+      "crossings": 9,
+      "path_length": 411.4814,
+      "perp_fraction": 0.280475,
+      "par_fraction": 0.719525,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2019-01 to 2026-01"
+    },
+    "Netherlands": {
+      "D": 11,
+      "N": 135,
+      "chi_bar": 0.277388,
+      "W": 0.050952,
+      "cv_chi": 1.202,
+      "crossings": 29,
+      "path_length": 569.1661,
+      "perp_fraction": 0.277388,
+      "par_fraction": 0.722612,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "burst-driven",
+        "extended": "C-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2015-01 to 2026-03"
+    },
+    "North Macedonia": {
+      "D": 11,
+      "N": 98,
+      "chi_bar": 0.230601,
+      "W": 0.03062,
+      "cv_chi": 0.5322,
+      "crossings": 19,
+      "path_length": 620.5161,
+      "perp_fraction": 0.230601,
+      "par_fraction": 0.769399,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "moderate",
+        "extended": "C-M"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2017-01 to 2025-02"
+    },
+    "Slovakia": {
+      "D": 11,
+      "N": 135,
+      "chi_bar": 0.198899,
+      "W": 0.101226,
+      "cv_chi": 1.156,
+      "crossings": 38,
+      "path_length": 375.3968,
+      "perp_fraction": 0.198899,
+      "par_fraction": 0.801101,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "burst-driven",
+        "extended": "C-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2015-01 to 2026-03"
+    },
+    "Spain": {
+      "D": 11,
+      "N": 135,
+      "chi_bar": 0.169173,
+      "W": 0.085333,
+      "cv_chi": 1.4911,
+      "crossings": 16,
+      "path_length": 187.5009,
+      "perp_fraction": 0.169173,
+      "par_fraction": 0.830827,
+      "regime": {
+        "class": "C",
+        "name": "Mixed",
+        "uniformity": "burst-driven",
+        "extended": "C-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2015-01 to 2026-03"
+    },
+    "T\u00fcrkiye": {
+      "D": 11,
+      "N": 98,
+      "chi_bar": 0.044052,
+      "W": 0.275208,
+      "cv_chi": 0.8035,
+      "crossings": 15,
+      "path_length": 54.5043,
+      "perp_fraction": 0.044052,
+      "par_fraction": 0.955948,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, transitional",
+        "uniformity": "moderate",
+        "extended": "A-M"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2018-01 to 2026-02"
+    },
+    "United Kingdom": {
+      "D": 11,
+      "N": 135,
+      "chi_bar": 0.118704,
+      "W": 0.186966,
+      "cv_chi": 1.1331,
+      "crossings": 39,
+      "path_length": 208.5944,
+      "perp_fraction": 0.118704,
+      "par_fraction": 0.881296,
+      "regime": {
+        "class": "A",
+        "name": "Parallel-dominant, transitional",
+        "uniformity": "burst-driven",
+        "extended": "A-B"
+      },
+      "state_size": "2x11+7 = 29",
+      "dates": "2015-01 to 2026-03"
+    }
+  }
+}

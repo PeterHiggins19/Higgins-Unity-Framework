@@ -8,7 +8,7 @@ HUF proposes that **composition** — the internal proportional balance of a sys
 
 ## The Discovery: EITT
 
-**Entropy Invariance under Temporal Transformation.** Shannon entropy appears empirically near-invariant under geometric-mean block decimation of compositional time series.
+**Entropy-Invariant Time Transformer.** Shannon entropy appears empirically near-invariant under geometric-mean block decimation of compositional time series.
 
 Measured: **0.18% variation** across a 341:1 compression ratio (daily to annual European electricity compositions, 8 carriers, 4089 trading days). Confirmed across energy, hardware degradation, cosmological observation, commodities, and chemistry.
 
@@ -41,33 +41,78 @@ This produced three new frameworks:
 
 ```
 HUF/
-├── science/                    # The unified front
-│   ├── reference/              # Core reference collection (start here, 9 docs, ~105 min)
-│   ├── chemistry/              # EITT chemistry results, HUF-IDX, PRISM
-│   ├── core/                   # EITT mathematics, complete explanation, formulas
-│   └── methodology/            # Compositional governance scale, confidence index
+├── ai-refresh/                     # AI STARTS HERE — fast context loading
+│   ├── HUF_FAST_REFRESH.json       #   All canonical values, single file
+│   ├── HUF_INTEGRITY_MANIFEST.json #   Hash verification, drift patterns
+│   └── huf_spec_v2.0.json          #   Complete framework specification
 │
-├── huf-gov/                    # Active governance
-│   ├── governance/             # Standards, protocols, kill tests
-│   ├── science/                # Monitoring taxonomy, ontological foundation
-│   └── evidence/               # Case studies (energy, backblaze, planck, ramsar)
+├── science/                        # All scientific work by subject
+│   ├── reference/                  #   Core reference (9 docs, ~105 min)
+│   ├── core/                       #   EITT maths, formulas, user handbook
+│   ├── methodology/                #   Governance scale, confidence index
+│   ├── chemistry/                  #   CheMixHub results, HUF-IDX, PRISM
+│   ├── quantum/                    #   HUF-QIT: 9 isomorphisms, Bell test
+│   ├── eitt/                       #   EITT evidence: 4 proofs, adversarial
+│   ├── coda-monitoring/            #   Perturbation drift detection protocol
+│   ├── spectral/                   #   Frequency-domain analysis
+│   ├── loudspeaker-analogy/        #   Origin: crossover networks as CoDa
+│   ├── wetlands/                   #   Ramsar Convention monitoring
+│   └── governance/                 #   201-country ranking outputs
 │
-├── tools/                      # Everything runnable
-│   ├── pipeline/               # EITT pipeline, preparsers, analysis scripts
-│   ├── diagnostics/            # Validators, dashboards, diagnostic JSX
-│   ├── spectrum-analyzer/      # HUF Spectrum Analyzer (all versions)
-│   └── shared/                 # Build utilities, styles, glossary
+├── huf-gov/                        # Active governance
+│   ├── governance/                 #   Standards, protocols, kill tests
+│   ├── science/                    #   Monitoring taxonomy, ontology
+│   └── evidence/                   #   Case studies (energy, backblaze, etc.)
 │
-├── drafts/codawork-2026/       # CoDaWork 2026 conference materials
+├── tools/                          # Everything runnable
+│   ├── pipeline/                   #   EITT pipeline, preparsers, scripts
+│   ├── diagnostics/                #   Validators, dashboards, UML diagrams
+│   ├── spectrum-analyzer/          #   HUF Spectrum Analyzer (all versions)
+│   └── shared/                     #   Build utilities, styles, glossary
 │
-├── data/                       # Datasets (energy, backblaze, toronto, eitt-lab)
+├── drafts/                         # Conference materials, papers, proposals
+│   ├── codawork-2026/              #   CoDaWork 2026, Coimbra
+│   │   ├── presentation/           #     Main talk slide deck
+│   │   ├── primers/                #     4 personalized researcher primers
+│   │   ├── preparation/            #     Q&A prep, conversation guide
+│   │   └── extended/               #     Extended results, EITT handout
+│   ├── papers/                     #   Paper submissions (7 venues)
+│   ├── proposals/                  #   Unified proposal, integration briefs
+│   └── books/                      #   Book-length QIT treatments
 │
-└── archive/                    # Development history (everything pre-restructure)
+├── briefings/                      # Session briefings & AI handoffs
+│
+├── data/                           # Datasets by domain
+│   ├── backblaze/                  #   Hard drive failure data
+│   ├── energy/                     #   EMBER/OWID energy data
+│   ├── ember/                      #   EMBER processed results
+│   ├── ngfs/                       #   NGFS Phase 4 scenarios
+│   ├── codawork-samples/           #   Reproducible CoDaWork samples
+│   ├── eitt-lab/                   #   EITT lab package
+│   └── toronto/                    #   TTC transit data
+│
+├── dormant/                        # Paused branches — sleeping, not dead
+│   ├── pre-coda-metrics/           #   Pre-CoDa metric formulations
+│   ├── early-governance/           #   Multi-AI collective experiments
+│   ├── planck-case/                #   Planck sky map analysis
+│   ├── peterson-outreach/          #   Peterson letters (paused)
+│   ├── hagf/                       #   Adaptive governance (superseded)
+│   └── deceptive-drift/            #   Arithmetic hiding composition changes
+│
+└── archive/                        # Superseded work — what failed speaks loudest
 ```
 
 ---
 
-## Start Here
+## For AI Systems
+
+**Start here:** Read `ai-refresh/HUF_FAST_REFRESH.json` first. It contains every canonical name, number, formula, and structural rule. If anything elsewhere disagrees with FAST_REFRESH, the FAST_REFRESH wins. Then verify with `ai-refresh/HUF_INTEGRITY_MANIFEST.json`. Then read `INDEX.json` for the full file map.
+
+**Known drift traps:** EITT is "Entropy-Invariant Time Transformer" (never Ternary). Japan drift flag is 2013-2014 (never 2011-2012). Germany is 2023-2024/2024-2025 (never 2011). UK has three specific values (2.98, 3.23, 3.26), never "approximately 3".
+
+---
+
+## Start Here (Humans)
 
 | Time | What | Where |
 |------|------|-------|
@@ -76,6 +121,7 @@ HUF/
 | 15 min | **User Handbook** — fast summary + guided links | [`science/core/HUF_USER_HANDBOOK.md`](science/core/HUF_USER_HANDBOOK.md) |
 | 20 min | Chemistry results (the new frontier) | [`science/chemistry/`](science/chemistry/) |
 | 30 min | The kill test — 19 documented failure modes | [`huf-gov/governance/`](huf-gov/governance/) |
+| 10 min | Quantum correspondence (advanced) | [`science/quantum/`](science/quantum/) |
 
 If you want to break it, the kill test is where to start.
 
@@ -94,6 +140,12 @@ If you want to break it, the kill test is where to start.
 - That every compositional change is harmful, actionable, or predictive.
 - That HUF replaces domain expertise, causal explanation, or policy judgment.
 - That autonomous intervention is justified on compositional readings alone.
+
+---
+
+## Dormant Branches
+
+Nothing dies here — only goes dormant. The `dormant/` folder preserves paused work with documented reasons and conditions for reawakening. The `archive/` folder holds superseded and rejected approaches as reference for what was tried and why. What failed always speaks louder.
 
 ---
 

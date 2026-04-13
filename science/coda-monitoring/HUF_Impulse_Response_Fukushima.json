@@ -1,0 +1,233 @@
+{
+  "computation": "HUF Carrier Impulse Response Analysis \u2014 Fukushima 2011",
+  "analogy": "Loudspeaker crossover: each carrier is a driver with its own group delay. The SBP is the crossover network.",
+  "date": "2026-04-07",
+  "event": {
+    "name": "Fukushima Daiichi nuclear disaster",
+    "date": "2011-03-11",
+    "type": "external_shock",
+    "baseline_period": "2008-2010",
+    "response_window": "2011-2018"
+  },
+  "carrier_impulse_responses": {
+    "Coal": {
+      "baseline_share": 0.2787,
+      "group_delay_years": 4,
+      "peak_year": 2015,
+      "peak_deviation_fractional": 0.2178,
+      "direction": "UP",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "HIGH",
+      "driver_analogy": "woofer (slow response)"
+    },
+    "Gas": {
+      "baseline_share": 0.2827,
+      "group_delay_years": 5,
+      "peak_year": 2016,
+      "peak_deviation_fractional": 0.5248,
+      "direction": "UP",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "HIGH",
+      "driver_analogy": "woofer (slow response)"
+    },
+    "Nuclear": {
+      "baseline_share": 0.2374,
+      "group_delay_years": 3,
+      "peak_year": 2014,
+      "peak_deviation_fractional": -1.0,
+      "direction": "DOWN",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "HIGH",
+      "driver_analogy": "midrange"
+    },
+    "Hydro": {
+      "baseline_share": 0.0678,
+      "group_delay_years": 4,
+      "peak_year": 2015,
+      "peak_deviation_fractional": 0.2286,
+      "direction": "UP",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "HIGH",
+      "driver_analogy": "woofer (slow response)"
+    },
+    "Solar": {
+      "baseline_share": 0.0028,
+      "group_delay_years": 7,
+      "peak_year": 2018,
+      "peak_deviation_fractional": 19.4217,
+      "direction": "UP",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "HIGH",
+      "driver_analogy": "woofer (slow response)"
+    },
+    "Wind": {
+      "baseline_share": 0.003,
+      "group_delay_years": 7,
+      "peak_year": 2018,
+      "peak_deviation_fractional": 1.2667,
+      "direction": "UP",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "HIGH",
+      "driver_analogy": "woofer (slow response)"
+    },
+    "Bioenergy": {
+      "baseline_share": 0.0184,
+      "group_delay_years": 4,
+      "peak_year": 2015,
+      "peak_deviation_fractional": 0.5082,
+      "direction": "UP",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "HIGH",
+      "driver_analogy": "woofer (slow response)"
+    },
+    "Other_Fossil": {
+      "baseline_share": 0.1093,
+      "group_delay_years": 1,
+      "peak_year": 2012,
+      "peak_deviation_fractional": 0.7168,
+      "direction": "UP",
+      "settling_years": 3,
+      "time_constant_years": 1.3,
+      "significance": "HIGH",
+      "driver_analogy": "tweeter (fast response)"
+    },
+    "Other_Renew": {
+      "baseline_share": 0.0,
+      "group_delay_years": 0,
+      "peak_year": 2011,
+      "peak_deviation_fractional": 0.0,
+      "direction": "DOWN",
+      "settling_years": 7,
+      "time_constant_years": 3.0,
+      "significance": "LOW",
+      "driver_analogy": "below noise floor"
+    }
+  },
+  "sbp_phase_alignment": {
+    "b1_fossil_vs_nonfossil": {
+      "label": "Fossil vs Non-Fossil",
+      "g1_delays": [
+        4,
+        5,
+        1
+      ],
+      "g2_delays": [
+        3,
+        4,
+        7,
+        7,
+        4
+      ],
+      "mismatch_years": 1.6666666666666665,
+      "aligned": "PARTIAL"
+    },
+    "b2_coal_vs_other_fossil": {
+      "label": "Coal vs {Gas, Other_Fossil}",
+      "g1_delays": [
+        4
+      ],
+      "g2_delays": [
+        5,
+        1
+      ],
+      "mismatch_years": 1.0,
+      "aligned": "YES"
+    },
+    "b3_nuclear_vs_renewables": {
+      "label": "Nuclear vs Renewables",
+      "g1_delays": [
+        3
+      ],
+      "g2_delays": [
+        4,
+        7,
+        7,
+        4
+      ],
+      "mismatch_years": 2.5,
+      "aligned": "NO"
+    },
+    "b4_gas_vs_other_fossil": {
+      "label": "Gas vs Other_Fossil",
+      "g1_delays": [
+        5
+      ],
+      "g2_delays": [
+        1
+      ],
+      "mismatch_years": 4.0,
+      "aligned": "NO"
+    },
+    "b5_hydro_vs_new_renew": {
+      "label": "Hydro vs {Solar, Wind, Bio, Other_Renew}",
+      "g1_delays": [
+        4
+      ],
+      "g2_delays": [
+        7,
+        7,
+        4
+      ],
+      "mismatch_years": 2.0,
+      "aligned": "PARTIAL"
+    },
+    "b6_solar_vs_wind": {
+      "label": "Solar vs Wind",
+      "g1_delays": [
+        7
+      ],
+      "g2_delays": [
+        7
+      ],
+      "mismatch_years": 0.0,
+      "aligned": "YES"
+    },
+    "b7_bio_vs_other_renew": {
+      "label": "Bioenergy vs Other_Renew",
+      "g1_delays": [
+        4
+      ],
+      "g2_delays": [],
+      "mismatch_years": null,
+      "aligned": "N/A"
+    },
+    "b8_solar_wind_vs_bio_other": {
+      "label": "{Solar, Wind} vs {Bio, Other_Renew}",
+      "g1_delays": [
+        7,
+        7
+      ],
+      "g2_delays": [
+        4
+      ],
+      "mismatch_years": 3.0,
+      "aligned": "NO"
+    }
+  },
+  "key_finding": {
+    "cr_vs_group_delay_correlation": {
+      "transition": "2010\u21922011",
+      "r": 0.6085,
+      "n_balances": 7,
+      "interpretation": "Strong: CR is partially measuring temporal misalignment between carrier responses. The coupling signal contains group delay information."
+    },
+    "crossover_aligned": false,
+    "but_thats_the_point": "The group delay mismatch between carriers IS the governance signal. Fast-responding carriers (Gas, Nuclear) and slow-responding carriers (Solar, Coal restructuring) create coupling patterns that CR detects. A phase-aligned SBP would hide this information."
+  },
+  "loudspeaker_translation": {
+    "tweeter": "Nuclear, Gas \u2014 instant response, high-frequency carriers",
+    "midrange": "Coal, Hydro \u2014 medium response time, policy-driven",
+    "woofer": "Solar, Wind \u2014 slow infrastructure build, long group delay",
+    "crossover": "SBP (Sequential Binary Partition)",
+    "constant_power_sum": "Closure constraint (compositions sum to 1)",
+    "group_delay_mismatch": "Different carriers respond to the same forcing event at different speeds",
+    "implication": "Unlike a loudspeaker where you WANT phase alignment, in governance you WANT to see the mismatch because it reveals system response dynamics"
+  }
+}

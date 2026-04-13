@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "type": "HUF-REPO-INDEX",
+    "version": "2.0",
+    "created": "2026-04-13",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Master index of the Higgins Unity Framework repository. Maps every folder with status, purpose, and AI training notes.",
+    "refresh_entry": "ai-refresh/HUF_FAST_REFRESH.json → ai-refresh/HUF_INTEGRITY_MANIFEST.json → this file"
+  },
+
+  "repository_structure": {
+    "ai-refresh": {
+      "purpose": "AI speed-loading context. Any AI starts here.",
+      "status": "active",
+      "load_order": ["HUF_FAST_REFRESH.json", "HUF_INTEGRITY_MANIFEST.json", "huf_spec_v2.0.json"]
+    },
+    "science": {
+      "purpose": "All scientific work organized by subject.",
+      "subfolders": {
+        "reference": "Core reference collection — 9 documents, start-here learning path",
+        "core": "EITT mathematics, complete explanation, formulas, user handbook",
+        "methodology": "Compositional governance scale, confidence index",
+        "chemistry": "EITT chemistry results (CheMixHub), HUF-IDX, PRISM",
+        "quantum": "HUF-QIT correspondence — 9 isomorphisms, Bell test, 3 books [NEW]",
+        "eitt": "EITT evidence chain — 4 proofs, adversarial tests, Grok/ChatGPT briefs [NEW]",
+        "coda-monitoring": "Perturbation-based drift detection protocol, EMBER/NGFS results [NEW]",
+        "spectral": "Frequency-domain analysis of compositions [NEW]",
+        "loudspeaker-analogy": "Origin story — crossover networks as compositions [NEW]",
+        "wetlands": "Ramsar Convention monitoring, hidden variables [NEW]",
+        "governance": "201-country ranking, governance science outputs [NEW]"
+      }
+    },
+    "huf-gov": {
+      "purpose": "Active governance — standards, protocols, kill tests, evidence, case studies.",
+      "status": "active — operational"
+    },
+    "tools": {
+      "purpose": "Everything runnable — pipeline scripts, diagnostics, spectrum analyzers.",
+      "status": "active"
+    },
+    "drafts": {
+      "purpose": "Conference materials, paper submissions, proposals, books.",
+      "subfolders": {
+        "codawork-2026": "CoDaWork 2026 Coimbra — presentation, primers, preparation, extended materials",
+        "codawork-2026/presentation": "Main talk slide deck [NEW]",
+        "codawork-2026/primers": "4 personalized researcher primers [NEW]",
+        "codawork-2026/preparation": "Q&A prep, conversation guide [NEW]",
+        "codawork-2026/extended": "Extended results, EITT handout, coffee table [NEW]",
+        "papers": "Paper submissions across 7 target venues + Ramsar outreach",
+        "proposals": "Unified proposal, complementary integration [NEW]",
+        "books": "Book-length QIT treatments (Book 0-2) [NEW]",
+        "accord": "Human-AI Accord for Ramsar"
+      }
+    },
+    "briefings": {
+      "purpose": "Session briefings and AI handoffs — chronological discovery record. [NEW]",
+      "status": "active"
+    },
+    "data": {
+      "purpose": "Datasets organized by domain.",
+      "subfolders": {
+        "backblaze": "Hard drive failure data",
+        "codawork-samples": "Reproducible samples for CoDaWork",
+        "eitt-lab": "EITT laboratory package",
+        "energy": "EMBER and OWID energy data",
+        "ember": "EMBER Global Electricity Review processed data [NEW]",
+        "ngfs": "NGFS Phase 4 scenario analysis [NEW]",
+        "toronto": "TTC transit data",
+        "manifests": "Data manifests",
+        "checksums": "Integrity checksums"
+      }
+    },
+    "dormant": {
+      "purpose": "Paused branches — sleeping, not dead. Nothing dies here. [NEW]",
+      "branches": ["pre-coda-metrics", "early-governance", "planck-case", "peterson-outreach", "hagf", "deceptive-drift"]
+    },
+    "archive": {
+      "purpose": "Superseded, rejected, or completed work. What failed always speaks louder.",
+      "status": "archived"
+    }
+  },
+
+  "ai_training_notes": {
+    "start_here": "ai-refresh/HUF_FAST_REFRESH.json",
+    "verify_with": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+    "known_pitfalls": [
+      "EITT = Entropy-Invariant Time Transformer. NEVER Ternary or Temporal.",
+      "Japan drift: 2013-2014 d_A=9.05. NOT 2011-2012.",
+      "Germany drift: 2023-2024 d_A=9.07, 2024-2025 d_A=5.73. NOT 2011.",
+      "UK: three values (2.98, 3.23, 3.26). NEVER 'approximately 3'.",
+      "HUF-GOV: open loop ONLY. Instrument reads, never actuates.",
+      "Dormant branches are valuable. Do not discard."
+    ]
+  }
+}

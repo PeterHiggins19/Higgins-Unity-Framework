@@ -1,0 +1,325 @@
+{
+  "document": "HUF-EMPIRICAL-001",
+  "title": "First Empirical Computation of \u03c7(t) and W \u2014 Layer 2/3 Validation",
+  "date": "2026-04-11",
+  "author": "Peter Higgins \u2014 Rogue Wave Audio",
+  "status": "First empirical results \u2014 validates D-5 (partially)",
+  "description": "Crossing intensity \u03c7(t), winding ratio W, and regime classification computed on real compositional data for the first time. This is the empirical validation that was listed as pending in all prior documents.",
+  "results": {
+    "energy": {
+      "Germany": {
+        "D": 9,
+        "N": 26,
+        "observations": 26,
+        "entropy": {
+          "mean": 1.6339870591905576,
+          "max_possible": 2.1972245773362196,
+          "first": 1.2506647828010018,
+          "last": 1.767100340815594,
+          "range": 0.645039456121173
+        },
+        "layer_2": {
+          "crossing_intensity": {
+            "cumulative": 0.346999,
+            "mean_instantaneous": 0.268491,
+            "std": 0.331951,
+            "min": 0.002567,
+            "max": 0.989808
+          },
+          "winding_ratio": {
+            "W": 0.018859,
+            "crossing_count": 1,
+            "total_path_length": 53.024177
+          }
+        },
+        "layer_3": {
+          "total_perpendicular_motion": 22.211548,
+          "total_parallel_motion": 41.798932,
+          "perp_to_par_ratio": 0.53139
+        },
+        "laplacian": {
+          "mean": -65387061.8843,
+          "min": -200000271.1111,
+          "max": -2602.0941
+        },
+        "dynamic_geometric_ratio": {
+          "mean_rho": 5.551e-05
+        },
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "reason": "\u03c7=0.347, W=0.019, \u03c1=0.000056"
+        },
+        "instrument_state_size": "2x9 + 6 = 24 numbers",
+        "years": "2000-2025",
+        "components": [
+          "Coal",
+          "Gas",
+          "Nuclear",
+          "Hydro",
+          "Solar",
+          "Wind",
+          "Bioenergy",
+          "Other_Fossil",
+          "Other_Renew"
+        ]
+      },
+      "Japan": {
+        "D": 9,
+        "N": 25,
+        "observations": 25,
+        "entropy": {
+          "mean": 1.5463206291388447,
+          "max_possible": 2.1972245773362196,
+          "first": 1.591221113536994,
+          "last": 1.643098381937827,
+          "range": 0.27265114272390845
+        },
+        "layer_2": {
+          "crossing_intensity": {
+            "cumulative": 0.213369,
+            "mean_instantaneous": 0.123257,
+            "std": 0.134731,
+            "min": 0.008562,
+            "max": 0.646576
+          },
+          "winding_ratio": {
+            "W": 0.126573,
+            "crossing_count": 5,
+            "total_path_length": 39.502808
+          }
+        },
+        "layer_3": {
+          "total_perpendicular_motion": 9.89146,
+          "total_parallel_motion": 36.467096,
+          "perp_to_par_ratio": 0.271243
+        },
+        "laplacian": {
+          "mean": -104001588.4955,
+          "min": -200000333.8935,
+          "max": -100000193.081
+        },
+        "dynamic_geometric_ratio": {
+          "mean_rho": 0.0
+        },
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "reason": "\u03c7=0.213, W=0.127, \u03c1=0.000000"
+        },
+        "instrument_state_size": "2x9 + 6 = 24 numbers",
+        "years": "2000-2024",
+        "components": [
+          "Coal",
+          "Gas",
+          "Nuclear",
+          "Hydro",
+          "Solar",
+          "Wind",
+          "Bioenergy",
+          "Other_Fossil",
+          "Other_Renew"
+        ]
+      },
+      "United Kingdom": {
+        "D": 9,
+        "N": 26,
+        "observations": 26,
+        "entropy": {
+          "mean": 1.5029902303153109,
+          "max_possible": 2.1972245773362196,
+          "first": 1.3102223106779862,
+          "last": 1.6571178686818457,
+          "range": 0.4503230026114866
+        },
+        "layer_2": {
+          "crossing_intensity": {
+            "cumulative": 0.235451,
+            "mean_instantaneous": 0.087239,
+            "std": 0.126864,
+            "min": 0.000222,
+            "max": 0.649334
+          },
+          "winding_ratio": {
+            "W": 0.121764,
+            "crossing_count": 3,
+            "total_path_length": 24.637914
+          }
+        },
+        "layer_3": {
+          "total_perpendicular_motion": 6.92109,
+          "total_parallel_motion": 22.473891,
+          "perp_to_par_ratio": 0.307961
+        },
+        "laplacian": {
+          "mean": -130770754.345,
+          "min": -200000626.5733,
+          "max": -100000162.5256
+        },
+        "dynamic_geometric_ratio": {
+          "mean_rho": 0.0
+        },
+        "regime": {
+          "class": "C",
+          "name": "Mixed",
+          "reason": "\u03c7=0.235, W=0.122, \u03c1=0.000000"
+        },
+        "instrument_state_size": "2x9 + 6 = 24 numbers",
+        "years": "2000-2025",
+        "components": [
+          "Coal",
+          "Gas",
+          "Nuclear",
+          "Hydro",
+          "Solar",
+          "Wind",
+          "Bioenergy",
+          "Other_Fossil",
+          "Other_Renew"
+        ]
+      }
+    },
+    "gold_silver": {
+      "full_series": {
+        "D": 2,
+        "N": 1338,
+        "observations": 1338,
+        "entropy": {
+          "mean": 0.11736202361185073,
+          "max_possible": 0.6931471805599453,
+          "first": 0.23442827532017507,
+          "last": 0.08204813402898334,
+          "range": 0.18764541710006669
+        },
+        "layer_2": {
+          "crossing_intensity": {
+            "cumulative": 1.0,
+            "mean_instantaneous": 0.240838,
+            "std": 0.427592,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "winding_ratio": {
+            "W": 2.395374,
+            "crossing_count": 28,
+            "total_path_length": 11.689198
+          }
+        },
+        "layer_3": {
+          "total_perpendicular_motion": 11.689198,
+          "total_parallel_motion": 0.0,
+          "perp_to_par_ratio": 1.8522324152082012e+16
+        },
+        "laplacian": {
+          "mean": -51.6367,
+          "min": -101.77,
+          "max": -16.2107
+        },
+        "dynamic_geometric_ratio": {
+          "mean_rho": 0.00024284
+        },
+        "regime": {
+          "class": "D",
+          "name": "Boundary-Resident, Curvature-Elevated",
+          "reason": "Elevated \u03c7=1.000 with small \u03c1=0.000243"
+        },
+        "instrument_state_size": "2x2 + 6 = 10 numbers",
+        "dates": "1688-01-01 to 2026-02-20",
+        "components": [
+          "gold_share",
+          "silver_share"
+        ]
+      },
+      "pre-1900": {
+        "D": 2,
+        "N": 212,
+        "observations": 212,
+        "entropy": {
+          "mean": 0.22533959412441318,
+          "max_possible": 0.6931471805599453,
+          "first": 0.23442827532017507,
+          "last": 0.1287133979247697,
+          "range": 0.11645176418029607
+        },
+        "layer_2": {
+          "crossing_intensity": {
+            "cumulative": 1.0,
+            "mean_instantaneous": 0.943128,
+            "std": 0.231598,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "winding_ratio": {
+            "W": 11.785424,
+            "crossing_count": 24,
+            "total_path_length": 2.036414
+          }
+        },
+        "layer_3": {
+          "total_perpendicular_motion": 2.036414,
+          "total_parallel_motion": 0.0,
+          "perp_to_par_ratio": 2.638005948431486e+16
+        },
+        "laplacian": {
+          "mean": -18.2084,
+          "min": -37.0585,
+          "max": -16.2107
+        },
+        "dynamic_geometric_ratio": {
+          "mean_rho": 0.00047891
+        },
+        "regime": {
+          "class": "D",
+          "name": "Boundary-Resident, Curvature-Elevated",
+          "reason": "Elevated \u03c7=1.000 with small \u03c1=0.000479"
+        },
+        "instrument_state_size": "2x2 + 6 = 10 numbers"
+      },
+      "post-1900": {
+        "D": 2,
+        "N": 1126,
+        "observations": 1126,
+        "entropy": {
+          "mean": 0.0970323211707644,
+          "max_possible": 0.6931471805599453,
+          "first": 0.13170147315518535,
+          "last": 0.08204813402898334,
+          "range": 0.14824409279346112
+        },
+        "layer_2": {
+          "crossing_intensity": {
+            "cumulative": 1.0,
+            "mean_instantaneous": 0.108444,
+            "std": 0.310941,
+            "min": 0.0,
+            "max": 1.0
+          },
+          "winding_ratio": {
+            "W": 1.661257,
+            "crossing_count": 16,
+            "total_path_length": 9.631263
+          }
+        },
+        "layer_3": {
+          "total_perpendicular_motion": 9.631263,
+          "total_parallel_motion": 0.0,
+          "perp_to_par_ratio": 1.7388347506137248e+16
+        },
+        "laplacian": {
+          "mean": -57.9305,
+          "min": -101.77,
+          "max": -20.3447
+        },
+        "dynamic_geometric_ratio": {
+          "mean_rho": 0.00019824
+        },
+        "regime": {
+          "class": "D",
+          "name": "Boundary-Resident, Curvature-Elevated",
+          "reason": "Elevated \u03c7=1.000 with small \u03c1=0.000198"
+        },
+        "instrument_state_size": "2x2 + 6 = 10 numbers"
+      }
+    }
+  }
+}

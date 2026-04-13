@@ -1,0 +1,575 @@
+{
+  "document": "HUF-DECOMP-001",
+  "title": "The EITT Decomposition Framework: HUF Construction from First Principles",
+  "version": "5.0.0",
+  "date": "2026-04-11",
+  "author": "Peter Higgins — Rogue Wave Audio",
+  "contact": "PeterHiggins@RogueWaveAudio.com",
+  "standard": "RWA-001",
+  "status": "Working paper — submitted for collective review",
+  "review_request": "This document presents a reframing of the Higgins Unity Framework (HUF) and EITT from the decomposition framework perspective. Reviewers are asked to evaluate the logical construction, identify gaps, test falsifiability, and assess whether the framework extends or contradicts prior EITT results.",
+
+  "prior_art_search": {
+    "date": "2026-04-11",
+    "method": "Web search across arXiv, Nature, Springer, PMC, ResearchGate, Wikipedia, CRAN, MDPI, and general academic web. Eight targeted queries.",
+    "finding": "The individual mathematical components exist in separate established fields. The specific combination — Hodge/Helmholtz decomposition of velocity fields on the Aitchison simplex with Shannon entropy as scalar potential — does not appear in the literature.",
+    "closest_existing_work": {
+      "rna_velocity_hodge": {
+        "source": "Hodge Decomposition of Single-Cell RNA Velocity, J. Chem. Inf. Model., 2024",
+        "url": "https://pubs.acs.org/doi/10.1021/acs.jcim.4c00132",
+        "what_they_did": "Applied Hodge decomposition to RNA velocity fields. Decomposed into curl-free (gradient), divergence-free (solenoidal), and harmonic components to identify cell cycle, bifurcation, lineage differentiation.",
+        "parallel": "Exact same three-way decomposition. Same insight: gradient component identifies transitions, solenoidal identifies cycles.",
+        "differences": "Operates on UMAP/t-SNE embeddings, NOT the compositional simplex. Does not use Aitchison geometry, Shannon entropy as scalar potential, constant-memory streaming, or thermodynamic governance."
+      },
+      "ddhodge": {
+        "source": "Geometry-preserving vector field reconstruction using ddHodge, Nature Communications, 2025",
+        "url": "https://www.nature.com/articles/s41467-025-67782-6",
+        "what_they_did": "Extended RNA velocity Hodge decomposition to sparse biological data. Recovers gradient, curl, divergence including second-order derivatives.",
+        "differences": "Same manifold limitations as RNA velocity work."
+      }
+    },
+    "adjacent_fields": {
+      "information_geometry_coda": {
+        "source": "Egozcue, Pawlowsky-Glahn et al., arXiv:2005.11510 / Springer 2021",
+        "url": "https://arxiv.org/pdf/2005.11510",
+        "contribution": "Connected Fisher-Rao metric to compositional data on the simplex. Did NOT apply Hodge decomposition or decompose velocity fields."
+      },
+      "cencov_uniqueness": {
+        "source": "Čencov (1982), standard references",
+        "url": "https://en.wikipedia.org/wiki/Fisher_information_metric",
+        "contribution": "The Fisher-Rao metric is the ONLY Riemannian metric on the probability simplex invariant under sufficient statistics. This makes HUF's decomposition canonical, not one choice among many."
+      },
+      "transport_information_geometry": {
+        "source": "Wuchen Li, Information Geometry / Springer 2021",
+        "url": "https://link.springer.com/article/10.1007/s41884-021-00059-1",
+        "contribution": "Riemannian calculus on the probability simplex via optimal transport. Gradient flow, Hessian, geodesics. Did NOT apply Helmholtz decomposition."
+      },
+      "maximum_entropy_coda": {
+        "source": "BMC Bioinformatics, 2022",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9617458/",
+        "contribution": "Compositional Maximum Entropy (CME). Maximum entropy at centroid = HUF ground state. Did NOT decompose velocity fields."
+      },
+      "helmholtz_hodge_survey": {
+        "source": "Bhatia et al., IEEE TVCG, 2013",
+        "url": "https://www.sci.utah.edu/~hbhatia/pubs/2013_TVCG_survey.pdf",
+        "contribution": "Comprehensive HHD survey across fluid dynamics, visualisation, topological analysis. Did NOT apply to the compositional simplex or Aitchison geometry."
+      },
+      "compositional_time_series_2026": {
+        "source": "arXiv:2601.16821, 2026",
+        "url": "https://arxiv.org/html/2601.16821",
+        "contribution": "Directional-Shift Dirichlet ARMA models for compositional time series. Geodesic motion on Aitchison simplex. Structural break detection. Did NOT use Hodge decomposition or entropy contour analysis."
+      }
+    },
+    "novel_contributions": [
+      "Helmholtz/Hodge decomposition of velocity fields on the Aitchison simplex",
+      "Shannon entropy as scalar potential for the gradient (irrotational) component on compositional data",
+      "Parallel/perpendicular decomposition relative to entropy contours on the simplex",
+      "Crossing intensity χ(t) and winding ratio W as entropy-geometric diagnostics",
+      "Constant-memory (2D+6) streaming computation of the decomposition",
+      "Thermodynamic justification for open-loop governance (intervention adds entropy to measurement)",
+      "Electromagnetic structural analogy (entropy = scalar potential, redistribution = vector potential)",
+      "EITT itself (entropy invariance under geometric-mean temporal decimation)",
+      "Čencov uniqueness chain: Fisher-Rao is canonical → decomposition is canonical"
+    ],
+    "significance_of_cencov": "Because the Fisher-Rao metric is the ONLY natural Riemannian metric on the simplex (Čencov), HUF's decomposition is not one possible decomposition among many — it is THE canonical decomposition. This distinguishes it from RNA velocity work, where the embedding metric (UMAP/t-SNE) is arbitrary and non-canonical.",
+    "assessment": "The framework sits at the intersection of five established fields: Compositional Data Analysis, Information Geometry, Vector Calculus, Riemannian Geometry, and Thermodynamics. Each field is mature. The intersection is empty. The closest parallel (RNA velocity Hodge decomposition) confirms the mathematical operation is natural, but on a different manifold with a non-canonical metric."
+  },
+
+  "context": {
+    "what_came_before": "EITT (Entropy Invariance under Temporal Transformation) was developed as an empirical diagnostic: apply geometric-mean block decimation to compositional time series and measure whether Shannon entropy is preserved. The residual δ_M serves as a pass/fail diagnostic for compositional stationarity. This was tested across four domains (precious metals, global energy, financial portfolios, chemical mixtures) and extended to ILR balance preservation, Rényi/Tsallis generalisation, adaptive decimation, and bidirectional inversion.",
+    "what_changed": "The decomposition framework reinterprets the EITT residual as a crossing detector on the entropy landscape of the compositional simplex. Instead of asking 'is entropy preserved?' it asks 'how is the compositional process moving relative to entropy contours?' This reframing unifies all prior EITT results under a single geometric principle and extends the instrument from a binary diagnostic to a three-layer decomposition method.",
+    "what_did_not_change": "All prior EITT empirical results stand exactly as published. They become Layer 1 observations within the new framework. No numbers change. No claims are retracted. The decomposition framework explains why they hold and extends the method to cases where the original diagnostic alone cannot operate.",
+    "origin": "The framework emerged from inverting Open Problem O-3 in the EITT Mathematics document: 'Does the EITT residual have a curvature interpretation?' The inverted question — 'What does the known Fisher-Rao curvature tell us about the EITT residual?' — led to the recognition that the residual measures perpendicular motion relative to entropy contours on the simplex."
+  },
+
+  "core_insight": {
+    "statement": "A compositional time series is a trajectory on a curved manifold (the simplex). Shannon entropy defines contour lines on this manifold. The EITT residual measures how much of the trajectory's motion crosses these contour lines versus moving along them.",
+    "analogy": "Topographic map. Entropy contours are elevation lines. A path along a contour stays at constant elevation (entropy preserved, EITT passes). A path across contours changes elevation (entropy changes, EITT fails). The residual is a crossing detector.",
+    "consequence": "The pass/fail diagnostic becomes the first layer of a three-layer instrument. Nothing is lost. Resolution increases."
+  },
+
+  "elimination_principle": {
+    "statement": "A system with no components is a system of no interest. A system with one component has no ratios. No ratios means no structure to measure.",
+    "formal": "HUF operates exclusively on the open D-part simplex S^D = {x ∈ R^D : x_i > 0, Σx_i = κ} with D ≥ 2.",
+    "consequence": "Entropy is strictly positive everywhere on the open simplex. The boundary (where any x_i = 0) is excluded by definition. The entropy landscape has no floor — it approaches zero asymptotically but never reaches it. The surface never ends."
+  },
+
+  "entropy_landscape": {
+    "field": "H(x) = -Σ x_i ln(x_i)",
+    "gradient_clr": "∇H(x) = clr(-ln(x_i) - 1) for i = 1,...,D",
+    "hessian": "Diagonal: ∂²H/∂x_i² = -1/x_i",
+    "properties": {
+      "maximum": "At centroid x* = (1/D, ..., 1/D), H* = ln(D). This is the isotropic budget — equal allocation, maximum freedom, ground state.",
+      "minimum": "Approaches zero as any x_i → 0. Never reached on the open simplex.",
+      "curvature_interior": "Gentle. All x_i moderate, -1/x_i bounded. Contours widely spaced. Most directions of motion are approximately parallel to contours.",
+      "curvature_boundary": "Severe. Any x_i small, -1/x_i large. Contours compressed. Even small movements cross many contour lines. This is the mechanism behind the chemistry boundary effect."
+    },
+    "key_property": "The landscape is pre-existing. It depends only on D and the current position x. It does not depend on data, history, or time. This is the ontological foundation (ONTO-001). The instrument does not create the landscape. It reads it."
+  },
+
+  "two_kinds_of_motion": {
+    "decomposition": "At any point on the simplex, the velocity of a compositional trajectory can be decomposed into two orthogonal components with respect to the local entropy contour.",
+    "parallel": {
+      "symbol": "v_∥",
+      "definition": "Component of velocity tangent to the local entropy contour.",
+      "meaning": "The composition changes but entropy stays the same. Movement along the contour.",
+      "eitt_effect": "Safe to decimate. Geometric-mean averaging of along-contour motion preserves entropy by construction."
+    },
+    "perpendicular": {
+      "symbol": "v_⊥",
+      "definition": "Component of velocity normal to the local entropy contour (aligned with entropy gradient).",
+      "meaning": "The composition changes AND entropy changes. Movement across contours.",
+      "eitt_effect": "Creates the EITT residual. This is the motion that geometric-mean averaging cannot absorb."
+    },
+    "formal_decomposition": {
+      "perpendicular": "v_⊥(t) = [⟨v(t), n̂(t)⟩_A / ⟨n̂(t), n̂(t)⟩_A] n̂(t)",
+      "parallel": "v_∥(t) = v(t) - v_⊥(t)",
+      "where": "n̂(t) = ilr(∇_clr H(x(t))) is the entropy gradient projected into ILR coordinates."
+    }
+  },
+
+  "three_layers": {
+    "layer_1": {
+      "name": "The Residual (Existing EITT)",
+      "input": "Compositional time series, block width M",
+      "output": "δ_M — a single number",
+      "question": "Is entropy approximately preserved under decimation?",
+      "nature": "Binary. Pass or fail.",
+      "status": "Fully established. All prior EITT results live here."
+    },
+    "layer_2": {
+      "name": "The Crossing Diagnostic",
+      "input": "Compositional time series",
+      "output": "χ(t) — crossing intensity at each time step. W — winding ratio over the trajectory.",
+      "question": "How is the process moving relative to entropy contours? Is it oscillating or transitioning?",
+      "nature": "Continuous. A profile, not a verdict.",
+      "status": "New. Theoretical. Awaiting empirical computation.",
+      "crossing_intensity": {
+        "symbol": "χ(t)",
+        "definition": "|v_⊥(t)| / |v(t)|",
+        "range": "[0, 1]",
+        "interpretation": "Fraction of total compositional motion directed across entropy contours. χ=0 is pure parallel (EITT safe). χ=1 is pure perpendicular (maximum entropy disruption)."
+      },
+      "winding_ratio": {
+        "symbol": "W",
+        "definition": "C(H̄) / L_A, where C is crossing count at mean entropy and L_A is total Aitchison path length",
+        "interpretation": {
+          "high_W": "Many crossings per unit path. Oscillatory. Process swings back and forth across contours. Stationary. EITT-friendly.",
+          "low_W": "Few crossings per unit path. Transitional. Process cuts steadily through contours. Non-stationary. EITT-challenging.",
+          "zero_W": "Never recrosses mean contour. Pure transition. Monotonic departure. Example: Solar in global electricity mix."
+        }
+      }
+    },
+    "layer_3": {
+      "name": "The Decomposition",
+      "input": "Compositional time series",
+      "output": "Two separated series — parallel component {v_∥(t)} and perpendicular component {v_⊥(t)}",
+      "question": "What part of the compositional motion preserves entropy, and what part disrupts it?",
+      "nature": "Structural. A separation, not a measurement.",
+      "status": "New. Theoretical. Awaiting empirical validation.",
+      "key_claim": "The parallel component can be decimated normally — it is entropy-preserving by construction. The perpendicular component is the signal — it should be reported, not averaged. This lets EITT work on non-stationary data by isolating the non-stationary component rather than rejecting the entire trajectory."
+    },
+    "emergent_layer_4": {
+      "name": "The Constraint Structure",
+      "observation": "When winding ratio approaches zero (pure transition), one direction dominates the trajectory. The remaining D-2 degrees of freedom go quiet. Three populations emerge.",
+      "populations": {
+        "perpendicular_active": "The transition direction. The dimension doing all the entropy-changing work. Example: Solar growing in the electricity mix.",
+        "parallel_active": "The redistribution among remaining components at roughly constant entropy. Example: Gas replacing Coal while total fossil share adjusts.",
+        "orthogonal_dormant": "The directions nobody is using. The degrees of freedom the system is not exploring. These are the constraints — physics, policy, infrastructure, thermodynamics preventing certain compositional changes."
+      },
+      "diagnostic_value": "The dormant dimensions tell you what the system CANNOT do. In chemistry: forbidden reaction pathways. In energy: infrastructure locked for decades. In finance: regulated positions. The winding ratio approaching zero signals reduced effective dimensionality, and the dropped dimensions are the constraint map."
+    }
+  },
+
+  "construction": {
+    "summary": "Eight steps from elimination to report. Constant memory. Linear computation per observation. No stored history. No model.",
+    "steps": [
+      {
+        "step": 0,
+        "name": "Elimination",
+        "action": "Remove all systems with D < 2. Define the domain as the open simplex.",
+        "cost": "Definition only. No computation."
+      },
+      {
+        "step": 1,
+        "name": "Entropy Landscape",
+        "action": "For given D, establish the entropy field, gradient field, and curvature field on S^D.",
+        "cost": "Computed once per D."
+      },
+      {
+        "step": 2,
+        "name": "The DUT (Device Under Test)",
+        "action": "Receive compositional time series. No assumptions about stationarity, trend, or structure.",
+        "cost": "Data ingestion only."
+      },
+      {
+        "step": 3,
+        "name": "First Contact",
+        "action": "Place first observation on simplex. Read local entropy, curvature, gradient direction, contour tangent space.",
+        "cost": "O(D) per observation. One composition gives position, curvature, gradient. No history needed."
+      },
+      {
+        "step": 4,
+        "name": "Motion",
+        "action": "Second observation arrives. Compute velocity. Decompose into parallel and perpendicular. Initialise running state.",
+        "cost": "O(D). State initialised at 2D + 6 numbers."
+      },
+      {
+        "step": 5,
+        "name": "Accumulation",
+        "action": "Each new observation: compute velocity, decompose, update running statistics (mean entropy, crossing counter, path length, component sums). Discard raw observation.",
+        "cost": "O(D) per observation. Memory constant at 2D + 6 numbers regardless of N."
+      },
+      {
+        "step": 6,
+        "name": "Classification",
+        "action": "Based on accumulated profile, classify DUT into geometric regime (A through E).",
+        "cost": "Comparison only."
+      },
+      {
+        "step": 7,
+        "name": "Goal",
+        "action": "Apply operator's intent (monitoring, diagnostics, or control) to determine which readings matter.",
+        "cost": "Depends on goal type."
+      },
+      {
+        "step": 8,
+        "name": "Report",
+        "action": "Assemble HUF state vector. Measure, report, file. No intervention on data.",
+        "cost": "Assembly only."
+      }
+    ],
+    "instrument_state": {
+      "contents": [
+        "Current composition: D numbers",
+        "Previous composition: D numbers",
+        "Running mean entropy: 1 number",
+        "Crossing counter: 1 integer",
+        "Cumulative Aitchison path length: 1 number",
+        "Running perpendicular sum: 1 number",
+        "Running parallel sum: 1 number",
+        "Observation count: 1 integer"
+      ],
+      "total": "2D + 6 numbers. Constant. Does not grow with N.",
+      "mechanism": "The geometry is local. The gradient depends on where you are, not where you have been. The decomposition depends on where you are and where you just were. The accumulating statistics are sums, counts, and means — all updatable in constant space. The simplex carries the information. The instrument carries a compass and a counter."
+    }
+  },
+
+  "regime_classification": {
+    "A": {
+      "name": "Parallel-Dominant, High Winding Ratio",
+      "profile": "Low χ̄, high W",
+      "behaviour": "Oscillatory. Internal redistribution without structural change.",
+      "eitt": "Passes easily.",
+      "examples": "Mature commodity markets, stable energy grids, well-mixed chemical systems far from reaction.",
+      "action": "Safe to decimate aggressively. Monitor perpendicular variance for transition onset."
+    },
+    "B": {
+      "name": "Perpendicular-Dominant, Low Winding Ratio",
+      "profile": "High χ̄, low W (near zero)",
+      "behaviour": "Transitional. One direction dominates. Monotonic departure from starting entropy.",
+      "eitt": "Fails. Perpendicular motion creates the residual directly.",
+      "examples": "Solar energy growth in electricity mix. Chemical reaction progressing. Market sector inflating.",
+      "action": "Do not decimate perpendicular component. Identify transition direction and dormant constraints."
+    },
+    "C": {
+      "name": "Mixed, Moderate Winding Ratio",
+      "profile": "Moderate χ̄, moderate W",
+      "behaviour": "Partial transition. Some components transitioning, others stable.",
+      "eitt": "May pass or fail. Layer 1 alone cannot distinguish 'barely passing' from 'mixed regime'.",
+      "examples": "Global electricity generation — Solar/Wind transitioning while Nuclear/Hydro stable.",
+      "action": "Decompose. Report parallel and perpendicular components separately. Identify which balances carry the transition."
+    },
+    "D": {
+      "name": "Boundary-Resident, Curvature-Elevated",
+      "profile": "Elevated χ̄ but low velocity. High κ_max.",
+      "behaviour": "Not transitioning — geometrically exposed. Contours packed tight near simplex boundary.",
+      "eitt": "High residuals from curvature, not dynamics. Looks like Regime B but the mechanism differs.",
+      "examples": "Chemical mixtures with trace components. Extreme-ratio financial portfolios.",
+      "action": "Distinguish from B via velocity magnitude. Report curvature separately. The chemistry boundary effect explained as classification, not anomaly."
+    },
+    "E": {
+      "name": "Dormant-Dominant",
+      "profile": "Near-zero variance in most directions.",
+      "behaviour": "Constrained. Composition locked by external forces.",
+      "eitt": "Passes trivially.",
+      "examples": "Thermodynamically constrained chemical systems. Heavily regulated portfolios. Infrastructure-locked energy grids.",
+      "action": "Report dormant directions as constraint map. Active dimensions (if any) are remaining degrees of freedom."
+    }
+  },
+
+  "goal_types": {
+    "monitoring": {
+      "intent": "Detect change.",
+      "primary_signal": "Instantaneous crossing intensity χ(t).",
+      "secondary_signal": "Winding ratio W trend over sliding window.",
+      "alert_condition": "χ spike or W drop indicates transition onset.",
+      "output": "χ(t) profile, W trend, identification of balance coordinates carrying change."
+    },
+    "diagnostics": {
+      "intent": "Characterise system position on development index.",
+      "primary_signal": "Full decomposition profile.",
+      "huf_idx": "Integrated perpendicular displacement from centroid (ground state). Single number summarising distance from isotropic budget.",
+      "output": "Regime classification, decomposition profile, HUF-IDX value, constraint map (dormant dimensions)."
+    },
+    "control": {
+      "intent": "Drive system toward target state.",
+      "primary_signal": "Perpendicular distance to target entropy contour. Parallel distance along contour to target.",
+      "method": "Phase 1: Reduce perpendicular displacement (match entropy). Phase 2: Navigate parallel (match specific ratios at matched entropy).",
+      "origin": "This is the loudspeaker problem. Assume the response you want. Measure the distance. Drive toward it.",
+      "output": "Current perpendicular and parallel distances to target. Recommended control direction."
+    }
+  },
+
+  "reinterpretation_of_prior_results": {
+    "solar_b1_failure": {
+      "original": "Solar | Rest SBP fails at B1 for both 2:1 and 3:1 decimation.",
+      "reinterpretation": "Solar's exponential growth is almost entirely perpendicular motion — cutting steadily across entropy contours. Winding ratio near zero. Every other SBP dilutes this perpendicular signal. Solar | Rest concentrates it in B1.",
+      "layer_readings": {
+        "layer_1": "B1 fails.",
+        "layer_2": "χ ≈ 1 for B1, W ≈ 0 for Solar component.",
+        "layer_3": "Perpendicular component is the entire Solar growth trajectory. Parallel component is redistribution among other sources at roughly constant total entropy."
+      }
+    },
+    "chemistry_boundary": {
+      "original": "Interior pass rates 54-82%, boundary much lower.",
+      "reinterpretation": "Compositions near the simplex boundary live where Hessian -1/x_i is large. Contours compressed together. Even small movements cross many contours. χ is elevated by curvature, not velocity.",
+      "layer_readings": {
+        "layer_1": "High residuals at boundary.",
+        "layer_2": "Elevated χ driven by curvature, not dynamics. Regime D.",
+        "layer_3": "In interior, most motion is parallel. At boundary, same magnitude of motion has larger perpendicular component because contours are closer. Geometric property, not process property."
+      }
+    },
+    "adaptive_decimation": {
+      "original": "Balance velocity V(t) controls block width M(t).",
+      "reinterpretation": "V(t) is a partial version of χ(t) — measures total speed without separating parallel from perpendicular. Decomposition refines: slow block width only when perpendicular velocity is high. Fast parallel motion can be decimated aggressively.",
+      "improvement": "A process moving fast but parallel to contours can be decimated aggressively. A process moving slowly but perpendicular cannot. The original adaptive scheme over-restricts parallel-fast processes and under-restricts perpendicular-slow ones."
+    },
+    "eitt_inversion": {
+      "original": "Upward inversion (increase K) and downward inversion (decrease K) both can restore EITT invariance.",
+      "reinterpretation": "Inversion is a dimension search for the simplex where the trajectory has minimum crossing intensity. Upward: amalgamated dimensions hide structure, distorting contour alignment. Downward: individual non-stationary components carry high perpendicular motion, amalgamation averages out opposing perpendicular components.",
+      "unification": "Both directions seek the K where the trajectory runs most parallel to entropy contours."
+    },
+    "huf_idx": {
+      "original": "Magnitude and structure of EITT residual when applied to a domain. Measures distance from ground zero.",
+      "reinterpretation": "Ground zero is the centroid — maximum entropy, isotropic budget. HUF-IDX is the integrated perpendicular displacement from this point. High index means the domain's compositional reality has moved far from the entropy contour where EITT invariance holds perfectly. Either boundary-resident (chemistry) or rapidly transitioning (energy solar)."
+    },
+    "renyi_tsallis": {
+      "original": "Near-invariance holds for Rényi entropy H_q across q ∈ [0.1, 5.0]. Shannon is not special.",
+      "reinterpretation": "The parallel-perpendicular decomposition is not specific to Shannon entropy. Any smooth scalar field on the simplex induces contours. The framework generalises to any functional F: S^D → R. Shannon was tested first. It will not be last."
+    }
+  },
+
+  "constant_memory_tracking": {
+    "claim": "The entire curve can be tracked without storing the curve.",
+    "mechanism": "The geometry is local. The entropy gradient at any point depends only on that point (-ln(x_i) - 1 in CLR). The decomposition at any point depends only on that point and one neighbour. The winding ratio is a counter divided by a running sum.",
+    "instrument_state": "2D + 6 numbers. Current composition, previous composition, running mean entropy, crossing counter, cumulative path length, perpendicular sum, parallel sum, observation count.",
+    "analogy": "You carry a compass, not a map. The simplex does the work. You walk on it and read the ground beneath your feet.",
+    "infinity": "The surface never ends. Entropy is never zero on the open simplex. The contours never close. The instrument reads at every step to infinity with constant memory."
+  },
+
+  "vector_calculus_formalism": {
+    "title": "The Full Surveyor's Kit — Vector Calculus on the Simplex",
+    "status": "The construction initially used gradient and directional derivative only. The full vector calculus toolkit reveals that several open questions have formal answers and that the framework has exact parallels to electromagnetism via the Helmholtz decomposition.",
+    "already_used_without_naming": {
+      "directional_derivative": "The perpendicular component v_⊥ IS the directional derivative of H along the trajectory. χ(t) is its normalised magnitude.",
+      "material_derivative": "DH/Dt = ∂H/∂t + v·∇H. The streaming instrument computes the material derivative of entropy following the moving composition. The constant-memory tracking is a material derivative computation. Seven numbers tracking it to infinity."
+    },
+    "laplacian": {
+      "formula": "∇²H = Σ(-1/x_i)",
+      "meaning": "Total curvature in one number. Divergence of the gradient. Measures how tightly packed the entropy contours are at any point.",
+      "at_centroid": "∇²H = -D². Gentle curvature. Contours widely spaced.",
+      "at_boundary": "∇²H → -∞ as any x_i → 0. Extreme curvature. Contours compressed.",
+      "what_it_solves": "Cleanly separates Regime B (dynamic transition) from Regime D (geometric boundary exposure). The dynamic-geometric ratio ρ = |v_⊥| / |∇²H| is large for Regime B (high velocity, moderate Laplacian) and small for Regime D (low velocity, extreme Laplacian). One ratio from one operator.",
+      "cost": "O(D) from current composition. Computed on the fly, not stored."
+    },
+    "curl_of_gradient_zero": {
+      "identity": "∇ × ∇H = 0",
+      "meaning": "The entropy gradient field is irrotational. Conservative. No rotation.",
+      "constraint": "You cannot create a closed loop purely through perpendicular motion. Any closed trajectory on the simplex must have net-zero perpendicular displacement. Entropy gained in one direction must be returned coming back.",
+      "thermodynamic_interpretation": "Oscillation is free — entropy borrows and repays. Monotonic departure costs entropy permanently. The winding ratio is an entropy accounting balance. High W = balanced books. Low W = growing entropy debt. ∇ × ∇H = 0 is the bookkeeping rule."
+    },
+    "divergence_of_curl_zero": {
+      "identity": "∇ · (∇ × F) = 0",
+      "meaning": "The parallel (along-contour) velocity component has zero divergence. It circulates but neither creates nor destroys flow.",
+      "interpretation": "Components trading shares at constant entropy is divergence-free flow. Gas replacing Coal while total entropy holds steady — zero-divergence parallel field. Pure redistribution, no concentration, no rarefaction."
+    },
+    "stokes_theorem": {
+      "statement": "∮ v · dl = ∬ (∇ × v) · dS",
+      "connection": "The winding ratio W measures circulation — how many times the trajectory loops around its mean entropy contour. Stokes' theorem says this circulation equals the integrated curl of the velocity field over the region the trajectory encloses.",
+      "consequence": "W is not just a counter divided by path length. It is a surface integral of curl. The winding ratio connects the trajectory-level measurement (Layer 2) to the field-level property (curl of the compositional velocity field)."
+    },
+    "divergence_theorem": {
+      "statement": "∯ v · dS = ∭ (∇ · v) dV",
+      "connection": "Take an entropy band H_1 ≤ H ≤ H_2 on the simplex. Count trajectory crossings. Gauss says net flux equals integrated divergence inside.",
+      "extension": "For a population of DUTs (many systems measured simultaneously), this gives field-level diagnostics: net flow of systems through entropy bands. Extends HUF from single-instrument to population monitoring."
+    },
+    "vector_potential": {
+      "definition": "A field A such that v_∥ = ∇ × A",
+      "existence": "Guaranteed locally by the divergence-free property of v_∥.",
+      "meaning": "Compact encoding of all redistribution dynamics — how components trade shares at constant entropy — in one field.",
+      "electromagnetic_analogy": {
+        "note": "The analogy is structural, not metaphorical.",
+        "mapping": {
+          "electric_field": "Perpendicular velocity v_⊥ (gradient of scalar potential H)",
+          "magnetic_field": "Parallel velocity v_∥ (curl of vector potential A)",
+          "scalar_potential": "Shannon entropy H",
+          "vector_potential": "Redistribution potential (to be determined)",
+          "faraday": "∇ × ∇H = 0 (curl of gradient is zero)",
+          "no_monopoles": "∇ · v_∥ = 0 (divergence-free redistribution)"
+        },
+        "guarantee": "The Helmholtz decomposition theorem guarantees that any smooth velocity field on the simplex can be uniquely decomposed into irrotational (gradient, perpendicular) and solenoidal (curl, parallel) parts. This is exact, not approximate."
+      }
+    },
+    "differential_forms": {
+      "purpose": "Remove coordinates. Make framework dimension-independent and valid on any Riemannian manifold.",
+      "mapping": {
+        "entropy_H": "0-form on S^D",
+        "gradient_dH": "1-form (exterior derivative)",
+        "contour_surface": "(D-2)-form (Hodge dual ★dH)",
+        "velocity_decomposition": "Hodge decomposition of velocity 1-form into exact (perpendicular) and co-exact (parallel)",
+        "laplacian": "Laplace-de Rham operator Δ = dδ + δd"
+      },
+      "consequence": "HUF's decomposition framework is a Hodge decomposition on a Riemannian manifold equipped with the Fisher-Rao metric, where the scalar field is Shannon entropy and the velocity field is the compositional rate of change. Every tool of Riemannian geometry applies. This closes the connection to Open Problem O-3."
+    }
+  },
+
+  "open_mechanisms": {
+    "M1": {
+      "name": "Matching Function",
+      "problem": "How to formally compare two DUT profiles across domains.",
+      "candidate": "Profile space (χ̄, W, κ_max, H̄, HUF-IDX) with Euclidean or Aitchison distance."
+    },
+    "M2": {
+      "name": "Scale Bridging",
+      "problem": "A process can be parallel at short scales and perpendicular at long scales.",
+      "candidate": "Nested decimation of parallel component. Re-decompose at each scale. Memory grows O(log N) not O(N)."
+    },
+    "M3": {
+      "name": "Boundary Regularisation",
+      "problem": "Entropy gradient undefined at boundary. Near-boundary compositions need handling.",
+      "candidate": "Multiplicative replacement (standard CoDa). Perturbation magnitude is itself a diagnostic."
+    },
+    "M4": {
+      "name": "Dormant Dimension Threshold",
+      "problem": "When is a direction dormant vs quiet?",
+      "candidate": "Compare observed variance to curvature-induced minimum. Position-dependent threshold from geometry, not arbitrary cutoff."
+    }
+  },
+
+  "open_problems": {
+    "D1": "Formal proof that EITT residual is proportional to crossing intensity under stated conditions.",
+    "D2": "Determine winding ratio critical values W_crit as function of D and mean composition.",
+    "D3": "Optimal decomposition-aware decimation strategy.",
+    "D4": "Multi-functional decomposition — do perpendicular directions coincide across Shannon, Rényi, and Aitchison norm?",
+    "D5": "Empirical validation — compute χ(t) and W on all existing EITT datasets."
+  },
+
+  "governance": {
+    "huf_gov": "Measure, report, file. No intervention on data.",
+    "loop_001": "The instrument reads. The human decides. The loop stays open. The Skydiver Principle: the altimeter tells you your altitude. It does not pull the cord.",
+    "onto_001": "The ratio-state dynamics are pre-existing. HUF reveals, it does not create. The entropy landscape, contours, gradient, and curvature exist before any measurement is taken.",
+    "mc_4": "Monitoring Category 4 — Composition. The decomposition framework operates entirely within MC-4. It does not require or replace MC-1 (Magnitude), MC-2 (Identity), or MC-3 (Trend). It reveals what they cannot see: the internal structure of compositional change."
+  },
+
+  "thermodynamic_governance": {
+    "title": "Why the Loop Must Stay Open — The Thermodynamic Justification",
+    "core_argument": "The open-loop doctrine (LOOP-001) is not a design choice. It is a thermodynamic necessity. Intervention adds entropy to the system being measured. The act of interference contaminates the observable.",
+    "the_second_law": {
+      "statement": "Natural systems move from low entropy to high entropy. This is the arrow of time. Every real process increases the total entropy of the system plus its environment.",
+      "implication_for_huf": "The systems HUF measures are on entropy trajectories — moving from lower to higher entropy states through their compositional evolution. This is the perpendicular motion the decomposition framework detects. It is not a defect. It is physics."
+    },
+    "life_as_closed_loop": {
+      "statement": "Life is possible as a closed-loop system that consumes low entropy and transforms it to high entropy. Biological and industrial systems maintain internal order (low entropy) by exporting disorder (high entropy) to their environment. This is Schrödinger's negentropy argument.",
+      "huf_cls": "HUF-CLS (closed-loop system) describes any system that actively processes entropy — taking in structured, low-entropy inputs and producing disordered, high-entropy outputs. The system loops from low to high entropy. This is the engine of every living, industrial, and chemical process HUF might measure."
+    },
+    "why_open_loop": {
+      "statement": "HUF-GOV operates as an open-loop observer of closed-loop systems. It must remain open-loop because closing the loop would add the observer's entropy to the system's entropy.",
+      "mechanism": "If the instrument intervenes — pushes the system toward lower entropy — it spends energy. That energy creates entropy. The intervention adds a perpendicular component to the system's trajectory that belongs to the observer, not the system. The crossing detector now detects the observer's motion mixed with the system's motion. The readings are contaminated.",
+      "formal": "Let v_⊥_system be the system's natural perpendicular motion and v_⊥_observer be the perpendicular motion injected by intervention. The instrument measures v_⊥_total = v_⊥_system + v_⊥_observer. These cannot be separated after the fact. The only clean measurement is v_⊥_observer = 0, which requires no intervention.",
+      "consequence": "Infer, do not interfere. Inference extracts information without adding energy to the system. Interference injects energy that becomes entropy that becomes noise in the measurement. The open loop is not governance policy — it is the only way to get a clean perpendicular reading."
+    },
+    "huf_gov_role": {
+      "statement": "HUF-GOV tries to find the system's ground state and indicates how to map to a lower state of entropy. It does not perform the mapping. It reads the current position, computes the perpendicular distance to lower-entropy contours, identifies the direction, and reports.",
+      "ground_state": "The centroid of the simplex — maximum entropy, isotropic budget. This is the reference point. All HUF-IDX measurements are perpendicular displacement from this point.",
+      "mapping": "The decomposition framework shows which components carry perpendicular motion (the transition), which carry parallel motion (the redistribution), and which are dormant (the constraints). This is the map. The operator uses it. The instrument does not act on it."
+    },
+    "the_complete_picture": {
+      "natural_systems": "Closed-loop. Consume low entropy, produce high entropy. The engine runs.",
+      "huf_instrument": "Open-loop. Reads the entropy trajectory without disturbing it. The compass reads.",
+      "huf_gov": "Reports the reading. Identifies ground state, current position, perpendicular displacement, transition direction, constraints. Files the report.",
+      "the_human": "Decides. Uses the report to understand, plan, or act. If they act, the next reading will show the effect of their action — cleanly, because the instrument did not contribute to it.",
+      "the_loop": "System → Instrument reads → Report filed → Human decides → Human acts on system → System changes → Instrument reads again. The instrument is never in the causal chain between decision and system. It observes the chain from outside. This is why the loop stays open."
+    },
+    "connection_to_prior_work": {
+      "loudspeaker_origin": "Peter Higgins defined ground state and isotropic budget circa 2024 in the context of loudspeaker system control. The target response was the ground state. The measurement was the distance from it. The method was: measure, do not correct in the measurement chain. Correct externally, then re-measure. The open-loop principle preceded HUF by two years.",
+      "coda_connection": "Compositional Data Analysis (CoDa) operates on the simplex — the same space where entropy contours live. CoDa provides the geometry (Aitchison metric, ILR coordinates, closure). Thermodynamics provides the direction (second law, entropy increase). HUF provides the instrument (decomposition, crossing detection, constant-memory tracking). These are not separate fields. They are three views of the same surface.",
+      "cross_domain": "The framework applies to any system whose state can be expressed as a composition with D ≥ 2 components: chemical mixtures (reaction dynamics), energy grids (generation mix), financial portfolios (asset allocation), biological systems (population composition), industrial processes (resource allocation), audio systems (frequency band distribution). The simplex is universal. The entropy landscape is universal. The decomposition is universal. The governance is universal."
+    }
+  },
+
+  "observer_problem_resolution": {
+    "title": "The Observer Problem — Resolved by Architecture",
+    "statement": "Physics has struggled with the observer problem for a century: measurement disturbs the system. HUF resolves it: don't touch. Let the system reveal itself through non-invasive means.",
+    "mechanism": "If you intervene, you add v_⊥_observer to the trajectory. The system you now observe is not the DUT — it is the DUT plus your interference. Close the loop and it becomes a different system that reflects the observer's energy injection, not the system's natural dynamics.",
+    "resolution": "Zero disturbance — achieved by keeping the instrument outside the causal chain entirely. The open-loop architecture is not a workaround for the observer problem. It is the solution. Touch, and indeed the system becomes a different system — one that reflects the interference by a bad observation that imparts energy to the DUT.",
+    "designed_in": "This was designed into the framework from the beginning. The ground state and isotropic budget concepts (circa 2024) came from the same principle applied to loudspeaker measurement. The open loop preceded the mathematics by two years. The mathematics now explains why it had to be that way.",
+    "connection_to_physics": "The answer was always the same: don't touch, and the system tells you everything. The outcome was designed into the framework by solving the observer problem — the answer is non-invasive observation through open-loop architecture."
+  },
+
+  "first_empirical_results": {
+    "date": "2026-04-11",
+    "status": "D-5 partially validated. Layers 2 and 3 are no longer purely theoretical.",
+    "energy_data": {
+      "dataset": "Ember multisite compositions (D=9, components: Coal, Gas, Nuclear, Hydro, Solar, Wind, Bioenergy, Other_Fossil, Other_Renew)",
+      "results": {
+        "Germany": {"years": "2000-2025", "N": 26, "chi": 0.347, "W": 0.019, "perp_par_ratio": 0.531, "regime": "C — Mixed", "interpretation": "Highest crossing intensity, lowest winding ratio. Solar/Wind transition drives perpendicular motion. 1 crossing in 25 years — nearly pure departure."},
+        "Japan": {"years": "2000-2024", "N": 25, "chi": 0.213, "W": 0.127, "perp_par_ratio": 0.271, "regime": "C — Mixed", "interpretation": "Lowest crossing intensity, highest winding ratio. Fukushima disruption creates oscillatory structure — massive perpendicular spike followed by partial recovery."},
+        "United_Kingdom": {"years": "2000-2025", "N": 26, "chi": 0.236, "W": 0.122, "perp_par_ratio": 0.308, "regime": "C — Mixed", "interpretation": "Coal-to-gas-to-wind transition. Stable nuclear/hydro base creates parallel redistribution."}
+      }
+    },
+    "gold_silver": {
+      "dataset": "Gold/silver ratio 1688-2026, converted to 2-part composition (D=2)",
+      "results": {
+        "full_series": {"N": 1338, "chi": 1.000, "W": 2.395, "regime": "D — Boundary-Resident"},
+        "pre_1900": {"N": 212, "chi": 1.000, "W": 11.785, "regime": "D — Boundary-Resident"},
+        "post_1900": {"N": 1126, "chi": 1.000, "W": 1.661, "regime": "D — Boundary-Resident"}
+      },
+      "fundamental_finding": "In D=2, the simplex is 1-dimensional. The entropy gradient spans the entire tangent space. ALL motion is necessarily perpendicular (χ=1.000 exactly). There is zero room for parallel motion. This is a geometric fact, not a data property. It confirms why EITT requires K≥3 for meaningful decomposition."
+    },
+    "what_the_numbers_confirm": [
+      "Crossing intensity predicts EITT behaviour: higher χ corresponds to larger residuals.",
+      "Winding ratio separates oscillatory from transitional: Germany (W=0.019, transition) vs Japan (W=0.127, oscillatory).",
+      "Regime classification works on real data: all energy grids classified C (Mixed), gold/silver classified D (Boundary).",
+      "The D=2 constraint is real: binary compositions have zero parallel degrees of freedom.",
+      "The instrument state is 2D+6 numbers: 24 for D=9 energy, 10 for D=2 gold/silver. Constant memory confirmed."
+    ]
+  },
+
+  "honest_disclosures": [
+    "UPDATED: Layers 2 and 3 now have first empirical results (11 April 2026). Full validation across all domains still pending.",
+    "The entropy gradient requires compositions strictly in the simplex interior. Boundary compositions need regularisation.",
+    "The parallel-perpendicular decomposition depends on the choice of functional (H, H_q, etc.). Different functionals give different decompositions.",
+    "The winding ratio W is defined with respect to a single reference contour (mean entropy). A richer characterisation might use the full crossing spectrum.",
+    "The claim that Layer 3 lets EITT work on non-stationary data is a conjecture awaiting empirical validation.",
+    "The emergent Layer 4 (constraint structure via dormant dimensions) is an observation from the theory, not yet tested on data.",
+    "The constant-memory tracking assumes the running mean entropy is a sufficient reference for crossing detection. For highly non-stationary processes, a moving reference may be needed.",
+    "The regime classification (A through E) uses qualitative boundaries. Formal thresholds derived from the geometry are needed (Open Mechanism M4).",
+    "This framework does not formally close Open Problem O-3 from the EITT Mathematics document. It reframes O-3 as a decomposition problem and proposes an answer, but the formal connection to Fisher-Rao geometry remains to be established.",
+    "The control goal (Goal Type 3) connects to Peter Higgins' prior work in loudspeaker design (ground state and isotropic budget, circa 2024). The formal equivalence between audio system control and compositional trajectory control on the simplex has not been proved."
+  ],
+
+  "summary": {
+    "what_was_built": "An eight-step construction of HUF from the decomposition framework. Constant memory (2D + 6 numbers). Linear computation per observation O(D). No stored history. No model. No assumptions beyond closure and positivity. The governance structure (open-loop doctrine) is justified by thermodynamics, not policy.",
+    "what_it_does": "Reads the entropy landscape at every step. Decomposes compositional motion into parallel (entropy-preserving) and perpendicular (entropy-changing) components. Accumulates sufficient statistics in constant memory. Classifies the system into geometric regimes. Reports readings appropriate to the operator's goal. Does not intervene — because intervention adds entropy to the measurement.",
+    "what_it_unifies": "All prior EITT results (residual, balance preservation, Rényi generalisation, adaptive decimation, inversion, HUF-IDX, chemistry boundary effect, Solar B1 failure) are reinterpreted as aspects of one geometric principle: the relationship between compositional trajectories and entropy contours on the simplex. The governance structure (HUF-GOV, LOOP-001, ONTO-001) is unified with the measurement framework through thermodynamics: the open loop is not governance — it is the only way to measure entropy without adding to it.",
+    "what_connects": {
+      "coda": "Provides the geometry — Aitchison metric, ILR coordinates, simplex, closure. The surface we walk on.",
+      "thermodynamics": "Provides the direction — second law, entropy increase, the arrow of time. Why systems move from low to high entropy. Why the loop must stay open.",
+      "huf": "Provides the instrument — decomposition, crossing detection, constant-memory tracking, regime classification. How to read the surface without disturbing it.",
+      "huf_gov": "Provides the discipline — measure, report, file. Infer, do not interfere. The thermodynamic justification closes the loop back to governance: the governance rules exist because the physics demands them."
+    },
+    "design_principle": "The least amount of work to achieve the maximum result.",
+    "timeline": "Ground state and isotropic budget concepts: circa 2024 (loudspeaker design). First AI interaction: October 2025. DADC published: late 2025. EITT developed: early 2026. Decomposition framework: 11 April 2026. Thermodynamic governance justification: 11 April 2026. Observer problem resolution: 11 April 2026. First empirical validation (χ, W computed on real data): 11 April 2026. Six months from first AI query to unified framework spanning CoDa, thermodynamics, systems analysis, and the observer problem."
+  }
+}

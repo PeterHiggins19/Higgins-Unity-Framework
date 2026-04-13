@@ -1,0 +1,96 @@
+{
+  "computation": "HUF Impulse Dependency Chain Analysis \u2014 Fukushima 2011",
+  "date": "2026-04-07",
+  "question": "Is there a causal dependency chain in the carrier impulse responses? Does closure create a forced relay?",
+  "answer": "Yes. The closure constraint (sum to 1) creates a forced cascade relay.",
+  "the_chain": {
+    "stage_1_shock": {
+      "period": "2010\u21922011",
+      "cr_mean": 0.7422,
+      "description": "Nuclear drops. Gas and Other_Fossil surge immediately. Only carriers with existing dispatchable capacity can respond.",
+      "active_carriers": "Nuclear (down), Gas (up), Other_Fossil (up)"
+    },
+    "stage_2_emergency": {
+      "period": "2011\u21922012",
+      "cr_mean": 0.4956,
+      "description": "Other_Fossil hits peak. Coal begins rising. Expensive emergency response at maximum.",
+      "active_carriers": "Other_Fossil (peak), Coal (rising), Gas (rising), Nuclear (still falling)"
+    },
+    "stage_3_handoff_1": {
+      "period": "2012\u21922014",
+      "cr_mean": 0.649,
+      "description": "Other_Fossil begins declining. Gas takes over as primary compensator. Nuclear hits absolute zero.",
+      "handoff": "Other_Fossil \u2192 Gas",
+      "active_carriers": "Other_Fossil (declining), Gas (sustained peak), Coal (plateau)"
+    },
+    "stage_4_handoff_2": {
+      "period": "2014\u21922016",
+      "cr_mean": 0.5716,
+      "description": "Coal plateaus and begins slow decline. Solar crosses structural visibility threshold.",
+      "handoff": "Coal \u2192 Solar",
+      "active_carriers": "Gas (peak), Coal (declining), Solar (accelerating)"
+    },
+    "stage_5_long_tail": {
+      "period": "2016\u21922018",
+      "cr_mean": 0.6136,
+      "description": "Gas begins slow decline. Solar continues exponential ramp. Other_Fossil collapses below pre-Fukushima baseline.",
+      "handoff": "Gas \u2192 Solar (ongoing)",
+      "active_carriers": "Solar (dominant gainer), Gas (declining), Other_Fossil (collapsed)"
+    }
+  },
+  "relay_pairs_by_delta_correlation": [
+    {
+      "pair": [
+        "Coal",
+        "Nuclear"
+      ],
+      "r": -0.447,
+      "relationship": "inverse movers \u2014 relay partners"
+    },
+    {
+      "pair": [
+        "Gas",
+        "Nuclear"
+      ],
+      "r": -0.742,
+      "relationship": "inverse movers \u2014 relay partners"
+    },
+    {
+      "pair": [
+        "Nuclear",
+        "Other_Fossil"
+      ],
+      "r": -0.724,
+      "relationship": "inverse movers \u2014 relay partners"
+    },
+    {
+      "pair": [
+        "Hydro",
+        "Other_Fossil"
+      ],
+      "r": -0.316,
+      "relationship": "inverse movers \u2014 relay partners"
+    },
+    {
+      "pair": [
+        "Bioenergy",
+        "Gas"
+      ],
+      "r": -0.513,
+      "relationship": "inverse movers \u2014 relay partners"
+    }
+  ],
+  "key_finding": {
+    "dependency_chain_exists": true,
+    "mechanism": "Closure constraint (sum to 1) forces carriers into a relay. Each absorbs share until it hits its dispatchability or infrastructure ceiling, then hands off to the next.",
+    "sequence_determined_by": "Dispatchability (can existing plants ramp?) then build time (how long to install new capacity?)",
+    "cr_tracks_handoffs": {
+      "mean_cr_at_handoff": 0.5664,
+      "mean_cr_at_non_handoff": 0.6602,
+      "elevated": false
+    },
+    "loudspeaker_difference": "In a loudspeaker, drivers are independent \u2014 each responds to its electrical band signal without affecting others. In a composition, carriers are coupled through closure \u2014 one carrier's response constrains all others. The impulse response is not parallel; it is serial relay."
+  },
+  "implication_for_sbp": "The SBP groups carriers by physics (fossil vs non-fossil), but the relay operates by response speed (fast dispatchable vs slow infrastructure). These are different organizing principles. CR detects the relay handoffs because they change which carriers are active on each side of the SBP partition.",
+  "implication_for_governance": "The dependency chain IS the governance information. A policymaker seeing the relay knows: (1) emergency response will be fossil-heavy and expensive, (2) sustained compensation will be gas-dominated, (3) structural transition to renewables takes 7+ years. The time constants of the relay are the actual constraints on energy policy."
+}

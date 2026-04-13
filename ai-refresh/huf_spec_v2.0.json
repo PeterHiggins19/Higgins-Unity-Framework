@@ -1,0 +1,740 @@
+{
+  "contact_point_format": {
+    "example": "D01 | 1 | CRNA_MLAKA_WB | MONTHLY | T01,T02,T03,T08",
+    "fields": {
+      "DOMAIN_ID": "Domain identifier from compendium (e.g. D01, D02)",
+      "MONITORING_FREQUENCY": "One of: DAILY, WEEKLY, MONTHLY, QUARTERLY, ANNUAL, EVENT",
+      "SITE_ID": "Unique site or system identifier (alphanumeric, operator-assigned)",
+      "TIER": "1, 2, or STUB",
+      "TOOL_CLASS": "Comma-separated tool IDs from portable tools (e.g. T01,T03,T08)"
+    },
+    "format": "{DOMAIN_ID} | {TIER} | {SITE_ID} | {MONITORING_FREQUENCY} | {TOOL_CLASS}",
+    "name": "HUF Contact Point (HUF-CP)",
+    "source": "HUF Vol 7, §III"
+  },
+  "deliverables": {
+    "actuation_module": "Implementation/huf_actuation_v1.py",
+    "prop7_3_proof": "Papers/HUF_Proof_Prop7.3_AnalyticalMDGThreshold_v2.0.docx",
+    "spec_updated_on": "2026-03-04",
+    "state_of_record_doc": "Docs/HUF_Doc_StateOfRecord_CollectiveSummary_v2.0.docx"
+  },
+  "document_coding": {
+    "examples": [
+      "HUF.BOOK.VOL1.FOUNDATIONS",
+      "HUF.BOOK.VOL6.UNIVERSAL_PROPOSAL",
+      "HUF.BOOK.VOL7.AI_INTERFACE",
+      "HUF.SPEC.AI.COMPACT_v2.0",
+      "HUF.BUNDLE.LETTER.RAMSAR"
+    ],
+    "format": "HUF.{TIER}.{TYPE}.{SLUG}",
+    "source": "HUF Vol 5, §IV Decision D15",
+    "tiers": [
+      "BOOK",
+      "BUNDLE",
+      "SPEC",
+      "DATA",
+      "PAPER",
+      "PROOF",
+      "EXHIBIT",
+      "IMPL"
+    ],
+    "types": {
+      "BOOK": "Canonical volume",
+      "BUNDLE": "Collection of related documents",
+      "DATA": "Data artefact",
+      "EXHIBIT": "Case study exhibit",
+      "IMPL": "Implementation code",
+      "PAPER": "Academic paper",
+      "PROOF": "Formal proof document",
+      "SPEC": "Machine-readable specification"
+    }
+  },
+  "document_registry": {
+    "implementation": [
+      "huf_actuation_v1.py",
+      "huf_compendium_v1.py",
+      "huf_ust_v1.py",
+      "ramsar_huf_demo_v2.py"
+    ],
+    "letters": [
+      "HUF_Letter_FAO_v2.0.docx",
+      "HUF_Letter_IMF_BIS_v2.0.docx",
+      "HUF_Letter_ISO_v2.0.docx",
+      "HUF_Letter_IUCN_v2.0.docx",
+      "HUF_Letter_Ramsar_v2.0.docx",
+      "HUF_Letter_WHO_v2.0.docx",
+      "HUF_Letter_WMO_v2.0.docx"
+    ],
+    "papers": [
+      "HUF_Exhibit_CaseStudyD2_ExhibitB_v2.0.docx",
+      "HUF_Paper_CBD_Submission_v2.0.docx",
+      "HUF_Paper_CoDa_MathGeosciences_v2.0.docx",
+      "HUF_Paper_GEO_BON_EBV_v2.0.docx",
+      "HUF_Paper_HorizonEurope_CaseForSupport_v2.0.docx",
+      "HUF_Paper_IFAC_IEEE_ControlSystems_v2.0.docx",
+      "HUF_Paper_Ramsar_TechnicalCommittee_v2.0.docx",
+      "HUF_Proof_Prop7.1_DomainInvariance_v2.0.docx",
+      "HUF_Proof_Prop7.3_AnalyticalMDGThreshold_v2.0.docx"
+    ],
+    "volumes": [
+      "HUF_D20_AIOutputClassification_v2.0.docx",
+      "HUF_D21_OperatorCodeOfConduct_v2.0.docx",
+      "HUF_Vol1_CoreReference_v2.0.docx",
+      "HUF_Vol2_MathProofs_v2.0.docx",
+      "HUF_Vol3_CaseStudies_v2.0.docx",
+      "HUF_Vol4_RamsarPackage_v3.0.docx",
+      "HUF_Vol5_GovernanceOps_v2.0.docx",
+      "HUF_Vol6_UniversalProposal_v2.0.docx",
+      "HUF_Vol7_AIInterface_v2.0.docx"
+    ],
+    "docs": [
+      "HUF_Doc_StateOfRecord_CollectiveSummary_v2.0.docx"
+    ]
+  },
+  "domain_compendium": {
+    "exchange_formula": "16 tools × 40 domains = 208 certified cross-domain exchanges",
+    "stubs": {
+      "count": 20,
+      "description": "Registered — admission pending full derivation",
+      "domains": [
+        {
+          "id": "D21",
+          "name": "Legal system caseload"
+        },
+        {
+          "id": "D22",
+          "name": "Defence procurement"
+        },
+        {
+          "id": "D23",
+          "name": "Space mission planning"
+        },
+        {
+          "id": "D24",
+          "name": "Cultural institution programming"
+        },
+        {
+          "id": "D25",
+          "name": "Sports performance analytics"
+        },
+        {
+          "id": "D26",
+          "name": "Electoral resource allocation"
+        },
+        {
+          "id": "D27",
+          "name": "Humanitarian aid distribution"
+        },
+        {
+          "id": "D28",
+          "name": "Insurance actuarial"
+        },
+        {
+          "id": "D29",
+          "name": "Urban planning permit allocation"
+        },
+        {
+          "id": "D30",
+          "name": "Waste management"
+        },
+        {
+          "id": "D31",
+          "name": "Library and archive management"
+        },
+        {
+          "id": "D32",
+          "name": "Media production scheduling"
+        },
+        {
+          "id": "D33",
+          "name": "Scientific instrument calibration"
+        },
+        {
+          "id": "D34",
+          "name": "Clinical trials management"
+        },
+        {
+          "id": "D35",
+          "name": "Fisheries quota management"
+        },
+        {
+          "id": "D36",
+          "name": "Forestry resource tracking"
+        },
+        {
+          "id": "D37",
+          "name": "Marine protected area monitoring"
+        },
+        {
+          "id": "D38",
+          "name": "Mountain ecosystem services"
+        },
+        {
+          "id": "D39",
+          "name": "Peatland carbon accounting"
+        },
+        {
+          "id": "D40",
+          "name": "Polar monitoring networks"
+        }
+      ]
+    },
+    "tier_1": {
+      "count": 10,
+      "description": "Directly compositional — Σρᵢ = 1.0 holds natively",
+      "domains": [
+        {
+          "id": "D01",
+          "name": "Ecological monitoring",
+          "pilot": "Crna Mlaka waterbird census"
+        },
+        {
+          "id": "D02",
+          "name": "Public health resource allocation",
+          "pilot": "WHO health budget modelling"
+        },
+        {
+          "id": "D03",
+          "name": "Climate finance",
+          "pilot": "UNFCCC adaptation fund tracking"
+        },
+        {
+          "id": "D04",
+          "name": "Food security",
+          "pilot": "FAO FIVIMS monitoring"
+        },
+        {
+          "id": "D05",
+          "name": "Acoustic engineering",
+          "pilot": "Sourdough fermentation MDG model"
+        },
+        {
+          "id": "D06",
+          "name": "Materials science QC",
+          "pilot": "Batch composition monitoring"
+        },
+        {
+          "id": "D07",
+          "name": "Pharmaceutical quality control",
+          "pilot": "API purity distribution monitoring"
+        },
+        {
+          "id": "D08",
+          "name": "Agricultural systems",
+          "pilot": "Crop area allocation monitoring"
+        },
+        {
+          "id": "D09",
+          "name": "Urban metabolism",
+          "pilot": "City resource flow tracking"
+        },
+        {
+          "id": "D10",
+          "name": "Energy grid management",
+          "pilot": "Generation mix proportional monitoring"
+        }
+      ]
+    },
+    "tier_2": {
+      "count": 10,
+      "description": "Projected — formal derivation complete, pilot pending",
+      "domains": [
+        {
+          "id": "D11",
+          "name": "Water resource management"
+        },
+        {
+          "id": "D12",
+          "name": "Transportation logistics"
+        },
+        {
+          "id": "D13",
+          "name": "Education systems"
+        },
+        {
+          "id": "D14",
+          "name": "Criminal justice resource allocation"
+        },
+        {
+          "id": "D15",
+          "name": "Mental health services"
+        },
+        {
+          "id": "D16",
+          "name": "Disaster response logistics"
+        },
+        {
+          "id": "D17",
+          "name": "Telecommunications bandwidth"
+        },
+        {
+          "id": "D18",
+          "name": "Research portfolio management"
+        },
+        {
+          "id": "D19",
+          "name": "Supply chain resilience"
+        },
+        {
+          "id": "D20",
+          "name": "Digital infrastructure"
+        }
+      ]
+    },
+    "total_domains": 40,
+    "total_exchanges": 208,
+    "total_tools": 16
+  },
+  "empirical_proofs": [
+    {
+      "domain": "Fermentation / Acoustic Engineering",
+      "id": "EP-1",
+      "null_model": "Dirichlet(α=1)^N — uniform-random budget allocation",
+      "p_value": 0.021,
+      "result": "REJECT_NULL",
+      "significance": "p < 0.05",
+      "source": "HUF Vol 3, §EP-1; Vol 6, §III",
+      "system": "Sourdough starter MDG model"
+    },
+    {
+      "domain": "Ecology / Wetlands",
+      "id": "EP-2",
+      "null_model": "Dirichlet(α=1)^N",
+      "p_value": 0.0027,
+      "result": "REJECT_NULL",
+      "significance": "p < 0.005",
+      "source": "HUF Vol 3, §EP-2; Vol 6, §III",
+      "system": "Crna Mlaka waterbird census"
+    },
+    {
+      "domain": "Software Engineering",
+      "id": "EP-3",
+      "null_model": "Dirichlet(α=1)^N",
+      "p_value": 0.0001,
+      "result": "REJECT_NULL",
+      "significance": "p < 0.001",
+      "source": "HUF Vol 3, §EP-3; Vol 6, §III",
+      "system": "CI/CD pipeline stage analysis"
+    }
+  ],
+  "huf_ai_accord": {
+    "accountability_requirements": [
+      "All AI outputs must include a Derivation Trace (T15)",
+      "All AI outputs must include a Human Verification Matrix (T16)",
+      "No AI output may claim HUF certification without operator sign-off",
+      "SHA-256 checksum of this spec file is the canonical D19 integrity anchor"
+    ],
+    "ai_tool_generation_workflow": [
+      "1. Operator provides: domain ID, site ID, task description, monitoring frequency",
+      "2. AI resolves HUF Contact Point address",
+      "3. AI selects applicable portable tools from T01–T16",
+      "4. AI generates tool code/procedure with Unity Constraint enforcement",
+      "5. AI produces Derivation Trace: each decision → source section",
+      "6. AI produces Human Verification Matrix: 10-minute spot-check sheet",
+      "7. Operator reviews and approves before deployment"
+    ],
+    "d20_output_classification": {
+      "compositional_levels": {
+        "level_0_atoms": [
+          "claim",
+          "source_ref",
+          "rule"
+        ],
+        "level_1_elements": [
+          "derivation_step",
+          "tool_invocation"
+        ],
+        "level_2_components": [
+          "derivation_trace (T15)",
+          "verification_row",
+          "verification_matrix (T16)"
+        ],
+        "level_3_parts": [
+          "ai_generated_tool",
+          "status_record"
+        ],
+        "level_4_system": [
+          "certified_huf_tool"
+        ]
+      },
+      "date": "2026-03-04",
+      "decision": "D20",
+      "document_code": "HUF.BOOK.D20.AI_OUTPUT_CLASSIFICATION",
+      "integrity_rules_count": 7,
+      "name": "AI Output Classification Standard",
+      "statement": "AI outputs at CERTIFIED status carry full registry standing equivalent to human-derived tools. The status_record is the complete disclosure mechanism.",
+      "statuses": [
+        {
+          "gate": "AI-generated. Trace + matrix present. Spec hash verified. Internal use only.",
+          "status": "DRAFT"
+        },
+        {
+          "gate": "Human operator has verified matrix, confirmed Unity Constraint + OCC, signed. Pilot use.",
+          "status": "REVIEWED"
+        },
+        {
+          "gate": "Live pilot validated. Domain registry entry created. Full canonical standing.",
+          "status": "CERTIFIED"
+        },
+        {
+          "gate": "Hallucinated refs found, constraint violation, or operator revocation. Archived.",
+          "status": "INVALID"
+        }
+      ],
+      "transitions": [
+        {
+          "by": "operator",
+          "from": "DRAFT",
+          "to": "REVIEWED"
+        },
+        {
+          "by": "operator + pilot data",
+          "from": "REVIEWED",
+          "to": "CERTIFIED"
+        },
+        {
+          "by": "operator (pilot contradiction)",
+          "from": "CERTIFIED",
+          "to": "REVIEWED"
+        },
+        {
+          "by": "operator or audit",
+          "from": "any",
+          "to": "INVALID"
+        }
+      ]
+    },
+    "date": "2026-03-04",
+    "decision": "D19",
+    "name": "HUF-AI Accord",
+    "source": "HUF Vol 7, §I–II",
+    "statement": "Any AI system that has loaded this specification may generate HUF-conformant tools for any registered domain, provided it: (1) maps every output claim to a source document section, (2) produces a human-verifiable derivation trace, and (3) does not deviate from the Unity Constraint or OCC without explicit operator approval."
+  },
+  "huf_spec": {
+    "author": "Peter Higgins",
+    "date": "2026-03-04",
+    "description": "Compact machine-readable specification of the Higgins Unity Framework (HUF). Intended for AI loading and tool generation. Every derivation must be traceable to a source document section herein. Human-verifiable via SHA-256 checksum.",
+    "document_code": "HUF.SPEC.AI.COMPACT_v2.0",
+    "document_version": "2.0",
+    "last_updated": "2026-03-04",
+    "location": "Markham, Ontario, Canada",
+    "organisation": "Rogue Wave Audio",
+    "repo_snapshot": "2026-03-04",
+    "version": "1.1.8"
+  },
+  "integrity": {
+    "note": "Integrity hash is computed on a normalized form of this spec (sha fields zeroed) to allow deterministic self-verification.",
+    "sha256": "65fc09d6a0e3f8d471c6e58534eae12677f761c4281d8e99554a579f280040b0",
+    "sha256_self": "65fc09d6a0e3f8d471c6e58534eae12677f761c4281d8e99554a579f280040b0",
+    "verify_command": "python -c \"import json,hashlib; p='huf_spec_v2.0.json'; d=json.load(open(p,'r',encoding='utf-8')); z='0'*64; d['integrity']['sha256']=z; d['integrity']['sha256_self']=z; b=(json.dumps(d,indent=2,ensure_ascii=False)+'\\n').encode('utf-8'); print(hashlib.sha256(b).hexdigest())\""
+  },
+  "monitoring_categories": {
+    "categories": [
+      {
+        "code": "MC-1",
+        "definition": "Observations that occur without deliberate operator intent (background, incidental).",
+        "id": "P",
+        "name": "Passive",
+        "source": "HUF Vol 2, §3.1"
+      },
+      {
+        "code": "MC-2",
+        "definition": "Observations required by regulatory, legal, or institutional obligation.",
+        "id": "M",
+        "name": "Mandated",
+        "source": "HUF Vol 2, §3.2"
+      },
+      {
+        "code": "MC-3",
+        "definition": "Observations initiated in direct response to a specific management or research question.",
+        "id": "Q",
+        "name": "Question-Driven",
+        "source": "HUF Vol 2, §3.3"
+      },
+      {
+        "code": "MC-4",
+        "definition": "Novel fourth category. Observations that fill gaps between mandated reporting and real decision-making needs. Detects silent drift not captured by MC-1 to MC-3.",
+        "id": "D",
+        "name": "MDG (Management Decision Gap)",
+        "novel": true,
+        "source": "HUF Vol 2, §3.4; Vol 3, §I"
+      }
+    ],
+    "description": "Four mutually exclusive, collectively exhaustive monitoring categories."
+  },
+  "occ": {
+    "lyapunov_proof": "V(ρ) = (Σρᵢ − 1)² → 0 as t → ∞ under HUF monitoring.",
+    "name": "Operator Control Contract",
+    "propositions": [
+      {
+        "id": "7.1",
+        "name": "Domain Invariance",
+        "statement": "The Unity Constraint holds for any finite-budget system regardless of domain."
+      },
+      {
+        "id": "7.2",
+        "name": "Non-invasive Sufficiency",
+        "statement": "HUF monitoring requires only category-level counts; no domain-internal restructuring is needed."
+      }
+    ],
+    "ratio": "51/49",
+    "source": "HUF Vol 4, §OCC; Vol 5, §VI; Vol 6, §VI",
+    "statement": "An operator retains control of a finite-budget system if and only if the operator-directed proportion exceeds 0.51 (51%). Below this threshold, passive or mandated allocation dominates and operator agency is compromised.",
+    "theorem": "OCC Stability Theorem 1 (Lyapunov)"
+  },
+  "operator_code_of_conduct": {
+    "cardinal_question": "Am I using the OCC 51% to govern the system, or to protect myself from the system?",
+    "conduct_flag_stages": [
+      "CF-1 RAISED",
+      "CF-2 REVIEWED",
+      "CF-3 RESOLVED",
+      "CF-4 OVERRIDE (OCO)",
+      "CF-5 ESCALATED"
+    ],
+    "date": "2026-03-04",
+    "decision": "D21",
+    "document_code": "HUF.BOOK.D21.OPERATOR_CODE_OF_CONDUCT",
+    "occ_position": "The operator is the framework's steward, not above it. The 51% is a stewardship right, not a capture right.",
+    "oco_record": "Out-of-Class Override record — permanent, non-deletable, visible to all registry participants",
+    "operator_obligations": [
+      "Maintain Σρᵢ = 1.0 — never report false totals",
+      "Log every governance action in the decision record",
+      "Sign verification matrices only after completing them",
+      "Disclose Out-of-Class Overrides in status_record",
+      "Never suppress MDG detection to conceal drift",
+      "Apply the same standards to human and AI outputs",
+      "Respond to Conduct Flags within the current reporting cycle"
+    ],
+    "operator_rights": [
+      "Set and change monitoring frequencies",
+      "Approve or reject AI-generated tool outputs",
+      "Determine which domains are registered",
+      "Hold gated decisions (e.g. D9)",
+      "Override AI recommendations with justification",
+      "Determine REVIEWED -> CERTIFIED transition timing"
+    ],
+    "out_of_class_taxonomy": [
+      {
+        "action": "Reporting Σρᵢ ≠ 1.0 without disclosure",
+        "severity": "HIGH",
+        "uc": "UC-1"
+      },
+      {
+        "action": "Advancing tool to CERTIFIED without live pilot",
+        "severity": "HIGH",
+        "uc": "UC-2"
+      },
+      {
+        "action": "Suppressing MDG gap detection",
+        "severity": "CRITICAL",
+        "uc": "UC-3"
+      },
+      {
+        "action": "Signing verification matrix without completing it",
+        "severity": "HIGH",
+        "uc": "UC-4"
+      },
+      {
+        "action": "Registering domain as Tier-1 without admission data",
+        "severity": "HIGH",
+        "uc": "UC-5"
+      },
+      {
+        "action": "Applying different standards to AI and human outputs",
+        "severity": "MEDIUM",
+        "uc": "UC-6"
+      },
+      {
+        "action": "Issuing Doc ID that misrepresents tier or type",
+        "severity": "MEDIUM",
+        "uc": "UC-7"
+      },
+      {
+        "action": "Overriding INVALID status without addressing cited failure",
+        "severity": "CRITICAL",
+        "uc": "UC-8"
+      }
+    ],
+    "self_assessment_questions": 8,
+    "source": "HUF D21, Vol 5 Addendum"
+  },
+  "portable_tools": {
+    "count": 16,
+    "description": "Any HUF-certified domain immediately inherits all 16 tools from every other certified domain. Tools are domain-invariant by Proposition 7.1.",
+    "tools": [
+      {
+        "id": "T01",
+        "name": "Unity Constraint Monitor",
+        "output": "Σρᵢ deviation alert",
+        "type": "diagnostic"
+      },
+      {
+        "id": "T02",
+        "name": "MDG Gap Detector",
+        "output": "MC-4 gap identification",
+        "type": "diagnostic"
+      },
+      {
+        "id": "T03",
+        "name": "Dirichlet Null Tester",
+        "output": "p-value vs uniform null",
+        "type": "statistical"
+      },
+      {
+        "id": "T04",
+        "name": "OCC Ratio Calculator",
+        "output": "Operator control ratio",
+        "type": "governance"
+      },
+      {
+        "id": "T05",
+        "name": "Budget Drift Tracer",
+        "output": "Time-series drift magnitude",
+        "type": "diagnostic"
+      },
+      {
+        "id": "T06",
+        "name": "Category Proportion Extractor",
+        "output": "ρᵢ vector from raw data",
+        "type": "data"
+      },
+      {
+        "id": "T07",
+        "name": "Cross-Domain Comparator",
+        "output": "Domain-invariant drift score",
+        "type": "analytical"
+      },
+      {
+        "id": "T08",
+        "name": "HUF Contact Point Mapper",
+        "output": "CP address string",
+        "type": "registry"
+      },
+      {
+        "id": "T09",
+        "name": "Tool Inheritance Register",
+        "output": "208-exchange matrix row",
+        "type": "registry"
+      },
+      {
+        "id": "T10",
+        "name": "Lyapunov Stability Checker",
+        "output": "V(ρ) convergence status",
+        "type": "governance"
+      },
+      {
+        "id": "T11",
+        "name": "Monitoring Frequency Optimiser",
+        "output": "Recommended sampling interval",
+        "type": "operational"
+      },
+      {
+        "id": "T12",
+        "name": "Report Generator (HUF-standard)",
+        "output": "OOXML-compliant HUF DOCX",
+        "type": "output"
+      },
+      {
+        "id": "T13",
+        "name": "Baseline Compositor",
+        "output": "t=0 proportion vector",
+        "type": "data"
+      },
+      {
+        "id": "T14",
+        "name": "Certification Checklist Verifier",
+        "output": "Pass/fail per criterion",
+        "type": "governance"
+      },
+      {
+        "id": "T15",
+        "name": "AI Derivation Tracer",
+        "output": "Decision→source mapping",
+        "type": "accountability"
+      },
+      {
+        "id": "T16",
+        "name": "Human Verification Matrix Generator",
+        "output": "10-minute verification sheet",
+        "type": "accountability"
+      },
+      {
+        "id": "T17",
+        "inputs": [
+          "rho_ref (simplex vector)",
+          "concentration c (>=0)",
+          "z (sigma multiplier) or alpha (tail prob)"
+        ],
+        "name": "Analytical MDG Threshold Generator (Closed Form)",
+        "notes": [
+          "Uses Dirichlet component moments and half-normal approximation; calibrated via c from stable window."
+        ],
+        "outputs": [
+          "mean_mdg",
+          "sd_mdg",
+          "tau (threshold)"
+        ],
+        "reference_impl": "Implementation/huf_actuation_v1.py::analytical_thresholds",
+        "source": "Prop 7.3 (closed-form moments under Dirichlet administrative noise)",
+        "type": "statistical_baseline"
+      },
+      {
+        "id": "T18",
+        "inputs": [
+          "rho_prev",
+          "rho_curr",
+          "rho_ref",
+          "thresholds (T17)",
+          "max_step bounds"
+        ],
+        "name": "Response Actuation Matrix (Certified Instruction Generator)",
+        "notes": [
+          "Never executes autonomously; produces a signable draft instruction with full trace."
+        ],
+        "outputs": [
+          "Certified Instruction (JSON)",
+          "recommended_delta",
+          "suggested_next_state"
+        ],
+        "reference_impl": "Implementation/huf_actuation_v1.py::build_certified_instruction",
+        "source": "HUF OCC + Vol.6 toolchain",
+        "type": "governance_actuation"
+      }
+    ]
+  },
+  "standardisation_pathway": {
+    "iso_candidates": [
+      "ISO TC 69 (Statistical methods)",
+      "ISO TC 176 (Quality management)"
+    ],
+    "phase_timeline": {
+      "Phase_A": "Pilot deployment in 2 Tier-1 domains (0–6 months)",
+      "Phase_B": "Cross-domain validation, 5 domains (6–18 months)",
+      "Phase_C": "ISO working group submission (18–36 months)",
+      "Phase_D": "ISO standard publication (36–60 months)"
+    },
+    "route": [
+      "Ramsar Convention pilot",
+      "GEO BON EBV integration",
+      "CBD GBF Target 3 alignment",
+      "ISO TC 69 / TC 176 candidature"
+    ],
+    "source": "HUF Vol 6, §VII",
+    "target_organisations": [
+      "Ramsar",
+      "IUCN",
+      "WHO",
+      "FAO",
+      "WMO",
+      "IMF/BIS",
+      "ISO"
+    ]
+  },
+  "unity_constraint": {
+    "admission_requirement": true,
+    "formula": "Σρᵢ = 1.0",
+    "latex": "\\sum_{i=1}^{n} \\rho_i = 1.0",
+    "meaning": "The sum of all category proportions in a finite-budget system must equal 1.0 at all times. Departure from 1.0 indicates unmeasured reallocation (silent drift).",
+    "source": "HUF Vol 2, §2.1; Vol 6, §II"
+  }
+}

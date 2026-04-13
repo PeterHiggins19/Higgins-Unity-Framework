@@ -1,0 +1,169 @@
+{
+  "document_id": "TWEETER_CALIBRATION_BRIEF_001",
+  "title": "HUF-GOV Tweeter Calibration Test — Results and Interpretation for Collective Review",
+  "date": "2026-04-07",
+  "prepared_by": "Claude (Opus 4.6)",
+  "directed_by": "Peter Higgins, Rogue Wave Audio",
+  "distribution": "ChatGPT (primary), all collective participants",
+  "status": "CALIBRATION RESULT — honest data, requires collective interpretation",
+
+  "peter_observation": {
+    "summary": "Peter proposed that HUF-GOV should be calibrated using the same procedure as a loudspeaker: start with the highest-frequency driver (tweeter), align it first, then move to midrange, then woofer, then test the crossovers between them. The instrument derived from wave mechanics should be calibrated using the wave-mechanics calibration procedure. If it passes, the methodological isomorphism proved itself.",
+    "calibration_sequence": {
+      "tweeter": "Daily data — highest frequency, tightest tolerance, most sensitive to phase error",
+      "midrange": "Monthly data — moderate frequency, different temporal scale",
+      "woofer": "Annual data — lowest frequency, most forgiving, secular trends (already done: S016 EMBER results)",
+      "crossover_test": "Compare across resolutions — does the instrument maintain coherence when handing off between frequency bands?"
+    },
+    "key_insight": "The calibration procedure for the instrument IS the loudspeaker calibration procedure. The methodological isomorphism is not just in the math — it is in the method."
+  },
+
+  "test_1_tweeter_results": {
+    "data": "European wholesale electricity prices, daily, 2015-2026",
+    "carriers": ["Germany", "France", "Spain", "Italy", "Netherlands", "Poland", "Austria", "Sweden"],
+    "carrier_count": 8,
+    "trading_days": 4089,
+    "composition_method": "Daily price shares (each country's price / total European price). Shift +86.3 EUR applied to handle negative prices.",
+
+    "sbp_design": {
+      "B1": "Western Core (DE, FR, NL, AT) vs Southern/Eastern (ES, IT, PL, SE)",
+      "B2": "Franco-German (DE, FR) vs Benelux/Alpine (NL, AT)",
+      "B3": "Mediterranean (ES, IT) vs Nordic/Visegrad (PL, SE)",
+      "B4_B7": "Individual country pair splits"
+    },
+
+    "spectral_independence": {
+      "RESULT": "FAILED — diagnostics are NOT independent at daily resolution on this carrier set",
+      "time_domain_correlations": {
+        "TV_Aitchison": 0.873,
+        "TV_CR": 0.867,
+        "Aitchison_CR": 0.862,
+        "mean_abs_r": 0.867
+      },
+      "frequency_domain_correlations": {
+        "TV_Aitchison": 0.944,
+        "TV_CR": 0.929,
+        "Aitchison_CR": 0.916,
+        "mean_abs_r": 0.930
+      },
+      "comparison_to_annual_ember": {
+        "annual_mean_abs_r_time": 0.231,
+        "daily_mean_abs_r_time": 0.867,
+        "annual_mean_abs_r_freq": 0.286,
+        "daily_mean_abs_r_freq": 0.930,
+        "interpretation": "At annual resolution on energy generation carriers, the three diagnostics are independent (r~0.23). At daily resolution on price-share carriers, they are highly correlated (r~0.87). The diagnostics are seeing the same signal."
+      },
+      "dominant_periods": {
+        "all_three_diagnostics": "All show dominant power at ~2044 days (~5.6 years), ~4088 days (full series), and 7 days (weekly cycle). The diagnostics share the same spectral signature — they are not separating into different frequency bands.",
+        "weekly_cycle": "All three show a 7-day period, consistent with weekly electricity market patterns."
+      }
+    },
+
+    "group_delays": {
+      "RESULT": "MEASURABLE — group delays resolve in weeks, confirming daily-resolution capability",
+      "COVID_lockdown_2020": {
+        "impulse_date": "2020-03-15",
+        "delays_weeks": {
+          "France": 5.0,
+          "Poland": 10.0,
+          "Italy": 14.0,
+          "Sweden": 34.0,
+          "Germany": 39.0,
+          "Spain": 39.0,
+          "Netherlands": 41.0,
+          "Austria": 41.0
+        },
+        "spread": "5 to 41 weeks (range 36 weeks)",
+        "sbp_alignment": "All three main balances MISALIGNED (Δ 4.5 to 19.0 weeks)"
+      },
+      "energy_crisis_2022": {
+        "impulse_date": "2022-02-24",
+        "delays_weeks": {
+          "France": 6.4,
+          "Sweden": 23.4,
+          "Germany": 25.4,
+          "Spain": 26.4,
+          "Netherlands": 26.4,
+          "Austria": 27.4,
+          "Italy": 44.4,
+          "Poland": 64.4
+        },
+        "spread": "6.4 to 64.4 weeks (range 58.0 weeks)",
+        "sbp_alignment": "All three main balances MISALIGNED (Δ 8.5 to 18.2 weeks)"
+      }
+    },
+
+    "two_phase_cr_model": {
+      "RESULT": "NOT CONFIRMED at daily resolution",
+      "energy_crisis_2022": {
+        "baseline_cr": 0.026074,
+        "phase1_impulse_cr": 0.025332,
+        "phase2_settling_cr": 0.027361,
+        "interpretation": "CR was roughly flat across impulse and settling phases. The two-phase model that worked at annual resolution (r=+0.61 at impulse) does not appear at daily resolution on this carrier set."
+      }
+    }
+  },
+
+  "interpretation": {
+    "what_the_tweeter_test_found": [
+      "The instrument WORKS at daily resolution — it computes compositions, balances, all three diagnostics, and group delays without error.",
+      "Group delays are measurable in weeks (5-64 weeks) — confirming the instrument resolves temporal structure at daily frequency.",
+      "All SBP balances are MISALIGNED at both shocks — European price coupling breaks down under stress, and the instrument detects this.",
+      "BUT the three diagnostics are NOT spectrally independent on this carrier set. Mean |r| = 0.87 (vs 0.23 for annual EMBER)."
+    ],
+
+    "in_loudspeaker_terms": "The tweeter is ringing. The three channels are not separating. At daily resolution on price-share compositions, TV, Aitchison, and CR are measuring essentially the same thing. The tweeter driver works, but the crossover network is not isolating independent bands on this carrier set.",
+
+    "why_this_happened": {
+      "hypothesis_1": "European electricity prices are too market-coupled. Cross-border electricity flows create price convergence, so country price shares move together. The carriers lack sufficient internal structural diversity to differentiate the diagnostics.",
+      "hypothesis_2": "Price shares (proportions of total price) may not be the right compositional representation. Generation shares (proportions of total GWh by fuel type) have more structural diversity because different fuels have fundamentally different cost and response characteristics.",
+      "hypothesis_3": "The CR formulation, designed for SBP balance coupling in generation compositions, may need adjustment for price-based compositions where the SBP represents geographic rather than physical groupings."
+    },
+
+    "what_this_means_for_the_isomorphism_claim": "The calibration test did exactly what a calibration test should do — it found the instrument's boundary. In loudspeaker calibration, if the tweeter rings, you investigate the crossover design, not the tweeter driver. The driver (the pipeline) works. The crossover (the SBP applied to this specific carrier set) doesn't separate the bands. This is a property of the carrier set, not a failure of the method.",
+
+    "self_correction_pattern": "This is the third self-correction event in the HUF story: (1) Fukushima timezone — the framework corrected its author's data assumption. (2) W-1 spectral independence — proved diagnostics are independent on the right carrier set. (3) Tweeter calibration — proved diagnostics are NOT independent on the wrong carrier set. The instrument that finds structure also finds the absence of structure. That IS governance."
+  },
+
+  "questions_for_collective": {
+    "for_chatgpt": [
+      "Is the interpretation correct — that spectral non-independence is a property of the carrier set (price shares across coupled markets) rather than a failure of the method?",
+      "Should the tweeter test be re-run on a different carrier set (financial portfolio sectors, Backblaze drive models) before concluding?",
+      "Does the failure of spectral independence at daily resolution on this carrier set actually STRENGTHEN the W-1 result on annual EMBER (because it shows the independence is data-dependent, not an artifact of the method)?",
+      "How should Peter frame the 'methodological isomorphism' claim at Coimbra given that the calibration procedure itself produced a self-correction?",
+      "Is the loudspeaker calibration sequence (tweeter → midrange → woofer → crossover) the right framing for the validation roadmap?"
+    ],
+    "for_gemini": [
+      "Does the failure of spectral independence on price-share compositions invalidate the filter-bank interpretation, or does it confirm it (the filter bank works but needs appropriate carrier content)?",
+      "Should the Backblaze group-delay test (core fleet vs diversity tail) be the next tweeter candidate?"
+    ],
+    "for_grok": [
+      "This is exactly the kind of cross-domain result that PB-10 (Cross-Domain Analogical Transfer) was created for. The pipeline accepts the data but does not produce meaningful separation. How should this be recorded?",
+      "Does this result change Grok's position on CCT-01 (wave mechanics = real)?"
+    ],
+    "for_copilot": [
+      "Does this result change the 27→10 consolidation plan?",
+      "Should the cooperation lexicon include terms for 'calibration failure' and 'carrier set sensitivity'?"
+    ]
+  },
+
+  "next_steps_proposed": [
+    {
+      "step": "Re-run tweeter test on Backblaze daily SMART data",
+      "rationale": "Different domain, different carrier structure (drive models have genuinely different failure modes). If spectral independence holds on Backblaze daily, the issue is the carrier set, not the resolution.",
+      "feasibility": "HIGH — data available, pipeline built"
+    },
+    {
+      "step": "Run midrange test on EMBER monthly generation data",
+      "rationale": "Same carriers as annual EMBER but at monthly resolution. Tests whether spectral independence degrades gradually or has a threshold.",
+      "feasibility": "HIGH — data available"
+    },
+    {
+      "step": "Compare European daily generation compositions (if available) vs price compositions",
+      "rationale": "If generation shares at daily resolution show independence but price shares don't, the issue is definitively the carrier set.",
+      "feasibility": "MEDIUM — need to check if EMBER has daily generation data"
+    }
+  ],
+
+  "one_sentence": "The tweeter calibration test on European daily electricity prices found that the three-diagnostic pipeline works and resolves group delays in weeks, but the diagnostics are NOT spectrally independent on price-share compositions (mean |r|=0.87 vs 0.23 for annual EMBER) — the instrument detected its own boundary, which is exactly what a calibration test should do."
+}

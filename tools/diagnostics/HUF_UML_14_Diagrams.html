@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HUF-UML: 14 Diagrams for Systems Analysis</title>
+<style>
+  :root {
+    --bg: #0a0e1a;
+    --card: #111827;
+    --border: #1e3a5f;
+    --accent: #3b82f6;
+    --accent2: #10b981;
+    --accent3: #f59e0b;
+    --accent4: #ef4444;
+    --accent5: #8b5cf6;
+    --text: #e2e8f0;
+    --dim: #64748b;
+    --white: #ffffff;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:var(--bg); color:var(--text); font-family:'Segoe UI',system-ui,sans-serif; line-height:1.6; }
+
+  .header {
+    text-align:center; padding:40px 20px 20px;
+    background: linear-gradient(180deg, #0f172a 0%, var(--bg) 100%);
+    border-bottom: 1px solid var(--border);
+  }
+  .header h1 { font-size:2.4em; color:var(--white); letter-spacing:2px; }
+  .header h1 span { color:var(--accent); }
+  .header .sub { color:var(--dim); font-size:1.1em; margin-top:8px; }
+  .header .tagline { color:var(--accent2); font-size:0.95em; margin-top:4px; font-style:italic; }
+
+  .nav {
+    display:flex; flex-wrap:wrap; justify-content:center; gap:6px;
+    padding:16px 20px; background:#0f1629; border-bottom:1px solid var(--border);
+    position:sticky; top:0; z-index:100;
+  }
+  .nav a {
+    color:var(--dim); text-decoration:none; font-size:0.75em;
+    padding:4px 10px; border:1px solid var(--border); border-radius:4px;
+    transition:all 0.2s;
+  }
+  .nav a:hover { color:var(--accent); border-color:var(--accent); }
+  .nav a.struct { border-left:3px solid var(--accent); }
+  .nav a.behav { border-left:3px solid var(--accent2); }
+
+  .diagram-section {
+    max-width:1100px; margin:30px auto; padding:0 20px;
+  }
+  .diagram-card {
+    background:var(--card); border:1px solid var(--border); border-radius:12px;
+    margin-bottom:40px; overflow:hidden;
+  }
+  .diagram-header {
+    padding:20px 24px; border-bottom:1px solid var(--border);
+    display:flex; align-items:center; gap:16px;
+  }
+  .diagram-num {
+    width:44px; height:44px; border-radius:50%;
+    display:flex; align-items:center; justify-content:center;
+    font-weight:700; font-size:1.1em; color:var(--white); flex-shrink:0;
+  }
+  .struct-num { background: linear-gradient(135deg, #1e40af, #3b82f6); }
+  .behav-num { background: linear-gradient(135deg, #065f46, #10b981); }
+  .diagram-header h2 { font-size:1.3em; color:var(--white); }
+  .diagram-header h2 small { display:block; font-size:0.65em; color:var(--dim); font-weight:400; margin-top:2px; }
+
+  .diagram-body { padding:24px; }
+  .diagram-desc {
+    color:var(--dim); font-size:0.9em; margin-bottom:16px;
+    padding:12px 16px; background:#0a0e1a; border-radius:8px; border-left:3px solid var(--accent5);
+  }
+  .diagram-desc strong { color:var(--accent3); }
+
+  .svg-container {
+    background:#060a14; border:1px solid #1a2744; border-radius:8px;
+    padding:20px; overflow-x:auto; display:flex; justify-content:center;
+  }
+  svg { max-width:100%; height:auto; }
+
+  /* SVG styles */
+  .uml-text { font-family:'Segoe UI',system-ui,sans-serif; }
+  .cls-name { font-size:13px; font-weight:700; fill:#ffffff; }
+  .cls-attr { font-size:11px; fill:#94a3b8; }
+  .cls-method { font-size:11px; fill:#10b981; }
+  .box-fill { fill:#1e293b; }
+  .box-stroke { stroke:#3b82f6; stroke-width:1.5; fill:none; }
+  .actor-fill { fill:none; stroke:#f59e0b; stroke-width:2; }
+  .use-case { fill:#0f172a; stroke:#3b82f6; stroke-width:1.5; }
+  .arrow { stroke:#64748b; stroke-width:1.5; fill:none; marker-end:url(#arrowhead); }
+  .arrow-open { stroke:#64748b; stroke-width:1.5; fill:none; marker-end:url(#openarrow); }
+  .dashed { stroke-dasharray:6,4; }
+  .label { font-size:10px; fill:#94a3b8; }
+  .note-box { fill:#1a1a2e; stroke:#f59e0b; stroke-width:1; stroke-dasharray:4,3; }
+  .comp-box { fill:#111827; stroke:#8b5cf6; stroke-width:2; rx:6; }
+  .pkg-box { fill:#0f172a; stroke:#3b82f6; stroke-width:1.5; }
+  .state-box { fill:#1e293b; stroke:#10b981; stroke-width:2; rx:12; }
+  .activity-box { fill:#1e293b; stroke:#f59e0b; stroke-width:1.5; rx:16; }
+  .decision { fill:#1e293b; stroke:#ef4444; stroke-width:1.5; }
+  .lifeline { stroke:#3b82f6; stroke-width:1; stroke-dasharray:6,4; }
+  .activation { fill:#1e3a5f; stroke:#3b82f6; stroke-width:1; }
+  .msg-arrow { stroke:#10b981; stroke-width:1.5; marker-end:url(#arrowG); }
+  .msg-return { stroke:#64748b; stroke-width:1; stroke-dasharray:5,3; marker-end:url(#arrowDim); }
+  .timing-bar { fill:#3b82f6; opacity:0.7; }
+  .timing-bar2 { fill:#10b981; opacity:0.7; }
+  .timing-bar3 { fill:#f59e0b; opacity:0.7; }
+
+  .legend {
+    margin-top:16px; padding:12px 16px; background:#0a0e1a;
+    border-radius:8px; font-size:0.85em; color:var(--dim);
+    display:flex; flex-wrap:wrap; gap:16px;
+  }
+  .legend span { display:flex; align-items:center; gap:6px; }
+  .legend-dot { width:10px; height:10px; border-radius:50%; display:inline-block; }
+
+  .footer {
+    text-align:center; padding:30px 20px; color:var(--dim); font-size:0.85em;
+    border-top:1px solid var(--border); margin-top:40px;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>HUF<span>-UML</span></h1>
+  <div class="sub">14 Unified Modeling Language Diagrams for Compositional Systems Analysis</div>
+  <div class="tagline">Speaking IIASA's language — HUF as a systems tool</div>
+</div>
+
+<div class="nav">
+  <a href="#d1" class="struct">1 Use Case</a>
+  <a href="#d2" class="struct">2 Class</a>
+  <a href="#d3" class="struct">3 Object</a>
+  <a href="#d4" class="struct">4 Package</a>
+  <a href="#d5" class="struct">5 Component</a>
+  <a href="#d6" class="struct">6 Composite</a>
+  <a href="#d7" class="struct">7 Deployment</a>
+  <a href="#d8" class="behav">8 Activity</a>
+  <a href="#d9" class="behav">9 Sequence</a>
+  <a href="#d10" class="behav">10 Communication</a>
+  <a href="#d11" class="behav">11 State Machine</a>
+  <a href="#d12" class="behav">12 Interaction Overview</a>
+  <a href="#d13" class="behav">13 Timing</a>
+  <a href="#d14" class="behav">14 Profile</a>
+</div>
+
+<!-- Shared SVG defs -->
+<svg width="0" height="0">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="openarrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polyline points="0 0, 10 3.5, 0 7" fill="none" stroke="#64748b" stroke-width="1.5"/>
+    </marker>
+    <marker id="arrowG" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#10b981"/>
+    </marker>
+    <marker id="arrowDim" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arrowB" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowY" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f59e0b"/>
+    </marker>
+    <marker id="diamond" markerWidth="12" markerHeight="8" refX="0" refY="4" orient="auto">
+      <polygon points="0 4, 6 0, 12 4, 6 8" fill="#3b82f6"/>
+    </marker>
+    <marker id="diamondOpen" markerWidth="12" markerHeight="8" refX="0" refY="4" orient="auto">
+      <polygon points="0 4, 6 0, 12 4, 6 8" fill="none" stroke="#3b82f6" stroke-width="1"/>
+    </marker>
+    <marker id="inherit" markerWidth="14" markerHeight="10" refX="14" refY="5" orient="auto">
+      <polygon points="0 0, 14 5, 0 10" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    </marker>
+  </defs>
+</svg>
+
+<div class="diagram-section">
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 1: USE CASE -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d1">
+  <div class="diagram-header">
+    <div class="diagram-num behav-num">1</div>
+    <h2>Use Case Diagram <small>UML Behavioral — Who does what with HUF</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> Four actors interact with the HUF system — the Analyst (human), the IAM data source (external system), the CoDa Toolkit (subsystem), and the Policy Consumer. Each ellipse is a use case that HUF performs or enables.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 900 520" width="900" height="520">
+        <!-- System boundary -->
+        <rect x="200" y="30" width="500" height="460" rx="12" fill="none" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8,4"/>
+        <text x="450" y="58" text-anchor="middle" class="uml-text" font-size="14" fill="#3b82f6" font-weight="700">«system» HUF Diagnostic Engine</text>
+
+        <!-- Actor: Analyst (left) -->
+        <circle cx="80" cy="160" r="16" class="actor-fill"/>
+        <line x1="80" y1="176" x2="80" y2="220" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="55" y1="195" x2="105" y2="195" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="80" y1="220" x2="60" y2="250" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="80" y1="220" x2="100" y2="250" stroke="#f59e0b" stroke-width="2"/>
+        <text x="80" y="270" text-anchor="middle" class="uml-text" font-size="12" fill="#f59e0b">Analyst</text>
+
+        <!-- Actor: IAM Data (left bottom) -->
+        <rect x="30" y="360" width="100" height="40" rx="4" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="80" y="375" text-anchor="middle" class="uml-text" font-size="9" fill="#8b5cf6">«external»</text>
+        <text x="80" y="390" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">IAM Data</text>
+        <text x="80" y="415" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">MESSAGEix/GCAM</text>
+
+        <!-- Actor: Policy Consumer (right) -->
+        <circle cx="820" cy="160" r="16" class="actor-fill"/>
+        <line x1="820" y1="176" x2="820" y2="220" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="795" y1="195" x2="845" y2="195" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="820" y1="220" x2="800" y2="250" stroke="#f59e0b" stroke-width="2"/>
+        <line x1="820" y1="220" x2="840" y2="250" stroke="#f59e0b" stroke-width="2"/>
+        <text x="820" y="270" text-anchor="middle" class="uml-text" font-size="12" fill="#f59e0b">Policy</text>
+        <text x="820" y="284" text-anchor="middle" class="uml-text" font-size="12" fill="#f59e0b">Consumer</text>
+
+        <!-- Actor: CoDa Toolkit (right bottom) -->
+        <rect x="770" y="360" width="100" height="40" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+        <text x="820" y="375" text-anchor="middle" class="uml-text" font-size="9" fill="#10b981">«subsystem»</text>
+        <text x="820" y="390" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">CoDa Toolkit</text>
+
+        <!-- Use Cases -->
+        <ellipse cx="380" cy="100" rx="100" ry="24" class="use-case"/>
+        <text x="380" y="104" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Extract Composition</text>
+
+        <ellipse cx="380" cy="170" rx="100" ry="24" class="use-case"/>
+        <text x="380" y="174" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Close to Simplex</text>
+
+        <ellipse cx="380" cy="240" rx="100" ry="24" class="use-case"/>
+        <text x="380" y="244" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Compute χ Trajectory</text>
+
+        <ellipse cx="380" cy="310" rx="110" ry="24" class="use-case"/>
+        <text x="380" y="314" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Diagnose Gov. Efficiency</text>
+
+        <ellipse cx="560" cy="130" rx="90" ry="24" class="use-case"/>
+        <text x="560" y="134" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">CLR Transform</text>
+
+        <ellipse cx="560" cy="200" rx="90" ry="24" class="use-case"/>
+        <text x="560" y="204" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">ILR / Balance</text>
+
+        <ellipse cx="560" cy="270" rx="100" ry="24" class="use-case"/>
+        <text x="560" y="274" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Variation Matrix</text>
+
+        <ellipse cx="560" cy="340" rx="90" ry="24" class="use-case"/>
+        <text x="560" y="344" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">EITT Validation</text>
+
+        <ellipse cx="450" cy="410" rx="110" ry="24" class="use-case"/>
+        <text x="450" y="414" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Perturbation Analysis</text>
+
+        <ellipse cx="450" cy="460" rx="110" ry="24" class="use-case"/>
+        <text x="450" y="464" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Time-Reversal Test</text>
+
+        <!-- Connections: Analyst to use cases -->
+        <line x1="105" y1="160" x2="280" y2="100" stroke="#64748b" stroke-width="1"/>
+        <line x1="105" y1="170" x2="280" y2="170" stroke="#64748b" stroke-width="1"/>
+        <line x1="105" y1="195" x2="280" y2="240" stroke="#64748b" stroke-width="1"/>
+        <line x1="105" y1="210" x2="270" y2="310" stroke="#64748b" stroke-width="1"/>
+
+        <!-- IAM Data to Extract -->
+        <line x1="130" y1="370" x2="280" y2="105" stroke="#8b5cf6" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="170" y="230" class="uml-text" font-size="9" fill="#8b5cf6" transform="rotate(-50,170,230)">«supplies»</text>
+
+        <!-- Policy Consumer to Diagnose & EITT -->
+        <line x1="795" y1="180" x2="690" y2="310" stroke="#64748b" stroke-width="1"/>
+        <line x1="795" y1="190" x2="650" y2="340" stroke="#64748b" stroke-width="1"/>
+
+        <!-- CoDa Toolkit to transforms -->
+        <line x1="770" y1="370" x2="650" y2="200" stroke="#10b981" stroke-width="1" stroke-dasharray="5,3"/>
+        <line x1="770" y1="380" x2="650" y2="270" stroke="#10b981" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="730" y="290" class="uml-text" font-size="9" fill="#10b981">«provides»</text>
+
+        <!-- Include relationships -->
+        <line x1="380" y1="216" x2="380" y2="195" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="395" y="210" class="uml-text" font-size="9" fill="#64748b">«include»</text>
+
+        <line x1="380" y1="264" x2="380" y2="286" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="395" y="280" class="uml-text" font-size="9" fill="#64748b">«include»</text>
+
+        <line x1="480" y1="240" x2="470" y2="240" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3"/>
+        <path d="M480,240 Q510,235 470,200" fill="none" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="505" y="215" class="uml-text" font-size="9" fill="#64748b">«extend»</text>
+      </svg>
+    </div>
+    <div class="legend">
+      <span><span class="legend-dot" style="background:#f59e0b"></span> Human actors</span>
+      <span><span class="legend-dot" style="background:#8b5cf6"></span> External system</span>
+      <span><span class="legend-dot" style="background:#10b981"></span> Subsystem</span>
+      <span><span class="legend-dot" style="background:#3b82f6"></span> System boundary</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 2: CLASS DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d2">
+  <div class="diagram-header">
+    <div class="diagram-num struct-num">2</div>
+    <h2>Class Diagram <small>UML Structural — The HUF/CoDa type hierarchy</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> Core classes of the HUF framework. A <em>Composition</em> lives on the <em>Simplex</em>. The <em>HUFDiagnostic</em> consumes a time-indexed sequence of compositions. <em>CoDaTool</em> is an abstract base with concrete specializations. Everything inherits the simplex constraint: parts sum to 1.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 920 560" width="920" height="560">
+        <!-- Composition class -->
+        <rect x="340" y="20" width="240" height="120" class="box-fill" stroke="#3b82f6" stroke-width="2" rx="4"/>
+        <rect x="340" y="20" width="240" height="28" fill="#1e3a5f" rx="4"/>
+        <text x="460" y="39" text-anchor="middle" class="uml-text cls-name">Composition</text>
+        <line x1="340" y1="48" x2="580" y2="48" stroke="#3b82f6" stroke-width="1"/>
+        <text x="348" y="64" class="uml-text cls-attr">- parts: float[D]</text>
+        <text x="348" y="78" class="uml-text cls-attr">- labels: string[D]</text>
+        <text x="348" y="92" class="uml-text cls-attr">- total: float = 1.0</text>
+        <line x1="340" y1="98" x2="580" y2="98" stroke="#3b82f6" stroke-width="1"/>
+        <text x="348" y="114" class="uml-text cls-method">+ close(): Composition</text>
+        <text x="348" y="128" class="uml-text cls-method">+ perturb(p): Composition</text>
+
+        <!-- Simplex class -->
+        <rect x="30" y="20" width="220" height="100" class="box-fill" stroke="#f59e0b" stroke-width="2" rx="4"/>
+        <rect x="30" y="20" width="220" height="28" fill="#4a3000" rx="4"/>
+        <text x="140" y="39" text-anchor="middle" class="uml-text cls-name">«space» Simplex Sᴰ</text>
+        <line x1="30" y1="48" x2="250" y2="48" stroke="#f59e0b" stroke-width="1"/>
+        <text x="38" y="64" class="uml-text cls-attr">- dimension: int D</text>
+        <text x="38" y="78" class="uml-text cls-attr">- constraint: Σxᵢ = κ</text>
+        <line x1="30" y1="84" x2="250" y2="84" stroke="#f59e0b" stroke-width="1"/>
+        <text x="38" y="100" class="uml-text cls-method">+ ⊕ perturbation(a,b)</text>
+        <text x="38" y="114" class="uml-text cls-method">+ ⊙ powering(α,x)</text>
+
+        <!-- lives-on association -->
+        <line x1="250" y1="60" x2="340" y2="60" stroke="#64748b" stroke-width="1.5"/>
+        <text x="295" y="52" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«lives on»</text>
+        <text x="256" y="72" class="uml-text" font-size="9" fill="#94a3b8">1</text>
+        <text x="334" y="72" class="uml-text" font-size="9" fill="#94a3b8">*</text>
+
+        <!-- TimeSeries class -->
+        <rect x="340" y="190" width="240" height="110" class="box-fill" stroke="#3b82f6" stroke-width="2" rx="4"/>
+        <rect x="340" y="190" width="240" height="28" fill="#1e3a5f" rx="4"/>
+        <text x="460" y="209" text-anchor="middle" class="uml-text cls-name">CompositionTimeSeries</text>
+        <line x1="340" y1="218" x2="580" y2="218" stroke="#3b82f6" stroke-width="1"/>
+        <text x="348" y="234" class="uml-text cls-attr">- timepoints: int[T]</text>
+        <text x="348" y="248" class="uml-text cls-attr">- compositions: Composition[T]</text>
+        <line x1="340" y1="256" x2="580" y2="256" stroke="#3b82f6" stroke-width="1"/>
+        <text x="348" y="272" class="uml-text cls-method">+ chi_trajectory(): float[T-1]</text>
+        <text x="348" y="286" class="uml-text cls-method">+ aitchison_distance(t1,t2): float</text>
+
+        <!-- Composition to TimeSeries: composition -->
+        <line x1="460" y1="140" x2="460" y2="190" stroke="#3b82f6" stroke-width="1.5" marker-start="url(#diamond)"/>
+        <text x="470" y="168" class="uml-text" font-size="9" fill="#94a3b8">1..*</text>
+
+        <!-- HUFDiagnostic class -->
+        <rect x="340" y="350" width="240" height="130" class="box-fill" stroke="#10b981" stroke-width="2" rx="4"/>
+        <rect x="340" y="350" width="240" height="28" fill="#064e3b" rx="4"/>
+        <text x="460" y="369" text-anchor="middle" class="uml-text cls-name">HUFDiagnostic</text>
+        <line x1="340" y1="378" x2="580" y2="378" stroke="#10b981" stroke-width="1"/>
+        <text x="348" y="394" class="uml-text cls-attr">- chi_bar: float</text>
+        <text x="348" y="408" class="uml-text cls-attr">- cv_chi: float</text>
+        <text x="348" y="422" class="uml-text cls-attr">- W: float</text>
+        <text x="348" y="436" class="uml-text cls-attr">- gov_efficiency: float</text>
+        <line x1="340" y1="442" x2="580" y2="442" stroke="#10b981" stroke-width="1"/>
+        <text x="348" y="458" class="uml-text cls-method">+ diagnose(ts): HUFDiagnostic</text>
+        <text x="348" y="472" class="uml-text cls-method">+ classify(): string</text>
+
+        <!-- TimeSeries to HUF -->
+        <line x1="460" y1="300" x2="460" y2="350" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="470" y="328" class="uml-text" font-size="9" fill="#64748b">«consumes»</text>
+
+        <!-- CoDaTool abstract -->
+        <rect x="670" y="20" width="220" height="110" class="box-fill" stroke="#8b5cf6" stroke-width="2" rx="4"/>
+        <rect x="670" y="20" width="220" height="28" fill="#3b1e6b" rx="4"/>
+        <text x="780" y="39" text-anchor="middle" class="uml-text cls-name" font-style="italic">«abstract» CoDaTool</text>
+        <line x1="670" y1="48" x2="890" y2="48" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="678" y="64" class="uml-text cls-attr">- name: string</text>
+        <text x="678" y="78" class="uml-text cls-attr">- input_type: Type</text>
+        <line x1="670" y1="84" x2="890" y2="84" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="678" y="100" class="uml-text cls-method" font-style="italic">+ apply(data): Result</text>
+        <text x="678" y="114" class="uml-text cls-method" font-style="italic">+ validate(): bool</text>
+
+        <!-- Concrete tools -->
+        <rect x="630" y="180" width="120" height="50" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="690" y="202" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">CLRTransform</text>
+        <text x="690" y="218" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">ln(xᵢ/g(x))</text>
+
+        <rect x="770" y="180" width="120" height="50" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="830" y="202" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">ILRTransform</text>
+        <text x="830" y="218" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">Ψ·clr(x)</text>
+
+        <rect x="630" y="250" width="120" height="50" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="690" y="272" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">VarMatrix</text>
+        <text x="690" y="288" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">var(ln(xᵢ/xⱼ))</text>
+
+        <rect x="770" y="250" width="120" height="50" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="830" y="272" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">EITTValidator</text>
+        <text x="830" y="288" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">ΔH &lt; ε</text>
+
+        <rect x="630" y="320" width="120" height="50" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="690" y="342" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Perturbation</text>
+        <text x="690" y="358" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">y ⊘ x</text>
+
+        <rect x="770" y="320" width="120" height="50" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="830" y="342" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">TimeReversal</text>
+        <text x="830" y="358" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">corr(χ↑,χ↓)</text>
+
+        <!-- Inheritance arrows -->
+        <line x1="690" y1="180" x2="750" y2="130" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#inherit)"/>
+        <line x1="830" y1="180" x2="780" y2="130" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#inherit)"/>
+        <line x1="690" y1="250" x2="720" y2="130" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#inherit)"/>
+        <line x1="830" y1="250" x2="810" y2="130" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#inherit)"/>
+        <line x1="690" y1="320" x2="710" y2="130" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#inherit)"/>
+        <line x1="830" y1="320" x2="820" y2="130" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#inherit)"/>
+
+        <!-- Association: HUF uses CoDaTools -->
+        <path d="M580,400 L620,400 L620,345 L630,345" fill="none" stroke="#64748b" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="610" y="365" class="uml-text" font-size="9" fill="#64748b">«uses»</text>
+
+        <!-- EITT box -->
+        <rect x="30" y="400" width="250" height="80" class="note-box" rx="4"/>
+        <text x="155" y="420" text-anchor="middle" class="uml-text" font-size="10" fill="#f59e0b" font-weight="700">«invariant» EITT Constraint</text>
+        <text x="40" y="438" class="uml-text" font-size="10" fill="#94a3b8">H(block_k(X)) ≈ H(X) ∀ k</text>
+        <text x="40" y="454" class="uml-text" font-size="10" fill="#94a3b8">Shannon entropy is preserved</text>
+        <text x="40" y="470" class="uml-text" font-size="10" fill="#94a3b8">under geometric-mean decimation</text>
+
+        <line x1="280" y1="440" x2="340" y2="440" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,3"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 3: OBJECT DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d3">
+  <div class="diagram-header">
+    <div class="diagram-num struct-num">3</div>
+    <h2>Object Diagram <small>UML Structural — A specific NGFS instance with real values</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> An instantiation of the class diagram with actual NGFS Phase 4 data — MESSAGEix Net Zero 2050, World region. Every value is real. This is what the Analyst sees when they run HUF on one scenario.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 900 400" width="900" height="400">
+        <!-- Object: nz2050 : CompositionTimeSeries -->
+        <rect x="30" y="20" width="280" height="160" class="box-fill" stroke="#3b82f6" stroke-width="2" rx="4"/>
+        <text x="170" y="42" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" text-decoration="underline">nz2050 : CompositionTimeSeries</text>
+        <line x1="30" y1="50" x2="310" y2="50" stroke="#3b82f6" stroke-width="1"/>
+        <text x="38" y="68" class="uml-text" font-size="10" fill="#94a3b8">model = "MESSAGEix-GLOBIOM 1.1"</text>
+        <text x="38" y="84" class="uml-text" font-size="10" fill="#94a3b8">scenario = "Net Zero 2050"</text>
+        <text x="38" y="100" class="uml-text" font-size="10" fill="#94a3b8">region = "World"</text>
+        <text x="38" y="116" class="uml-text" font-size="10" fill="#94a3b8">T = 17  (2020→2100)</text>
+        <text x="38" y="132" class="uml-text" font-size="10" fill="#94a3b8">D = 9  (energy parts)</text>
+        <text x="38" y="150" class="uml-text" font-size="10" fill="#10b981">x₂₀₂₀ = [.27,.23,.31,.05,.03,.01,.01,.08,.01]</text>
+        <text x="38" y="166" class="uml-text" font-size="10" fill="#10b981">x₂₁₀₀ = [.02,.04,.05,.10,.04,.28,.22,.19,.06]</text>
+
+        <!-- Object: diag : HUFDiagnostic -->
+        <rect x="370" y="20" width="240" height="140" class="box-fill" stroke="#10b981" stroke-width="2" rx="4"/>
+        <text x="490" y="42" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" text-decoration="underline">diag : HUFDiagnostic</text>
+        <line x1="370" y1="50" x2="610" y2="50" stroke="#10b981" stroke-width="1"/>
+        <text x="378" y="68" class="uml-text" font-size="10" fill="#94a3b8">χ̄ = 0.847</text>
+        <text x="378" y="84" class="uml-text" font-size="10" fill="#94a3b8">CV(χ) = 0.42</text>
+        <text x="378" y="100" class="uml-text" font-size="10" fill="#94a3b8">W = 4.21</text>
+        <text x="378" y="116" class="uml-text" font-size="10" fill="#94a3b8">gov_efficiency = 1.47</text>
+        <text x="378" y="132" class="uml-text" font-size="10" fill="#f59e0b">classification = "Active Transition"</text>
+        <text x="378" y="148" class="uml-text" font-size="10" fill="#94a3b8">K1 = 3.12 (Aitchison total)</text>
+
+        <!-- Link -->
+        <line x1="310" y1="90" x2="370" y2="90" stroke="#64748b" stroke-width="1.5"/>
+        <text x="340" y="82" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«diagnoses»</text>
+
+        <!-- Object: comp2020 : Composition -->
+        <rect x="30" y="230" width="280" height="140" class="box-fill" stroke="#f59e0b" stroke-width="1.5" rx="4"/>
+        <text x="170" y="252" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" text-decoration="underline">comp2020 : Composition</text>
+        <line x1="30" y1="258" x2="310" y2="258" stroke="#f59e0b" stroke-width="1"/>
+        <text x="38" y="276" class="uml-text" font-size="10" fill="#94a3b8">Coal  = 0.270   Gas   = 0.232</text>
+        <text x="38" y="292" class="uml-text" font-size="10" fill="#94a3b8">Oil   = 0.312   Nucl  = 0.050</text>
+        <text x="38" y="308" class="uml-text" font-size="10" fill="#94a3b8">Hydro = 0.027   Solar = 0.011</text>
+        <text x="38" y="324" class="uml-text" font-size="10" fill="#94a3b8">Wind  = 0.009   Bio   = 0.081</text>
+        <text x="38" y="340" class="uml-text" font-size="10" fill="#94a3b8">Geo   = 0.008</text>
+        <text x="38" y="358" class="uml-text" font-size="10" fill="#10b981">fossil_share = 0.814</text>
+
+        <!-- Object: perturbation -->
+        <rect x="370" y="230" width="240" height="100" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="490" y="252" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" text-decoration="underline">p : Perturbation</text>
+        <line x1="370" y1="258" x2="610" y2="258" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="378" y="276" class="uml-text" font-size="10" fill="#94a3b8">direction = "fossil → clean"</text>
+        <text x="378" y="292" class="uml-text" font-size="10" fill="#94a3b8">norm = 4.21 (Aitchison)</text>
+        <text x="378" y="308" class="uml-text" font-size="10" fill="#94a3b8">rate = 0.12/yr (powering)</text>
+        <text x="378" y="324" class="uml-text" font-size="10" fill="#ef4444">sign_pattern = [−−−++++++]</text>
+
+        <!-- Object: eitt : EITTResult -->
+        <rect x="670" y="20" width="200" height="100" class="box-fill" stroke="#ef4444" stroke-width="1.5" rx="4"/>
+        <text x="770" y="42" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" text-decoration="underline">eitt : EITTResult</text>
+        <line x1="670" y1="50" x2="870" y2="50" stroke="#ef4444" stroke-width="1"/>
+        <text x="678" y="68" class="uml-text" font-size="10" fill="#94a3b8">H_original = 1.72 bits</text>
+        <text x="678" y="84" class="uml-text" font-size="10" fill="#94a3b8">H_block2   = 1.68 bits</text>
+        <text x="678" y="100" class="uml-text" font-size="10" fill="#94a3b8">ΔH = 2.3%  &lt; 5% threshold</text>
+        <text x="678" y="116" class="uml-text" font-size="10" fill="#10b981">PASS = true</text>
+
+        <!-- Object: varmat -->
+        <rect x="670" y="160" width="200" height="90" class="box-fill" stroke="#8b5cf6" stroke-width="1.5" rx="4"/>
+        <text x="770" y="182" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" text-decoration="underline">vm : VarMatrixResult</text>
+        <line x1="670" y1="188" x2="870" y2="188" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="678" y="206" class="uml-text" font-size="10" fill="#94a3b8">tightest = Solar↔Wind: 0.154</text>
+        <text x="678" y="222" class="uml-text" font-size="10" fill="#94a3b8">loosest = Coal↔Geo: 5.028</text>
+        <text x="678" y="238" class="uml-text" font-size="10" fill="#94a3b8">total_var = 7.00</text>
+
+        <!-- Links -->
+        <line x1="310" y1="100" x2="310" y2="230" stroke="#3b82f6" stroke-width="1" stroke-dasharray="4,3"/>
+        <line x1="610" y1="90" x2="670" y2="70" stroke="#64748b" stroke-width="1"/>
+        <line x1="610" y1="100" x2="670" y2="200" stroke="#64748b" stroke-width="1"/>
+        <line x1="490" y1="160" x2="490" y2="230" stroke="#64748b" stroke-width="1"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 4: PACKAGE DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d4">
+  <div class="diagram-header">
+    <div class="diagram-num struct-num">4</div>
+    <h2>Package Diagram <small>UML Structural — Module organization of HUF/CoDa</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> How the HUF framework organizes into logical packages. The <em>CoDa.Core</em> package contains Aitchison's foundational algebra. <em>CoDa.Advanced</em> adds the debated tools (EITT, time reversal). <em>HUF.Engine</em> is the diagnostic layer. <em>Integration</em> is where HUF meets IIASA.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 860 440" width="860" height="440">
+        <!-- CoDa.Core -->
+        <rect x="30" y="30" width="240" height="180" class="pkg-box" rx="4"/>
+        <rect x="30" y="30" width="120" height="22" fill="#1e3a5f" rx="4"/>
+        <text x="90" y="46" text-anchor="middle" class="uml-text" font-size="11" fill="#3b82f6" font-weight="700">CoDa.Core</text>
+        <rect x="50" y="62" width="200" height="24" fill="#1e293b" rx="3" stroke="#3b82f6" stroke-width="1"/>
+        <text x="150" y="78" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Simplex Algebra</text>
+        <rect x="50" y="94" width="200" height="24" fill="#1e293b" rx="3" stroke="#3b82f6" stroke-width="1"/>
+        <text x="150" y="110" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">CLR / ILR / ALR</text>
+        <rect x="50" y="126" width="200" height="24" fill="#1e293b" rx="3" stroke="#3b82f6" stroke-width="1"/>
+        <text x="150" y="142" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Variation Matrix</text>
+        <rect x="50" y="158" width="200" height="24" fill="#1e293b" rx="3" stroke="#3b82f6" stroke-width="1"/>
+        <text x="150" y="174" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Perturbation / Powering</text>
+        <text x="150" y="200" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">Aitchison 1986, Egozcue 2003</text>
+
+        <!-- CoDa.Advanced -->
+        <rect x="310" y="30" width="240" height="180" class="pkg-box" rx="4" stroke="#8b5cf6"/>
+        <rect x="310" y="30" width="140" height="22" fill="#3b1e6b" rx="4"/>
+        <text x="380" y="46" text-anchor="middle" class="uml-text" font-size="11" fill="#8b5cf6" font-weight="700">CoDa.Advanced</text>
+        <rect x="330" y="62" width="200" height="24" fill="#1e293b" rx="3" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="430" y="78" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Compositional PCA</text>
+        <rect x="330" y="94" width="200" height="24" fill="#1e293b" rx="3" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="430" y="110" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Balance Dendrograms</text>
+        <rect x="330" y="126" width="200" height="24" fill="#1e293b" rx="3" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="430" y="142" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Simplicial Regression</text>
+        <rect x="330" y="158" width="200" height="24" fill="#1e293b" rx="3" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="430" y="174" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Zero Replacement</text>
+        <text x="430" y="200" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">Pawlowsky-Glahn, Greenacre</text>
+
+        <!-- HUF.Engine -->
+        <rect x="590" y="30" width="240" height="180" class="pkg-box" rx="4" stroke="#10b981"/>
+        <rect x="590" y="30" width="120" height="22" fill="#064e3b" rx="4"/>
+        <text x="650" y="46" text-anchor="middle" class="uml-text" font-size="11" fill="#10b981" font-weight="700">HUF.Engine</text>
+        <rect x="610" y="62" width="200" height="24" fill="#1e293b" rx="3" stroke="#10b981" stroke-width="1"/>
+        <text x="710" y="78" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">χ Computation</text>
+        <rect x="610" y="94" width="200" height="24" fill="#1e293b" rx="3" stroke="#10b981" stroke-width="1"/>
+        <text x="710" y="110" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Governance Efficiency</text>
+        <rect x="610" y="126" width="200" height="24" fill="#1e293b" rx="3" stroke="#10b981" stroke-width="1"/>
+        <text x="710" y="142" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">EITT Validator</text>
+        <rect x="610" y="158" width="200" height="24" fill="#1e293b" rx="3" stroke="#10b981" stroke-width="1"/>
+        <text x="710" y="174" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Time Reversal Tester</text>
+        <text x="710" y="200" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">Higgins / Rogue Wave Audio</text>
+
+        <!-- Integration -->
+        <rect x="170" y="260" width="520" height="160" class="pkg-box" rx="4" stroke="#f59e0b"/>
+        <rect x="170" y="260" width="180" height="22" fill="#4a3000" rx="4"/>
+        <text x="260" y="276" text-anchor="middle" class="uml-text" font-size="11" fill="#f59e0b" font-weight="700">Integration.IIASA</text>
+        <rect x="190" y="292" width="150" height="24" fill="#1e293b" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="265" y="308" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">NGFS Adapter</text>
+        <rect x="360" y="292" width="150" height="24" fill="#1e293b" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="435" y="308" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">MESSAGEix Bridge</text>
+        <rect x="530" y="292" width="140" height="24" fill="#1e293b" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="600" y="308" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">GAINS Bridge</text>
+        <rect x="190" y="330" width="150" height="24" fill="#1e293b" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="265" y="346" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Result Exporter</text>
+        <rect x="360" y="330" width="150" height="24" fill="#1e293b" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="435" y="346" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Dashboard Builder</text>
+        <rect x="530" y="330" width="140" height="24" fill="#1e293b" rx="3" stroke="#f59e0b" stroke-width="1"/>
+        <text x="600" y="346" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Coherence Check</text>
+
+        <text x="430" y="400" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«boundary» Diagnostic layer only — does not optimize</text>
+
+        <!-- Dependency arrows -->
+        <path d="M430,210 L430,260" class="arrow" stroke-dasharray="5,3"/>
+        <text x="440" y="238" class="uml-text" font-size="9" fill="#64748b">«import»</text>
+        <path d="M270,210 L350,260" class="arrow" stroke-dasharray="5,3"/>
+        <path d="M710,210 L520,260" class="arrow" stroke-dasharray="5,3"/>
+
+        <!-- Core → Advanced -->
+        <path d="M270,120 L310,120" class="arrow" stroke-dasharray="5,3"/>
+        <text x="290" y="112" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«use»</text>
+        <!-- Advanced → Engine -->
+        <path d="M550,120 L590,120" class="arrow" stroke-dasharray="5,3"/>
+        <text x="570" y="112" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«use»</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 5: COMPONENT DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d5">
+  <div class="diagram-header">
+    <div class="diagram-num struct-num">5</div>
+    <h2>Component Diagram <small>UML Structural — HUF system components and interfaces</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> The HUF engine as a component architecture with provided and required interfaces. Each lollipop (○─) is a provided interface; each socket (◠─) is a required interface. The IIASA data flows through the adapter into the diagnostic pipeline.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 880 380" width="880" height="380">
+        <!-- Data Ingestion Component -->
+        <rect x="30" y="80" width="180" height="80" rx="6" fill="#111827" stroke="#3b82f6" stroke-width="2"/>
+        <rect x="20" y="90" width="16" height="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+        <rect x="20" y="108" width="16" height="10" fill="#1e293b" stroke="#3b82f6" stroke-width="1"/>
+        <text x="120" y="115" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">«component»</text>
+        <text x="120" y="132" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">Data Adapter</text>
+        <text x="120" y="148" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">NGFS / IAMC / NetCDF</text>
+
+        <!-- Provided interface: ICompositionSource -->
+        <line x1="210" y1="120" x2="250" y2="120" stroke="#10b981" stroke-width="1.5"/>
+        <circle cx="258" cy="120" r="8" fill="none" stroke="#10b981" stroke-width="2"/>
+        <text x="258" y="105" text-anchor="middle" class="uml-text" font-size="8" fill="#10b981">ICompSource</text>
+
+        <!-- Simplex Engine Component -->
+        <rect x="290" y="80" width="180" height="80" rx="6" fill="#111827" stroke="#10b981" stroke-width="2"/>
+        <rect x="280" y="90" width="16" height="10" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+        <rect x="280" y="108" width="16" height="10" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+        <text x="380" y="115" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">«component»</text>
+        <text x="380" y="132" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">Simplex Engine</text>
+        <text x="380" y="148" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">CLR · ILR · ⊕ · ⊙</text>
+
+        <!-- Required interface from Simplex -->
+        <line x1="290" y1="120" x2="268" y2="120" stroke="#10b981" stroke-width="1.5"/>
+
+        <!-- Provided: IDiagInput -->
+        <line x1="470" y1="120" x2="510" y2="120" stroke="#f59e0b" stroke-width="1.5"/>
+        <circle cx="518" cy="120" r="8" fill="none" stroke="#f59e0b" stroke-width="2"/>
+        <text x="518" y="105" text-anchor="middle" class="uml-text" font-size="8" fill="#f59e0b">IDiagInput</text>
+
+        <!-- HUF Diagnostic Component -->
+        <rect x="550" y="60" width="200" height="110" rx="6" fill="#111827" stroke="#f59e0b" stroke-width="2"/>
+        <rect x="540" y="70" width="16" height="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+        <rect x="540" y="88" width="16" height="10" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+        <text x="650" y="90" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">«component»</text>
+        <text x="650" y="107" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">HUF Diagnostic</text>
+        <text x="650" y="123" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">χ · W · GovEff · K1</text>
+        <text x="650" y="139" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">EITT · TimeReversal</text>
+        <text x="650" y="155" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">SubcompCoherence</text>
+
+        <line x1="550" y1="120" x2="528" y2="120" stroke="#f59e0b" stroke-width="1.5"/>
+
+        <!-- Provided: IReport -->
+        <line x1="750" y1="115" x2="790" y2="115" stroke="#ef4444" stroke-width="1.5"/>
+        <circle cx="798" cy="115" r="8" fill="none" stroke="#ef4444" stroke-width="2"/>
+        <text x="798" y="100" text-anchor="middle" class="uml-text" font-size="8" fill="#ef4444">IReport</text>
+
+        <!-- Visualization Component -->
+        <rect x="290" y="220" width="180" height="80" rx="6" fill="#111827" stroke="#8b5cf6" stroke-width="2"/>
+        <rect x="280" y="230" width="16" height="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+        <rect x="280" y="248" width="16" height="10" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="380" y="255" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">«component»</text>
+        <text x="380" y="272" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">Visualization</text>
+        <text x="380" y="288" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">Dashboard · XLSX · HTML</text>
+
+        <!-- Required interface from Viz -->
+        <path d="M380,220 L380,170 L468,128" fill="none" stroke="#f59e0b" stroke-width="1" stroke-dasharray="5,3"/>
+
+        <!-- External: IIASA IXMP -->
+        <rect x="30" y="240" width="180" height="60" rx="6" fill="#0a0e1a" stroke="#64748b" stroke-width="1.5" stroke-dasharray="6,3"/>
+        <text x="120" y="265" text-anchor="middle" class="uml-text" font-size="11" fill="#64748b">«external»</text>
+        <text x="120" y="282" text-anchor="middle" class="uml-text" font-size="12" fill="#94a3b8">IIASA ixmp Platform</text>
+
+        <line x1="120" y1="240" x2="120" y2="160" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arrowDim)"/>
+        <text x="130" y="200" class="uml-text" font-size="8" fill="#64748b">«supplies»</text>
+
+        <!-- Validation Component -->
+        <rect x="570" y="230" width="180" height="70" rx="6" fill="#111827" stroke="#ef4444" stroke-width="2"/>
+        <rect x="560" y="240" width="16" height="10" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+        <rect x="560" y="258" width="16" height="10" fill="#1e293b" stroke="#ef4444" stroke-width="1"/>
+        <text x="660" y="260" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">«component»</text>
+        <text x="660" y="277" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">Validator</text>
+        <text x="660" y="293" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">Zero-check · Coherence</text>
+
+        <path d="M650,230 L650,170" fill="none" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="660" y="200" class="uml-text" font-size="8" fill="#64748b">«validates»</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 6: COMPOSITE STRUCTURE -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d6">
+  <div class="diagram-header">
+    <div class="diagram-num struct-num">6</div>
+    <h2>Composite Structure Diagram <small>UML Structural — Inside the HUF Diagnostic Engine</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> Internal parts and connectors within the HUF Diagnostic Engine. Each «part» is a runtime instance. Connectors show data flow between internal parts. Ports (small squares) expose interfaces to the outside.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 800 360" width="800" height="360">
+        <!-- Outer boundary -->
+        <rect x="20" y="20" width="760" height="320" rx="8" fill="none" stroke="#f59e0b" stroke-width="2"/>
+        <text x="400" y="46" text-anchor="middle" class="uml-text" font-size="14" fill="#f59e0b" font-weight="700">HUF Diagnostic Engine</text>
+
+        <!-- Port: in -->
+        <rect x="14" y="140" width="12" height="12" fill="#3b82f6" stroke="#3b82f6" stroke-width="1"/>
+        <text x="6" y="134" text-anchor="end" class="uml-text" font-size="9" fill="#3b82f6">in:comp[]</text>
+
+        <!-- Port: out -->
+        <rect x="774" y="140" width="12" height="12" fill="#ef4444" stroke="#ef4444" stroke-width="1"/>
+        <text x="798" y="134" class="uml-text" font-size="9" fill="#ef4444">out:diag</text>
+
+        <!-- Part: Closer -->
+        <rect x="60" y="100" width="130" height="70" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="125" y="126" text-anchor="middle" class="uml-text" font-size="10" fill="#3b82f6">«part»</text>
+        <text x="125" y="142" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" font-weight="600">closer</text>
+        <text x="125" y="158" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">Σxᵢ → 1.0</text>
+
+        <!-- Part: χ Computer -->
+        <rect x="230" y="70" width="140" height="70" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+        <text x="300" y="96" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">«part»</text>
+        <text x="300" y="112" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" font-weight="600">chiComputer</text>
+        <text x="300" y="128" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">dₐ(xₜ, xₜ₊₁)</text>
+
+        <!-- Part: Stat Accumulator -->
+        <rect x="230" y="170" width="140" height="70" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+        <text x="300" y="196" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">«part»</text>
+        <text x="300" y="212" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" font-weight="600">statAccum</text>
+        <text x="300" y="228" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">χ̄, CV(χ), W</text>
+
+        <!-- Part: EITT -->
+        <rect x="420" y="70" width="140" height="70" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="490" y="96" text-anchor="middle" class="uml-text" font-size="10" fill="#8b5cf6">«part»</text>
+        <text x="490" y="112" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" font-weight="600">eittValidator</text>
+        <text x="490" y="128" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">ΔH &lt; 5%</text>
+
+        <!-- Part: GovEff -->
+        <rect x="420" y="170" width="140" height="70" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="490" y="196" text-anchor="middle" class="uml-text" font-size="10" fill="#8b5cf6">«part»</text>
+        <text x="490" y="212" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" font-weight="600">govEffCalc</text>
+        <text x="490" y="228" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">W / (χ̄ · CV)</text>
+
+        <!-- Part: Reporter -->
+        <rect x="610" y="110" width="140" height="80" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="680" y="136" text-anchor="middle" class="uml-text" font-size="10" fill="#ef4444">«part»</text>
+        <text x="680" y="152" text-anchor="middle" class="uml-text" font-size="12" fill="#ffffff" font-weight="600">reporter</text>
+        <text x="680" y="168" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">classify + emit</text>
+        <text x="680" y="182" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">JSON / XLSX / HTML</text>
+
+        <!-- Connectors -->
+        <line x1="26" y1="146" x2="60" y2="135" stroke="#3b82f6" stroke-width="1.5" marker-end="url(#arrowB)"/>
+        <line x1="190" y1="120" x2="230" y2="105" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="190" y1="145" x2="230" y2="195" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="370" y1="105" x2="420" y2="105" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="370" y1="205" x2="420" y2="205" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="300" y1="140" x2="300" y2="170" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="560" y1="115" x2="610" y2="135" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="560" y1="210" x2="610" y2="170" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="750" y1="146" x2="774" y2="146" stroke="#ef4444" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Subcomp coherence check -->
+        <rect x="230" y="270" width="330" height="50" rx="6" fill="#0a0e1a" stroke="#f59e0b" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="395" y="292" text-anchor="middle" class="uml-text" font-size="10" fill="#f59e0b">«constraint» Subcompositional Coherence</text>
+        <text x="395" y="308" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">fossil↔full correlation must exceed 0.70 for coherent diagnosis</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 7: DEPLOYMENT DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d7">
+  <div class="diagram-header">
+    <div class="diagram-num struct-num">7</div>
+    <h2>Deployment Diagram <small>UML Structural — Where HUF runs in the IIASA ecosystem</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> Physical/logical deployment of HUF relative to IIASA infrastructure. HUF is a lightweight diagnostic layer that can be deployed alongside IIASA's existing ixmp/MESSAGEix stack — or independently on analyst workstations. It reads; it does not write to their models.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 820 340" width="820" height="340">
+        <!-- IIASA Server node -->
+        <rect x="30" y="30" width="250" height="130" rx="4" fill="#0a0e1a" stroke="#3b82f6" stroke-width="2"/>
+        <rect x="38" y="22" width="234" height="16" fill="#1e3a5f" rx="2"/>
+        <text x="155" y="34" text-anchor="middle" class="uml-text" font-size="10" fill="#3b82f6">«device» IIASA Data Server</text>
+        <rect x="50" y="60" width="210" height="30" rx="4" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+        <text x="155" y="80" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">«artifact» ixmp Platform</text>
+        <rect x="50" y="100" width="210" height="30" rx="4" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+        <text x="155" y="120" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">«artifact» NGFS Phase 4 DB</text>
+
+        <!-- Analyst Workstation node -->
+        <rect x="350" y="30" width="250" height="180" rx="4" fill="#0a0e1a" stroke="#10b981" stroke-width="2"/>
+        <rect x="358" y="22" width="234" height="16" fill="#064e3b" rx="2"/>
+        <text x="475" y="34" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">«device» Analyst Workstation</text>
+        <rect x="370" y="55" width="210" height="30" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1"/>
+        <text x="475" y="75" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">«artifact» HUF Engine</text>
+        <rect x="370" y="95" width="210" height="30" rx="4" fill="#1e293b" stroke="#8b5cf6" stroke-width="1"/>
+        <text x="475" y="115" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">«artifact» CoDa Toolkit</text>
+        <rect x="370" y="135" width="210" height="30" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+        <text x="475" y="155" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">«artifact» Python / NumPy</text>
+        <rect x="370" y="175" width="210" height="24" rx="4" fill="#1e293b" stroke="#64748b" stroke-width="1"/>
+        <text x="475" y="192" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">«artifact» Dashboard HTML</text>
+
+        <!-- CoDaWork node -->
+        <rect x="350" y="250" width="250" height="70" rx="4" fill="#0a0e1a" stroke="#f59e0b" stroke-width="2"/>
+        <rect x="358" y="242" width="234" height="16" fill="#4a3000" rx="2"/>
+        <text x="475" y="254" text-anchor="middle" class="uml-text" font-size="10" fill="#f59e0b">«environment» CoDaWork 2026</text>
+        <rect x="370" y="268" width="210" height="30" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+        <text x="475" y="288" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">«artifact» Presentation Deck</text>
+
+        <!-- AI Collective node -->
+        <rect x="660" y="30" width="140" height="130" rx="4" fill="#0a0e1a" stroke="#8b5cf6" stroke-width="2"/>
+        <rect x="668" y="22" width="124" height="16" fill="#3b1e6b" rx="2"/>
+        <text x="730" y="34" text-anchor="middle" class="uml-text" font-size="10" fill="#8b5cf6">«cloud» AI Collective</text>
+        <text x="730" y="65" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">Claude</text>
+        <text x="730" y="82" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">ChatGPT</text>
+        <text x="730" y="99" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">Grok</text>
+        <text x="730" y="116" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">Gemini</text>
+        <text x="730" y="133" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">Copilot</text>
+
+        <!-- Connections -->
+        <path d="M280,100 L350,80" fill="none" stroke="#64748b" stroke-width="1.5"/>
+        <text x="315" y="82" text-anchor="middle" class="uml-text" font-size="8" fill="#64748b">«HTTP/xlsx»</text>
+        <path d="M475,210 L475,250" fill="none" stroke="#f59e0b" stroke-width="1.5" marker-end="url(#arrowY)"/>
+        <path d="M600,90 L660,80" fill="none" stroke="#8b5cf6" stroke-width="1.5" stroke-dasharray="5,3"/>
+        <text x="630" y="75" text-anchor="middle" class="uml-text" font-size="8" fill="#8b5cf6">«JSON brief»</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 8: ACTIVITY DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d8">
+  <div class="diagram-header">
+    <div class="diagram-num behav-num">8</div>
+    <h2>Activity Diagram <small>UML Behavioral — HUF analysis workflow</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> The complete workflow from raw IIASA data to diagnosed output. Fork/join bars show parallel CoDa analyses. Decision diamonds show validation gates. This is the process IIASA would follow to integrate HUF into their pipeline.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 800 620" width="800" height="620">
+        <!-- Start -->
+        <circle cx="400" cy="25" r="12" fill="#ffffff"/>
+
+        <!-- Load Data -->
+        <rect x="310" y="55" width="180" height="36" class="activity-box"/>
+        <text x="400" y="78" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Load IIASA Data</text>
+        <line x1="400" y1="37" x2="400" y2="55" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Extract Composition -->
+        <rect x="310" y="110" width="180" height="36" class="activity-box"/>
+        <text x="400" y="133" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Extract D-part Composition</text>
+        <line x1="400" y1="91" x2="400" y2="110" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Decision: zeros? -->
+        <polygon points="400,170 440,195 400,220 360,195" class="decision"/>
+        <text x="400" y="199" text-anchor="middle" class="uml-text" font-size="9" fill="#e2e8f0">zeros?</text>
+        <line x1="400" y1="146" x2="400" y2="170" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Yes: Replace -->
+        <rect x="490" y="177" width="140" height="36" class="activity-box" stroke="#ef4444"/>
+        <text x="560" y="200" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Zero Replacement</text>
+        <line x1="440" y1="195" x2="490" y2="195" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="460" y="188" class="uml-text" font-size="9" fill="#94a3b8">yes</text>
+        <path d="M630,195 Q660,195 660,250 L440,250" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- No: Close -->
+        <rect x="310" y="232" width="180" height="36" class="activity-box"/>
+        <text x="400" y="255" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Close to Simplex (Σ=1)</text>
+        <line x1="400" y1="220" x2="400" y2="232" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="380" y="228" class="uml-text" font-size="9" fill="#94a3b8">no</text>
+
+        <!-- Fork bar -->
+        <rect x="200" y="286" width="400" height="4" fill="#e2e8f0" rx="2"/>
+        <line x1="400" y1="268" x2="400" y2="286" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Parallel activities -->
+        <rect x="60" y="310" width="150" height="36" class="activity-box" stroke="#10b981"/>
+        <text x="135" y="333" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Compute χ Series</text>
+        <line x1="260" y1="290" x2="135" y2="310" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <rect x="240" y="310" width="150" height="36" class="activity-box" stroke="#8b5cf6"/>
+        <text x="315" y="333" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">CLR Transform</text>
+        <line x1="340" y1="290" x2="315" y2="310" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <rect x="420" y="310" width="150" height="36" class="activity-box" stroke="#8b5cf6"/>
+        <text x="495" y="333" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">ILR / Balances</text>
+        <line x1="460" y1="290" x2="495" y2="310" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <rect x="600" y="310" width="150" height="36" class="activity-box" stroke="#3b82f6"/>
+        <text x="675" y="333" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Variation Matrix</text>
+        <line x1="540" y1="290" x2="675" y2="310" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Second parallel row -->
+        <rect x="60" y="366" width="150" height="36" class="activity-box" stroke="#10b981"/>
+        <text x="135" y="389" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">W & GovEff</text>
+        <line x1="135" y1="346" x2="135" y2="366" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <rect x="240" y="366" width="150" height="36" class="activity-box" stroke="#f59e0b"/>
+        <text x="315" y="389" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Perturbation</text>
+        <line x1="315" y1="346" x2="315" y2="366" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <rect x="420" y="366" width="150" height="36" class="activity-box" stroke="#f59e0b"/>
+        <text x="495" y="389" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">EITT Test</text>
+        <line x1="495" y1="346" x2="495" y2="366" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <rect x="600" y="366" width="150" height="36" class="activity-box" stroke="#ef4444"/>
+        <text x="675" y="389" text-anchor="middle" class="uml-text" font-size="10" fill="#e2e8f0">Time Reversal</text>
+        <line x1="675" y1="346" x2="675" y2="366" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Join bar -->
+        <rect x="200" y="420" width="400" height="4" fill="#e2e8f0" rx="2"/>
+        <line x1="135" y1="402" x2="260" y2="420" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="315" y1="402" x2="340" y2="420" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="495" y1="402" x2="460" y2="420" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="675" y1="402" x2="540" y2="420" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Decision: EITT pass? -->
+        <polygon points="400,445 450,475 400,505 350,475" class="decision" stroke="#10b981"/>
+        <text x="400" y="479" text-anchor="middle" class="uml-text" font-size="9" fill="#e2e8f0">EITT?</text>
+        <line x1="400" y1="424" x2="400" y2="445" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Pass: Classify -->
+        <rect x="310" y="525" width="180" height="36" class="activity-box" stroke="#10b981"/>
+        <text x="400" y="548" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Classify & Report</text>
+        <line x1="400" y1="505" x2="400" y2="525" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="410" y="518" class="uml-text" font-size="9" fill="#10b981">pass</text>
+
+        <!-- Fail: Flag -->
+        <rect x="520" y="457" width="140" height="36" class="activity-box" stroke="#ef4444"/>
+        <text x="590" y="480" text-anchor="middle" class="uml-text" font-size="10" fill="#ef4444">Flag: Non-CoDa</text>
+        <line x1="450" y1="475" x2="520" y2="475" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="480" y="468" class="uml-text" font-size="9" fill="#ef4444">fail</text>
+
+        <!-- End -->
+        <circle cx="400" cy="590" r="12" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="400" cy="590" r="8" fill="#ffffff"/>
+        <line x1="400" y1="561" x2="400" y2="578" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path d="M590,493 L590,590 L412,590" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 9: SEQUENCE DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d9">
+  <div class="diagram-header">
+    <div class="diagram-num behav-num">9</div>
+    <h2>Sequence Diagram <small>UML Behavioral — Interaction flow for a single HUF analysis</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> Messages between the Analyst, the IIASA Data Store, the CoDa Engine, and the HUF Diagnostic. Lifelines show object lifetime; activation bars show processing. Return values carry compositional results.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 820 560" width="820" height="560">
+        <!-- Lifeline headers -->
+        <rect x="50" y="10" width="110" height="36" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+        <text x="105" y="33" text-anchor="middle" class="uml-text" font-size="11" fill="#f59e0b">:Analyst</text>
+        <rect x="240" y="10" width="120" height="36" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="300" y="33" text-anchor="middle" class="uml-text" font-size="11" fill="#3b82f6">:DataStore</text>
+        <rect x="440" y="10" width="120" height="36" rx="4" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="500" y="33" text-anchor="middle" class="uml-text" font-size="11" fill="#8b5cf6">:CoDaEngine</text>
+        <rect x="640" y="10" width="130" height="36" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="1.5"/>
+        <text x="705" y="33" text-anchor="middle" class="uml-text" font-size="11" fill="#10b981">:HUFDiagnostic</text>
+
+        <!-- Lifelines -->
+        <line x1="105" y1="46" x2="105" y2="540" class="lifeline"/>
+        <line x1="300" y1="46" x2="300" y2="540" class="lifeline"/>
+        <line x1="500" y1="46" x2="500" y2="540" class="lifeline"/>
+        <line x1="705" y1="46" x2="705" y2="540" class="lifeline"/>
+
+        <!-- Message 1: select scenario -->
+        <rect x="97" y="70" width="16" height="60" class="activation"/>
+        <line x1="113" y1="80" x2="292" y2="80" class="msg-arrow"/>
+        <text x="200" y="73" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">1: query(model, scenario, region)</text>
+        <rect x="292" y="75" width="16" height="40" class="activation"/>
+        <line x1="292" y1="105" x2="113" y2="105" class="msg-return"/>
+        <text x="200" y="118" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">composition_timeseries[T×D]</text>
+
+        <!-- Message 2: close + transform -->
+        <rect x="97" y="140" width="16" height="40" class="activation"/>
+        <line x1="113" y1="150" x2="492" y2="150" class="msg-arrow"/>
+        <text x="300" y="143" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">2: close_and_transform(raw_comp)</text>
+        <rect x="492" y="145" width="16" height="70" class="activation"/>
+
+        <!-- Self-call: CLR -->
+        <rect x="515" y="165" width="16" height="20" class="activation" fill="#2d1e5f"/>
+        <path d="M508,170 L540,170 L540,180 L515,180" fill="none" class="msg-arrow"/>
+        <text x="560" y="177" class="uml-text" font-size="9" fill="#10b981">clr(x)</text>
+
+        <!-- Self-call: ILR -->
+        <rect x="515" y="190" width="16" height="20" class="activation" fill="#2d1e5f"/>
+        <path d="M508,195 L540,195 L540,205 L515,205" fill="none" class="msg-arrow"/>
+        <text x="560" y="202" class="uml-text" font-size="9" fill="#10b981">ilr(x, Ψ)</text>
+
+        <line x1="492" y1="210" x2="113" y2="210" class="msg-return"/>
+        <text x="300" y="223" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">SimplexData{closed, clr, ilr}</text>
+
+        <!-- Message 3: diagnose -->
+        <rect x="97" y="240" width="16" height="30" class="activation"/>
+        <line x1="113" y1="250" x2="697" y2="250" class="msg-arrow"/>
+        <text x="400" y="243" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">3: diagnose(simplex_data)</text>
+        <rect x="697" y="245" width="16" height="120" class="activation"/>
+
+        <!-- HUF internal -->
+        <rect x="720" y="265" width="16" height="20" class="activation" fill="#0a3d2e"/>
+        <path d="M713,270 L745,270 L745,280 L720,280" fill="none" class="msg-arrow"/>
+        <text x="770" y="277" class="uml-text" font-size="9" fill="#10b981">χ_series()</text>
+
+        <rect x="720" y="290" width="16" height="20" class="activation" fill="#0a3d2e"/>
+        <path d="M713,295 L745,295 L745,305 L720,305" fill="none" class="msg-arrow"/>
+        <text x="770" y="302" class="uml-text" font-size="9" fill="#10b981">gov_eff()</text>
+
+        <rect x="720" y="315" width="16" height="20" class="activation" fill="#0a3d2e"/>
+        <path d="M713,320 L745,320 L745,330 L720,330" fill="none" class="msg-arrow"/>
+        <text x="770" y="327" class="uml-text" font-size="9" fill="#10b981">eitt_test()</text>
+
+        <rect x="720" y="340" width="16" height="20" class="activation" fill="#0a3d2e"/>
+        <path d="M713,345 L745,345 L745,355 L720,355" fill="none" class="msg-arrow"/>
+        <text x="770" y="352" class="uml-text" font-size="9" fill="#10b981">time_rev()</text>
+
+        <line x1="697" y1="365" x2="113" y2="365" class="msg-return"/>
+        <text x="400" y="378" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">HUFResult{χ̄, CV, W, GovEff, eitt_pass, irreversibility}</text>
+
+        <!-- Message 4: compare models -->
+        <rect x="97" y="400" width="16" height="30" class="activation"/>
+        <line x1="113" y1="410" x2="492" y2="410" class="msg-arrow"/>
+        <text x="300" y="403" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">4: subcomp_coherence(models[])</text>
+        <rect x="492" y="405" width="16" height="50" class="activation"/>
+
+        <!-- CoDa calls HUF -->
+        <line x1="508" y1="430" x2="697" y2="430" class="msg-arrow"/>
+        <text x="600" y="423" text-anchor="middle" class="uml-text" font-size="9" fill="#10b981">diagnose_sub(fossil)</text>
+        <rect x="697" y="425" width="16" height="20" class="activation"/>
+        <line x1="697" y1="440" x2="508" y2="440" class="msg-return"/>
+
+        <line x1="492" y1="450" x2="113" y2="450" class="msg-return"/>
+        <text x="300" y="463" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">CoherenceReport{REMIND:0.78, GCAM:0.52}</text>
+
+        <!-- Note -->
+        <rect x="30" y="480" width="320" height="50" class="note-box" rx="4"/>
+        <text x="190" y="500" text-anchor="middle" class="uml-text" font-size="10" fill="#f59e0b">Key insight: HUF reads model output.</text>
+        <text x="190" y="516" text-anchor="middle" class="uml-text" font-size="10" fill="#f59e0b">It never modifies the optimization model.</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 10: COMMUNICATION DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d10">
+  <div class="diagram-header">
+    <div class="diagram-num behav-num">10</div>
+    <h2>Communication Diagram <small>UML Behavioral — Object collaboration topology</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> Same interactions as the sequence diagram, but showing the spatial topology of object collaboration. Numbered messages indicate ordering. The star topology around HUF shows it as the diagnostic hub — every data source feeds it, every consumer reads from it.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 700 400" width="700" height="400">
+        <!-- Objects -->
+        <rect x="270" y="140" width="160" height="50" rx="6" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+        <text x="350" y="170" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700" text-decoration="underline">:HUFEngine</text>
+
+        <rect x="40" y="30" width="140" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+        <text x="110" y="55" text-anchor="middle" class="uml-text" font-size="11" fill="#f59e0b" text-decoration="underline">:Analyst</text>
+
+        <rect x="520" y="30" width="140" height="40" rx="6" fill="#1e293b" stroke="#3b82f6" stroke-width="1.5"/>
+        <text x="590" y="55" text-anchor="middle" class="uml-text" font-size="11" fill="#3b82f6" text-decoration="underline">:IIASAData</text>
+
+        <rect x="40" y="300" width="140" height="40" rx="6" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+        <text x="110" y="325" text-anchor="middle" class="uml-text" font-size="11" fill="#8b5cf6" text-decoration="underline">:CoDaToolkit</text>
+
+        <rect x="520" y="300" width="140" height="40" rx="6" fill="#1e293b" stroke="#ef4444" stroke-width="1.5"/>
+        <text x="590" y="325" text-anchor="middle" class="uml-text" font-size="11" fill="#ef4444" text-decoration="underline">:Dashboard</text>
+
+        <rect x="270" y="340" width="160" height="40" rx="6" fill="#1e293b" stroke="#f59e0b" stroke-width="1.5"/>
+        <text x="350" y="365" text-anchor="middle" class="uml-text" font-size="11" fill="#f59e0b" text-decoration="underline">:PolicyReport</text>
+
+        <!-- Links with messages -->
+        <!-- Analyst → HUF -->
+        <line x1="150" y1="70" x2="280" y2="140" stroke="#64748b" stroke-width="1.5"/>
+        <text x="190" y="95" class="uml-text" font-size="9" fill="#10b981">1: diagnose(scenario)</text>
+        <text x="220" y="120" class="uml-text" font-size="9" fill="#64748b">1.4: result</text>
+
+        <!-- IIASAData → HUF -->
+        <line x1="530" y1="70" x2="420" y2="140" stroke="#64748b" stroke-width="1.5"/>
+        <text x="490" y="95" class="uml-text" font-size="9" fill="#10b981">1.1: fetchComp()</text>
+        <text x="440" y="120" class="uml-text" font-size="9" fill="#64748b">1.1.1: timeseries</text>
+
+        <!-- CoDa → HUF -->
+        <line x1="150" y1="300" x2="280" y2="190" stroke="#64748b" stroke-width="1.5"/>
+        <text x="170" y="240" class="uml-text" font-size="9" fill="#10b981">1.2: transform()</text>
+        <text x="200" y="260" class="uml-text" font-size="9" fill="#64748b">1.2.1: clr,ilr,var</text>
+
+        <!-- HUF → Dashboard -->
+        <line x1="420" y1="190" x2="530" y2="300" stroke="#64748b" stroke-width="1.5"/>
+        <text x="500" y="240" class="uml-text" font-size="9" fill="#10b981">1.3: render(hufResult)</text>
+
+        <!-- HUF → PolicyReport -->
+        <line x1="350" y1="190" x2="350" y2="340" stroke="#64748b" stroke-width="1.5"/>
+        <text x="360" y="270" class="uml-text" font-size="9" fill="#10b981">1.3.1: classify()</text>
+
+        <!-- Analyst → CoDa -->
+        <line x1="110" y1="70" x2="110" y2="300" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3"/>
+        <text x="70" y="185" class="uml-text" font-size="9" fill="#64748b">«uses»</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 11: STATE MACHINE -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d11">
+  <div class="diagram-header">
+    <div class="diagram-num behav-num">11</div>
+    <h2>State Machine Diagram <small>UML Behavioral — Lifecycle of a composition under analysis</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> A composition transitions through states from raw extraction through transformation, diagnosis, and classification. Guard conditions (in brackets) determine transitions. The terminal states map to HUF's governance classification.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 820 440" width="820" height="440">
+        <!-- Initial -->
+        <circle cx="80" cy="60" r="12" fill="#ffffff"/>
+        <line x1="92" y1="60" x2="140" y2="60" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Raw -->
+        <rect x="140" y="38" width="140" height="44" class="state-box"/>
+        <text x="210" y="65" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">Raw</text>
+        <text x="210" y="78" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">entry / validate_parts()</text>
+
+        <!-- Transition: Raw → ZeroHandled -->
+        <line x1="280" y1="60" x2="340" y2="60" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="310" y="50" text-anchor="middle" class="uml-text" font-size="9" fill="#94a3b8">[has_zeros]</text>
+
+        <!-- ZeroHandled -->
+        <rect x="340" y="38" width="140" height="44" class="state-box" stroke="#f59e0b"/>
+        <text x="410" y="58" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">ZeroHandled</text>
+        <text x="410" y="78" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">do / mult_replace(δ)</text>
+
+        <!-- Transition: Raw → Closed (no zeros) -->
+        <path d="M210,82 L210,140" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="215" y="112" class="uml-text" font-size="9" fill="#94a3b8">[no_zeros]</text>
+
+        <!-- Closed -->
+        <rect x="270" y="140" width="140" height="44" class="state-box"/>
+        <text x="340" y="160" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">Closed</text>
+        <text x="340" y="176" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">entry / close(Σ=1)</text>
+
+        <line x1="410" y1="82" x2="410" y2="120" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="410" y1="120" x2="340" y2="140" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Transformed -->
+        <rect x="470" y="140" width="160" height="58" class="state-box" stroke="#8b5cf6"/>
+        <text x="550" y="160" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">Transformed</text>
+        <line x1="470" y1="168" x2="630" y2="168" stroke="#8b5cf6" stroke-width="0.5"/>
+        <text x="550" y="182" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">do / clr(); ilr(); varmat()</text>
+        <text x="550" y="194" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">do / perturbation(); pca()</text>
+
+        <line x1="410" y1="162" x2="470" y2="162" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Diagnosed -->
+        <rect x="270" y="250" width="160" height="58" class="state-box" stroke="#10b981"/>
+        <text x="350" y="270" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">Diagnosed</text>
+        <line x1="270" y1="278" x2="430" y2="278" stroke="#10b981" stroke-width="0.5"/>
+        <text x="350" y="292" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">do / chi(); goveff(); eitt()</text>
+        <text x="350" y="304" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">do / time_reversal()</text>
+
+        <path d="M550,198 L550,280 L430,280" fill="none" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Decision: EITT pass? -->
+        <polygon points="350,335 390,360 350,385 310,360" class="decision" stroke="#10b981"/>
+        <text x="350" y="364" text-anchor="middle" class="uml-text" font-size="9" fill="#e2e8f0">EITT?</text>
+        <line x1="350" y1="308" x2="350" y2="335" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Terminal states -->
+        <rect x="60" y="390" width="150" height="36" rx="12" fill="#064e3b" stroke="#10b981" stroke-width="2"/>
+        <text x="135" y="413" text-anchor="middle" class="uml-text" font-size="11" fill="#10b981">Active Transition</text>
+        <line x1="310" y1="360" x2="210" y2="408" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="245" y="378" class="uml-text" font-size="9" fill="#94a3b8">[pass ∧ GovEff>1]</text>
+
+        <rect x="250" y="390" width="150" height="36" rx="12" fill="#4a3000" stroke="#f59e0b" stroke-width="2"/>
+        <text x="325" y="413" text-anchor="middle" class="uml-text" font-size="11" fill="#f59e0b">Constrained</text>
+        <line x1="350" y1="385" x2="325" y2="390" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="340" y="400" class="uml-text" font-size="9" fill="#94a3b8">[pass ∧ GovEff≤1]</text>
+
+        <rect x="440" y="390" width="150" height="36" rx="12" fill="#4a0000" stroke="#ef4444" stroke-width="2"/>
+        <text x="515" y="413" text-anchor="middle" class="uml-text" font-size="11" fill="#ef4444">Non-Compositional</text>
+        <line x1="390" y1="360" x2="440" y2="408" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <text x="430" y="378" class="uml-text" font-size="9" fill="#94a3b8">[fail]</text>
+
+        <rect x="640" y="390" width="150" height="36" rx="12" fill="#1e1e3b" stroke="#8b5cf6" stroke-width="2"/>
+        <text x="715" y="413" text-anchor="middle" class="uml-text" font-size="11" fill="#8b5cf6">Incoherent</text>
+        <text x="715" y="430" text-anchor="middle" class="uml-text" font-size="8" fill="#64748b">(subcomp r &lt; 0.70)</text>
+
+        <path d="M550,198 Q700,198 700,360 L700,390" fill="none" stroke="#64748b" stroke-width="1" stroke-dasharray="5,3" marker-end="url(#arrowhead)"/>
+        <text x="710" y="340" class="uml-text" font-size="9" fill="#94a3b8">[incoherent]</text>
+
+        <!-- Final nodes -->
+        <circle cx="135" cy="440" r="8" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="135" cy="440" r="5" fill="#ffffff"/>
+        <line x1="135" y1="426" x2="135" y2="432" stroke="#64748b" stroke-width="1"/>
+        <circle cx="325" cy="440" r="8" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="325" cy="440" r="5" fill="#ffffff"/>
+        <circle cx="515" cy="440" r="8" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="515" cy="440" r="5" fill="#ffffff"/>
+        <circle cx="715" cy="440" r="8" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="715" cy="440" r="5" fill="#ffffff"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 12: INTERACTION OVERVIEW -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d12">
+  <div class="diagram-header">
+    <div class="diagram-num behav-num">12</div>
+    <h2>Interaction Overview Diagram <small>UML Behavioral — High-level orchestration of HUF analyses</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> An activity diagram whose nodes are interaction fragments (sequence diagram snapshots). This shows how the full CoDa arsenal attack on IIASA data orchestrates — world analysis first, then regional fan-out, then cross-model coherence check.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 700 500" width="700" height="500">
+        <!-- Start -->
+        <circle cx="350" cy="25" r="12" fill="#ffffff"/>
+        <line x1="350" y1="37" x2="350" y2="60" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Interaction: Load & Extract -->
+        <rect x="200" y="60" width="300" height="70" rx="4" fill="#0f172a" stroke="#3b82f6" stroke-width="2"/>
+        <text x="208" y="78" class="uml-text" font-size="10" fill="#3b82f6" font-weight="700">sd Load & Extract</text>
+        <line x1="200" y1="82" x2="500" y2="82" stroke="#3b82f6" stroke-width="0.5"/>
+        <text x="350" y="102" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">DataStore → CoDaEngine: fetchComp()</text>
+        <text x="350" y="118" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">CoDaEngine → CoDaEngine: close()</text>
+
+        <line x1="350" y1="130" x2="350" y2="155" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Interaction: World HUF -->
+        <rect x="200" y="155" width="300" height="70" rx="4" fill="#0f172a" stroke="#10b981" stroke-width="2"/>
+        <text x="208" y="173" class="uml-text" font-size="10" fill="#10b981" font-weight="700">sd World HUF (35 analyses)</text>
+        <line x1="200" y1="177" x2="500" y2="177" stroke="#10b981" stroke-width="0.5"/>
+        <text x="350" y="197" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">loop [each model×scenario]</text>
+        <text x="350" y="213" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">  HUF.diagnose(world_comp)</text>
+
+        <line x1="350" y1="225" x2="350" y2="250" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Fork -->
+        <rect x="170" y="250" width="360" height="4" fill="#e2e8f0" rx="2"/>
+
+        <!-- Regional fan-out -->
+        <rect x="50" y="270" width="260" height="70" rx="4" fill="#0f172a" stroke="#8b5cf6" stroke-width="2"/>
+        <text x="58" y="288" class="uml-text" font-size="10" fill="#8b5cf6" font-weight="700">sd Regional (222 analyses)</text>
+        <line x1="50" y1="292" x2="310" y2="292" stroke="#8b5cf6" stroke-width="0.5"/>
+        <text x="180" y="312" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">par [each region]</text>
+        <text x="180" y="328" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">  HUF.diagnose(regional_comp)</text>
+
+        <line x1="230" y1="254" x2="180" y2="270" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Full Arsenal -->
+        <rect x="390" y="270" width="260" height="70" rx="4" fill="#0f172a" stroke="#f59e0b" stroke-width="2"/>
+        <text x="398" y="288" class="uml-text" font-size="10" fill="#f59e0b" font-weight="700">sd CoDa Arsenal (8 methods)</text>
+        <line x1="390" y1="292" x2="650" y2="292" stroke="#f59e0b" stroke-width="0.5"/>
+        <text x="520" y="312" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">VarMatrix, PCA, Balances,</text>
+        <text x="520" y="328" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">Perturbation, EITT, TimeRev...</text>
+
+        <line x1="470" y1="254" x2="520" y2="270" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Join -->
+        <rect x="170" y="360" width="360" height="4" fill="#e2e8f0" rx="2"/>
+        <line x1="180" y1="340" x2="270" y2="360" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <line x1="520" y1="340" x2="430" y2="360" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- Coherence check -->
+        <rect x="200" y="380" width="300" height="60" rx="4" fill="#0f172a" stroke="#ef4444" stroke-width="2"/>
+        <text x="208" y="398" class="uml-text" font-size="10" fill="#ef4444" font-weight="700">sd Cross-Model Coherence</text>
+        <line x1="200" y1="402" x2="500" y2="402" stroke="#ef4444" stroke-width="0.5"/>
+        <text x="350" y="422" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">subcomp_coherence(REMIND, GCAM, MSG)</text>
+        <text x="350" y="436" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">→ REMIND coherent, GCAM incoherent</text>
+
+        <line x1="350" y1="364" x2="350" y2="380" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+
+        <!-- End -->
+        <circle cx="350" cy="470" r="12" fill="none" stroke="#ffffff" stroke-width="2"/>
+        <circle cx="350" cy="470" r="8" fill="#ffffff"/>
+        <line x1="350" y1="440" x2="350" y2="458" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 13: TIMING DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d13">
+  <div class="diagram-header">
+    <div class="diagram-num behav-num">13</div>
+    <h2>Timing Diagram <small>UML Behavioral — χ evolution and state transitions over time</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> The χ (Aitchison velocity) for three scenarios plotted against time, with state-change annotations. Net Zero accelerates then decelerates (the HUF signature of active transition). Current Policies shows a flat line — the composition barely moves. This is the timing fingerprint IIASA doesn't currently see.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 800 360" width="800" height="360">
+        <!-- Axes -->
+        <line x1="80" y1="30" x2="80" y2="280" stroke="#64748b" stroke-width="1.5"/>
+        <line x1="80" y1="280" x2="750" y2="280" stroke="#64748b" stroke-width="1.5"/>
+        <text x="40" y="155" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0" transform="rotate(-90,40,155)">χ (Aitchison velocity)</text>
+        <text x="415" y="310" text-anchor="middle" class="uml-text" font-size="11" fill="#e2e8f0">Year</text>
+
+        <!-- Y-axis labels -->
+        <text x="72" y="280" text-anchor="end" class="uml-text" font-size="9" fill="#64748b">0.0</text>
+        <text x="72" y="220" text-anchor="end" class="uml-text" font-size="9" fill="#64748b">0.4</text>
+        <text x="72" y="160" text-anchor="end" class="uml-text" font-size="9" fill="#64748b">0.8</text>
+        <text x="72" y="100" text-anchor="end" class="uml-text" font-size="9" fill="#64748b">1.2</text>
+        <text x="72" y="40" text-anchor="end" class="uml-text" font-size="9" fill="#64748b">1.6</text>
+
+        <!-- X-axis labels (2020-2100) -->
+        <text x="120" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2025</text>
+        <text x="200" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2035</text>
+        <text x="280" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2045</text>
+        <text x="360" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2055</text>
+        <text x="440" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2065</text>
+        <text x="520" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2075</text>
+        <text x="600" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2085</text>
+        <text x="680" y="296" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">2095</text>
+
+        <!-- Grid lines -->
+        <line x1="80" y1="220" x2="750" y2="220" stroke="#1e293b" stroke-width="0.5"/>
+        <line x1="80" y1="160" x2="750" y2="160" stroke="#1e293b" stroke-width="0.5"/>
+        <line x1="80" y1="100" x2="750" y2="100" stroke="#1e293b" stroke-width="0.5"/>
+
+        <!-- Net Zero 2050 (green) - accelerates then decelerates -->
+        <polyline points="100,240 140,200 180,140 220,80 260,60 300,55 340,65 380,85 420,110 460,135 500,155 540,170 580,178 620,182 660,185 700,186"
+          fill="none" stroke="#10b981" stroke-width="2.5"/>
+        <text x="710" y="182" class="uml-text" font-size="10" fill="#10b981">Net Zero</text>
+
+        <!-- Below 2°C (blue) -->
+        <polyline points="100,250 140,225 180,185 220,140 260,120 300,115 340,120 380,135 420,155 460,172 500,185 540,195 580,200 620,203 660,204 700,205"
+          fill="none" stroke="#3b82f6" stroke-width="2"/>
+        <text x="710" y="202" class="uml-text" font-size="10" fill="#3b82f6">Below 2°C</text>
+
+        <!-- Current Policies (red) - flat -->
+        <polyline points="100,258 140,255 180,252 220,250 260,252 300,253 340,255 380,254 420,255 460,256 500,256 540,257 580,257 620,258 660,258 700,258"
+          fill="none" stroke="#ef4444" stroke-width="2" stroke-dasharray="6,3"/>
+        <text x="710" y="256" class="uml-text" font-size="10" fill="#ef4444">Current Pol.</text>
+
+        <!-- State annotations -->
+        <!-- Peak annotation -->
+        <line x1="280" y1="55" x2="280" y2="30" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2"/>
+        <rect x="230" y="18" width="100" height="18" rx="3" fill="#1e293b" stroke="#f59e0b" stroke-width="1"/>
+        <text x="280" y="31" text-anchor="middle" class="uml-text" font-size="9" fill="#f59e0b">Peak χ ≈ 2040</text>
+
+        <!-- Deceleration zone -->
+        <rect x="300" y="42" width="200" height="20" rx="3" fill="none" stroke="#10b981" stroke-width="1" stroke-dasharray="4,3"/>
+        <text x="400" y="56" text-anchor="middle" class="uml-text" font-size="8" fill="#10b981">deceleration → convergence</text>
+
+        <!-- Frozen tech ceiling -->
+        <line x1="80" y1="230" x2="750" y2="230" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,2" opacity="0.5"/>
+        <text x="750" y="228" text-anchor="end" class="uml-text" font-size="8" fill="#f59e0b">frozen tech ceiling</text>
+
+        <!-- State bars at bottom -->
+        <rect x="80" y="320" width="200" height="12" rx="2" fill="#ef4444" opacity="0.5"/>
+        <text x="180" y="330" text-anchor="middle" class="uml-text" font-size="8" fill="#ffffff">Fossil Dominant</text>
+        <rect x="280" y="320" width="160" height="12" rx="2" fill="#f59e0b" opacity="0.5"/>
+        <text x="360" y="330" text-anchor="middle" class="uml-text" font-size="8" fill="#ffffff">Transition</text>
+        <rect x="440" y="320" width="310" height="12" rx="2" fill="#10b981" opacity="0.5"/>
+        <text x="595" y="330" text-anchor="middle" class="uml-text" font-size="8" fill="#ffffff">Clean Dominant</text>
+
+        <text x="80" y="350" class="uml-text" font-size="9" fill="#64748b">State timeline:</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════ -->
+<!-- DIAGRAM 14: PROFILE DIAGRAM -->
+<!-- ═══════════════════════════════════════════════ -->
+<div class="diagram-card" id="d14">
+  <div class="diagram-header">
+    <div class="diagram-num struct-num">14</div>
+    <h2>Profile Diagram <small>UML Structural — CoDa/HUF stereotypes extending UML</small></h2>
+  </div>
+  <div class="diagram-body">
+    <div class="diagram-desc">
+      <strong>Systems mapping:</strong> A UML profile defines domain-specific stereotypes. Here we define the «composition», «simplex», «balance», «perturbation», «invariant», and «diagnostic» stereotypes that extend standard UML metaclasses. This is the vocabulary bridge — when IIASA systems analysts see «composition» on a class, they know it obeys the simplex constraint.
+    </div>
+    <div class="svg-container">
+      <svg viewBox="0 0 840 480" width="840" height="480">
+        <!-- Profile boundary -->
+        <rect x="30" y="20" width="780" height="440" rx="8" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="8,4"/>
+        <rect x="38" y="12" width="160" height="18" fill="#4a3000" rx="3"/>
+        <text x="118" y="25" text-anchor="middle" class="uml-text" font-size="11" fill="#f59e0b" font-weight="700">«profile» CoDa_HUF</text>
+
+        <!-- Metaclass: Class -->
+        <rect x="360" y="50" width="120" height="36" rx="4" fill="#0a0e1a" stroke="#64748b" stroke-width="1.5"/>
+        <text x="420" y="64" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«metaclass»</text>
+        <text x="420" y="78" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">Class</text>
+
+        <!-- Metaclass: Property -->
+        <rect x="600" y="50" width="120" height="36" rx="4" fill="#0a0e1a" stroke="#64748b" stroke-width="1.5"/>
+        <text x="660" y="64" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«metaclass»</text>
+        <text x="660" y="78" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">Property</text>
+
+        <!-- Metaclass: Constraint -->
+        <rect x="120" y="50" width="120" height="36" rx="4" fill="#0a0e1a" stroke="#64748b" stroke-width="1.5"/>
+        <text x="180" y="64" text-anchor="middle" class="uml-text" font-size="9" fill="#64748b">«metaclass»</text>
+        <text x="180" y="78" text-anchor="middle" class="uml-text" font-size="12" fill="#e2e8f0">Constraint</text>
+
+        <!-- Stereotype: «composition» -->
+        <rect x="60" y="140" width="180" height="90" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+        <text x="150" y="160" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">«stereotype»</text>
+        <text x="150" y="176" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">composition</text>
+        <line x1="60" y1="182" x2="240" y2="182" stroke="#10b981" stroke-width="0.5"/>
+        <text x="68" y="198" class="uml-text" font-size="10" fill="#94a3b8">parts: int  {D ≥ 2}</text>
+        <text x="68" y="214" class="uml-text" font-size="10" fill="#94a3b8">closure: float = 1.0</text>
+        <text x="68" y="226" class="uml-text" font-size="10" fill="#94a3b8">space: Simplex Sᴰ</text>
+
+        <line x1="200" y1="140" x2="380" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#inherit)"/>
+
+        <!-- Stereotype: «balance» -->
+        <rect x="280" y="140" width="180" height="90" rx="4" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+        <text x="370" y="160" text-anchor="middle" class="uml-text" font-size="10" fill="#3b82f6">«stereotype»</text>
+        <text x="370" y="176" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">balance</text>
+        <line x1="280" y1="182" x2="460" y2="182" stroke="#3b82f6" stroke-width="0.5"/>
+        <text x="288" y="198" class="uml-text" font-size="10" fill="#94a3b8">numerator: Part[]</text>
+        <text x="288" y="214" class="uml-text" font-size="10" fill="#94a3b8">denominator: Part[]</text>
+        <text x="288" y="226" class="uml-text" font-size="10" fill="#94a3b8">isometric: bool = true</text>
+
+        <line x1="400" y1="140" x2="420" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#inherit)"/>
+
+        <!-- Stereotype: «perturbation» -->
+        <rect x="500" y="140" width="180" height="90" rx="4" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+        <text x="590" y="160" text-anchor="middle" class="uml-text" font-size="10" fill="#8b5cf6">«stereotype»</text>
+        <text x="590" y="176" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">perturbation</text>
+        <line x1="500" y1="182" x2="680" y2="182" stroke="#8b5cf6" stroke-width="0.5"/>
+        <text x="508" y="198" class="uml-text" font-size="10" fill="#94a3b8">operation: ⊕ (Aitchison +)</text>
+        <text x="508" y="214" class="uml-text" font-size="10" fill="#94a3b8">norm: float</text>
+        <text x="508" y="226" class="uml-text" font-size="10" fill="#94a3b8">direction: float[D]</text>
+
+        <line x1="590" y1="140" x2="450" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#inherit)"/>
+
+        <!-- Stereotype: «diagnostic» -->
+        <rect x="60" y="280" width="180" height="100" rx="4" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+        <text x="150" y="300" text-anchor="middle" class="uml-text" font-size="10" fill="#f59e0b">«stereotype»</text>
+        <text x="150" y="316" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">diagnostic</text>
+        <line x1="60" y1="322" x2="240" y2="322" stroke="#f59e0b" stroke-width="0.5"/>
+        <text x="68" y="338" class="uml-text" font-size="10" fill="#94a3b8">reads_only: bool = true</text>
+        <text x="68" y="354" class="uml-text" font-size="10" fill="#94a3b8">modifies_model: bool = false</text>
+        <text x="68" y="370" class="uml-text" font-size="10" fill="#94a3b8">boundary: "stethoscope"</text>
+
+        <line x1="150" y1="280" x2="150" y2="230" stroke="#64748b" stroke-width="1.5" marker-end="url(#inherit)"/>
+
+        <!-- Stereotype: «invariant» -->
+        <rect x="280" y="280" width="180" height="90" rx="4" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+        <text x="370" y="300" text-anchor="middle" class="uml-text" font-size="10" fill="#ef4444">«stereotype»</text>
+        <text x="370" y="316" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">invariant</text>
+        <line x1="280" y1="322" x2="460" y2="322" stroke="#ef4444" stroke-width="0.5"/>
+        <text x="288" y="338" class="uml-text" font-size="10" fill="#94a3b8">property: "entropy"</text>
+        <text x="288" y="354" class="uml-text" font-size="10" fill="#94a3b8">tolerance: float = 0.05</text>
+        <text x="288" y="366" class="uml-text" font-size="10" fill="#94a3b8">decimation: "geometric"</text>
+
+        <line x1="300" y1="280" x2="180" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#inherit)"/>
+
+        <!-- Stereotype: «simplex_property» -->
+        <rect x="500" y="280" width="180" height="90" rx="4" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+        <text x="590" y="300" text-anchor="middle" class="uml-text" font-size="10" fill="#10b981">«stereotype»</text>
+        <text x="590" y="316" text-anchor="middle" class="uml-text" font-size="13" fill="#ffffff" font-weight="700">simplex_property</text>
+        <line x1="500" y1="322" x2="680" y2="322" stroke="#10b981" stroke-width="0.5"/>
+        <text x="508" y="338" class="uml-text" font-size="10" fill="#94a3b8">constraint: "Σ = κ"</text>
+        <text x="508" y="354" class="uml-text" font-size="10" fill="#94a3b8">positive: bool = true</text>
+        <text x="508" y="366" class="uml-text" font-size="10" fill="#94a3b8">unit: "proportion"</text>
+
+        <line x1="590" y1="280" x2="660" y2="86" stroke="#64748b" stroke-width="1.5" marker-end="url(#inherit)"/>
+
+        <!-- Usage note -->
+        <rect x="500" y="400" width="280" height="48" class="note-box" rx="4"/>
+        <text x="640" y="418" text-anchor="middle" class="uml-text" font-size="10" fill="#f59e0b">Apply stereotypes to any UML model:</text>
+        <text x="640" y="436" text-anchor="middle" class="uml-text" font-size="10" fill="#94a3b8">«composition» EnergyMix : Class</text>
+      </svg>
+    </div>
+  </div>
+</div>
+
+</div><!-- end diagram-section -->
+
+<div class="footer">
+  <strong>HUF-UML</strong> — 14 UML Diagram Types for Compositional Systems Analysis<br/>
+  Rogue Wave Audio · CoDaWork 2026 · S018<br/>
+  <em>The stethoscope has a blueprint.</em>
+</div>
+
+</body>
+</html>
