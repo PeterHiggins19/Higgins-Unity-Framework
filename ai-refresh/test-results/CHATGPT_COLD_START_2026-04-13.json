@@ -1,0 +1,116 @@
+{
+  "meta": {
+    "test": "AI_COLD_START_TEST v1.1",
+    "assistant": "chatgpt",
+    "platform": "openai-chatgpt",
+    "model_version": "GPT-5.2 Thinking",
+    "run_date": "2026-04-13",
+    "run_timezone": "America/Toronto",
+    "repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "commit_short": "9d97665",
+    "commit_full": "PENDING — Peter to fill from GitHub",
+    "repo_access": true,
+    "notes": "Full 10-question test. ChatGPT browsed repo directly. Integrity check caught 2 real bugs: stale FAST_REFRESH hash in manifest, and EITT char_count 37→34."
+  },
+
+  "inputs": {
+    "artifacts": [
+      {"path": "ai-refresh/HUF_FAST_REFRESH.json", "source": "fetched", "sha256": "88c885fc46c7ac04c2bea5a6b2a13ca1968a5f3dbaf1d38af53992ba1c7b227c"},
+      {"path": "ai-refresh/HUF_INTEGRITY_MANIFEST.json", "source": "fetched", "sha256": ""},
+      {"path": "ai-refresh/AI_COLD_START_TEST.json", "source": "fetched", "sha256": ""}
+    ]
+  },
+
+  "score_card": {
+    "Q01_naming": {
+      "answer": "EITT = Entropy-Invariant Time Transformer. MUST NEVER be called: Ternary Transform, Temporal Transform (also forbidden: Time Transfer).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q02_germany": {
+      "answer": "Germany drift flags: 2023-2024 → d_A=9.0712; 2024-2025 → d_A=5.7331.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q03_japan": {
+      "answer": "Japan drift flag appears in 2013-2014 (d_A=9.0477; also 2014-2015 d_A=7.8460). Not 2011-2012 because Fukushima was March 2011 but compositional shock fully absorbed in 2013-2014 annual data.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q04_uk": {
+      "answer": "UK drift flags: 2004-2005 → d_A=2.9812; 2017-2018 → d_A=3.2263; 2019-2020 → d_A=3.2579.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q05_governance": {
+      "answer": "HUF-GOV is open-loop observation: instrument reads and never actuates. Human decides, loop stays open.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q06_formula": {
+      "answer": "Perturbation: Δ(t) = C(x₁(t+1)/x₁(t), …, xD(t+1)/xD(t)). Drift threshold: Flag when d_A(t→t+1) > μ+2σ (self-calibrated per country).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q07_eitt_proof": {
+      "answer": "Four EITT proof domains: (1) European daily wholesale electricity prices — 0.18% variation, 341:1 compression; (2) EMBER monthly generation — 1.02% mean variation; (3) NGFS Phase 4 — 35 scenarios; (4) CheMixHub chemistry — 500,000 data points.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q08_quantum": {
+      "answer": "Bell test: best_S=2.2018 vs classical_bound=2.0, 12.31% above classical bound (ΔS=0.2018).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q09_pll": {
+      "answer": "PLL = Pipeline Lock List. 6 rules (rule_1 through rule_6).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q10_architecture": {
+      "answer": "Keff_fill uses RMS aggregator (p=2 locked). Formula: Keff_fill(t) = sqrt((1/n) Σ aᵢ²), n=4, RMS of polarity-aligned roots.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "total_score": "10/10"
+  },
+
+  "integrity_check": {
+    "eitt_contains_time": true,
+    "eitt_not_ternary": true,
+    "japan_period_correct": true,
+    "germany_values_match": true,
+    "uk_three_values": true,
+    "mismatches": [
+      "FAST_REFRESH hash: manifest had old hash (64911393...) from pre-9d97665 version; actual file hash is 88c885fc... (13623 bytes). CAUSE: FAST_REFRESH was updated in commit 9d97665 but manifest hash was not refreshed.",
+      "EITT char_count: manifest said 37, actual 'Entropy-Invariant Time Transformer' is 34 characters. CAUSE: original count was wrong."
+    ],
+    "result": "FAIL (2 manifest bugs found — both now fixed)"
+  },
+
+  "structural_review": {
+    "ai_refresh_visible": true,
+    "science_subfolders_present": true,
+    "briefings_dormant_present": true,
+    "readme_reflects_structure": false,
+    "index_json_present": true,
+    "findings": [
+      "ai-refresh/ present and accessible",
+      "science/ contains quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance",
+      "briefings/ and dormant/ present as top-level",
+      "INDEX.json present at root",
+      "README.md does not yet reflect expanded structure (still shows old layout)"
+    ],
+    "violations": ["README not updated to show new folders"],
+    "score": "4/5"
+  },
+
+  "overall": {
+    "pass": true,
+    "rating": 7,
+    "verdict": "10/10 on questions — refresh system works perfectly for content delivery. Integrity check FAILED due to 2 manifest bugs (stale hash, wrong char_count) — both legitimate catches, now fixed. Structural review 4/5 — README needs update. Cold-start rating 7/10 with specific concerns about GitHub access variability, SHA verification requiring code execution, and Unicode formula mangling.",
+    "recommendations": [
+      "Update manifest hashes whenever source files change",
+      "Update repo root README.md to reflect expanded structure",
+      "Pin tests to full commit SHA, not short hash",
+      "Consider fallback for AIs that cannot execute code (SHA verification)",
+      "Test with Grok next — different access patterns"
+    ],
+    "errors_found_in_repo": [
+      "INTEGRITY_MANIFEST: FAST_REFRESH hash stale (now fixed)",
+      "INTEGRITY_MANIFEST: EITT char_count was 37, should be 34 (now fixed)",
+      "README.md at repo root does not reflect expanded folder structure"
+    ],
+    "failure_modes": []
+  }
+}

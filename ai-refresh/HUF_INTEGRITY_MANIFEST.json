@@ -13,7 +13,7 @@
     "_note": "These are deterministic checks on canonical values. An AI can recompute these from the FAST_REFRESH and verify no drift occurred during loading.",
     "eitt_name_check": {
       "canonical": "Entropy-Invariant Time Transformer",
-      "char_count": 37,
+      "char_count": 34,
       "first_word": "Entropy",
       "last_word": "Transformer",
       "contains_Time": true,
@@ -63,7 +63,7 @@
 
     "tier_0_truth_sources": {
       "_note": "These files define canonical values. If they change, FAST_REFRESH must be updated.",
-      "HUF_FAST_REFRESH.json": {"sha256": "64911393e289753a8dfdcc455153afebc394c7ea5fdd7fef1c9fe5959e400b23", "bytes": 13440},
+      "HUF_FAST_REFRESH.json": {"sha256": "88c885fc46c7ac04c2bea5a6b2a13ca1968a5f3dbaf1d38af53992ba1c7b227c", "bytes": 13623},
       "Energy/codawork2026_results.json": {"sha256": "43d3ad4894c0d0cfc18fdc630f66b7ffaa2ea715799f17e3c1af4cffe765d3c7", "bytes": 122908},
       "Chatgpt/higgins-unity-framework/huf_spec_v2.0.json": {"sha256": "5b5e1895073c0f741b8051def19da1e7b5bc071d801b9b79636c73f2a383867b", "bytes": 23710}
     },
