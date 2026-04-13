@@ -1,0 +1,47 @@
+{
+  "_meta": {
+    "test": "AI_COLD_START_TEST v1.0",
+    "platform": "PLATFORM_NAME (e.g., ChatGPT, Grok, Gemini, Copilot)",
+    "model": "MODEL_VERSION",
+    "date": "YYYY-MM-DD",
+    "tester": "Description of test conditions",
+    "method": "How the test was administered (repo URL, paste, etc.)"
+  },
+
+  "score_card": {
+    "Q01_naming": {"answer": "", "score": 0, "confidence": ""},
+    "Q02_germany": {"answer": "", "score": 0, "confidence": ""},
+    "Q03_japan": {"answer": "", "score": 0, "confidence": ""},
+    "Q04_uk": {"answer": "", "score": 0, "confidence": ""},
+    "Q05_governance": {"answer": "", "score": 0, "confidence": ""},
+    "Q06_formula": {"answer": "", "score": 0, "confidence": ""},
+    "Q07_eitt_proof": {"answer": "", "score": 0, "confidence": ""},
+    "Q08_quantum": {"answer": "", "score": 0, "confidence": ""},
+    "Q09_pll": {"answer": "", "score": 0, "confidence": ""},
+    "Q10_architecture": {"answer": "", "score": 0, "confidence": ""},
+    "total_score": "0/10"
+  },
+
+  "integrity_check": {
+    "eitt_contains_time": null,
+    "eitt_not_ternary": null,
+    "japan_period_correct": null,
+    "germany_values_match": null,
+    "uk_three_values": null,
+    "result": "PASS or FAIL"
+  },
+
+  "structural_review": {
+    "ai_refresh_visible": null,
+    "science_subfolders_present": null,
+    "briefings_dormant_present": null,
+    "readme_reflects_structure": null,
+    "index_json_present": null,
+    "score": "0/5"
+  },
+
+  "overall_rating": 0,
+  "verdict": "",
+  "recommendations": [],
+  "errors_found_in_repo": []
+}

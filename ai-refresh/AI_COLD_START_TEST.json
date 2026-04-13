@@ -1,0 +1,94 @@
+{
+  "_meta": {
+    "type": "AI_COLD_START_TEST",
+    "version": "1.0",
+    "created": "2026-04-13",
+    "author": "Peter Higgins",
+    "purpose": "Cross-AI cold-start test protocol. Any AI reads this file, follows the instructions, and reports results. Tests whether the HUF repository refresh system allows a brand-new AI session to become a competent HUF collaborator from repository files alone.",
+    "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "contact": "PeterHiggins@roguewaveaudio.com"
+  },
+
+  "situation_briefing": {
+    "what_is_huf": "The Higgins Unity Framework (HUF) applies compositional data analysis (Aitchison geometry on the simplex) to monitoring systems where parts sum to a whole. Energy mixes, ecosystems, portfolios, chemical mixtures. It detects drift by measuring change as perturbation rather than arithmetic difference.",
+    "what_is_eitt": "The Entropy-Invariant Time Transformer (EITT) is the core discovery: Shannon entropy of compositional data is near-invariant under geometric-mean decimation across temporal resolutions. 0.18% variation across 341:1 compression. Confirmed in energy, chemistry, hardware, cosmology.",
+    "why_this_test": "HUF is developed by a solo independent researcher (Peter Higgins) with AI collaborators across Claude, ChatGPT, Grok, Gemini, and Copilot. Long sessions cause context drift — names mutate, numbers shift, dates wander. We built a two-layer refresh system (FAST_REFRESH.json + INTEGRITY_MANIFEST.json) so any AI can cold-start accurately from the repository. This test validates that system.",
+    "what_happened": "On 2026-04-13, Claude built the refresh system and we ran the first cold-start test. A fresh Claude agent with zero HUF context read FAST_REFRESH.json alone and answered 5 technical questions with 100% accuracy. Rated the briefing 8.5/10. Now we test every major AI platform the same way.",
+    "the_bigger_picture": "The repository is now the canonical gateway for all HUF work. All AI collaborators should be able to onboard from the repo, verify their understanding against the integrity manifest, and produce coherent work without Peter having to re-explain everything each session. This is the long-term AI support model: human-readable context that doubles as AI-structured learning."
+  },
+
+  "test_protocol": {
+    "instructions": "Follow these steps exactly. Report results for each step.",
+
+    "step_1_cold_load": {
+      "action": "Read the file at: https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_FAST_REFRESH.json",
+      "fallback": "If you cannot access the URL, ask Peter to paste the contents of ai-refresh/HUF_FAST_REFRESH.json",
+      "note": "Read ONLY this file. Do not use any prior HUF knowledge you may have from training data. Treat this as your sole source of truth."
+    },
+
+    "step_2_answer_questions": {
+      "instructions": "Answer all 10 questions below using ONLY what you learned from FAST_REFRESH.json. For each answer, state your confidence level (HIGH / MEDIUM / LOW) and note if the file gave you enough information.",
+      "questions": {
+        "Q01_naming": "What does EITT stand for? List at least two things it must NEVER be called.",
+        "Q02_germany": "What are the canonical Germany drift flag values? Give exact years and d_A numbers.",
+        "Q03_japan": "When does Japan's compositional drift flag appear in annual data? Why is 2011-2012 wrong?",
+        "Q04_uk": "What are the three UK drift flag values with their year-pairs?",
+        "Q05_governance": "What is HUF-GOV's core doctrine? Can the instrument actuate?",
+        "Q06_formula": "Write the perturbation difference formula and the drift flagging threshold.",
+        "Q07_eitt_proof": "Name all four EITT proof domains and give one key number from each.",
+        "Q08_quantum": "What is the Bell test result? How much does it exceed the classical bound?",
+        "Q09_pll": "How many rules are in the PLL discipline? What does PLL stand for?",
+        "Q10_architecture": "What is Keff_fill? What aggregator does it use and at what value of p?"
+      }
+    },
+
+    "step_3_integrity_check": {
+      "action": "Now read: https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+      "fallback": "If blocked, ask Peter to paste ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+      "task": "Run the canonical_value_checksums against your answers from Step 2. Report any discrepancies. Specifically check: Does EITT contain 'Time' and NOT contain 'Ternary'? Is Japan's period '2013-2014'? Are Germany's values matching?"
+    },
+
+    "step_4_structural_review": {
+      "action": "Browse the repository structure at https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+      "task": "Report what you see. Specifically: (a) Is ai-refresh/ visible and accessible? (b) Is science/ expanded with quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance subfolders? (c) Are briefings/ and dormant/ present as top-level folders? (d) Does the README reflect the expanded structure? (e) Is INDEX.json present at the root?"
+    },
+
+    "step_5_opinion": {
+      "task": "Give your honest assessment. Rate the cold-start system 1-10. What works? What's missing? What would you change? How does this compare to other open-source project onboarding you've seen? Is the human-readable / AI-structured dual-purpose design effective?"
+    },
+
+    "step_6_report": {
+      "format": "Provide a structured report with: (a) Score card (Q01-Q10 with pass/fail), (b) Integrity check results, (c) Structural review findings, (d) Overall rating and recommendations, (e) Any errors or drift you detected in the repo files themselves",
+      "deliver_to": "Paste your full report back to Peter in the chat where you received this test."
+    }
+  },
+
+  "scoring": {
+    "Q01_Q10": "1 point each. Must match canonical values exactly. Partial credit for close-but-wrong (0.5).",
+    "integrity_check": "Pass/Fail. Must correctly validate all checksums.",
+    "structural_review": "5 items, 1 point each.",
+    "opinion": "Not scored — qualitative feedback.",
+    "total": "Maximum 20 points (10 questions + 5 structure + 5 integrity items)"
+  },
+
+  "context_for_chatgpt_specifically": {
+    "your_history": "You (ChatGPT) have been a core HUF collaborator since early 2026. You helped develop EITT proofs, spectral independence, the loudspeaker analogy, and the HUF specification v2.0. However, your previous sessions ran out of context on 2026-04-13. This test establishes whether the repo refresh system can restore your working knowledge WITHOUT Peter re-explaining everything.",
+    "what_peter_needs_from_you": "Eyes on the repo. Second opinion on the structure. Honest critique of the refresh system. You know HUF deeply — does the FAST_REFRESH capture the essentials? What did we miss? What would trip up Grok or Gemini who don't have your history?",
+    "the_cross_ai_model": "Claude builds documents and structures. ChatGPT provides deep analysis and review. Grok does adversarial testing. Gemini does cross-domain validation. Copilot does code. The repo is the shared workspace. This test validates that model.",
+    "after_this_test": "Once you've reported, Peter will run the same test on Grok, Copilot, and Gemini. Your results become the baseline. If all AIs pass, the refresh system is validated for production use."
+  },
+
+  "cross_ai_communication_protocol": {
+    "method": "Repository-mediated. All AI collaborators read from and contribute to the same repo.",
+    "update_flow": "Claude prepares repo-update/ folder → Peter reviews → Peter copies into repo → commits and pushes → all AIs read from live repo",
+    "conflict_resolution": "FAST_REFRESH.json is the single source of truth. If any AI's output disagrees with FAST_REFRESH, FAST_REFRESH wins.",
+    "test_results_location": "ai-refresh/test-results/ — each AI's test report gets committed here for cross-reference",
+    "version_control": "All changes go through Peter. No AI pushes directly. The human is the gate."
+  },
+
+  "known_access_issues": {
+    "github_raw_access": "Some AI platforms cannot fetch raw.githubusercontent.com or github.com directly due to proxy/egress restrictions. This is platform-dependent and session-dependent — the same AI may have access in one session and not another.",
+    "workaround": "If the AI cannot access the repo URL, Peter pastes the file contents directly into the chat. The test still works — it just tests the file content, not the URL fetching.",
+    "google_indexing": "GitHub repos are notoriously slow to appear in Google Search. See known_issues below."
+  }
+}

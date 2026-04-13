@@ -1,0 +1,34 @@
+{
+  "_meta": {
+    "test": "AI_COLD_START_TEST v1.0",
+    "platform": "Claude (Anthropic)",
+    "model": "claude-opus-4-6",
+    "date": "2026-04-13",
+    "tester": "Fresh Claude agent with zero HUF context",
+    "method": "Agent read FAST_REFRESH.json only, answered 5 of 10 questions (abbreviated test)"
+  },
+
+  "score_card": {
+    "Q01_naming": {"answer": "Entropy-Invariant Time Transformer. NEVER: Ternary Transform, Temporal Transform, Time Transfer", "score": 1, "confidence": "HIGH"},
+    "Q02_germany": {"answer": "2023-2024 d_A=9.0712, 2024-2025 d_A=5.7331", "score": 1, "confidence": "HIGH"},
+    "Q03_japan": {"answer": "2013-2014. Fukushima March 2011 but annual data absorbs shock by 2013-2014. NOT 2011-2012.", "score": 1, "confidence": "HIGH"},
+    "Q04_uk": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
+    "Q05_governance": {"answer": "Open-loop: HUF-GOV observes, human decides, loop stays open. Instrument reads, never actuates.", "score": 1, "confidence": "HIGH"},
+    "Q06_formula": {"answer": "Flag when d_A(t→t+1) > μ+2σ. d_A(x,y) = ‖clr(x)−clr(y)‖. Country thresholds: DE 5.5634, JP 5.6909, UK 2.8008", "score": 1, "confidence": "HIGH"},
+    "Q07_eitt_proof": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
+    "Q08_quantum": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
+    "Q09_pll": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
+    "Q10_architecture": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
+    "tested_score": "5/5",
+    "confidence_all_high": true
+  },
+
+  "overall_rating": 8.5,
+  "verdict": "FAST_REFRESH.json is an excellent cold-start briefing. All 5 tested questions answered with HIGH confidence from a single file read. The file is canonical, precise, and well-organized. Missing: worked examples, explicit file-routing for next steps. Companion files needed for implementation depth.",
+
+  "recommendations": [
+    "Add a next_steps field pointing to specific files for specific tasks",
+    "Add one worked example per formula showing input → output",
+    "Otherwise the system works as designed"
+  ]
+}
