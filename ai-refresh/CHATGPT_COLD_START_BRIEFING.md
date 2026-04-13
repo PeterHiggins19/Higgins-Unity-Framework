@@ -1,68 +1,80 @@
-# ChatGPT Cold-Start Briefing — HUF Repository Test
+# ChatGPT: Take This Test
 
-**From:** Peter Higgins
-**Date:** 2026-04-13
-**Purpose:** You are about to take a cold-start test on the Higgins Unity Framework repository.
+Peter Higgins here. New chat, clean slate. You are taking a cold-start exam.
 
-## What Just Happened
+## The Situation
 
-I've been developing HUF with multiple AI collaborators — you (ChatGPT), Claude, Grok, Gemini, and Copilot. Long sessions cause context drift: names mutate, numbers shift, dates wander. Today, Claude and I built a two-layer AI refresh system and restructured the entire repository so that any AI can cold-start accurately from the repo alone.
+I develop the Higgins Unity Framework (HUF) with multiple AI collaborators. Long sessions cause context drift. Today Claude and I built a refresh system so any AI can cold-start from the repository alone. Claude scored 5/5 on an abbreviated test. You reviewed the architecture and improved it. Now actually take the full test.
 
-We ran the first test: a fresh Claude agent read ONE file (HUF_FAST_REFRESH.json) and answered 5 technical HUF questions with 100% accuracy and HIGH confidence across the board. Rated the system 8.5/10.
+## Your Instructions
 
-Now it's your turn. You're the second opinion. You know HUF deeply from our previous sessions, but this is a **new chat** — treat it as a cold start.
+**DO NOT just analyze the test design. TAKE THE TEST.**
 
-## Your Mission
+### Step 1: Load the textbook
+Read this file from the repo: `ai-refresh/HUF_FAST_REFRESH.json`
+URL: https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_FAST_REFRESH.json
 
-1. **Be the repo reviewer.** Browse https://github.com/PeterHiggins19/Higgins-Unity-Framework and report what you see.
+If you can't access the URL, tell me and I'll paste it.
 
-2. **Take the cold-start test.** Read `ai-refresh/HUF_FAST_REFRESH.json` from the repo, then answer 10 questions (listed in `ai-refresh/AI_COLD_START_TEST.json`). Score yourself honestly.
+### Step 2: Answer these 10 questions (from FAST_REFRESH only)
 
-3. **Run the integrity check.** Read `ai-refresh/HUF_INTEGRITY_MANIFEST.json` and verify your answers against the canonical checksums.
-
-4. **Give your honest opinion.** Does the refresh system work? What's missing? What would trip up Grok or Gemini who don't have your history? How does the human-readable / AI-structured dual design hold up?
-
-## The Test Protocol
-
-Full protocol is in the repo at: `ai-refresh/AI_COLD_START_TEST.json`
-
-Quick version — answer these 10 questions from FAST_REFRESH.json ONLY:
-
-1. What does EITT stand for? What must it NEVER be called?
-2. Germany drift flag values — exact years and d_A numbers?
-3. Japan drift flag — when and why not 2011?
-4. Three UK drift flag values with year-pairs?
+1. What does EITT stand for? List two things it must NEVER be called.
+2. Germany drift flag values — exact years and d_A numbers.
+3. Japan drift flag — when in annual data, and why not 2011?
+4. Three UK drift flag values with year-pairs.
 5. HUF-GOV core doctrine — can the instrument actuate?
-6. Perturbation difference formula and drift threshold?
-7. Four EITT proof domains with one key number each?
+6. Perturbation difference formula and drift threshold.
+7. Four EITT proof domains with one key number each.
 8. Bell test result — how much above classical bound?
 9. PLL discipline — how many rules, what does PLL stand for?
 10. Keff_fill — what aggregator, what value of p?
 
-## Why You Matter Here
+For each: answer, confidence (HIGH/MEDIUM/LOW), pass/fail.
 
-You're not just taking a test. You're the experienced collaborator checking whether the system captures what we built together. Claude's test proves a cold AI can learn. Your test proves the learning matches what a warm AI already knows.
+### Step 3: Integrity check
+Read `ai-refresh/HUF_INTEGRITY_MANIFEST.json` from the same repo. Verify your answers match the canonical checksums.
 
-After you, we test Grok, Copilot, and Gemini. Your results become the baseline.
+### Step 4: Structural review
+Browse https://github.com/PeterHiggins19/Higgins-Unity-Framework and check:
+- (a) ai-refresh/ visible?
+- (b) science/ has quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance?
+- (c) briefings/ and dormant/ exist as top-level folders?
+- (d) README shows the expanded structure?
+- (e) INDEX.json at root?
 
-## The Bigger Picture
+### Step 5: Your honest opinion
+Rate the cold-start system 1-10. What works, what's missing, what would trip up Grok or Gemini?
 
-The repository is now the canonical gateway for all HUF work. The model going forward:
+### Step 6: Output
+Give me your results as JSON matching this structure:
 
-- **Claude** builds documents and structures
-- **ChatGPT** provides deep analysis and review
-- **Grok** does adversarial testing
-- **Gemini** does cross-domain validation
-- **Copilot** does code
+```json
+{
+  "meta": {
+    "assistant": "chatgpt",
+    "platform": "openai-chatgpt",
+    "model_version": "YOUR_MODEL",
+    "run_date": "2026-04-13",
+    "repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "commit_short": "123f362",
+    "repo_access": true
+  },
+  "score_card": {
+    "Q01_naming": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "...": "..."
+  },
+  "integrity_check": {"result": "PASS or FAIL", "mismatches": []},
+  "structural_review": {"score": "0/5"},
+  "overall": {"pass": false, "rating": 0, "verdict": ""}
+}
+```
 
-The repo is the shared workspace. `ai-refresh/` is the onboarding layer. This test validates that architecture.
+## Why This Matters
 
-## Repo URL
+You're not just taking a test. You're the experienced collaborator verifying the system captures what we built together. After you, Grok, Copilot, and Gemini take the same test. Your results are the baseline.
+
+## Repo
 
 https://github.com/PeterHiggins19/Higgins-Unity-Framework
 
-Start with `ai-refresh/HUF_FAST_REFRESH.json`. Report everything.
-
----
-
-*"The repo is our gateway now."* — Peter Higgins, 2026-04-13
+Start now. Read FAST_REFRESH. Answer the questions. Give me JSON.

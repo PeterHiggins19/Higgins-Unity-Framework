@@ -1,24 +1,37 @@
 {
-  "_meta": {
-    "test": "AI_COLD_START_TEST v1.0",
-    "platform": "PLATFORM_NAME (e.g., ChatGPT, Grok, Gemini, Copilot)",
-    "model": "MODEL_VERSION",
-    "date": "YYYY-MM-DD",
-    "tester": "Description of test conditions",
-    "method": "How the test was administered (repo URL, paste, etc.)"
+  "meta": {
+    "test": "AI_COLD_START_TEST v1.1",
+    "assistant": "ASSISTANT_NAME (chatgpt | grok | gemini | copilot | claude)",
+    "platform": "PLATFORM (e.g., openai-chatgpt, x-grok, google-gemini, github-copilot, anthropic-claude)",
+    "model_version": "MODEL_VERSION (as reported by the platform)",
+    "run_date": "YYYY-MM-DD",
+    "run_timezone": "America/Toronto",
+    "repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "commit_short": "123f362",
+    "commit_full": "FULL_40_CHAR_SHA (Peter fills after commit)",
+    "repo_access": true,
+    "notes": ""
+  },
+
+  "inputs": {
+    "artifacts": [
+      {"path": "ai-refresh/HUF_FAST_REFRESH.json", "source": "fetched | pasted", "sha256": ""},
+      {"path": "ai-refresh/HUF_INTEGRITY_MANIFEST.json", "source": "fetched | pasted", "sha256": ""},
+      {"path": "ai-refresh/AI_COLD_START_TEST.json", "source": "fetched | pasted", "sha256": ""}
+    ]
   },
 
   "score_card": {
-    "Q01_naming": {"answer": "", "score": 0, "confidence": ""},
-    "Q02_germany": {"answer": "", "score": 0, "confidence": ""},
-    "Q03_japan": {"answer": "", "score": 0, "confidence": ""},
-    "Q04_uk": {"answer": "", "score": 0, "confidence": ""},
-    "Q05_governance": {"answer": "", "score": 0, "confidence": ""},
-    "Q06_formula": {"answer": "", "score": 0, "confidence": ""},
-    "Q07_eitt_proof": {"answer": "", "score": 0, "confidence": ""},
-    "Q08_quantum": {"answer": "", "score": 0, "confidence": ""},
-    "Q09_pll": {"answer": "", "score": 0, "confidence": ""},
-    "Q10_architecture": {"answer": "", "score": 0, "confidence": ""},
+    "Q01_naming": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q02_germany": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q03_japan": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q04_uk": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q05_governance": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q06_formula": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q07_eitt_proof": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q08_quantum": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q09_pll": {"answer": "", "score": 0, "pass": false, "confidence": ""},
+    "Q10_architecture": {"answer": "", "score": 0, "pass": false, "confidence": ""},
     "total_score": "0/10"
   },
 
@@ -28,7 +41,8 @@
     "japan_period_correct": null,
     "germany_values_match": null,
     "uk_three_values": null,
-    "result": "PASS or FAIL"
+    "mismatches": [],
+    "result": "PASS | FAIL"
   },
 
   "structural_review": {
@@ -37,11 +51,17 @@
     "briefings_dormant_present": null,
     "readme_reflects_structure": null,
     "index_json_present": null,
+    "findings": [],
+    "violations": [],
     "score": "0/5"
   },
 
-  "overall_rating": 0,
-  "verdict": "",
-  "recommendations": [],
-  "errors_found_in_repo": []
+  "overall": {
+    "pass": false,
+    "rating": 0,
+    "verdict": "",
+    "recommendations": [],
+    "errors_found_in_repo": [],
+    "failure_modes": []
+  }
 }

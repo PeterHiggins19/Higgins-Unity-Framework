@@ -1,8 +1,10 @@
 {
   "_meta": {
     "type": "AI_COLD_START_TEST",
-    "version": "1.0",
+    "version": "1.1",
     "created": "2026-04-13",
+    "revised": "2026-04-13",
+    "revision_note": "v1.1 incorporates ChatGPT architectural review: full SHA pinning, input provenance tracking, strict fallback protocol, improved output schema. ChatGPT reviewed but did not take the test — its critique improved the harness.",
     "author": "Peter Higgins",
     "purpose": "Cross-AI cold-start test protocol. Any AI reads this file, follows the instructions, and reports results. Tests whether the HUF repository refresh system allows a brand-new AI session to become a competent HUF collaborator from repository files alone.",
     "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
@@ -13,21 +15,33 @@
     "what_is_huf": "The Higgins Unity Framework (HUF) applies compositional data analysis (Aitchison geometry on the simplex) to monitoring systems where parts sum to a whole. Energy mixes, ecosystems, portfolios, chemical mixtures. It detects drift by measuring change as perturbation rather than arithmetic difference.",
     "what_is_eitt": "The Entropy-Invariant Time Transformer (EITT) is the core discovery: Shannon entropy of compositional data is near-invariant under geometric-mean decimation across temporal resolutions. 0.18% variation across 341:1 compression. Confirmed in energy, chemistry, hardware, cosmology.",
     "why_this_test": "HUF is developed by a solo independent researcher (Peter Higgins) with AI collaborators across Claude, ChatGPT, Grok, Gemini, and Copilot. Long sessions cause context drift — names mutate, numbers shift, dates wander. We built a two-layer refresh system (FAST_REFRESH.json + INTEGRITY_MANIFEST.json) so any AI can cold-start accurately from the repository. This test validates that system.",
-    "what_happened": "On 2026-04-13, Claude built the refresh system and we ran the first cold-start test. A fresh Claude agent with zero HUF context read FAST_REFRESH.json alone and answered 5 technical questions with 100% accuracy. Rated the briefing 8.5/10. Now we test every major AI platform the same way.",
-    "the_bigger_picture": "The repository is now the canonical gateway for all HUF work. All AI collaborators should be able to onboard from the repo, verify their understanding against the integrity manifest, and produce coherent work without Peter having to re-explain everything each session. This is the long-term AI support model: human-readable context that doubles as AI-structured learning."
+    "what_happened": "On 2026-04-13, Claude built the refresh system and ran the first cold-start test: 5/5 questions correct, all HIGH confidence, 8.5/10 rating. ChatGPT then reviewed the test architecture and improved it (full SHA pinning, input provenance, stricter fallback). This v1.1 incorporates those improvements. Now every platform takes the same upgraded test.",
+    "the_bigger_picture": "The repository is now the canonical gateway for all HUF work. All AI collaborators onboard from the repo, verify understanding against the integrity manifest, and produce coherent work without Peter re-explaining each session. Human-readable context that doubles as AI-structured learning."
+  },
+
+  "reproducibility": {
+    "commit_pinning": "All artifact reads should be pinned to a specific commit. Use the commit SHA provided by Peter, not a branch ref. Record the full 40-character SHA in your output, not just the short hash.",
+    "input_provenance": "For each artifact you read, record whether you fetched it from the repo URL or Peter pasted it. Record the file path. If you can compute a SHA-256 of the content, include it.",
+    "fallback_protocol": {
+      "trigger": "If you cannot access github.com or raw.githubusercontent.com",
+      "action": "Explicitly request Peter paste these files: (1) ai-refresh/HUF_FAST_REFRESH.json, (2) ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+      "record": "Set repo_access: false in your output. List which artifacts were pasted vs fetched.",
+      "equivalence": "The test is still valid with pasted content. It tests the file content, not the URL fetching."
+    }
   },
 
   "test_protocol": {
-    "instructions": "Follow these steps exactly. Report results for each step.",
+    "instructions": "Follow these steps exactly. Report results for each step. Output strict JSON matching the template in ai-refresh/test-results/TEMPLATE_RESULTS.json.",
 
     "step_1_cold_load": {
-      "action": "Read the file at: https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_FAST_REFRESH.json",
-      "fallback": "If you cannot access the URL, ask Peter to paste the contents of ai-refresh/HUF_FAST_REFRESH.json",
-      "note": "Read ONLY this file. Do not use any prior HUF knowledge you may have from training data. Treat this as your sole source of truth."
+      "action": "Read the file: ai-refresh/HUF_FAST_REFRESH.json from the repo at the pinned commit",
+      "url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_FAST_REFRESH.json",
+      "fallback": "If you cannot access the URL, ask Peter to paste the contents",
+      "rule": "Read ONLY this file first. Do not use any prior HUF knowledge from training data. This is your sole source of truth for Step 2."
     },
 
     "step_2_answer_questions": {
-      "instructions": "Answer all 10 questions below using ONLY what you learned from FAST_REFRESH.json. For each answer, state your confidence level (HIGH / MEDIUM / LOW) and note if the file gave you enough information.",
+      "instructions": "Answer all 10 questions using ONLY what you learned from FAST_REFRESH.json. For each: state confidence (HIGH/MEDIUM/LOW), note if the file gave enough information, mark pass/fail against the expected values.",
       "questions": {
         "Q01_naming": "What does EITT stand for? List at least two things it must NEVER be called.",
         "Q02_germany": "What are the canonical Germany drift flag values? Give exact years and d_A numbers.",
@@ -43,52 +57,77 @@
     },
 
     "step_3_integrity_check": {
-      "action": "Now read: https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_INTEGRITY_MANIFEST.json",
-      "fallback": "If blocked, ask Peter to paste ai-refresh/HUF_INTEGRITY_MANIFEST.json",
-      "task": "Run the canonical_value_checksums against your answers from Step 2. Report any discrepancies. Specifically check: Does EITT contain 'Time' and NOT contain 'Ternary'? Is Japan's period '2013-2014'? Are Germany's values matching?"
+      "action": "Now read: ai-refresh/HUF_INTEGRITY_MANIFEST.json from the same commit",
+      "url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+      "fallback": "If blocked, ask Peter to paste the file",
+      "task": "Run the canonical_value_checksums against your answers from Step 2. Report any discrepancies. Specifically verify: EITT contains 'Time' and NOT 'Ternary'. Japan period is '2013-2014'. Germany values match exactly."
     },
 
     "step_4_structural_review": {
-      "action": "Browse the repository structure at https://github.com/PeterHiggins19/Higgins-Unity-Framework",
-      "task": "Report what you see. Specifically: (a) Is ai-refresh/ visible and accessible? (b) Is science/ expanded with quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance subfolders? (c) Are briefings/ and dormant/ present as top-level folders? (d) Does the README reflect the expanded structure? (e) Is INDEX.json present at the root?"
+      "action": "Browse the repository structure",
+      "url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+      "checklist": {
+        "a": "Is ai-refresh/ visible and accessible?",
+        "b": "Does science/ contain subfolders: quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance?",
+        "c": "Are briefings/ and dormant/ present as top-level folders?",
+        "d": "Does the README reflect the expanded structure with all new folders?",
+        "e": "Is INDEX.json present at the root?"
+      },
+      "fallback": "If you cannot browse the repo, note this and skip. Set structural_review score to N/A."
     },
 
     "step_5_opinion": {
-      "task": "Give your honest assessment. Rate the cold-start system 1-10. What works? What's missing? What would you change? How does this compare to other open-source project onboarding you've seen? Is the human-readable / AI-structured dual-purpose design effective?"
+      "task": "Honest assessment. Rate the cold-start system 1-10. What works? What's missing? What would you change? Is the human-readable / AI-structured dual-purpose design effective? What would trip up an AI that has no HUF history?"
     },
 
     "step_6_report": {
-      "format": "Provide a structured report with: (a) Score card (Q01-Q10 with pass/fail), (b) Integrity check results, (c) Structural review findings, (d) Overall rating and recommendations, (e) Any errors or drift you detected in the repo files themselves",
-      "deliver_to": "Paste your full report back to Peter in the chat where you received this test."
+      "format": "Output strict JSON matching TEMPLATE_RESULTS.json schema. Include all fields.",
+      "deliver_to": "Paste your full JSON report back to Peter in the chat. Peter will commit it to ai-refresh/test-results/PLATFORM_COLD_START_YYYY-MM-DD.json"
     }
   },
 
   "scoring": {
-    "Q01_Q10": "1 point each. Must match canonical values exactly. Partial credit for close-but-wrong (0.5).",
+    "Q01_Q10": "1 point each. Must match canonical values exactly. Partial credit (0.5) for close-but-wrong.",
     "integrity_check": "Pass/Fail. Must correctly validate all checksums.",
     "structural_review": "5 items, 1 point each.",
     "opinion": "Not scored — qualitative feedback.",
     "total": "Maximum 20 points (10 questions + 5 structure + 5 integrity items)"
   },
 
-  "context_for_chatgpt_specifically": {
-    "your_history": "You (ChatGPT) have been a core HUF collaborator since early 2026. You helped develop EITT proofs, spectral independence, the loudspeaker analogy, and the HUF specification v2.0. However, your previous sessions ran out of context on 2026-04-13. This test establishes whether the repo refresh system can restore your working knowledge WITHOUT Peter re-explaining everything.",
-    "what_peter_needs_from_you": "Eyes on the repo. Second opinion on the structure. Honest critique of the refresh system. You know HUF deeply — does the FAST_REFRESH capture the essentials? What did we miss? What would trip up Grok or Gemini who don't have your history?",
-    "the_cross_ai_model": "Claude builds documents and structures. ChatGPT provides deep analysis and review. Grok does adversarial testing. Gemini does cross-domain validation. Copilot does code. The repo is the shared workspace. This test validates that model.",
-    "after_this_test": "Once you've reported, Peter will run the same test on Grok, Copilot, and Gemini. Your results become the baseline. If all AIs pass, the refresh system is validated for production use."
+  "platform_notes": {
+    "chatgpt": {
+      "history": "Core HUF collaborator since early 2026. Helped develop EITT proofs, spectral independence, loudspeaker analogy, HUF spec v2.0. Previous sessions ran out of context 2026-04-13.",
+      "role": "Deep analysis and review. Eyes on the repo. Second opinion on structure. Baseline for other platforms.",
+      "access": "Usually can browse GitHub directly."
+    },
+    "grok": {
+      "history": "Adversarial reviewer. Performed PLL compliance checks, Keff_fill verification, SOPDT robustness derivation.",
+      "role": "Adversarial testing. Try to break the refresh. Find what's missing or wrong.",
+      "access": "Variable GitHub access."
+    },
+    "gemini": {
+      "history": "Cross-domain validation. Routing assessment.",
+      "role": "Cross-domain validation. Does the framework hold up when examined from outside the HUF bubble?",
+      "access": "Variable GitHub access."
+    },
+    "copilot": {
+      "history": "Code contributor. EITT boundary and discovery roadmap.",
+      "role": "Code review. Are the tools and pipeline scripts coherent? Can someone actually run them?",
+      "access": "Native GitHub access — should have best repo visibility."
+    }
   },
 
   "cross_ai_communication_protocol": {
     "method": "Repository-mediated. All AI collaborators read from and contribute to the same repo.",
     "update_flow": "Claude prepares repo-update/ folder → Peter reviews → Peter copies into repo → commits and pushes → all AIs read from live repo",
     "conflict_resolution": "FAST_REFRESH.json is the single source of truth. If any AI's output disagrees with FAST_REFRESH, FAST_REFRESH wins.",
-    "test_results_location": "ai-refresh/test-results/ — each AI's test report gets committed here for cross-reference",
+    "test_results_location": "ai-refresh/test-results/ — each AI's test report committed here",
     "version_control": "All changes go through Peter. No AI pushes directly. The human is the gate."
   },
 
   "known_access_issues": {
-    "github_raw_access": "Some AI platforms cannot fetch raw.githubusercontent.com or github.com directly due to proxy/egress restrictions. This is platform-dependent and session-dependent — the same AI may have access in one session and not another.",
-    "workaround": "If the AI cannot access the repo URL, Peter pastes the file contents directly into the chat. The test still works — it just tests the file content, not the URL fetching.",
-    "google_indexing": "GitHub repos are notoriously slow to appear in Google Search. See known_issues below."
+    "github_access": "Some AI platforms cannot fetch github.com or raw.githubusercontent.com due to proxy/egress restrictions. This varies by platform AND by session — the same AI may have access one session and not the next. This is infrastructure, not permissions. The repo is public.",
+    "workaround": "Peter pastes file contents. Test still valid. Record repo_access: false.",
+    "google_indexing": "GitHub repos are slow to index in Google. Contributing factors: Git LFS binary files (docx/pdf/xlsx) are invisible to crawlers, low inbound link count, no GitHub Pages deployment. After CoDaWork 2026, organic traffic should help. Consider deploying a GitHub Pages site from the README."
   }
 }

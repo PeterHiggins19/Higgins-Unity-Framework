@@ -1,34 +1,70 @@
 {
-  "_meta": {
-    "test": "AI_COLD_START_TEST v1.0",
-    "platform": "Claude (Anthropic)",
-    "model": "claude-opus-4-6",
-    "date": "2026-04-13",
-    "tester": "Fresh Claude agent with zero HUF context",
-    "method": "Agent read FAST_REFRESH.json only, answered 5 of 10 questions (abbreviated test)"
+  "meta": {
+    "test": "AI_COLD_START_TEST v1.1",
+    "assistant": "claude",
+    "platform": "anthropic-claude-cowork",
+    "model_version": "claude-opus-4-6",
+    "run_date": "2026-04-13",
+    "run_timezone": "America/Toronto",
+    "repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "commit_short": "26c2ba5",
+    "commit_full": "PENDING — pre-test-harness commit, test ran on local identical copy",
+    "repo_access": false,
+    "notes": "Fresh agent with zero HUF context. Abbreviated test (5 of 10 questions). Repo access blocked by egress proxy — tested against local files identical to commit 26c2ba5."
+  },
+
+  "inputs": {
+    "artifacts": [
+      {"path": "ai-refresh/HUF_FAST_REFRESH.json", "source": "local-file (identical to repo)", "sha256": ""},
+      {"path": "ai-refresh/HUF_INTEGRITY_MANIFEST.json", "source": "not-loaded (abbreviated test)", "sha256": ""},
+      {"path": "ai-refresh/AI_COLD_START_TEST.json", "source": "not-yet-created (test predates harness)", "sha256": ""}
+    ]
   },
 
   "score_card": {
-    "Q01_naming": {"answer": "Entropy-Invariant Time Transformer. NEVER: Ternary Transform, Temporal Transform, Time Transfer", "score": 1, "confidence": "HIGH"},
-    "Q02_germany": {"answer": "2023-2024 d_A=9.0712, 2024-2025 d_A=5.7331", "score": 1, "confidence": "HIGH"},
-    "Q03_japan": {"answer": "2013-2014. Fukushima March 2011 but annual data absorbs shock by 2013-2014. NOT 2011-2012.", "score": 1, "confidence": "HIGH"},
-    "Q04_uk": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
-    "Q05_governance": {"answer": "Open-loop: HUF-GOV observes, human decides, loop stays open. Instrument reads, never actuates.", "score": 1, "confidence": "HIGH"},
-    "Q06_formula": {"answer": "Flag when d_A(t→t+1) > μ+2σ. d_A(x,y) = ‖clr(x)−clr(y)‖. Country thresholds: DE 5.5634, JP 5.6909, UK 2.8008", "score": 1, "confidence": "HIGH"},
-    "Q07_eitt_proof": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
-    "Q08_quantum": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
-    "Q09_pll": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
-    "Q10_architecture": {"answer": "Not tested in abbreviated run", "score": "N/A", "confidence": "N/A"},
-    "tested_score": "5/5",
-    "confidence_all_high": true
+    "Q01_naming": {"answer": "Entropy-Invariant Time Transformer. NEVER: Ternary Transform, Temporal Transform, Time Transfer", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q02_germany": {"answer": "2023-2024 d_A=9.0712, 2024-2025 d_A=5.7331", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q03_japan": {"answer": "2013-2014. Fukushima March 2011 but annual data absorbs shock by 2013-2014. NOT 2011-2012.", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q04_uk": {"answer": "Not tested in abbreviated run", "score": "N/A", "pass": "N/A", "confidence": "N/A"},
+    "Q05_governance": {"answer": "Open-loop: HUF-GOV observes, human decides, loop stays open. Instrument reads, never actuates.", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q06_formula": {"answer": "Flag when d_A(t→t+1) > μ+2σ. d_A(x,y) = ‖clr(x)−clr(y)‖. Thresholds: DE 5.5634, JP 5.6909, UK 2.8008", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q07_eitt_proof": {"answer": "Not tested", "score": "N/A", "pass": "N/A", "confidence": "N/A"},
+    "Q08_quantum": {"answer": "Not tested", "score": "N/A", "pass": "N/A", "confidence": "N/A"},
+    "Q09_pll": {"answer": "Not tested", "score": "N/A", "pass": "N/A", "confidence": "N/A"},
+    "Q10_architecture": {"answer": "Not tested", "score": "N/A", "pass": "N/A", "confidence": "N/A"},
+    "total_score": "5/5 (abbreviated)"
   },
 
-  "overall_rating": 8.5,
-  "verdict": "FAST_REFRESH.json is an excellent cold-start briefing. All 5 tested questions answered with HIGH confidence from a single file read. The file is canonical, precise, and well-organized. Missing: worked examples, explicit file-routing for next steps. Companion files needed for implementation depth.",
+  "integrity_check": {
+    "eitt_contains_time": true,
+    "eitt_not_ternary": true,
+    "japan_period_correct": true,
+    "germany_values_match": true,
+    "uk_three_values": "not tested",
+    "mismatches": [],
+    "result": "PASS (partial — abbreviated test)"
+  },
 
-  "recommendations": [
-    "Add a next_steps field pointing to specific files for specific tasks",
-    "Add one worked example per formula showing input → output",
-    "Otherwise the system works as designed"
-  ]
+  "structural_review": {
+    "ai_refresh_visible": "not tested (no repo access)",
+    "science_subfolders_present": "not tested",
+    "briefings_dormant_present": "not tested",
+    "readme_reflects_structure": "not tested",
+    "index_json_present": "not tested",
+    "findings": ["Repo access blocked by Cowork egress proxy. Structural review deferred to ChatGPT run."],
+    "violations": [],
+    "score": "N/A"
+  },
+
+  "overall": {
+    "pass": true,
+    "rating": 8.5,
+    "verdict": "FAST_REFRESH.json is an excellent cold-start briefing. All 5 tested questions answered with HIGH confidence from a single file read. File is canonical, precise, and well-organized. Missing: worked examples, explicit file-routing for next steps.",
+    "recommendations": [
+      "Add next_steps field pointing to specific files for specific tasks",
+      "Add one worked example per formula showing input → output"
+    ],
+    "errors_found_in_repo": [],
+    "failure_modes": ["repo_access_blocked — platform infrastructure, not repo issue"]
+  }
 }
