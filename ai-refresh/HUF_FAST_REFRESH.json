@@ -17,6 +17,8 @@
     "affiliation": "Independent Researcher, Markham, Ontario, Canada",
     "contact": "PeterHiggins@roguewaveaudio.com",
     "repo": "github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "pages": "https://peterhiggins19.github.io/Higgins-Unity-Framework/",
+    "admin_register": "ai-refresh/HUF_ADMIN.json — all contact info, websites, canonical terms, AI roles",
     "doctrine": "Open-loop: HUF-GOV observes, human decides, loop stays open. Instrument reads, never actuates.",
     "principle": "The simplex is the same everywhere. Compositions have their own geometry, and that geometry has consequences."
   },
