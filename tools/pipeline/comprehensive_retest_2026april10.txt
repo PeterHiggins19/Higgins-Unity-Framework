@@ -1,0 +1,307 @@
+================================================================================
+COMPREHENSIVE EITT RE-TEST — 2026-04-10
+Post-ILR-fix, post-honesty-audit, all corrections applied
+================================================================================
+
+
+================================================================================
+TEST 1: MULTI-RATIO EITT (Geometric Mean Decimation)
+Testing at 2:1, 3:1, 5:1, 10:1 compression
+================================================================================
+
+
+Gold/Silver K=2: N=339, Period: 1688→2026
+  Base H = 0.180811
+  2:1  →  H=0.180964  Δ=+0.0847%  (n=169)  [PASS]
+  3:1  →  H=0.180671  Δ=-0.0774%  (n=113)  [PASS]
+  5:1  →  H=0.181770  Δ=+0.5302%  (n=67)  [PASS]
+  10:1  →  H=0.183321  Δ=+1.3880%  (n=33)  [PASS]
+
+Energy World K=7: N=25, Period: 2000→2024
+  Base H = 1.420835
+  2:1  →  H=1.412466  Δ=-0.5891%  (n=12)  [PASS]
+  3:1  →  H=1.412175  Δ=-0.6095%  (n=8)  [PASS]
+  5:1  →  H=1.419600  Δ=-0.0870%  (n=5)  [PASS]
+  10:1  →  H=1.376046  Δ=-3.1523%  (n=2)  [FAIL]
+
+Financial K=9 (price-level, NOT market-cap): N=74, Period: 2020-01→2026-02
+  Base H = 2.148406
+  2:1  →  H=2.148497  Δ=+0.0043%  (n=37)  [PASS]
+  3:1  →  H=2.148290  Δ=-0.0054%  (n=24)  [PASS]
+  5:1  →  H=2.148241  Δ=-0.0077%  (n=14)  [PASS]
+  10:1  →  H=2.148667  Δ=+0.0122%  (n=7)  [PASS]
+
+Energy Germany K=7: N=36, Period: 1990→2025
+  Base H = 1.294173
+  2:1  →  H=1.294544  Δ=+0.0287%  (n=18)  [PASS]
+  3:1  →  H=1.293132  Δ=-0.0805%  (n=12)  [PASS]
+  5:1  →  H=1.277856  Δ=-1.2609%  (n=7)  [PASS]
+  10:1  →  H=1.237577  Δ=-4.3732%  (n=3)  [FAIL]
+
+
+================================================================================
+TEST 2: ARITHMETIC vs GEOMETRIC MEAN — HIGHER COMPRESSION RATIOS
+ATK-09 extension: at 2:1 both pass; do they diverge at 5:1, 10:1?
+================================================================================
+
+
+Gold/Silver K=2:
+  Ratio       Geom Δ%   Arith Δ%        Gap  Diverges?
+  ────────────────────────────────────────────────
+  2:1         +0.0847    +0.1380    +0.0534         no
+  3:1         -0.0774    +0.0331    -0.0443         no
+  5:1         +0.5302    +0.7133    +0.1831         no
+  10:1         +1.3880    +1.7411    +0.3531         no
+
+Energy World K=7:
+  Ratio       Geom Δ%   Arith Δ%        Gap  Diverges?
+  ────────────────────────────────────────────────
+  2:1         -0.5891    -0.5652    -0.0239         no
+  3:1         -0.6095    -0.5455    -0.0641         no
+  5:1         -0.0870    +0.1048    +0.0178         no
+  10:1         -3.1523    -2.4613    -0.6910         no
+
+Financial K=9 (price-level, NOT market-cap):
+  Ratio       Geom Δ%   Arith Δ%        Gap  Diverges?
+  ────────────────────────────────────────────────
+  2:1         +0.0043    +0.0054    +0.0011         no
+  3:1         -0.0054    -0.0019    -0.0035         no
+  5:1         -0.0077    -0.0003    -0.0073         no
+  10:1         +0.0122    +0.0312    +0.0190         no
+
+Energy Germany K=7:
+  Ratio       Geom Δ%   Arith Δ%        Gap  Diverges?
+  ────────────────────────────────────────────────
+  2:1         +0.0287    +0.1497    +0.1210         no
+  3:1         -0.0805    +0.2154    +0.1350         no
+  5:1         -1.2609    +0.2718    -0.9891         no
+  10:1         -4.3732    -3.2387    -1.1344         no
+
+
+================================================================================
+TEST 3: BOOTSTRAP CONFIDENCE INTERVALS (1000 replicates)
+================================================================================
+
+Gold/Silver K=2:
+  Point estimate: +0.084658%
+  95% CI: [-0.186602%, 0.164703%]
+  CI width: 0.351305%
+  CI excludes zero: NO — consistent with invariance
+
+Energy World K=7:
+  Point estimate: -0.589071%
+  95% CI: [-0.968901%, 0.203894%]
+  CI width: 1.172795%
+  CI excludes zero: NO — consistent with invariance
+
+Financial K=9 (price-level, NOT market-cap):
+  Point estimate: +0.004257%
+  95% CI: [0.003562%, 0.006043%]
+  CI width: 0.002481%
+  CI excludes zero: YES — systematic bias
+
+Energy Germany K=7:
+  Point estimate: +0.028654%
+  95% CI: [-0.118766%, 0.086397%]
+  CI width: 0.205162%
+  CI excludes zero: NO — consistent with invariance
+
+
+================================================================================
+TEST 4: SUBCOMPOSITIONAL COHERENCE (CoDa principle)
+Does EITT hold on subcompositions? If yes, confirms CoDa compatibility.
+================================================================================
+
+  Energy Fossil only (Coal/Gas):
+    2:1  Δ=-0.1033%  [PASS]
+    3:1  Δ=-0.1024%  [PASS]
+    5:1  Δ=+0.0101%  [PASS]
+
+  Energy Fossil+Nuclear (Coal/Gas/Nuc):
+    2:1  Δ=+0.0686%  [PASS]
+    3:1  Δ=+0.0692%  [PASS]
+    5:1  Δ=+0.0142%  [PASS]
+
+  Energy Renewables only (Hydro/Wind/Solar/Other):
+    2:1  Δ=-4.5137%  [FAIL]
+    3:1  Δ=-4.6322%  [FAIL]
+    5:1  Δ=-0.4448%  [PASS]
+
+  Energy Coal/Gas/Wind/Solar (transition mix):
+    2:1  Δ=-1.6378%  [PASS]
+    3:1  Δ=-1.6898%  [PASS]
+    5:1  Δ=-0.2331%  [PASS]
+
+  Financial First 3 sectors:
+    2:1  Δ=+0.0066%  [PASS]
+    3:1  Δ=-0.0328%  [PASS]
+    5:1  Δ=-0.0690%  [PASS]
+
+  Financial Last 3 sectors:
+    2:1  Δ=+0.0078%  [PASS]
+    3:1  Δ=+0.0031%  [PASS]
+    5:1  Δ=-0.0058%  [PASS]
+
+  Financial Sectors 0,2,4,6:
+    2:1  Δ=+0.0065%  [PASS]
+    3:1  Δ=-0.0399%  [PASS]
+    5:1  Δ=-0.0662%  [PASS]
+
+
+================================================================================
+TEST 5: AITCHISON DISTANCE CONTRACTION UNDER DECIMATION
+Does geometric-mean decimation contract distances on the simplex?
+================================================================================
+
+Gold/Silver K=2:
+  2:1  Mean dist: 0.0353 → 0.0465  (ratio=1.3195, max: 0.3391 → 0.3633)
+  3:1  Mean dist: 0.0353 → 0.0531  (ratio=1.5057, max: 0.3391 → 0.3770)
+  5:1  Mean dist: 0.0353 → 0.0686  (ratio=1.9455, max: 0.3391 → 0.3386)
+  Contraction mapping: NO
+
+Energy World K=7:
+  2:1  Mean dist: 0.3060 → 0.6164  (ratio=2.0142, max: 0.6274 → 0.9737)
+  3:1  Mean dist: 0.3060 → 0.9293  (ratio=3.0367, max: 0.6274 → 1.3732)
+  5:1  Mean dist: 0.3060 → 1.5550  (ratio=5.0815, max: 0.6274 → 2.1741)
+  Contraction mapping: NO
+
+Financial K=9 (price-level, NOT market-cap):
+  2:1  Mean dist: 0.1076 → 0.1548  (ratio=1.4388, max: 0.3506 → 0.4269)
+  3:1  Mean dist: 0.1076 → 0.1763  (ratio=1.6391, max: 0.3506 → 0.3281)
+  5:1  Mean dist: 0.1076 → 0.2147  (ratio=1.9961, max: 0.3506 → 0.5285)
+  Contraction mapping: NO
+
+Energy Germany K=7:
+  2:1  Mean dist: 1.1746 → 1.6474  (ratio=1.4025, max: 8.2731 → 8.9073)
+  3:1  Mean dist: 1.1746 → 2.1257  (ratio=1.8098, max: 8.2731 → 7.3060)
+  5:1  Mean dist: 1.1746 → 2.5458  (ratio=2.1674, max: 8.2731 → 3.2836)
+  Contraction mapping: NO
+
+
+================================================================================
+TEST 6: PAIRWISE LOG-RATIO STABILITY ('TURNS RATIOS')
+Peter's idea: do pairwise log-ratios (exchange rates between parts)
+preserve their mean under geometric-mean decimation?
+================================================================================
+
+Gold/Silver K=2 (K=2, 1 pairs):
+
+  2:1 decimation:
+    Mean |shift| across all pairs: 0.001823
+    Max |shift|: 0.001823
+    Mean variance ratio (agg/orig): 0.9932
+    All means preserved (<0.1): YES
+    Most shifted pairs:
+      (0,1): mean 3.1712 → 3.1694  (shift=-0.0018, var ratio=0.9932)
+
+  5:1 decimation:
+    Mean |shift| across all pairs: 0.011820
+    Max |shift|: 0.011820
+    Mean variance ratio (agg/orig): 0.9528
+    All means preserved (<0.1): YES
+    Most shifted pairs:
+      (0,1): mean 3.1712 → 3.1594  (shift=-0.0118, var ratio=0.9528)
+
+Energy World K=7 (K=7, 21 pairs):
+
+  2:1 decimation:
+    Mean |shift| across all pairs: 0.057559
+    Max |shift|: 0.149837
+    Mean variance ratio (agg/orig): 0.9409
+    All means preserved (<0.1): NO
+    Most shifted pairs:
+      (5,6): mean 10.9815 → 10.8316  (shift=-0.1498, var ratio=0.9476)
+      (2,5): mean 3.8045 → 3.9523  (shift=+0.1477, var ratio=0.9500)
+      (0,5): mean 4.9667 → 5.1072  (shift=+0.1406, var ratio=0.9461)
+
+  5:1 decimation:
+    Mean |shift| across all pairs: 0.000000
+    Max |shift|: 0.000000
+    Mean variance ratio (agg/orig): 0.9023
+    All means preserved (<0.1): YES
+    Most shifted pairs:
+      (0,6): mean 15.9481 → 15.9481  (shift=-0.0000, var ratio=0.9383)
+      (3,6): mean 15.0679 → 15.0679  (shift=-0.0000, var ratio=0.9645)
+      (1,5): mean 4.4010 → 4.4010  (shift=+0.0000, var ratio=0.9650)
+
+Financial K=9 (price-level, NOT market-cap) (K=9, 36 pairs):
+
+  2:1 decimation:
+    Mean |shift| across all pairs: 0.000000
+    Max |shift|: 0.000000
+    Mean variance ratio (agg/orig): 0.9699
+    All means preserved (<0.1): YES
+    Most shifted pairs:
+      (4,6): mean -1.2097 → -1.2097  (shift=-0.0000, var ratio=0.9784)
+      (4,5): mean -0.9713 → -0.9713  (shift=-0.0000, var ratio=0.9855)
+      (1,7): mean -0.5992 → -0.5992  (shift=-0.0000, var ratio=0.9842)
+
+  5:1 decimation:
+    Mean |shift| across all pairs: 0.007539
+    Max |shift|: 0.018224
+    Mean variance ratio (agg/orig): 0.8220
+    All means preserved (<0.1): YES
+    Most shifted pairs:
+      (1,6): mean -0.8437 → -0.8619  (shift=-0.0182, var ratio=0.9095)
+      (1,3): mean -0.4309 → -0.4477  (shift=-0.0168, var ratio=0.8988)
+      (0,1): mean 0.3675 → 0.3826  (shift=+0.0151, var ratio=0.8857)
+
+Energy Germany K=7 (K=7, 21 pairs):
+
+  2:1 decimation:
+    Mean |shift| across all pairs: 0.000000
+    Max |shift|: 0.000000
+    Mean variance ratio (agg/orig): 0.9587
+    All means preserved (<0.1): YES
+    Most shifted pairs:
+      (0,6): mean 10.2648 → 10.2648  (shift=+0.0000, var ratio=0.9351)
+      (0,5): mean 5.6964 → 5.6964  (shift=-0.0000, var ratio=0.9833)
+      (4,6): mean 7.6326 → 7.6326  (shift=+0.0000, var ratio=0.8423)
+
+  5:1 decimation:
+    Mean |shift| across all pairs: 0.153832
+    Max |shift|: 0.447766
+    Mean variance ratio (agg/orig): 0.7349
+    All means preserved (<0.1): NO
+    Most shifted pairs:
+      (2,5): mean 4.2685 → 4.7162  (shift=+0.4478, var ratio=0.7101)
+      (2,4): mean 1.2044 → 1.5765  (shift=+0.3721, var ratio=0.5211)
+      (1,2): mean 0.0649 → -0.2567  (shift=-0.3216, var ratio=0.2508)
+
+
+================================================================================
+TEST 7: ILR BALANCE BEHAVIOUR UNDER DECIMATION
+Do ILR balances (proper normalisation) show any structure change?
+================================================================================
+
+Energy World — ILR Balances (corrected normalisation):
+  SBP: B1=Fossil|Renew, B2=Coal|Gas, B3=Wind|Solar
+
+  2:1  B1 Fossil|Renew: mean 6.8461→6.9003 (Δ=+0.0542), var 0.8180→0.7748 (ratio=0.9472)
+  2:1  B2 Coal|Gas: mean 0.4000→0.4041 (Δ=+0.0041), var 0.0055→0.0051 (ratio=0.9211)
+  2:1  B3 Wind|Solar: mean 1.3539→1.4056 (Δ=+0.0518), var 0.6900→0.6478 (ratio=0.9389)
+
+  3:1  B1 Fossil|Renew: mean 6.8461→6.9003 (Δ=+0.0542), var 0.8180→0.7683 (ratio=0.9392)
+  3:1  B2 Coal|Gas: mean 0.4000→0.4041 (Δ=+0.0041), var 0.0055→0.0051 (ratio=0.9153)
+  3:1  B3 Wind|Solar: mean 1.3539→1.4056 (Δ=+0.0518), var 0.6900→0.6418 (ratio=0.9302)
+
+  5:1  B1 Fossil|Renew: mean 6.8461→6.8461 (Δ=+0.0000), var 0.8180→0.7896 (ratio=0.9652)
+  5:1  B2 Coal|Gas: mean 0.4000→0.4000 (Δ=+0.0000), var 0.0055→0.0052 (ratio=0.9376)
+  5:1  B3 Wind|Solar: mean 1.3539→1.3539 (Δ=+0.0000), var 0.6900→0.6649 (ratio=0.9637)
+
+
+================================================================================
+SUMMARY — COMPREHENSIVE RE-TEST
+================================================================================
+
+Test 1 (Multi-ratio EITT):      Geometric-mean decimation residuals at multiple ratios
+Test 2 (Arith vs Geom):          Higher compression ratios to separate the two means
+Test 3 (Bootstrap CIs):           Statistical confidence on all domains
+Test 4 (Subcomp coherence):       EITT on subsets of parts — CoDa compatibility
+Test 5 (Aitchison contraction):   Does decimation shrink simplex distances?
+Test 6 (Turns ratios):            Pairwise log-ratio stability under decimation
+Test 7 (ILR balance behaviour):   Corrected ILR balances under decimation
+
+All tests run with corrected ILR normalisation (sqrt(r*s/(r+s)) coefficients)
+All labels honest: financial = price-level portfolio, not market-cap
+Date: 2026-04-10

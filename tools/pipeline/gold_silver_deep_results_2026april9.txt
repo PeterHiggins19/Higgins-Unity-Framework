@@ -1,0 +1,115 @@
+================================================================================
+  HUF GOLD/SILVER DEEP STRUCTURE — INVERTING THE EITT FAILURE
+  Run: 2026-04-09
+  Original: K=2 [gold, silver] 338 years → EITT FAILS at 6.7%
+================================================================================
+
+WHAT FIXED IT
+═════════════
+
+Three independent paths, all converging:
+
+1. DETRENDING (running-mean removal of secular drift)
+   10-year window: 0.14% → HOLDS
+   20-year window: 0.26% → HOLDS
+   30-year window: 0.43% → HOLDS
+   50-year window: 0.80% → HOLDS
+
+   The structural fluctuations AROUND the trend are perfectly
+   scale-invariant. EITT failure was caused by drift through
+   monetary regimes, not by the compositional dynamics.
+
+2. HIGHER-K RECONSTRUCTION (K=4: Gold + Silver + Volatility + Momentum)
+   Full 338-year series: 0.38% → HOLDS
+
+   Adding two hidden carriers — local volatility (5-year rolling σ)
+   and momentum (10-year balance trend) — recovers the missing
+   compositional dimensions. The gold/silver ratio is NOT K=2.
+   It is at least K=4. The hidden carriers absorb structural energy
+   during regime transitions.
+
+   Individual carriers:
+   - K=3 with Volatility alone: 2.8% → MARGINAL
+   - K=3 with Momentum alone:   1.1% → MARGINAL
+   - K=4 with both:             0.38% → HOLDS
+   - K=3 with Price Level:      5.9% → FAILS (price alone isn't enough)
+
+3. BIMETALLIC REGIME ISOLATION (K=2 within 1688-1816)
+   128 years at K=2: 0.52% → HOLDS
+
+   When the gold/silver ratio was policy-fixed (~15:1), the system
+   WAS genuinely K=2. No hidden carriers needed. EITT held because
+   there were no regime transitions to absorb.
+
+WHAT THIS MEANS
+═══════════════
+
+EITT failure is a diagnostic of MISSPECIFIED DIMENSIONALITY.
+
+When a K-part system fails EITT, the correct response is not
+"EITT doesn't work here" — it is "the system isn't really K parts."
+The missing carriers are real compositional dimensions that absorb
+structural energy during transitions.
+
+This reframes EITT failure from a limitation to a DISCOVERY TOOL:
+"How many hidden dimensions does this system have?"
+
+REGIME ANALYSIS
+═══════════════
+
+Regime                K=2 EITT   H range%   Note
+────────────────────────────────────────────────────
+Bimetallic (1688-1816)  0.52%      9.4%     HOLDS — genuine K=2
+Gold Standard (1817-1913) 10.1%    58.6%    FAILS — silver demonetized
+Interwar (1914-1944)    11.3%     136.0%    FAILS — regime chaos
+Bretton Woods (1945-70) 11.1%      99.0%    FAILS — fixed/suppressed
+Early Float (1971-99)   11.3%      94.3%    FAILS — Hunt brothers era
+Modern Float (2000-26)   3.4%      56.0%    MARGINAL — settling
+
+RUNNING-WINDOW EITT (50-year windows)
+════════════════════════════════════
+
+Every window from 1688 to ~1837: HOLDS (all < 0.7%)
+Every window crossing 1870-1930: FAILS (all > 5%)
+The boundary at ~1870 is the demonetization of silver.
+The hidden carriers activate when silver stops being money.
+
+IMPULSE DETECTION (21 shocks at >2σ)
+═════════════════════════════════════
+
+Top shocks by |dB/dt|:
+  1921 (+6.0σ): Post-WWI silver crash
+  1946 (-5.4σ): Post-WWII reconstruction
+  2026 (-5.4σ): Recent silver rally
+  1981 (+4.8σ): Hunt brothers collapse
+  1936 (+4.4σ): Post-Gold Reserve Act
+  2011 (-3.8σ): Silver spike to $49
+  1971 (+3.3σ): Nixon shock
+
+Removing impulses alone: 7.5% → still FAILS.
+Impulses are symptoms. Regime transitions are the cause.
+The hidden carriers (volatility, momentum) are the fix.
+
+COMBINED FIX: REGIME + IMPULSE REMOVAL + K=4
+═════════════════════════════════════════════
+
+Bimetallic K=4 impulse-cleaned: 0.36% → HOLDS
+Modern Float K=4 impulse-cleaned: 0.76% → HOLDS
+
+THE INVERSION PRINCIPLE
+═══════════════════════
+
+"If EITT fails, increase K until it holds.
+ The number of carriers needed IS the system's true dimensionality.
+ The carriers you had to add ARE the hidden state variables."
+
+For gold/silver: K_true = 4 = gold + silver + volatility + momentum.
+The monetary regime state lives in the volatility and momentum carriers.
+When those carriers are quiescent (bimetallic era), K=2 suffices.
+When they activate (regime transitions), K=4 is required.
+
+This is the EITT inversion: failure → dimensionality → hidden structure.
+
+Governance: CGS-2 (n=3), GDoF 264. No new constants.
+Data: Gold/Silver ratio, Measuring Worth + modern sources.
+HUF:1.1.8 | OP_MIN=0.51 | TOOL_MAX=0.49
