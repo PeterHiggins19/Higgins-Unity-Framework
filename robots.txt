@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peterhiggins19.github.io/Higgins-Unity-Framework/sitemap.xml

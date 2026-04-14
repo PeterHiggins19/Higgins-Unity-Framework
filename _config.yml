@@ -18,6 +18,7 @@ baseurl: "/Higgins-Unity-Framework"
 # ─── SEO & Social ────────────────────────────────────────────────────────────
 plugins:
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 # Open Graph / Twitter Card metadata
 tagline: "Compositional structure as an open-loop monitoring signal"
@@ -41,6 +42,7 @@ kramdown:
   input: GFM
 
 # Exclude non-site files from Jekyll build
+# Markdown (.md) files in science/ and drafts/ ARE included — they appear in the sitemap
 exclude:
   - build_context.py
   - HUF_SESSION_LOADER.txt
@@ -48,6 +50,9 @@ exclude:
   - "*.py"
   - "*.xlsx"
   - "*.pptx"
+  - "*.docx"
+  - "*.pdf"
+  - "*.png"
   - dormant/
   - data/
   - tools/
