@@ -149,6 +149,39 @@
         "tier_1: All 8 briefing paths updated to include subfolder (science/quantum/, briefings/, science/eitt/)",
         "tier_2: All 10 deliverable paths updated to include drafts/codawork-2026/ subfolders"
       ]
+    },
+    {
+      "version": "1.3",
+      "date": "2026-04-13",
+      "event": "FAST_REFRESH file_map aligned to post-restructure paths. New science/eitt/INDEX.json created with canonical claims.",
+      "changes": [
+        "FAST_REFRESH file_map: all paths updated to match v1.2 manifest paths",
+        "FAST_REFRESH file_map: added ai-refresh/HUF_ADMIN.json and science/eitt/INDEX.json references",
+        "New file: science/eitt/INDEX.json — folder index with canonical claims, key numbers, definitions, file inventory",
+        "New file: science/eitt/EITT_Chemistry_Findings.md — markdown companion to .docx",
+        "New file: science/eitt/PRISM_Chemistry_Analysis.md — markdown companion to .docx",
+        "New file: science/eitt/EITT_CoDa_Cheatsheet_v3.md — markdown companion to .pdf",
+        "TODO: Compute SHA-256 hashes for 4 new files and add to tier_1_briefings after commit"
+      ]
+    },
+    {
+      "version": "1.4",
+      "date": "2026-04-13",
+      "event": "Markdown companions for all science/quantum/ DOCX files. build_context.py aggregator. Gemini value matrix.",
+      "changes": [
+        "New file: science/quantum/Book0_HUF_QIT_Primer.md — markdown companion",
+        "New file: science/quantum/Book1_HUF_QIT_Observer_Problem.md — markdown companion",
+        "New file: science/quantum/Book2_HUF_QTM_Toolkit_Results.md — markdown companion",
+        "New file: science/quantum/HUF_QIT_Observer_Problem.md — markdown companion (extended version)",
+        "New file: science/quantum/HUF_QTM_Toolkit_Results.md — markdown companion (standalone toolkit)",
+        "New file: science/quantum/HUF_Topography_Conjecture_v1.0.md — markdown companion",
+        "New file: science/quantum/HUF_Morphology_Plausibility_Test_v1.0.md — markdown companion",
+        "New file: science/quantum/HUF_VCore_Stack_Brief_v1.0.md — markdown companion",
+        "New file: build_context.py — context aggregator script (seed/science/full/custom modes)",
+        "New file: science/HUF_Cross_Disciplinary_Value_Matrix.md — Gemini value matrix reference",
+        "build_context.py --mode science now picks up 54 files (~232k tokens)",
+        "TODO: Compute SHA-256 hashes for all new files after commit"
+      ]
     }
   ]
 }

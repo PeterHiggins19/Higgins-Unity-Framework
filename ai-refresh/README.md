@@ -1,5 +1,7 @@
 # AI Refresh Layer
 
+**Status: STABLE** — validated across all 5 AI platforms on 2026-04-13.
+
 **For any AI starting HUF work: read these files first, in this order.**
 
 | Order | File | Purpose |
@@ -15,9 +17,23 @@
 - **GitHub Pages:** https://peterhiggins19.github.io/Higgins-Unity-Framework/
 - **Contact:** PeterHiggins@roguewaveaudio.com
 
-## Cold-Start Test
+## Cold-Start Test — COMPLETE
 
-`AI_COLD_START_TEST.json` — cross-platform test protocol. Results stored in `test-results/`.
+`AI_COLD_START_TEST.json` — cross-platform test protocol. All 5 platforms tested 2026-04-13.
+
+| Platform | Questions | Integrity | Structure | Attempts |
+|----------|-----------|-----------|-----------|----------|
+| Claude   | 5/5 (abbrev.) | n/a | n/a | 1 |
+| ChatGPT  | 10/10 | FAIL (caught 2 real bugs) | 4/5 | 2 |
+| Grok     | 10/10 | PASS | 5/5 | 1 |
+| Copilot  | 10/10 | NOT DONE | NOT DONE | 3 |
+| Gemini   | 10/10 | PASS | 3/5 | 1 |
+
+Results stored in `test-results/`. Key finding: every platform achieved 100% question accuracy from FAST_REFRESH alone. The single-file injection pattern works universally.
+
+Bugs found and fixed during testing:
+- **v1.1:** ChatGPT caught stale FAST_REFRESH hash + wrong EITT char_count (37→34)
+- **v1.2:** Grok caught 21 stale file paths in manifest (pre-restructure paths)
 
 ## Known Drift Errors (caught 2026-04-13)
 
@@ -31,3 +47,10 @@
 - `HUF_ADMIN.json` wins on identity, contacts, naming, URLs.
 - `HUF_FAST_REFRESH.json` wins on numbers, formulas, science.
 - If both address the same field, they must agree. Any disagreement is a bug — report to Peter.
+
+## Platform Access Notes
+
+- **ChatGPT, Grok:** Can usually browse GitHub directly.
+- **Copilot:** Claims native GitHub access but could not fetch raw file URLs in practice.
+- **Gemini, Claude:** Cannot fetch raw.githubusercontent.com. Need content pasted.
+- **Fallback:** Always have paste-ready content. The test is valid with pasted content.

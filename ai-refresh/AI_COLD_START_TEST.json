@@ -15,8 +15,9 @@
     "what_is_huf": "The Higgins Unity Framework (HUF) applies compositional data analysis (Aitchison geometry on the simplex) to monitoring systems where parts sum to a whole. Energy mixes, ecosystems, portfolios, chemical mixtures. It detects drift by measuring change as perturbation rather than arithmetic difference.",
     "what_is_eitt": "The Entropy-Invariant Time Transformer (EITT) is the core discovery: Shannon entropy of compositional data is near-invariant under geometric-mean decimation across temporal resolutions. 0.18% variation across 341:1 compression. Confirmed in energy, chemistry, hardware, cosmology.",
     "why_this_test": "HUF is developed by a solo independent researcher (Peter Higgins) with AI collaborators across Claude, ChatGPT, Grok, Gemini, and Copilot. Long sessions cause context drift — names mutate, numbers shift, dates wander. We built a two-layer refresh system (FAST_REFRESH.json + INTEGRITY_MANIFEST.json) so any AI can cold-start accurately from the repository. This test validates that system.",
-    "what_happened": "On 2026-04-13, Claude built the refresh system and ran the first cold-start test: 5/5 questions correct, all HIGH confidence, 8.5/10 rating. ChatGPT then reviewed the test architecture and improved it (full SHA pinning, input provenance, stricter fallback). This v1.1 incorporates those improvements. Now every platform takes the same upgraded test.",
-    "the_bigger_picture": "The repository is now the canonical gateway for all HUF work. All AI collaborators onboard from the repo, verify understanding against the integrity manifest, and produce coherent work without Peter re-explaining each session. Human-readable context that doubles as AI-structured learning."
+    "what_happened": "On 2026-04-13, Claude built the refresh system. All five platforms tested same day: Claude 5/5 (abbreviated), ChatGPT 10/10 (caught 2 manifest bugs), Grok 10/10 (6 adversarial findings, caught path bugs), Copilot 10/10 (3 attempts needed), Gemini 10/10 (best instruction-following). Every platform achieved 100% question accuracy from FAST_REFRESH alone. ChatGPT's integrity failure and Grok's adversarial findings led to manifest fixes (v1.0→v1.2). System declared STABLE.",
+    "test_status": "COMPLETE — all 5 platforms validated 2026-04-13. Results in ai-refresh/test-results/.",
+    "the_bigger_picture": "The repository is now the canonical gateway for all HUF work. All AI collaborators onboard from the repo, verify understanding against the integrity manifest, and produce coherent work without Peter re-explaining each session. Human-readable context that doubles as AI-structured learning. Cross-platform validation proves the single-file injection pattern works universally."
   },
 
   "reproducibility": {
@@ -95,25 +96,35 @@
   },
 
   "platform_notes": {
+    "claude": {
+      "history": "Built the refresh system, repo structure, and test protocol. Ran abbreviated 5/5 test.",
+      "role": "Document building, structure, repository management, coherence refresh.",
+      "access": "Blocked by egress proxy (variable). Uses local files via Cowork.",
+      "test_result_2026-04-13": "5/5 abbreviated. Built the system. 1 attempt."
+    },
     "chatgpt": {
-      "history": "Core HUF collaborator since early 2026. Helped develop EITT proofs, spectral independence, loudspeaker analogy, HUF spec v2.0. Previous sessions ran out of context 2026-04-13.",
-      "role": "Deep analysis and review. Eyes on the repo. Second opinion on structure. Baseline for other platforms.",
-      "access": "Usually can browse GitHub directly."
+      "history": "Core HUF collaborator since early 2026. Helped develop EITT proofs, spectral independence, loudspeaker analogy, HUF spec v2.0.",
+      "role": "Deep analysis and review. Eyes on the repo. Second opinion on structure.",
+      "access": "Usually can browse GitHub directly.",
+      "test_result_2026-04-13": "10/10 questions. Integrity FAIL — caught 2 real bugs (stale hash, wrong char_count). Structure 4/5. 2 attempts (first attempt reviewed architecture instead of taking test)."
     },
     "grok": {
       "history": "Adversarial reviewer. Performed PLL compliance checks, Keff_fill verification, SOPDT robustness derivation.",
       "role": "Adversarial testing. Try to break the refresh. Find what's missing or wrong.",
-      "access": "Variable GitHub access."
+      "access": "Can browse GitHub directly.",
+      "test_result_2026-04-13": "10/10 questions. Integrity PASS. Structure 5/5. 6 adversarial findings (caught stale manifest paths). 1 attempt. Highest overall score."
     },
     "gemini": {
       "history": "Cross-domain validation. Routing assessment.",
       "role": "Cross-domain validation. Does the framework hold up when examined from outside the HUF bubble?",
-      "access": "Variable GitHub access."
+      "access": "Cannot fetch raw GitHub URLs. Needs content pasted.",
+      "test_result_2026-04-13": "10/10 questions. Integrity PASS. Structure 3/5 (inferred from manifest paths — creative). 1 attempt. Best instruction-following."
     },
     "copilot": {
       "history": "Code contributor. EITT boundary and discovery roadmap.",
       "role": "Code review. Are the tools and pipeline scripts coherent? Can someone actually run them?",
-      "access": "Native GitHub access — should have best repo visibility."
+      "access": "Native GitHub access claimed but could NOT fetch raw file URLs in practice.",
+      "test_result_2026-04-13": "10/10 questions. Integrity NOT DONE. Structure NOT DONE. 3 attempts (scraped repo, hallucinated briefing, finally answered when content pasted). Weakest instruction-following."
     }
   },
 

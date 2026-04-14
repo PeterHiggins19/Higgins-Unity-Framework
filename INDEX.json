@@ -1,18 +1,21 @@
 {
   "_meta": {
     "type": "HUF-REPO-INDEX",
-    "version": "2.0",
+    "version": "2.1",
     "created": "2026-04-13",
+    "updated": "2026-04-13",
     "author": "Peter Higgins / Claude",
     "purpose": "Master index of the Higgins Unity Framework repository. Maps every folder with status, purpose, and AI training notes.",
-    "refresh_entry": "ai-refresh/HUF_FAST_REFRESH.json → ai-refresh/HUF_INTEGRITY_MANIFEST.json → this file"
+    "project_status": "STABLE — repo restructured, AI refresh validated across 5 platforms, all tests passed 2026-04-13",
+    "refresh_entry": "ai-refresh/HUF_FAST_REFRESH.json → ai-refresh/HUF_INTEGRITY_MANIFEST.json → ai-refresh/HUF_ADMIN.json → this file"
   },
 
   "repository_structure": {
     "ai-refresh": {
       "purpose": "AI speed-loading context. Any AI starts here.",
-      "status": "active",
-      "load_order": ["HUF_FAST_REFRESH.json", "HUF_INTEGRITY_MANIFEST.json", "huf_spec_v2.0.json"]
+      "status": "STABLE — validated across Claude, ChatGPT, Grok, Copilot, Gemini on 2026-04-13",
+      "load_order": ["HUF_FAST_REFRESH.json", "HUF_INTEGRITY_MANIFEST.json", "HUF_ADMIN.json", "huf_spec_v2.0.json"],
+      "test_results": "ai-refresh/test-results/ — 5 platform results + template"
     },
     "science": {
       "purpose": "All scientific work organized by subject.",

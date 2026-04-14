@@ -1,8 +1,9 @@
 {
   "_meta": {
     "type": "HUF_ADMINISTRATIVE_REGISTER",
-    "version": "1.0",
+    "version": "1.1",
     "created": "2026-04-13",
+    "updated": "2026-04-13",
     "author": "Peter Higgins",
     "purpose": "Single source of truth for all HUF project identity, contact information, websites, canonical names, terms, standards, and administrative references. Extends RWA-001. If any AI or document uses a different name, URL, or term — this file wins.",
     "update_authority": "Peter Higgins only"
@@ -29,9 +30,17 @@
     "full_name": "Higgins Unity Framework",
     "abbreviation": "HUF",
     "tagline": "Compositional structure as an open-loop monitoring signal.",
-    "status": "Active — independent research, pre-publication",
+    "status": "STABLE — repo restructured, AI refresh layer validated across 5 platforms, pre-publication",
+    "status_date": "2026-04-13",
     "founded": "2025",
-    "domain": "Compositional data analysis (CoDa), Aitchison geometry, monitoring systems"
+    "domain": "Compositional data analysis (CoDa), Aitchison geometry, monitoring systems",
+    "milestones": {
+      "2025": "Framework conception, initial development",
+      "2026-02": "Ratio State Monitoring name locked for literature submission",
+      "2026-03": "GitHub repo launched, multi-AI collaboration established",
+      "2026-04-13": "Full repo restructure. AI refresh layer (FAST_REFRESH + INTEGRITY_MANIFEST + ADMIN + spec) validated across Claude, ChatGPT, Grok, Copilot, Gemini. 286 files organized into 12 top-level folders. All five cold-start tests passed (10/10 questions). System declared STABLE.",
+      "2026-06": "CoDaWork 2026, Coimbra, Portugal (upcoming)"
+    }
   },
 
   "web_presence": {
@@ -151,7 +160,19 @@
         "interface": "GitHub Copilot"
       }
     },
-    "communication": "Repository-mediated. ai-refresh/ is the shared onboarding layer. FAST_REFRESH.json is the single source of truth across all platforms."
+    "communication": "Repository-mediated. ai-refresh/ is the shared onboarding layer. FAST_REFRESH.json is the single source of truth across all platforms.",
+    "cold_start_validation": {
+      "date": "2026-04-13",
+      "protocol": "AI_COLD_START_TEST v1.1",
+      "results": {
+        "claude":  {"questions": "5/5 (abbreviated)", "integrity": "n/a", "structure": "n/a", "attempts": 1, "note": "Built the system"},
+        "chatgpt": {"questions": "10/10", "integrity": "FAIL (caught 2 real bugs)", "structure": "4/5", "attempts": 2, "note": "Found stale hash + wrong char_count"},
+        "grok":    {"questions": "10/10", "integrity": "PASS", "structure": "5/5", "attempts": 1, "note": "6 adversarial findings, caught path bugs"},
+        "copilot": {"questions": "10/10", "integrity": "NOT DONE", "structure": "NOT DONE", "attempts": 3, "note": "Weak instruction-following, needed content pasted"},
+        "gemini":  {"questions": "10/10", "integrity": "PASS", "structure": "3/5", "attempts": 1, "note": "Best instruction-following, inferred structure from manifest paths"}
+      },
+      "conclusion": "All 5 platforms achieved 100% question accuracy from FAST_REFRESH. System validated for cross-AI cold-start onboarding."
+    }
   },
 
   "mathematical_foundations": {

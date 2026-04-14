@@ -1,0 +1,269 @@
+{
+  "_meta": {
+    "type": "FOLDER_INDEX",
+    "folder": "science/eitt/",
+    "version": "1.0",
+    "created": "2026-04-13",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Machine-readable index of the EITT chemistry extension. Contains canonical claims, key numbers, file inventory, and provenance. For any AI starting EITT chemistry work: read this file first, then the markdown companions.",
+    "parent_index": "../../INDEX.json",
+    "canonical_source": "../../ai-refresh/HUF_FAST_REFRESH.json"
+  },
+
+  "domain": {
+    "name": "EITT on the Chemical Simplex",
+    "short": "Chemistry EITT",
+    "scope": "Entropy Invariance under Temporal Transformation applied to chemical mixture compositions from the CheMixHub benchmark",
+    "status": "Complete — findings documented, PRISM allocation targets ranked, markdown companions available"
+  },
+
+  "canonical_claims": {
+    "_warning": "These are the exact claims made by the EITT chemistry analysis. Numbers come from HUF_FAST_REFRESH.json proof_4_chemistry.",
+
+    "claim_1_partial_invariance": {
+      "statement": "Shannon entropy of chemical compositions is partially invariant under geometric-mean decimation. Interior pass rates 54-82%, overall ~53%.",
+      "evidence": "Table 1 in EITT_Chemistry_Findings.md",
+      "comparison": "Energy time series: 94.8%. The gap quantifies temporal autocorrelation's contribution.",
+      "qualification": "Composition sweeps are not time series. Results describe EITT on smoothly ordered compositions."
+    },
+
+    "claim_2_geometry_dynamics_split": {
+      "statement": "Approximately 50% of EITT invariance comes from Aitchison geometry of the simplex, approximately 50% from temporal autocorrelation.",
+      "evidence": "Interior-only pass rates (54-82%) vs temporal EITT (94.8%). First empirical decomposition of the two contributions.",
+      "qualification": "The 50/50 split is approximate, not a formal decomposition."
+    },
+
+    "claim_3_boundary_failure": {
+      "statement": "Shannon entropy fails at the simplex boundary where min(x_i) < 0.05. Curvature of H(x) diverges as -1/x_i near zero.",
+      "evidence": "All four lenses show degraded performance at boundary. NIST boundary: Shannon 35.7% pass at 12.12% residual.",
+      "consequence": "Shannon-based QA metrics are geometrically unreliable for trace-level components."
+    },
+
+    "claim_4_aitchison_boundary_rescue": {
+      "statement": "The Aitchison norm recovers performance at the boundary where Shannon fails. NIST boundary: 42.9% pass at 2.49% residual (vs Shannon 35.7% at 12.12%).",
+      "evidence": "Table 1 in EITT_Chemistry_Findings.md. Polymer boundary: Aitchison 57.7% vs Shannon 42.3%.",
+      "implication": "Boundary failures are metric artefacts, not failures of the underlying compositional structure."
+    },
+
+    "claim_5_jensen_overcorrection": {
+      "statement": "The Jensen (Hessian-based) bias correction diverges catastrophically at the simplex boundary. 476% overcorrection at ionic-liquid boundary.",
+      "evidence": "Table 1, Jensen column. 0% pass rate at all boundary compositions.",
+      "mechanism": "The 1/x_i term in the Hessian dominates when x_i is small. Local approximation applied to global traversal.",
+      "implication": "Symmetric confidence intervals from Fisher information at the geometric mean are unreliable below 5%."
+    },
+
+    "claim_6_dual_lens": {
+      "statement": "A natural dual-lens diagnostic emerges: Shannon for interior (optimal 82%), Aitchison for boundary (optimal 58%), crossover at min(x_i) ~ 0.05.",
+      "evidence": "Best-performing lens switches between Shannon (interior) and Aitchison (boundary) across all datasets.",
+      "qualification": "The 0.05 threshold is empirical. Formal derivation is an open problem (PRISM Target 7)."
+    },
+
+    "claim_7_prism_method": {
+      "statement": "PRISM converts EITT residuals into ranked resource allocation targets for analytical infrastructure investment.",
+      "evidence": "PRISM_Chemistry_Analysis.md — 7 ranked targets from immediate (software update) to foundational (mathematical research).",
+      "novelty": "First systematic entropy-invariance diagnostic applied to the global chemical industry ($5.7T annual revenue)."
+    }
+  },
+
+  "key_numbers": {
+    "data_points": 500000,
+    "datasets": 7,
+    "dataset_names": [
+      "Ionic-liquid transport properties",
+      "Organic viscosity (NIST)",
+      "Drug solubility",
+      "Polymer electrolytes",
+      "Miscible solvents",
+      "Medicine formulations",
+      "Motor octane number mixtures"
+    ],
+    "data_source": "CheMixHub benchmark (Rajaonson et al., NeurIPS 2025)",
+    "data_repo": "github.com/chemcognition-lab/chemixhub",
+    "diagnostic_lenses": 4,
+    "lens_names": ["Shannon (raw)", "Jensen-corrected", "Renyi q=2", "Aitchison norm"],
+    "boundary_threshold": 0.05,
+    "interior_pass_rates": "54-82%",
+    "overall_pass_rate": "~53%",
+    "worst_overcorrection": "476% (Jensen at ionic-liquid boundary)",
+    "best_boundary_residual": "2.49% (Aitchison on NIST organic viscosity boundary)",
+    "prism_targets": 7,
+    "industry_value": "$5.7 trillion (global chemical industry annual revenue)"
+  },
+
+  "definitions": {
+    "_note": "Explicit definitions for terms that cause drift or ambiguity.",
+    "entropy_formula": "H(x) = -sum( x_i * ln(x_i) ) — natural logarithm, base e",
+    "geometric_mean_decimation": "Group consecutive compositions into blocks of size k, compute the Aitchison barycenter (geometric mean with closure) of each block: x_bar_G = C( prod(x(t))^(1/k) )",
+    "pass_criterion": "Relative residual |delta_H| / H < threshold (typically 5%). A group 'passes' EITT if entropy change under decimation is below this threshold.",
+    "interior": "A composition where min(x_i) >= 0.05 — all parts above 5%",
+    "boundary": "A composition where min(x_i) < 0.05 — at least one part below 5%",
+    "aitchison_distance": "d_A(x,y) = ||clr(x) - clr(y)|| where clr(x) = ( ln(x_i) - (1/D) sum(ln(x_j)) )",
+    "simplex_closure": "C(x) = x / sum(x_i) — project onto the unit simplex"
+  },
+
+  "provenance": {
+    "eitt_origin": "Peter Higgins / Rogue Wave Audio, confirmed on energy-market compositions (2025-2026)",
+    "aitchison_geometry": "John Aitchison (1982), developed by Pawlowsky-Glahn, Egozcue, and CoDa community",
+    "chemixhub_data": "Rajaonson et al., NeurIPS 2025 Datasets and Benchmarks Track",
+    "pipeline": "chem_eitt_pipeline.py — open source, single-file Python, no proprietary dependencies",
+    "governance": "HUF-GOV: Measure, report, file. No intervention on the data.",
+    "standard": "RWA-001 (Rogue Wave Audio Corporate Reference)",
+    "review": "Multi-AI adversarial review (Claude, ChatGPT, Grok, Gemini, Copilot) applied throughout"
+  },
+
+  "files": {
+    "_note": "All files in science/eitt/ with their purpose and machine-readability status.",
+
+    "primary_documents": [
+      {
+        "file": "EITT_Chemistry_Findings.docx",
+        "purpose": "Empirical findings. Four-lens results, failure taxonomy, multi-modal simplex analysis.",
+        "machine_readable": false,
+        "companion": "EITT_Chemistry_Findings.md"
+      },
+      {
+        "file": "EITT_Chemistry_Findings.md",
+        "purpose": "Markdown companion to EITT_Chemistry_Findings.docx — identical content, machine-readable.",
+        "machine_readable": true
+      },
+      {
+        "file": "PRISM_Chemistry_Analysis.docx",
+        "purpose": "Operational layer. Ranked resource allocation targets.",
+        "machine_readable": false,
+        "companion": "PRISM_Chemistry_Analysis.md"
+      },
+      {
+        "file": "PRISM_Chemistry_Analysis.md",
+        "purpose": "Markdown companion to PRISM_Chemistry_Analysis.docx — identical content, machine-readable.",
+        "machine_readable": true
+      },
+      {
+        "file": "EITT_CoDa_Cheatsheet_v3.pdf",
+        "purpose": "Quick-reference glossary, formulas, results scorecard. 6-page PDF.",
+        "machine_readable": false,
+        "companion": "EITT_CoDa_Cheatsheet_v3.md"
+      },
+      {
+        "file": "EITT_CoDa_Cheatsheet_v3.md",
+        "purpose": "Markdown companion to EITT_CoDa_Cheatsheet_v3.pdf — identical content, machine-readable.",
+        "machine_readable": true
+      }
+    ],
+
+    "experiment_protocols": [
+      {
+        "file": "CHEM_EITT_LAB_001.json",
+        "purpose": "Full experiment specification: protocol, hypotheses, expected results, CoDa mapping.",
+        "machine_readable": true
+      },
+      {
+        "file": "EITT_Adversarial_001.json",
+        "purpose": "Adversarial test results. 17 tests: 10 pass, 7 fail. Boundary conditions identified.",
+        "machine_readable": true
+      },
+      {
+        "file": "EITT_Midrange_Confirmation_001.json",
+        "purpose": "Midrange EITT confirmation across multiple compression ratios.",
+        "machine_readable": true
+      },
+      {
+        "file": "EITT_Residual_Analysis_001.json",
+        "purpose": "Residual analysis from EITT runs.",
+        "machine_readable": true
+      }
+    ],
+
+    "analysis_and_briefings": [
+      {
+        "file": "EITT_ENTROPY_LANDSCAPE.md",
+        "purpose": "Entropy landscape analysis on the simplex.",
+        "machine_readable": true
+      },
+      {
+        "file": "HUF_Aitchison_Variance_Conservation_001.json",
+        "purpose": "Aitchison variance conservation analysis.",
+        "machine_readable": true
+      },
+      {
+        "file": "HUF_ETC_Analysis_001.json",
+        "purpose": "Entropy-Time Correspondence analysis.",
+        "machine_readable": true
+      },
+      {
+        "file": "HUF_ETC_and_Time_Transformer_GROK_BRIEF.md",
+        "purpose": "Grok adversarial briefing on ETC and EITT.",
+        "machine_readable": true
+      },
+      {
+        "file": "HUF_CHATGPT_EITT_BRIEFING.json",
+        "purpose": "ChatGPT EITT briefing — context loader for chemistry extension work.",
+        "machine_readable": true
+      }
+    ],
+
+    "code": [
+      {
+        "file": "chem_eitt_pipeline.py",
+        "purpose": "Complete analysis pipeline. Open source, single-file Python. Dependencies: pandas, numpy, scipy, matplotlib.",
+        "machine_readable": true,
+        "runnable": true
+      }
+    ],
+
+    "folder_metadata": [
+      {
+        "file": "README.md",
+        "purpose": "Folder README with overview and file listing.",
+        "machine_readable": true
+      },
+      {
+        "file": "INDEX.json",
+        "purpose": "This file. Machine-readable folder index with canonical claims.",
+        "machine_readable": true
+      }
+    ]
+  },
+
+  "document_family": {
+    "_note": "The three primary documents form a coherent trilogy. Read in this order.",
+    "layer_1_empirical": {
+      "title": "EITT on the Chemical Simplex",
+      "file": "EITT_Chemistry_Findings.md",
+      "role": "Raw science. What happened when we tested EITT on chemistry."
+    },
+    "layer_2_interpretive": {
+      "title": "The HUF Development Index",
+      "file": "Referenced externally — see science/coda-monitoring/",
+      "role": "What the residuals mean. Where chemistry sits on the development arc."
+    },
+    "layer_3_operational": {
+      "title": "PRISM: Post-Residual Investigation for System Maturation",
+      "file": "PRISM_Chemistry_Analysis.md",
+      "role": "What to do about it. Ranked resource allocation targets."
+    },
+    "reference": {
+      "title": "EITT/CoDa Cheatsheet v3",
+      "file": "EITT_CoDa_Cheatsheet_v3.md",
+      "role": "Quick reference. Glossary, formulas, results scorecard."
+    }
+  },
+
+  "open_problems": {
+    "_note": "From EITT_CoDa_Cheatsheet_v3.md Section 4.3 and PRISM targets.",
+    "O-1": "Formal proof of EITT invariance from Aitchison geometry",
+    "O-2": "Non-temporal EITT — test on spatial, cross-sectional, multi-modal compositions",
+    "O-3": "Higher-D simplex behaviour — how does EITT scale with dimension?",
+    "O-4": "Boundary threshold formalisation — derive the 0.05 crossover from curvature of H(x) on the D-simplex",
+    "O-5": "Jensen damping coefficient — proportional to composition range, keeps Hessian correction within validity"
+  },
+
+  "honest_disclosures": [
+    "Composition sweeps are not time series. Results describe EITT on smoothly ordered compositions.",
+    "Binary mixtures (D=2) live on the one-dimensional simplex. Higher-D tests limited by data availability.",
+    "CheMixHub data is curated for ML benchmarking. Preprocessing may affect compositional structure.",
+    "The 0.05 boundary threshold is empirical, not theoretically derived.",
+    "EITT is an empirical observation, not a theorem. Formal proof is Open Problem O-1.",
+    "PRISM return-on-investment rankings are qualitative estimates, not formal economic analysis.",
+    "The author is the originator of HUF and EITT. This is first-party analysis, not independent audit."
+  ]
+}
