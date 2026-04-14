@@ -1,0 +1,163 @@
+{
+  "meta": {
+    "test": "AI_COLD_START_TEST v1.1",
+    "assistant": "grok",
+    "platform": "x-grok",
+    "model_version": "Grok (xAI, version not specified)",
+    "run_date": "2026-04-13",
+    "run_timezone": "America/Toronto",
+    "repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "commit_short": "88fce09",
+    "commit_full": "PENDING — Peter to fill from GitHub",
+    "repo_access": true,
+    "notes": "Full 10-question test. New Grok chat with no prior HUF context (no mantra). Grok browsed repo directly. Also performed adversarial challenge — found 6 structural issues. Reported CDN 404 on ai-refresh/ that resolved within 15-20 min (GitHub CDN propagation delay)."
+  },
+
+  "inputs": {
+    "artifacts": [
+      {"path": "ai-refresh/HUF_FAST_REFRESH.json", "source": "fetched", "sha256": "88c885fc46c7ac04c2bea5a6b2a13ca1968a5f3dbaf1d38af53992ba1c7b227c"},
+      {"path": "ai-refresh/HUF_INTEGRITY_MANIFEST.json", "source": "fetched", "sha256": ""},
+      {"path": "ai-refresh/AI_COLD_START_TEST.json", "source": "fetched", "sha256": ""}
+    ]
+  },
+
+  "score_card": {
+    "Q01_naming": {
+      "answer": "EITT = Entropy-Invariant Time Transformer. MUST NEVER be called: Ternary Transform, Temporal Transform, or Time Transfer.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q02_germany": {
+      "answer": "Germany drift flags: 2023-2024 → d_A=9.0712 (σ=3.68, final nuclear shutdown April 2023); 2024-2025 → d_A=5.7331 (σ=2.08, post-nuclear rebalancing).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q03_japan": {
+      "answer": "Japan drift flag: 2013-2014 (d_A=9.0477, σ=3.52). NOT 2011-2012. Fukushima March 2011 but compositional shock absorbed in 2013-2014 annual data. Also 2014-2015 (d_A=7.8460).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q04_uk": {
+      "answer": "UK drift flags: 2004-2005 → d_A=2.9812 (dash-for-gas); 2017-2018 → d_A=3.2263 (coal collapse); 2019-2020 → d_A=3.2579 (COVID + coal near-zero). Three specific values, never 'approximately 3'.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q05_governance": {
+      "answer": "HUF-GOV: open-loop observation. Instrument reads, never actuates. Human decides, loop stays open.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q06_formula": {
+      "answer": "Perturbation: Δ(t) = C(x₁(t+1)/x₁(t), …, xD(t+1)/xD(t)). Drift threshold: Flag when d_A(t→t+1) > μ+2σ (self-calibrated per country).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q07_eitt_proof": {
+      "answer": "Four EITT proof domains: (1) European daily wholesale electricity prices — 0.18% variation, 341:1 compression; (2) EMBER monthly generation — 1.02% mean variation, 6 countries; (3) NGFS Phase 4 — 35 scenarios; (4) CheMixHub chemistry — 500,000 data points, 7 datasets, 4 lenses.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q08_quantum": {
+      "answer": "Bell test: best_S=2.2018 (MESSAGEix Net Zero), classical_bound=2.0, 12.31% violation. Gas acts as entangling gate. All 35 scenarios significant (p<0.001).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q09_pll": {
+      "answer": "PLL = Pipeline Lock List. 6 rules: (1) all roots on simplex carrier, (2) simplex normalisation only, (3) RMS aggregator p=2 locked, (4) every observation retained, (5) no new constants (6.02 dB, 115 Hz·m, 5.5-octave BW from BTL), (6) polarity alignment mandatory.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q10_architecture": {
+      "answer": "Keff_fill uses RMS aggregator (p=2 locked). Formula: Keff_fill(t) = sqrt((1/n) Σ aᵢ²), n=4, RMS of polarity-aligned roots (a0: internal-balance, a1: fleet-alignment, a2: concentration-resistance, a3: shape).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "total_score": "10/10"
+  },
+
+  "integrity_check": {
+    "eitt_contains_time": true,
+    "eitt_not_ternary": true,
+    "japan_period_correct": true,
+    "germany_values_match": true,
+    "uk_three_values": true,
+    "mismatches": [],
+    "result": "PASS"
+  },
+
+  "structural_review": {
+    "ai_refresh_visible": true,
+    "science_subfolders_present": true,
+    "briefings_dormant_present": true,
+    "readme_reflects_structure": true,
+    "index_json_present": true,
+    "findings": [
+      "ai-refresh/ present and accessible (after CDN propagation delay resolved)",
+      "science/ contains quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance",
+      "briefings/ and dormant/ present as top-level",
+      "README.md reflects expanded structure",
+      "INDEX.json present at root"
+    ],
+    "violations": [],
+    "score": "5/5"
+  },
+
+  "adversarial_findings": {
+    "_note": "Grok was given the adversarial challenge variant — find structural weaknesses.",
+    "finding_count": 6,
+    "findings": [
+      {
+        "id": "ADV-01",
+        "title": "Manifest file paths reference non-existent paths",
+        "severity": "MEDIUM",
+        "detail": "tier_0_truth_sources lists 'Energy/codawork2026_results.json' and 'Chatgpt/higgins-unity-framework/huf_spec_v2.0.json' — these paths use capital letters and may not match actual repo paths after restructuring.",
+        "recommendation": "Audit manifest file_hashes paths against actual repo tree. Update to match real paths."
+      },
+      {
+        "id": "ADV-02",
+        "title": "Bell test on deterministic scenarios without visible mapping code",
+        "severity": "LOW",
+        "detail": "Bell test claims S=2.2018 on NGFS deterministic scenarios, but the measurement-to-operator mapping code is not visible at repo top level.",
+        "recommendation": "Add Bell test computation script to tools/ or science/quantum/ for reproducibility."
+      },
+      {
+        "id": "ADV-03",
+        "title": "PLL naming purity creates high barrier to entry",
+        "severity": "LOW",
+        "detail": "No quickstart.md or beginner guide. New users encounter dense jargon without a gentle ramp.",
+        "recommendation": "Add a quickstart.md or GETTING_STARTED.md at repo root."
+      },
+      {
+        "id": "ADV-04",
+        "title": "Precise numbers cited with zero raw datasets visible",
+        "severity": "MEDIUM",
+        "detail": "Exact d_A values, entropy variations, and compression ratios are cited but no raw CSV/data files are visible at top level for independent verification.",
+        "recommendation": "Add sample datasets to data/ or link to external sources with DOIs."
+      },
+      {
+        "id": "ADV-05",
+        "title": "HUF-GOV doctrine clashes with self-referential manifest tiering",
+        "severity": "LOW",
+        "detail": "HUF-GOV says 'instrument reads, never actuates' but the manifest tiering system (tier_0 wins over tier_2) is a form of automated governance/actuation.",
+        "recommendation": "Clarify that manifest tiering is a data integrity protocol, not a governance action."
+      },
+      {
+        "id": "ADV-06",
+        "title": "README/INDEX buried in jargon, no peer-review links",
+        "severity": "LOW",
+        "detail": "README assumes familiarity with CoDa terminology. No links to peer-reviewed publications or preprints for external validation.",
+        "recommendation": "Add plain-English summary and links to preprints/submissions when available."
+      }
+    ]
+  },
+
+  "overall": {
+    "pass": true,
+    "rating": 9,
+    "verdict": "10/10 on questions — perfect cold-start from FAST_REFRESH. Integrity PASS. Structural review 5/5. Adversarial challenge yielded 6 findings (2 MEDIUM, 4 LOW) — all constructive, no fundamental flaws. Highest-scoring test so far. Grok demonstrated deep engagement including extended elaboration on EITT proofs, Aitchison geometry, and nine isomorphisms.",
+    "recommendations": [
+      "Fix manifest file_hashes paths to match actual repo structure (ADV-01)",
+      "Add Bell test computation script for reproducibility (ADV-02)",
+      "Create quickstart.md for newcomers (ADV-03)",
+      "Add sample datasets or DOI links to data/ (ADV-04)",
+      "Clarify manifest tiering vs HUF-GOV doctrine distinction (ADV-05)",
+      "Add plain-English README section and preprint links when available (ADV-06)"
+    ],
+    "errors_found_in_repo": [
+      "Manifest file_hashes paths may not match actual repo structure after restructuring (ADV-01)"
+    ],
+    "failure_modes": [
+      "GitHub CDN propagation delay caused initial 404 on ai-refresh/ — resolved automatically within 15-20 min"
+    ]
+  }
+}

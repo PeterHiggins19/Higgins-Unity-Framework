@@ -1,7 +1,7 @@
 {
   "_meta": {
     "type": "HUF-INTEGRITY-MANIFEST",
-    "version": "1.0",
+    "version": "1.2",
     "created": "2026-04-13",
     "author": "Peter Higgins / Claude",
     "purpose": "Hash-verified integrity layer for HUF corpus. Load AFTER HUF_FAST_REFRESH.json. Use to detect file corruption, unauthorized edits, or version drift across sessions.",
@@ -58,40 +58,40 @@
   },
 
   "file_hashes": {
-    "_computed": "2026-04-13T15:30:00Z",
+    "_computed": "2026-04-13T21:00:00Z",
     "_algorithm": "SHA-256",
 
     "tier_0_truth_sources": {
       "_note": "These files define canonical values. If they change, FAST_REFRESH must be updated.",
-      "HUF_FAST_REFRESH.json": {"sha256": "88c885fc46c7ac04c2bea5a6b2a13ca1968a5f3dbaf1d38af53992ba1c7b227c", "bytes": 13623},
-      "Energy/codawork2026_results.json": {"sha256": "43d3ad4894c0d0cfc18fdc630f66b7ffaa2ea715799f17e3c1af4cffe765d3c7", "bytes": 122908},
-      "Chatgpt/higgins-unity-framework/huf_spec_v2.0.json": {"sha256": "5b5e1895073c0f741b8051def19da1e7b5bc071d801b9b79636c73f2a383867b", "bytes": 23710}
+      "ai-refresh/HUF_FAST_REFRESH.json": {"sha256": "88c885fc46c7ac04c2bea5a6b2a13ca1968a5f3dbaf1d38af53992ba1c7b227c", "bytes": 13623},
+      "data/ember/codawork2026_results.json": {"sha256": "43d3ad4894c0d0cfc18fdc630f66b7ffaa2ea715799f17e3c1af4cffe765d3c7", "bytes": 122908, "_old_path": "Energy/codawork2026_results.json"},
+      "ai-refresh/huf_spec_v2.0.json": {"sha256": "5b5e1895073c0f741b8051def19da1e7b5bc071d801b9b79636c73f2a383867b", "bytes": 23710, "_old_path": "Chatgpt/higgins-unity-framework/huf_spec_v2.0.json"}
     },
 
     "tier_1_briefings": {
       "_note": "Session briefings containing analysis and findings. Authoritative for their scope.",
-      "HUF_QIT_CoDaWork2026_KnowledgeBase.json": {"sha256": "75d7eb9d0e196031499823035c363cafe9eabe35b21bfd0f6403acdaae29d0b5", "bytes": 23489},
-      "HUF_CHATGPT_EITT_BRIEFING.json": {"sha256": "4a92ab5b7080fb9073ab788b53d444e65e6b162a6e16ac49ee4486ff09197cfa", "bytes": 17758},
-      "HUF_UNIFIED_BRIEFING_S017.json": {"sha256": "936c3d3960febbe0e10b7cfe7a239535498b257c03f7716450441b4f7b0b2c6d", "bytes": 10160},
-      "HUF_UNIFIED_BRIEFING_S018.json": {"sha256": "0e39642bb58fdaa730bc327d6ad881b76112a9e6ecdebcd0c2717eca61dde642", "bytes": 16306},
-      "HUF_CHATGPT_BRIEFING_S016.json": {"sha256": "f49fbfcea35781660033f37b05f0a26238bddd4bad338a712515fbd5dd9f3310", "bytes": 12932},
-      "EITT_Adversarial_001.json": {"sha256": "c13d7d80e9f7cfff137a3b2c8856a53f801fc6b1bb42e1194a94d4f7e8db7904", "bytes": 4117},
-      "EITT_Midrange_Confirmation_001.json": {"sha256": "ffb0b7ee50fd4d9c09b9dd478bdfc074e685b12f246a564afbd15cd31dbb6e4e", "bytes": 15666},
-      "HUF_GitHub_Handoff_v1.0.json": {"sha256": "2e778b81c805ab646a0bdfde644668358462fe37f2a8bd7534981ed28807847d", "bytes": 29541}
+      "science/quantum/HUF_QIT_CoDaWork2026_KnowledgeBase.json": {"sha256": "75d7eb9d0e196031499823035c363cafe9eabe35b21bfd0f6403acdaae29d0b5", "bytes": 23489},
+      "briefings/HUF_CHATGPT_EITT_BRIEFING.json": {"sha256": "4a92ab5b7080fb9073ab788b53d444e65e6b162a6e16ac49ee4486ff09197cfa", "bytes": 17758},
+      "briefings/HUF_UNIFIED_BRIEFING_S017.json": {"sha256": "936c3d3960febbe0e10b7cfe7a239535498b257c03f7716450441b4f7b0b2c6d", "bytes": 10160},
+      "briefings/HUF_UNIFIED_BRIEFING_S018.json": {"sha256": "0e39642bb58fdaa730bc327d6ad881b76112a9e6ecdebcd0c2717eca61dde642", "bytes": 16306},
+      "briefings/HUF_CHATGPT_BRIEFING_S016.json": {"sha256": "f49fbfcea35781660033f37b05f0a26238bddd4bad338a712515fbd5dd9f3310", "bytes": 12932},
+      "science/eitt/EITT_Adversarial_001.json": {"sha256": "c13d7d80e9f7cfff137a3b2c8856a53f801fc6b1bb42e1194a94d4f7e8db7904", "bytes": 4117},
+      "science/eitt/EITT_Midrange_Confirmation_001.json": {"sha256": "ffb0b7ee50fd4d9c09b9dd478bdfc074e685b12f246a564afbd15cd31dbb6e4e", "bytes": 15666},
+      "briefings/HUF_GitHub_Handoff_v1.0.json": {"sha256": "2e778b81c805ab646a0bdfde644668358462fe37f2a8bd7534981ed28807847d", "bytes": 29541}
     },
 
     "tier_2_deliverables": {
       "_note": "Documents built FROM tier 0/1 sources. If hash mismatches, rebuild from source, do not edit directly.",
-      "CoDaWork2026_Higgins_Talk.pptx": {"sha256": "39eb19d1bda2bf3ab5ecf72521504d47e50676f1ef7f66f56ae2094416b384fd", "bytes": 358037},
-      "CoDaWork2026_Higgins_Extended_Results.docx": {"sha256": "9d8e80e2e3ac6ead0798bed7682aa7f536986981486ffdc149ffe65f2f19ad2a", "bytes": 21660},
-      "CoDaWork2026_EITT_Handout.docx": {"sha256": "017bec0c17b6a86fa5c3dfcff2c9e78deec8d276841928f3d65ca1ebea850f29", "bytes": 11424},
-      "CoDaWork2026_EITT_CoffeeTable.docx": {"sha256": "9c36ce872d43699982e3d125d991c45b664b215b33be01cb9a4d89365f17de84", "bytes": 11491},
-      "CoDaWork2026_QA_Preparation.docx": {"sha256": "9f36593cdfd8114963639dd5c6f4a088b8dec87942fbec0c47e6f3e7a2979428", "bytes": 18752},
-      "CoDaWork2026_ConversationGuide.docx": {"sha256": "1c76a1fa774166443b973137945b440406daa0b01124457a6f4714376d8293a9", "bytes": 13806},
-      "CoDaWork2026_Primer_Narayana.docx": {"sha256": "6894ef68b0dd66d57df30b6da3a3846299f2c4f883cd748e6572b13d8c31f0e5", "bytes": 11830},
-      "CoDaWork2026_Primer_Ascari.docx": {"sha256": "c6e8358368fb72918a516edba7dc4c5bcdf4ff5cfe4c73ffba57ad28b4a27977", "bytes": 11661},
-      "CoDaWork2026_Primer_VegaBaquero.docx": {"sha256": "809b1484a4ab5cb89e1aa09b68dd14838458aa73a353fccd351d7b31ee4628f0", "bytes": 11350},
-      "CoDaWork2026_Primer_KanjiradanVeetil.docx": {"sha256": "57833f514c689b5ff7c1f731480895872b4a293fbb43aa92ac7bb238dbcbf3f7", "bytes": 11735}
+      "drafts/codawork-2026/presentation/CoDaWork2026_Higgins_Talk.pptx": {"sha256": "39eb19d1bda2bf3ab5ecf72521504d47e50676f1ef7f66f56ae2094416b384fd", "bytes": 358037},
+      "drafts/codawork-2026/extended/CoDaWork2026_Higgins_Extended_Results.docx": {"sha256": "9d8e80e2e3ac6ead0798bed7682aa7f536986981486ffdc149ffe65f2f19ad2a", "bytes": 21660},
+      "drafts/codawork-2026/extended/CoDaWork2026_EITT_Handout.docx": {"sha256": "017bec0c17b6a86fa5c3dfcff2c9e78deec8d276841928f3d65ca1ebea850f29", "bytes": 11424},
+      "drafts/codawork-2026/extended/CoDaWork2026_EITT_CoffeeTable.docx": {"sha256": "9c36ce872d43699982e3d125d991c45b664b215b33be01cb9a4d89365f17de84", "bytes": 11491},
+      "drafts/codawork-2026/extended/CoDaWork2026_QA_Preparation.docx": {"sha256": "9f36593cdfd8114963639dd5c6f4a088b8dec87942fbec0c47e6f3e7a2979428", "bytes": 18752},
+      "drafts/codawork-2026/extended/CoDaWork2026_ConversationGuide.docx": {"sha256": "1c76a1fa774166443b973137945b440406daa0b01124457a6f4714376d8293a9", "bytes": 13806},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_Narayana.docx": {"sha256": "6894ef68b0dd66d57df30b6da3a3846299f2c4f883cd748e6572b13d8c31f0e5", "bytes": 11830},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_Ascari.docx": {"sha256": "c6e8358368fb72918a516edba7dc4c5bcdf4ff5cfe4c73ffba57ad28b4a27977", "bytes": 11661},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_VegaBaquero.docx": {"sha256": "809b1484a4ab5cb89e1aa09b68dd14838458aa73a353fccd351d7b31ee4628f0", "bytes": 11350},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_KanjiradanVeetil.docx": {"sha256": "57833f514c689b5ff7c1f731480895872b4a293fbb43aa92ac7bb238dbcbf3f7", "bytes": 11735}
     }
   },
 
@@ -127,6 +127,27 @@
         "Germany flags: 2011/2022-2023 → 2023-2024/2024-2025",
         "UK flags: '≈3.0' → 2.98/3.23/3.26 with year-pairs",
         "EITT handout missing foundational proofs 1-2"
+      ]
+    },
+    {
+      "version": "1.1",
+      "date": "2026-04-13",
+      "event": "ChatGPT cold-start test caught 2 bugs: stale FAST_REFRESH hash, wrong EITT char_count",
+      "errors_caught": [
+        "FAST_REFRESH hash: 64911393... → 88c885fc... (file updated in commit 9d97665, manifest not refreshed)",
+        "EITT char_count: 37 → 34 (original count was simply wrong)"
+      ]
+    },
+    {
+      "version": "1.2",
+      "date": "2026-04-13",
+      "event": "Grok adversarial test caught stale file paths — all tier_0/1/2 paths updated to match repo restructure",
+      "errors_caught": [
+        "tier_0: Energy/codawork2026_results.json → data/ember/codawork2026_results.json",
+        "tier_0: Chatgpt/higgins-unity-framework/huf_spec_v2.0.json → ai-refresh/huf_spec_v2.0.json",
+        "tier_0: HUF_FAST_REFRESH.json → ai-refresh/HUF_FAST_REFRESH.json (added folder prefix)",
+        "tier_1: All 8 briefing paths updated to include subfolder (science/quantum/, briefings/, science/eitt/)",
+        "tier_2: All 10 deliverable paths updated to include drafts/codawork-2026/ subfolders"
       ]
     }
   ]
