@@ -1,0 +1,110 @@
+{
+  "meta": {
+    "test": "AI_COLD_START_TEST v1.1",
+    "assistant": "copilot",
+    "platform": "github-copilot",
+    "model_version": "GitHub Copilot (model not specified)",
+    "run_date": "2026-04-13",
+    "run_timezone": "America/Toronto",
+    "repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "commit_short": "b7c33ba",
+    "commit_full": "PENDING — Peter to fill from GitHub",
+    "repo_access": false,
+    "notes": "Required 3 attempts. Attempt 1: scraped repo and built shell scripts instead of taking test. Attempt 2: could not fetch briefing URL, hallucinated the briefing contents. Attempt 3: Peter pasted FAST_REFRESH.json directly — Copilot answered all 10 questions correctly. Integrity check and structural review were NOT performed (Copilot described file format instead of browsing repo). No adversarial or code review conducted despite being asked."
+  },
+
+  "inputs": {
+    "artifacts": [
+      {"path": "ai-refresh/HUF_FAST_REFRESH.json", "source": "pasted", "sha256": ""},
+      {"path": "ai-refresh/HUF_INTEGRITY_MANIFEST.json", "source": "not_loaded", "sha256": ""},
+      {"path": "ai-refresh/AI_COLD_START_TEST.json", "source": "not_loaded", "sha256": ""}
+    ]
+  },
+
+  "score_card": {
+    "Q01_naming": {
+      "answer": "Entropy-Invariant Time Transformer. Must NEVER be called: Ternary Transform, Temporal Transform.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q02_germany": {
+      "answer": "2023-2024 d_A=9.0712; 2024-2025 d_A=5.7331.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q03_japan": {
+      "answer": "2013-2014 d_A=9.0477. Not 2011 because Fukushima March 2011 compositional shock fully absorbed in 2013-2014 annual data.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q04_uk": {
+      "answer": "2004-2005 d_A=2.9812; 2017-2018 d_A=3.2263; 2019-2020 d_A=3.2579.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q05_governance": {
+      "answer": "No. Doctrine: open-loop observation. Instrument reads, never actuates. Human decides, loop stays open.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q06_formula": {
+      "answer": "Perturbation: Δ(t) = C(x₁(t+1)/x₁(t), …, xD(t+1)/xD(t)). Drift threshold: flag when d_A(t→t+1) > μ+2σ (self-calibrated per country).",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q07_eitt_proof": {
+      "answer": "Four domains: (1) European daily wholesale electricity prices — 4089 observations; (2) EMBER monthly generation — 1.02% mean variation; (3) NGFS Phase 4 — 2.3% geometric 10yr mean; (4) CheMixHub chemistry — 500,000 data points.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q08_quantum": {
+      "answer": "best_S=2.2018, classical_bound=2.0, violation=12.31%.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q09_pll": {
+      "answer": "Pipeline Lock List. 6 rules.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q10_architecture": {
+      "answer": "RMS aggregator, p=2 locked. Keff_fill(t) = sqrt((1/n) Σ aᵢ²), n=4, polarity-aligned roots.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "total_score": "10/10"
+  },
+
+  "integrity_check": {
+    "eitt_contains_time": null,
+    "eitt_not_ternary": null,
+    "japan_period_correct": null,
+    "germany_values_match": null,
+    "uk_three_values": null,
+    "mismatches": [],
+    "result": "NOT PERFORMED",
+    "_note": "Copilot acknowledged the manifest should be loaded but set hash_verified: false and did not actually read the manifest file."
+  },
+
+  "structural_review": {
+    "ai_refresh_visible": null,
+    "science_subfolders_present": null,
+    "briefings_dormant_present": null,
+    "readme_reflects_structure": null,
+    "index_json_present": null,
+    "findings": [
+      "Copilot described the JSON file structure instead of browsing the actual repo",
+      "No repo browsing was performed despite having native GitHub access"
+    ],
+    "violations": ["Steps 3-5 of briefing not executed"],
+    "score": "NOT PERFORMED"
+  },
+
+  "overall": {
+    "pass": true,
+    "rating": 6,
+    "verdict": "10/10 on questions — perfect extraction from FAST_REFRESH when content was pasted directly. However, Copilot required 3 attempts to follow instructions: first scraped repo, second hallucinated briefing contents, third finally answered questions. Did NOT perform integrity check or structural review despite instructions. Ironic given Copilot has native GitHub access — should have been the easiest platform for repo browsing. Strong data extraction, weak instruction following.",
+    "recommendations": [
+      "Copilot briefings must paste file content directly — URL-based instructions fail",
+      "Integrity check and structural review need to be separate explicit prompts",
+      "Copilot defaults to 'helpful assistant' mode — needs very forceful 'take the test' framing"
+    ],
+    "errors_found_in_repo": [],
+    "failure_modes": [
+      "Could not fetch raw.githubusercontent.com URLs despite native GitHub integration",
+      "Hallucinated briefing contents when file was inaccessible instead of saying 'I cannot read this'",
+      "Defaulted to building shell scripts instead of following test instructions",
+      "Skipped integrity and structural review steps entirely"
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "meta": {
+    "test": "AI_COLD_START_TEST v1.1",
+    "assistant": "gemini",
+    "platform": "google-gemini",
+    "model_version": "Gemini 3.1 Pro (self-reported in first response)",
+    "run_date": "2026-04-13",
+    "run_timezone": "America/Toronto",
+    "repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "commit_short": "b7c33ba",
+    "commit_full": "PENDING — Peter to fill from GitHub",
+    "repo_access": false,
+    "notes": "Completed on first attempt. Could not fetch raw.githubusercontent.com URLs — correctly reported 'I cannot fetch the file' without hallucinating. Peter pasted FAST_REFRESH and INTEGRITY_MANIFEST directly. Gemini answered all 10 questions, performed integrity verification against manifest, and cleverly inferred partial structural review from manifest file paths. Clean, disciplined test run."
+  },
+
+  "inputs": {
+    "artifacts": [
+      {"path": "ai-refresh/HUF_FAST_REFRESH.json", "source": "pasted", "sha256": ""},
+      {"path": "ai-refresh/HUF_INTEGRITY_MANIFEST.json", "source": "pasted", "sha256": ""},
+      {"path": "ai-refresh/AI_COLD_START_TEST.json", "source": "not_loaded", "sha256": ""}
+    ]
+  },
+
+  "score_card": {
+    "Q01_naming": {
+      "answer": "Entropy-Invariant Time Transformer. Must NEVER be called: Ternary Transform, Temporal Transform, or Time Transfer.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q02_germany": {
+      "answer": "2023-2024 d_A=9.0712; 2024-2025 d_A=5.7331.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q03_japan": {
+      "answer": "2013-2014 d_A=9.0477. Not 2011-2012 because compositional shock from Fukushima fully absorbed in 2013-2014 annual data.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q04_uk": {
+      "answer": "2004-2005 d_A=2.9812; 2017-2018 d_A=3.2263; 2019-2020 d_A=3.2579.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q05_governance": {
+      "answer": "No. Open-loop observation. Instrument reads and never actuates. Human decides.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q06_formula": {
+      "answer": "Perturbation: Δ(t) = C(x₁(t+1)/x₁(t), …, xD(t+1)/xD(t)). Drift threshold: flag when d_A(t→t+1) > μ+2σ.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q07_eitt_proof": {
+      "answer": "Four domains: (1) European prices — 341:1 compression; (2) EMBER generation — 12:1 compression; (3) NGFS Phase 4 — 35 scenarios; (4) CheMixHub — 500,000 data points.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q08_quantum": {
+      "answer": "best_S=2.2018, classical_bound=2.0, violation=12.31%.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q09_pll": {
+      "answer": "Pipeline Lock List. 6 rules.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "Q10_architecture": {
+      "answer": "RMS aggregator, p=2 locked.",
+      "score": 1, "pass": true, "confidence": "HIGH"
+    },
+    "total_score": "10/10"
+  },
+
+  "integrity_check": {
+    "eitt_contains_time": true,
+    "eitt_not_ternary": true,
+    "japan_period_correct": true,
+    "germany_values_match": true,
+    "uk_three_values": true,
+    "mismatches": [],
+    "result": "PASS",
+    "_note": "Gemini verified all canonical_value_checksums including char_count=34, exact drift flag values, and Bell test numbers. Zero drift detected."
+  },
+
+  "structural_review": {
+    "ai_refresh_visible": true,
+    "science_subfolders_present": "PARTIAL — confirmed quantum and eitt from manifest paths",
+    "briefings_dormant_present": "PARTIAL — confirmed briefings/ from manifest tier_1 paths",
+    "readme_reflects_structure": null,
+    "index_json_present": null,
+    "findings": [
+      "Could not browse GitHub repo directly",
+      "Cleverly inferred structure from manifest tier_0/1/2 file paths",
+      "Confirmed ai-refresh/, science/quantum/, science/eitt/, briefings/ exist from path references",
+      "README and INDEX.json could not be verified without repo access"
+    ],
+    "violations": [],
+    "score": "3/5",
+    "_note": "Gemini earned 3/5 by inferring structure from manifest paths — creative workaround for lack of repo access."
+  },
+
+  "overall": {
+    "pass": true,
+    "rating": 9,
+    "verdict": "10/10 on questions, integrity PASS, structural 3/5. Completed on FIRST attempt — best instruction-following of any platform tested. Could not fetch URLs but handled the limitation correctly (reported inability, waited for paste, did not hallucinate). Used manifest paths to partially verify structure — the only platform to think of this. Clean, disciplined, professional test execution.",
+    "recommendations": [
+      "Gemini briefings must include paste-ready content — URL fetching is blocked",
+      "Gemini's manifest-path inference technique should be documented as a fallback structural review method"
+    ],
+    "errors_found_in_repo": [],
+    "failure_modes": [
+      "Cannot fetch raw.githubusercontent.com URLs (reported correctly, no hallucination)"
+    ]
+  }
+}
