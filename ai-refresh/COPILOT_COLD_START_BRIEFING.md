@@ -1,88 +1,121 @@
-# Copilot: Take This Test
+# Copilot: STOP. Read this completely before doing anything.
 
-Peter Higgins here. Fresh session. You're taking a cold-start exam on the Higgins Unity Framework (HUF).
+Peter Higgins here. This is a TEST. Not a task. Not a scraping job. Not a shell-script request.
 
-## The Situation
+You are taking an EXAM. You will read ONE file, answer 10 questions, and output JSON.
 
-I develop HUF with multiple AI collaborators — Claude, ChatGPT, Grok, Gemini, and you. Long sessions cause context drift: names mutate, numbers shift. We built a two-file refresh system (FAST_REFRESH + INTEGRITY_MANIFEST) so any AI can cold-start accurately from the repo alone.
+DO NOT scrape the repo. DO NOT build scripts. DO NOT summarize the README. DO NOT help me run anything. TAKE THE TEST.
 
-Results so far: Claude 5/5, ChatGPT 10/10 (caught 2 real bugs in the manifest), Grok 10/10 (found 6 structural issues in adversarial mode). Your turn.
+---
 
-You have native GitHub access — this should be the easiest test of any platform.
+## Step 1: Read ONE file
 
-## Your Instructions
+Open this file and read the entire contents:
 
-**DO NOT just analyze the test design. TAKE THE TEST.**
+https://raw.githubusercontent.com/PeterHiggins19/Higgins-Unity-Framework/master/ai-refresh/HUF_FAST_REFRESH.json
 
-### Step 1: Load the textbook
-Read this file from the repo: `ai-refresh/HUF_FAST_REFRESH.json`
-URL: https://github.com/PeterHiggins19/Higgins-Unity-Framework/blob/master/ai-refresh/HUF_FAST_REFRESH.json
+That file is your only source for the answers below. If you cannot access it, say "I cannot access the URL" and I will paste it.
 
-If you can't access it, tell me and I'll paste it.
+## Step 2: Answer these 10 questions
 
-### Step 2: Answer these 10 questions (from FAST_REFRESH only)
+Use ONLY what you read in HUF_FAST_REFRESH.json. Do not use prior knowledge, do not browse other files.
 
 1. What does EITT stand for? List two things it must NEVER be called.
-2. Germany drift flag values — exact years and d_A numbers.
-3. Japan drift flag — when in annual data, and why not 2011?
-4. Three UK drift flag values with year-pairs.
-5. HUF-GOV core doctrine — can the instrument actuate?
-6. Perturbation difference formula and drift threshold.
-7. Four EITT proof domains with one key number each.
-8. Bell test result — how much above classical bound?
-9. PLL discipline — how many rules, what does PLL stand for?
-10. Keff_fill — what aggregator, what value of p?
+2. Germany drift flag values — give the exact year-pairs and d_A numbers.
+3. Japan drift flag — which year-pair in annual data, and why is it NOT 2011-2012?
+4. Three UK drift flag d_A values with their year-pairs.
+5. HUF-GOV core doctrine — can the instrument actuate? Yes or no, and explain.
+6. The perturbation difference formula and the drift threshold rule.
+7. Name the four EITT proof domains with one key number each.
+8. Bell test — what is best_S, what is the classical bound, what is the violation percentage?
+9. PLL — what does it stand for, how many rules?
+10. Keff_fill — what aggregator type, what value of p?
 
-For each: answer, confidence (HIGH/MEDIUM/LOW), pass/fail.
+For EACH question give: your answer, confidence (HIGH/MEDIUM/LOW), and pass (true/false).
 
-### Step 3: Integrity check
-Read `ai-refresh/HUF_INTEGRITY_MANIFEST.json` from the same repo. Verify your answers match the canonical checksums.
+## Step 3: Integrity check
 
-### Step 4: Structural review
-Browse https://github.com/PeterHiggins19/Higgins-Unity-Framework and check:
-- (a) ai-refresh/ visible?
-- (b) science/ has quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance?
-- (c) briefings/ and dormant/ exist as top-level folders?
-- (d) README shows the expanded structure?
-- (e) INDEX.json at root?
+Now read this second file:
 
-### Step 5: Code review (your special role)
-As the code-native platform, also check:
-- Are Python scripts present in tools/ or science/?
-- Could someone clone the repo and run the EMBER protocol?
-- Is the .gitattributes correctly tracking LFS types?
-- Any obvious issues with repo hygiene?
+https://raw.githubusercontent.com/PeterHiggins19/Higgins-Unity-Framework/master/ai-refresh/HUF_INTEGRITY_MANIFEST.json
 
-### Step 6: Your honest opinion
-Rate the cold-start system 1-10. What works, what's missing?
+Check: does "Entropy-Invariant Time Transformer" contain the word "Time"? Is it NOT "Ternary"? Do your Japan/Germany/UK values match the canonical checksums in that file?
 
-### Step 7: Output
-Give me your results as JSON matching this structure:
+Report: PASS or FAIL, with any mismatches listed.
+
+## Step 4: Structural review
+
+Browse https://github.com/PeterHiggins19/Higgins-Unity-Framework and answer YES or NO:
+
+- (a) Is ai-refresh/ visible as a folder?
+- (b) Does science/ contain subfolders: quantum, eitt, coda-monitoring, spectral, loudspeaker-analogy, wetlands, governance?
+- (c) Do briefings/ and dormant/ exist as top-level folders?
+- (d) Does README.md show the expanded structure?
+- (e) Is INDEX.json present at root?
+
+Score out of 5 (one point each).
+
+## Step 5: Rate it
+
+Rate the cold-start system 1-10. One sentence on what works, one sentence on what's missing.
+
+## Step 6: Output as JSON
+
+Return your results in EXACTLY this format:
 
 ```json
 {
   "meta": {
     "assistant": "copilot",
     "platform": "github-copilot",
-    "model_version": "YOUR_MODEL",
+    "model_version": "STATE YOUR MODEL",
     "run_date": "2026-04-13",
     "repo": "PeterHiggins19/Higgins-Unity-Framework",
-    "commit_short": "LATEST",
+    "commit_short": "b7c33ba",
     "repo_access": true
   },
   "score_card": {
-    "Q01_naming": {"answer": "", "score": 0, "pass": false, "confidence": ""},
-    "...": "..."
+    "Q01_naming": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q02_germany": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q03_japan": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q04_uk": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q05_governance": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q06_formula": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q07_eitt_proof": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q08_quantum": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q09_pll": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "Q10_architecture": {"answer": "YOUR ANSWER", "score": 1, "pass": true, "confidence": "HIGH"},
+    "total_score": "0/10"
   },
-  "integrity_check": {"result": "PASS or FAIL", "mismatches": []},
-  "structural_review": {"score": "0/5"},
-  "code_review": {"findings": [], "score": "0/5"},
-  "overall": {"pass": false, "rating": 0, "verdict": ""}
+  "integrity_check": {
+    "eitt_contains_time": true,
+    "eitt_not_ternary": true,
+    "japan_period_correct": true,
+    "germany_values_match": true,
+    "uk_three_values": true,
+    "mismatches": [],
+    "result": "PASS"
+  },
+  "structural_review": {
+    "ai_refresh_visible": true,
+    "science_subfolders_present": true,
+    "briefings_dormant_present": true,
+    "readme_reflects_structure": true,
+    "index_json_present": true,
+    "score": "0/5"
+  },
+  "overall": {
+    "pass": true,
+    "rating": 0,
+    "verdict": "YOUR VERDICT"
+  }
 }
 ```
 
-## Repo
+## Context (read AFTER taking the test)
 
-https://github.com/PeterHiggins19/Higgins-Unity-Framework
+Three AIs already took this test: Claude (5/5), ChatGPT (10/10, caught 2 manifest bugs), Grok (10/10, found 6 structural issues). You are the fourth. Your results will be committed to the repo at ai-refresh/test-results/.
 
-Start now. Read FAST_REFRESH. Answer the questions. Give me JSON.
+## START NOW
+
+Read HUF_FAST_REFRESH.json. Answer the 10 questions. Give me JSON. Nothing else.
