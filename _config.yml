@@ -1,0 +1,55 @@
+# GitHub Pages configuration for Higgins Unity Framework
+# This file controls how Jekyll renders the site and what metadata
+# search engines see when indexing it.
+
+# ─── Site Identity ────────────────────────────────────────────────────────────
+title: "Higgins Unity Framework — Compositional Monitoring on the Simplex"
+description: >-
+  The Higgins Unity Framework (HUF) is an independent research project in
+  Compositional Data Analysis (CoDa). It introduces the Entropy-Invariant Time
+  Transformer (EITT) — an empirical finding that Shannon entropy is near-invariant
+  under geometric-mean decimation of compositional time series. Validated across
+  energy systems, chemistry (500k data points), hardware reliability, and climate
+  scenarios. Not a game engine. Not a Unity plugin.
+author: "Peter Higgins"
+url: "https://peterhiggins19.github.io"
+baseurl: "/Higgins-Unity-Framework"
+
+# ─── SEO & Social ────────────────────────────────────────────────────────────
+plugins:
+  - jekyll-seo-tag
+
+# Open Graph / Twitter Card metadata
+tagline: "Compositional structure as an open-loop monitoring signal"
+lang: en
+logo: # Add a logo path here if you create one
+
+# Social links (used by jekyll-seo-tag for structured data)
+social:
+  name: Peter Higgins
+  links:
+    - https://github.com/PeterHiggins19
+    - https://roguewaveaudio.com
+
+# ─── GitHub metadata ──────────────────────────────────────────────────────────
+repository: PeterHiggins19/Higgins-Unity-Framework
+
+# ─── Build settings ──────────────────────────────────────────────────────────
+theme: jekyll-theme-minimal
+markdown: kramdown
+kramdown:
+  input: GFM
+
+# Exclude non-site files from Jekyll build
+exclude:
+  - build_context.py
+  - HUF_SESSION_LOADER.txt
+  - "*.json"
+  - "*.py"
+  - "*.xlsx"
+  - "*.pptx"
+  - dormant/
+  - data/
+  - tools/
+  - briefings/
+  - ai-refresh/
