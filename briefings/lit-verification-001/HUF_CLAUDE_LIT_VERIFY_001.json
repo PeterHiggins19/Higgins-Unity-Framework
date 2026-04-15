@@ -1,0 +1,145 @@
+{
+  "_meta": {
+    "task_id": "LIT_VERIFY_001_CLAUDE",
+    "assistant_assigned": "Claude",
+    "date_issued": "2026-04-15",
+    "deadline": "2026-04-22",
+    "coordinator": "Peter Higgins",
+    "branch": "combinatorial_graph_theory",
+    "parallel_work": ["ChatGPT:CoDa_canon", "Grok:Penrose_aperiodic", "Gemini:KPZ_physics", "Copilot:arXiv_crossover"]
+  },
+
+  "context": {
+    "background": "The Higgins Unity Framework (HUF) develops the Entropy-Invariant Time Transformer (EITT): Shannon entropy of compositional data is near-invariant under geometric-mean block decimation across temporal resolutions. Four empirical proofs validate this (European electricity prices 0.18%/341:1, EMBER monthly 1.02% mean, NGFS scenarios 1.8% geometric vs 14.2% arithmetic, CheMixHub 54-82% interior pass).",
+    "recent_synthesis": "A shape/magnitude decomposition generalizes EITT: shape functionals (entropy, correlations, principal balances, affinity clusters) are invariant under EITT decimation; magnitude functionals (Aitchison variance, total variation) scale as 1/M. The Fisher-Rao vs Aitchison geometry tension dissolves because both agree infinitesimally at the Fréchet mean and EITT never leaves the infinitesimal regime.",
+    "novelty_claim_under_test": "A five-object cluster (EITT + Tutte's theorem + Hanani-Tutte theorem + Penrose tilings + KPZ universality) organized under a single shape/magnitude decomposition is novel in the literature. Each pairwise connection to EITT may also be individually novel. We are testing both.",
+    "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "key_files": [
+      "science/eitt/EITT_HESSIAN_BOUND.md",
+      "science/eitt/EITT_WHY_IT_WORKS.md (§7 shape/magnitude decomposition)",
+      "ai-refresh/HUF_FAST_REFRESH.json"
+    ]
+  },
+
+  "your_branch_assignment": {
+    "scope": "Tutte theorem + Hanani-Tutte theorem + their possible connections to compositional data analysis (CoDa), simplex geometry, sequential binary partitions (SBP), and entropy Taylor expansions",
+    "why_claude": "You have participated in developing the framework and understand the mathematical structure. You are well-positioned to judge whether a claimed combinatorial-CoDa connection is substantive or superficial. Your knowledge cutoff is late May 2025; any 2025+ papers you can access via web search should be checked but older references in your training are already known to you.",
+    "hypothesis_to_test": {
+      "H1": "Tutte's theorem (perfect matching existence) has not been explicitly connected to sequential binary partition (SBP) existence in the CoDa literature.",
+      "H2": "Hanani-Tutte theorem (parity of crossings for planarity) has not been connected to parity cancellation in the Taylor expansion of Shannon entropy under compositional averaging.",
+      "H3": "Graph-matching theoretic language is absent from the SBP theory of Egozcue & Pawlowsky-Glahn (2005 and later)."
+    }
+  },
+
+  "tasks": [
+    {
+      "task_id": "T1",
+      "type": "google_scholar_search",
+      "query": "\"Tutte theorem\" \"compositional data\"",
+      "expected_hits": "0-3",
+      "action": "For each hit, extract title/authors/year/abstract. Classify as positive/near-miss/irrelevant.",
+      "positive_definition": "Paper explicitly uses Tutte matching theorem in the context of compositional data analysis."
+    },
+    {
+      "task_id": "T2",
+      "type": "google_scholar_search",
+      "query": "\"Tutte theorem\" \"simplex\" statistics",
+      "expected_hits": "0-5",
+      "action": "Same as T1. Filter for statistical/data-analysis context, exclude pure combinatorics papers about simplices of graphs."
+    },
+    {
+      "task_id": "T3",
+      "type": "google_scholar_search",
+      "query": "\"Tutte theorem\" \"Aitchison\"",
+      "expected_hits": "0-2",
+      "action": "Direct pairing test. Any hit is significant."
+    },
+    {
+      "task_id": "T4",
+      "type": "google_scholar_search",
+      "query": "\"Hanani-Tutte\" \"compositional\"",
+      "expected_hits": "0-1",
+      "action": "Any hit is highly significant — this is the most unlikely pairing."
+    },
+    {
+      "task_id": "T5",
+      "type": "google_scholar_search",
+      "query": "\"Hanani-Tutte\" \"information geometry\"",
+      "expected_hits": "0-2",
+      "action": "Probe adjacent area. Even tangential hits are notable."
+    },
+    {
+      "task_id": "T6",
+      "type": "google_scholar_search",
+      "query": "\"graph matching\" \"sequential binary partition\"",
+      "expected_hits": "0-5",
+      "action": "Tests whether anyone has used matching-theoretic language for SBP construction."
+    },
+    {
+      "task_id": "T7",
+      "type": "google_scholar_search",
+      "query": "\"perfect matching\" \"balance basis\" \"compositional\"",
+      "expected_hits": "0-3",
+      "action": "Alternative phrasing for same concept."
+    },
+    {
+      "task_id": "T8",
+      "type": "google_scholar_search",
+      "query": "\"parity argument\" \"entropy\" Taylor expansion simplex",
+      "expected_hits": "0-5",
+      "action": "Tests Hanani-Tutte H2 hypothesis directly."
+    },
+    {
+      "task_id": "T9",
+      "type": "google_scholar_search",
+      "query": "\"odd order\" \"entropy\" \"compositional\" cancellation",
+      "expected_hits": "0-5",
+      "action": "Alternative phrasing for parity cancellation in entropy expansions."
+    },
+    {
+      "task_id": "T10",
+      "type": "paper_review",
+      "source": "Egozcue & Pawlowsky-Glahn (2005) 'Groups of parts and their balances in compositional data analysis' or any subsequent SBP paper by this group",
+      "action": "Scan for matching-theoretic language, graph-theoretic existence conditions, parity arguments, or Tutte/Hanani-Tutte citations. Report findings in 2-4 sentences.",
+      "access": "If paywall blocks, use abstract + references section only."
+    },
+    {
+      "task_id": "T11",
+      "type": "reasoning_check",
+      "action": "Based on T1-T10 results, assess hypotheses H1, H2, H3 with confidence level (HIGH/MEDIUM/LOW) and brief justification.",
+      "note": "This is the synthesis step — use judgment, not just search returns."
+    }
+  ],
+
+  "report_format": {
+    "return_as": "JSON",
+    "filename": "CLAUDE_LIT_VERIFY_001_RESULTS.json",
+    "required_fields": {
+      "_meta": "echo of input meta + date_completed",
+      "task_results": "array of {task_id, query, n_hits, top_hits: [{title, authors, year, venue, relevance}], verdict: positive|near_miss|negative}",
+      "hypothesis_assessment": {
+        "H1": {"confidence": "HIGH|MEDIUM|LOW", "supporting_tasks": "array of task_ids", "notes": "..."},
+        "H2": {"confidence": "HIGH|MEDIUM|LOW", "supporting_tasks": "array of task_ids", "notes": "..."},
+        "H3": {"confidence": "HIGH|MEDIUM|LOW", "supporting_tasks": "array of task_ids", "notes": "..."}
+      },
+      "surprise_findings": "Anything unexpected discovered along the way",
+      "recommended_next_searches": "Queries that would tighten the verification further"
+    }
+  },
+
+  "verdict_definitions": {
+    "positive": "A paper explicitly makes the claimed connection. Novelty claim for that pairing is FALSIFIED. Cite the paper clearly so the framework can acknowledge the prior work.",
+    "near_miss": "A paper is in adjacent territory but does not make the explicit connection. Note for the discussion section of any future paper. Novelty claim remains.",
+    "negative": "No relevant hits. Novelty claim for that pairing is tentatively supported."
+  },
+
+  "coordination_notes": {
+    "overlap_with_others": {
+      "ChatGPT": "ChatGPT is reviewing recent papers from Pawlowsky-Glahn / Egozcue / Tolosana-Delgado group (2020-2025) for any mention of matching theory, parity, aperiodic, universality. If they find Tutte/Hanani-Tutte mentions, flag it and reconcile.",
+      "Copilot": "Copilot is running arXiv crossover searches. If they find a math.CO × stat.ME preprint with compositional content, that overlaps with your T6 and T7."
+    },
+    "escalate_if": "Any task returns a strongly positive hit. Peter wants to know immediately so the framework can cite correctly rather than claim novelty incorrectly."
+  },
+
+  "estimated_effort": "1-2 hours of focused search + 30 minutes synthesis"
+}

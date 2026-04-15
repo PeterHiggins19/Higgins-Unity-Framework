@@ -10,6 +10,8 @@
 
 **Conference:** CoDaWork 2026, Coimbra, Portugal (June 2026). Abstract page 25.
 
+**Phase status (2026-04-15):** Phase 1 (CoDaWork 2026 submission content) marked STABLE. Phase 2 (EITT hardening for broader adoption) started the same day. Mission for Phase 2: *push EITT to pain point and protect users from pain.* See [`ai-refresh/PHASE_MARKERS.json`](ai-refresh/PHASE_MARKERS.json), [`science/eitt/EITT_PHASE_2_ROADMAP.md`](science/eitt/EITT_PHASE_2_ROADMAP.md), and [`science/eitt/EITT_SAFETY_BOUNDARIES.md`](science/eitt/EITT_SAFETY_BOUNDARIES.md).
+
 ---
 
 ## What This Project Is

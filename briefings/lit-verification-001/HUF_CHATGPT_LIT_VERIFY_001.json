@@ -1,0 +1,136 @@
+{
+  "_meta": {
+    "task_id": "LIT_VERIFY_001_CHATGPT",
+    "assistant_assigned": "ChatGPT",
+    "date_issued": "2026-04-15",
+    "deadline": "2026-04-22",
+    "coordinator": "Peter Higgins",
+    "branch": "coda_canon_review",
+    "parallel_work": ["Claude:combinatorial", "Grok:Penrose_aperiodic", "Gemini:KPZ_physics", "Copilot:arXiv_crossover"]
+  },
+
+  "context": {
+    "background": "The Higgins Unity Framework (HUF) develops the Entropy-Invariant Time Transformer (EITT): Shannon entropy of compositional data is near-invariant under geometric-mean block decimation across temporal resolutions. Four empirical proofs validate this across electricity prices, generation mixes, climate scenarios, and chemical mixtures.",
+    "recent_synthesis": "A shape/magnitude decomposition generalizes EITT beyond scalar entropy: any shape functional (entropy, correlation structure, principal balances, affinity clusters) is invariant under EITT decimation; any magnitude functional (Aitchison variance, total variation) scales as 1/M. The second-order Hessian bound has been proven under stated assumptions and checks against published proof data.",
+    "novelty_claim_under_test": "A five-object cluster (EITT + Tutte + Hanani-Tutte + Penrose + KPZ) organized under this shape/magnitude decomposition is novel in the literature. Your branch tests whether the CoDa canon already contains any of these connections, especially in recent (2020-2025) work by the founding group.",
+    "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework"
+  },
+
+  "your_branch_assignment": {
+    "scope": "Recent (2020-2025) publications by Pawlowsky-Glahn, Egozcue, Tolosana-Delgado, Ferrer-Rosell, Daunis-i-Estadella, Coenders, and related CoDa community authors. Check for mentions of: matching theory, parity arguments, aperiodic structure, self-similar scaling, universality classes, graph-theoretic existence conditions, or phase-field/phase-transition analogies applied to compositional data.",
+    "why_chatgpt": "Strong at sustained literature review with good recall across adjacent fields. Best-placed to build a matrix of recent CoDa publications and scan their abstracts and conclusions systematically for the specific concept markers we care about.",
+    "hypothesis_to_test": {
+      "H1": "The founding CoDa group (Pawlowsky-Glahn, Egozcue) has not published work connecting compositional data analysis to any of: Tutte matching, Hanani-Tutte parity, Penrose/aperiodic order, or KPZ universality, in the 2020-2025 window.",
+      "H2": "The broader CoDa community (Ferrer-Rosell et al., Tolosana-Delgado et al.) has not connected compositional time series to these structural mathematical objects either.",
+      "H3": "CoDa textbook coverage (Pawlowsky-Glahn, Egozcue & Tolosana-Delgado 2015 'Modeling and Analysis of Compositional Data') does not index or discuss any of the four mathematical objects."
+    }
+  },
+
+  "tasks": [
+    {
+      "task_id": "T1",
+      "type": "author_publication_review",
+      "target": "Juan José Egozcue",
+      "window": "2020-2025",
+      "sources": ["Google Scholar author profile", "ResearchGate", "ORCID if available"],
+      "action": "List all papers from this window. For each, note title, co-authors, venue, and whether the abstract/keywords mention any of: matching, balance existence, parity, aperiodic, quasi-crystal, self-similar, universality, KPZ, graph, topology, Penrose. Flag anything relevant."
+    },
+    {
+      "task_id": "T2",
+      "type": "author_publication_review",
+      "target": "Vera Pawlowsky-Glahn",
+      "window": "2020-2025",
+      "action": "Same as T1."
+    },
+    {
+      "task_id": "T3",
+      "type": "author_publication_review",
+      "target": "Raimon Tolosana-Delgado",
+      "window": "2020-2025",
+      "action": "Same as T1."
+    },
+    {
+      "task_id": "T4",
+      "type": "author_publication_review",
+      "target": "Berta Ferrer-Rosell and/or Germà Coenders",
+      "window": "2020-2025",
+      "action": "Same as T1. Their focus is often compositional time series, so most likely to have any time-series-related structural work."
+    },
+    {
+      "task_id": "T5",
+      "type": "textbook_index_review",
+      "target": "Pawlowsky-Glahn, Egozcue, Tolosana-Delgado (2015) 'Modeling and Analysis of Compositional Data' (Wiley)",
+      "action": "Check the book's index for entries on: matching, Tutte, Hanani-Tutte, graph theory, parity, Penrose, aperiodic, quasi-crystal, self-similar, KPZ, universality, Kardar-Parisi-Zhang, phase field, interface. Report which terms are indexed and cite the page ranges if possible.",
+      "access": "If full text unavailable, try Google Books preview or publisher excerpts."
+    },
+    {
+      "task_id": "T6",
+      "type": "proceedings_scan",
+      "target": "CoDaWork conference proceedings 2015, 2017, 2019, 2022, 2024",
+      "action": "Scan abstract collections for talks mentioning any of the four mathematical objects or their adjacent concepts. CoDaWork abstracts are usually public. Report any abstracts that even tangentially touch these structures.",
+      "url_hint": "https://www.coda-association.org hosts some proceedings; check past editions."
+    },
+    {
+      "task_id": "T7",
+      "type": "targeted_search",
+      "query": "\"compositional data\" \"universality\" OR \"universality class\"",
+      "venue": "Google Scholar",
+      "action": "Report top 20 hits, classify by relevance."
+    },
+    {
+      "task_id": "T8",
+      "type": "targeted_search",
+      "query": "\"compositional time series\" \"self-similar\" OR \"multifractal\"",
+      "venue": "Google Scholar",
+      "action": "Report top 20 hits, classify by relevance."
+    },
+    {
+      "task_id": "T9",
+      "type": "targeted_search",
+      "query": "\"Aitchison geometry\" \"phase transition\" OR \"interface\"",
+      "venue": "Google Scholar",
+      "action": "Report top 10 hits. Any positive hit is notable."
+    },
+    {
+      "task_id": "T10",
+      "type": "reasoning_check",
+      "action": "Based on T1-T9, assess H1, H2, H3 with confidence levels and short justifications. If the CoDa canon has any of these connections, the novelty claim must be downgraded."
+    }
+  ],
+
+  "report_format": {
+    "return_as": "JSON",
+    "filename": "CHATGPT_LIT_VERIFY_001_RESULTS.json",
+    "required_fields": {
+      "_meta": "echo of input meta + date_completed",
+      "author_matrices": "object with authors as keys, value is array of {title, year, venue, relevance_flags: [...], relevance_notes}",
+      "textbook_review": "object with {indexed_terms_found: [...], page_references: [...], notes}",
+      "proceedings_review": "array of {conference, year, relevant_abstracts: [...]}",
+      "search_results": "array of {task_id, query, n_hits, top_hits, verdict}",
+      "hypothesis_assessment": {
+        "H1": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H2": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H3": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."}
+      },
+      "surprise_findings": "...",
+      "recommended_next_actions": "..."
+    }
+  },
+
+  "verdict_definitions": {
+    "positive": "A CoDa-canon paper explicitly makes one of the four claimed connections. Novelty claim must be revised.",
+    "near_miss": "A paper discusses adjacent concepts (e.g., self-similarity in compositional time series, or graph structure of balances) without completing the connection. Valuable for discussion section of any future paper.",
+    "negative": "No relevant mentions found in the CoDa canon or recent work."
+  },
+
+  "coordination_notes": {
+    "overlap_with_others": {
+      "Claude": "Claude is checking Tutte / Hanani-Tutte specifically in the combinatorial-graph-theory direction. If you find any SBP paper with graph-theoretic existence conditions, flag it — that overlaps with Claude's H3.",
+      "Grok": "Grok is checking Penrose / aperiodic. If Pawlowsky-Glahn or Egozcue reference quasi-crystals or self-similar decomposition anywhere, flag it for Grok.",
+      "Gemini": "Gemini is checking KPZ. If any CoDa paper cites Kardar-Parisi-Zhang, that is a strong finding worth escalating immediately."
+    },
+    "escalate_if": "Any textbook index entry or author publication contains one of the four mathematical objects with substantive treatment (more than a passing citation)."
+  },
+
+  "estimated_effort": "2-3 hours: publication list builds can be sped up with Google Scholar author profiles, textbook review is bounded by book access, search tasks are quick."
+}

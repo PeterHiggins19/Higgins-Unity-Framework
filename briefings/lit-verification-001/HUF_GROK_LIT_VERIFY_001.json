@@ -1,0 +1,140 @@
+{
+  "_meta": {
+    "task_id": "LIT_VERIFY_001_GROK",
+    "assistant_assigned": "Grok",
+    "date_issued": "2026-04-15",
+    "deadline": "2026-04-22",
+    "coordinator": "Peter Higgins",
+    "branch": "penrose_aperiodic_selfsimilar",
+    "parallel_work": ["Claude:combinatorial", "ChatGPT:CoDa_canon", "Gemini:KPZ_physics", "Copilot:arXiv_crossover"]
+  },
+
+  "context": {
+    "background": "The Higgins Unity Framework (HUF) develops the Entropy-Invariant Time Transformer (EITT): Shannon entropy of compositional data is near-invariant under geometric-mean block decimation. Under repeated decimation the operator is exactly self-similar — the same operation applied at M=12 then again at M=12 equals M=144 up to edge effects. This self-similarity is a seed of a fractal/aperiodic argument.",
+    "recent_synthesis": "A shape/magnitude decomposition generalizes EITT: shape functionals are invariant, magnitude functionals scale as 1/M. The self-similar structure of real compositional time series — locally structured, globally non-repeating — resembles the Penrose tiling regime: aperiodic long-range order with local matching rules.",
+    "novelty_claim_under_test": "A five-object cluster (EITT + Tutte + Hanani-Tutte + Penrose + KPZ) is novel. Your branch tests the Penrose / aperiodic-order / self-similar-tiling side: has anyone connected Penrose tilings or aperiodic order theory to compositional data, simplex geometry, or compositional time series?",
+    "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "prior_grok_work": "You ran the cold-start test on this repo on 2026-04-13 and scored 10/10 on questions, 5/5 on structure. You subsequently explored higher-order Taylor tensors (orders 3-10, now in dormant/grok-tensor-exploration-apr14/). This task is more focused: literature search, not derivation."
+  },
+
+  "your_branch_assignment": {
+    "scope": "Penrose tilings, aperiodic order, quasi-crystal theory, substitution tilings, self-similar time series, multifractal analysis — and their possible connections to compositional data, simplex-valued processes, or compositional time series.",
+    "why_grok": "You have broad web access via X/Twitter and standard search engines. Penrose / aperiodic-order literature is scattered across math, physics, and materials science venues, and benefits from wide-net search rather than deep dive into a single journal family.",
+    "hypothesis_to_test": {
+      "H1": "No paper has explicitly connected Penrose tiling structure (inflation, matching rules, aperiodicity) to compositional data analysis on the simplex.",
+      "H2": "No paper has used aperiodic-order theory as a framework for compositional time series with long-range non-periodic structure.",
+      "H3": "Multifractal analysis of compositional time series exists in isolation but has not been connected to the self-similar structure of EITT geometric-mean decimation."
+    }
+  },
+
+  "tasks": [
+    {
+      "task_id": "T1",
+      "type": "google_scholar_search",
+      "query": "\"Penrose tiling\" \"compositional data\"",
+      "expected_hits": "0-2",
+      "action": "Report all hits. Any direct hit is highly significant."
+    },
+    {
+      "task_id": "T2",
+      "type": "google_scholar_search",
+      "query": "\"Penrose tiling\" \"time series\"",
+      "expected_hits": "0-5",
+      "action": "Filter for statistical / time-series-analysis context, exclude pure crystallography."
+    },
+    {
+      "task_id": "T3",
+      "type": "google_scholar_search",
+      "query": "\"aperiodic order\" \"compositional\"",
+      "expected_hits": "0-5",
+      "action": "Baake & Grimm's framework for aperiodic order meets CoDa — probe."
+    },
+    {
+      "task_id": "T4",
+      "type": "google_scholar_search",
+      "query": "\"aperiodic\" \"simplex\" statistics",
+      "expected_hits": "0-10",
+      "action": "Broader net. Filter aggressively for statistical context; simplex is overloaded terminology."
+    },
+    {
+      "task_id": "T5",
+      "type": "google_scholar_search",
+      "query": "\"quasi-crystal\" \"time series\" OR \"data analysis\"",
+      "expected_hits": "0-10",
+      "action": "Quasi-crystals are the physical realization of Penrose-like order. Any statistical application is notable."
+    },
+    {
+      "task_id": "T6",
+      "type": "google_scholar_search",
+      "query": "\"substitution tiling\" statistics OR \"data analysis\"",
+      "expected_hits": "0-5",
+      "action": "Substitution tilings are the generalized Penrose framework. Applications to data are rare."
+    },
+    {
+      "task_id": "T7",
+      "type": "google_scholar_search",
+      "query": "\"self-similar\" \"compositional time series\"",
+      "expected_hits": "0-10",
+      "action": "Tests H3. Self-similarity in compositional time series specifically — the 2019-2025 window is most relevant."
+    },
+    {
+      "task_id": "T8",
+      "type": "google_scholar_search",
+      "query": "\"multifractal\" \"compositional data\" OR \"Aitchison\"",
+      "expected_hits": "0-10",
+      "action": "Multifractal analysis of CoDa. Report any papers and whether they connect to self-similar aggregation operators like geometric-mean decimation."
+    },
+    {
+      "task_id": "T9",
+      "type": "google_scholar_search",
+      "query": "\"inflation rule\" OR \"inflation operator\" statistics data",
+      "expected_hits": "0-5",
+      "action": "Penrose's inflation operation has a statistical analogue in block averaging. Test direct."
+    },
+    {
+      "task_id": "T10",
+      "type": "book_reference_check",
+      "target": "Baake & Grimm (2013) 'Aperiodic Order, Volume 1: A Mathematical Invitation'",
+      "action": "Check index for entries on: statistics, data analysis, compositional, simplex, time series, entropy. Report which terms appear and in what context. Most likely zero hits — but confirm.",
+      "access": "Free chapters available from Cambridge University Press website."
+    },
+    {
+      "task_id": "T11",
+      "type": "reasoning_check",
+      "action": "Based on T1-T10, assess hypotheses H1, H2, H3 with confidence levels and short justifications. Flag any result that could unseat the novelty claim."
+    }
+  ],
+
+  "report_format": {
+    "return_as": "JSON",
+    "filename": "GROK_LIT_VERIFY_001_RESULTS.json",
+    "required_fields": {
+      "_meta": "echo of input meta + date_completed",
+      "task_results": "array of {task_id, query, n_hits, top_hits: [{title, authors, year, venue, relevance}], verdict}",
+      "book_reference_result": "object with {terms_found, page_references, notes}",
+      "hypothesis_assessment": {
+        "H1": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H2": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H3": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."}
+      },
+      "surprise_findings": "Anything unexpected — particularly any mathematical physics paper using simplex-valued aperiodic structures",
+      "recommended_next_searches": "Queries that would tighten verification"
+    }
+  },
+
+  "verdict_definitions": {
+    "positive": "A paper explicitly connects Penrose/aperiodic/quasi-crystal structure to CoDa or compositional time series. Flag for immediate escalation.",
+    "near_miss": "A paper treats compositional time series as self-similar or multifractal, without invoking aperiodic-order theory proper. Useful context for any future framework paper.",
+    "negative": "No meaningful hits — the cluster connection remains novel on this branch."
+  },
+
+  "coordination_notes": {
+    "overlap_with_others": {
+      "ChatGPT": "ChatGPT is scanning the CoDa canon for aperiodic/self-similar mentions. If they find something in Pawlowsky-Glahn or Egozcue's recent work, reconcile with your T8 (multifractal CoDa search).",
+      "Gemini": "Gemini is checking KPZ universality. Aperiodic-order theory and KPZ universality touch in random-tiling theory (arctic circle phenomena, domino tilings). If you see anything about random tilings or arctic circles in statistical-physics journals, flag for Gemini."
+    },
+    "escalate_if": "Any positive hit. Peter wants to know immediately if the Penrose connection has already been made."
+  },
+
+  "estimated_effort": "2 hours focused search + 30 minutes synthesis. Aperiodic-order literature is scattered so expect some search dead-ends."
+}

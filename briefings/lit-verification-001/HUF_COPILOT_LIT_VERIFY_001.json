@@ -1,0 +1,154 @@
+{
+  "_meta": {
+    "task_id": "LIT_VERIFY_001_COPILOT",
+    "assistant_assigned": "Copilot",
+    "date_issued": "2026-04-15",
+    "deadline": "2026-04-22",
+    "coordinator": "Peter Higgins",
+    "branch": "arxiv_crossover_preprints",
+    "parallel_work": ["Claude:combinatorial", "ChatGPT:CoDa_canon", "Grok:Penrose_aperiodic", "Gemini:KPZ_physics"]
+  },
+
+  "context": {
+    "background": "The Higgins Unity Framework (HUF) develops the Entropy-Invariant Time Transformer (EITT): Shannon entropy of compositional data is near-invariant under geometric-mean block decimation. A five-object cluster (EITT + Tutte + Hanani-Tutte + Penrose + KPZ) is claimed novel. Four other AIs are verifying pairwise via Google Scholar and publication-matrix methods. Your branch covers arXiv preprints and interdisciplinary crossover work, which is where novel combinations tend to appear before they reach journals.",
+    "recent_synthesis": "A shape/magnitude decomposition: shape functionals (entropy, correlations, balances, affinity clusters) are invariant under EITT decimation; magnitude functionals (Aitchison variance, total variation) scale as 1/M. Second-order Hessian bound is proven under mixing assumptions.",
+    "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework"
+  },
+
+  "your_branch_assignment": {
+    "scope": "arXiv preprints, specifically cross-listed papers (two primary categories) where the combinatorial, mathematical-physics, probability, or compositional-statistics communities might have overlapping interests. Also other preprint servers (SSRN, bioRxiv for ecological CoDa, etc.) if relevant.",
+    "why_copilot": "Strong Bing-integrated search and good at structured-query preprint discovery. arXiv has a specific query syntax your search is well-suited to.",
+    "hypothesis_to_test": {
+      "H1": "No arXiv preprint explicitly introduces EITT-like entropy-invariance of compositional data under geometric-mean decimation.",
+      "H2": "No arXiv preprint connects graph-matching theory (Tutte/Hanani-Tutte) to sequential binary partitions or balance theory in CoDa.",
+      "H3": "No arXiv preprint connects Penrose tilings or aperiodic-order theory to compositional time series.",
+      "H4": "No arXiv preprint connects KPZ universality or phase-field methods to compositional drift or simplex-valued time series analysis.",
+      "H5": "The cross-category arXiv listings (math.CO + stat.ME, math-ph + stat.ME, math.PR + stat.ME for compositional subjects) are sparse and do not contain any of the connections above."
+    }
+  },
+
+  "tasks": [
+    {
+      "task_id": "T1",
+      "type": "arxiv_search",
+      "query": "EITT OR \"entropy-invariant time transformer\"",
+      "venue": "arxiv.org",
+      "expected_hits": "0 (this is Peter's term, should not appear unless someone scraped the repo)",
+      "action": "Confirm no preprints use this term."
+    },
+    {
+      "task_id": "T2",
+      "type": "arxiv_search",
+      "query": "ti:\"compositional\" AND (abs:\"Tutte\" OR abs:\"matching theorem\")",
+      "venue": "arxiv.org",
+      "action": "Check if any compositional-focused preprint invokes Tutte's matching."
+    },
+    {
+      "task_id": "T3",
+      "type": "arxiv_search",
+      "query": "ti:\"compositional\" AND abs:\"Hanani-Tutte\"",
+      "venue": "arxiv.org",
+      "expected_hits": "0",
+      "action": "Any hit is highly significant."
+    },
+    {
+      "task_id": "T4",
+      "type": "arxiv_search",
+      "query": "ti:\"compositional data\" AND (abs:\"Penrose\" OR abs:\"aperiodic\" OR abs:\"quasi-crystal\")",
+      "venue": "arxiv.org",
+      "action": "Check for Penrose / aperiodic order connections."
+    },
+    {
+      "task_id": "T5",
+      "type": "arxiv_search",
+      "query": "ti:\"compositional\" AND (abs:\"KPZ\" OR abs:\"Kardar-Parisi-Zhang\" OR abs:\"universality class\")",
+      "venue": "arxiv.org",
+      "action": "Check for KPZ / universality connections."
+    },
+    {
+      "task_id": "T6",
+      "type": "arxiv_cross_listing",
+      "query": "math.CO AND stat.ME with compositional content",
+      "action": "Browse arXiv listings in math.CO cross-listed to stat.ME. Report any preprints touching compositional, simplex, balance, or log-ratio themes. This is where combinatorial-statistics bridges appear."
+    },
+    {
+      "task_id": "T7",
+      "type": "arxiv_cross_listing",
+      "query": "math-ph AND stat.ME with compositional or simplex content",
+      "action": "Same as T6 for mathematical physics + statistical methodology crossover. KPZ-CoDa bridges would live here."
+    },
+    {
+      "task_id": "T8",
+      "type": "arxiv_cross_listing",
+      "query": "math.PR AND stat.ME with simplex or Aitchison content",
+      "action": "Probability + statistics crossover. Wasserstein flows, random simplex processes."
+    },
+    {
+      "task_id": "T9",
+      "type": "cited_by_search",
+      "target": "Egozcue, Pawlowsky-Glahn, Mateu-Figueras, Barceló-Vidal (2003) 'Isometric logratio transformations for compositional data analysis'",
+      "venue": "Google Scholar + arXiv",
+      "action": "Browse papers citing this foundational ilr paper. Filter for any that extend into graph theory, topology, universality classes, or aperiodic structures. This is a highly-cited paper and will have many extensions — focus on recent (2023-2025) ones."
+    },
+    {
+      "task_id": "T10",
+      "type": "bioRxiv_search",
+      "query": "\"compositional data\" \"time series\" scale-invariant OR self-similar",
+      "venue": "bioRxiv.org",
+      "action": "Ecological / microbiome CoDa preprints often explore scaling properties. Check for any aperiodic or universality framings."
+    },
+    {
+      "task_id": "T11",
+      "type": "reasoning_check",
+      "action": "Synthesize T1-T10. Classify any positive hits and assess H1-H5."
+    }
+  ],
+
+  "arxiv_query_syntax_help": {
+    "basic": "Use arxiv.org/find or arxiv.org/search",
+    "title_field": "ti:",
+    "abstract_field": "abs:",
+    "category_filter": "cat:math.CO OR cat:stat.ME",
+    "cross_listing": "cat:math.CO+AND+cat:stat.ME",
+    "date_range": "Use the advanced search UI for 2020-2025 filter",
+    "example_full_query": "ti:compositional+AND+(abs:Penrose+OR+abs:aperiodic)+AND+cat:stat.ME"
+  },
+
+  "report_format": {
+    "return_as": "JSON",
+    "filename": "COPILOT_LIT_VERIFY_001_RESULTS.json",
+    "required_fields": {
+      "_meta": "echo of input meta + date_completed",
+      "task_results": "array of {task_id, query, venue, n_hits, top_hits: [{title, authors, year, arxiv_id, categories, relevance}], verdict}",
+      "cited_by_scan_result": "notes on any relevant extensions of Egozcue 2003 ilr paper",
+      "hypothesis_assessment": {
+        "H1": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H2": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H3": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H4": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
+        "H5": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."}
+      },
+      "cross_listings_summary": "Count of compositional-adjacent preprints in each cross-category pair",
+      "surprise_findings": "...",
+      "recommended_next_searches": "..."
+    }
+  },
+
+  "verdict_definitions": {
+    "positive": "A preprint explicitly makes one of the claimed connections. Cite and escalate.",
+    "near_miss": "A preprint is in the right neighborhood but does not complete the connection (e.g., compositional time series + self-similarity without aperiodic-order framing). Useful for discussion.",
+    "negative": "No relevant preprints — novelty claim supported by arXiv evidence."
+  },
+
+  "coordination_notes": {
+    "overlap_with_others": {
+      "Claude": "Tutte / Hanani-Tutte combinatorial — your T2, T3, T6 overlap. If you find something, share before Claude duplicates search.",
+      "ChatGPT": "Recent CoDa canon — if you find Egozcue-group preprints, flag for ChatGPT's author review.",
+      "Grok": "Penrose / aperiodic — your T4 overlaps. Coordinate on any positive.",
+      "Gemini": "KPZ / phase-field — your T5, T7 overlap heavily. math-ph + stat.ME crossover is jointly owned."
+    },
+    "escalate_if": "Any positive hit across the five branches. arXiv often has the earliest evidence of novelty challenges because preprints appear before journal publication."
+  },
+
+  "estimated_effort": "2-3 hours. arXiv search is fast but comprehensive coverage requires multiple query formulations. Cited-by scan for Egozcue 2003 is the longest single task."
+}

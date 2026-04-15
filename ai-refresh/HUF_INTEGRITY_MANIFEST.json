@@ -1,8 +1,9 @@
 {
   "_meta": {
     "type": "HUF-INTEGRITY-MANIFEST",
-    "version": "1.2",
+    "version": "1.6",
     "created": "2026-04-13",
+    "last_updated": "2026-04-15",
     "author": "Peter Higgins / Claude",
     "purpose": "Hash-verified integrity layer for HUF corpus. Load AFTER HUF_FAST_REFRESH.json. Use to detect file corruption, unauthorized edits, or version drift across sessions.",
     "protocol": "Any AI loading the HUF context should: (1) Read HUF_FAST_REFRESH.json for concepts. (2) Read this file. (3) Spot-check 2-3 file hashes. If any hash mismatches, flag it and re-read the source file before proceeding.",
@@ -181,6 +182,36 @@
         "New file: science/HUF_Cross_Disciplinary_Value_Matrix.md — Gemini value matrix reference",
         "build_context.py --mode science now picks up 54 files (~232k tokens)",
         "TODO: Compute SHA-256 hashes for all new files after commit"
+      ]
+    },
+    {
+      "version": "1.5",
+      "date": "2026-04-14",
+      "event": "Grok cold-start test (10/10 questions, 5/5 structure) + tensor-exploration session. Second-order Hessian bound promoted to theorem. Speculative higher-order extensions moved to dormant.",
+      "changes": [
+        "New file: science/eitt/EITT_HESSIAN_BOUND.md — rigorous second-order theorem with assumptions, proof sketch, and empirical check table against published EITT proofs",
+        "New file: science/eitt/EITT_WHY_IT_WORKS.md — conceptual synthesis answering the 'why does it work' question. CLT + concavity picture, six-variable decomposition, heuristic product form, six falsifiable predictions, loose ends noted for later. Updated same day with §7 'Shape/Magnitude Decomposition' which generalizes EITT from scalar-entropy invariance to a class invariance over all shape functionals and resolves the Fisher-Rao loose end (both geometries agree infinitesimally; EITT never leaves the infinitesimal regime)",
+        "New dormant branch: dormant/grok-tensor-exploration-apr14/ with README, tensor_escalation.md, adversarial_review.md, applications_brainstorm.md",
+        "Updated: dormant/README.md — new branch registered with reawaken conditions",
+        "Grok scored 10/10 on content questions and 5/5 on structural review — fourth AI to pass cold-start test (after Claude, ChatGPT, Gemini)",
+        "Grok caught and correctly diagnosed a live GitHub CDN desync on ai-refresh/ folder (Fastly cache lag, ~20 min post-commit)",
+        "Grok's own adversarial review correctly flagged: Taylor series is asymptotic not convergent past order 2; Shannon vs von Neumann conflation in many-body analogy; fabricated number in stadium-billiard example; Bell result on deterministic NGFS is correlation structure not quantum inequality violation",
+        "Open TODO: extend chem_eitt_pipeline.py with measure_aitchison_variance(X) -> (V, sigma_A2, delta_min) so EITT_HESSIAN_BOUND.md empirical check table can be populated with measured rather than back-computed values",
+        "Open TODO: edit science/quantum/Book2_HUF_QTM_Toolkit_Results.md to frame S=2.2018 as correlation-structure diagnostic rather than quantum inequality violation",
+        "TODO: Compute SHA-256 hashes for new files after commit"
+      ]
+    },
+    {
+      "version": "1.6",
+      "date": "2026-04-15",
+      "event": "Phase 1 flag set (CoDaWork 2026 content STABLE). Phase 2 started (EITT hardening for broader adoption). Literature verification briefings issued to five-AI collective. Safety boundaries framework created.",
+      "changes": [
+        "New file: ai-refresh/PHASE_MARKERS.json \u2014 machine-readable phase record. P01 marked STABLE with explicit exit criteria met; P02 ACTIVE with two-pole mission (reveal hidden structure, establish safety fences); P03 FUTURE (peer-reviewed consolidation)",
+        "New file: science/eitt/EITT_PHASE_2_ROADMAP.md \u2014 seven-track hardening plan: direct measurement tooling, hydrology validation, second external domain, safety documentation, phase-field visualization, literature verification follow-up, package release preparation",
+        "New file: science/eitt/EITT_SAFETY_BOUNDARIES.md \u2014 living document articulating when NOT to use EITT. Covers three core assumptions (A1 interior, A2 finite variance, A3 mixing), failure modes by assumption, sample-size requirements, domain-specific red flags with emphasis on clinical/biomedical misuse (breast cancer microbiome study misuse example), sanity-check checklist, responsible-use and inappropriate-use examples",
+        "New folder: briefings/lit-verification-001/ with five per-AI task briefings (Claude/ChatGPT/Grok/Gemini/Copilot) + README coordinating the distributed novelty check of the five-object cluster (EITT + Tutte + Hanani-Tutte + Penrose + KPZ)",
+        "Mission statement for Phase 2 recorded: 'Push EITT to pain point and protect users from pain'",
+        "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_1_briefings"
       ]
     }
   ]
