@@ -1,7 +1,7 @@
 {
   "_meta": {
     "type": "HUF-INTEGRITY-MANIFEST",
-    "version": "1.6",
+    "version": "2.0",
     "created": "2026-04-13",
     "last_updated": "2026-04-15",
     "author": "Peter Higgins / Claude",
@@ -212,6 +212,58 @@
         "New folder: briefings/lit-verification-001/ with five per-AI task briefings (Claude/ChatGPT/Grok/Gemini/Copilot) + README coordinating the distributed novelty check of the five-object cluster (EITT + Tutte + Hanani-Tutte + Penrose + KPZ)",
         "Mission statement for Phase 2 recorded: 'Push EITT to pain point and protect users from pain'",
         "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_1_briefings"
+      ]
+    },
+    {
+      "version": "1.7",
+      "date": "2026-04-15",
+      "event": "First lit-verification return (Grok, Penrose/aperiodic branch). Apr 15 metallic-ratio escalation triaged and archived.",
+      "changes": [
+        "New file: briefings/lit-verification-001/GROK_LIT_VERIFY_001_RESULTS.json \u2014 Grok's completed Penrose branch. Verdict: Novel. 0 positive hits, 3 near-misses (Maz\u00e1\u010d 2023, Irwin 2017, Physics StackExchange). Schema differs slightly from briefing spec but substance is clean. Ready for collation 2026-04-24",
+        "New file: dormant/grok-tensor-exploration-apr14/apr15_metallic_ratio_escalation.md \u2014 second dormant installment. Triages the April 15 Grok session that extended past the lit-verification task into metallic-ratio derivations, cut-and-project framing, and 'EITT-KPZ scaling exponent' claims. Keep: lit verification result, related-work paragraph, phrase 'entropy-invariant coarse-graining on the simplex' as consistent repo descriptor. Store: metallic-ratio pattern-continuation (one observation shown four ways, not four results), category error between deterministic CLT rate and KPZ universality exponent, speculative quasicrystal physics applications, Fibonacci/Pell corollary (restatement of \u00a77 shape/magnitude decomposition, not new content)",
+        "Grok remains the first of five AIs to complete the lit-verification task. ChatGPT, Gemini, Claude, Copilot branches still pending",
+        "No main-repo claims advanced based on Apr 15 escalation. Phase 2 guardrail ('waffle gets divided into keep and store') operating as designed"
+      ]
+    },
+    {
+      "version": "1.8",
+      "date": "2026-04-15",
+      "event": "Master Lineage established. RWA\u2192H1\u2192HUF arc formally recorded after review of the complete Claude CoWorker folder revealed existing narrative (THE_LINEAGE.md), technical bridge (ORIGIN_BRIDGE_DADC_TO_MC4.md), biographical foundation (BIO-001), and primary sources (DADC-DADI paper, Higgins Operator H1 paper) that preexisted the current repo.",
+      "changes": [
+        "New file: ai-refresh/MASTER_LINEAGE.json \u2014 machine-readable record of the arc of discovery from the Isotropic Principle through DADC-DADI-ADAC, BTL, Higgins Operator H1, ratio-state monitoring, to HUF/EITT. Includes the three layers (screwdriver/math book/alliance), invariants carried forward (6.02 dB, 115 Hz\u00b7m, Isotropic Principle, paired measurement, inert probe, GOV/CLS fork, Banach convergence/stationarity), and cross-reference map connecting every current-repo document to its RWA ancestor",
+        "Updated: ai-refresh/PHASE_MARKERS.json operating_principles \u2014 added 'past_is_strength' as the first principle, updated 'cold_start_testable' to reference MASTER_LINEAGE, added 'lineage_cross_reference' as a maintenance rule for future additions",
+        "Acknowledged in lineage: the founding narrative THE_LINEAGE.md (already in briefings/), the technical bridge ORIGIN_BRIDGE_DADC_TO_MC4.md (already in science/coda-monitoring/), the biographical foundation HUF_Biographical_Foundation_v1.0.json (already in briefings/) \u2014 MASTER_LINEAGE.json is the index that ties them together with primary-source pointers to the RWA folder outside the repo",
+        "Founding principle locked into operating_principles: 'The past is our strength and our future.' Every new document promoted to main repo should identify its RWA/H1/earlier-HUF ancestor via MASTER_LINEAGE.json cross_reference_map, or explicitly note the absence of one",
+        "Recognition that the Apr 15 Grok escalation's 'cut-and-project analogue' framing had legitimate grounding in DADC's non-contact diffraction work (not just pattern-matching, as Claude initially triaged) \u2014 the shape/magnitude structure in EITT_WHY_IT_WORKS.md \u00a77 was already present in DADC's gain-apportionment-plus-corner-frequency split from December 2024. The triage is not revised (higher-order metallic-ratio escalation still goes to dormant) but the DADC ancestor is now properly cited in MASTER_LINEAGE.json",
+        "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_0 or tier_1"
+      ]
+    },
+    {
+      "version": "1.9",
+      "date": "2026-04-15",
+      "event": "Public RWA repo (https://github.com/PeterHiggins19/Rogue-Wave-Audio) reviewed via Chrome browser tools (github.com blocked for WebFetch). MASTER_LINEAGE.json updated with public-repo state, concept-branch map, and observations.",
+      "changes": [
+        "Updated ai-refresh/MASTER_LINEAGE.json: added 'public_rwa_repo' section (URL, default branch master, initial commit 2026-03-11, structure, no cross-referencing to HUF)",
+        "Updated ai-refresh/MASTER_LINEAGE.json: added 'rwa_concept_branches' section mapping the five RWA concept folders (ai-reports, entropix, regimes, tensor-acoustic-forge, v-infinity-core) to HUF counterparts where they exist. Key mappings: 'entropix' is likely conceptual ancestor of EITT; 'regimes' is direct ancestor of HUF regime vocabulary; 'v-infinity-core' is direct ancestor of HUF_VCore_Stack documentation",
+        "Updated ai-refresh/MASTER_LINEAGE.json: added 'observations_from_public_repo_review' section with findings and recommended adjustments",
+        "Updated root README.md: added 'Engineering sibling: Rogue Wave Audio' link to the Lineage paragraph",
+        "Findings noted (not errors, state observations): H1 paper is in local folder but NOT in public RWA repo; CITATION.cff has repository-code URL typo (peterhiggins/RWA should be PeterHiggins19/Rogue-Wave-Audio); RWA public repo is at initial commit only (2026-03-11), not current with local March-April 2026 work",
+        "No changes made to the public RWA repo. All observations recorded as Peter's-call items in MASTER_LINEAGE.json"
+      ]
+    },
+    {
+      "version": "2.0",
+      "date": "2026-04-15",
+      "event": "Canonical HUF-GOV definition locked in. Coimbra welcome package built. All 4 remaining per-AI lit-verification briefings updated with shared addendum. Version bump to 2.0 marks transition from Phase 1 stabilization to Phase 2 external-readiness posture.",
+      "changes": [
+        "NEW: HUF-GOV canonical definition promoted to HUF_FAST_REFRESH.json identity section with five-clause unpacking: 'HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.' \u2014 Peter Higgins, 2026-04-15",
+        "NEW: science/governance/HUF_GOV_CANONICAL_DEFINITION.md \u2014 full unpacking of the five clauses (A tool / Verifiably clean usable output / Known degree of certainty / Open to interpretation / Open to modification), with explicit discussion of how the definition resolves the unfalsifiability concern around HUF-GOV",
+        "NEW: briefings/lit-verification-001/LIT_VERIFY_001_ADDENDUM.json \u2014 shared status update for 4 remaining branches (Claude, ChatGPT, Gemini, Copilot). Carries news of Grok's completed branch, canonical definition, shape/magnitude decomposition, Master Lineage, Coimbra welcome package",
+        "UPDATED: 4 per-AI briefings (HUF_CLAUDE/CHATGPT/GEMINI/COPILOT_LIT_VERIFY_001.json) touched with addendum_issued + addendum_file + addendum_note fields referencing the addendum. Core task unchanged; context deepened",
+        "NEW: briefings/coimbra-welcome-package/ folder with 6 files \u2014 README (index), 00_WELCOME (invitation + canonical definition), 01_SUCCESS_AND_FAILURE (validated successes + documented failures), 02_WORK_VERIFICATION_POSSIBILITIES (three-category status board), 03_BEST_USE_CASES (tier-ranked domain fit with sample-size guidance), 04_MEET_THE_COLLECTIVE (5 AI allies with engagement URLs), 05_STANDARDIZATION_BENEFITS (individual + community + scale benefits)",
+        "The welcome package structure is designed for a new CoDa practitioner arriving at HUF cold. Entry point: briefings/coimbra-welcome-package/README.md",
+        "Version bumped 1.9 \u2192 2.0 because this set of changes operationalizes the tool's external posture \u2014 the repo is now ready to be handed to a stranger who has never spoken to Peter",
+        "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_0 / tier_1 / tier_2"
       ]
     }
   ]

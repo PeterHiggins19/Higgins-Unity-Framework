@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "type": "LIT-VERIFY-001-ADDENDUM",
+    "version": "1.0",
+    "date_issued": "2026-04-15",
+    "coordinator": "Peter Higgins",
+    "purpose": "Shared status update for the four remaining lit-verification branches (Claude, ChatGPT, Gemini, Copilot). Grok's branch returned clean on 2026-04-15 with verdict Novel for Penrose x CoDa and three properly classified near-misses. This addendum brings the remaining branches current on framework developments since the original briefings were issued earlier on 2026-04-15."
+  },
+
+  "addressed_to": [
+    "HUF_CLAUDE_LIT_VERIFY_001.json",
+    "HUF_CHATGPT_LIT_VERIFY_001.json",
+    "HUF_GEMINI_LIT_VERIFY_001.json",
+    "HUF_COPILOT_LIT_VERIFY_001.json"
+  ],
+
+  "reason_for_addendum": "Between briefing issuance and deadline, substantive framework work happened that affects how the literature verification should be interpreted and reported. The core task is unchanged \u2014 run the assigned searches, return results in the specified JSON schema, flag positive hits immediately. But the context in which a positive or negative hit will be interpreted has deepened. This addendum catches you up.",
+
+  "status_updates": [
+    {
+      "item": "Grok branch complete",
+      "date": "2026-04-15",
+      "detail": "Grok's Penrose / aperiodic-order branch returned Novel with three near-misses properly classified (Maz\u00e1\u010d 2023, Irwin 2017, Physics StackExchange discussion). Result filed at briefings/lit-verification-001/GROK_LIT_VERIFY_001_RESULTS.json. No positive hits. Three near-misses are useful for related-work citations in any future paper.",
+      "implication": "You do not need to re-verify the Penrose / aperiodic branch. If your searches overlap with it (e.g., multifractal compositional analysis for ChatGPT's H3), your finding is a cross-check; report it as such."
+    },
+    {
+      "item": "Canonical HUF-GOV definition locked in",
+      "date": "2026-04-15",
+      "detail": "The tool's core design statement is now canonically captured: 'HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.' See science/governance/HUF_GOV_CANONICAL_DEFINITION.md for the five-clause unpacking.",
+      "implication": "When assessing novelty, the framing matters. HUF-GOV is a tool, not a theory. Prior-art questions should ask: has anyone built a verifiably clean, bounded-certainty, interpretation-open, modification-open compositional-monitoring tool before? Not just: has anyone described similar mathematics? The two questions have different answers."
+    },
+    {
+      "item": "Shape/magnitude decomposition is the organizing principle",
+      "date": "2026-04-14",
+      "detail": "science/eitt/EITT_WHY_IT_WORKS.md \u00a77 establishes that HUF's EITT is the canonical operation separating shape functionals (invariant under geometric-mean decimation) from magnitude functionals (scale as 1/M). The Fisher-Rao vs Aitchison geometry tension dissolves because EITT operates in the infinitesimal regime where both geometries agree. This is arguably the framework's central organizing claim going forward.",
+      "implication": "Novelty checks should include the shape/magnitude framing as a search target, not just EITT-entropy-invariance. If prior work separates shape from magnitude in compositional analysis under similar language, that is relevant prior art even if the term 'EITT' does not appear."
+    },
+    {
+      "item": "Master Lineage established",
+      "date": "2026-04-15",
+      "detail": "ai-refresh/MASTER_LINEAGE.json documents the arc from Rogue Wave Audio's DADC-DADI-ADAC (Dec 2024) through the Higgins Operator H1 (Feb 2026) to HUF/EITT (Apr 2026). The compositional mathematics was discovered empirically in acoustic engineering before it was formalized. The engineering origin is not peripheral \u2014 it is the framework's foundation.",
+      "implication": "When evaluating novelty, remember the RWA prior art is Peter's own. Claims of DADC-style apportionment, of 'inert measurement,' of paired-measurement doctrine exist in Rogue Wave Audio materials dating to December 2024 and are public at github.com/PeterHiggins19/Rogue-Wave-Audio. This is self-citation territory, not someone else's prior art, but the lineage should be acknowledged clearly in any novelty finding."
+    },
+    {
+      "item": "RWA-HUF public cross-linkage in preparation",
+      "date": "2026-04-15",
+      "detail": "A rwa-update/ folder is prepared for push to the public RWA repo. It will add LINEAGE.md, HUF_RELATIONSHIP.json (reciprocal to MASTER_LINEAGE), the Higgins Operator H1 paper, and a BTL Advanced ODL lab study proposal. After the push, both public repos will have visible reciprocal links.",
+      "implication": "Arxiv searches for 'Higgins Operator' or cross-references between rogue-wave-audio and higgins-unity-framework may return results after the push. Timing-wise, the lit-verification deadline (2026-04-22) may overlap with the push, so keep an eye on recent commits if your branch involves GitHub searches."
+    },
+    {
+      "item": "Phase 1 marked STABLE; Phase 2 ACTIVE",
+      "date": "2026-04-15",
+      "detail": "CoDaWork 2026 submission content is phase-complete. Phase 2 mission: push EITT to pain point and protect users from pain. Seven work tracks including measurement tooling, hydrology validation, safety documentation, package release preparation. See science/eitt/EITT_PHASE_2_ROADMAP.md and ai-refresh/PHASE_MARKERS.json.",
+      "implication": "The verdict from this lit-verification is a Phase 2 dependency. A 'Novel' consolidated verdict enables the structural-observations paper track; a 'Partially novel' verdict redirects to restricted-scope claims; a 'Not novel' verdict shifts to applied-methodology framing. Your branch's result contributes to that decision, so the verdict field in your results JSON matters."
+    },
+    {
+      "item": "Coimbra welcome package in preparation",
+      "date": "2026-04-15",
+      "detail": "Peter is assembling a comprehensive welcome package for CoDaWork 2026 (Coimbra, June 2026). Includes instruction manual, safety manual, best use cases, traceability, certification standards, maintenance instructions, and a 'meet the collective' document introducing the five AIs to the CoDa community. Your branch's literature verification is one of the foundational credibility pieces for that package.",
+      "implication": "Cite well, classify verdicts carefully, and err on the side of honesty in near-miss classification. The package will be read by CoDa researchers who will evaluate the framework's claim to novelty directly. A positive hit reported honestly is more valuable than an overconfident negative. A near-miss correctly classified is useful for the related-work section in any future publication."
+    }
+  ],
+
+  "unchanged": [
+    "The core task in each branch's original briefing is unchanged. Execute the searches as specified.",
+    "The deadline remains 2026-04-22.",
+    "The return schema is unchanged. File your results as HUF_<ASSISTANT>_LIT_VERIFY_001_RESULTS.json in briefings/lit-verification-001/.",
+    "The escalation rule remains: if any positive hit is found, flag immediately rather than waiting for the deadline."
+  ],
+
+  "coordination_notes": {
+    "if_your_search_touches_an_adjacent_branch": "Cross-check against Grok's filed results (Penrose / aperiodic). If you find a paper Grok missed or a classification Grok got wrong, flag it in a surprise_findings section of your results.",
+    "if_you_find_positive_hits_touching_RWA_lineage": "The RWA work (DADC-DADI 2024, H1 2026) is Peter's own prior art. If a paper cites or is cited by RWA work, that is self-lineage rather than external preemption. Note the distinction clearly.",
+    "if_you_find_work_by_Peter_Higgins_or_Rogue_Wave_Audio": "Same \u2014 self-authored work is not external prior art. Classify as 'self-lineage reference' rather than 'positive hit.'",
+    "if_the_search_feels_ambiguous": "Err on the side of 'near-miss' with honest notes rather than 'positive' or 'negative'. Near-misses are the most valuable class for the related-work section of any future paper."
+  },
+
+  "status": "Addendum issued. Continue with your originally assigned task. Deadline 2026-04-22.",
+
+  "canonical_definition_reminder": "When assessing 'what is HUF-GOV' for novelty purposes, the answer is: 'a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.' \u2014 Peter Higgins, 2026-04-15"
+}

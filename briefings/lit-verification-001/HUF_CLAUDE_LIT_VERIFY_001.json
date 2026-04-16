@@ -6,21 +6,27 @@
     "deadline": "2026-04-22",
     "coordinator": "Peter Higgins",
     "branch": "combinatorial_graph_theory",
-    "parallel_work": ["ChatGPT:CoDa_canon", "Grok:Penrose_aperiodic", "Gemini:KPZ_physics", "Copilot:arXiv_crossover"]
+    "parallel_work": [
+      "ChatGPT:CoDa_canon",
+      "Grok:Penrose_aperiodic",
+      "Gemini:KPZ_physics",
+      "Copilot:arXiv_crossover"
+    ],
+    "addendum_issued": "2026-04-15",
+    "addendum_file": "LIT_VERIFY_001_ADDENDUM.json",
+    "addendum_note": "A shared addendum was issued 2026-04-15 carrying status updates relevant to all 4 remaining branches: Grok branch complete (Novel for Penrose); canonical HUF-GOV definition locked in; shape/magnitude decomposition as organizing principle; Master Lineage established; Coimbra welcome package in preparation. Read the addendum before executing this briefing. Core task unchanged; interpretation context has deepened."
   },
-
   "context": {
     "background": "The Higgins Unity Framework (HUF) develops the Entropy-Invariant Time Transformer (EITT): Shannon entropy of compositional data is near-invariant under geometric-mean block decimation across temporal resolutions. Four empirical proofs validate this (European electricity prices 0.18%/341:1, EMBER monthly 1.02% mean, NGFS scenarios 1.8% geometric vs 14.2% arithmetic, CheMixHub 54-82% interior pass).",
-    "recent_synthesis": "A shape/magnitude decomposition generalizes EITT: shape functionals (entropy, correlations, principal balances, affinity clusters) are invariant under EITT decimation; magnitude functionals (Aitchison variance, total variation) scale as 1/M. The Fisher-Rao vs Aitchison geometry tension dissolves because both agree infinitesimally at the Fréchet mean and EITT never leaves the infinitesimal regime.",
+    "recent_synthesis": "A shape/magnitude decomposition generalizes EITT: shape functionals (entropy, correlations, principal balances, affinity clusters) are invariant under EITT decimation; magnitude functionals (Aitchison variance, total variation) scale as 1/M. The Fisher-Rao vs Aitchison geometry tension dissolves because both agree infinitesimally at the Fr\u00e9chet mean and EITT never leaves the infinitesimal regime.",
     "novelty_claim_under_test": "A five-object cluster (EITT + Tutte's theorem + Hanani-Tutte theorem + Penrose tilings + KPZ universality) organized under a single shape/magnitude decomposition is novel in the literature. Each pairwise connection to EITT may also be individually novel. We are testing both.",
     "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
     "key_files": [
       "science/eitt/EITT_HESSIAN_BOUND.md",
-      "science/eitt/EITT_WHY_IT_WORKS.md (§7 shape/magnitude decomposition)",
+      "science/eitt/EITT_WHY_IT_WORKS.md (\u00a77 shape/magnitude decomposition)",
       "ai-refresh/HUF_FAST_REFRESH.json"
     ]
   },
-
   "your_branch_assignment": {
     "scope": "Tutte theorem + Hanani-Tutte theorem + their possible connections to compositional data analysis (CoDa), simplex geometry, sequential binary partitions (SBP), and entropy Taylor expansions",
     "why_claude": "You have participated in developing the framework and understand the mathematical structure. You are well-positioned to judge whether a claimed combinatorial-CoDa connection is substantive or superficial. Your knowledge cutoff is late May 2025; any 2025+ papers you can access via web search should be checked but older references in your training are already known to you.",
@@ -30,7 +36,6 @@
       "H3": "Graph-matching theoretic language is absent from the SBP theory of Egozcue & Pawlowsky-Glahn (2005 and later)."
     }
   },
-
   "tasks": [
     {
       "task_id": "T1",
@@ -59,7 +64,7 @@
       "type": "google_scholar_search",
       "query": "\"Hanani-Tutte\" \"compositional\"",
       "expected_hits": "0-1",
-      "action": "Any hit is highly significant — this is the most unlikely pairing."
+      "action": "Any hit is highly significant \u2014 this is the most unlikely pairing."
     },
     {
       "task_id": "T5",
@@ -107,10 +112,9 @@
       "task_id": "T11",
       "type": "reasoning_check",
       "action": "Based on T1-T10 results, assess hypotheses H1, H2, H3 with confidence level (HIGH/MEDIUM/LOW) and brief justification.",
-      "note": "This is the synthesis step — use judgment, not just search returns."
+      "note": "This is the synthesis step \u2014 use judgment, not just search returns."
     }
   ],
-
   "report_format": {
     "return_as": "JSON",
     "filename": "CLAUDE_LIT_VERIFY_001_RESULTS.json",
@@ -118,28 +122,37 @@
       "_meta": "echo of input meta + date_completed",
       "task_results": "array of {task_id, query, n_hits, top_hits: [{title, authors, year, venue, relevance}], verdict: positive|near_miss|negative}",
       "hypothesis_assessment": {
-        "H1": {"confidence": "HIGH|MEDIUM|LOW", "supporting_tasks": "array of task_ids", "notes": "..."},
-        "H2": {"confidence": "HIGH|MEDIUM|LOW", "supporting_tasks": "array of task_ids", "notes": "..."},
-        "H3": {"confidence": "HIGH|MEDIUM|LOW", "supporting_tasks": "array of task_ids", "notes": "..."}
+        "H1": {
+          "confidence": "HIGH|MEDIUM|LOW",
+          "supporting_tasks": "array of task_ids",
+          "notes": "..."
+        },
+        "H2": {
+          "confidence": "HIGH|MEDIUM|LOW",
+          "supporting_tasks": "array of task_ids",
+          "notes": "..."
+        },
+        "H3": {
+          "confidence": "HIGH|MEDIUM|LOW",
+          "supporting_tasks": "array of task_ids",
+          "notes": "..."
+        }
       },
       "surprise_findings": "Anything unexpected discovered along the way",
       "recommended_next_searches": "Queries that would tighten the verification further"
     }
   },
-
   "verdict_definitions": {
     "positive": "A paper explicitly makes the claimed connection. Novelty claim for that pairing is FALSIFIED. Cite the paper clearly so the framework can acknowledge the prior work.",
     "near_miss": "A paper is in adjacent territory but does not make the explicit connection. Note for the discussion section of any future paper. Novelty claim remains.",
     "negative": "No relevant hits. Novelty claim for that pairing is tentatively supported."
   },
-
   "coordination_notes": {
     "overlap_with_others": {
       "ChatGPT": "ChatGPT is reviewing recent papers from Pawlowsky-Glahn / Egozcue / Tolosana-Delgado group (2020-2025) for any mention of matching theory, parity, aperiodic, universality. If they find Tutte/Hanani-Tutte mentions, flag it and reconcile.",
-      "Copilot": "Copilot is running arXiv crossover searches. If they find a math.CO × stat.ME preprint with compositional content, that overlaps with your T6 and T7."
+      "Copilot": "Copilot is running arXiv crossover searches. If they find a math.CO \u00d7 stat.ME preprint with compositional content, that overlaps with your T6 and T7."
     },
     "escalate_if": "Any task returns a strongly positive hit. Peter wants to know immediately so the framework can cite correctly rather than claim novelty incorrectly."
   },
-
   "estimated_effort": "1-2 hours of focused search + 30 minutes synthesis"
 }

@@ -6,19 +6,25 @@
     "deadline": "2026-04-22",
     "coordinator": "Peter Higgins",
     "branch": "kpz_statistical_physics",
-    "parallel_work": ["Claude:combinatorial", "ChatGPT:CoDa_canon", "Grok:Penrose_aperiodic", "Copilot:arXiv_crossover"]
+    "parallel_work": [
+      "Claude:combinatorial",
+      "ChatGPT:CoDa_canon",
+      "Grok:Penrose_aperiodic",
+      "Copilot:arXiv_crossover"
+    ],
+    "addendum_issued": "2026-04-15",
+    "addendum_file": "LIT_VERIFY_001_ADDENDUM.json",
+    "addendum_note": "A shared addendum was issued 2026-04-15 carrying status updates relevant to all 4 remaining branches: Grok branch complete (Novel for Penrose); canonical HUF-GOV definition locked in; shape/magnitude decomposition as organizing principle; Master Lineage established; Coimbra welcome package in preparation. Read the addendum before executing this briefing. Core task unchanged; interpretation context has deepened."
   },
-
   "context": {
-    "background": "The Higgins Unity Framework (HUF) develops the Entropy-Invariant Time Transformer (EITT): Shannon entropy of compositional data is near-invariant under geometric-mean block decimation across temporal resolutions. Drift events — points where autocorrelation breaks and a new regime takes over — behave like interfaces in time. If these interfaces have universal fluctuation scaling, they may live in the KPZ (Kardar-Parisi-Zhang) universality class.",
+    "background": "The Higgins Unity Framework (HUF) develops the Entropy-Invariant Time Transformer (EITT): Shannon entropy of compositional data is near-invariant under geometric-mean block decimation across temporal resolutions. Drift events \u2014 points where autocorrelation breaks and a new regime takes over \u2014 behave like interfaces in time. If these interfaces have universal fluctuation scaling, they may live in the KPZ (Kardar-Parisi-Zhang) universality class.",
     "recent_synthesis": "A shape/magnitude decomposition generalizes EITT: shape functionals are invariant under decimation, magnitude functionals scale as 1/M. KPZ universality governs interface dynamics in many systems; if compositional drift interfaces show KPZ scaling exponents (1/3 and 2/3), that would be a deep connection.",
     "novelty_claim_under_test": "A five-object cluster (EITT + Tutte + Hanani-Tutte + Penrose + KPZ) is novel. Your branch tests the KPZ side: has anyone connected KPZ universality, interface growth, or statistical-physics scaling theory to compositional data or simplex-valued time series?",
     "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework"
   },
-
   "your_branch_assignment": {
-    "scope": "KPZ universality, interface growth models, random matrix theory, directed polymers, stochastic growth models, Wasserstein gradient flows on the simplex, information geometry of stochastic processes — and their connections to compositional data.",
-    "why_gemini": "Strong on multi-modal technical search and good coverage of physics/math journals. KPZ universality has massive literature across statistical physics, probability, and mathematical physics venues — wide-net search with physics sensibility is needed.",
+    "scope": "KPZ universality, interface growth models, random matrix theory, directed polymers, stochastic growth models, Wasserstein gradient flows on the simplex, information geometry of stochastic processes \u2014 and their connections to compositional data.",
+    "why_gemini": "Strong on multi-modal technical search and good coverage of physics/math journals. KPZ universality has massive literature across statistical physics, probability, and mathematical physics venues \u2014 wide-net search with physics sensibility is needed.",
     "hypothesis_to_test": {
       "H1": "No paper has explicitly connected KPZ universality to compositional data analysis or simplex-valued time series.",
       "H2": "Random matrix theory connections to compositional data exist at a statistical level but have not been framed as universality class membership.",
@@ -26,7 +32,6 @@
       "H4": "Phase-field methods on the simplex (multi-component materials science) exist but have not been adapted to compositional monitoring or EITT-style coarse-graining."
     }
   },
-
   "tasks": [
     {
       "task_id": "T1",
@@ -54,7 +59,7 @@
       "type": "google_scholar_search",
       "query": "\"interface growth\" \"probability simplex\"",
       "expected_hits": "0-5",
-      "action": "Probability simplex is the natural KPZ setting — any crossover paper is notable."
+      "action": "Probability simplex is the natural KPZ setting \u2014 any crossover paper is notable."
     },
     {
       "task_id": "T5",
@@ -95,7 +100,7 @@
       "task_id": "T10",
       "type": "review_paper_scan",
       "target": "Recent review papers on KPZ universality (e.g., Corwin 2012 'The Kardar-Parisi-Zhang equation and universality class' and updates)",
-      "action": "Scan for mentions of probability simplices, compositional data, Aitchison geometry, log-ratio coordinates, or any statistical-methodology connection. Most likely none — but confirm."
+      "action": "Scan for mentions of probability simplices, compositional data, Aitchison geometry, log-ratio coordinates, or any statistical-methodology connection. Most likely none \u2014 but confirm."
     },
     {
       "task_id": "T11",
@@ -103,7 +108,6 @@
       "action": "Based on T1-T10, assess hypotheses H1-H4 with confidence levels. KPZ is this branch's weakest novelty claim (largest literature on both sides). Give a candid judgment."
     }
   ],
-
   "report_format": {
     "return_as": "JSON",
     "filename": "GEMINI_LIT_VERIFY_001_RESULTS.json",
@@ -112,35 +116,43 @@
       "task_results": "array of {task_id, query, n_hits, top_hits: [{title, authors, year, venue, relevance}], verdict}",
       "review_paper_findings": "notes on whether KPZ review papers mention compositional/simplex applications",
       "hypothesis_assessment": {
-        "H1": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
-        "H2": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
-        "H3": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."},
-        "H4": {"confidence": "HIGH|MEDIUM|LOW", "notes": "..."}
+        "H1": {
+          "confidence": "HIGH|MEDIUM|LOW",
+          "notes": "..."
+        },
+        "H2": {
+          "confidence": "HIGH|MEDIUM|LOW",
+          "notes": "..."
+        },
+        "H3": {
+          "confidence": "HIGH|MEDIUM|LOW",
+          "notes": "..."
+        },
+        "H4": {
+          "confidence": "HIGH|MEDIUM|LOW",
+          "notes": "..."
+        }
       },
       "strong_candidates_for_positive_hit": "List any specific paper that could preempt the KPZ-CoDa connection",
       "surprise_findings": "...",
       "recommended_next_searches": "..."
     }
   },
-
   "verdict_definitions": {
     "positive": "A paper explicitly applies KPZ universality, random matrix theory, or interface-growth theory to compositional data or simplex-valued time series. Flag for escalation.",
     "near_miss": "A paper uses Wasserstein gradient flows or phase-field methods on the simplex in a mathematical context without connecting to CoDa practice. Valuable reference but does not negate novelty.",
     "negative": "No positive hits. The KPZ-CoDa connection remains novel."
   },
-
   "coordination_notes": {
     "overlap_with_others": {
-      "Grok": "Grok is checking Penrose / aperiodic order. Arctic circle theorem and random-tiling limit shapes are KPZ-adjacent — if Grok finds statistical-physics tiling results connected to compositional data, reconcile with your T4.",
+      "Grok": "Grok is checking Penrose / aperiodic order. Arctic circle theorem and random-tiling limit shapes are KPZ-adjacent \u2014 if Grok finds statistical-physics tiling results connected to compositional data, reconcile with your T4.",
       "Copilot": "Copilot is scanning arXiv. math-ph + stat.ME crossover papers are most likely to contain KPZ-CoDa attempts; if Copilot finds any, cross-check with your results."
     },
     "escalate_if": "Any T1-T9 returns a direct positive hit, or T10 finds the CoDa/simplex connection mentioned in a KPZ review."
   },
-
   "honest_notes": {
-    "this_is_the_weakest_novelty_branch": "KPZ universality has been connected to many things and the probability-simplex setting is natural enough that it is the most likely branch to have been touched somewhere. Don't be afraid to report a positive finding if you find one — the framework benefits more from correct citation than from maintaining a novelty claim.",
+    "this_is_the_weakest_novelty_branch": "KPZ universality has been connected to many things and the probability-simplex setting is natural enough that it is the most likely branch to have been touched somewhere. Don't be afraid to report a positive finding if you find one \u2014 the framework benefits more from correct citation than from maintaining a novelty claim.",
     "scope_creep_warning": "Pure-math results on Wasserstein flow on the simplex (Otto, Ambrosio, Villani, Carrillo) are legitimate near-misses. Do NOT classify them as positive hits unless they explicitly connect to compositional data practice (not just simplex as an abstract object)."
   },
-
   "estimated_effort": "2-3 hours. KPZ literature is extensive and requires filtering. Take the time."
 }

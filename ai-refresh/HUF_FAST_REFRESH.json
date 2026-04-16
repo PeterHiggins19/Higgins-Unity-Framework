@@ -6,6 +6,8 @@
     "author": "Peter Higgins / Claude",
     "purpose": "Single-file AI context loader for the Higgins Unity Framework. Load this FIRST in any new session. Contains all canonical names, numbers, formulas, and structure. Every value here is the source of truth — if a document disagrees with this file, this file wins.",
     "companion": "HUF_INTEGRITY_MANIFEST.json — hash-verified cross-reference. Load SECOND to verify corpus integrity.",
+    "lineage": "MASTER_LINEAGE.json — the arc of discovery from DADC-DADI loudspeaker diffraction correction (Dec 2024) through the Higgins Operator H1 (Feb 2026) to HUF/EITT (Apr 2026). Load for the origin story and the cross-reference map.",
+    "phase_record": "PHASE_MARKERS.json — machine-readable record of completed and active phases. Load to understand what is STABLE versus ACTIVE versus FUTURE.",
     "usage": "AI: read this file before doing ANY HUF/CoDa/EITT work. Human: use as quick reference. Both: if a value looks wrong in a document, check it against this file.",
     "refresh_protocol": "When new canonical results are produced, update this file FIRST, then rebuild documents FROM this file. Never the reverse."
   },
@@ -20,7 +22,11 @@
     "pages": "https://peterhiggins19.github.io/Higgins-Unity-Framework/",
     "admin_register": "ai-refresh/HUF_ADMIN.json — all contact info, websites, canonical terms, AI roles",
     "doctrine": "Open-loop: HUF-GOV observes, human decides, loop stays open. Instrument reads, never actuates.",
-    "principle": "The simplex is the same everywhere. Compositions have their own geometry, and that geometry has consequences."
+    "canonical_definition": "HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment. \u2014 Peter Higgins, 2026-04-15",
+    "canonical_definition_unpacking": "Five clauses, each load-bearing: (1) 'A tool' \u2014 not a framework, theory, or method. Built, verified, used. (2) 'Verifiably clean usable output' \u2014 clean (unambiguous), usable (actionable at decision point), verifiable (trust is optional; the user can check). (3) 'Known degree of certainty' \u2014 bounded precision as a contract; the Hessian bound and safety boundaries operationalize this. (4) 'Diagnostic open to interpretation by expert decision' \u2014 the output is a diagnostic, not a conclusion; meaning is the expert's call. (5) 'Open to modification by expert judgment' \u2014 the tool evolves under expert use; safety boundaries, dormant folder, keep-vs-store discipline all accommodate this. Full unpacking: science/governance/HUF_GOV_CANONICAL_DEFINITION.md",
+    "principle": "The simplex is the same everywhere. Compositions have their own geometry, and that geometry has consequences.",
+    "founding_principle": "The past is our strength and our future. The framework's engineering DNA is the Rogue Wave Audio DADC-DADI-ADAC loudspeaker diffraction correction chain (Dec 2024 \u2013 Nov 2025). See MASTER_LINEAGE.json for the full arc.",
+    "origin": "Binaural Test Lab (BTL), Markham, Ontario. Purpose-built basement lab for loudspeaker measurement. The compositional structure (simplex closure, log-ratios, inert measurement) was discovered empirically in acoustic engineering before it was formalized mathematically."
   },
 
   "canonical_names": {

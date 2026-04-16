@@ -1,0 +1,371 @@
+{
+  "_meta": {
+    "type": "HUF-MASTER-LINEAGE",
+    "version": "1.0",
+    "created": "2026-04-15",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Machine-readable record of the arc from Rogue Wave Audio loudspeaker engineering through the Higgins Operator H1 to the Higgins Unity Framework (HUF) and EITT. Establishes that the compositional viewpoint was discovered empirically in acoustic engineering before it was formalized mathematically. Cross-references the current repo back to the prior work it grew out of.",
+    "founding_principle": "The past is our strength and our future. What was built in the Binaural Test Lab in 2024-2025 is the engineering DNA of everything in this repo. The math book did not invent the structure; the physics did. The screwdriver came first.",
+    "companion_documents": {
+      "narrative_origin": "briefings/THE_LINEAGE.md \u2014 the first-person founding narrative including the Isotropic Principle and the screwdriver-and-math-book framing",
+      "technical_bridge": "science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md \u2014 the line-by-line mapping from DADC-DADI-ADAC to MC-4/EITT",
+      "biographical_foundation": "briefings/HUF_Biographical_Foundation_v1.0.json \u2014 the human origin story, 35 years at the machine interface",
+      "acoustic_primary_source": "RogueWaveAudio/Dimension-Apportioned Diffraction Correction and Inference (DADC-DADI).docx (local working folder) \u2014 published in public RWA repo at docs/papers/Dimension-Apportioned_Diffraction_Correction_and_Inference_DADC-DADI.docx",
+      "flagship_publication": "RogueWaveAudio/Organic_Digital_Loudspeakers_v2.6.docx (local working folder) \u2014 published in public RWA repo at docs/papers/Organic_Digital_Loudspeakers_v2.6.docx",
+      "generalization_primary_source": "RogueWaveAudio/The Higgins Operator H1 101.pdf (local working folder ONLY) \u2014 NOT YET in public RWA repo. See 'observations' section at end of this file for note."
+    }
+  },
+
+  "public_rwa_repo": {
+    "url": "https://github.com/PeterHiggins19/Rogue-Wave-Audio",
+    "default_branch": "master",
+    "initial_commit": "2026-03-11",
+    "current_state_as_of_review": "2026-04-15",
+    "commit_history": "Single commit ('Initial RWA repo structure') \u2014 the repo is at its initial state, no subsequent updates",
+    "structure": {
+      "docs/papers/": ["Dimension-Apportioned_Diffraction_Correction_and_Inference_DADC-DADI.docx", "Organic_Digital_Loudspeakers_v2.6.docx"],
+      "docs/btl-lab/": "BTL Small Studio Lab certification and design documents",
+      "docs/reference/": "Supporting reference materials",
+      "data/btl-lab/": "Design and measurement spreadsheets",
+      "src/builders/": "docx-js builder scripts (for generating .docx from .js)",
+      "src/tools/": "DADC-DADI calculator and other tools (Jupyter notebooks)",
+      "concepts/": ["ai-reports/ (9 Grok reports, numbered 24, 25, 46-52)", "entropix/", "regimes/", "tensor-acoustic-forge/", "v-infinity-core/"],
+      "archive/": "Superseded designs, logs, reference materials"
+    },
+    "cross_referencing_to_huf": "NONE. The public RWA README does not reference HUF or the Higgins-Unity-Framework repo. RWA presents itself purely as an audio engineering project. This is a deliberate separation \u2014 RWA is the engineering home, HUF is the scientific framework home. The lineage connection lives in HUF-side documents (THE_LINEAGE.md, ORIGIN_BRIDGE_DADC_TO_MC4.md, this MASTER_LINEAGE.json). Whether to add a reciprocal link in the RWA README is Peter's design choice."
+  },
+
+  "rwa_concept_branches": {
+    "_note": "The public RWA concepts/ folder contains five active R&D branches that preexisted the HUF repo. Several appear to have conceptual counterparts in HUF; mapping them is part of the 'past is our strength' principle.",
+    "ai-reports": {
+      "rwa_location": "concepts/ai-reports/",
+      "content": "Nine numbered Grok reports (24, 25, 46-52)",
+      "huf_counterpart": "briefings/ folder (HUF's accumulated per-AI briefings and reviews). Same methodological instinct: preserve all AI exchanges systematically.",
+      "status": "RWA-side concept branch"
+    },
+    "entropix": {
+      "rwa_location": "concepts/entropix/",
+      "content": "Regime-balanced predictive systems per README",
+      "huf_counterpart": "EITT work in science/eitt/ \u2014 entropy invariance under temporal transformation. Name 'entropix' precedes EITT and suggests entropy-based prediction was an explicit RWA-side R&D thread before EITT was named.",
+      "status": "Likely conceptual ancestor of EITT; cross-reference deserves deeper examination if time permits"
+    },
+    "regimes": {
+      "rwa_location": "concepts/regimes/",
+      "content": "Universal regime classification per README",
+      "huf_counterpart": "HUF's 'regime' language throughout (HUF-GOV regimes, drift-flagged regimes, regime-shift detection). The regime concept is explicitly RWA-originated and carried into HUF.",
+      "status": "Direct ancestor of HUF regime vocabulary"
+    },
+    "tensor-acoustic-forge": {
+      "rwa_location": "concepts/tensor-acoustic-forge/",
+      "content": "Processing pipeline per README",
+      "huf_counterpart": "Possibly an early experiment in tensor-based acoustic signal processing. No obvious direct counterpart in HUF, but the name suggests a processing-pipeline mindset that carried forward into chem_eitt_pipeline.py.",
+      "status": "Concept branch, no direct HUF equivalent identified"
+    },
+    "v-infinity-core": {
+      "rwa_location": "concepts/v-infinity-core/",
+      "content": "Engine architecture per README",
+      "huf_counterpart": "HUF_VCore_Stack_Brief_v1.0 documents (science/quantum/) reference 'V\u221eCore stack' as part of the HUF operating manual. This is a direct RWA\u2192HUF name carry-through.",
+      "status": "Direct ancestor of HUF V\u221eCore stack documentation"
+    }
+  },
+
+  "observations_from_public_repo_review": {
+    "review_date": "2026-04-15",
+    "reviewer": "Claude (via Chrome browser tools, github.com blocked for WebFetch)",
+    "findings": [
+      "Public RWA repo contains 2 canonical papers: DADC-DADI (Dec 2024) and Organic Digital Loudspeakers v2.6 (Mar 2026). The Higgins Operator H1 101 paper (Feb 2026) is NOT in the public RWA repo \u2014 it exists only in the local RogueWaveAudio/ working folder. Peter may want to add it, or may be deliberately holding it back. Not flagging as an error, just noting the state.",
+      "Public RWA README makes no reference to HUF or to the Higgins-Unity-Framework repo. The two public projects are presented as independent. This is defensible (RWA = engineering, HUF = scientific framework) but means a reader arriving at RWA has no path to HUF and vice versa. A cross-reference could be added to either or both READMEs if Peter wants to make the lineage visible to the public.",
+      "CITATION.cff has a repository-code URL typo: 'https://github.com/peterhiggins/RWA' should be 'https://github.com/PeterHiggins19/Rogue-Wave-Audio'. Minor but worth fixing next time the RWA repo is touched.",
+      "Two different contact emails in use: CITATION.cff in RWA uses peterhiggins2016@gmail.com; HUF ai-refresh/HUF_FAST_REFRESH.json uses PeterHiggins@roguewaveaudio.com. Not inconsistent \u2014 one is personal, one is business \u2014 but consistency per project might be worth deciding deliberately.",
+      "RWA repo is at initial commit (March 11, 2026) with no subsequent updates. The BTL lab work, the H1 paper, and the concept R&D all happened in the local folder during March-April 2026 without being pushed. Nothing wrong with this \u2014 just noting the public state is snapshot-from-March, not current."
+    ],
+    "recommended_adjustments": [
+      "MASTER_LINEAGE.json (this file) is updated to reflect public RWA repo state and the five concept branches. Done.",
+      "No changes to RWA repo itself recommended at this time. Peter's call on: (a) pushing H1 paper, (b) fixing CITATION.cff URL typo, (c) deciding whether to cross-reference HUF.",
+      "HUF repo could add a line to the root README noting the RWA repo as the engineering sibling. Low-priority but symmetric with MASTER_LINEAGE's acknowledgment of RWA as ancestor."
+    ]
+  },
+
+  "the_isotropic_principle": {
+    "statement": "Paint the inside of a sphere with radiation. Uniform. The geometry of that sphere exists whether or not anything is radiating. The structure is there before the signal. The simplex is there before the measurement.",
+    "role": "Pre-origin. Ground state. The barycenter of the simplex (1/D, 1/D, ..., 1/D) in CoDa language. Every departure is a signal; every return is relaxation. The same sphere regardless of what paints it \u2014 acoustic radiation, electricity generation shares, financial portfolio weights, wetland habitat proportions.",
+    "consequence": "HUF is inert. The probe reads the departure from isotropy. It does not create the departure. The geometry was always there; the instrument makes it readable."
+  },
+
+  "the_arc": [
+    {
+      "phase": "Pre-origin",
+      "period": "background conditioning",
+      "duration": "35 years at the man-machine interface",
+      "event": "Cognitive conditioning at the machine interface. Dage X-ray, Fuji placement, Electrovert wave solder, AOI, PLCs, first-gen industrial AI. Thirty-five years of working inside controller systems until thinking like a controller became natural.",
+      "note": "The biographical foundation establishes this as the preparation. Not study \u2014 exposure. The environment shaped the perceptual channel."
+    },
+    {
+      "phase": "The Montreal incident",
+      "period": "prior to HUF, formative",
+      "event": "Telecom manufacturing facility in Montreal. Engineer entered a live automated placement machine. Shear bolt (sacrificial failure point designed in Japan) broke at precisely the right location. Engineer survived. Peter called in to restore trust.",
+      "extracted_principles": [
+        "Explainability: If the operator cannot understand why the system behaved as it did, trust cannot be restored",
+        "Predictability: Predictable failure is safe failure",
+        "Designed Failure: Every high-power system must contain intentional, predictable failure points",
+        "Human Primacy: The system serves the human; the human does not serve the system",
+        "Drift Awareness: The incident was not sudden. It was the visible result of invisible concentration of risk"
+      ],
+      "seed_of": "HUF-GOV doctrine (open-loop observation; human decides). The 'governance before engineering' principle."
+    },
+    {
+      "phase": "AES paper draft",
+      "period": "June 2024",
+      "event": "Initial AES (Audio Engineering Society) paper draft begins on diffraction correction for rectangular loudspeaker cabinets.",
+      "document": "RogueWaveAudio/aes doc.docx"
+    },
+    {
+      "phase": "DADC-DADI formalization",
+      "period": "December 5-6, 2024",
+      "event": "Dimension-Apportioned Diffraction Correction (DADC) formal writeup. DADI inverse method documented one day later.",
+      "technical_content": "Total baffle step correction = 6.02 dB (= 20 log10 2) apportioned across three cabinet dimensions (H, W, D). Each dimension receives a share proportional to its contribution. Gains sum to 6.02 dB exactly. Corner frequency Fc = 115/dimension (Hz*m). DADI inverts the acoustic response to recover H, W, D.",
+      "compositional_structure_present": "The gain vector (G_H, G_W, G_D) / 6.02 = (0.533, 0.246, 0.221) is a 3-simplex composition. The Dominance Index max/min is a pairwise log-ratio. The closure constraint is physical. The compositional geometry was in the data from the first measurement \u2014 before anyone involved knew the word 'simplex'.",
+      "document": "RogueWaveAudio/Dimension-Apportioned Diffraction Correction and Inference (DADC-DADI).docx"
+    },
+    {
+      "phase": "Full AES LaTeX manuscript",
+      "period": "December 21, 2024",
+      "event": "Complete AES-format manuscript of the diffraction correction work.",
+      "document": "RogueWaveAudio/BTL/... (LaTeX sources)"
+    },
+    {
+      "phase": "BTL Lab certification",
+      "period": "January-February 2025",
+      "event": "Binaural Test Lab certified for production loudspeaker measurement. Peter lived with the system to learn it. The basement lab in Markham, Ontario, purpose-built by its user."
+    },
+    {
+      "phase": "DADC-DADI-ADAC complete architecture",
+      "period": "early-mid 2025",
+      "event": "ADAC \u2014 Adaptive Dimension Apportioning Correction / Apparent Dimension Apportioning Correction \u2014 completes the DADC-DADI triple. Measure, infer, correct, re-measure. Loop converges by Banach fixed-point theorem.",
+      "critical_moment": "The moment when the error signal was sitting there, geometrically native, and every engineering instinct said 'close the loop' \u2014 but something said: not automatically. Not by default. Fork right there. Observe OR control. Not a whiteboard choice; a mechanism that physically prevented automatic closure. Birth of HUF-GOV vs HUF-CLS.",
+      "governance_principle_locked": "Scientific measurement path (HUF-GOV) stays open, stateless, no feedback. Control path (HUF-CLS) closes the loop explicitly and only on human decision. Same architecture up to the fork. The fork is the doctrine."
+    },
+    {
+      "phase": "Generalization recognized",
+      "period": "November 2025",
+      "event": "Grok session where the DADC dimensional inversion loop was recognized as a general principle, not specific to acoustics. The shift from 'this works for loudspeakers' to 'this works wherever a conserved budget is apportioned across parts'.",
+      "note": "The generalization insight was empirical, not theoretical. Peter saw the dimensional inversion working and asked: what else can this principle do?"
+    },
+    {
+      "phase": "HUF framework formalization begins",
+      "period": "late 2025",
+      "event": "Higgins Unity Framework repository initialized. First articulation of MC-4 (Composition Monitoring \u2014 the fourth monitoring category alongside MC-1 Magnitude, MC-2 Identity, MC-3 Trend). First cross-domain tests across energy, finance, infrastructure.",
+      "key_transition": "From single-object (cabinet) to arbitrary-system (any conserved-budget composition). The simplex is the simplex regardless of what lives on it."
+    },
+    {
+      "phase": "Higgins Operator H1 generalization",
+      "period": "February 2026",
+      "event": "H1 paper formalizes the unity-normalization + directional-coherence preservation as an abstract operator on Hilbert space. Applications range from Conformal Cyclic Cosmology to Toronto urban infrastructure to EUV lithography to Planck CMB anomalies to stellar fusion \u2014 every context where a system has many components summing to something preserved under some operation.",
+      "document": "RogueWaveAudio/The Higgins Operator H1 101.pdf",
+      "key_object": "H1|\u03c8\u27e9 = \u03bc(|\u03c8\u27e9) \u00b7 u where \u03bc(|\u03c8\u27e9) = \u27e8u|P|u\u27e9 is directional coherence, u = |\u03c8\u27e9 / ||\u03c8||, P is projection onto the ideal coherent unity subspace. The \u2211|\u03c8_i| = 1 invariant is the simplex constraint in abstract form."
+    },
+    {
+      "phase": "Ratio State Monitoring naming",
+      "period": "February 2026",
+      "event": "Ratio State Monitoring (RSM) name locked for literature submission. The practical measurement doctrine for HUF-GOV takes a formal name."
+    },
+    {
+      "phase": "Organic Digital Loudspeakers v2.6",
+      "period": "March 2026",
+      "event": "Latest RWA flagship synthesis paper integrating DADC-DADI-ADAC with the broader compositional framework.",
+      "document": "RogueWaveAudio/Organic_Digital_Loudspeakers_v2.6.docx"
+    },
+    {
+      "phase": "CoDa formalization and EITT discovery",
+      "period": "April 2026",
+      "event": "Aitchison geometry adopted explicitly. CoDaWork 2026 abstract submitted. EITT (Entropy-Invariant Time Transformer) discovered: Shannon entropy of compositional time series is near-invariant under geometric-mean block decimation across temporal resolutions. Four empirical proofs validate (European prices 0.18% at 341:1, EMBER 1.02% mean across six countries, NGFS 1.8% geometric vs 14.2% arithmetic, CheMixHub 54-82% interior pass).",
+      "transition_steps": [
+        "Euclidean \u2192 Aitchison geometry (the space the data already lived in got named)",
+        "Spatial \u2192 Temporal (apportionment across cabinet dimensions became apportionment across time blocks)",
+        "Single object \u2192 Arbitrary system (3-part cabinet became arbitrary-D compositional series)"
+      ]
+    },
+    {
+      "phase": "Phase 1 stable \u2014 CoDaWork 2026 content",
+      "period": "2026-04-14 to 2026-04-15",
+      "event": "Four AI cold-start tests passed (Claude 5/5, ChatGPT 10/10, Grok 10/10, Gemini 5/5). Second-order Hessian bound formalized in EITT_HESSIAN_BOUND.md. Shape/magnitude decomposition synthesis in EITT_WHY_IT_WORKS.md \u00a77 resolves the Fisher-Rao loose end. Grok tensor-exploration residuals safely contained in dormant/. Abstract v4 drafted. Five-AI literature verification briefings issued.",
+      "phase_status": "STABLE \u2014 see PHASE_MARKERS.json P01"
+    },
+    {
+      "phase": "Phase 2 started \u2014 EITT hardening for broader adoption",
+      "period": "2026-04-15 onward",
+      "event": "Mission: push EITT to pain point and protect users from pain. Two poles: reveal hidden structure + establish safety fences. Seven tracks of work in EITT_PHASE_2_ROADMAP.md. First Grok lit-verification return (Novel for Penrose x CoDa) filed.",
+      "phase_status": "ACTIVE \u2014 see PHASE_MARKERS.json P02"
+    }
+  ],
+
+  "the_three_layers": {
+    "layer_1_screwdriver": {
+      "description": "Engineering and physics. The instrument was built because the measurement required it.",
+      "artifacts": [
+        "DADC \u2014 forward mapping, cabinet geometry to acoustic composition",
+        "DADI \u2014 inverse inference, composition back to geometry",
+        "ADAC \u2014 adaptive closure, the forking point (GOV vs CLS)",
+        "BTL \u2014 Binaural Test Lab, the purpose-built validation environment",
+        "Higgins Operator H1 \u2014 generalization to Hilbert space",
+        "The Isotropic Principle \u2014 design doctrine"
+      ]
+    },
+    "layer_2_math_book": {
+      "description": "CoDa (Compositional Data Analysis) as developed by Aitchison (1982/1986), Egozcue, Pawlowsky-Glahn, Tolosana-Delgado.",
+      "artifacts": [
+        "Simplex and closure constraint",
+        "Aitchison geometry / distance / metric",
+        "Log-ratio transforms (ILR, CLR, ALR)",
+        "Perturbation and powering operations",
+        "Subcompositional coherence",
+        "Sequential Binary Partition (SBP) and balances",
+        "Geometric mean / Fr\u00e9chet mean / barycenter"
+      ]
+    },
+    "layer_3_alliance": {
+      "description": "HUF as the calibration joint of engineering discipline and compositional mathematics.",
+      "artifacts": [
+        "MC-4 (Composition Monitoring) \u2014 the fourth monitoring category",
+        "EITT (Entropy Invariance under Temporal Transformation)",
+        "K_eff (effective number of carriers = exp(H))",
+        "Total Variation (TV) as diagnostic",
+        "d(CoDa)/dt (balance velocity)",
+        "Deceptive drift detection",
+        "Three-diagnostic protocol (TV + Aitchison + coherence residual)",
+        "25-error calibration catalogue",
+        "HUF-GOV / HUF-CLS doctrine",
+        "Shape/magnitude decomposition (formalized April 14, 2026)"
+      ]
+    }
+  },
+
+  "invariants_carried_forward": [
+    {
+      "name": "6.02 dB",
+      "value": "20 * log10(2) \u2248 6.0206",
+      "acoustic_origin": "Baffle step correction from 2\u03c0 to 4\u03c0 steradian radiation",
+      "carried_to": "Binary doubling; the 2:1 compression ratio as the fundamental EITT test; the primary decimation diagnostic",
+      "status": "Physical constant of acoustic wave propagation that became a structural constant of the compositional framework"
+    },
+    {
+      "name": "115 Hz\u00b7m",
+      "value": "115 (approximately c / 2 where c is speed of sound / \u03c0, varies slightly with conditions)",
+      "acoustic_origin": "Wavenumber-dimension product: Fc = 115 / dimension (m)",
+      "carried_to": "Scale constant linking compositional dimension to temporal autocorrelation length; relates block width M to the characteristic timescale of the process",
+      "status": "Empirical acoustic constant inherited into the temporal framework"
+    },
+    {
+      "name": "Isotropic Principle",
+      "value": "Uniform distribution as ground state",
+      "acoustic_origin": "Omnidirectional radiation at wavelengths much larger than cabinet dimensions",
+      "carried_to": "Barycenter of the simplex (1/D, 1/D, ..., 1/D); maximum-entropy composition; the reference state every departure is measured against",
+      "status": "Design principle inherited unchanged"
+    },
+    {
+      "name": "Paired-measurement doctrine",
+      "value": "Two metrics, always; disagreement is diagnostic",
+      "acoustic_origin": "A flat frequency response can hide directional redistribution; one curve lies",
+      "carried_to": "Three-diagnostic protocol (TV + Aitchison + coherence residual). Metric agreement = robustness; metric disagreement = diagnostic information about the type of compositional change",
+      "status": "Core methodology inherited from acoustic-engineering instinct"
+    },
+    {
+      "name": "Inert measurement",
+      "value": "The probe reads without imprinting",
+      "acoustic_origin": "DADC-DADI was designed as non-contact diagnostic; gains determined by the object, not by the probe",
+      "carried_to": "'HUF is inert'. The measurement system must not contaminate its own reading. Open-loop by mechanism, not by philosophical choice.",
+      "status": "Design requirement inherited verbatim"
+    },
+    {
+      "name": "The GOV/CLS fork",
+      "value": "Observation and control are architecturally separated",
+      "acoustic_origin": "ADAC moment \u2014 the error signal existed, the loop could close, and something said: not automatically",
+      "carried_to": "HUF-GOV (open-loop, stateless, no feedback) vs HUF-CLS (closed-loop, stateful, requires human decision). Fork is the entire doctrine.",
+      "status": "Architectural principle inherited intact"
+    },
+    {
+      "name": "Banach convergence / stationarity condition",
+      "value": "Contractive mapping, |m| < 1, fails under non-stationarity",
+      "acoustic_origin": "ADAC converges when the room is slower than the adaptation loop. Fails when the room changes faster than the instrument can track.",
+      "carried_to": "EITT's mixing assumption (A3) in EITT_HESSIAN_BOUND.md. The system must be slower than the observer. Adversarial failures in EITT_Adversarial_001.json are exactly the cases where this fails.",
+      "status": "Mathematical condition inherited with different formalism"
+    }
+  ],
+
+  "cross_reference_map": {
+    "_purpose": "Every major current-repo document, with its direct ancestor in the RWA / H1 prior work.",
+
+    "science/eitt/EITT_HESSIAN_BOUND.md": {
+      "ancestor": "ADAC Banach convergence + DADI error reduction (12.5% to 4.99% over 5 iterations)",
+      "relationship": "The Hessian bound formalizes what ADAC proved by construction \u2014 contractive mapping under stationarity. (A3) is the stationarity assumption that ADAC required for the loop to close."
+    },
+    "science/eitt/EITT_WHY_IT_WORKS.md": {
+      "ancestor": "The Isotropic Principle + DADC gain apportionment",
+      "relationship": "The shape/magnitude decomposition in \u00a77 restates what DADC was doing: gains encode shape (apportionment), corner frequencies encode magnitude (scale). The compositional viewpoint was present in DADC before it was named."
+    },
+    "science/eitt/EITT_SAFETY_BOUNDARIES.md": {
+      "ancestor": "Montreal incident \u2014 Drift Awareness, Human Primacy, Designed Failure",
+      "relationship": "The safety fence is the Montreal incident's lessons applied to statistical methodology. Shear bolts for EITT: document where the method must not be applied, so no one walks into a live machine."
+    },
+    "science/coda-monitoring/": {
+      "ancestor": "DADC-DADI-ADAC",
+      "relationship": "The three-diagnostic monitoring protocol is the compositional generalization of the acoustic diagnostic triple."
+    },
+    "science/loudspeaker-analogy/": {
+      "ancestor": "BTL validation work, tweeter calibration, amplifier demonstrations",
+      "relationship": "Direct preservation of the acoustic work as an active branch. Not historical \u2014 current validation domain."
+    },
+    "science/governance/": {
+      "ancestor": "HUF-GOV / HUF-CLS fork at ADAC moment + Montreal incident",
+      "relationship": "The governance doctrine is the codification of the 'do not close the loop automatically' mechanism from ADAC."
+    },
+    "ai-refresh/HUF_FAST_REFRESH.json": {
+      "ancestor": "Consolidated canonical claims",
+      "relationship": "The cold-start reference. When Peter built the repo to be readable by AI systems that have never seen it, he was applying the BTL principle: a purpose-built lab a first-time user can walk into."
+    },
+    "dormant/": {
+      "ancestor": "Peter's instinct to preserve rather than delete speculative branches",
+      "relationship": "Reflects the 'lose nothing, discard nothing' doctrine from acoustic measurement. Every number is diagnostic until proven otherwise."
+    },
+    "briefings/": {
+      "ancestor": "The Collective as a ratio-state system in itself",
+      "relationship": "Five AI systems as carrier elements contributing proportional capability. Peter as the bus between them. The framework applied to the team building the framework."
+    }
+  },
+
+  "operating_principle_addition": {
+    "name": "The past is our strength and our future",
+    "statement": "What was built in the Binaural Test Lab in 2024-2025 is the engineering DNA of everything in this repo. The math book did not invent the structure; the physics did. The screwdriver came first. Every new concept should be checked against the RWA lineage for prior embodiment. The constants that carried forward (6.02 dB, 115 Hz\u00b7m, the Isotropic Principle, paired measurement, inert probe, GOV/CLS fork, Banach convergence) are the ancestral structure; new work extends them, it does not replace them.",
+    "application_rule": "When any new document is written, the author should ask: does this have an ancestor in the RWA / H1 work? If yes, cite the ancestor. If no, note the absence explicitly. The continuity is the framework's strength.",
+    "maintenance_rule": "MASTER_LINEAGE.json is updated whenever a new current-repo document is added, with the cross_reference_map getting a new entry identifying its ancestor (or noting its absence)."
+  },
+
+  "status": {
+    "lineage_version": "1.1",
+    "established": "2026-04-15",
+    "last_updated": "2026-04-15",
+    "update_log": [
+      "v1.0 \u2014 initial establishment with arc from Isotropic Principle through DADC-DADI-ADAC, BTL, H1, RSM, to HUF/EITT",
+      "v1.0.1 \u2014 public RWA repo review added; five concept branches mapped to HUF counterparts",
+      "v1.1 \u2014 canonical HUF-GOV definition noted (2026-04-15, Peter Higgins); Coimbra welcome package added to cross_reference_map; mature expression of ADAC fork identified"
+    ],
+    "next_update_trigger": "Addition of a new major current-repo document, or discovery of a further ancestor thread not yet mapped",
+    "maintenance_responsibility": "Any AI working on the repo should add cross-reference entries when promoting new files, per the application_rule above"
+  },
+
+  "v1_1_additions": {
+    "canonical_hufgov_definition": {
+      "statement": "HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.",
+      "source": "Peter Higgins, 2026-04-15",
+      "rwa_ancestor": "ADAC moment in DADC-DADI-ADAC chain, where the engineering instinct to close the feedback loop was met by the discipline to refuse automatic closure. The five-clause definition is the mature expression of what ADAC seeded.",
+      "current_repo_location": "ai-refresh/HUF_FAST_REFRESH.json identity section; full unpacking in science/governance/HUF_GOV_CANONICAL_DEFINITION.md",
+      "relationship_note": "This definition is not a new claim; it is a crystallized statement of what HUF-GOV has always been. Every earlier document in the repo can now be read as an unpacking of one or more of the five clauses."
+    },
+    "coimbra_welcome_package": {
+      "location": "briefings/coimbra-welcome-package/",
+      "purpose": "Self-contained introduction to HUF for CoDaWork 2026 attendees and new users. Six files covering welcome, success/failure, work-verification-possibilities, best-use-cases, meet-the-collective, standardization-benefits.",
+      "rwa_ancestor": "BTL certification documentation pattern \u2014 purpose-built lab hands off complete validation package, not just the hardware. Welcome package is the HUF-side equivalent: hands off the complete usable tool, not just the code.",
+      "relationship_note": "The welcome package is what the framework produces for external users. Everything upstream in the repo feeds this output. This is the \u2018verifiably clean usable output\u2019 clause of the canonical definition, manifested as documentation."
+    }
+  }
+}

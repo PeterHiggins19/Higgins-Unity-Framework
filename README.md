@@ -12,6 +12,8 @@
 
 **Phase status (2026-04-15):** Phase 1 (CoDaWork 2026 submission content) marked STABLE. Phase 2 (EITT hardening for broader adoption) started the same day. Mission for Phase 2: *push EITT to pain point and protect users from pain.* See [`ai-refresh/PHASE_MARKERS.json`](ai-refresh/PHASE_MARKERS.json), [`science/eitt/EITT_PHASE_2_ROADMAP.md`](science/eitt/EITT_PHASE_2_ROADMAP.md), and [`science/eitt/EITT_SAFETY_BOUNDARIES.md`](science/eitt/EITT_SAFETY_BOUNDARIES.md).
 
+**Lineage:** The framework's engineering DNA traces to Rogue Wave Audio's DADC-DADI-ADAC loudspeaker diffraction correction chain (Dec 2024–Nov 2025), then through the Higgins Operator H₁ (Feb 2026), to HUF/EITT. The compositional structure was discovered empirically in acoustic engineering before it was formalized mathematically. Engineering sibling: [Rogue Wave Audio](https://github.com/PeterHiggins19/Rogue-Wave-Audio). See [`ai-refresh/MASTER_LINEAGE.json`](ai-refresh/MASTER_LINEAGE.json) for the full arc, [`briefings/THE_LINEAGE.md`](briefings/THE_LINEAGE.md) for the founding narrative, and [`science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md`](science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md) for the technical bridge. **Principle:** The past is our strength and our future.
+
 ---
 
 ## What This Project Is
