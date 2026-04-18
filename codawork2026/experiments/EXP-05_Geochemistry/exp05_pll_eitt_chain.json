@@ -1,0 +1,1913 @@
+{
+  "_meta": {
+    "type": "EXP05_PLL_EITT_CHAIN",
+    "date": "2026-04-18",
+    "author": "Peter Higgins / Claude",
+    "note": "Full PLL-EITT chain on 28 igneous rock compositions. ACTUAL computation, not old-data reformat."
+  },
+  "full_differentiation": {
+    "N": 28,
+    "name": "Full Differentiation Series",
+    "eitt": {
+      "2": {
+        "n_blocks": 14,
+        "H_original": 1.2736152414050408,
+        "H_decimated": 1.2622862130487353,
+        "delta_pct": 0.8895173352202794,
+        "pass": "True"
+      },
+      "3": {
+        "n_blocks": 9,
+        "H_original": 1.2736152414050408,
+        "H_decimated": 1.2729906230657617,
+        "delta_pct": 0.04904293847724351,
+        "pass": "True"
+      },
+      "5": {
+        "n_blocks": 5,
+        "H_original": 1.2736152414050408,
+        "H_decimated": 1.2928180361978283,
+        "delta_pct": 1.5077390854402133,
+        "pass": "False"
+      },
+      "7": {
+        "n_blocks": 4,
+        "H_original": 1.2736152414050408,
+        "H_decimated": 1.249214037066576,
+        "delta_pct": 1.9159007795435552,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 1.9159007795435552,
+    "eitt_pass_rate": 0.5,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.455622447639739,
+      "min": 1.011810767046021,
+      "max": 9.371098120623731,
+      "total": 0.7826475733463465
+    },
+    "pll": {
+      "a": 16.016203818742753,
+      "b": -17.92347812665047,
+      "c": 6.1731988387507535,
+      "R2": 0.6289093158063332,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.5595420216142527,
+      "vertex_value": 59.13274931975461,
+      "Q_factor": 0.19271729145725058,
+      "vertex_in_range": "True",
+      "error_signal_correlation": -0.04941830310031291,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 1.038978282518893,
+        "squeeze_pct": 0.0,
+        "residual_std": 1.0193028414160794
+      },
+      "3": {
+        "residual_variance": 0.6086020996400286,
+        "squeeze_pct": 41.42302010735611,
+        "residual_std": 0.7801295402944493
+      },
+      "4": {
+        "residual_variance": 0.3589266752572107,
+        "squeeze_pct": 65.45388086582224,
+        "residual_std": 0.5991048950369299
+      },
+      "5": {
+        "residual_variance": 0.2945468707316386,
+        "squeeze_pct": 71.65033420934066,
+        "residual_std": 0.5427217249490189
+      },
+      "6": {
+        "residual_variance": 0.2914770051428976,
+        "squeeze_pct": 71.94580386836937,
+        "residual_std": 0.5398861038616364
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 13,
+        "ordering_value": 56.5,
+        "sigma2_A": 1.2396098046396564,
+        "inner_product": 0.04321040908974258,
+        "dsigma2_dt": 0.12035749237279691,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 3,
+        "ordering_value": 45.0,
+        "sigma2_A": 2.3117736136834193,
+        "inner_product": -1.018870541891829,
+        "dsigma2_dt": -2.124239210295662,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.5870940649054703,
+        "clr_variance": 0.2262061062527854,
+        "fraction_of_total": 0.03612834722108727,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.9423357967780197,
+        "clr_variance": 0.2582709325138742,
+        "fraction_of_total": 0.04124955812000919,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.0592982570351979,
+        "clr_variance": 0.18801784309385897,
+        "fraction_of_total": 0.030029135957381783,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.34554713814845345,
+        "clr_variance": 0.3731951310402982,
+        "fraction_of_total": 0.05960459467162167,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.3823926522742144,
+        "clr_variance": 2.477922620769498,
+        "fraction_of_total": 0.3957596473107792,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.10093858251766895,
+        "clr_variance": 0.4340717329602106,
+        "fraction_of_total": 0.06932745780841386,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": -0.4000292278520247,
+        "clr_variance": 0.5246742022892323,
+        "fraction_of_total": 0.08379796669621936,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -1.1662432006671932,
+        "clr_variance": 1.7788220178510143,
+        "fraction_of_total": 0.2841032922144877,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.2736152414050408,
+      "H_min": 0.9246449174280074,
+      "H_max": 1.5991747713026925
+    }
+  },
+  "subseries_ultramafic": {
+    "N": 4,
+    "name": "Sub-series: Ultramafic",
+    "eitt": {},
+    "eitt_max_delta": 0.0,
+    "eitt_pass_rate": 0.0,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 5.360223486001756,
+      "min": 2.3117736136834193,
+      "max": 9.371098120623731,
+      "total": 0.39406785704520564
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.9777902496916053,
+        "clr_variance": 0.4364938892857064,
+        "fraction_of_total": 0.13845771784034197,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -2.4697969398293687,
+        "clr_variance": 0.5302283445250721,
+        "fraction_of_total": 0.16819068564130782,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 0.18451656524533389,
+        "clr_variance": 0.10712932559767738,
+        "fraction_of_total": 0.033981877639346514,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 1.458916327971445,
+        "clr_variance": 0.3755908451052212,
+        "fraction_of_total": 0.11913901324047066,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": 2.727952872415757,
+        "clr_variance": 0.9369305941318975,
+        "fraction_of_total": 0.2971983686887006,
+        "direction": "enriched"
+      },
+      "CaO": {
+        "clr_mean": 0.30542211741689396,
+        "clr_variance": 0.18802525717082497,
+        "fraction_of_total": 0.05964241113848813,
+        "direction": "enriched"
+      },
+      "Na2O": {
+        "clr_mean": -1.6914181125267747,
+        "clr_variance": 0.13554889664190997,
+        "fraction_of_total": 0.04299668642676191,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -3.493383080384894,
+        "clr_variance": 0.44259570390333547,
+        "fraction_of_total": 0.14039323938458237,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.2484041343132581,
+      "H_min": 0.982821482494513,
+      "H_max": 1.4874053980883262
+    }
+  },
+  "subseries_mafic": {
+    "N": 6,
+    "name": "Sub-series: Mafic",
+    "eitt": {
+      "2": {
+        "n_blocks": 3,
+        "H_original": 1.5048865914994003,
+        "H_decimated": 1.5021154805510324,
+        "delta_pct": 0.18414084915241996,
+        "pass": "True"
+      }
+    },
+    "eitt_max_delta": 0.18414084915241996,
+    "eitt_pass_rate": 1.0,
+    "eitt_pass": true,
+    "verdict": "LEGITIMATE",
+    "sigma2_A": {
+      "mean": 1.6684312447194527,
+      "min": 1.011810767046021,
+      "max": 2.3075641769256676,
+      "total": 0.04593117116417818
+    },
+    "pll": {
+      "a": 0.11174322696376862,
+      "b": 0.8651437721441031,
+      "c": 1.103189253784786,
+      "R2": 0.6343985615326382,
+      "shape": "bowl (lock)",
+      "vertex_normalised": -3.8711239851011974,
+      "vertex_value": 27.144380074494013,
+      "Q_factor": 4.936268997057342,
+      "vertex_in_range": "False"
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.062072398756386,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.24914332974492012
+      },
+      "3": {
+        "residual_variance": 0.03046112937467038,
+        "squeeze_pct": 50.92645042731405,
+        "residual_std": 0.17453117020942244
+      },
+      "4": {
+        "residual_variance": 0.02618144785126168,
+        "squeeze_pct": 57.82111151525599,
+        "residual_std": 0.16180682263508445
+      },
+      "5": {
+        "residual_variance": 1.3883995757495653e-26,
+        "squeeze_pct": 100.0,
+        "residual_std": 1.1783036857065183e-13
+      },
+      "6": {
+        "residual_variance": 1.4384002094588238e-27,
+        "squeeze_pct": 100.0,
+        "residual_std": 3.792624697302415e-14
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.1099611722623823,
+        "clr_variance": 0.021206679233309655,
+        "fraction_of_total": 0.05771320079534786,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.383157415654874,
+        "clr_variance": 0.1373898157731148,
+        "fraction_of_total": 0.3739013514428558,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 0.9536689778341958,
+        "clr_variance": 0.02508291062025038,
+        "fraction_of_total": 0.06826222253998554,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.5462848868212956,
+        "clr_variance": 0.007179487372608716,
+        "fraction_of_total": 0.01953871192111038,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": 0.1871765748930332,
+        "clr_variance": 0.020919546376636705,
+        "fraction_of_total": 0.05693177924274198,
+        "direction": "enriched"
+      },
+      "CaO": {
+        "clr_mean": 0.5174212154278379,
+        "clr_variance": 0.02878626465696603,
+        "fraction_of_total": 0.07834076490797305,
+        "direction": "enriched"
+      },
+      "Na2O": {
+        "clr_mean": -0.8301282396686945,
+        "clr_variance": 0.003712921133079402,
+        "fraction_of_total": 0.010104578870326949,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -2.1012271719151756,
+        "clr_variance": 0.12317174414745975,
+        "fraction_of_total": 0.33520739027965846,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.5048865914994003,
+      "H_min": 1.4377012272681937,
+      "H_max": 1.5991747713026925
+    }
+  },
+  "subseries_intermediate": {
+    "N": 8,
+    "name": "Sub-series: Intermediate",
+    "eitt": {
+      "2": {
+        "n_blocks": 4,
+        "H_original": 1.3368267899317172,
+        "H_decimated": 1.3207128445930552,
+        "delta_pct": 1.2053876732590865,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 1.2053876732590865,
+    "eitt_pass_rate": 0.0,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 1.6278284997355053,
+      "min": 1.2396098046396564,
+      "max": 2.3003369345316913,
+      "total": 0.15439300551158144
+    },
+    "pll": {
+      "a": -0.027691255709887383,
+      "b": 0.17440314077791474,
+      "c": 1.5702111559085188,
+      "R2": 0.013729007110593439,
+      "shape": "hill (anti-lock)",
+      "vertex_normalised": 3.1490652248688513,
+      "vertex_value": 77.18817614154261,
+      "Q_factor": 28.352111806686008,
+      "vertex_in_range": "False"
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.12887209425781412,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.35898759624507104
+      },
+      "3": {
+        "residual_variance": 0.12883768545273358,
+        "squeeze_pct": 0.026699965790655256,
+        "residual_std": 0.35893966826297363
+      },
+      "4": {
+        "residual_variance": 0.1029684686621651,
+        "squeeze_pct": 20.10025967594483,
+        "residual_std": 0.3208870029498937
+      },
+      "5": {
+        "residual_variance": 0.0013115101071055635,
+        "squeeze_pct": 98.98231644743677,
+        "residual_std": 0.0362147774686738
+      },
+      "6": {
+        "residual_variance": 0.0006758079242643784,
+        "squeeze_pct": 99.47559793440432,
+        "residual_std": 0.02599630597343358
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.3695085973315373,
+        "clr_variance": 0.018229651270569136,
+        "fraction_of_total": 0.014759129801707306,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.8505340030650603,
+        "clr_variance": 0.05845665112812024,
+        "fraction_of_total": 0.04732780067855409,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.201383139413109,
+        "clr_variance": 0.03693129973201213,
+        "fraction_of_total": 0.029900398992849627,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.07196248231487673,
+        "clr_variance": 0.0500034156791819,
+        "fraction_of_total": 0.040483873859356125,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.8442915830108035,
+        "clr_variance": 0.36638191198279024,
+        "fraction_of_total": 0.29663091826017574,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.06707074785892359,
+        "clr_variance": 0.1248070378600595,
+        "fraction_of_total": 0.10104654469814808,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": -0.12857618696910494,
+        "clr_variance": 0.1938371166658501,
+        "fraction_of_total": 0.15693482682681328,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -0.7523816981556302,
+        "clr_variance": 0.3864969597740683,
+        "fraction_of_total": 0.3129165068823957,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.3368267899317172,
+      "H_min": 1.2468549717089576,
+      "H_max": 1.4278161253750001
+    }
+  },
+  "subseries_felsic": {
+    "N": 10,
+    "name": "Sub-series: Felsic",
+    "eitt": {
+      "2": {
+        "n_blocks": 5,
+        "H_original": 1.0943676353637979,
+        "H_decimated": 1.0855044410344834,
+        "delta_pct": 0.8098918537889795,
+        "pass": "True"
+      },
+      "3": {
+        "n_blocks": 3,
+        "H_original": 1.0943676353637979,
+        "H_decimated": 1.104245858169892,
+        "delta_pct": 0.9026420817726649,
+        "pass": "True"
+      }
+    },
+    "eitt_max_delta": 0.9026420817726649,
+    "eitt_pass_rate": 1.0,
+    "eitt_pass": true,
+    "verdict": "LEGITIMATE",
+    "sigma2_A": {
+      "mean": 2.42833191237049,
+      "min": 1.565300923594492,
+      "max": 4.169700647121657,
+      "total": 0.20271849529558522
+    },
+    "pll": {
+      "a": 0.5282958019260813,
+      "b": 1.399812754520147,
+      "c": 1.630463512709048,
+      "R2": 0.6540319390089797,
+      "shape": "bowl (lock)",
+      "vertex_normalised": -1.3248380447248072,
+      "vertex_value": 46.36691107224728,
+      "Q_factor": 1.5431350265936632,
+      "vertex_in_range": "False"
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.25054999729264893,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.5005496951279153
+      },
+      "3": {
+        "residual_variance": 0.23914476306358856,
+        "squeeze_pct": 4.552079166753598,
+        "residual_std": 0.48902429700740696
+      },
+      "4": {
+        "residual_variance": 0.23908162824858117,
+        "squeeze_pct": 4.577277656352319,
+        "residual_std": 0.48895974092820893
+      },
+      "5": {
+        "residual_variance": 0.09968119804137657,
+        "squeeze_pct": 60.215047248655,
+        "residual_std": 0.31572329347290257
+      },
+      "6": {
+        "residual_variance": 0.0728261124489076,
+        "squeeze_pct": 70.93350100345648,
+        "residual_std": 0.2698631365135068
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 4,
+        "ordering_value": 66.1,
+        "sigma2_A": 1.8147182925067156,
+        "inner_product": 0.04781338970692477,
+        "dsigma2_dt": 0.0772581074944928,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 6,
+        "ordering_value": 70.5,
+        "sigma2_A": 4.169700647121657,
+        "inner_product": 0.26572250499399824,
+        "dsigma2_dt": 0.30658441443089657,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.8911637006360142,
+        "clr_variance": 0.10348783943652347,
+        "fraction_of_total": 0.06381252934372561,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -2.140299803201734,
+        "clr_variance": 0.037041879439076594,
+        "fraction_of_total": 0.022840712797977298,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.3589205953694155,
+        "clr_variance": 0.020287677505825448,
+        "fraction_of_total": 0.012509759824975422,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": -0.0013754623175871394,
+        "clr_variance": 0.15015169467946837,
+        "fraction_of_total": 0.09258633163967794,
+        "direction": "depleted"
+      },
+      "MgO": {
+        "clr_mean": -1.59875325386128,
+        "clr_variance": 0.5431950563187781,
+        "fraction_of_total": 0.3349441891863034,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.6615930089857945,
+        "clr_variance": 0.4123494390305041,
+        "fraction_of_total": 0.25426234445780005,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": 0.15742330040154123,
+        "clr_variance": 0.1098028411965957,
+        "fraction_of_total": 0.06770647705115129,
+        "direction": "enriched"
+      },
+      "K2O": {
+        "clr_mean": -0.005486068040574698,
+        "clr_variance": 0.24543153475790982,
+        "fraction_of_total": 0.1513376556983888,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.0943676353637979,
+      "H_min": 0.9246449174280074,
+      "H_max": 1.2449780282423966
+    }
+  },
+  "volcanic_only": {
+    "N": 14,
+    "name": "Volcanic (Extrusive) Only",
+    "eitt": {
+      "2": {
+        "n_blocks": 7,
+        "H_original": 1.3018540691151554,
+        "H_decimated": 1.2912721628759631,
+        "delta_pct": 0.8128335187664022,
+        "pass": "True"
+      },
+      "3": {
+        "n_blocks": 4,
+        "H_original": 1.3018540691151554,
+        "H_decimated": 1.34769352527718,
+        "delta_pct": 3.5210902089187877,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 3.5210902089187877,
+    "eitt_pass_rate": 0.5,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.204126990225338,
+      "min": 1.011810767046021,
+      "max": 5.260289187637345,
+      "total": 0.6708522218032996
+    },
+    "pll": {
+      "a": 8.395488508202085,
+      "b": -7.697263294896889,
+      "c": 3.143835718088636,
+      "R2": 0.440769722632818,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.45841664171042246,
+      "vertex_value": 57.20239928126016,
+      "Q_factor": 0.18723363834142726,
+      "vertex_in_range": "True",
+      "error_signal_correlation": -0.8293000298048006,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.7388705927204142,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.8595758213912338
+      },
+      "3": {
+        "residual_variance": 0.5879794763668816,
+        "squeeze_pct": 20.42185977357326,
+        "residual_std": 0.7667981979418586
+      },
+      "4": {
+        "residual_variance": 0.4967169859246541,
+        "squeeze_pct": 32.7734801170237,
+        "residual_std": 0.7047815164465184
+      },
+      "5": {
+        "residual_variance": 0.2071270145572213,
+        "squeeze_pct": 71.96707832225265,
+        "residual_std": 0.4551120901022311
+      },
+      "6": {
+        "residual_variance": 0.18188332520177775,
+        "squeeze_pct": 75.38360208218468,
+        "residual_std": 0.4264778132585302
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 3,
+        "ordering_value": 49.2,
+        "sigma2_A": 1.329626980477177,
+        "inner_product": 0.19201709690021185,
+        "dsigma2_dt": 0.42027863191666426,
+        "orthogonality_holds": "False"
+      },
+      "maximum": {
+        "index": 8,
+        "ordering_value": 57.9,
+        "sigma2_A": 1.5369259645863522,
+        "inner_product": 0.03427702095869592,
+        "dsigma2_dt": 0.043670557641900754,
+        "orthogonality_holds": "True"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.5084867016904826,
+        "clr_variance": 0.18282825660623278,
+        "fraction_of_total": 0.03406641780860044,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.7340291952151132,
+        "clr_variance": 0.1628020313585481,
+        "fraction_of_total": 0.030334928108481995,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.0603188122724694,
+        "clr_variance": 0.1255201088235231,
+        "fraction_of_total": 0.0233881816188437,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.3427826399051895,
+        "clr_variance": 0.2689151578006762,
+        "fraction_of_total": 0.0501070036478773,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.5591308682769718,
+        "clr_variance": 1.940477250787094,
+        "fraction_of_total": 0.3615694313367089,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.12342742149140938,
+        "clr_variance": 0.5626934972887935,
+        "fraction_of_total": 0.10484676785004758,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": -0.373545599974555,
+        "clr_variance": 0.554184113001029,
+        "fraction_of_total": 0.10326121293735559,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -1.1214550689100926,
+        "clr_variance": 1.5693973587605003,
+        "fraction_of_total": 0.2924260566920845,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.3018540691151554,
+      "H_min": 0.9246449174280074,
+      "H_max": 1.5991747713026925
+    }
+  },
+  "plutonic_only": {
+    "N": 14,
+    "name": "Plutonic (Intrusive) Only",
+    "eitt": {
+      "2": {
+        "n_blocks": 7,
+        "H_original": 1.245376413694927,
+        "H_decimated": 1.2297265722719266,
+        "delta_pct": 1.2566354437827072,
+        "pass": "False"
+      },
+      "3": {
+        "n_blocks": 4,
+        "H_original": 1.245376413694927,
+        "H_decimated": 1.2740919746064219,
+        "delta_pct": 2.3057736276133736,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 2.3057736276133736,
+    "eitt_pass_rate": 0.0,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.707117905054139,
+      "min": 1.2869749094593674,
+      "max": 9.371098120623731,
+      "total": 0.8734356884004191
+    },
+    "pll": {
+      "a": 18.098295084135458,
+      "b": -21.557272174832566,
+      "c": 7.4984789870513495,
+      "R2": 0.8248719005329721,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.595560854616885,
+      "vertex_value": 60.33217645874227,
+      "Q_factor": 0.20715981677258485,
+      "vertex_in_range": "True",
+      "error_signal_correlation": -0.08318198907738973,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.7271081630553372,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.8527063756389636
+      },
+      "3": {
+        "residual_variance": 0.37768038185039954,
+        "squeeze_pct": 48.05719409566637,
+        "residual_std": 0.6145570615088558
+      },
+      "4": {
+        "residual_variance": 0.09928518121162434,
+        "squeeze_pct": 86.34519783213214,
+        "residual_std": 0.315095511252738
+      },
+      "5": {
+        "residual_variance": 0.07275335646740447,
+        "squeeze_pct": 89.99414940389447,
+        "residual_std": 0.26972830119845503
+      },
+      "6": {
+        "residual_variance": 0.06401387698762087,
+        "squeeze_pct": 91.19609980465188,
+        "residual_std": 0.2530096381318721
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 7,
+        "ordering_value": 56.8,
+        "sigma2_A": 1.5276898942049613,
+        "inner_product": 0.1063355441432323,
+        "dsigma2_dt": 0.21005760989382616,
+        "orthogonality_holds": "False"
+      },
+      "maximum": {
+        "index": 4,
+        "ordering_value": 51.5,
+        "sigma2_A": 2.3075641769256676,
+        "inner_product": -0.3564792813006816,
+        "dsigma2_dt": 0.31698617987207545,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.665701428120457,
+        "clr_variance": 0.2572257207961122,
+        "fraction_of_total": 0.03681234408728862,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -2.1506423983409255,
+        "clr_variance": 0.2669565531598256,
+        "fraction_of_total": 0.03820495268070636,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.0582777017979261,
+        "clr_variance": 0.2505134942982102,
+        "fraction_of_total": 0.035851737229359186,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.3483116363917173,
+        "clr_variance": 0.4774598193788465,
+        "fraction_of_total": 0.06833070621565317,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.20565443627145674,
+        "clr_variance": 2.9528951967602275,
+        "fraction_of_total": 0.422597684634352,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.07844974354392852,
+        "clr_variance": 0.3044384728748542,
+        "fraction_of_total": 0.04356910258504445,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": -0.42651285572949443,
+        "clr_variance": 0.4937615264863314,
+        "fraction_of_total": 0.07066369239368238,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -1.2110313324242945,
+        "clr_variance": 1.9842347234489455,
+        "fraction_of_total": 0.28396978017391394,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.245376413694927,
+      "H_min": 0.9246827880411884,
+      "H_max": 1.508513468954228
+    }
+  },
+  "intermediate_to_felsic": {
+    "N": 18,
+    "name": "Intermediate-to-Felsic",
+    "eitt": {
+      "2": {
+        "n_blocks": 9,
+        "H_original": 1.2021272596162065,
+        "H_decimated": 1.1900415092827377,
+        "delta_pct": 1.0053636365693375,
+        "pass": "False"
+      },
+      "3": {
+        "n_blocks": 6,
+        "H_original": 1.2021272596162065,
+        "H_decimated": 1.184554203837807,
+        "delta_pct": 1.461829905097562,
+        "pass": "False"
+      },
+      "5": {
+        "n_blocks": 3,
+        "H_original": 1.2021272596162065,
+        "H_decimated": 1.2319909906927171,
+        "delta_pct": 2.4842404028043577,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 2.4842404028043577,
+    "eitt_pass_rate": 0.0,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.072552617866052,
+      "min": 1.2396098046396564,
+      "max": 4.169700647121657,
+      "total": 0.24138255819108012
+    },
+    "pll": {
+      "a": 2.8808761750830043,
+      "b": -0.9327898787704679,
+      "c": 1.6503858391351562,
+      "R2": 0.6781406208727536,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.16189343485816293,
+      "vertex_value": 57.373111323219995,
+      "Q_factor": 0.2864381769354605,
+      "vertex_in_range": "True",
+      "error_signal_correlation": 0.1183748395243541,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.19911207101066536,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.44621975641007355
+      },
+      "3": {
+        "residual_variance": 0.19895798481712654,
+        "squeeze_pct": 0.07738666609046208,
+        "residual_std": 0.44604706569724967
+      },
+      "4": {
+        "residual_variance": 0.19190934309120092,
+        "squeeze_pct": 3.6174240380828726,
+        "residual_std": 0.4380745862192886
+      },
+      "5": {
+        "residual_variance": 0.1917740666824886,
+        "squeeze_pct": 3.6853638711757064,
+        "residual_std": 0.4379201601690525
+      },
+      "6": {
+        "residual_variance": 0.18218814576509523,
+        "squeeze_pct": 8.499698265236566,
+        "residual_std": 0.4268350334322327
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 3,
+        "ordering_value": 56.5,
+        "sigma2_A": 1.2396098046396564,
+        "inner_product": 0.04321040908974258,
+        "dsigma2_dt": 0.12035749237279691,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 14,
+        "ordering_value": 70.5,
+        "sigma2_A": 4.169700647121657,
+        "inner_product": 0.26572250499399824,
+        "dsigma2_dt": 0.30658441443089657,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.6593169880562466,
+        "clr_variance": 0.1327864340303226,
+        "fraction_of_total": 0.06876347809956919,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -2.0115150031409907,
+        "clr_variance": 0.06729146165367551,
+        "fraction_of_total": 0.034846895193027534,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.2889039482777236,
+        "clr_variance": 0.033812756527139325,
+        "fraction_of_total": 0.017509941884643603,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.031219179741285692,
+        "clr_variance": 0.10696936182080138,
+        "fraction_of_total": 0.05539410273800919,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -1.2634369557055127,
+        "clr_variance": 0.6051577113750038,
+        "fraction_of_total": 0.31338102673514046,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.39736089292940746,
+        "clr_variance": 0.3718260802326293,
+        "fraction_of_total": 0.19255020071618492,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": 0.030312417125698495,
+        "clr_variance": 0.16734787888077599,
+        "fraction_of_total": 0.08666112836345773,
+        "direction": "enriched"
+      },
+      "K2O": {
+        "clr_mean": -0.33743968142504377,
+        "clr_variance": 0.44586878100829275,
+        "fraction_of_total": 0.23089322626996722,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.2021272596162065,
+      "H_min": 0.9246449174280074,
+      "H_max": 1.4278161253750001
+    }
+  },
+  "mafic_to_intermediate": {
+    "N": 18,
+    "name": "Ultramafic-to-Intermediate",
+    "eitt": {
+      "2": {
+        "n_blocks": 9,
+        "H_original": 1.3731972447612872,
+        "H_decimated": 1.3604983086122084,
+        "delta_pct": 0.9247714556320965,
+        "pass": "True"
+      },
+      "3": {
+        "n_blocks": 6,
+        "H_original": 1.3731972447612872,
+        "H_decimated": 1.3573630055136965,
+        "delta_pct": 1.1530928501348205,
+        "pass": "False"
+      },
+      "5": {
+        "n_blocks": 3,
+        "H_original": 1.3731972447612872,
+        "H_decimated": 1.3728532314559914,
+        "delta_pct": 0.025051995014429142,
+        "pass": "True"
+      }
+    },
+    "eitt_max_delta": 1.1530928501348205,
+    "eitt_pass_rate": 0.6666666666666666,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.470783856122655,
+      "min": 1.011810767046021,
+      "max": 9.371098120623731,
+      "total": 0.6950113037237875
+    },
+    "pll": {
+      "a": 15.811949309168641,
+      "b": -20.381539611176347,
+      "c": 7.608366477357514,
+      "R2": 0.7717893623274497,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.6444980063071036,
+      "vertex_value": 54.034458132449174,
+      "Q_factor": 0.2405891370062059,
+      "vertex_in_range": "True",
+      "error_signal_correlation": -0.1944001735279944,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.9019481546832551,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.9497095106837959
+      },
+      "3": {
+        "residual_variance": 0.37953988851573484,
+        "squeeze_pct": 57.919988355758534,
+        "residual_std": 0.6160680875647876
+      },
+      "4": {
+        "residual_variance": 0.3155733569320989,
+        "squeeze_pct": 65.01202920660982,
+        "residual_std": 0.5617591627486809
+      },
+      "5": {
+        "residual_variance": 0.2841620789982768,
+        "squeeze_pct": 68.49463269891956,
+        "residual_std": 0.5330685499992255
+      },
+      "6": {
+        "residual_variance": 0.18613188361881788,
+        "squeeze_pct": 79.36335002712175,
+        "residual_std": 0.43143004487265124
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 13,
+        "ordering_value": 56.5,
+        "sigma2_A": 1.2396098046396564,
+        "inner_product": 0.04321040908974258,
+        "dsigma2_dt": 0.12035749237279691,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 3,
+        "ordering_value": 45.0,
+        "sigma2_A": 2.3117736136834193,
+        "inner_product": -1.018870541891829,
+        "dsigma2_dt": -2.124239210295662,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.4181664894996118,
+        "clr_variance": 0.21448064909970366,
+        "fraction_of_total": 0.038575028915094976,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.832355793209289,
+        "clr_variance": 0.3473082786819346,
+        "fraction_of_total": 0.062464501803981165,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 0.8928414024050768,
+        "clr_variance": 0.2036191919511553,
+        "fraction_of_total": 0.036621561199830135,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.5382819161851425,
+        "clr_variance": 0.3930974061791742,
+        "fraction_of_total": 0.07069982244767195,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": 0.29336323749637777,
+        "clr_variance": 2.2741624045195596,
+        "fraction_of_total": 0.40901536283202683,
+        "direction": "enriched"
+      },
+      "CaO": {
+        "clr_mean": 0.21053609885351193,
+        "clr_variance": 0.17449353805348966,
+        "fraction_of_total": 0.031383219438046214,
+        "direction": "enriched"
+      },
+      "Na2O": {
+        "clr_mean": -0.7097250768817837,
+        "clr_variance": 0.48660603884760484,
+        "fraction_of_total": 0.08751764831744963,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -1.8111082743486486,
+        "clr_variance": 1.466322922457679,
+        "fraction_of_total": 0.26372285504589926,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.3731972447612872,
+      "H_min": 0.982821482494513,
+      "H_max": 1.5991747713026925
+    }
+  },
+  "control_shuffled": {
+    "N": 28,
+    "name": "Control: Shuffled Order",
+    "eitt": {
+      "2": {
+        "n_blocks": 14,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.2465368546605613,
+        "delta_pct": 2.126104168995895,
+        "pass": "False"
+      },
+      "3": {
+        "n_blocks": 9,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.225599473363697,
+        "delta_pct": 3.7700371729513407,
+        "pass": "False"
+      },
+      "5": {
+        "n_blocks": 5,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.2100176374893241,
+        "delta_pct": 4.99347070042571,
+        "pass": "False"
+      },
+      "7": {
+        "n_blocks": 4,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.2085746709740648,
+        "delta_pct": 5.106767594836886,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 5.106767594836886,
+    "eitt_pass_rate": 0.0,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.455622447639739,
+      "min": 1.011810767046021,
+      "max": 9.371098120623731,
+      "total": 0.7826475733463465
+    },
+    "pll": {
+      "a": 16.01620381874274,
+      "b": -17.923478126650462,
+      "c": 6.173198838750746,
+      "R2": 0.6289093158063335,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.559542021614253,
+      "vertex_value": 59.13274931975462,
+      "Q_factor": 0.19271729145725053,
+      "vertex_in_range": "True",
+      "error_signal_correlation": 0.32319986114784865,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 1.038978282518893,
+        "squeeze_pct": 0.0,
+        "residual_std": 1.0193028414160794
+      },
+      "3": {
+        "residual_variance": 0.6086020996400283,
+        "squeeze_pct": 41.423020107356145,
+        "residual_std": 0.780129540294449
+      },
+      "4": {
+        "residual_variance": 0.3589266752572105,
+        "squeeze_pct": 65.45388086582227,
+        "residual_std": 0.5991048950369297
+      },
+      "5": {
+        "residual_variance": 0.2945468707316296,
+        "squeeze_pct": 71.65033420934152,
+        "residual_std": 0.5427217249490107
+      },
+      "6": {
+        "residual_variance": 0.29147700514289404,
+        "squeeze_pct": 71.94580386836971,
+        "residual_std": 0.539886103861633
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 24,
+        "ordering_value": 54.2,
+        "sigma2_A": 1.332907586621748,
+        "inner_product": -0.034158296209444716,
+        "dsigma2_dt": -0.16233906833719414,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 3,
+        "ordering_value": 63.6,
+        "sigma2_A": 1.73629596808185,
+        "inner_product": 0.4224834348618911,
+        "dsigma2_dt": 3.8523667729180957,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.5870940649054703,
+        "clr_variance": 0.22620610625278545,
+        "fraction_of_total": 0.03612834722108728,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.9423357967780197,
+        "clr_variance": 0.2582709325138742,
+        "fraction_of_total": 0.04124955812000919,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.0592982570351976,
+        "clr_variance": 0.188017843093859,
+        "fraction_of_total": 0.03002913595738179,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.3455471381484534,
+        "clr_variance": 0.3731951310402984,
+        "fraction_of_total": 0.0596045946716217,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.3823926522742144,
+        "clr_variance": 2.4779226207694975,
+        "fraction_of_total": 0.39575964731077906,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.10093858251766895,
+        "clr_variance": 0.4340717329602107,
+        "fraction_of_total": 0.06932745780841387,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": -0.40002922785202477,
+        "clr_variance": 0.5246742022892324,
+        "fraction_of_total": 0.08379796669621938,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -1.1662432006671932,
+        "clr_variance": 1.7788220178510143,
+        "fraction_of_total": 0.2841032922144877,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.273615241405041,
+      "H_min": 0.9246449174280074,
+      "H_max": 1.5991747713026925
+    }
+  },
+  "control_reversed": {
+    "N": 28,
+    "name": "Control: Reversed Order",
+    "eitt": {
+      "2": {
+        "n_blocks": 14,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.2622862130487353,
+        "delta_pct": 0.8895173352202967,
+        "pass": "True"
+      },
+      "3": {
+        "n_blocks": 9,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.2714354874882061,
+        "delta_pct": 0.17114697170475182,
+        "pass": "True"
+      },
+      "5": {
+        "n_blocks": 5,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.2710958218083974,
+        "delta_pct": 0.19781638243149394,
+        "pass": "True"
+      },
+      "7": {
+        "n_blocks": 4,
+        "H_original": 1.273615241405041,
+        "H_decimated": 1.2492140370665763,
+        "delta_pct": 1.915900779543555,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 1.915900779543555,
+    "eitt_pass_rate": 0.75,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.455622447639739,
+      "min": 1.011810767046021,
+      "max": 9.371098120623731,
+      "total": 0.7826475733463465
+    },
+    "pll": {
+      "a": 16.016203818742728,
+      "b": -17.923478126650462,
+      "c": 6.173198838750746,
+      "R2": 0.6289093158063332,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.5595420216142534,
+      "vertex_value": 59.13274931975464,
+      "Q_factor": 0.19271729145725067,
+      "vertex_in_range": "True",
+      "error_signal_correlation": -0.04941830310031296,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 1.0389782825188927,
+        "squeeze_pct": 0.0,
+        "residual_std": 1.0193028414160792
+      },
+      "3": {
+        "residual_variance": 0.6086020996400279,
+        "squeeze_pct": 41.42302010735618,
+        "residual_std": 0.7801295402944487
+      },
+      "4": {
+        "residual_variance": 0.35892667525721084,
+        "squeeze_pct": 65.45388086582223,
+        "residual_std": 0.59910489503693
+      },
+      "5": {
+        "residual_variance": 0.29454687073163266,
+        "squeeze_pct": 71.65033420934121,
+        "residual_std": 0.5427217249490135
+      },
+      "6": {
+        "residual_variance": 0.2914770051428941,
+        "squeeze_pct": 71.94580386836971,
+        "residual_std": 0.5398861038616332
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 14,
+        "ordering_value": 56.5,
+        "sigma2_A": 1.2396098046396564,
+        "inner_product": -0.04321040908974258,
+        "dsigma2_dt": -0.12035749237279691,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 24,
+        "ordering_value": 45.0,
+        "sigma2_A": 2.3117736136834193,
+        "inner_product": 1.018870541891829,
+        "dsigma2_dt": 2.124239210295662,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.5870940649054703,
+        "clr_variance": 0.22620610625278542,
+        "fraction_of_total": 0.03612834722108728,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.9423357967780197,
+        "clr_variance": 0.2582709325138742,
+        "fraction_of_total": 0.04124955812000919,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.0592982570351979,
+        "clr_variance": 0.18801784309385897,
+        "fraction_of_total": 0.030029135957381783,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.34554713814845345,
+        "clr_variance": 0.3731951310402984,
+        "fraction_of_total": 0.0596045946716217,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.3823926522742144,
+        "clr_variance": 2.477922620769498,
+        "fraction_of_total": 0.3957596473107792,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.10093858251766895,
+        "clr_variance": 0.4340717329602107,
+        "fraction_of_total": 0.06932745780841387,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": -0.4000292278520247,
+        "clr_variance": 0.5246742022892324,
+        "fraction_of_total": 0.08379796669621938,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -1.1662432006671934,
+        "clr_variance": 1.7788220178510146,
+        "fraction_of_total": 0.28410329221448777,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.273615241405041,
+      "H_min": 0.9246449174280074,
+      "H_max": 1.5991747713026925
+    }
+  },
+  "control_dirichlet": {
+    "N": 28,
+    "name": "Control: Random Dirichlet (smooth)",
+    "eitt": {
+      "2": {
+        "n_blocks": 14,
+        "H_original": 2.0023643143626195,
+        "H_decimated": 2.0344156838293155,
+        "delta_pct": 1.6006762224434843,
+        "pass": "False"
+      },
+      "3": {
+        "n_blocks": 9,
+        "H_original": 2.0023643143626195,
+        "H_decimated": 2.0446276477777223,
+        "delta_pct": 2.110671525254175,
+        "pass": "False"
+      },
+      "5": {
+        "n_blocks": 5,
+        "H_original": 2.0023643143626195,
+        "H_decimated": 2.058991860290721,
+        "delta_pct": 2.828034115566374,
+        "pass": "False"
+      },
+      "7": {
+        "n_blocks": 4,
+        "H_original": 2.0023643143626195,
+        "H_decimated": 2.06230873821415,
+        "delta_pct": 2.9936821896774406,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 2.9936821896774406,
+    "eitt_pass_rate": 0.0,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 0.17976491060820138,
+      "min": 0.06526510632574734,
+      "max": 0.6523521252603132,
+      "total": 0.17330573997328166
+    },
+    "pll": {
+      "a": 0.549446265880223,
+      "b": -0.6934509706595785,
+      "c": 0.33994999702803846,
+      "R2": 0.29094289521034067,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.6310453029912373,
+      "vertex_value": 62.086585604693305,
+      "Q_factor": 0.30935690907229324,
+      "vertex_in_range": "True",
+      "error_signal_correlation": 0.04141740086254603,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 0.009220902033645324,
+        "squeeze_pct": 0.0,
+        "residual_std": 0.09602552803106747
+      },
+      "3": {
+        "residual_variance": 0.008113464240320908,
+        "squeeze_pct": 12.01008089320964,
+        "residual_std": 0.09007477027625942
+      },
+      "4": {
+        "residual_variance": 0.007097498394886896,
+        "squeeze_pct": 23.028155282536687,
+        "residual_std": 0.08424665212865669
+      },
+      "5": {
+        "residual_variance": 0.006735140099673198,
+        "squeeze_pct": 26.957904171436287,
+        "residual_std": 0.08206789932533425
+      },
+      "6": {
+        "residual_variance": 0.00632713893501487,
+        "squeeze_pct": 31.38264660086032,
+        "residual_std": 0.07954331483547106
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 13,
+        "ordering_value": 56.85185185185185,
+        "sigma2_A": 0.06526510632574734,
+        "inner_product": -0.0019371311623278351,
+        "dsigma2_dt": -0.04094348537922305,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 3,
+        "ordering_value": 43.888888888888886,
+        "sigma2_A": 0.3499053673602294,
+        "inner_product": -0.097436617400542,
+        "dsigma2_dt": -0.047059481116370525,
+        "orthogonality_holds": "True"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": -0.08445594811304873,
+        "clr_variance": 0.2003873235056279,
+        "fraction_of_total": 0.14453309764618974,
+        "direction": "depleted"
+      },
+      "TiO2": {
+        "clr_mean": 0.036912321157303904,
+        "clr_variance": 0.2869459685713636,
+        "fraction_of_total": 0.20696513616311968,
+        "direction": "enriched"
+      },
+      "Al2O3": {
+        "clr_mean": -0.0921211230393377,
+        "clr_variance": 0.19140688578174828,
+        "fraction_of_total": 0.1380557893028076,
+        "direction": "depleted"
+      },
+      "FeOt": {
+        "clr_mean": 0.11576637462314343,
+        "clr_variance": 0.1516215579284567,
+        "fraction_of_total": 0.10935987892829747,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.002108312715337679,
+        "clr_variance": 0.1582427717153434,
+        "fraction_of_total": 0.11413555296822504,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.05812889224236758,
+        "clr_variance": 0.1187953750186198,
+        "fraction_of_total": 0.08568338174844521,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": 0.12682353515156514,
+        "clr_variance": 0.14174034367363905,
+        "fraction_of_total": 0.10223286869746134,
+        "direction": "enriched"
+      },
+      "K2O": {
+        "clr_mean": -0.04268795482192077,
+        "clr_variance": 0.13730569359145467,
+        "fraction_of_total": 0.09903429454545398,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 2.0023643143626195,
+      "H_min": 1.904504699066616,
+      "H_max": 2.0478357566666023
+    }
+  },
+  "control_noisy_15pct": {
+    "N": 28,
+    "name": "Control: 15% Noise Added",
+    "eitt": {
+      "2": {
+        "n_blocks": 14,
+        "H_original": 1.2591771018437599,
+        "H_decimated": 1.2483877563675445,
+        "delta_pct": 0.8568568679034083,
+        "pass": "True"
+      },
+      "3": {
+        "n_blocks": 9,
+        "H_original": 1.2591771018437599,
+        "H_decimated": 1.2599000515764525,
+        "delta_pct": 0.057414459938480204,
+        "pass": "True"
+      },
+      "5": {
+        "n_blocks": 5,
+        "H_original": 1.2591771018437599,
+        "H_decimated": 1.2808078680092614,
+        "delta_pct": 1.7178493901952716,
+        "pass": "False"
+      },
+      "7": {
+        "n_blocks": 4,
+        "H_original": 1.2591771018437599,
+        "H_decimated": 1.234561375898675,
+        "delta_pct": 1.9549057800559586,
+        "pass": "False"
+      }
+    },
+    "eitt_max_delta": 1.9549057800559586,
+    "eitt_pass_rate": 0.5,
+    "eitt_pass": false,
+    "verdict": "FABRICATED",
+    "sigma2_A": {
+      "mean": 2.513086310638353,
+      "min": 1.1512597650909018,
+      "max": 9.467516735540507,
+      "total": 0.8158813854873891
+    },
+    "pll": {
+      "a": 16.35047736605896,
+      "b": -18.17586505241141,
+      "c": 6.247770901145254,
+      "R2": 0.6275697732492341,
+      "shape": "bowl (lock)",
+      "vertex_normalised": 0.5558206236272242,
+      "vertex_value": 59.00882676678656,
+      "Q_factor": 0.19105775205421988,
+      "vertex_in_range": "True",
+      "error_signal_correlation": 0.022254881098081037,
+      "ratio_of_2_verified": false
+    },
+    "noise_squeeze": {
+      "2": {
+        "residual_variance": 1.072345969587017,
+        "squeeze_pct": 0.0,
+        "residual_std": 1.0355413896059475
+      },
+      "3": {
+        "residual_variance": 0.6339541072166318,
+        "squeeze_pct": 40.881569456471134,
+        "residual_std": 0.7962123505803158
+      },
+      "4": {
+        "residual_variance": 0.3967914036860219,
+        "squeeze_pct": 62.99781834039675,
+        "residual_std": 0.6299138065529457
+      },
+      "5": {
+        "residual_variance": 0.33317275934888047,
+        "squeeze_pct": 68.93047870761409,
+        "residual_std": 0.5772111912886656
+      },
+      "6": {
+        "residual_variance": 0.32976817390899543,
+        "squeeze_pct": 69.24796816870622,
+        "residual_std": 0.5742544504912395
+      }
+    },
+    "vertex_theorem": {
+      "minimum": {
+        "index": 13,
+        "ordering_value": 56.5,
+        "sigma2_A": 1.1512597650909018,
+        "inner_product": 0.06383640126291996,
+        "dsigma2_dt": 0.220466639256215,
+        "orthogonality_holds": "True"
+      },
+      "maximum": {
+        "index": 3,
+        "ordering_value": 45.0,
+        "sigma2_A": 2.507583344487911,
+        "inner_product": -1.0366262150975563,
+        "dsigma2_dt": -2.1758642149559755,
+        "orthogonality_holds": "False"
+      }
+    },
+    "boundary_species": {
+      "SiO2": {
+        "clr_mean": 2.6141221210434864,
+        "clr_variance": 0.2203492365362905,
+        "fraction_of_total": 0.033759385931549785,
+        "direction": "enriched"
+      },
+      "TiO2": {
+        "clr_mean": -1.9606611694081888,
+        "clr_variance": 0.31112897874476925,
+        "fraction_of_total": 0.04766761815489084,
+        "direction": "depleted"
+      },
+      "Al2O3": {
+        "clr_mean": 1.0642124533304105,
+        "clr_variance": 0.21081313769283497,
+        "fraction_of_total": 0.032298374102336574,
+        "direction": "enriched"
+      },
+      "FeOt": {
+        "clr_mean": 0.3335607720119587,
+        "clr_variance": 0.3880354198224019,
+        "fraction_of_total": 0.05945034209700077,
+        "direction": "enriched"
+      },
+      "MgO": {
+        "clr_mean": -0.3774438653605321,
+        "clr_variance": 2.4664795367579515,
+        "fraction_of_total": 0.37788574121049046,
+        "direction": "depleted"
+      },
+      "CaO": {
+        "clr_mean": -0.10089492043348271,
+        "clr_variance": 0.5079058980278487,
+        "fraction_of_total": 0.07781552365673185,
+        "direction": "depleted"
+      },
+      "Na2O": {
+        "clr_mean": -0.4215105985915207,
+        "clr_variance": 0.5920707363832586,
+        "fraction_of_total": 0.0907102960851302,
+        "direction": "depleted"
+      },
+      "K2O": {
+        "clr_mean": -1.151384792592132,
+        "clr_variance": 1.8302681399337573,
+        "fraction_of_total": 0.28041271876186946,
+        "direction": "depleted"
+      }
+    },
+    "entropy": {
+      "H_mean": 1.2591771018437599,
+      "H_min": 0.9158654850910126,
+      "H_max": 1.5539054324745782
+    }
+  },
+  "texture_matrix": {
+    "volcanic_ultramafic": {
+      "N": 2,
+      "sigma2_A_mean": 3.786031400660382,
+      "sigma2_A_std": 1.4742577869769629,
+      "rocks": [
+        "Komatiite",
+        "Picrite"
+      ]
+    },
+    "plutonic_ultramafic": {
+      "N": 2,
+      "sigma2_A_mean": 6.934415571343131,
+      "sigma2_A_std": 2.436682549280601,
+      "rocks": [
+        "Dunite",
+        "Peridotite"
+      ]
+    },
+    "volcanic_mafic": {
+      "N": 3,
+      "sigma2_A_mean": 1.3979352594675156,
+      "sigma2_A_std": 0.34653873682433584,
+      "rocks": [
+        "Alkali_Basalt",
+        "Basalt",
+        "Tholeiitic_Basalt"
+      ]
+    },
+    "plutonic_mafic": {
+      "N": 3,
+      "sigma2_A_mean": 1.9389272299713898,
+      "sigma2_A_std": 0.27044030099070576,
+      "rocks": [
+        "Gabbro",
+        "Diabase",
+        "Norite"
+      ]
+    },
+    "volcanic_intermediate": {
+      "N": 4,
+      "sigma2_A_mean": 1.5501340326102504,
+      "sigma2_A_std": 0.33031176128858836,
+      "rocks": [
+        "Basaltic_Andesite",
+        "Trachyandesite",
+        "Phonolite",
+        "Andesite"
+      ]
+    },
+    "plutonic_intermediate": {
+      "N": 4,
+      "sigma2_A_mean": 1.70552296686076,
+      "sigma2_A_std": 0.3743705351049487,
+      "rocks": [
+        "Nepheline_Syenite",
+        "Monzodiorite",
+        "Diorite",
+        "Tonalite"
+      ]
+    },
+    "volcanic_felsic": {
+      "N": 5,
+      "sigma2_A_mean": 2.578274630598085,
+      "sigma2_A_std": 0.8931056638082491,
+      "rocks": [
+        "Trachyte",
+        "Dacite",
+        "Rhyodacite",
+        "Pantellerite",
+        "Rhyolite"
+      ]
+    },
+    "plutonic_felsic": {
+      "N": 5,
+      "sigma2_A_mean": 2.278389194142895,
+      "sigma2_A_std": 0.778329118556872,
+      "rocks": [
+        "Monzonite",
+        "Syenite",
+        "Granodiorite",
+        "Granite",
+        "Alkali_Granite"
+      ]
+    }
+  },
+  "texture_comparison": {
+    "volcanic_sigma2_A": 2.204126990225338,
+    "plutonic_sigma2_A": 2.707117905054139,
+    "peter_prediction_confirmed": true
+  }
+}

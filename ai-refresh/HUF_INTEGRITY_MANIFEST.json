@@ -1,7 +1,7 @@
 {
   "_meta": {
     "type": "HUF-INTEGRITY-MANIFEST",
-    "version": "3.1",
+    "version": "3.2",
     "created": "2026-04-13",
     "last_updated": "2026-04-18",
     "author": "Peter Higgins / Claude",
@@ -334,6 +334,20 @@
         "INTEGRITY_MANIFEST v3.1: Updated FAST_REFRESH hash (v3.0→v3.1, 23765→30090 bytes). Added 4 new tier_1 entries (3 ChatGPT methodology briefings + ChatGPT handoff). Added 2 new tier_2 entries (CoDa+TimeSeries and Geochemistry Bridge handouts). Added 3 new drift patterns (HIVIP naming, nuclear overclaim, promotion ladder misuse)",
         "3 ChatGPT-authored briefings placed in briefings/: Precedent_and_Lineage (16,911 bytes), Project_Arc_and_Contamination_Context (10,749 bytes), Nuclear_Assessment_and_Stable_Island_Plan (8,999 bytes)",
         "Nuclear staircase analysis: prime-2 mechanism confirmed (every step dN=0,2,4,6), prime Z enrichment DEAD (p=0.85), stability corridor prediction Z=114-126/N≈184, σ²_A candidate Z=115/N=252, packing crisis Z≈522"
+      ]
+    },
+    {
+      "version": "3.2",
+      "date": "2026-04-18",
+      "event": "FIXED POINT v3.2 — Full PLL-EITT chain run on EXP-04 (Microphone Valley) and EXP-05 (Geochemistry). Mathematical addenda appended to all 15 discovery documents. EXP Series 1-5 Conclusion document created. Claim classification (22 claims, L0-L5). Executive Summary with mathematical registry.",
+      "changes": [
+        "EXP-04 full PLL-EITT chain: RC bandpass orders 1-6 tested. 5 new findings: critical order transition at 2→3, PLL shape flip at order 4→5, vertex migration, monotonic noise squeeze, non-parabolic confirmation. Files: EXP-04_Microphone_Valley/EXP04_SEALED_CONCLUSION.json, exp04_pll_eitt_chain.json",
+        "EXP-05 full PLL-EITT chain: 28 igneous rocks on 8-part simplex. 7 new findings: PLL parabola in geochemistry (R²=0.63, vertex at SiO2≈59 wt%), cooling rate predicts PLL quality (plutonic R²=0.82), intermediate anti-lock shape, MgO as boundary species (39.6%), 72% noise squeeze, vertex theorem verified, texture-energy prediction confirmed. Files: EXP-05_Geochemistry/EXP05_SEALED_CONCLUSION.json, exp05_pll_eitt_chain.json",
+        "Mathematical addenda: HUF_MATHEMATICAL_ADDENDUM.json created (3 theorems, 2 lemmas, 7 corollaries, 4 fixed-point results, 8 open problems, 14 notation symbols, canonical values). Appended to all 15 discoveries/*.md documents. MATHEMATICAL_REGISTRY_SUMMARY.md created.",
+        "EXP Series Conclusion: HIGGINS_EXP_Series_Conclusion_2026.docx — 21-page professional document covering the full five-experiment arc, methods, tools, discovery narrative, cross-experiment operating envelope, mathematical spine, implications, and limitations",
+        "Claim classification: 22 claims across L0-L5 promotion ladder. CLAIM_CLASSIFICATION.json created",
+        "Executive Summary updated: HUF_Executive_Summary_2026-04-18_v2.docx with mathematical registry addendum",
+        "All five experiments now have sealed conclusions with full PLL-EITT chain results"
       ]
     }
   ]
