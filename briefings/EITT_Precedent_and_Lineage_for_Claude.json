@@ -1,0 +1,424 @@
+{
+  "_meta": {
+    "type": "EITT_PRECEDENT_AND_LINEAGE_FOR_CLAUDE",
+    "version": "1.0",
+    "created": "2026-04-17",
+    "author": "OpenAI ChatGPT for Peter Higgins",
+    "intended_reader": "Claude",
+    "status": "LINEAGE_AND_METHOD_CONTEXT",
+    "purpose": "Document the methodological lineage, precedent, naming architecture, concept solidification chain, and current method-status table for the EITT/CoDa/HIVP programme."
+  },
+  "recommended_naming_architecture": {
+    "guiding_rule": "Do not discard existing names that already carry validated meaning. Add one umbrella name for the full methodology while preserving the established sub-names.",
+    "canonical_names": {
+      "science": {
+        "name": "Entropy-Invariant Time Transformer",
+        "short_name": "EITT",
+        "role": "Primary scientific claim and main observable."
+      },
+      "decomposition_engine": {
+        "name": "The Higgins Decomposition",
+        "short_name": "Higgins Decomposition",
+        "role": "Operational state-machine / process-line implementation of CoDa + EITT."
+      },
+      "development_chain": {
+        "name": "Higgins Iterative Validation Protocol",
+        "short_name": "HIVP",
+        "role": "Regression-chain rule for advancing the method without breaking prior DUTs."
+      },
+      "recommended_umbrella_methodology": {
+        "name": "Higgins Iterative Validation and Integrity Protocol",
+        "short_name": "HIVIP",
+        "role": "Recommended umbrella name for the full methodology: theory + instrument development + contamination control + regression discipline."
+      }
+    },
+    "naming_policy": {
+      "keep": [
+        "Keep EITT for the science.",
+        "Keep Higgins Decomposition for the stepwise engine.",
+        "Keep HIVP for the historical regression-chain name."
+      ],
+      "add": [
+        "Use HIVIP as the broader umbrella only when referring to the full research methodology, including contamination control and integrity doctrine."
+      ],
+      "avoid": [
+        "Do not rename everything under one term and lose the role distinction.",
+        "Do not use HUF-GOV as the core scientific name."
+      ]
+    },
+    "one_line_summary": "EITT is the science. The Higgins Decomposition is the engine. HIVP is the chain. HIVIP is the full methodology."
+  },
+  "precedent_and_lineage_chain": [
+    {
+      "lineage_stage": 1,
+      "name": "Compositional Data Analysis lineage",
+      "legacy": [
+        "Aitchison geometry",
+        "simplex closure",
+        "CLR / ILR / ALR transforms",
+        "variation matrix",
+        "Aitchison variance",
+        "Fréchet mean",
+        "perturbation and powering"
+      ],
+      "what_is_inherited": "The structural mathematics of constrained data living on the simplex.",
+      "what_the_project_adds": "A temporal-invariance reading layered on top of the CoDa structure."
+    },
+    {
+      "lineage_stage": 2,
+      "name": "Information / entropy lineage",
+      "legacy": [
+        "Shannon entropy",
+        "coarse-graining",
+        "information preservation under aggregation"
+      ],
+      "what_is_inherited": "Entropy as a measure of compositional balance and information content.",
+      "what_the_project_adds": "The empirical claim that legitimate compositional time series preserve entropy under geometric-mean block decimation."
+    },
+    {
+      "lineage_stage": 3,
+      "name": "Metrology lineage",
+      "legacy": [
+        "uncertainty budgets",
+        "operating envelopes",
+        "instrument calibration",
+        "detectability floors"
+      ],
+      "what_is_inherited": "An instrument must report what it knows, how well it knows it, and where it should not be trusted.",
+      "what_the_project_adds": "RMS error, SNR, ETF, stagewise RMSE, and explicit envelope reporting for compositional temporal diagnostics."
+    },
+    {
+      "lineage_stage": 4,
+      "name": "Systems engineering and V&V lineage",
+      "legacy": [
+        "requirements traceability",
+        "verification and validation",
+        "fault transparency",
+        "lifecycle discipline"
+      ],
+      "what_is_inherited": "A complex system must expose its process line, not just its final verdict.",
+      "what_the_project_adds": "The 10-step / 12-state decomposition chain with gauges and local fault modes at each station."
+    },
+    {
+      "lineage_stage": 5,
+      "name": "Scientific regression-testing lineage",
+      "legacy": [
+        "software regression tests",
+        "no-forward-only changes",
+        "cumulative validation suites"
+      ],
+      "what_is_inherited": "A new modification is not accepted unless prior successes still hold.",
+      "what_the_project_adds": "HIVP: every new DUT may extend the theory only if the entire prior chain still passes."
+    },
+    {
+      "lineage_stage": 6,
+      "name": "Data-integrity / GLP lineage",
+      "legacy": [
+        "provenance",
+        "auditability",
+        "process discipline",
+        "ALCOA-style data integrity principles"
+      ],
+      "what_is_inherited": "Good results require clean records, clean handling, and transparent transformations.",
+      "what_the_project_adds": "Explicit recognition that data, theory, and method can contaminate one another."
+    },
+    {
+      "lineage_stage": 7,
+      "name": "Adversarial robustness lineage",
+      "legacy": [
+        "negative controls",
+        "stress testing",
+        "red teaming",
+        "adversarial examples"
+      ],
+      "what_is_inherited": "A trustworthy instrument must survive deliberate attempts to fool it.",
+      "what_the_project_adds": "Stored-energy attacks, entropy stuffing, contamination grafts, and Pass 2 integrity alarms."
+    },
+    {
+      "lineage_stage": 8,
+      "name": "Exploratory science lineage",
+      "legacy": [
+        "hypothesis generation",
+        "pattern discovery",
+        "cross-domain analogy",
+        "model refinement through failure"
+      ],
+      "what_is_inherited": "Exploratory work is legitimate when clearly distinguished from settled claims.",
+      "what_the_project_adds": "Resolution classes and progressive promotion from exploratory overlay to candidate method to canonical tool."
+    }
+  ],
+  "solidification_of_concepts": {
+    "statement": "A concept becomes solid not when it is attractive, but when it survives refinement without corrupting the DUT chain.",
+    "promotion_ladder": [
+      {
+        "level": 0,
+        "name": "exploratory_pattern",
+        "definition": "Interesting visual, analogy, or domain-specific signal. May inspire work, but does not yet influence core claims."
+      },
+      {
+        "level": 1,
+        "name": "candidate_overlay",
+        "definition": "Testable add-on readout that may rank or explain cases, but does not alter the science signal."
+      },
+      {
+        "level": 2,
+        "name": "process_control_candidate",
+        "definition": "Methodological addition that can improve integrity, detection, or transparency, but must survive HIVP."
+      },
+      {
+        "level": 3,
+        "name": "validated_companion",
+        "definition": "A robust secondary instrument that adds information while remaining separate from the core observable."
+      },
+      {
+        "level": 4,
+        "name": "canonical_method_component",
+        "definition": "A promoted method element that has survived cross-domain validation and regression through prior DUTs."
+      },
+      {
+        "level": 5,
+        "name": "core_science",
+        "definition": "The non-negotiable primary claim of the programme."
+      }
+    ],
+    "anti_corruption_rule": "No concept is allowed to climb the ladder by improving one domain at the cost of contaminating earlier DUTs or the core signal."
+  },
+  "contamination_doctrine": {
+    "core_statement": "The project arc depends on keeping theory, data, and method from contaminating one another.",
+    "contamination_paths": [
+      {
+        "path": "data_contaminates_theory",
+        "examples": [
+          "sparse boundary data mistaken for a universal law",
+          "shuffled or injected data mistaken for legitimate structure",
+          "small-N artifacts mistaken for physics"
+        ]
+      },
+      {
+        "path": "theory_contaminates_method",
+        "examples": [
+          "attractive analogies treated as proof",
+          "forced error corrections",
+          "overclaiming precision beyond the instrument's resolution class"
+        ]
+      },
+      {
+        "path": "method_contaminates_data_interpretation",
+        "examples": [
+          "arithmetic averaging on the simplex",
+          "overaggressive zero handling",
+          "phase-sensitive partitioning left unreported",
+          "one-score fusion of unlike observables"
+        ]
+      }
+    ],
+    "integrity_rule": "Prefer a weaker but cleaner claim over a stronger contaminated one."
+  },
+  "current_methods_table": [
+    {
+      "method": "Simplex closure",
+      "role": "Map raw observables to the compositional manifold",
+      "status": "canonical",
+      "good_points": [
+        "Foundational CoDa operation",
+        "Required for valid entropy and log-ratio work",
+        "Clear and reproducible"
+      ],
+      "untested_or_open_points": [
+        "Domain-specific mapping choices may still need comparison in some new datasets"
+      ]
+    },
+    {
+      "method": "CLR / ILR / CoDa structural layer",
+      "role": "Structural measurement in Aitchison space",
+      "status": "canonical",
+      "good_points": [
+        "Strong mathematical precedent",
+        "Supports sigma-squared-A, variation matrix, distance, PCA, depth"
+      ],
+      "untested_or_open_points": [
+        "Choice of balance basis in higher-D operational dashboards still needs standardization"
+      ]
+    },
+    {
+      "method": "Geometric-mean decimation",
+      "role": "Core temporal coarse-graining operator",
+      "status": "core_science_support",
+      "good_points": [
+        "Cross-domain evidence strongly favors it over arithmetic decimation",
+        "Preserves structure where arithmetic introduces persistent bias"
+      ],
+      "untested_or_open_points": [
+        "Formal proof remains incomplete in the general case",
+        "Higher-D and near-boundary tightening still needs hardening"
+      ]
+    },
+    {
+      "method": "Shannon entropy invariance under geometric decimation",
+      "role": "Primary EITT claim",
+      "status": "core_science",
+      "good_points": [
+        "Validated across commodities, energy, nuclear, acoustics, geochemistry, and blind tests",
+        "Separates legitimate temporal structure from many fabricated cases"
+      ],
+      "untested_or_open_points": [
+        "General theorem still incomplete",
+        "Exact higher-order terms and broadest applicability boundary remain open"
+      ]
+    },
+    {
+      "method": "Pass-rate classifier",
+      "role": "Pass 1 legitimacy classifier",
+      "status": "validated_engineering",
+      "good_points": [
+        "Simple and interpretable",
+        "Strong separation in blind tests"
+      ],
+      "untested_or_open_points": [
+        "Threshold tuning across small-N and high-D edge cases still needs care"
+      ]
+    },
+    {
+      "method": "EITT slope",
+      "role": "Constraint detector / loss-of-lock signal",
+      "status": "validated_companion",
+      "good_points": [
+        "One of the strongest discoveries of EXP-04",
+        "Gives richer interpretation than pass/fail alone",
+        "Cross-domain overlays are promising"
+      ],
+      "untested_or_open_points": [
+        "Need canonical smoothing, derivative, and reporting conventions",
+        "Need more formal theory linking slope to specific physical mechanisms"
+      ]
+    },
+    {
+      "method": "M_break / lock-range width",
+      "role": "Constraint-strength descriptor",
+      "status": "validated_companion",
+      "good_points": [
+        "Useful cross-domain summary",
+        "Bridges structural and temporal views"
+      ],
+      "untested_or_open_points": [
+        "Need strict separation of M_last_pass, M_break, and max tested M",
+        "Predictive equation is still qualitative / loose"
+      ]
+    },
+    {
+      "method": "F17 linear contamination tuner",
+      "role": "Integrity / contamination alarm",
+      "status": "validated_process_control_candidate",
+      "good_points": [
+        "Catches some cases the primary metric can miss",
+        "Does not need to rewrite the core signal",
+        "Fits naturally in Pass 2"
+      ],
+      "untested_or_open_points": [
+        "Thresholds still need wider cross-domain calibration",
+        "Should remain separate from the primary science claim until more hardening is complete"
+      ]
+    },
+    {
+      "method": "Two-pass instrument",
+      "role": "Pass 1 classification plus Pass 2 integrity resolution",
+      "status": "strong_engineering_candidate",
+      "good_points": [
+        "Improves blind-test performance from 17/20 to 18/20",
+        "Respects ambiguity by reporting resolution boundaries"
+      ],
+      "untested_or_open_points": [
+        "Needs standard operating rules frozen before broad deployment",
+        "Needs more independent domain retesting"
+      ]
+    },
+    {
+      "method": "Operating envelope",
+      "role": "Honesty layer",
+      "status": "canonical_method_component",
+      "good_points": [
+        "Makes risk, detectability, low-power zones, and vertex proximity explicit",
+        "Prevents overclaiming"
+      ],
+      "untested_or_open_points": [
+        "Need wider calibration of soft and hard thresholds in high-D settings"
+      ]
+    },
+    {
+      "method": "Stagewise RMSE and process-line diagnostics",
+      "role": "Instrument-grade transparency",
+      "status": "strong_engineering_candidate",
+      "good_points": [
+        "Very strong fit with the decomposition-engine concept",
+        "Aligns with metrology and systems-engineering precedent"
+      ],
+      "untested_or_open_points": [
+        "Needs repeated use on more real datasets to determine which gauges are truly essential"
+      ]
+    },
+    {
+      "method": "Stored-energy / adversarial attack protocol",
+      "role": "Integrity stress testing",
+      "status": "validated_process_control_candidate",
+      "good_points": [
+        "Improves trust by showing where cosmetic improvement equals contamination",
+        "Strongly supports the integrity role of F17"
+      ],
+      "untested_or_open_points": [
+        "Needs formal library of standard attacks and severity classes"
+      ]
+    },
+    {
+      "method": "Rayleigh / PLL analogy",
+      "role": "Interpretive unification layer",
+      "status": "promising_but_not_canonical",
+      "good_points": [
+        "Organizes slope, lock, and contamination intuitively",
+        "Helpful for cross-domain reasoning"
+      ],
+      "untested_or_open_points": [
+        "Analogy is ahead of proof",
+        "Should not be treated as a finished theorem"
+      ]
+    },
+    {
+      "method": "SEMF compositional basin in nuclear analysis",
+      "role": "Primary physical basis for nuclear prediction work",
+      "status": "strong_domain_candidate",
+      "good_points": [
+        "Physically grounded",
+        "Works naturally with EITT/CoDa thermodynamic language",
+        "Supports corridor-level reasoning"
+      ],
+      "untested_or_open_points": [
+        "Exact shell closures still need external physics overlay and deeper internal testing"
+      ]
+    },
+    {
+      "method": "Prime-step staircase overlay",
+      "role": "Exploratory nuclear ranker",
+      "status": "exploratory_pattern",
+      "good_points": [
+        "Interesting structured visual pattern",
+        "May encode shell/packing irregularity indirectly"
+      ],
+      "untested_or_open_points": [
+        "No validated statistical superiority over null models yet",
+        "Must not drive primary claims until it beats shell-only and random baselines"
+      ]
+    }
+  ],
+  "best_next_step_logic": {
+    "rule": "Advance the programme by strengthening what is already clean before promoting what is only suggestive.",
+    "priority_order": [
+      "Freeze terminology and report structure",
+      "Standardize the two-pass instrument and stagewise RMSE panels",
+      "Calibrate F17 and envelope thresholds on more real domains",
+      "Harden nuclear corridor prediction using SEMF plus shell support",
+      "Only then test exploratory overlays like the prime staircase against null models"
+    ]
+  },
+  "claude_instruction": {
+    "exact_text": "Present the programme as a lineage-aware instrument methodology. Keep EITT as the science, the Higgins Decomposition as the engine, HIVP as the regression chain, and HIVIP as the recommended umbrella for the full integrity-aware methodology. Treat concept solidification as a promotion ladder whose purpose is to reduce contamination of the DUT chain over time."
+  }
+}

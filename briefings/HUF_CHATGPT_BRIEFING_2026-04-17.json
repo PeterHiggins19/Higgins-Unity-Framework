@@ -1,0 +1,185 @@
+{
+  "_meta": {
+    "type": "HUF_CHATGPT_HANDOFF_BRIEFING",
+    "version": "1.0",
+    "date": "2026-04-17",
+    "from": "Claude (Cowork)",
+    "to": "ChatGPT",
+    "purpose": "Comprehensive handoff briefing for ChatGPT to verify repo structure, validate progress, and stress-test refresh chain v3.0 after Peter pushes to GitHub. This covers everything built or updated since the last collective sync."
+  },
+
+  "executive_summary": "Major consolidation push completed 2026-04-17. All CoDaWork 2026 materials consolidated into self-contained codawork2026/ folder (65 files). AI refresh chain updated to v3.0 with archive-on-update protocol. Two new general conference handouts built. Geochemistry extension (40,666 real rocks) and Gold Standard Working Example (10-step chain) added to evidence base. CoDaWork talk deck built (16 slides). Geometric mean empirical proof articulated as the headline finding.",
+
+  "what_changed_since_last_sync": {
+    "refresh_chain_v3": {
+      "description": "All 4 AI refresh files updated with complete current state. Previous versions archived.",
+      "files_updated": [
+        "ai-refresh/HUF_FAST_REFRESH.json (v1.0 → v3.0)",
+        "ai-refresh/HUF_INTEGRITY_MANIFEST.json (v2.0 → v3.0)",
+        "ai-refresh/HUF_ADMIN.json (v1.1 → v2.0)",
+        "ai-refresh/PHASE_MARKERS.json (v1.0 → v2.0)"
+      ],
+      "archive_location": "ai-refresh/archive/2026-04-15-pre-v3/",
+      "key_additions_to_fast_refresh": [
+        "proof_5_geochemistry (40,666 rocks, 37/39 TAS pass)",
+        "proof_5b_synthetic_geochemistry (500 synthetic, 89-95% PR)",
+        "experiment_chain (EXP-01 through EXP-05b, all LEGITIMATE)",
+        "geometric_mean_empirical_proof section",
+        "gold_standard_working_example section",
+        "codawork2026.consolidated_package section",
+        "Restructured file_map into refresh_chain / canonical_sources / briefings / codawork2026_package",
+        "5 new common_drift_errors"
+      ],
+      "refresh_chain_concept": "The refresh chain is now a self-sustaining knowledge management protocol. Each pass compresses sessions into canonical signal and archives old state. History grows in archive/; the live chain stays lean and current. This is compositional knowledge management — EITT applied to the project itself."
+    },
+
+    "codawork2026_consolidation": {
+      "description": "Self-contained top-level folder with everything for Coimbra. 78 aged drafts archived to archive/pre-codawork2026/.",
+      "path": "codawork2026/",
+      "file_count": 65,
+      "subfolders": [
+        "presentation/ — Talk PPTX (16 slides) + submitted abstract",
+        "journals/ — 11 formal PDFs (200+ pages)",
+        "experiments/ — Python builders, Working Example (11 plots + JSON)",
+        "reproducibility/ — HIGGINS_REPRODUCIBILITY_PACKAGE.json v5.0",
+        "primers/ — 4 personalized researcher briefings",
+        "preparation/ — Q&A prep, conversation guide",
+        "extended/ — Extended results, EITT handout, coffee table, 2 general conference handouts",
+        "science/ — Cheatsheet, adversarial tests, formulas, safety boundaries, WHY_IT_WORKS, HESSIAN_BOUND",
+        "data/ — EMBER, gold/silver, geochemistry, NGFS"
+      ],
+      "nothing_outside_needed": "True. This folder can be handed to anyone at Coimbra as a complete, self-verifying package."
+    },
+
+    "geochemistry_extension": {
+      "experiment_id": "EXP-05b",
+      "data": "Ball 2022 Global Igneous Geochemistry Dataset + AGDB3 (Alaska)",
+      "samples": 40666,
+      "oxides": ["SiO2", "TiO2", "Al2O3", "Fe2O3", "FeO", "MgO", "CaO", "Na2O+K2O"],
+      "result": "37/39 TAS classification types pass EITT",
+      "anomaly": "Foidite (sole failure — deep mantle phase chaos, not a method failure)",
+      "journal": "codawork2026/journals/HIGGINS_Geochemistry_EITT.pdf (29pp)",
+      "significance": "First real-data geochemistry validation. Brings total experiment chain to 6 independent domains."
+    },
+
+    "gold_standard_working_example": {
+      "description": "Complete 10-step Higgins Decomposition chain with pedagogical commentary from 5 analytical viewpoints. Includes fabricated counterexample to show the contrast at each step.",
+      "steps": "Step 0 (raw data) through Step 10 (master summary)",
+      "plots": 11,
+      "pages": 23,
+      "viewpoints": ["Aitchison geometry", "Shannon entropy", "EITT diagnostic", "Two-pass instrument", "Thermal map"],
+      "journal": "codawork2026/journals/HIGGINS_Working_Example.pdf",
+      "data": "codawork2026/experiments/Working_Example/HIGGINS_working_example.json"
+    },
+
+    "talk_deck": {
+      "file": "codawork2026/presentation/CoDaWork2026_Higgins_Talk.pptx",
+      "slides": 16,
+      "duration": "15 minutes",
+      "design": "NAVY/ICE_BLUE/TEAL/GOLD palette, dark slides for title/close, light for content",
+      "strategy": "Stanley Steamer — their tools, their geometry, our application, their language",
+      "office_compatibility": "Office 2013+ (no advanced features)"
+    },
+
+    "conference_handouts": {
+      "description": "Two general-audience handouts replacing personalized primers. Designed for walk-up distribution at Coimbra.",
+      "handout_A": {
+        "file": "codawork2026/extended/CoDaWork2026_Handout_CoDa_TimeSeries.docx",
+        "audience": "CoDa practitioners who already work with time series",
+        "approach": "Protocol → results → EITT proof → geometric mean evidence → open question → reading path",
+        "pages": 3
+      },
+      "handout_B": {
+        "file": "codawork2026/extended/CoDaWork2026_Handout_Geochemistry_Bridge.docx",
+        "audience": "Static/geochemistry practitioners who need the bridge to temporal analysis",
+        "approach": "Familiar ground (40,666 rocks, TAS, oxides) → bridge table (static vs temporal) → energy results → EITT → experiment chain → reading path",
+        "pages": 4
+      },
+      "both_direct_to": "GitHub learning path at codawork2026/ for self-study after conference"
+    },
+
+    "geometric_mean_empirical_proof": {
+      "headline": "EITT gives measurable proof that geometric mean is the correct aggregator for compositional time series",
+      "evidence": "Geometric mean preserves Shannon entropy at 0.18-1.02% variation. Arithmetic mean destroys 20-40% of entropy.",
+      "significance": "This is not theory — it is measurement. The CoDa community knows geometric mean is correct from Aitchison geometry. EITT now provides empirical, measurable evidence anyone can reproduce.",
+      "location_in_refresh": "HUF_FAST_REFRESH.json → geometric_mean_empirical_proof section"
+    }
+  },
+
+  "experiment_chain_complete": {
+    "description": "Six independent experiments, all LEGITIMATE, spanning 5 domains.",
+    "experiments": [
+      {"id": "EXP-01", "domain": "Gold/Silver Ratio", "samples": 624, "result": "PR=97%, M_break=105", "status": "LEGITIMATE"},
+      {"id": "EXP-02", "domain": "US Monthly Electricity", "samples": 302, "result": "PR=94%, all 9 carriers pass", "status": "LEGITIMATE"},
+      {"id": "EXP-03", "domain": "Uranium-235 Binding", "samples": 235, "result": "PR=78%, nuclear shell effects", "status": "LEGITIMATE"},
+      {"id": "EXP-04", "domain": "Microphone Valley", "samples": 82, "result": "PR=88%, 3-part closure confirmed", "status": "LEGITIMATE"},
+      {"id": "EXP-05", "domain": "Geochemistry (synthetic)", "samples": 500, "result": "PR=89-95% across series", "status": "LEGITIMATE"},
+      {"id": "EXP-05b", "domain": "Geochemistry (real data)", "samples": 40666, "result": "37/39 TAS types pass", "status": "LEGITIMATE"}
+    ],
+    "total_EITT_proofs": "6 (energy Proof 1 daily, Proof 2 monthly, chemistry 500k, geochemistry 40k real rocks, Bell Test, NGFS scenarios)"
+  },
+
+  "canonical_values_to_verify": {
+    "note": "ChatGPT should verify these against HUF_FAST_REFRESH.json v3.0",
+    "eitt_proof_1": "0.18% entropy variation, 341:1 compression, daily→annual European electricity",
+    "eitt_proof_2": "Mean 1.02%, all 6 countries below 2%, monthly→annual EMBER",
+    "germany_flags": "2023-2024 (d_A=9.07) and 2024-2025 (d_A=5.73)",
+    "japan_flag": "2013-2014 (d_A=9.05)",
+    "uk_three_flags": "d_A values 2.98, 3.23, 3.26",
+    "bell_test": "S=2.2018, 12.31% above classical bound of 2.0",
+    "geochemistry": "40,666 rocks, 8 oxides, 37/39 TAS pass, Foidite sole anomaly",
+    "working_example": "10 steps, 23 pages, 11 plots, 5 analytical viewpoints",
+    "codawork2026_files": 65,
+    "eitt_full_name": "Entropy-Invariant Time Transformer (NEVER Ternary, NEVER Temporal)"
+  },
+
+  "verification_tasks_for_chatgpt": [
+    {
+      "task": "COLD_START_TEST",
+      "instruction": "Read ai-refresh/HUF_FAST_REFRESH.json v3.0 cold. Can you orient on the project in one read? Are the canonical values self-consistent? Any drift from the numbers listed above?"
+    },
+    {
+      "task": "INTEGRITY_CHECK",
+      "instruction": "Read ai-refresh/HUF_INTEGRITY_MANIFEST.json v3.0. Verify the hash chain concept makes sense. Check that the known drift patterns are comprehensive enough to catch common AI hallucination modes."
+    },
+    {
+      "task": "CODAWORK2026_COMPLETENESS",
+      "instruction": "Browse codawork2026/. Is the package self-contained? Can someone at Coimbra use it without touching anything outside this folder? Any missing pieces?"
+    },
+    {
+      "task": "GEOMETRIC_MEAN_PROOF_REVIEW",
+      "instruction": "Review the geometric mean empirical proof claim. Is '0.18% vs 20-40%' a fair characterization of the evidence? Are there caveats we should add?"
+    },
+    {
+      "task": "REFRESH_CHAIN_STRESS_TEST",
+      "instruction": "The refresh chain is now: FAST_REFRESH → INTEGRITY_MANIFEST → ADMIN → PHASE_MARKERS → INDEX.json. Each pass tightens. Does this sequence make sense? Can a new AI start at FAST_REFRESH and become productively oriented? Any circular dependencies or contradictions?"
+    },
+    {
+      "task": "HANDOUT_REVIEW",
+      "instruction": "Read the two new handouts in codawork2026/extended/ (CoDa_TimeSeries and Geochemistry_Bridge). Are they pitched at the right level for their audiences? Do they accurately represent the evidence? Do they correctly direct to the GitHub learning path?"
+    }
+  ],
+
+  "outstanding_work": {
+    "abstract_v4_amendment": "Drafted 2026-04-14, pending send to codawork2026@coda-association.org before 2026-05-01",
+    "lit_verification_001": "Five-AI literature verification in progress. Grok branch complete. Four branches outstanding. Consolidated verdict expected 2026-04-24.",
+    "phase_2_active": "EITT hardening for broader adoption. See PHASE_MARKERS.json P02 for full roadmap.",
+    "poster_pdf": "Not yet built (lower priority — talk deck takes precedence)"
+  },
+
+  "files_touched_this_session": [
+    "ai-refresh/HUF_FAST_REFRESH.json (v3.0 — major update)",
+    "ai-refresh/HUF_INTEGRITY_MANIFEST.json (v3.0 — major update)",
+    "ai-refresh/HUF_ADMIN.json (v2.0 — updated)",
+    "ai-refresh/PHASE_MARKERS.json (v2.0 — updated)",
+    "ai-refresh/archive/2026-04-15-pre-v3/ (4 archived files)",
+    "codawork2026/presentation/CoDaWork2026_Higgins_Talk.pptx (16 slides, new)",
+    "codawork2026/extended/CoDaWork2026_Handout_CoDa_TimeSeries.docx (new)",
+    "codawork2026/extended/CoDaWork2026_Handout_Geochemistry_Bridge.docx (new)",
+    "codawork2026/README.md (updated with handouts)",
+    "README.md (updated extended/ description)",
+    "INDEX.json (updated extended/ description)"
+  ],
+
+  "how_to_use_this_briefing": "Peter will push to GitHub, then paste or reference this briefing in a ChatGPT session. ChatGPT should read FAST_REFRESH.json first for full context, then work through the verification tasks above. Report any drift, contradictions, or missing pieces back to Peter."
+}

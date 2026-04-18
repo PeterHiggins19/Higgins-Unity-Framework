@@ -3,14 +3,29 @@
     "type": "HUF-REPO-INDEX",
     "version": "2.1",
     "created": "2026-04-13",
-    "updated": "2026-04-13",
+    "updated": "2026-04-17",
     "author": "Peter Higgins / Claude",
     "purpose": "Master index of the Higgins Unity Framework repository. Maps every folder with status, purpose, and AI training notes.",
-    "project_status": "STABLE — repo restructured, AI refresh validated across 5 platforms, all tests passed 2026-04-13",
+    "project_status": "ACTIVE — codawork2026/ package consolidated, 78 aged drafts archived, geochemistry + Working Example added 2026-04-17",
     "refresh_entry": "ai-refresh/HUF_FAST_REFRESH.json → ai-refresh/HUF_INTEGRITY_MANIFEST.json → ai-refresh/HUF_ADMIN.json → this file"
   },
 
   "repository_structure": {
+    "codawork2026": {
+      "purpose": "Complete CoDaWork 2026 deliverables package — self-contained. Everything needed for Coimbra.",
+      "status": "ACTIVE — consolidated 2026-04-17",
+      "subfolders": {
+        "presentation": "Talk PPTX + submitted abstract",
+        "journals": "All formal PDF documents (11 PDFs, 200+ pages total)",
+        "experiments": "Python builders, Working Example (11 plots + JSON), appendix_formulae",
+        "reproducibility": "HIGGINS_REPRODUCIBILITY_PACKAGE.json v5.0",
+        "primers": "4 personalized researcher briefings",
+        "preparation": "Q&A prep, conversation guide",
+        "extended": "Extended results, EITT handout, coffee table doc, 2 general conference handouts (CoDa+Time Series, Geochemistry Bridge)",
+        "science": "Key supporting science (cheatsheet, adversarial tests, formulas, safety boundaries)",
+        "data": "EMBER results, gold/silver ratio, geochemistry, NGFS scenarios"
+      }
+    },
     "ai-refresh": {
       "purpose": "AI speed-loading context. Any AI starts here.",
       "status": "STABLE — validated across Claude, ChatGPT, Grok, Copilot, Gemini on 2026-04-13",

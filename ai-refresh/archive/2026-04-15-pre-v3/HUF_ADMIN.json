@@ -1,0 +1,221 @@
+{
+  "_meta": {
+    "type": "HUF_ADMINISTRATIVE_REGISTER",
+    "version": "1.1",
+    "created": "2026-04-13",
+    "updated": "2026-04-13",
+    "author": "Peter Higgins",
+    "purpose": "Single source of truth for all HUF project identity, contact information, websites, canonical names, terms, standards, and administrative references. Extends RWA-001. If any AI or document uses a different name, URL, or term — this file wins.",
+    "update_authority": "Peter Higgins only"
+  },
+
+  "principal": {
+    "name": "Peter Higgins",
+    "role": "Independent Researcher, Framework Author, Sole Operator",
+    "location": "Markham, Ontario, Canada",
+    "timezone": "America/Toronto (EST/EDT)",
+    "email_primary": "PeterHiggins@roguewaveaudio.com",
+    "email_personal": "peterhiggins2016@gmail.com"
+  },
+
+  "corporate": {
+    "entity": "Rogue Wave Audio",
+    "standard": "RWA-001",
+    "standard_description": "Rogue Wave Audio Corporate Reference Standard — governs all HUF operational procedures",
+    "website": null,
+    "note": "Rogue Wave Audio is Peter's corporate identity. RWA-001 is the governance standard under which HUF operates."
+  },
+
+  "project": {
+    "full_name": "Higgins Unity Framework",
+    "abbreviation": "HUF",
+    "tagline": "Compositional structure as an open-loop monitoring signal.",
+    "status": "STABLE — repo restructured, AI refresh layer validated across 5 platforms, pre-publication",
+    "status_date": "2026-04-13",
+    "founded": "2025",
+    "domain": "Compositional data analysis (CoDa), Aitchison geometry, monitoring systems",
+    "milestones": {
+      "2025": "Framework conception, initial development",
+      "2026-02": "Ratio State Monitoring name locked for literature submission",
+      "2026-03": "GitHub repo launched, multi-AI collaboration established",
+      "2026-04-13": "Full repo restructure. AI refresh layer (FAST_REFRESH + INTEGRITY_MANIFEST + ADMIN + spec) validated across Claude, ChatGPT, Grok, Copilot, Gemini. 286 files organized into 12 top-level folders. All five cold-start tests passed (10/10 questions). System declared STABLE.",
+      "2026-06": "CoDaWork 2026, Coimbra, Portugal (upcoming)"
+    }
+  },
+
+  "web_presence": {
+    "github_repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "github_pages": "https://peterhiggins19.github.io/Higgins-Unity-Framework/",
+    "github_username": "PeterHiggins19",
+    "github_branch": "master",
+    "note": "GitHub Pages is live and serves the README as a public site. This is the primary web-indexable URL."
+  },
+
+  "canonical_names": {
+    "framework": {
+      "full": "Higgins Unity Framework",
+      "short": "HUF",
+      "NOT": ["Higgins Unified Framework", "HUF Framework", "Unity Framework"]
+    },
+    "eitt": {
+      "full": "Entropy-Invariant Time Transformer",
+      "short": "EITT",
+      "double_meaning": "Ricardo Montalban — 'Explain It To Them'",
+      "NOT": ["Entropy-Invariant Ternary Transform", "Entropy-Invariant Temporal Transform", "Entropy-Invariant Time Transfer", "EITT Transform"]
+    },
+    "monitoring_category": {
+      "full": "Fourth Monitoring Category (MC-4): Composition Monitoring",
+      "short": "MC-4",
+      "canonical_paper_name": "Ratio State Monitoring",
+      "paper_name_locked": "February 2026",
+      "NOT": ["MC4", "Category 4", "Compositional Monitoring Category"]
+    },
+    "governance": {
+      "full": "HUF-GOV",
+      "description": "Open-loop governance layer",
+      "doctrine": "Instrument reads, never actuates. Human decides, loop stays open.",
+      "NOT": ["HUF Governance", "HUF-Gov", "HUFGOV"]
+    },
+    "pll": {
+      "full": "Pipeline Lock List",
+      "short": "PLL",
+      "rule_count": 6,
+      "description": "6 rules that cannot be changed without operator (Peter) approval",
+      "NOT": ["Phase-Locked Loop", "PLL Discipline List"]
+    },
+    "keff": {
+      "full": "Keff_fill",
+      "aggregator": "RMS (root mean square)",
+      "p_value": 2,
+      "description": "RMS aggregator of 4 polarity-aligned roots (a0-a3), locked at p=2",
+      "NOT": ["K_eff", "Keff", "K-effective"]
+    },
+    "bell_test": {
+      "result": "S = 2.2018",
+      "classical_bound": 2.0,
+      "excess_percent": 12.31,
+      "description": "Gas carrier acts as entangling gate. 9 structural isomorphisms between QIT and CoDa."
+    }
+  },
+
+  "canonical_conferences": {
+    "codawork_2026": {
+      "full_name": "11th International Workshop on Compositional Data Analysis",
+      "short": "CoDaWork 2026",
+      "location": "Coimbra, Portugal",
+      "dates": "1-5 June 2026",
+      "abstract_page": 25,
+      "presentation_strategy": "Stanley Steamer — their tools, their geometry, your application. Gas turbine stays in the garage."
+    }
+  },
+
+  "canonical_data_sources": {
+    "ember": {
+      "full": "EMBER Global Electricity Review",
+      "url": "https://ember-climate.org/",
+      "usage": "Primary energy composition data — 6 countries, 8 carriers, 24 years"
+    },
+    "ngfs": {
+      "full": "Network for Greening the Financial System Phase 4",
+      "usage": "35 scenarios, 6 carriers — IIASA validation"
+    },
+    "chemixhub": {
+      "full": "CheMixHub Benchmark",
+      "usage": "500,000 chemical mixture data points, 7 datasets — EITT chemistry extension"
+    },
+    "owid": {
+      "full": "Our World in Data",
+      "url": "https://ourworldindata.org/",
+      "usage": "Energy and GDP cross-validation"
+    }
+  },
+
+  "ai_collaborators": {
+    "model": "Multi-AI collaborative development with human gate",
+    "gate": "Peter Higgins — all changes go through Peter, no AI pushes directly",
+    "platforms": {
+      "claude": {
+        "provider": "Anthropic",
+        "role": "Document building, structure, repository management, coherence refresh",
+        "interface": "Claude Cowork (desktop), Claude.ai"
+      },
+      "chatgpt": {
+        "provider": "OpenAI",
+        "role": "Deep analysis, review, second opinion, HUF spec development",
+        "interface": "ChatGPT web/app"
+      },
+      "grok": {
+        "provider": "xAI",
+        "role": "Adversarial testing, PLL compliance, robustness derivations",
+        "interface": "Grok web"
+      },
+      "gemini": {
+        "provider": "Google",
+        "role": "Cross-domain validation, routing assessment",
+        "interface": "Gemini web"
+      },
+      "copilot": {
+        "provider": "GitHub/Microsoft",
+        "role": "Code contribution, pipeline scripts, EITT boundary roadmap",
+        "interface": "GitHub Copilot"
+      }
+    },
+    "communication": "Repository-mediated. ai-refresh/ is the shared onboarding layer. FAST_REFRESH.json is the single source of truth across all platforms.",
+    "cold_start_validation": {
+      "date": "2026-04-13",
+      "protocol": "AI_COLD_START_TEST v1.1",
+      "results": {
+        "claude":  {"questions": "5/5 (abbreviated)", "integrity": "n/a", "structure": "n/a", "attempts": 1, "note": "Built the system"},
+        "chatgpt": {"questions": "10/10", "integrity": "FAIL (caught 2 real bugs)", "structure": "4/5", "attempts": 2, "note": "Found stale hash + wrong char_count"},
+        "grok":    {"questions": "10/10", "integrity": "PASS", "structure": "5/5", "attempts": 1, "note": "6 adversarial findings, caught path bugs"},
+        "copilot": {"questions": "10/10", "integrity": "NOT DONE", "structure": "NOT DONE", "attempts": 3, "note": "Weak instruction-following, needed content pasted"},
+        "gemini":  {"questions": "10/10", "integrity": "PASS", "structure": "3/5", "attempts": 1, "note": "Best instruction-following, inferred structure from manifest paths"}
+      },
+      "conclusion": "All 5 platforms achieved 100% question accuracy from FAST_REFRESH. System validated for cross-AI cold-start onboarding."
+    }
+  },
+
+  "mathematical_foundations": {
+    "note": "HUF does not claim new mathematics. These are the foundations it builds on.",
+    "aitchison": {"author": "John Aitchison", "year": 1982, "contribution": "Compositional data analysis, simplex geometry, log-ratio transforms"},
+    "shannon": {"author": "Claude Shannon", "year": 1948, "contribution": "Information entropy"},
+    "stevens": {"author": "S.S. Stevens", "year": 1946, "contribution": "Measurement scales (nominal, ordinal, interval, ratio)"},
+    "amari": {"author": "Shun-ichi Amari", "year": 1985, "contribution": "Information geometry"}
+  },
+
+  "key_claims": {
+    "claims": [
+      "Composition can be monitored directly, not only as a statistical correction",
+      "In some systems, structural change appears in ratio-state before magnitude-based indicators visibly fail",
+      "Shannon entropy is near-invariant under geometric-mean decimation of compositional time series (EITT)"
+    ],
+    "non_claims": [
+      "New simplex mathematics",
+      "Universal validity — cross-domain validity must be earned domain by domain",
+      "Every compositional change is harmful, actionable, or predictive",
+      "HUF replaces domain expertise, causal explanation, or policy judgment",
+      "Autonomous intervention is justified on compositional readings alone"
+    ],
+    "falsifiable": "No existing monitoring framework performs compositional change detection at the carrier level with formal perturbation-based drift measurement."
+  },
+
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+
+  "citation": {
+    "file": "CITATION.cff",
+    "preferred": "Higgins, P. (2026). Higgins Unity Framework. https://github.com/PeterHiggins19/Higgins-Unity-Framework"
+  },
+
+  "file_hierarchy": {
+    "truth_sources": [
+      "ai-refresh/HUF_ADMIN.json (this file — identity, contacts, terms)",
+      "ai-refresh/HUF_FAST_REFRESH.json (canonical numbers, formulas, structure)",
+      "ai-refresh/HUF_INTEGRITY_MANIFEST.json (hash verification, drift patterns)",
+      "ai-refresh/huf_spec_v2.0.json (complete framework specification)"
+    ],
+    "conflict_resolution": "HUF_ADMIN.json wins on identity/contact/naming. FAST_REFRESH wins on numbers/formulas/science. If both address the same field, they must agree — any disagreement is a bug to be reported to Peter."
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "_meta": {
+    "type": "HUF-PHASE-MARKERS",
+    "version": "1.0",
+    "created": "2026-04-15",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Machine-readable record of completed and active phases of the Higgins Unity Framework. Each phase marks a coherent body of work that has reached a stable state (or is actively in progress). Phase completion is not retirement — it signals stable foundation for the next phase."
+  },
+
+  "phases": [
+    {
+      "phase_id": "P01",
+      "name": "CoDaWork 2026 submission content",
+      "status": "STABLE",
+      "marked_stable_date": "2026-04-15",
+      "description": "Core compositional-monitoring work submitted to CoDaWork 2026 in Coimbra. Three diagnostics (total variation, Aitchison distance, coherence residual), four EITT proofs, 25-error calibration catalogue, cross-domain validation on Backblaze hardware reliability data, adversarial test suite with 17 total tests (10 pass / 7 designed failures).",
+      "contents_stable_at_this_marker": {
+        "abstract": "drafts/codawork-2026/abstract_v3.md (submitted); abstract_v4.md (amendment draft pending send)",
+        "extended_results": "drafts/codawork-2026/extended/CoDaWork2026_Higgins_Extended_Results.docx",
+        "handout": "drafts/codawork-2026/extended/CoDaWork2026_EITT_Handout.docx",
+        "presentation_deck": "drafts/codawork-2026/presentation/CoDaWork2026_Higgins_Talk.pptx",
+        "primers_for_other_speakers": "drafts/codawork-2026/primers/ (4 primer documents)",
+        "science_folders": [
+          "science/coda-monitoring/",
+          "science/eitt/ (through EITT_WHY_IT_WORKS.md §7 shape/magnitude decomposition)",
+          "science/quantum/ (QIT branch, markdown companions complete)",
+          "science/governance/",
+          "science/chemistry/"
+        ],
+        "ai_refresh_layer": "ai-refresh/HUF_FAST_REFRESH.json v1.5 manifest, cold-start test passed by Claude/ChatGPT/Grok/Gemini"
+      },
+      "what_stable_means": "The content has passed cold-start testing across four AI systems, survived an adversarial review pass, has empirical validation on real datasets, and is ready to submit to peers. It is not frozen — small edits (typos, clarifications, abstract amendment) are fine — but the core mathematical claims and empirical findings are not expected to change from this point forward without new evidence.",
+      "exit_criteria_met": [
+        "Four AI cold-start tests passed (Claude 5/5, ChatGPT 10/10, Grok 10/10, Gemini 5/5)",
+        "Second-order Hessian bound formalized in EITT_HESSIAN_BOUND.md",
+        "Shape/magnitude decomposition synthesis in EITT_WHY_IT_WORKS.md §7 with Fisher-Rao loose end resolved",
+        "Grok tensor-exploration residuals safely contained in dormant/",
+        "CoDaWork abstract v4 amendment drafted (pending send)",
+        "Literature verification briefings issued to five-AI collective for novelty check"
+      ]
+    },
+    {
+      "phase_id": "P02",
+      "name": "EITT hardening for broader adoption",
+      "status": "ACTIVE",
+      "started": "2026-04-15",
+      "estimated_completion": "2026-Q4 to 2027-Q1",
+      "mission_statement": "Push EITT to pain point and protect users from pain. Make the tool reliable, accurate, and precise enough that CoDa practitioners can trust it with time-series analysis; document failure modes and boundary conditions clearly enough that no one walks off a cliff with it — especially in high-stakes domains like clinical/biomedical studies where misuse could lead a large-cohort study astray.",
+      "two_poles": {
+        "pole_A_reveal_hidden_structure": "Reveal the hidden geometry behind hypothesis testing on compositional time series. Document the mathematical substrate clearly enough that a practitioner can understand what EITT is measuring, why the second-order bound has the form it does, and how the shape/magnitude decomposition organizes their analytical choices.",
+        "pole_B_establish_safety_fences": "Articulate the boundary conditions where EITT should NOT be applied, the failure modes, the sample-size requirements, and the domain-specific red flags. Especially critical for clinical/biomedical settings where low power, small cohorts, boundary-close compositions, and treatment confounds can turn a reliable method into a misleading one."
+      },
+      "planned_deliverables": [
+        "EITT_PHASE_2_ROADMAP.md \u2014 detailed work plan",
+        "EITT_SAFETY_BOUNDARIES.md \u2014 'when not to use' documentation",
+        "Direct measurement tools (measure_aitchison_variance, measure_tau_int) in chem_eitt_pipeline.py",
+        "Validation on hydrology dataset (CAMELS or USGS daily streamflow)",
+        "Validation on at least one additional domain (ecological monitoring candidate)",
+        "Phase-field visualization of EMBER data as presentation asset",
+        "Literature verification results from five-AI collective",
+        "Short structural-observations paper on shape/magnitude decomposition (pending novelty verification)",
+        "Published Python/R package with documentation and tutorials",
+        "Rényi q=2 entropy test at boundaries per prediction 4 in EITT_WHY_IT_WORKS.md"
+      ],
+      "exit_criteria_planned": [
+        "EITT validated on at least three domains beyond the original four proofs",
+        "Direct measurement of \u03c3_A\u00b2 and \u03b4 from raw data replacing back-computed values in Hessian bound table",
+        "Safety boundaries document covers at least clinical/biomedical, ecological, and physical-systems cases",
+        "Package installable via standard channels (pip, CRAN, etc.)",
+        "At least one external researcher has successfully used the tool without direct mentoring",
+        "At least one failure mode has been observed in the wild and the safety document updated to prevent recurrence",
+        "Literature verification complete; novelty claims either confirmed or properly restricted to pieces that survive"
+      ]
+    },
+    {
+      "phase_id": "P03",
+      "name": "Consolidation and peer-reviewed publication",
+      "status": "FUTURE",
+      "earliest_start": "2027-Q1",
+      "description": "After Phase 2 hardening, consolidate the framework into peer-reviewed venues. Candidate papers: structural-observations paper on five-object cluster, methodological paper on EITT for compositional time series, application papers in hydrology and ecology. A short monograph becomes possible when enough predictions have survived contact with reality.",
+      "not_started": true
+    }
+  ],
+
+  "operating_principles": {
+    "past_is_strength": "The past is our strength and our future. What was built in the Binaural Test Lab in 2024-2025 is the engineering DNA of everything in this repo. The math book did not invent the structure; the physics did. The screwdriver came first. Every new concept should be checked against the RWA lineage for prior embodiment. See ai-refresh/MASTER_LINEAGE.json for the full arc from DADC-DADI through Higgins Operator H1 to HUF/EITT, and for the cross-reference map connecting each current-repo document to its RWA ancestor.",
+    "due_diligence": "All exploratory work gets divided into keep (promoted to main repo) or store (archived to dormant/ with reawaken conditions). Nothing is deleted; speculative work is preserved with honest labeling.",
+    "open_publication": "All data, code, and documentation are publicly available. Failures and speculative branches are published alongside successes to everyone's gain.",
+    "safety_first": "In domains where misapplication could cause harm (clinical, biomedical, regulatory), the safety fence documentation takes precedence over methodological claims. A tool that is clearly bounded is more valuable than a tool that claims more than it can deliver.",
+    "cold_start_testable": "Any AI system should be able to read the repo cold and become productively oriented within one file read. ai-refresh/HUF_FAST_REFRESH.json and science/*/INDEX.json are the entry points; ai-refresh/MASTER_LINEAGE.json provides the full arc of discovery.",
+    "adversarial_review_required": "Every major finding undergoes adversarial review by multiple AI systems before being treated as stable. The review is structured through briefings in briefings/lit-verification-001/ and similar.",
+    "lineage_cross_reference": "When any new document is promoted to the main repo, the author should add an entry to MASTER_LINEAGE.json's cross_reference_map identifying its RWA / H1 / or earlier-HUF ancestor. If no ancestor exists, note the absence explicitly. The continuity is the framework's strength."
+  },
+
+  "coordination": {
+    "current_collective": ["Claude", "ChatGPT", "Grok", "Gemini", "Copilot"],
+    "outstanding_work": {
+      "LIT_VERIFY_001": "Five-AI distributed literature verification of the EITT + Tutte + Hanani-Tutte + Penrose + KPZ cluster novelty claim. Issued 2026-04-15. Deadline 2026-04-22. Files in briefings/lit-verification-001/. Grok branch complete (Novel for Penrose). Four remaining branches received addendum 2026-04-15. Consolidated verdict expected 2026-04-24.",
+      "abstract_v4_amendment": "Drafted 2026-04-14, pending send to codawork2026@coda-association.org before 2026-05-01.",
+      "coimbra_welcome_package": "Built 2026-04-15 in briefings/coimbra-welcome-package/. Six files covering welcome, success/failure, work-verification-possibilities, best-use-cases, meet-the-collective, standardization-benefits. Designed for a new CoDa practitioner arriving cold. Ready for CoDaWork 2026 distribution."
+    },
+    "canonical_hufgov_definition_locked": {
+      "date": "2026-04-15",
+      "definition": "HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.",
+      "source": "Peter Higgins, 2026-04-15",
+      "location": "ai-refresh/HUF_FAST_REFRESH.json identity section; full unpacking in science/governance/HUF_GOV_CANONICAL_DEFINITION.md"
+    }
+  }
+}

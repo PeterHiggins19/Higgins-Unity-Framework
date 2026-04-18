@@ -330,6 +330,18 @@
     "briefings/": {
       "ancestor": "The Collective as a ratio-state system in itself",
       "relationship": "Five AI systems as carrier elements contributing proportional capability. Peter as the bus between them. The framework applied to the team building the framework."
+    },
+    "EITT_PLL_Experiment_Journal_Complete.docx": {
+      "ancestor": "DADC-DADI-ADAC + PLL engineering (USI Corporation, 34 years, 44kHz ultrasonic spray fluxers)",
+      "relationship": "The PLL-EITT discovery is the most direct lineage connection in the entire framework. Peter WAS the PLL for 34 years — a human phase-locked loop tuning ultrasonic spray fluxers with a screwdriver and voltmeter. The σ²_A parabola IS the millivolt minimum he tuned to. The vertex IS the lock point. The ratio of 2 IS the quadratic response curve. The DADC-DADI-ADAC chain IS the measurement round-trip he performed in the Binaural Test Lab. This journal documents the moment the engineering DNA expressed itself fully in the mathematical framework."
+    },
+    "eitt_contamination_dadc.py": {
+      "ancestor": "DADC-DADI-ADAC loudspeaker diffraction correction chain",
+      "relationship": "The per-species contamination decomposition is the direct descendant of the DADC-DADI-ADAC acoustic measurement chain. D→A (fractions→CLR) = D→A (acoustic→digital). A→D (CLR→σ²_A) = A→D (digital→diagnostic). D→A (σ²_A→fit) = D→A (diagnostic→model). A→D (residual) = A→D (error signal). ADAC (per-species decomposition) = ADAC (back-conversion to source). The chain closes the same way in both domains."
+    },
+    "eitt_pll_noise_squeeze.py": {
+      "ancestor": "PLL phase noise measurement + BTL noise floor characterisation",
+      "relationship": "The stochastic core (irreducible noise floor after squeeze) is the compositional equivalent of the VCO phase noise floor that Peter measured in every PLL tuning session. The Allan variance of the residuals is the compositional equivalent of the timing jitter specification."
     }
   },
 
@@ -341,13 +353,14 @@
   },
 
   "status": {
-    "lineage_version": "1.1",
+    "lineage_version": "1.2",
     "established": "2026-04-15",
-    "last_updated": "2026-04-15",
+    "last_updated": "2026-04-18",
     "update_log": [
       "v1.0 \u2014 initial establishment with arc from Isotropic Principle through DADC-DADI-ADAC, BTL, H1, RSM, to HUF/EITT",
       "v1.0.1 \u2014 public RWA repo review added; five concept branches mapped to HUF counterparts",
-      "v1.1 \u2014 canonical HUF-GOV definition noted (2026-04-15, Peter Higgins); Coimbra welcome package added to cross_reference_map; mature expression of ADAC fork identified"
+      "v1.1 \u2014 canonical HUF-GOV definition noted (2026-04-15, Peter Higgins); Coimbra welcome package added to cross_reference_map; mature expression of ADAC fork identified",
+      "v1.2 \u2014 PLL-EITT discovery lineage added (2026-04-18). Three new cross-references: Experiment Journal (PLL engineering DNA), contamination DADC script (DADC-DADI-ADAC acoustic chain descendant), noise squeeze (PLL phase noise descendant). FIXED POINT v3.2."
     ],
     "next_update_trigger": "Addition of a new major current-repo document, or discovery of a further ancestor thread not yet mapped",
     "maintenance_responsibility": "Any AI working on the repo should add cross-reference entries when promoting new files, per the application_rule above"
