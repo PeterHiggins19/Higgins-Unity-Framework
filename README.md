@@ -10,7 +10,7 @@
 
 **Conference:** CoDaWork 2026, Coimbra, Portugal (June 2026). Abstract page 25.
 
-**Phase status (2026-04-15):** Phase 1 (CoDaWork 2026 submission content) marked STABLE. Phase 2 (EITT hardening for broader adoption) started the same day. Mission for Phase 2: *push EITT to pain point and protect users from pain.* See [`ai-refresh/PHASE_MARKERS.json`](ai-refresh/PHASE_MARKERS.json), [`science/eitt/EITT_PHASE_2_ROADMAP.md`](science/eitt/EITT_PHASE_2_ROADMAP.md), and [`science/eitt/EITT_SAFETY_BOUNDARIES.md`](science/eitt/EITT_SAFETY_BOUNDARIES.md).
+**Phase status (2026-04-17):** Phase 1 (CoDaWork 2026 submission content) marked STABLE. Phase 2 (EITT hardening for broader adoption) ACTIVE. **April 2026 — Geochemistry extension.** EITT validated on 40,666 real igneous rocks (Ball 2022 + AGDB3 Alaska), 8 major oxides, 37/39 TAS classification types pass. Foidite sole anomaly (deep mantle phase chaos). Gold Standard Working Example: complete 10-step Higgins Decomposition chain with pedagogical commentary from 5 analytical viewpoints (23-page PDF, 11 plots). New top-level [`codawork2026/`](codawork2026/) folder consolidates all deliverables. See [`ai-refresh/PHASE_MARKERS.json`](ai-refresh/PHASE_MARKERS.json) and [`codawork2026/README.md`](codawork2026/README.md).
 
 **Lineage:** The framework's engineering DNA traces to Rogue Wave Audio's DADC-DADI-ADAC loudspeaker diffraction correction chain (Dec 2024–Nov 2025), then through the Higgins Operator H₁ (Feb 2026), to HUF/EITT. The compositional structure was discovered empirically in acoustic engineering before it was formalized mathematically. Engineering sibling: [Rogue Wave Audio](https://github.com/PeterHiggins19/Rogue-Wave-Audio). See [`ai-refresh/MASTER_LINEAGE.json`](ai-refresh/MASTER_LINEAGE.json) for the full arc, [`briefings/THE_LINEAGE.md`](briefings/THE_LINEAGE.md) for the founding narrative, and [`science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md`](science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md) for the technical bridge. **Principle:** The past is our strength and our future.
 
@@ -59,6 +59,17 @@ This produced three new frameworks:
 
 ```
 HUF/
+├── codawork2026/                   # ★ CODAWORK 2026 — COMPLETE PACKAGE ★
+│   ├── presentation/               #   Talk PPTX + submitted abstract
+│   ├── journals/                   #   All formal PDF documents (11 PDFs)
+│   ├── experiments/                #   Builders, Working Example, plots
+│   ├── reproducibility/            #   HIGGINS_REPRODUCIBILITY_PACKAGE.json v5.0
+│   ├── primers/                    #   4 researcher briefings
+│   ├── preparation/                #   Q&A prep, conversation guide
+│   ├── extended/                   #   Extended results, handouts, bridge docs
+│   ├── science/                    #   Key supporting science docs
+│   └── data/                       #   EMBER, gold/silver, geochemistry, NGFS
+│
 ├── ai-refresh/                     # AI STARTS HERE — fast context loading
 │   ├── HUF_FAST_REFRESH.json       #   All canonical values, single file
 │   ├── HUF_INTEGRITY_MANIFEST.json #   Hash verification, drift patterns
@@ -142,6 +153,8 @@ HUF/
 | 20 min | Chemistry results (the new frontier) | [`science/chemistry/`](science/chemistry/) |
 | 30 min | The kill test — 19 documented failure modes | [`huf-gov/governance/`](huf-gov/governance/) |
 | 10 min | Quantum correspondence (advanced) | [`science/quantum/`](science/quantum/) |
+| 23 pp | **Gold Standard Working Example** — step-by-step decomposition chain | [`codawork2026/journals/HIGGINS_Working_Example.pdf`](codawork2026/journals/HIGGINS_Working_Example.pdf) |
+| — | **CoDaWork 2026 complete package** — everything for Coimbra | [`codawork2026/`](codawork2026/) |
 
 If you want to break it, the kill test is where to start.
 

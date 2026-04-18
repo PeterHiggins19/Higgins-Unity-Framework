@@ -1,0 +1,205 @@
+{
+  "_meta": {
+    "type": "EITT_PROJECT_ARC_AND_CONTAMINATION_CONTEXT_FOR_CLAUDE",
+    "version": "1.0",
+    "created": "2026-04-17",
+    "author": "OpenAI ChatGPT for Peter Higgins",
+    "intended_reader": "Claude",
+    "status": "PROJECT_CONTEXT_DIRECTIVE",
+    "purpose": "Put the full EITT/CoDa/HIVP project arc into context, with explicit emphasis that the structured research approach is as important as the data and theories because either can contaminate the other."
+  },
+  "core_position": {
+    "statement": "The project is not only a theory programme and not only a data programme. It is an instrument-development programme whose validity depends equally on clean concepts, clean data, and clean method.",
+    "gold_standard_hierarchy": {
+      "EITT": "the science",
+      "HIVP": "the method of development",
+      "operating_envelope": "the honesty layer",
+      "HUF_GOV": "the downstream application family"
+    },
+    "project_arc_summary": "EITT began as an empirical invariance claim, became a cross-domain instrument through HIVP, gained slope, lock-range, and contamination channels, and now advances only by preserving prior results while extending to new domains."
+  },
+  "why_method_matters_as_much_as_data_and_theory": {
+    "statement": "Bad data can contaminate a good theory, but bad method can also contaminate both the data interpretation and the theory itself.",
+    "three_contamination_paths": [
+      {
+        "name": "data_to_theory_contamination",
+        "description": "Noisy, sparse, shuffled, or boundary-distorted data can create false theoretical conclusions if not identified by the operating envelope."
+      },
+      {
+        "name": "theory_to_method_contamination",
+        "description": "An attractive theory can tempt premature corrections, forced unification, or overclaiming that bends the method until it stops being diagnostic."
+      },
+      {
+        "name": "method_to_data_contamination",
+        "description": "Wrong averaging, bad zero handling, unstable segmentation, or overaggressive correction can inject artifacts into the readout and make the instrument appear to work or fail for the wrong reason."
+      }
+    ],
+    "bottom_line": "The project arc depends on preventing all three contamination paths at once."
+  },
+  "doctrine_of_clean_research": {
+    "principles": [
+      "Keep the core observable clean.",
+      "Keep process-control signals separate from the science signal.",
+      "Do not promote a modification until it survives regression through prior DUTs.",
+      "Treat boundaries, misses, and low-power zones as useful information, not embarrassment.",
+      "Prefer declared resolution boundaries over false confidence."
+    ],
+    "canonical_example": {
+      "good": "F17 is acceptable as a process-control / contamination channel because it does not rewrite the core EITT observable.",
+      "bad": "Direct error correction or mixed composite scores are unacceptable when they modify the primary science signal and risk stored-energy style contamination."
+    }
+  },
+  "project_arc_by_stage": [
+    {
+      "stage": "stage_1_discovery",
+      "name": "EXP-01 foundation",
+      "role": "Establish the core phenomenon.",
+      "summary": "Gold/Silver validated that geometric-mean decimation preserves Shannon entropy while arithmetic decimation does not. This anchored the instrument in the simplex and established the baseline lock-range concept."
+    },
+    {
+      "stage": "stage_2_extension",
+      "name": "EXP-02 dimensionality and real-world hardening",
+      "role": "Show the core survives outside the easiest 2-simplex case.",
+      "summary": "EXP-02 extended the method to higher-dimensional monthly compositions and introduced F17 as a candidate contamination/process signal while preserving the core formulas."
+    },
+    {
+      "stage": "stage_3_cross_domain_validation",
+      "name": "EXP-03 nuclear breakthrough",
+      "role": "Move from economics to hard science.",
+      "summary": "The nuclear programme established that EITT passes on legitimate decay and related paths, and that failures on non-time-series or CoDa-broken cases are validation, not embarrassment."
+    },
+    {
+      "stage": "stage_4_instrument_reframing",
+      "name": "EXP-04 slope, PLL, stored-energy attack",
+      "role": "Turn a phenomenon into an instrument.",
+      "summary": "EXP-04 discovered slope as the key error signal, formalized lock-range language, showed that stored-energy style correction contaminates the instrument, and demonstrated that F17 can serve as an integrity alarm."
+    },
+    {
+      "stage": "stage_5_return_to_codas_home",
+      "name": "EXP-05 geochemistry",
+      "role": "Return the method to CoDa's birthplace.",
+      "summary": "The geochemistry programme showed that passing and failing sub-series can both be physically meaningful, reinforcing that the tool reads structure while the scientist interprets domain context."
+    },
+    {
+      "stage": "stage_6_integration",
+      "name": "CoDa plus EITT integration",
+      "role": "Unify structural and temporal views.",
+      "summary": "CoDa measures structure; EITT measures temporal invariance. The bridge is that sigma-squared-A predicts M_break qualitatively, while EITT pass rate separates legitimate from fabricated cases more cleanly than structural summaries alone."
+    },
+    {
+      "stage": "stage_7_prediction",
+      "name": "Nuclear corridor and stable-island work",
+      "role": "Use the instrument for disciplined prediction.",
+      "summary": "The current nuclear work is strong enough for corridor-level prediction and ranking, but not yet strong enough to claim an exact island center from exploratory overlays such as the prime staircase."
+    }
+  ],
+  "contamination_register": {
+    "data_contamination": [
+      "shuffling temporal order",
+      "entropy stuffing",
+      "periodic calibration injection",
+      "near-zero replacement floor effects",
+      "small-N / low-block-count artifacts",
+      "boundary sparsity and near-vertex distortion"
+    ],
+    "theory_contamination": [
+      "forcing unification before validation",
+      "treating analogy as proof",
+      "promoting exploratory overlays to primary theory",
+      "overstating predictive precision beyond resolution class"
+    ],
+    "method_contamination": [
+      "arithmetic averaging on the simplex",
+      "direct correction of the primary EITT signal",
+      "mixing unlike observables into one score",
+      "changing thresholds without HIVP regression",
+      "ignoring phase sensitivity or detectability limits"
+    ],
+    "reporting_contamination": [
+      "hiding misses",
+      "burying low-power warnings",
+      "reporting a verdict without the process line",
+      "presenting a boundary case as a clean failure or clean success"
+    ]
+  },
+  "structured_research_requirements": {
+    "mandatory": [
+      "Every new candidate idea must be classified as core science, process control, companion diagnostic, exploratory overlay, or application.",
+      "Every modification must be regressed through earlier DUTs under HIVP.",
+      "Every result must carry its operating-envelope context.",
+      "Every prediction must have a resolution class.",
+      "Every visualization set must preserve stagewise fault transparency."
+    ],
+    "resolution_classes": [
+      "corridor-level",
+      "regional-level",
+      "single-candidate ranking",
+      "single-isotope claim"
+    ],
+    "promotion_rule": "A concept advances only when it improves understanding without corrupting the chain."
+  },
+  "how_to_think_about_prediction": {
+    "statement": "Prediction should be layered, not monolithic.",
+    "layers": [
+      {
+        "layer": "physics_basis",
+        "contents": [
+          "SEMF decomposition",
+          "shell structure",
+          "magic-number context",
+          "binding-energy topology"
+        ]
+      },
+      {
+        "layer": "instrument_basis",
+        "contents": [
+          "EITT pass rate",
+          "sigma-squared-A",
+          "EITT slope",
+          "M_break",
+          "velocity / companion diagnostics"
+        ]
+      },
+      {
+        "layer": "exploratory_rankers",
+        "contents": [
+          "prime-step staircase",
+          "packing-step score",
+          "distance-to-prime score",
+          "other residual overlays"
+        ]
+      }
+    ],
+    "decision_rule": "Strong claims require agreement between the physics basis and the instrument basis. Exploratory rankers may refine ranking inside an already-supported corridor, but must not generate the corridor by themselves."
+  },
+  "current_nuclear_position": {
+    "safe_claim": "The present state of the programme supports a broad superheavy stability corridor and a ranked-candidate workflow.",
+    "unsafe_claim": "The exact center of the stable island has already been found from the exploratory staircase overlay.",
+    "working_guidance": "Use EITT plus SEMF to define the cooled basin. Use shell structure to constrain it. Use staircase / prime overlays only to rank candidates inside that basin until they survive null-model tests."
+  },
+  "role_of_failure_and_stagnation": {
+    "statement": "Stagnation is itself a contamination risk because it freezes assumptions and prevents boundary discovery.",
+    "meaning": [
+      "Exploratory work is justified because the chain is designed to reject what does not hold.",
+      "A failed overlay is a cleaning of the instrument, not a wasted effort.",
+      "The cost of not probing is hidden contamination by untested assumptions."
+    ]
+  },
+  "claude_operating_instructions": {
+    "always": [
+      "Keep the project arc visible: discovery -> extension -> cross-domain validation -> instrument reframing -> integration -> prediction.",
+      "Separate science from process control and from exploratory overlays.",
+      "Frame misses and boundaries as informative when they preserve honesty.",
+      "Use HIVP and the operating envelope as guardrails against conceptual contamination."
+    ],
+    "never": [
+      "Do not let exploratory nuclear overlays become primary theory without null-model wins.",
+      "Do not let process-control additions rewrite the EITT science signal.",
+      "Do not let attractive predictions outrun the resolution class of the instrument.",
+      "Do not present the programme as if data alone or theory alone were enough."
+    ]
+  },
+  "final_instruction": {
+    "exact_text": "Treat the EITT project arc as a coupled problem of theory, data, and disciplined method. Any one of the three can contaminate the other two. The research programme succeeds only when the instrument grows sharper without corrupting its own signal, its own evidence, or its own claims."
+  }
+}

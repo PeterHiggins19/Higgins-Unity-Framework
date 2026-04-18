@@ -1,0 +1,161 @@
+{
+  "_meta": {
+    "type": "EITT_NUCLEAR_ASSESSMENT_AND_STABLE_ISLAND_PLAN_FOR_CLAUDE",
+    "version": "1.0",
+    "created": "2026-04-17",
+    "author": "OpenAI ChatGPT for Peter Higgins",
+    "intended_reader": "Claude",
+    "status": "SCIENCE_SIDE_ASSESSMENT",
+    "purpose": "Capture the current scientific assessment of EITT/CoDa/HIVP with emphasis on the nuclear programme, the prime-step staircase idea, and the best next steps toward a careful stable-island prediction."
+  },
+  "executive_assessment": {
+    "summary": "The science side is now coherent enough to support a disciplined predictive programme, but not yet strong enough to justify a sharp single-nuclide claim on prime-step structure alone.",
+    "current_position": [
+      "EITT is strongest as an instrument for detecting constrained compositional manifolds and their lock range.",
+      "In the nuclear programme, the SEMF decomposition is currently the physically strongest compositional basis.",
+      "Sigma-squared-A is behaving like a compositional heat-capacity map, with the superheavy region becoming cooler and smoother.",
+      "F17 is best treated as an integrity / contamination channel, not as a direct predictor of stability.",
+      "The prime-step staircase is promising as a shell / packing overlay, but must remain secondary until it beats null models."
+    ],
+    "bottom_line": "Use EITT to predict a stable corridor first, then use shell, magic-number, and staircase/prime overlays to rank candidate nuclei inside that corridor."
+  },
+  "what_looks_solid_now": {
+    "solid_findings": [
+      "Geometric-mean decimation is the correct compositional operator; arithmetic decimation introduces persistent bias.",
+      "The EITT slope is the key diagnostic: flat means locked, rising means losing lock.",
+      "The four-instrument architecture is now justified: EITT, velocity, delta, and trajectory efficiency / process controls remain separate.",
+      "The blind test supports instrument status: Pass 1 = 17/20, Pass 2 = 18/20 with honest resolution boundaries.",
+      "In the SEMF programme, the superheavy region A=210-295 is smooth under the chosen decomposition and shows low sigma-squared-A."
+    ],
+    "nuclear_specific": [
+      "Iron peak behaves like a thermodynamic critical region.",
+      "Light nuclei are off-critical and high-variance.",
+      "Post-iron, heavy, and superheavy regions are increasingly low-variance under SEMF composition."
+    ]
+  },
+  "what_is_not_solid_yet": {
+    "warnings": [
+      "The valley / SEMF programme can identify broad stability structure but does not by itself resolve exact shell closures.",
+      "Shuffled valley and some noisy controls can pass, so EITT alone is not sufficient for exact island localisation.",
+      "The prime-step staircase has visual suggestiveness but is not yet a validated statistical predictor.",
+      "Error correction should not be used to force the prediction; contamination-aware process control is allowed, direct signal correction is not."
+    ],
+    "forbidden_overclaim": [
+      "Do not claim that prime numbers cause nuclear stability.",
+      "Do not claim that EITT alone has already identified the exact center of the island of stability.",
+      "Do not present one isotope as a settled discovery unless it survives shell-theory and null-model checks."
+    ]
+  },
+  "best_current_scientific_reading": {
+    "broad_corridor_prediction": {
+      "statement": "The present EITT x SEMF evidence supports a broad superheavy stability corridor rather than a pinpoint.",
+      "recommended_working_corridor": {
+        "neutron_number": "N approximately 184",
+        "proton_number_band": "Z approximately 114 to 126",
+        "operational_center_for_internal_work": "Z approximately 120 to 122, N = 184"
+      },
+      "why_this_is_the_right_form": [
+        "External shell-based theory already brackets the island near N=184 with competing proton closures in the 114-126 range.",
+        "Internal EITT x SEMF work shows the entire superheavy region is low-variance and pass-like, which supports a broad cooled basin rather than a sharp isolated spike.",
+        "The prime-step staircase may help rank locations inside that basin, but it does not yet narrow the corridor with sufficient rigor."
+      ]
+    },
+    "single_best_internal_prediction_if_forced": {
+      "statement": "If one operational target must be named now, use an N=184 nucleus in the low-120 Z corridor, with Z=120 or Z=122 as working candidates for ranking studies, not as final claims.",
+      "confidence": "moderate for corridor, low for exact Z"
+    }
+  },
+  "prime_step_staircase_assessment": {
+    "what_the_plot_suggests": [
+      "The staircase N(Z) along the valley is not random; step sizes are structured.",
+      "Sigma-squared-A along the valley smooths downward with Z, consistent with the heat-capacity reading.",
+      "Prime-marked proton numbers appear visually near some large-step or inflection regions.",
+      "Big-step proximity to primes may be capturing shell/packing boundaries rather than primality as a causal mechanism."
+    ],
+    "most_likely_interpretation": "Prime Z is best treated as a proxy overlay for sparse arithmetic packing, shell spacing, or staircase irregularity, not as the underlying physics.",
+    "null_models_required": [
+      "Randomized prime-label control with same Z support",
+      "Magic-number control (compare prime proximity versus magic-number proximity)",
+      "Step-size permutation test",
+      "Distance-to-nearest-prime baseline versus random integer baseline",
+      "Local-window enrichment test for large steps near prime Z"
+    ],
+    "promotion_rule": "The prime-step layer stays exploratory until it beats shell-only and random-baseline models on held-out regions."
+  },
+  "recommended_prediction_stack": {
+    "tier_1_physics": [
+      "SEMF composition",
+      "binding-energy / valley extraction",
+      "known shell-closure candidates",
+      "magic-number structure"
+    ],
+    "tier_2_eitt": [
+      "regional pass rate",
+      "local sigma-squared-A",
+      "EITT slope flatness",
+      "M_break / lock-range width",
+      "velocity inflections"
+    ],
+    "tier_3_exploratory_rankers": [
+      "prime-step staircase score",
+      "packing regularity score",
+      "distance to nearest prime",
+      "big-step clustering score"
+    ],
+    "decision_rule": "Only make a strong prediction where tier 1 and tier 2 agree. Use tier 3 only to rank candidates inside that pre-approved region."
+  },
+  "best_next_steps": {
+    "immediate": [
+      "Freeze the nuclear report vocabulary: corridor, shell overlay, staircase score, resolution boundary.",
+      "Standardize a sliding-window nuclear dashboard with sigma-squared-A, EITT pass rate, EITT slope, velocity, and shell markers.",
+      "Run prime-step staircase statistics against null models before using it in any headline claim.",
+      "Separate SEMF smooth structure from shell residuals explicitly rather than mixing them."
+    ],
+    "short_horizon": [
+      "Build a two-layer nuclear model: layer A = SEMF compositional basin, layer B = shell / staircase residual map.",
+      "Rank candidate superheavy nuclei by combined score: low local sigma-squared-A + flat slope + shell support + staircase anomaly support.",
+      "Test whether the prime/staircase signal peaks near known shell candidates before extrapolating beyond observed masses."
+    ],
+    "hardening": [
+      "Re-run the nuclear prediction pipeline under HIVP after every scoring change.",
+      "Require no degradation to EXP-01 through EXP-05 core behaviour.",
+      "Add explicit uncertainty classes: corridor-level, regional-level, single-isotope-level."
+    ]
+  },
+  "suggested_output_language_for_claude": {
+    "preferred": [
+      "broad stability corridor",
+      "ranked candidate list",
+      "shell-supported basin",
+      "compositional heat-capacity minimum",
+      "exploratory staircase overlay",
+      "prediction with resolution class"
+    ],
+    "avoid": [
+      "exact discovery",
+      "prime numbers determine stability",
+      "EITT proves the island center",
+      "final isotope identified"
+    ]
+  },
+  "recommended_json_fields_for_future_nuclear_runs": [
+    "region_name",
+    "A_range",
+    "candidate_Z",
+    "candidate_N",
+    "sigma2_A_local",
+    "eitt_pass_rate",
+    "eitt_slope_class",
+    "M_break",
+    "velocity_score",
+    "shell_support_score",
+    "prime_step_score",
+    "null_model_p_value",
+    "prediction_rank",
+    "resolution_class",
+    "notes"
+  ],
+  "claude_instruction": {
+    "exact_text": "Treat the current nuclear EITT programme as strong enough to predict a superheavy stability corridor, but not yet strong enough to claim an exact island center from the prime-step staircase alone. Use SEMF + shell physics as the primary basis, EITT as the structural/thermodynamic meter, and the prime-step idea only as a secondary ranking overlay until it survives null-model tests."
+  }
+}

@@ -1,9 +1,9 @@
 {
   "_meta": {
     "type": "HUF_ADMINISTRATIVE_REGISTER",
-    "version": "1.1",
+    "version": "2.1",
     "created": "2026-04-13",
-    "updated": "2026-04-13",
+    "updated": "2026-04-18",
     "author": "Peter Higgins",
     "purpose": "Single source of truth for all HUF project identity, contact information, websites, canonical names, terms, standards, and administrative references. Extends RWA-001. If any AI or document uses a different name, URL, or term — this file wins.",
     "update_authority": "Peter Higgins only"
@@ -30,8 +30,8 @@
     "full_name": "Higgins Unity Framework",
     "abbreviation": "HUF",
     "tagline": "Compositional structure as an open-loop monitoring signal.",
-    "status": "STABLE — repo restructured, AI refresh layer validated across 5 platforms, pre-publication",
-    "status_date": "2026-04-13",
+    "status": "ACTIVE — Phase 2 EITT hardening in progress. HIVIP methodology established. Nuclear staircase programme (prime-2 mechanism, stability corridor). codawork2026/ package consolidated (65 files). Refresh chain v3.1.",
+    "status_date": "2026-04-18",
     "founded": "2025",
     "domain": "Compositional data analysis (CoDa), Aitchison geometry, monitoring systems",
     "milestones": {
@@ -39,6 +39,8 @@
       "2026-02": "Ratio State Monitoring name locked for literature submission",
       "2026-03": "GitHub repo launched, multi-AI collaboration established",
       "2026-04-13": "Full repo restructure. AI refresh layer (FAST_REFRESH + INTEGRITY_MANIFEST + ADMIN + spec) validated across Claude, ChatGPT, Grok, Copilot, Gemini. 286 files organized into 12 top-level folders. All five cold-start tests passed (10/10 questions). System declared STABLE.",
+      "2026-04-17": "codawork2026/ package consolidated. 78 aged drafts archived. Geochemistry extension (40,666 rocks, 37/39 TAS pass). Gold Standard Working Example (10-step Higgins Decomposition, 23pp, 11 plots). CoDaWork talk deck (16 slides). Refresh chain v3.0. Geometric mean empirical proof articulated.",
+      "2026-04-18": "HIVIP methodology established (Higgins Iterative Validation and Integrity Protocol). Nuclear staircase programme: prime-2 mechanism confirmed (every step dN=0,2,4,6), stability corridor Z=114-126/N≈184. 3 ChatGPT methodology briefings (precedent/lineage, project arc, nuclear assessment). 2 general conference handouts. Refresh chain v3.1.",
       "2026-06": "CoDaWork 2026, Coimbra, Portugal (upcoming)"
     }
   },
@@ -90,6 +92,24 @@
       "description": "RMS aggregator of 4 polarity-aligned roots (a0-a3), locked at p=2",
       "NOT": ["K_eff", "Keff", "K-effective"]
     },
+    "hivp": {
+      "full": "Higgins Iterative Validation Protocol",
+      "short": "HIVP",
+      "description": "Regression-chain rule for advancing the method without breaking prior DUTs",
+      "NOT": ["HIVIP", "HUF Validation"]
+    },
+    "hivip": {
+      "full": "Higgins Iterative Validation and Integrity Protocol",
+      "short": "HIVIP",
+      "description": "Umbrella methodology: theory + instrument development + contamination control + regression discipline",
+      "one_line": "EITT is the science. The Higgins Decomposition is the engine. HIVP is the chain. HIVIP is the full methodology.",
+      "NOT": ["HIVP", "HUF Protocol"]
+    },
+    "higgins_decomposition": {
+      "full": "The Higgins Decomposition",
+      "description": "Operational 10-step state-machine / process-line implementation of CoDa + EITT",
+      "NOT": ["Higgins Method", "HUF Decomposition"]
+    },
     "bell_test": {
       "result": "S = 2.2018",
       "classical_bound": 2.0,
@@ -127,6 +147,14 @@
       "full": "Our World in Data",
       "url": "https://ourworldindata.org/",
       "usage": "Energy and GDP cross-validation"
+    },
+    "ball_2022": {
+      "full": "Ball 2022 Global Igneous Geochemistry Dataset",
+      "usage": "40,666 real igneous rock compositions, 8 major oxides — EITT geochemistry validation"
+    },
+    "agdb3": {
+      "full": "Alaska Geochemical Database v3 (AGDB3)",
+      "usage": "Companion geochemistry dataset for cross-validation with Ball 2022"
     }
   },
 

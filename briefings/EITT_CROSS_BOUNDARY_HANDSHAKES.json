@@ -1,0 +1,232 @@
+{
+  "_meta": {
+    "type": "EITT_CROSS_BOUNDARY_HANDSHAKE_SPECIFICATION",
+    "version": "1.0",
+    "date": "2026-04-18",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Formal specification of handshake mechanisms where EITT/CoDa can interface with domains beyond the nuclear stability boundary. Each handshake defines: what the composition IS, what the simplex looks like, what the log-ratio transform DOES in that domain, what σ²_A MEASURES physically, and what an EITT proof would require.",
+    "hivip_level": "L0-L1 (proposed interfaces, not yet tested). Each handshake must earn its own promotion through domain-specific validation.",
+    "principle": "The simplex is the same everywhere. EITT reads compositional change — it does not need to know what the components ARE. The geometry is universal; the interpretation is domain-specific.",
+    "governance": "HUF-GOV: instrument reads, never actuates. Each handshake produces a diagnostic. Domain experts interpret."
+  },
+
+  "the_boundary": {
+    "what_it_is": "The nuclear stability boundary where SEMF (nucleons as discrete objects) breaks down. Beyond Z≈363 (B/A < 0), conventional nuclear matter cannot exist. The compositional lens (SEMF 4-part simplex, σ²_A) confirms Z≈114-126 as the last island. Beyond that boundary lies quark matter, where the degrees of freedom change from nucleons to quarks.",
+    "why_it_matters": "EITT reached this boundary by following the compositional signal from energy-mix monitoring (EMBER) through geochemistry (40,666 rocks) through nuclear binding (AME2020) to the point where the signal dissolves. The question: does it dissolve, or does it transform into a signal readable by the same geometry from the other side?",
+    "the_answer": "It transforms. Every domain beyond the boundary has compositional data on a simplex. None of them use CoDa. The handshake is possible because the Aitchison geometry that works on energy carriers also works on quark flavors, hadron yields, and r-process abundances."
+  },
+
+  "handshakes": {
+
+    "HS-01": {
+      "domain": "Quark-Gluon Plasma — Chemical Freeze-out",
+      "contact_point": "Statistical Hadronization Model (SHM)",
+      "key_researchers": ["P. Braun-Munzinger (GSI/Heidelberg)", "J. Stachel (Heidelberg)", "A. Andronic (Münster)", "V. Vovchenko (Thermal-FIST)"],
+      "facilities": ["RHIC-STAR (Brookhaven)", "ALICE (CERN LHC)", "FAIR-CBM (GSI, commissioning)", "NICA-MPD (JINR Dubna, commissioning)"],
+
+      "the_composition": {
+        "components": ["π", "K", "p", "Λ", "Ξ", "Ω", "φ", "..."],
+        "D": "7-12 (depending on species included)",
+        "what_they_are": "Hadron species yields at chemical freeze-out. When the QGP cools and hadronizes, it freezes into a composition of particle species. The yield ratios (K/π, Λ/π, etc.) are currently fitted independently.",
+        "why_its_compositional": "Total yield sums to closure. Changing one species fraction necessarily changes others. The constraint is currently IGNORED in chi-squared fits. Aitchison geometry respects it naturally.",
+        "data_form": "Yield ratios at each collision energy √s_NN. Time series: scan across √s_NN from 3 GeV (BES-II low) to 5.02 TeV (LHC)."
+      },
+
+      "the_handshake": {
+        "clr_transform": "clr of hadron yield vector at each √s_NN. Moves from the simplex to Euclidean space where distances are meaningful.",
+        "sigma2_A_measures": "COMPOSITIONAL STRESS of the hadronization. High σ²_A = one species dominates (pion-dominated at high √s_NN). Low σ²_A = balanced production (more strange particles emerging at lower √s_NN where strangeness enhancement peaks).",
+        "perturbation": "Δ(√s) = C( yield(√s₂)/yield(√s₁) ) — the perturbation between two collision energies. This IS the EITT diagnostic applied to the energy scan.",
+        "aitchison_distance": "d_A between freeze-out compositions at adjacent energies. Spike = phase transition signature. The QCD critical point would appear as a drift flag.",
+        "eitt_decimation": "Geometric mean of freeze-out compositions across energy bins. If Shannon entropy is invariant under decimation (EITT holds), then the freeze-out composition has the same structure at coarse and fine energy resolution. If it BREAKS, the breaking point marks the phase transition.",
+        "drift_flag": "d_A(√s → √s+δ) > μ + 2σ flags the energy where the hadronic composition changes abruptly. This is a model-independent QCD critical point detector."
+      },
+
+      "proof_of_concept": {
+        "data_needed": "Published STAR BES-II particle yields (π±, K±, p, p̄, Λ, Ξ, Ω) at each of ~10 energy points",
+        "test": "Compute d_A between adjacent energies. Plot d_A vs √s_NN. Look for drift flag. Compare to known crossover temperature (T_c ≈ 155 MeV).",
+        "prediction": "d_A should show structure (not flat) across the BES energy range. If a critical point exists, d_A should spike.",
+        "sample_size": "~10 energy points × 7-12 species = feasible with published data",
+        "estimated_effort": "1-2 days for a motivated physicist with CoDa background"
+      },
+
+      "what_they_gain": "Model-independent compositional drift detection. Currently the SHM extracts T and μ_B by fitting ratios independently — this loses the simplex constraint. CoDa preserves it. The d_A drift flag is parameter-free."
+    },
+
+    "HS-02": {
+      "domain": "QCD Phase Diagram — Information Geometry Bridge",
+      "contact_point": "Ruppeiner/thermodynamic geometry community",
+      "key_researchers": ["G. Ruppeiner (New College of Florida)", "D. Johnston (Heriot-Watt)", "Authors of PRD 109 096017 (2024 FRG thermodynamic geometry on QCD)"],
+
+      "the_composition": {
+        "components": "At each (T, μ_B) point: fractions of hadronic vs partonic degrees of freedom, or equivalently the quark condensate ⟨q̄q⟩ and Polyakov loop ⟨L⟩ as order parameters",
+        "why_its_compositional": "The QCD crossover is a continuous change in composition from hadronic to partonic matter. The order parameters trace a path through a state space that has simplex-like structure when normalized."
+      },
+
+      "the_handshake": {
+        "mathematical_bridge": "Aitchison geometry on the D-simplex is isometric to ℝ^(D-1) with the standard Euclidean metric via the ILR transform. The Fisher-Rao metric on the multinomial family, restricted to the simplex, is conformally related to the Aitchison metric. Ruppeiner's thermodynamic metric IS the Fisher-Rao metric applied to thermodynamic fluctuations. Therefore: Aitchison ↔ Fisher-Rao ↔ Ruppeiner. The bridge is exact, not analogical.",
+        "sigma2_A_measures": "Scalar curvature of the compositional manifold. In Ruppeiner geometry, curvature divergence = phase transition. In Aitchison geometry, σ²_A extremum = compositional stress change. These are measuring the same thing in different coordinates.",
+        "eitt_contribution": "EITT adds TIME. Ruppeiner geometry is static (equilibrium). EITT applies to time-evolving compositions. The QGP evolves from initial state through thermalization to freeze-out — that's a time series on the simplex. EITT can read entropy invariance along this evolution.",
+        "the_union": "Ruppeiner curvature detects WHERE the phase transition is in (T, μ_B). EITT detects HOW the composition changes across it. Together: geometry + dynamics."
+      },
+
+      "proof_of_concept": {
+        "data_needed": "Lattice QCD equation of state at μ_B = 0 (publicly available from HotQCD collaboration). Susceptibilities χ_2, χ_4 as function of T.",
+        "test": "Construct composition vector from partial pressures (hadronic, gluonic, quark contributions) as function of T. Compute σ²_A(T). Look for extremum near T_c ≈ 155 MeV.",
+        "prediction": "σ²_A should show a minimum or inflection near T_c — the composition is maximally balanced at the crossover.",
+        "estimated_effort": "2-3 days, requires familiarity with lattice QCD data formats"
+      }
+    },
+
+    "HS-03": {
+      "domain": "Quark Flavor Simplex — udQM Continent of Stability",
+      "contact_point": "Holdom-Ren-Zhang (University of Toronto)",
+      "key_researchers": ["B. Holdom (Toronto)", "J. Ren (Toronto)", "C. Zhang (Toronto)"],
+
+      "the_composition": {
+        "components": ["u (up quark fraction)", "d (down quark fraction)", "s (strange quark fraction)"],
+        "D": 3,
+        "what_they_are": "Quark flavor fractions in bulk quark matter. The simplex is already 2D (ternary diagram). Nuclear matter sits near (u≈1/3, d≈2/3, s≈0). Strange quark matter sits near (u≈1/3, d≈1/3, s≈1/3). udQM sits at (u, d, s≈0) with specific u/d ratio.",
+        "why_its_compositional": "Quark number conservation enforces closure. The three flavors sum to total baryon number. The ground state of quark matter is literally a point on a 2-simplex."
+      },
+
+      "the_handshake": {
+        "clr_transform": "clr(u, d, s) maps the ternary diagram to ℝ². In CLR coordinates, nuclear matter, udQM, and SQM occupy distinct regions.",
+        "sigma2_A_measures": "FLAVOR BALANCE. Nuclear matter has high σ²_A (dominated by d quarks — 2 down per neutron, 1 up). SQM has low σ²_A (all three flavors equal). udQM has intermediate σ²_A (s=0 but u/d can balance).",
+        "aitchison_distance": "d_A from nuclear matter to udQM to SQM measures the compositional distance of the phase transition. The Bodmer-Witten question (is SQM the ground state?) is: is d_A(nuclear → SQM) energetically downhill?",
+        "perturbation_path": "The transition nuclear → udQM → SQM can be parameterized as a path on the simplex. EITT can test: is the path entropy-invariant? If yes, the transition preserves compositional structure. If no, where does it break?",
+        "the_insight": "The continent of stability (A > 300) begins exactly where the SEMF compositional structure dissolves (Z > 363, B/A < 0). One simplex ends. Another begins. The handshake IS the boundary."
+      },
+
+      "proof_of_concept": {
+        "data_needed": "Holdom-Ren-Zhang energy functional. Quark flavor fractions as function of baryon number A from their 2018 PRL model.",
+        "test": "Compute σ²_A of the (u, d, s) composition as function of A across the transition from nuclear to quark matter. Look for the σ²_A minimum — compositionally calmest quark matter.",
+        "prediction": "σ²_A should have a minimum at the SQM point (1/3, 1/3, 1/3) and a saddle near the nuclear-udQM boundary.",
+        "estimated_effort": "1 day. The simplex is only 2D. Visualization is immediate."
+      }
+    },
+
+    "HS-04": {
+      "domain": "Neutron Star Interior — Radial Composition Profile",
+      "contact_point": "Nuclear astrophysics EOS community",
+      "key_researchers": ["E. Annala (Helsinki)", "T. Gorda (Stavanger)", "A. Kurkela (Stavanger/CERN)", "C. Horowitz (Indiana)", "M. Caplan (Illinois State)", "I. Tews (LANL)"],
+
+      "the_composition": {
+        "components": ["neutrons", "protons", "electrons", "muons"],
+        "D": 4,
+        "extension": "In the core: add hyperons (Λ, Σ, Ξ) for D=7, or quarks (u, d, s) for D=7 total",
+        "parameterized_by": "Baryon density n_B (from 0 at surface to ~5-10 n_0 at center, where n_0 = 0.16 fm⁻³ = nuclear saturation density)",
+        "why_its_compositional": "Charge neutrality + beta equilibrium constrain the composition at each density. The proton fraction Y_p as function of n_B traces a 1D path through the 4-simplex."
+      },
+
+      "the_handshake": {
+        "clr_transform": "clr(n, p, e, μ) at each density shell. The radial profile of a neutron star IS a compositional time series — density plays the role of time.",
+        "sigma2_A_measures": "COMPOSITIONAL UNIFORMITY of the matter at each density. Low σ²_A = balanced composition (matter has diverse particle content). High σ²_A = neutron-dominated (nearly pure neutron matter). The crust-core boundary, nuclear pasta phases, and hadron-quark transition should all show σ²_A structure.",
+        "perturbation": "Δ(n_B) = C( x(n_B + δ) / x(n_B) ) — the perturbation between adjacent density shells. This is EITT applied to the radial coordinate.",
+        "eitt_decimation": "Coarse-grain the density profile (average over shells). If EITT holds, Shannon entropy of the composition is invariant under this decimation. If it breaks, the breaking point marks a phase transition inside the star.",
+        "drift_flag": "d_A spike between adjacent density shells = phase boundary. The crust-core boundary, the nuclear pasta transitions, and the possible hadron-quark transition should all produce drift flags.",
+        "the_union": "The neutron star is a compositional gradient from vacuum (surface) to the densest matter in the universe (core). EITT reads the entire gradient as a single compositional time series. Every phase transition is a drift flag."
+      },
+
+      "proof_of_concept": {
+        "data_needed": "Any published EOS table (e.g., APR, SLy4, or the Annala et al. 2020 posterior). These give particle fractions as function of n_B.",
+        "test": "Compute d_A(n_B → n_B + δ) along the EOS. Plot d_A vs n_B. Look for drift flags at known phase boundaries.",
+        "prediction": "Drift flags at n_B ≈ 0.5 n_0 (crust-core), n_B ≈ 2 n_0 (possible hyperon onset), n_B ≈ 4-5 n_0 (possible quark deconfinement).",
+        "connection_to_observation": "Neutron star mass-radius measurements (NICER) and gravitational wave tidal deformability (LIGO/Virgo) constrain the EOS. The σ²_A profile provides a new observable that could discriminate between competing EOS models.",
+        "estimated_effort": "2-3 days. EOS tables are freely available. The computation is straightforward."
+      }
+    },
+
+    "HS-05": {
+      "domain": "Kilonova Nucleosynthesis — r-Process Abundances",
+      "contact_point": "Multi-messenger astronomy community",
+      "key_researchers": ["S. Rosswog (Stockholm)", "B. Metzger (Columbia)", "D. Kasen (Berkeley)", "A. Perego (Trento)", "E. Most (Caltech)"],
+
+      "the_composition": {
+        "components": "Elemental mass fractions X_Z for Z=1..92+ (or binned by atomic mass regions: light, first-peak, second-peak, rare-earth, third-peak, actinides)",
+        "D": "6-8 (binned) or 92+ (full)",
+        "what_they_are": "The final elemental abundance pattern after r-process nucleosynthesis in neutron star merger ejecta. Different ejecta components (dynamical, disk wind, neutrino-driven) produce different compositions.",
+        "parameterized_by": "Electron fraction Y_e of the ejecta, which controls the neutron richness and hence the r-process path"
+      },
+
+      "the_handshake": {
+        "clr_transform": "clr of the abundance pattern. In CLR space, different Y_e trajectories trace different paths through compositional space.",
+        "sigma2_A_measures": "ELEMENTAL DIVERSITY of the ejecta. Low σ²_A = broad, balanced abundance pattern (many elements produced in similar amounts — high metallicity, actinide-rich). High σ²_A = dominated by a few elements (iron-peak or light elements).",
+        "perturbation": "Δ(Y_e) = C( X(Y_e + δ) / X(Y_e) ) — how the abundance pattern changes as electron fraction shifts. This maps the sensitivity of nucleosynthesis to initial conditions.",
+        "eitt_decimation": "Coarse-grain the abundance pattern (bin adjacent elements). If EITT holds, the Shannon entropy of the abundance composition is invariant under binning. This would mean the r-process has a scale-invariant compositional structure — a profound claim about nucleosynthesis.",
+        "drift_flag": "d_A between abundance patterns at adjacent Y_e values. Spikes mark where the r-process path jumps to a qualitatively different trajectory (e.g., crossing the N=82 or N=126 neutron shell closures).",
+        "the_union": "The r-process builds elements by capturing neutrons — it traverses the SAME valley of stability that EITT mapped with SEMF. The nuclear staircase (dN/2 step code) determines WHERE the r-process waits (at magic numbers) and what it builds. The calm channel predicted by σ²_A should correlate with r-process abundance peaks."
+      },
+
+      "proof_of_concept": {
+        "data_needed": "Published r-process yield tables from any major simulation (e.g., Rosswog, Korobkin, or Lippuner & Roberts SkyNet code). Yields as function of Y_e.",
+        "test": "Compute d_A between abundance patterns at different Y_e. Plot d_A vs Y_e. Look for drift flags near Y_e ≈ 0.25 (transition from heavy to light r-process) and Y_e ≈ 0.40 (transition from r-process to alpha-process).",
+        "prediction": "r-process abundance peaks (A≈80, 130, 195) should correspond to σ²_A calm zones in the nuclear staircase analysis. The step-code regime boundaries should predict WHERE abundance peaks form.",
+        "estimated_effort": "2-4 days. Requires r-process simulation data."
+      }
+    },
+
+    "HS-06": {
+      "domain": "Nuclear-to-Quark Handshake — The Boundary Itself",
+      "contact_point": "The boundary where SEMF composition ends and quark flavor composition begins",
+      "key_researchers": ["Combined: HS-01 through HS-05 researchers + Holdom group"],
+
+      "the_composition": {
+        "SEMF_side": "[Volume, Surface, Coulomb, Asymmetry] — D=4 on the nuclear simplex",
+        "quark_side": "[u, d, s] — D=3 on the flavor simplex",
+        "the_boundary_question": "Can the two simplices be JOINED at the transition? Is there a D=7 (or reduced) joint simplex that spans both regimes?"
+      },
+
+      "the_handshake": {
+        "approach": "At the transition density (n_B ≈ 2-5 n_0), both descriptions coexist. The SEMF composition describes the hadronic fraction; the quark flavor composition describes the deconfined fraction. A mixed-phase model would have a composition like [Volume_had, Surface_had, Coulomb_had, Asymmetry_had, u_quark, d_quark, s_quark] on a 6-simplex.",
+        "sigma2_A_measures": "TOTAL compositional stress across both phases simultaneously. At the transition, the joint composition should show structure — either a minimum (smooth crossover) or a discontinuity (first-order transition).",
+        "eitt_test": "If EITT holds across the boundary (Shannon entropy invariant under geometric-mean decimation of the joint composition), then the two phases share a common compositional structure. If EITT breaks AT the boundary, the break itself characterizes the nature of the phase transition.",
+        "prediction": "The EITT breaking point (if any) at the nuclear-quark boundary should coincide with the QCD critical point. This gives EITT a falsifiable prediction in QCD.",
+        "the_union": "This is the ultimate HUF-GOV union. One tool reading two domains through a single geometry. The simplex is the same everywhere — the components change, the geometry doesn't. If the handshake succeeds, EITT spans from energy-mix monitoring through geochemistry through nuclear binding through the quark-hadron transition. One tool, one geometry, five domains."
+      },
+
+      "proof_of_concept": {
+        "approach": "Use a hybrid EOS (e.g., the Annala et al. construction that smoothly interpolates between nuclear and quark matter). Extract the composition at each density. Build the joint simplex. Compute σ²_A across the transition.",
+        "estimated_effort": "1-2 weeks. Requires careful handling of the two simplex spaces and their union.",
+        "significance": "If this works, it's a paper. A CoDa-geometric characterization of the QCD phase transition that connects to nuclear structure, astrophysics, and heavy-ion experiments simultaneously."
+      }
+    }
+  },
+
+  "priority_ranking": {
+    "immediate": {
+      "HS-01": "QGP freeze-out. Data exists (STAR BES-II published yields). Computation is straightforward. Result is model-independent. Could be done in 1-2 days. HIGHEST IMPACT for lowest effort.",
+      "HS-03": "Quark flavor simplex. Only 2D. Visualization is immediate. Connects directly to the continent-of-stability literature."
+    },
+    "near_term": {
+      "HS-04": "Neutron star EOS. EOS tables are freely available. The computation is clean. Connects to NICER/LIGO observational programme.",
+      "HS-05": "r-Process abundances. Direct connection to the nuclear staircase already mapped."
+    },
+    "ambitious": {
+      "HS-02": "QCD information geometry bridge. Requires lattice QCD data handling. But the mathematical bridge (Aitchison ↔ Fisher-Rao ↔ Ruppeiner) is exact and publishable.",
+      "HS-06": "Joint nuclear-quark simplex. The ultimate test. Requires hybrid EOS expertise. If it works, it unifies the programme."
+    }
+  },
+
+  "what_eitt_brings_to_the_table": {
+    "model_independence": "EITT reads compositional change without assuming a model. Chi-squared fits assume thermal equilibrium. CoDa doesn't.",
+    "simplex_constraint": "All these domains have compositions summing to closure. Current methods IGNORE this constraint. CoDa respects it. This isn't a convenience — it's a correction. Treating ratio data as unconstrained violates the mathematical structure of the data.",
+    "entropy_invariance_test": "EITT's core claim — Shannon entropy is near-invariant under geometric-mean decimation — is testable in EVERY domain. Each handshake produces a new EITT proof or a new failure mode. Both are scientifically valuable.",
+    "drift_detection": "The d_A drift flag is a universal phase-transition detector. It works on energy-mix data (EMBER). It works on geochemistry (40,666 rocks). If it works on QGP freeze-out data, the chain is: energy monitoring → geochemistry → nuclear binding → QCD. One tool across four boundaries.",
+    "the_proven_chain": "EMBER (energy) → Gold/Silver (finance) → U-235 (nuclear) → Ball 2022 (geochemistry) → NGFS (scenarios) → Nuclear staircase (AME2020). Six domains, six proofs. The next handshake extends the chain across the nuclear boundary."
+  },
+
+  "what_we_do_NOT_claim": [
+    "EITT discovers new physics (it reads existing structure through a compositional lens)",
+    "CoDa replaces domain expertise in QCD, nuclear astrophysics, or particle physics",
+    "The handshake mechanisms work before they are tested — each must earn promotion independently",
+    "The mathematical bridge (Aitchison ↔ Fisher-Rao) has been proven in the physics context — it is exact mathematically but unverified in physical application",
+    "Any handshake supersedes the native methods of the receiving domain"
+  ],
+
+  "governance": {
+    "hivip_level": "L0 (proposed handshake) until domain-specific validation promotes each",
+    "contamination_doctrine": "Each handshake must be validated INDEPENDENTLY. Success in HS-01 does not promote HS-02. The anti-corruption rule applies: no handshake climbs by borrowing credibility from another.",
+    "open_loop": "The diagnostics produced by each handshake are open to interpretation by domain experts. EITT reads; humans decide.",
+    "falsifiable": "Each handshake includes a specific prediction. If the prediction fails, the handshake fails honestly and we learn something."
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "title": "Higgins Decomposition \u2014 Gold Standard Working Example",
+  "dataset": "Gold/Silver ratio 1688-2026",
+  "N": 624,
+  "D": 2,
+  "composition": "2-simplex: [x_gold, x_silver]",
+  "steps": {
+    "step0_raw_data": {
+      "ratio_range": [
+        14.14,
+        104.81905836747713
+      ],
+      "ratio_mean": 54.35306341508917,
+      "ratio_median": 59.132801855428355
+    },
+    "step1_simplex_closure": {
+      "x_gold_range": [
+        0.9339498018494056,
+        0.9905499064589357
+      ],
+      "x_silver_range": [
+        0.009450093541064283,
+        0.06605019815059444
+      ],
+      "closure_check": "sum = 1.0 for all t"
+    },
+    "step2_clr_transform": {
+      "clr_gold_range": [
+        1.3245038302342134,
+        2.326117805002444
+      ],
+      "clr_gold_mean": 1.8711080747590971,
+      "identity": "CLR(gold) = 0.5 * ln(R)",
+      "sum_to_zero": true
+    },
+    "step3_aitchison_variance": {
+      "sigma2_A": 0.2958093698806383,
+      "variation_matrix_V12": 0.5916187397612764,
+      "thermodynamic_reading": "LOW heat capacity \u2014 tight compositional coupling"
+    },
+    "step4_decimation": {
+      "M_values_tested": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        "...",
+        122,
+        123,
+        124
+      ],
+      "blocks_at_M2": 312,
+      "blocks_at_M50": 12
+    },
+    "step5_entropy": {
+      "H_bar_M1": 0.18457755610158322,
+      "H_bar_range_legit": [
+        0.1816385019340532,
+        0.19700088286705084
+      ],
+      "max_deviation_legit": 0.012423326765467618
+    },
+    "step6_pass_rate": {
+      "legitimate": {
+        "pass_rate": 0.967479674796748,
+        "M_break": 105,
+        "verdict": "LEGITIMATE"
+      },
+      "fabricated": {
+        "pass_rate": 0.0,
+        "M_break": 2,
+        "verdict": "FABRICATED"
+      }
+    },
+    "step7_f17": {
+      "legitimate": {
+        "f17_max": 0.014076836461826586,
+        "f17_normalized": 0.047587527289979746
+      },
+      "fabricated": {
+        "f17_max": 0.004819211678204538,
+        "f17_normalized": 0.016291612669839136
+      }
+    }
+  },
+  "key_insight": "Same composition, same \u03c3\u00b2_A, same H\u0304 \u2014 but EITT reads temporal structure through geometric-mean decimation. Ordered series preserves entropy invariance; shuffled series destroys it. This is the Higgins Decomposition."
+}

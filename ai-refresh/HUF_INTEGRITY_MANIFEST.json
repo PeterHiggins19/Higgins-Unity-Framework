@@ -1,9 +1,9 @@
 {
   "_meta": {
     "type": "HUF-INTEGRITY-MANIFEST",
-    "version": "2.0",
+    "version": "3.1",
     "created": "2026-04-13",
-    "last_updated": "2026-04-15",
+    "last_updated": "2026-04-18",
     "author": "Peter Higgins / Claude",
     "purpose": "Hash-verified integrity layer for HUF corpus. Load AFTER HUF_FAST_REFRESH.json. Use to detect file corruption, unauthorized edits, or version drift across sessions.",
     "protocol": "Any AI loading the HUF context should: (1) Read HUF_FAST_REFRESH.json for concepts. (2) Read this file. (3) Spot-check 2-3 file hashes. If any hash mismatches, flag it and re-read the source file before proceeding.",
@@ -55,6 +55,27 @@
       "best_S": 2.2018,
       "classical_bound": 2.0,
       "violation": "12.31%"
+    },
+    "geochemistry_check": {
+      "total_rocks": 40666,
+      "oxides": 8,
+      "TAS_types_tested": 39,
+      "TAS_types_pass": 37,
+      "TAS_types_fail": 1,
+      "sole_anomaly": "Foidite",
+      "anomaly_PR": "32%",
+      "NOT_multiple_failures": true
+    },
+    "experiment_chain_check": {
+      "total_experiments": 6,
+      "IDs": ["EXP-01", "EXP-02", "EXP-03", "EXP-04", "EXP-05", "EXP-05b"],
+      "all_LEGITIMATE": true
+    },
+    "geometric_mean_proof_check": {
+      "arithmetic_5yr_mean": "14.2%",
+      "geometric_5yr_mean": "1.8%",
+      "destruction_range": "20-40%",
+      "source": "NGFS Phase 4"
     }
   },
 
@@ -64,7 +85,7 @@
 
     "tier_0_truth_sources": {
       "_note": "These files define canonical values. If they change, FAST_REFRESH must be updated.",
-      "ai-refresh/HUF_FAST_REFRESH.json": {"sha256": "88c885fc46c7ac04c2bea5a6b2a13ca1968a5f3dbaf1d38af53992ba1c7b227c", "bytes": 13623},
+      "ai-refresh/HUF_FAST_REFRESH.json": {"sha256": "3fb3f89fb24d886b3e30d35bc9f63b3003c85d8f31761e8ac817fb94eea2491f", "bytes": 30090, "_previous_hash": "e6ca91992f60160308e4319345384074608e1d804adc28967d34e3a9573da5a6"},
       "data/ember/codawork2026_results.json": {"sha256": "43d3ad4894c0d0cfc18fdc630f66b7ffaa2ea715799f17e3c1af4cffe765d3c7", "bytes": 122908, "_old_path": "Energy/codawork2026_results.json"},
       "ai-refresh/huf_spec_v2.0.json": {"sha256": "5b5e1895073c0f741b8051def19da1e7b5bc071d801b9b79636c73f2a383867b", "bytes": 23710, "_old_path": "Chatgpt/higgins-unity-framework/huf_spec_v2.0.json"}
     },
@@ -78,12 +99,21 @@
       "briefings/HUF_CHATGPT_BRIEFING_S016.json": {"sha256": "f49fbfcea35781660033f37b05f0a26238bddd4bad338a712515fbd5dd9f3310", "bytes": 12932},
       "science/eitt/EITT_Adversarial_001.json": {"sha256": "c13d7d80e9f7cfff137a3b2c8856a53f801fc6b1bb42e1194a94d4f7e8db7904", "bytes": 4117},
       "science/eitt/EITT_Midrange_Confirmation_001.json": {"sha256": "ffb0b7ee50fd4d9c09b9dd478bdfc074e685b12f246a564afbd15cd31dbb6e4e", "bytes": 15666},
-      "briefings/HUF_GitHub_Handoff_v1.0.json": {"sha256": "2e778b81c805ab646a0bdfde644668358462fe37f2a8bd7534981ed28807847d", "bytes": 29541}
+      "briefings/HUF_GitHub_Handoff_v1.0.json": {"sha256": "2e778b81c805ab646a0bdfde644668358462fe37f2a8bd7534981ed28807847d", "bytes": 29541},
+      "briefings/EITT_Precedent_and_Lineage_for_Claude.json": {"sha256": "a00df4d94a26002f6a4f11d40d9e96d2d4cc7058adecac549259c9d30ed8ddef", "bytes": 16911, "_note": "ChatGPT-authored. 8-stage precedent chain, HIVIP naming, 6-level promotion ladder, contamination doctrine, 15-item methods status"},
+      "briefings/EITT_Project_Arc_and_Contamination_Context_for_Claude.json": {"sha256": "d9142840ece659e2c9b7a0bd020c90494bc8a538127b784022a5b17c7370593a", "bytes": 10749, "_note": "ChatGPT-authored. 7-stage project arc, 3-path contamination doctrine, clean research principles"},
+      "briefings/EITT_Nuclear_Assessment_and_Stable_Island_Plan_for_Claude.json": {"sha256": "36ffde0eb3b69fb973804bd500a642172e93c82abe954729ec525f8ec951ee3b", "bytes": 8999, "_note": "ChatGPT-authored. Nuclear assessment, corridor prediction, prime-step staircase, 3-tier prediction stack"},
+      "briefings/HUF_CHATGPT_BRIEFING_2026-04-17.json": {"sha256": "c5f58aa92791630e9c9e6196438868d0df93dea22be7ec6b277afc7ff19f7adf", "bytes": 11803, "_note": "ChatGPT handoff: refresh chain v3, codawork2026 consolidation, geochemistry, working example, talk deck, handouts"}
     },
 
     "tier_2_deliverables": {
       "_note": "Documents built FROM tier 0/1 sources. If hash mismatches, rebuild from source, do not edit directly.",
-      "drafts/codawork-2026/presentation/CoDaWork2026_Higgins_Talk.pptx": {"sha256": "39eb19d1bda2bf3ab5ecf72521504d47e50676f1ef7f66f56ae2094416b384fd", "bytes": 358037},
+      "_updated": "2026-04-17 — codawork2026/ consolidated package added, old drafts/codawork-2026/ paths archived",
+      "codawork2026/presentation/CoDaWork2026_Higgins_Talk.pptx": {"sha256": "49fd71ec28024ff539e517dd05f5addaae19f9f9384c2c202f5a9d89e0b6ab82", "bytes": 56902, "_note": "v2 talk deck built 2026-04-17, 16 slides, Office 2013 compatible"},
+      "codawork2026/journals/HIGGINS_Working_Example.pdf": {"sha256": "8548214d78a0bdc890f31b95e3b52b8d7aba1b6c2e6d82c46fa167b075b33953", "bytes": 1528593, "_note": "23pp, 11 plots, 5 analytical viewpoints, fabricated counterexample"},
+      "codawork2026/journals/HIGGINS_Geochemistry_EITT.pdf": {"sha256": "b09c30bd792820019af08c18784973cece5090d005788c2fa7a6be65ae9ff745", "bytes": 4177657, "_note": "40,666 rocks, 8 oxides, 37/39 TAS pass"},
+      "codawork2026/reproducibility/HIGGINS_REPRODUCIBILITY_PACKAGE.json": {"sha256": "e54c4a8fdf11e5d0ee6ea8ff33e1180414fb6030fc02b7da1899fe578432faa6", "bytes": 64738, "_note": "v5.0, 12 sections, 24 refs"},
+      "drafts/codawork-2026/presentation/CoDaWork2026_Higgins_Talk.pptx": {"sha256": "39eb19d1bda2bf3ab5ecf72521504d47e50676f1ef7f66f56ae2094416b384fd", "bytes": 358037, "_note": "ARCHIVED — superseded by codawork2026/ version"},
       "drafts/codawork-2026/extended/CoDaWork2026_Higgins_Extended_Results.docx": {"sha256": "9d8e80e2e3ac6ead0798bed7682aa7f536986981486ffdc149ffe65f2f19ad2a", "bytes": 21660},
       "drafts/codawork-2026/extended/CoDaWork2026_EITT_Handout.docx": {"sha256": "017bec0c17b6a86fa5c3dfcff2c9e78deec8d276841928f3d65ca1ebea850f29", "bytes": 11424},
       "drafts/codawork-2026/extended/CoDaWork2026_EITT_CoffeeTable.docx": {"sha256": "9c36ce872d43699982e3d125d991c45b664b215b33be01cb9a4d89365f17de84", "bytes": 11491},
@@ -92,7 +122,9 @@
       "drafts/codawork-2026/primers/CoDaWork2026_Primer_Narayana.docx": {"sha256": "6894ef68b0dd66d57df30b6da3a3846299f2c4f883cd748e6572b13d8c31f0e5", "bytes": 11830},
       "drafts/codawork-2026/primers/CoDaWork2026_Primer_Ascari.docx": {"sha256": "c6e8358368fb72918a516edba7dc4c5bcdf4ff5cfe4c73ffba57ad28b4a27977", "bytes": 11661},
       "drafts/codawork-2026/primers/CoDaWork2026_Primer_VegaBaquero.docx": {"sha256": "809b1484a4ab5cb89e1aa09b68dd14838458aa73a353fccd351d7b31ee4628f0", "bytes": 11350},
-      "drafts/codawork-2026/primers/CoDaWork2026_Primer_KanjiradanVeetil.docx": {"sha256": "57833f514c689b5ff7c1f731480895872b4a293fbb43aa92ac7bb238dbcbf3f7", "bytes": 11735}
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_KanjiradanVeetil.docx": {"sha256": "57833f514c689b5ff7c1f731480895872b4a293fbb43aa92ac7bb238dbcbf3f7", "bytes": 11735},
+      "codawork2026/extended/CoDaWork2026_Handout_CoDa_TimeSeries.docx": {"sha256": "ea633232bfe5cc47250d83be347fd04a7f225221538fe990c04c8b066f1074f1", "bytes": 41035, "_note": "3pp general conference handout for advanced CoDa+time-series audience"},
+      "codawork2026/extended/CoDaWork2026_Handout_Geochemistry_Bridge.docx": {"sha256": "0de7303b289871ea7380ec471d7942e417b20983e6d00f463ba3755ce18cfa0c", "bytes": 41276, "_note": "4pp general conference handout bridging static geochemistry to EITT"}
     }
   },
 
@@ -112,7 +144,14 @@
       "Germany drift flag attributed to 2011 nuclear moratorium instead of 2023 final shutdown",
       "UK flag values collapse from three specific values to 'approximately 3'",
       "Arithmetic mean destruction percentage gets omitted when describing EITT",
-      "Chemistry proof details (4 lenses, pass rates) get simplified to just '500k data points'"
+      "Chemistry proof details (4 lenses, pass rates) get simplified to just '500k data points'",
+      "Geochemistry anomaly count inflated from 1 (Foidite only) to 'several' or '2'",
+      "Experiment chain truncated — EXP-05b (real geochemistry, 40,666 rocks) gets omitted when listing experiments",
+      "codawork2026/ path reverts to old drafts/codawork-2026/ path — use codawork2026/ (top-level)",
+      "Working Example step count mutates from 10 to fewer — the Higgins Decomposition is exactly 10 steps",
+      "HIVIP/HIVP naming confusion — HIVP is the regression chain rule, HIVIP is the umbrella methodology. They are distinct. Do not merge or swap them",
+      "Nuclear staircase overclaim — prime-2 mechanism is structural identity (pairing energy), NOT a statistical correlation. Prime Z enrichment is DEAD (p=0.85). Stability corridor is corridor-level resolution only, not exact-Z prediction",
+      "Promotion ladder misuse — no concept climbs by improving one domain at cost of contaminating earlier DUTs. Anti-corruption rule is absolute"
     ],
     "golden_rule": "If a value in a document disagrees with HUF_FAST_REFRESH.json, the FAST_REFRESH wins. Always."
   },
@@ -254,7 +293,7 @@
     {
       "version": "2.0",
       "date": "2026-04-15",
-      "event": "Canonical HUF-GOV definition locked in. Coimbra welcome package built. All 4 remaining per-AI lit-verification briefings updated with shared addendum. Version bump to 2.0 marks transition from Phase 1 stabilization to Phase 2 external-readiness posture.",
+      "event": "Canonical HUF-GOV definition locked in. Coimbra welcome package built. Version bump to 2.0 marks Phase 1 → Phase 2 transition.",
       "changes": [
         "NEW: HUF-GOV canonical definition promoted to HUF_FAST_REFRESH.json identity section with five-clause unpacking: 'HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.' \u2014 Peter Higgins, 2026-04-15",
         "NEW: science/governance/HUF_GOV_CANONICAL_DEFINITION.md \u2014 full unpacking of the five clauses (A tool / Verifiably clean usable output / Known degree of certainty / Open to interpretation / Open to modification), with explicit discussion of how the definition resolves the unfalsifiability concern around HUF-GOV",
@@ -264,6 +303,37 @@
         "The welcome package structure is designed for a new CoDa practitioner arriving at HUF cold. Entry point: briefings/coimbra-welcome-package/README.md",
         "Version bumped 1.9 \u2192 2.0 because this set of changes operationalizes the tool's external posture \u2014 the repo is now ready to be handed to a stranger who has never spoken to Peter",
         "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_0 / tier_1 / tier_2"
+      ]
+    },
+    {
+      "version": "3.0",
+      "date": "2026-04-17",
+      "event": "Major refresh — geochemistry extension, Gold Standard Working Example, codawork2026/ consolidation, geometric mean empirical proof, CoDaWork talk deck, refresh chain formalized. Previous refresh files archived at ai-refresh/archive/2026-04-15-pre-v3/.",
+      "changes": [
+        "FAST_REFRESH v3.0: Added proof_5_geochemistry (40,666 rocks, 37/39 TAS pass), proof_5b_synthetic_geochemistry, experiment_chain (6 experiments), geometric_mean_empirical_proof (headline finding for CoDaWork), gold_standard_working_example (10-step Higgins Decomposition), codawork2026 consolidated_package section, formalized refresh_chain in file_map",
+        "FAST_REFRESH file_map restructured into refresh_chain / canonical_sources / briefings / codawork2026_package sections — cleaner for both AI and human navigation",
+        "FAST_REFRESH common_drift_errors: added geochemistry_anomaly_miscount, experiment_chain_completeness, working_example_step_count, codawork2026_path errors",
+        "INTEGRITY_MANIFEST: Added geochemistry_check, experiment_chain_check, geometric_mean_proof_check to canonical_value_checksums",
+        "INTEGRITY_MANIFEST: Updated FAST_REFRESH hash (v3.0), added 4 new tier_2 entries for codawork2026/ deliverables (Working Example PDF, Geochemistry PDF, Talk PPTX, Reproducibility JSON)",
+        "INTEGRITY_MANIFEST: Added 5 new known drift patterns (geochemistry count, experiment chain truncation, path reversion, step count mutation)",
+        "New: ai-refresh/archive/2026-04-15-pre-v3/ — archived pre-update versions of all 4 refresh files",
+        "Refresh chain concept formalized: history is archived, the refresh stays lean and current. Each pass tightens. Energy-efficient knowledge management.",
+        "78 aged drafts archived to archive/pre-codawork2026-drafts/, archive/papers-v1/, archive/post-coimbra-planning/",
+        "63-file codawork2026/ self-contained package created at repo root",
+        "CoDaWork 2026 talk deck: 16 slides, Office 2013 compatible, all canonical values verified"
+      ]
+    },
+    {
+      "version": "3.1",
+      "date": "2026-04-18",
+      "event": "HIVIP methodology integration, nuclear staircase programme, ChatGPT methodology briefings, refresh chain v3.1.",
+      "changes": [
+        "FAST_REFRESH v3.1: Added HIVP, HIVIP, Higgins_Decomposition to canonical_names. New methodology section (promotion_ladder, contamination_doctrine, precedent_lineage). New nuclear_programme section (prime_2_finding, prime_z_dead, stability_corridor, resolution_class). 3 new drift errors (hivip_naming, nuclear_overclaim, promotion_ladder_misuse). 4 new briefing entries in file_map. 2 handout entries added to codawork2026_package",
+        "ADMIN v2.1: Updated status/status_date to 2026-04-18. Added 2026-04-18 milestone (HIVIP, nuclear staircase, ChatGPT briefings, handouts, refresh v3.1). Added hivp, hivip, higgins_decomposition to canonical_names",
+        "PHASE_MARKERS v2.1: Added outstanding_work entries for hivip_methodology, nuclear_staircase, conference_handouts, chatgpt_methodology_briefings",
+        "INTEGRITY_MANIFEST v3.1: Updated FAST_REFRESH hash (v3.0→v3.1, 23765→30090 bytes). Added 4 new tier_1 entries (3 ChatGPT methodology briefings + ChatGPT handoff). Added 2 new tier_2 entries (CoDa+TimeSeries and Geochemistry Bridge handouts). Added 3 new drift patterns (HIVIP naming, nuclear overclaim, promotion ladder misuse)",
+        "3 ChatGPT-authored briefings placed in briefings/: Precedent_and_Lineage (16,911 bytes), Project_Arc_and_Contamination_Context (10,749 bytes), Nuclear_Assessment_and_Stable_Island_Plan (8,999 bytes)",
+        "Nuclear staircase analysis: prime-2 mechanism confirmed (every step dN=0,2,4,6), prime Z enrichment DEAD (p=0.85), stability corridor prediction Z=114-126/N≈184, σ²_A candidate Z=115/N=252, packing crisis Z≈522"
       ]
     }
   ]
