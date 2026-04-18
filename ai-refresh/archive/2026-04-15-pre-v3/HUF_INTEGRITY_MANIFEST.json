@@ -1,0 +1,270 @@
+{
+  "_meta": {
+    "type": "HUF-INTEGRITY-MANIFEST",
+    "version": "2.0",
+    "created": "2026-04-13",
+    "last_updated": "2026-04-15",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Hash-verified integrity layer for HUF corpus. Load AFTER HUF_FAST_REFRESH.json. Use to detect file corruption, unauthorized edits, or version drift across sessions.",
+    "protocol": "Any AI loading the HUF context should: (1) Read HUF_FAST_REFRESH.json for concepts. (2) Read this file. (3) Spot-check 2-3 file hashes. If any hash mismatches, flag it and re-read the source file before proceeding.",
+    "hash_algorithm": "SHA-256"
+  },
+
+  "canonical_value_checksums": {
+    "_note": "These are deterministic checks on canonical values. An AI can recompute these from the FAST_REFRESH and verify no drift occurred during loading.",
+    "eitt_name_check": {
+      "canonical": "Entropy-Invariant Time Transformer",
+      "char_count": 34,
+      "first_word": "Entropy",
+      "last_word": "Transformer",
+      "contains_Time": true,
+      "contains_Ternary": false,
+      "contains_Temporal": false
+    },
+    "japan_flag_check": {
+      "period": "2013-2014",
+      "dA": 9.0477,
+      "NOT_period": ["2011-2012", "2011-2013", "2012-2013"],
+      "reason": "Fukushima March 2011 but annual data shock absorbed by 2013-2014"
+    },
+    "germany_flag_check": {
+      "flag_1_period": "2023-2024",
+      "flag_1_dA": 9.0712,
+      "flag_2_period": "2024-2025",
+      "flag_2_dA": 5.7331,
+      "NOT_periods": ["2011", "2022-2023"]
+    },
+    "uk_flag_check": {
+      "n_flags": 3,
+      "flag_1": {"period": "2004-2005", "dA": 2.9812},
+      "flag_2": {"period": "2017-2018", "dA": 3.2263},
+      "flag_3": {"period": "2019-2020", "dA": 3.2579},
+      "NOT_approximate": "Do not state 'approximately 3.0' — use exact values"
+    },
+    "eitt_proof1_check": {
+      "compression": "341:1",
+      "variation": "0.18%",
+      "domain": "European daily wholesale electricity prices"
+    },
+    "eitt_proof2_check": {
+      "mean_variation": "1.02%",
+      "all_below": "2%",
+      "n_countries": 6
+    },
+    "bell_test_check": {
+      "best_S": 2.2018,
+      "classical_bound": 2.0,
+      "violation": "12.31%"
+    }
+  },
+
+  "file_hashes": {
+    "_computed": "2026-04-13T21:00:00Z",
+    "_algorithm": "SHA-256",
+
+    "tier_0_truth_sources": {
+      "_note": "These files define canonical values. If they change, FAST_REFRESH must be updated.",
+      "ai-refresh/HUF_FAST_REFRESH.json": {"sha256": "88c885fc46c7ac04c2bea5a6b2a13ca1968a5f3dbaf1d38af53992ba1c7b227c", "bytes": 13623},
+      "data/ember/codawork2026_results.json": {"sha256": "43d3ad4894c0d0cfc18fdc630f66b7ffaa2ea715799f17e3c1af4cffe765d3c7", "bytes": 122908, "_old_path": "Energy/codawork2026_results.json"},
+      "ai-refresh/huf_spec_v2.0.json": {"sha256": "5b5e1895073c0f741b8051def19da1e7b5bc071d801b9b79636c73f2a383867b", "bytes": 23710, "_old_path": "Chatgpt/higgins-unity-framework/huf_spec_v2.0.json"}
+    },
+
+    "tier_1_briefings": {
+      "_note": "Session briefings containing analysis and findings. Authoritative for their scope.",
+      "science/quantum/HUF_QIT_CoDaWork2026_KnowledgeBase.json": {"sha256": "75d7eb9d0e196031499823035c363cafe9eabe35b21bfd0f6403acdaae29d0b5", "bytes": 23489},
+      "briefings/HUF_CHATGPT_EITT_BRIEFING.json": {"sha256": "4a92ab5b7080fb9073ab788b53d444e65e6b162a6e16ac49ee4486ff09197cfa", "bytes": 17758},
+      "briefings/HUF_UNIFIED_BRIEFING_S017.json": {"sha256": "936c3d3960febbe0e10b7cfe7a239535498b257c03f7716450441b4f7b0b2c6d", "bytes": 10160},
+      "briefings/HUF_UNIFIED_BRIEFING_S018.json": {"sha256": "0e39642bb58fdaa730bc327d6ad881b76112a9e6ecdebcd0c2717eca61dde642", "bytes": 16306},
+      "briefings/HUF_CHATGPT_BRIEFING_S016.json": {"sha256": "f49fbfcea35781660033f37b05f0a26238bddd4bad338a712515fbd5dd9f3310", "bytes": 12932},
+      "science/eitt/EITT_Adversarial_001.json": {"sha256": "c13d7d80e9f7cfff137a3b2c8856a53f801fc6b1bb42e1194a94d4f7e8db7904", "bytes": 4117},
+      "science/eitt/EITT_Midrange_Confirmation_001.json": {"sha256": "ffb0b7ee50fd4d9c09b9dd478bdfc074e685b12f246a564afbd15cd31dbb6e4e", "bytes": 15666},
+      "briefings/HUF_GitHub_Handoff_v1.0.json": {"sha256": "2e778b81c805ab646a0bdfde644668358462fe37f2a8bd7534981ed28807847d", "bytes": 29541}
+    },
+
+    "tier_2_deliverables": {
+      "_note": "Documents built FROM tier 0/1 sources. If hash mismatches, rebuild from source, do not edit directly.",
+      "drafts/codawork-2026/presentation/CoDaWork2026_Higgins_Talk.pptx": {"sha256": "39eb19d1bda2bf3ab5ecf72521504d47e50676f1ef7f66f56ae2094416b384fd", "bytes": 358037},
+      "drafts/codawork-2026/extended/CoDaWork2026_Higgins_Extended_Results.docx": {"sha256": "9d8e80e2e3ac6ead0798bed7682aa7f536986981486ffdc149ffe65f2f19ad2a", "bytes": 21660},
+      "drafts/codawork-2026/extended/CoDaWork2026_EITT_Handout.docx": {"sha256": "017bec0c17b6a86fa5c3dfcff2c9e78deec8d276841928f3d65ca1ebea850f29", "bytes": 11424},
+      "drafts/codawork-2026/extended/CoDaWork2026_EITT_CoffeeTable.docx": {"sha256": "9c36ce872d43699982e3d125d991c45b664b215b33be01cb9a4d89365f17de84", "bytes": 11491},
+      "drafts/codawork-2026/extended/CoDaWork2026_QA_Preparation.docx": {"sha256": "9f36593cdfd8114963639dd5c6f4a088b8dec87942fbec0c47e6f3e7a2979428", "bytes": 18752},
+      "drafts/codawork-2026/extended/CoDaWork2026_ConversationGuide.docx": {"sha256": "1c76a1fa774166443b973137945b440406daa0b01124457a6f4714376d8293a9", "bytes": 13806},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_Narayana.docx": {"sha256": "6894ef68b0dd66d57df30b6da3a3846299f2c4f883cd748e6572b13d8c31f0e5", "bytes": 11830},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_Ascari.docx": {"sha256": "c6e8358368fb72918a516edba7dc4c5bcdf4ff5cfe4c73ffba57ad28b4a27977", "bytes": 11661},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_VegaBaquero.docx": {"sha256": "809b1484a4ab5cb89e1aa09b68dd14838458aa73a353fccd351d7b31ee4628f0", "bytes": 11350},
+      "drafts/codawork-2026/primers/CoDaWork2026_Primer_KanjiradanVeetil.docx": {"sha256": "57833f514c689b5ff7c1f731480895872b4a293fbb43aa92ac7bb238dbcbf3f7", "bytes": 11735}
+    }
+  },
+
+  "refresh_protocol": {
+    "for_any_ai": [
+      "1. Read HUF_FAST_REFRESH.json — this gives you every concept, name, number, formula",
+      "2. Read this file (HUF_INTEGRITY_MANIFEST.json) — this gives you hashes to verify against",
+      "3. Spot-check: pick 2-3 canonical_value_checksums and verify they match what you loaded",
+      "4. If building documents: read the relevant tier_1 briefing for full context",
+      "5. If editing documents: verify the file hash matches tier_2 before editing",
+      "6. After producing new canonical results: update FAST_REFRESH first, then rebuild deliverables",
+      "7. After rebuilding: recompute hashes and update this manifest"
+    ],
+    "known_drift_patterns": [
+      "EITT name mutates from 'Time' to 'Ternary' or 'Temporal' across sessions",
+      "Japan drift flag year drifts from 2013-2014 to 2011-2012 (narrative gravity toward event date)",
+      "Germany drift flag attributed to 2011 nuclear moratorium instead of 2023 final shutdown",
+      "UK flag values collapse from three specific values to 'approximately 3'",
+      "Arithmetic mean destruction percentage gets omitted when describing EITT",
+      "Chemistry proof details (4 lenses, pass rates) get simplified to just '500k data points'"
+    ],
+    "golden_rule": "If a value in a document disagrees with HUF_FAST_REFRESH.json, the FAST_REFRESH wins. Always."
+  },
+
+  "version_history": [
+    {
+      "version": "1.0",
+      "date": "2026-04-13",
+      "event": "Initial creation after coherence audit caught 5 errors across 6 documents",
+      "errors_caught": [
+        "EITT name: 'Ternary Transform' → 'Time Transformer'",
+        "Japan flag: 2011-2012 → 2013-2014",
+        "Germany flags: 2011/2022-2023 → 2023-2024/2024-2025",
+        "UK flags: '≈3.0' → 2.98/3.23/3.26 with year-pairs",
+        "EITT handout missing foundational proofs 1-2"
+      ]
+    },
+    {
+      "version": "1.1",
+      "date": "2026-04-13",
+      "event": "ChatGPT cold-start test caught 2 bugs: stale FAST_REFRESH hash, wrong EITT char_count",
+      "errors_caught": [
+        "FAST_REFRESH hash: 64911393... → 88c885fc... (file updated in commit 9d97665, manifest not refreshed)",
+        "EITT char_count: 37 → 34 (original count was simply wrong)"
+      ]
+    },
+    {
+      "version": "1.2",
+      "date": "2026-04-13",
+      "event": "Grok adversarial test caught stale file paths — all tier_0/1/2 paths updated to match repo restructure",
+      "errors_caught": [
+        "tier_0: Energy/codawork2026_results.json → data/ember/codawork2026_results.json",
+        "tier_0: Chatgpt/higgins-unity-framework/huf_spec_v2.0.json → ai-refresh/huf_spec_v2.0.json",
+        "tier_0: HUF_FAST_REFRESH.json → ai-refresh/HUF_FAST_REFRESH.json (added folder prefix)",
+        "tier_1: All 8 briefing paths updated to include subfolder (science/quantum/, briefings/, science/eitt/)",
+        "tier_2: All 10 deliverable paths updated to include drafts/codawork-2026/ subfolders"
+      ]
+    },
+    {
+      "version": "1.3",
+      "date": "2026-04-13",
+      "event": "FAST_REFRESH file_map aligned to post-restructure paths. New science/eitt/INDEX.json created with canonical claims.",
+      "changes": [
+        "FAST_REFRESH file_map: all paths updated to match v1.2 manifest paths",
+        "FAST_REFRESH file_map: added ai-refresh/HUF_ADMIN.json and science/eitt/INDEX.json references",
+        "New file: science/eitt/INDEX.json — folder index with canonical claims, key numbers, definitions, file inventory",
+        "New file: science/eitt/EITT_Chemistry_Findings.md — markdown companion to .docx",
+        "New file: science/eitt/PRISM_Chemistry_Analysis.md — markdown companion to .docx",
+        "New file: science/eitt/EITT_CoDa_Cheatsheet_v3.md — markdown companion to .pdf",
+        "TODO: Compute SHA-256 hashes for 4 new files and add to tier_1_briefings after commit"
+      ]
+    },
+    {
+      "version": "1.4",
+      "date": "2026-04-13",
+      "event": "Markdown companions for all science/quantum/ DOCX files. build_context.py aggregator. Gemini value matrix.",
+      "changes": [
+        "New file: science/quantum/Book0_HUF_QIT_Primer.md — markdown companion",
+        "New file: science/quantum/Book1_HUF_QIT_Observer_Problem.md — markdown companion",
+        "New file: science/quantum/Book2_HUF_QTM_Toolkit_Results.md — markdown companion",
+        "New file: science/quantum/HUF_QIT_Observer_Problem.md — markdown companion (extended version)",
+        "New file: science/quantum/HUF_QTM_Toolkit_Results.md — markdown companion (standalone toolkit)",
+        "New file: science/quantum/HUF_Topography_Conjecture_v1.0.md — markdown companion",
+        "New file: science/quantum/HUF_Morphology_Plausibility_Test_v1.0.md — markdown companion",
+        "New file: science/quantum/HUF_VCore_Stack_Brief_v1.0.md — markdown companion",
+        "New file: build_context.py — context aggregator script (seed/science/full/custom modes)",
+        "New file: science/HUF_Cross_Disciplinary_Value_Matrix.md — Gemini value matrix reference",
+        "build_context.py --mode science now picks up 54 files (~232k tokens)",
+        "TODO: Compute SHA-256 hashes for all new files after commit"
+      ]
+    },
+    {
+      "version": "1.5",
+      "date": "2026-04-14",
+      "event": "Grok cold-start test (10/10 questions, 5/5 structure) + tensor-exploration session. Second-order Hessian bound promoted to theorem. Speculative higher-order extensions moved to dormant.",
+      "changes": [
+        "New file: science/eitt/EITT_HESSIAN_BOUND.md — rigorous second-order theorem with assumptions, proof sketch, and empirical check table against published EITT proofs",
+        "New file: science/eitt/EITT_WHY_IT_WORKS.md — conceptual synthesis answering the 'why does it work' question. CLT + concavity picture, six-variable decomposition, heuristic product form, six falsifiable predictions, loose ends noted for later. Updated same day with §7 'Shape/Magnitude Decomposition' which generalizes EITT from scalar-entropy invariance to a class invariance over all shape functionals and resolves the Fisher-Rao loose end (both geometries agree infinitesimally; EITT never leaves the infinitesimal regime)",
+        "New dormant branch: dormant/grok-tensor-exploration-apr14/ with README, tensor_escalation.md, adversarial_review.md, applications_brainstorm.md",
+        "Updated: dormant/README.md — new branch registered with reawaken conditions",
+        "Grok scored 10/10 on content questions and 5/5 on structural review — fourth AI to pass cold-start test (after Claude, ChatGPT, Gemini)",
+        "Grok caught and correctly diagnosed a live GitHub CDN desync on ai-refresh/ folder (Fastly cache lag, ~20 min post-commit)",
+        "Grok's own adversarial review correctly flagged: Taylor series is asymptotic not convergent past order 2; Shannon vs von Neumann conflation in many-body analogy; fabricated number in stadium-billiard example; Bell result on deterministic NGFS is correlation structure not quantum inequality violation",
+        "Open TODO: extend chem_eitt_pipeline.py with measure_aitchison_variance(X) -> (V, sigma_A2, delta_min) so EITT_HESSIAN_BOUND.md empirical check table can be populated with measured rather than back-computed values",
+        "Open TODO: edit science/quantum/Book2_HUF_QTM_Toolkit_Results.md to frame S=2.2018 as correlation-structure diagnostic rather than quantum inequality violation",
+        "TODO: Compute SHA-256 hashes for new files after commit"
+      ]
+    },
+    {
+      "version": "1.6",
+      "date": "2026-04-15",
+      "event": "Phase 1 flag set (CoDaWork 2026 content STABLE). Phase 2 started (EITT hardening for broader adoption). Literature verification briefings issued to five-AI collective. Safety boundaries framework created.",
+      "changes": [
+        "New file: ai-refresh/PHASE_MARKERS.json \u2014 machine-readable phase record. P01 marked STABLE with explicit exit criteria met; P02 ACTIVE with two-pole mission (reveal hidden structure, establish safety fences); P03 FUTURE (peer-reviewed consolidation)",
+        "New file: science/eitt/EITT_PHASE_2_ROADMAP.md \u2014 seven-track hardening plan: direct measurement tooling, hydrology validation, second external domain, safety documentation, phase-field visualization, literature verification follow-up, package release preparation",
+        "New file: science/eitt/EITT_SAFETY_BOUNDARIES.md \u2014 living document articulating when NOT to use EITT. Covers three core assumptions (A1 interior, A2 finite variance, A3 mixing), failure modes by assumption, sample-size requirements, domain-specific red flags with emphasis on clinical/biomedical misuse (breast cancer microbiome study misuse example), sanity-check checklist, responsible-use and inappropriate-use examples",
+        "New folder: briefings/lit-verification-001/ with five per-AI task briefings (Claude/ChatGPT/Grok/Gemini/Copilot) + README coordinating the distributed novelty check of the five-object cluster (EITT + Tutte + Hanani-Tutte + Penrose + KPZ)",
+        "Mission statement for Phase 2 recorded: 'Push EITT to pain point and protect users from pain'",
+        "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_1_briefings"
+      ]
+    },
+    {
+      "version": "1.7",
+      "date": "2026-04-15",
+      "event": "First lit-verification return (Grok, Penrose/aperiodic branch). Apr 15 metallic-ratio escalation triaged and archived.",
+      "changes": [
+        "New file: briefings/lit-verification-001/GROK_LIT_VERIFY_001_RESULTS.json \u2014 Grok's completed Penrose branch. Verdict: Novel. 0 positive hits, 3 near-misses (Maz\u00e1\u010d 2023, Irwin 2017, Physics StackExchange). Schema differs slightly from briefing spec but substance is clean. Ready for collation 2026-04-24",
+        "New file: dormant/grok-tensor-exploration-apr14/apr15_metallic_ratio_escalation.md \u2014 second dormant installment. Triages the April 15 Grok session that extended past the lit-verification task into metallic-ratio derivations, cut-and-project framing, and 'EITT-KPZ scaling exponent' claims. Keep: lit verification result, related-work paragraph, phrase 'entropy-invariant coarse-graining on the simplex' as consistent repo descriptor. Store: metallic-ratio pattern-continuation (one observation shown four ways, not four results), category error between deterministic CLT rate and KPZ universality exponent, speculative quasicrystal physics applications, Fibonacci/Pell corollary (restatement of \u00a77 shape/magnitude decomposition, not new content)",
+        "Grok remains the first of five AIs to complete the lit-verification task. ChatGPT, Gemini, Claude, Copilot branches still pending",
+        "No main-repo claims advanced based on Apr 15 escalation. Phase 2 guardrail ('waffle gets divided into keep and store') operating as designed"
+      ]
+    },
+    {
+      "version": "1.8",
+      "date": "2026-04-15",
+      "event": "Master Lineage established. RWA\u2192H1\u2192HUF arc formally recorded after review of the complete Claude CoWorker folder revealed existing narrative (THE_LINEAGE.md), technical bridge (ORIGIN_BRIDGE_DADC_TO_MC4.md), biographical foundation (BIO-001), and primary sources (DADC-DADI paper, Higgins Operator H1 paper) that preexisted the current repo.",
+      "changes": [
+        "New file: ai-refresh/MASTER_LINEAGE.json \u2014 machine-readable record of the arc of discovery from the Isotropic Principle through DADC-DADI-ADAC, BTL, Higgins Operator H1, ratio-state monitoring, to HUF/EITT. Includes the three layers (screwdriver/math book/alliance), invariants carried forward (6.02 dB, 115 Hz\u00b7m, Isotropic Principle, paired measurement, inert probe, GOV/CLS fork, Banach convergence/stationarity), and cross-reference map connecting every current-repo document to its RWA ancestor",
+        "Updated: ai-refresh/PHASE_MARKERS.json operating_principles \u2014 added 'past_is_strength' as the first principle, updated 'cold_start_testable' to reference MASTER_LINEAGE, added 'lineage_cross_reference' as a maintenance rule for future additions",
+        "Acknowledged in lineage: the founding narrative THE_LINEAGE.md (already in briefings/), the technical bridge ORIGIN_BRIDGE_DADC_TO_MC4.md (already in science/coda-monitoring/), the biographical foundation HUF_Biographical_Foundation_v1.0.json (already in briefings/) \u2014 MASTER_LINEAGE.json is the index that ties them together with primary-source pointers to the RWA folder outside the repo",
+        "Founding principle locked into operating_principles: 'The past is our strength and our future.' Every new document promoted to main repo should identify its RWA/H1/earlier-HUF ancestor via MASTER_LINEAGE.json cross_reference_map, or explicitly note the absence of one",
+        "Recognition that the Apr 15 Grok escalation's 'cut-and-project analogue' framing had legitimate grounding in DADC's non-contact diffraction work (not just pattern-matching, as Claude initially triaged) \u2014 the shape/magnitude structure in EITT_WHY_IT_WORKS.md \u00a77 was already present in DADC's gain-apportionment-plus-corner-frequency split from December 2024. The triage is not revised (higher-order metallic-ratio escalation still goes to dormant) but the DADC ancestor is now properly cited in MASTER_LINEAGE.json",
+        "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_0 or tier_1"
+      ]
+    },
+    {
+      "version": "1.9",
+      "date": "2026-04-15",
+      "event": "Public RWA repo (https://github.com/PeterHiggins19/Rogue-Wave-Audio) reviewed via Chrome browser tools (github.com blocked for WebFetch). MASTER_LINEAGE.json updated with public-repo state, concept-branch map, and observations.",
+      "changes": [
+        "Updated ai-refresh/MASTER_LINEAGE.json: added 'public_rwa_repo' section (URL, default branch master, initial commit 2026-03-11, structure, no cross-referencing to HUF)",
+        "Updated ai-refresh/MASTER_LINEAGE.json: added 'rwa_concept_branches' section mapping the five RWA concept folders (ai-reports, entropix, regimes, tensor-acoustic-forge, v-infinity-core) to HUF counterparts where they exist. Key mappings: 'entropix' is likely conceptual ancestor of EITT; 'regimes' is direct ancestor of HUF regime vocabulary; 'v-infinity-core' is direct ancestor of HUF_VCore_Stack documentation",
+        "Updated ai-refresh/MASTER_LINEAGE.json: added 'observations_from_public_repo_review' section with findings and recommended adjustments",
+        "Updated root README.md: added 'Engineering sibling: Rogue Wave Audio' link to the Lineage paragraph",
+        "Findings noted (not errors, state observations): H1 paper is in local folder but NOT in public RWA repo; CITATION.cff has repository-code URL typo (peterhiggins/RWA should be PeterHiggins19/Rogue-Wave-Audio); RWA public repo is at initial commit only (2026-03-11), not current with local March-April 2026 work",
+        "No changes made to the public RWA repo. All observations recorded as Peter's-call items in MASTER_LINEAGE.json"
+      ]
+    },
+    {
+      "version": "2.0",
+      "date": "2026-04-15",
+      "event": "Canonical HUF-GOV definition locked in. Coimbra welcome package built. All 4 remaining per-AI lit-verification briefings updated with shared addendum. Version bump to 2.0 marks transition from Phase 1 stabilization to Phase 2 external-readiness posture.",
+      "changes": [
+        "NEW: HUF-GOV canonical definition promoted to HUF_FAST_REFRESH.json identity section with five-clause unpacking: 'HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.' \u2014 Peter Higgins, 2026-04-15",
+        "NEW: science/governance/HUF_GOV_CANONICAL_DEFINITION.md \u2014 full unpacking of the five clauses (A tool / Verifiably clean usable output / Known degree of certainty / Open to interpretation / Open to modification), with explicit discussion of how the definition resolves the unfalsifiability concern around HUF-GOV",
+        "NEW: briefings/lit-verification-001/LIT_VERIFY_001_ADDENDUM.json \u2014 shared status update for 4 remaining branches (Claude, ChatGPT, Gemini, Copilot). Carries news of Grok's completed branch, canonical definition, shape/magnitude decomposition, Master Lineage, Coimbra welcome package",
+        "UPDATED: 4 per-AI briefings (HUF_CLAUDE/CHATGPT/GEMINI/COPILOT_LIT_VERIFY_001.json) touched with addendum_issued + addendum_file + addendum_note fields referencing the addendum. Core task unchanged; context deepened",
+        "NEW: briefings/coimbra-welcome-package/ folder with 6 files \u2014 README (index), 00_WELCOME (invitation + canonical definition), 01_SUCCESS_AND_FAILURE (validated successes + documented failures), 02_WORK_VERIFICATION_POSSIBILITIES (three-category status board), 03_BEST_USE_CASES (tier-ranked domain fit with sample-size guidance), 04_MEET_THE_COLLECTIVE (5 AI allies with engagement URLs), 05_STANDARDIZATION_BENEFITS (individual + community + scale benefits)",
+        "The welcome package structure is designed for a new CoDa practitioner arriving at HUF cold. Entry point: briefings/coimbra-welcome-package/README.md",
+        "Version bumped 1.9 \u2192 2.0 because this set of changes operationalizes the tool's external posture \u2014 the repo is now ready to be handed to a stranger who has never spoken to Peter",
+        "TODO: After commit, compute SHA-256 hashes for all new files and add to tier_0 / tier_1 / tier_2"
+      ]
+    }
+  ]
+}

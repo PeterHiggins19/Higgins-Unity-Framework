@@ -1,0 +1,409 @@
+{
+  "experiment": "EXP-02-REVISED",
+  "title": "US Monthly Energy Compositions \u2014 Full PLL-EITT Verification",
+  "date": "2026-04-18",
+  "fixed_point": "v3.2",
+  "data": {
+    "source": "us_monthly_full_release_long_format.csv",
+    "states": [
+      "California",
+      "Minnesota",
+      "Texas",
+      "Wisconsin",
+      "Pennsylvania",
+      "North Carolina",
+      "Rhode Island",
+      "West Virginia",
+      "Wyoming",
+      "Delaware"
+    ],
+    "carriers": [
+      "Coal",
+      "Gas",
+      "Nuclear",
+      "Hydro",
+      "Solar",
+      "Wind",
+      "Bioenergy",
+      "Other Fossil",
+      "Other Renewables"
+    ],
+    "D": 9,
+    "N_per_state": 300,
+    "time_span": "2001-01 to 2025-12"
+  },
+  "eitt_summary": {
+    "pass_count": 5,
+    "fail_count": 5,
+    "per_state": {
+      "California": {
+        "cohort": "interior",
+        "verdict": "PASS",
+        "max_rel": 0.008293863564004274
+      },
+      "Minnesota": {
+        "cohort": "interior",
+        "verdict": "PASS",
+        "max_rel": 0.004898508744889155
+      },
+      "Texas": {
+        "cohort": "interior",
+        "verdict": "PASS",
+        "max_rel": 0.002080761740310516
+      },
+      "Wisconsin": {
+        "cohort": "interior",
+        "verdict": "PASS",
+        "max_rel": 0.0013420819683516985
+      },
+      "Pennsylvania": {
+        "cohort": "bridge",
+        "verdict": "FAIL",
+        "max_rel": 0.010925175496673921
+      },
+      "North Carolina": {
+        "cohort": "bridge",
+        "verdict": "PASS",
+        "max_rel": 0.0021324621451008635
+      },
+      "Rhode Island": {
+        "cohort": "boundary",
+        "verdict": "FAIL",
+        "max_rel": 0.08783637410307667
+      },
+      "West Virginia": {
+        "cohort": "boundary",
+        "verdict": "FAIL",
+        "max_rel": 0.05283187160383826
+      },
+      "Wyoming": {
+        "cohort": "boundary",
+        "verdict": "FAIL",
+        "max_rel": 0.02823523122140057
+      },
+      "Delaware": {
+        "cohort": "boundary",
+        "verdict": "FAIL",
+        "max_rel": 0.0644056801989265
+      }
+    }
+  },
+  "pll_summary": {
+    "California": {
+      "R2": 0.513426781972915,
+      "shape": "\u222a (bowl)",
+      "vertex_year": 2013.7926697704538,
+      "lock_type": "stable"
+    },
+    "Minnesota": {
+      "R2": 0.778523786723646,
+      "shape": "\u222a (bowl)",
+      "vertex_year": 2036.9683964605263,
+      "lock_type": "stable"
+    },
+    "Texas": {
+      "R2": 0.48278151768304245,
+      "shape": "\u222a (bowl)",
+      "vertex_year": 2022.9432126619904,
+      "lock_type": "stable"
+    },
+    "Wisconsin": {
+      "R2": 0.7134149073535684,
+      "shape": "\u2229 (hill)",
+      "vertex_year": 1951.021597062697,
+      "lock_type": "unstable"
+    },
+    "Pennsylvania": {
+      "R2": 0.7527925586246589,
+      "shape": "\u222a (bowl)",
+      "vertex_year": 2052.08436797949,
+      "lock_type": "stable"
+    },
+    "North Carolina": {
+      "R2": 0.8184624328308673,
+      "shape": "\u2229 (hill)",
+      "vertex_year": 1980.759770309966,
+      "lock_type": "unstable"
+    },
+    "Rhode Island": {
+      "R2": 0.4620235164729367,
+      "shape": "\u222a (bowl)",
+      "vertex_year": 2012.628343349462,
+      "lock_type": "stable"
+    },
+    "West Virginia": {
+      "R2": 0.008018563499963882,
+      "shape": "\u222a (bowl)",
+      "vertex_year": 2019.3966997808734,
+      "lock_type": "stable"
+    },
+    "Wyoming": {
+      "R2": 0.09131834775863978,
+      "shape": "\u2229 (hill)",
+      "vertex_year": 2015.1002932677795,
+      "lock_type": "unstable"
+    },
+    "Delaware": {
+      "R2": 0.6612777931743248,
+      "shape": "\u222a (bowl)",
+      "vertex_year": 2018.8067553809828,
+      "lock_type": "stable"
+    }
+  },
+  "noise_summary": {
+    "California": {
+      "squeeze_pct": 23.897046937209655,
+      "Q_factor": 35.87008181449518,
+      "stochastic_core": 2.070909242384631
+    },
+    "Minnesota": {
+      "squeeze_pct": 23.973914134777363,
+      "Q_factor": 8.971153213324309,
+      "stochastic_core": 2.1057168520361516
+    },
+    "Texas": {
+      "squeeze_pct": 19.29434569835854,
+      "Q_factor": 10.36041596608464,
+      "stochastic_core": 2.665222408647097
+    },
+    "Wisconsin": {
+      "squeeze_pct": 34.57437767650793,
+      "Q_factor": 3.3138435139905447,
+      "stochastic_core": 1.701196937947478
+    },
+    "Pennsylvania": {
+      "squeeze_pct": 25.06145322865361,
+      "Q_factor": 5.179348326630346,
+      "stochastic_core": 2.604297657791249
+    },
+    "North Carolina": {
+      "squeeze_pct": 21.649353470999323,
+      "Q_factor": 7.0774658459580415,
+      "stochastic_core": 2.8433441904465044
+    },
+    "Rhode Island": {
+      "squeeze_pct": 4.467409016937585,
+      "Q_factor": 24.87989129115602,
+      "stochastic_core": 2.211744025056481
+    },
+    "West Virginia": {
+      "squeeze_pct": 11.120311058481903,
+      "Q_factor": 1.30162151069105,
+      "stochastic_core": 1.789249226009448
+    },
+    "Wyoming": {
+      "squeeze_pct": 17.252219126149647,
+      "Q_factor": 9.195468145557925,
+      "stochastic_core": 1.206867540144573
+    },
+    "Delaware": {
+      "squeeze_pct": 25.70420720783362,
+      "Q_factor": 26.197719933990268,
+      "stochastic_core": 1.6988702765405512
+    }
+  },
+  "dadc_summary": {
+    "California": {
+      "H_contam": 0.4580931391562555,
+      "boundary_species": "Other Fossil",
+      "boundary_C_S": 2.3999167154657726,
+      "top_3": [
+        [
+          "Other Fossil",
+          2.3999167154657726
+        ],
+        [
+          "Solar",
+          1.3287689843709918
+        ],
+        [
+          "Wind",
+          1.2560677421679993
+        ]
+      ]
+    },
+    "Minnesota": {
+      "H_contam": 0.42687779974438556,
+      "boundary_species": "Hydro",
+      "boundary_C_S": 5.225313116613972,
+      "top_3": [
+        [
+          "Hydro",
+          5.225313116613972
+        ],
+        [
+          "Other Renewables",
+          1.0357610925994856
+        ],
+        [
+          "Bioenergy",
+          0.6017990646694978
+        ]
+      ]
+    },
+    "Texas": {
+      "H_contam": 0.40797174950672577,
+      "boundary_species": "Hydro",
+      "boundary_C_S": 0.8207048711720758,
+      "top_3": [
+        [
+          "Hydro",
+          0.8207048711720758
+        ],
+        [
+          "Other Renewables",
+          0.808684448516338
+        ],
+        [
+          "Other Fossil",
+          0.7631742778202502
+        ]
+      ]
+    },
+    "Wisconsin": {
+      "H_contam": 0.30342454178294664,
+      "boundary_species": "Wind",
+      "boundary_C_S": 0.8393827148978747,
+      "top_3": [
+        [
+          "Wind",
+          0.8393827148978747
+        ],
+        [
+          "Other Renewables",
+          0.6644762946032581
+        ],
+        [
+          "Bioenergy",
+          0.5494355530137807
+        ]
+      ]
+    },
+    "Pennsylvania": {
+      "H_contam": 0.5442875860660634,
+      "boundary_species": "Hydro",
+      "boundary_C_S": 3.7297384763046924,
+      "top_3": [
+        [
+          "Hydro",
+          3.7297384763046924
+        ],
+        [
+          "Wind",
+          1.2574614409267884
+        ],
+        [
+          "Other Fossil",
+          0.8395597093432793
+        ]
+      ]
+    },
+    "North Carolina": {
+      "H_contam": 0.5921845763511336,
+      "boundary_species": "Other Renewables",
+      "boundary_C_S": 0.9045646832809927,
+      "top_3": [
+        [
+          "Other Renewables",
+          0.9045646832809927
+        ],
+        [
+          "Other Fossil",
+          0.627002695218291
+        ],
+        [
+          "Hydro",
+          0.5555305037378102
+        ]
+      ]
+    },
+    "Rhode Island": {
+      "H_contam": 0.9498609717785979,
+      "boundary_species": "Hydro",
+      "boundary_C_S": 1.1070054000760556,
+      "top_3": [
+        [
+          "Hydro",
+          1.1070054000760556
+        ],
+        [
+          "Other Fossil",
+          0.5743740232631698
+        ],
+        [
+          "Other Renewables",
+          0.4395643603735572
+        ]
+      ]
+    },
+    "West Virginia": {
+      "H_contam": 0.7136605837316972,
+      "boundary_species": "Bioenergy",
+      "boundary_C_S": 0.5907470523343374,
+      "top_3": [
+        [
+          "Bioenergy",
+          0.5907470523343374
+        ],
+        [
+          "Solar",
+          0.48923386644316985
+        ],
+        [
+          "Wind",
+          0.4695659894729624
+        ]
+      ]
+    },
+    "Wyoming": {
+      "H_contam": 0.8121969265884822,
+      "boundary_species": "Solar",
+      "boundary_C_S": 0.4305766764656048,
+      "top_3": [
+        [
+          "Solar",
+          0.4305766764656048
+        ],
+        [
+          "Hydro",
+          0.38945340856614286
+        ],
+        [
+          "Other Fossil",
+          0.2808413749570308
+        ]
+      ]
+    },
+    "Delaware": {
+      "H_contam": 0.9493880810662506,
+      "boundary_species": "Wind",
+      "boundary_C_S": 0.8422122126367259,
+      "top_3": [
+        [
+          "Wind",
+          0.8422122126367259
+        ],
+        [
+          "Solar",
+          0.4598316715099058
+        ],
+        [
+          "Bioenergy",
+          0.42438299544276675
+        ]
+      ]
+    }
+  },
+  "checks": {
+    "All closures exact": true,
+    "EITT interior PASS (4/4)": true,
+    "EITT boundary FAIL (4/4)": true,
+    "PA bridge FAIL (expected)": true,
+    "NC bridge PASS (expected)": true,
+    "PLL parabola all R\u00b2 > 0.3": false,
+    "DADC chain all complete": true,
+    "Noise squeeze all > 0%": true,
+    "F17 tuner all R\u00b2 > 0.96": true
+  },
+  "all_pass": false
+}

@@ -1,0 +1,290 @@
+{
+  "_meta": {
+    "type": "HUF-REPO-VERIFICATION",
+    "date": "2026-04-18",
+    "purpose": "Machine-readable verification of the Higgins Unity Framework repository at FIXED POINT v3.2. Designed for cold-start consumption by ChatGPT or any AI system to verify repo integrity, cross-reference consistency, and completeness.",
+    "repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "commit": "b70d6fd (CODA EITTValidate Documents #81)",
+    "verified_by": "Claude (post-push verification)"
+  },
+  "summary": {
+    "total_files": 1085,
+    "total_size_bytes": 399658786,
+    "total_size_MB": 399.7,
+    "file_types": {
+      ".docx": 314,
+      ".json": 258,
+      ".md": 180,
+      ".js": 91,
+      ".py": 52,
+      ".txt": 43,
+      ".pdf": 29,
+      ".png": 26,
+      ".html": 19,
+      ".xlsx": 18,
+      ".geojson": 12,
+      ".ipynb": 12,
+      ".csv": 12,
+      ".jsx": 6,
+      "(none)": 3,
+      ".pptx": 2,
+      ".cff": 1,
+      ".yml": 1,
+      ".ps1": 1,
+      ".jsonl": 1,
+      ".mmd": 1,
+      ".pdf#": 1,
+      ".tmp": 1,
+      ".yaml": 1
+    },
+    "critical_jsons_checked": 15,
+    "critical_jsons_valid": 15,
+    "consistency_checks": 15,
+    "consistency_passes": 15,
+    "errors": []
+  },
+  "critical_json_files": [
+    {
+      "file": "ai-refresh/HUF_FAST_REFRESH.json",
+      "exists": true,
+      "valid": true,
+      "size": 44733,
+      "md5": "d2725f2adb53096b744a1591e2767641",
+      "version": "3.2",
+      "type": "HUF-FAST-REFRESH"
+    },
+    {
+      "file": "ai-refresh/PHASE_MARKERS.json",
+      "exists": true,
+      "valid": true,
+      "size": 16885,
+      "md5": "fbbd782cb026e2688f81112c7e38013b",
+      "version": "2.1",
+      "type": "HUF-PHASE-MARKERS"
+    },
+    {
+      "file": "ai-refresh/MASTER_LINEAGE.json",
+      "exists": true,
+      "valid": true,
+      "size": 31741,
+      "md5": "ee20d4d8f81fcdc316145010ec619a4a",
+      "version": "1.2",
+      "type": "HUF-MASTER-LINEAGE"
+    },
+    {
+      "file": "ai-refresh/HUF_ADMIN.json",
+      "exists": true,
+      "valid": true,
+      "size": 12143,
+      "md5": "bf5840c9c82583b021c925da827d2259",
+      "version": "2.1",
+      "type": "HUF_ADMINISTRATIVE_REGISTER"
+    },
+    {
+      "file": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+      "exists": true,
+      "valid": true,
+      "size": 32088,
+      "md5": "d4fe4a049e8e36a9a3e447d5e9ae695e",
+      "version": "3.1",
+      "type": "HUF-INTEGRITY-MANIFEST"
+    },
+    {
+      "file": "codawork2026/experiments/EXP-01_Gold_Silver/EXP01_SEALED_CONCLUSION.json",
+      "exists": true,
+      "valid": true,
+      "size": 9698,
+      "md5": "24cbe393cf4982f6d492646355fd535a",
+      "status": "SEALED",
+      "type": "HUF-EXPERIMENT-CONCLUSION"
+    },
+    {
+      "file": "codawork2026/experiments/EXP-01_Gold_Silver/exp01_gold_silver_full_verify.json",
+      "exists": true,
+      "valid": true,
+      "size": 5697,
+      "md5": "10c1064d209657736412110a1a5871a4",
+      "experiment": "EXP-01-REVISED",
+      "fixed_point": "v3.2"
+    },
+    {
+      "file": "codawork2026/experiments/EXP-02_US_Monthly/EXP02_SEALED_CONCLUSION.json",
+      "exists": true,
+      "valid": true,
+      "size": 12054,
+      "md5": "32fb84c793a12096bfaf93899915e02d",
+      "status": "SEALED",
+      "type": "HUF-EXPERIMENT-CONCLUSION"
+    },
+    {
+      "file": "codawork2026/experiments/EXP-02_US_Monthly/exp02_us_energy_full_verify.json",
+      "exists": true,
+      "valid": true,
+      "size": 9472,
+      "md5": "16990bc0104f92fea72eba24021027fe",
+      "experiment": "EXP-02-REVISED",
+      "fixed_point": "v3.2"
+    },
+    {
+      "file": "briefings/EITT_Precedent_and_Lineage_for_Claude.json",
+      "exists": true,
+      "valid": true,
+      "size": 16911,
+      "md5": "7044d6d55257b7b6922d7bdb42709bc9",
+      "version": "1.0",
+      "status": "LINEAGE_AND_METHOD_CONTEXT",
+      "type": "EITT_PRECEDENT_AND_LINEAGE_FOR_CLAUDE"
+    },
+    {
+      "file": "briefings/EITT_Project_Arc_and_Contamination_Context_for_Claude.json",
+      "exists": true,
+      "valid": true,
+      "size": 10749,
+      "md5": "72eb12b81169c3d8271b8d317297a078",
+      "version": "1.0",
+      "status": "PROJECT_CONTEXT_DIRECTIVE",
+      "type": "EITT_PROJECT_ARC_AND_CONTAMINATION_CONTEXT_FOR_CLAUDE"
+    },
+    {
+      "file": "briefings/EITT_Nuclear_Assessment_and_Stable_Island_Plan_for_Claude.json",
+      "exists": true,
+      "valid": true,
+      "size": 8999,
+      "md5": "c076ef1d3ab8624a7be9f419d9ebc12a",
+      "version": "1.0",
+      "status": "SCIENCE_SIDE_ASSESSMENT",
+      "type": "EITT_NUCLEAR_ASSESSMENT_AND_STABLE_ISLAND_PLAN_FOR_CLAUDE"
+    },
+    {
+      "file": "briefings/EITT_CROSS_BOUNDARY_HANDSHAKES.json",
+      "exists": true,
+      "valid": true,
+      "size": 23256,
+      "md5": "c7e4f3874cb8625238ad3ec6f85107ba",
+      "version": "1.0",
+      "type": "EITT_CROSS_BOUNDARY_HANDSHAKE_SPECIFICATION"
+    },
+    {
+      "file": "briefings/HUF_CHATGPT_BRIEFING_2026-04-17.json",
+      "exists": true,
+      "valid": true,
+      "size": 11803,
+      "md5": "859e56bfe92043118787970d9fbc0949",
+      "version": "1.0",
+      "type": "HUF_CHATGPT_HANDOFF_BRIEFING"
+    },
+    {
+      "file": "briefings/HUF_CHATGPT_BRIEFING_2026-04-18_ADDENDUM.json",
+      "exists": true,
+      "valid": true,
+      "size": 7913,
+      "md5": "d9aff227ee250f13640a3ae10c785305",
+      "version": "1.0",
+      "type": "HUF_CHATGPT_HANDOFF_BRIEFING_ADDENDUM"
+    }
+  ],
+  "consistency_checks": [
+    {
+      "check": "HUF_FAST_REFRESH version = 3.2",
+      "pass": true,
+      "found": "3.2"
+    },
+    {
+      "check": "HUF_FAST_REFRESH has pll_parabola_discovery section",
+      "pass": true,
+      "note": "Found at active_research.pll_parabola_discovery (nested path)"
+    },
+    {
+      "check": "PHASE_MARKERS has P01/P02/P03",
+      "pass": true
+    },
+    {
+      "check": "P01 exit_criteria includes PLL discovery",
+      "pass": true
+    },
+    {
+      "check": "MASTER_LINEAGE has PLL cross-references",
+      "pass": true,
+      "count": 3,
+      "note": "cross_reference_map is a dict (not list). 3 PLL entries found."
+    },
+    {
+      "check": "EXP-01 sealed",
+      "pass": true
+    },
+    {
+      "check": "EXP-01 all checks pass",
+      "pass": true,
+      "checks": "8/8"
+    },
+    {
+      "check": "EXP-01 EITT verdict HOLDS",
+      "pass": true
+    },
+    {
+      "check": "EXP-01 PLL R\u00b2 > 0.9",
+      "pass": true,
+      "R2": 0.900725896683674
+    },
+    {
+      "check": "EXP-02 sealed",
+      "pass": true
+    },
+    {
+      "check": "EXP-02 EITT 5 PASS / 5 FAIL",
+      "pass": true
+    },
+    {
+      "check": "ChatGPT briefings present (2 files)",
+      "pass": true
+    },
+    {
+      "check": "EXP-01 and EXP-02 visualizations present",
+      "pass": true
+    },
+    {
+      "check": "Working Example has 11 step PNGs",
+      "pass": true
+    },
+    {
+      "check": "Journals directory has 11 files",
+      "pass": true
+    }
+  ],
+  "key_versions": {
+    "HUF_FAST_REFRESH": "3.2",
+    "PHASE_MARKERS": "2.1",
+    "MASTER_LINEAGE": "1.2",
+    "fixed_point": "v3.2",
+    "EXP-01": "SEALED (8/8 checks, R\u00b2=0.9007, EITT HOLDS at 0.60%)",
+    "EXP-02": "SEALED (8/9 checks, 5 PASS / 5 FAIL, F17 tuner validated)"
+  },
+  "directory_structure": {
+    "ai-refresh/": "Core refresh chain (5 JSONs + archive + cold-start briefings)",
+    "briefings/": "AI briefing packets (ChatGPT, Coimbra welcome, lit verification)",
+    "codawork2026/": "CoDaWork 2026 self-contained package (experiments, journals, data, presentation)",
+    "science/": "Science folders (CoDa monitoring, EITT, quantum, governance, chemistry)",
+    "archive/": "Historical archive (HUFv1-v4, papers, pre-CoDaWork drafts)",
+    "dormant/": "Speculative work with reawaken conditions",
+    "data/": "Supporting data files",
+    "tools/": "Utility scripts",
+    "huf-gov/": "HUF-GOV governance documentation"
+  },
+  "chatgpt_entry_points": {
+    "cold_start": "ai-refresh/HUF_FAST_REFRESH.json \u2014 read this FIRST for full orientation",
+    "lineage": "ai-refresh/MASTER_LINEAGE.json \u2014 the full arc from DADC to HUF/EITT",
+    "phases": "ai-refresh/PHASE_MARKERS.json \u2014 what has been done, what is active, what is next",
+    "chatgpt_briefings": [
+      "briefings/HUF_CHATGPT_BRIEFING_2026-04-17.json \u2014 comprehensive update with nuclear programme",
+      "briefings/HUF_CHATGPT_BRIEFING_2026-04-18_ADDENDUM.json \u2014 PLL-EITT discovery addendum",
+      "briefings/EITT_Precedent_and_Lineage_for_Claude.json \u2014 HIVIP methodology (also valid for ChatGPT)",
+      "briefings/EITT_Project_Arc_and_Contamination_Context_for_Claude.json \u2014 project arc context"
+    ],
+    "experiments": [
+      "codawork2026/experiments/EXP-01_Gold_Silver/ \u2014 Gold/Silver founding experiment (SEALED)",
+      "codawork2026/experiments/EXP-02_US_Monthly/ \u2014 US Energy operating envelope (SEALED)",
+      "codawork2026/experiments/Working_Example/ \u2014 10-step Higgins Decomposition with 11 plots"
+    ]
+  },
+  "instructions_for_chatgpt": "Read ai-refresh/HUF_FAST_REFRESH.json first. It is version 3.2 at FIXED POINT. Then read ai-refresh/PHASE_MARKERS.json for the phase structure. Then read the ChatGPT briefings in briefings/ for your specific context. The repo is self-documenting: every directory has an INDEX.json or README where applicable. The experiments in codawork2026/experiments/ have sealed conclusions with full chain results. The MASTER_LINEAGE.json traces every document back to its RWA/H1 ancestor. Check the consistency_checks section of this verification file to confirm repo integrity."
+}

@@ -1,0 +1,298 @@
+{
+  "_meta": {
+    "type": "HUF-FAST-REFRESH",
+    "version": "1.0",
+    "created": "2026-04-13",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Single-file AI context loader for the Higgins Unity Framework. Load this FIRST in any new session. Contains all canonical names, numbers, formulas, and structure. Every value here is the source of truth — if a document disagrees with this file, this file wins.",
+    "companion": "HUF_INTEGRITY_MANIFEST.json — hash-verified cross-reference. Load SECOND to verify corpus integrity.",
+    "lineage": "MASTER_LINEAGE.json — the arc of discovery from DADC-DADI loudspeaker diffraction correction (Dec 2024) through the Higgins Operator H1 (Feb 2026) to HUF/EITT (Apr 2026). Load for the origin story and the cross-reference map.",
+    "phase_record": "PHASE_MARKERS.json — machine-readable record of completed and active phases. Load to understand what is STABLE versus ACTIVE versus FUTURE.",
+    "usage": "AI: read this file before doing ANY HUF/CoDa/EITT work. Human: use as quick reference. Both: if a value looks wrong in a document, check it against this file.",
+    "refresh_protocol": "When new canonical results are produced, update this file FIRST, then rebuild documents FROM this file. Never the reverse."
+  },
+
+  "identity": {
+    "framework_name": "Higgins Unity Framework",
+    "acronym": "HUF",
+    "author": "Peter Higgins",
+    "affiliation": "Independent Researcher, Markham, Ontario, Canada",
+    "contact": "PeterHiggins@roguewaveaudio.com",
+    "repo": "github.com/PeterHiggins19/Higgins-Unity-Framework",
+    "pages": "https://peterhiggins19.github.io/Higgins-Unity-Framework/",
+    "admin_register": "ai-refresh/HUF_ADMIN.json — all contact info, websites, canonical terms, AI roles",
+    "doctrine": "Open-loop: HUF-GOV observes, human decides, loop stays open. Instrument reads, never actuates.",
+    "canonical_definition": "HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment. \u2014 Peter Higgins, 2026-04-15",
+    "canonical_definition_unpacking": "Five clauses, each load-bearing: (1) 'A tool' \u2014 not a framework, theory, or method. Built, verified, used. (2) 'Verifiably clean usable output' \u2014 clean (unambiguous), usable (actionable at decision point), verifiable (trust is optional; the user can check). (3) 'Known degree of certainty' \u2014 bounded precision as a contract; the Hessian bound and safety boundaries operationalize this. (4) 'Diagnostic open to interpretation by expert decision' \u2014 the output is a diagnostic, not a conclusion; meaning is the expert's call. (5) 'Open to modification by expert judgment' \u2014 the tool evolves under expert use; safety boundaries, dormant folder, keep-vs-store discipline all accommodate this. Full unpacking: science/governance/HUF_GOV_CANONICAL_DEFINITION.md",
+    "principle": "The simplex is the same everywhere. Compositions have their own geometry, and that geometry has consequences.",
+    "founding_principle": "The past is our strength and our future. The framework's engineering DNA is the Rogue Wave Audio DADC-DADI-ADAC loudspeaker diffraction correction chain (Dec 2024 \u2013 Nov 2025). See MASTER_LINEAGE.json for the full arc.",
+    "origin": "Binaural Test Lab (BTL), Markham, Ontario. Purpose-built basement lab for loudspeaker measurement. The compositional structure (simplex closure, log-ratios, inert measurement) was discovered empirically in acoustic engineering before it was formalized mathematically."
+  },
+
+  "canonical_names": {
+    "_warning": "These are EXACT. Do not paraphrase, abbreviate differently, or expand differently.",
+    "EITT": {
+      "full": "Entropy-Invariant Time Transformer",
+      "NOT": ["Ternary Transform", "Temporal Transform", "Time Transfer"],
+      "double_meaning": "Ricardo Montalban's 'Explain It To Them'",
+      "one_sentence": "Shannon entropy of compositional data is near-invariant under geometric-mean decimation across temporal resolutions."
+    },
+    "HUF": {
+      "full": "Higgins Unity Framework"
+    },
+    "HUF-GOV": {
+      "full": "HUF Governance — open-loop observation layer",
+      "NOT_control": true
+    },
+    "HUF-QIT": {
+      "full": "HUF Quantum Information Theory correspondence"
+    },
+    "HUF-QTM": {
+      "full": "HUF Quantum Toolkit for Monitoring",
+      "tools_count": 5
+    },
+    "MC-4": {
+      "full": "Fourth Monitoring Category (Composition)",
+      "others": ["MC-1 Magnitude", "MC-2 Identity", "MC-3 Trend"]
+    },
+    "CoDa": {
+      "full": "Compositional Data Analysis",
+      "NOT": "CODA"
+    },
+    "Ratio_State_Monitoring": {
+      "note": "Canonical name locked for literature submission by operator approval February 2026. All HUF documents updated."
+    }
+  },
+
+  "canonical_numbers": {
+    "_warning": "These are EXACT empirical results. Do not round, approximate, or restate differently.",
+
+    "ember_monitoring": {
+      "countries": ["Germany", "Japan", "United Kingdom"],
+      "carriers": ["Coal", "Gas", "Nuclear", "Hydro", "Solar", "Wind", "Bioenergy", "Other Fossil", "Other Renewables"],
+      "D": 9,
+      "simplex_dim": 8,
+      "data_source": "EMBER Global Electricity Review, CC BY 4.0",
+      "zero_replacement": {"method": "multiplicative", "delta": 1e-6},
+
+      "Germany": {
+        "years": "2000-2025 (26 years)",
+        "mean_dA": 1.3871,
+        "std_dA": 2.0882,
+        "threshold": 5.5634,
+        "max_dA": 9.0712,
+        "cumulative_drift": 34.6768,
+        "shift_from_2000": 17.8466,
+        "N_eff": {"start": 3.49, "end": 5.85},
+        "drift_flags": [
+          {"period": "2023-2024", "dA": 9.0712, "sigma": 3.68, "cause": "Final nuclear shutdown April 2023, full-year effect"},
+          {"period": "2024-2025", "dA": 5.7331, "sigma": 2.08, "cause": "Post-nuclear rebalancing"}
+        ]
+      },
+      "Japan": {
+        "years": "2000-2024 (25 years)",
+        "mean_dA": 1.2823,
+        "std_dA": 2.2043,
+        "threshold": 5.6909,
+        "max_dA": 9.0477,
+        "cumulative_drift": 30.7761,
+        "shift_from_2000": 7.2484,
+        "N_eff": {"start": 4.91, "end": 5.17},
+        "drift_flags": [
+          {"period": "2013-2014", "dA": 9.0477, "sigma": 3.52, "cause": "Near-total nuclear shutdown post-Fukushima"},
+          {"period": "2014-2015", "dA": 7.8460, "sigma": 2.98, "cause": "Nuclear fleet fully offline"}
+        ],
+        "NOTE": "Fukushima disaster March 2011. Compositional shock fully absorbed in 2013-2014 annual data. Do NOT attribute drift flag to 2011-2012."
+      },
+      "United_Kingdom": {
+        "years": "2000-2025 (26 years)",
+        "mean_dA": 1.0118,
+        "std_dA": 0.8945,
+        "threshold": 2.8008,
+        "max_dA": 3.2579,
+        "cumulative_drift": 25.2962,
+        "shift_from_2000": 12.9529,
+        "N_eff": {"start": 3.71, "end": 5.24},
+        "drift_flags": [
+          {"period": "2004-2005", "dA": 2.9812, "sigma": 2.20, "cause": "Dash-for-gas acceleration"},
+          {"period": "2017-2018", "dA": 3.2263, "sigma": 2.48, "cause": "Coal collapse phase accelerates"},
+          {"period": "2019-2020", "dA": 3.2579, "sigma": 2.51, "cause": "COVID demand shock + coal near-zero"}
+        ]
+      }
+    },
+
+    "eitt_proofs": {
+      "proof_1_original": {
+        "domain": "European daily wholesale electricity prices",
+        "carriers": "8 countries as price shares",
+        "base_resolution": "daily",
+        "n_observations": 4089,
+        "compression": "341:1 (daily to annual)",
+        "entropy_variation": "0.18%",
+        "aitchison_variance_drop": "55%",
+        "total_variation_drop": "99.7%"
+      },
+      "proof_2_confirmation": {
+        "domain": "EMBER monthly generation by fuel type",
+        "carriers": "9 fuel types",
+        "countries": 6,
+        "compression": "12:1 (monthly to annual)",
+        "mean_variation": "1.02%",
+        "all_below_2_percent": true
+      },
+      "proof_3_ngfs": {
+        "domain": "NGFS Phase 4 scenario trajectories",
+        "n_scenarios": 35,
+        "carriers": 6,
+        "period": "2020-2100",
+        "geometric_5yr":  {"mean": "1.8%", "max": "4.7%"},
+        "geometric_10yr": {"mean": "2.3%", "max": "4.9%"},
+        "arithmetic_5yr": {"mean": "14.2%", "max": "28.6%"},
+        "arithmetic_10yr": {"mean": "21.7%", "max": "41.3%"}
+      },
+      "proof_4_chemistry": {
+        "domain": "CheMixHub chemical mixture compositions",
+        "data_points": 500000,
+        "datasets": 7,
+        "lenses": ["Shannon", "Jensen-corrected", "Renyi q=2", "Aitchison norm"],
+        "interior_pass_rates": "54-82%"
+      },
+      "adversarial": {
+        "total_tests": 17,
+        "pass": 10,
+        "fail": 7,
+        "real_world_pass": 10,
+        "real_world_fail_borderline": {"Estonia": "8.43%"},
+        "synthetic_fail": 6,
+        "boundary": "Temporal autocorrelation required. EITT does NOT hold for arbitrary simplex-valued sequences."
+      }
+    },
+
+    "bell_test": {
+      "best_S": 2.2018,
+      "scenario": "MESSAGEix Net Zero",
+      "classical_bound": 2.0,
+      "tsirelson_bound": 2.828,
+      "violation_percent": "12.31%",
+      "all_35_significant": true,
+      "p_value": "< 0.001",
+      "key_finding": "Gas acts as crossover frequency / entangling gate"
+    },
+
+    "governance_ranking": {
+      "countries": 201,
+      "sheets": 10,
+      "formulas": 561,
+      "total_stagnation_cost": "$707.3 billion/year"
+    }
+  },
+
+  "canonical_formulas": {
+    "perturbation_difference": "Δ(t) = C( x₁(t+1)/x₁(t), …, xD(t+1)/xD(t) )",
+    "aitchison_distance": "d_A(x,y) = ‖clr(x) − clr(y)‖",
+    "clr": "clr(x) = ( ln(xᵢ) − (1/D)Σln(xⱼ) ) for i=1..D",
+    "shannon_entropy": "H(x) = −Σ xᵢ ln(xᵢ)",
+    "effective_diversity": "N_eff = exp(H(x))",
+    "drift_flag": "Flag when d_A(t→t+1) > μ + 2σ (self-calibrated per country)",
+    "geometric_mean_decimation": "x̄_G = C( ∏ x(t)^(1/k) ) — Aitchison barycenter",
+    "simplex_closure": "C(x) = x / Σxᵢ",
+    "perturbation": "x ⊕ y = C(x₁y₁, …, xDyD)",
+    "powering": "α ⊙ x = C(x₁^α, …, xD^α)",
+    "keff_fill": "Keff_fill(t) = sqrt( (1/n) Σ aᵢ² )  (n=4, RMS of polarity-aligned roots)",
+    "polarity_roots": {
+      "a0": "internal-balance from ILR variance",
+      "a1": "fleet-alignment from Aitchison distance to reference",
+      "a2": "concentration-resistance from ILR-based clustering",
+      "a3": "shape from higher moments, bandwidth spread, ETC τ, spectrogram ridges, perpendicular flow"
+    }
+  },
+
+  "nine_isomorphisms": [
+    {"quantum": "Basis ambiguity", "coda": "Log-ratio choice (ALR, CLR, ILR)"},
+    {"quantum": "Pointer states (decoherence)", "coda": "Balances (physically meaningful ILR)"},
+    {"quantum": "Partial trace", "coda": "Closure of subcomposition"},
+    {"quantum": "Unitarity", "coda": "EITT (entropy-invariant decimation)"},
+    {"quantum": "External interference", "coda": "Subcompositional recalculation"},
+    {"quantum": "No-go theorem (no-cloning)", "coda": "Subcompositional incoherence"},
+    {"quantum": "Multiple observers", "coda": "Multiple IAMs"},
+    {"quantum": "Non-contact injection", "coda": "Perturbation ⊕"},
+    {"quantum": "Ground state", "coda": "Isotropic barycenter (1/D, …, 1/D)"}
+  ],
+
+  "codawork_2026": {
+    "conference": "11th International Workshop on Compositional Data Analysis",
+    "dates": "1-5 June 2026",
+    "location": "Coimbra, Portugal",
+    "abstract_page": 25,
+    "title": "Compositional monitoring of energy-mix drift on the simplex",
+    "falsifiable_claim": "No existing monitoring framework performs compositional change detection at the carrier level with formal perturbation-based drift measurement.",
+    "four_defeats": [
+      "Published system using Aitchison metric on energy-mix compositions to detect drift",
+      "Published system measuring change as perturbation rather than arithmetic difference",
+      "Published system at individual carrier level within the simplex",
+      "Theoretical proof that CoDa adds no information beyond percentage-based monitoring"
+    ],
+    "strategic_neighbours": {
+      "Narayana_p29": "COPD microbiome perturbation — closest methodological ally",
+      "Ascari_p9": "Energy-mix clustering with zeros — same domain, complementary",
+      "Vega_Baquero_p57": "Portfolio allocation as composition — best EITT bridge",
+      "Kanjiradan_Veetil_p26": "Cancer mortality time series — VAR forecasting, needs drift detection"
+    },
+    "presentation_strategy": {
+      "show": "Protocol, EMBER results, falsifiable claim, open question, EITT seed (2 min at end)",
+      "hide": "Quantum correspondence, Bell test, QTM tools, full HUF framework",
+      "posture": "Stanley Steamer — their tools, their geometry, your application, their language"
+    }
+  },
+
+  "pll_discipline": {
+    "_note": "Pipeline Lock List — rules that cannot be changed without operator approval",
+    "rule_1": "All roots computed on simplex carrier",
+    "rule_2": "Simplex normalisation only",
+    "rule_3": "RMS aggregator (p=2 locked)",
+    "rule_4": "Every observation retained",
+    "rule_5": "No new constants (6.02 dB budget, 115 Hz·m, 5.5-octave BW locked from BTL)",
+    "rule_6": "Polarity alignment mandatory"
+  },
+
+  "file_map": {
+    "_note": "Authoritative source files. If content disagrees, these win. Paths are relative to repo root.",
+    "_updated": "2026-04-13 — paths corrected to match post-restructure repo layout (v1.2 manifest alignment)",
+    "fast_refresh": "ai-refresh/HUF_FAST_REFRESH.json (THIS FILE)",
+    "integrity_manifest": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+    "admin": "ai-refresh/HUF_ADMIN.json",
+    "knowledge_base": "science/quantum/HUF_QIT_CoDaWork2026_KnowledgeBase.json",
+    "huf_spec": "ai-refresh/huf_spec_v2.0.json",
+    "ember_results": "data/ember/codawork2026_results.json",
+    "ember_protocol": "data/ember/codawork_ember_protocol.py",
+    "eitt_briefing": "briefings/HUF_CHATGPT_EITT_BRIEFING.json",
+    "eitt_adversarial": "science/eitt/EITT_Adversarial_001.json",
+    "eitt_midrange": "science/eitt/EITT_Midrange_Confirmation_001.json",
+    "eitt_index": "science/eitt/INDEX.json",
+    "s016_briefing": "briefings/HUF_CHATGPT_BRIEFING_S016.json",
+    "s017_briefing": "briefings/HUF_UNIFIED_BRIEFING_S017.json",
+    "s018_briefing": "briefings/HUF_UNIFIED_BRIEFING_S018.json",
+    "github_handoff": "briefings/HUF_GitHub_Handoff_v1.0.json",
+    "presentation": "drafts/codawork-2026/presentation/CoDaWork2026_Higgins_Talk.pptx",
+    "extended_paper": "drafts/codawork-2026/extended/CoDaWork2026_Higgins_Extended_Results.docx",
+    "eitt_handout": "drafts/codawork-2026/extended/CoDaWork2026_EITT_Handout.docx",
+    "eitt_coffee_table": "drafts/codawork-2026/extended/CoDaWork2026_EITT_CoffeeTable.docx",
+    "qa_preparation": "drafts/codawork-2026/extended/CoDaWork2026_QA_Preparation.docx",
+    "conversation_guide": "drafts/codawork-2026/extended/CoDaWork2026_ConversationGuide.docx",
+    "primers": {
+      "narayana": "drafts/codawork-2026/primers/CoDaWork2026_Primer_Narayana.docx",
+      "ascari": "drafts/codawork-2026/primers/CoDaWork2026_Primer_Ascari.docx",
+      "vega_baquero": "drafts/codawork-2026/primers/CoDaWork2026_Primer_VegaBaquero.docx",
+      "kanjiradan": "drafts/codawork-2026/primers/CoDaWork2026_Primer_KanjiradanVeetil.docx"
+    }
+  },
+
+  "common_drift_errors": {
+    "_note": "Errors that have actually occurred in sessions. Check for these during refresh.",
+    "eitt_name_mutation": "EITT expanded as 'Ternary Transform' instead of 'Time Transformer' — caught 2026-04-13",
+    "japan_flag_year_drift": "Japan drift flag attributed to 2011-2012 instead of canonical 2013-2014 — caught 2026-04-13",
+    "germany_flag_year_drift": "Germany drift flags attributed to 2011 or 2022-2023 instead of canonical 2023-2024 and 2024-2025 — caught 2026-04-13",
+    "uk_flag_precision_loss": "UK flags rounded to 'approximately 3.0' losing specific values (2.98, 3.23, 3.26) and year-pairs — caught 2026-04-13",
+    "arithmetic_vs_geometric": "Descriptions of EITT sometimes omit that arithmetic mean DESTROYS entropy — both results must be stated together"
+  }
+}

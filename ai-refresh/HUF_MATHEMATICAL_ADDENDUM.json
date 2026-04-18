@@ -1,0 +1,422 @@
+{
+  "_meta": {
+    "type": "HUF-MATHEMATICAL-ADDENDUM",
+    "version": "1.0",
+    "created": "2026-04-18",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Comprehensive mathematical registry for the Higgins Unity Framework. Contains all formal definitions, theorems, lemmas, corollaries, proof sketches, canonical formulas, symbolic notation, numerical constants, fixed-point results, and open problems. This file appends to (does not replace) HUF_FAST_REFRESH.json and CLAIM_CLASSIFICATION.json. Both human scientists and AI systems should reference this as the complete mathematical foundation.",
+    "companion_documents": {
+      "formula_reference": "science/core/FORMULA_REFERENCE.md",
+      "eitt_coda_mathematics": "science/core/EITT_CODA_MATHEMATICS.md",
+      "hessian_bound": "science/eitt/EITT_HESSIAN_BOUND.md",
+      "vertex_theorem": "discoveries/theorems/VERTEX_THEOREM.md",
+      "claim_classification": "ai-refresh/CLAIM_CLASSIFICATION.json",
+      "rwa_001": "archive/legacy-references/machine-readable/RWA_Corporate_Reference_v1.0.json"
+    },
+    "update_protocol": "When a new theorem is proved or an open problem is resolved, add it here with date, evidence, and promotion status. This file is part of the refresh chain."
+  },
+
+  "notation_table": {
+    "purpose": "Standard symbolic notation used throughout HUF. Where HUF engineering notation differs from standard CoDa literature, both forms are given.",
+    "symbols": {
+      "S_D": {
+        "latex": "\\mathcal{S}^D",
+        "definition": "The D-part simplex: S^D = {x ∈ ℝ^D : x_i > 0, Σ x_i = 1}",
+        "note": "The sample space for all compositional data in HUF"
+      },
+      "C": {
+        "latex": "\\mathcal{C}",
+        "definition": "Closure operator: C(x) = x / Σ x_i",
+        "note": "Projects any positive vector onto the simplex"
+      },
+      "clr": {
+        "latex": "\\mathrm{clr}",
+        "definition": "Centred log-ratio transform: clr(x)_i = ln(x_i) − (1/D) Σ_{j=1}^{D} ln(x_j)",
+        "properties": ["Linear: clr(x ⊕ y) = clr(x) + clr(y)", "Σ clr_i = 0 (zero-sum constraint)", "Maps simplex to hyperplane in ℝ^D"],
+        "note": "The primary coordinate system for HUF analysis"
+      },
+      "ilr": {
+        "latex": "\\mathrm{ilr}",
+        "definition": "Isometric log-ratio transform: ilr(x) = Ψ^T · clr(x) where Ψ is an orthonormal basis (SBP matrix)",
+        "properties": ["Linear isometry from S^D to ℝ^{D−1}", "Preserves Aitchison inner product as Euclidean inner product", "Balance coordinates: b_k = √(rs/(r+s)) · ln(g(x⁺)/g(x⁻))"],
+        "note": "Used for statistical analysis; SBP choice does not affect EITT"
+      },
+      "d_A": {
+        "latex": "d_A",
+        "definition": "Aitchison distance: d_A(x, y) = ‖clr(x) − clr(y)‖₂",
+        "equivalent_form": "d_A(x,y) = √((1/2D) Σ_{i<j} [ln(x_i/x_j) − ln(y_i/y_j)]²)",
+        "properties": ["Metric on the simplex", "Invariant under permutation", "Subcompositionally coherent"],
+        "note": "Measures compositional distance. Used for drift detection."
+      },
+      "inner_product_A": {
+        "latex": "\\langle x, y \\rangle_A",
+        "definition": "Aitchison inner product: ⟨x, y⟩_A = (1/D) Σ_{i<j} ln(x_i/x_j) · ln(y_i/y_j)",
+        "equivalent_form": "⟨x, y⟩_A = (1/D) Σ_i clr(x)_i · clr(y)_i",
+        "note": "Makes (S^D, ⊕, ⊙, ⟨·,·⟩_A) a Euclidean vector space"
+      },
+      "sigma_A_squared": {
+        "latex": "\\sigma_A^2",
+        "definition": "Aitchison variance (total variance): σ²_A = (1/D) Σ_{i=1}^{D} clr_i²",
+        "equivalent_form": "σ²_A = (1/D) ‖clr(x)‖²",
+        "properties": ["Non-negative", "Zero iff x = barycenter (1/D, ..., 1/D)", "Measures departure from isotropy"],
+        "note": "The primary observable in PLL analysis. Its parabolic trajectory is the PLL lock signal."
+      },
+      "H": {
+        "latex": "H",
+        "definition": "Shannon entropy: H(x) = −Σ_{i=1}^{D} x_i ln(x_i)",
+        "properties": ["Maximum H = ln(D) at barycenter", "Minimum H → 0 as x approaches a vertex", "Concave function on S^D"],
+        "note": "The entropy whose near-invariance under decimation is the core EITT claim"
+      },
+      "D_M": {
+        "latex": "\\mathcal{D}_M",
+        "definition": "Block decimation operator: D_M maps a time series {x(t)}_{t=1}^{T} to {x̄_G^{(b)}}_{b=1}^{⌊T/M⌋} where x̄_G^{(b)} = C(∏_{t∈B_b} x(t)^{1/M})",
+        "note": "Geometric-mean block averaging. The compression operator for EITT."
+      },
+      "delta_M": {
+        "latex": "\\delta_M",
+        "definition": "EITT residual: δ_M = |H(D_M(series)) − H(series)| / H(series) × 100%",
+        "note": "Percentage entropy deviation. The primary EITT diagnostic."
+      },
+      "perturbation": {
+        "latex": "\\oplus",
+        "definition": "Perturbation: x ⊕ y = C(x₁y₁, ..., x_Dy_D)",
+        "note": "The 'addition' operation in Aitchison geometry"
+      },
+      "powering": {
+        "latex": "\\odot",
+        "definition": "Powering: α ⊙ x = C(x₁^α, ..., x_D^α)",
+        "note": "The 'scalar multiplication' in Aitchison geometry"
+      },
+      "N_eff": {
+        "latex": "N_{\\mathrm{eff}}",
+        "definition": "Effective diversity: N_eff = exp(H(x))",
+        "note": "Number of 'effectively present' components. Ecological diversity equivalent."
+      },
+      "perturbation_difference": {
+        "latex": "\\Delta(t)",
+        "definition": "Perturbation difference: Δ(t) = C(x₁(t+1)/x₁(t), ..., x_D(t+1)/x_D(t))",
+        "note": "Measures compositional change between consecutive time steps"
+      }
+    }
+  },
+
+  "theorems_and_proofs": {
+
+    "theorem_1_vertex_theorem": {
+      "id": "T1",
+      "name": "Vertex Theorem (Orthogonality Condition)",
+      "level": "L4 — Canonical Method Component",
+      "status": "PROVED. Exact mathematics.",
+      "statement": "Let {x(t)} be a D-part compositional time series on S^D with differentiable CLR trajectories. Then σ²_A(t) = (1/D) Σ_{i=1}^{D} [clr_i(t)]². The vertex (extremum) of σ²_A occurs at t = t* where: d(σ²_A)/dt = (2/D) Σ_{i=1}^{D} clr_i(t) · clr_i'(t) = 0. This is equivalent to clr(t*) ⊥ clr'(t*) in the Aitchison inner product.",
+      "proof": {
+        "step_1": "σ²_A(t) = (1/D) Σ [clr_i(t)]² by definition.",
+        "step_2": "Differentiate: d(σ²_A)/dt = (1/D) Σ 2·clr_i(t)·clr_i'(t) = (2/D) Σ clr_i(t)·clr_i'(t).",
+        "step_3": "Set d(σ²_A)/dt = 0: Σ clr_i(t*)·clr_i'(t*) = 0.",
+        "step_4": "By definition of the Aitchison inner product: ⟨clr(t*), clr'(t*)⟩ = 0, i.e., clr(t*) ⊥ clr'(t*). QED."
+      },
+      "corollary_1": {
+        "id": "C1.1",
+        "name": "PLL Error Signal",
+        "statement": "Near the vertex t₀, σ²_A(t) ≈ σ²_A(t₀) + a(t − t₀)² where a = (1/D) Σ [(clr_i')² + clr_i · clr_i''] evaluated at t₀. The error signal ε(t) = dσ²_A/dt = 2a(t − t₀) is linear near the lock point.",
+        "proof": "Taylor expansion of σ²_A about t₀ to second order. The first-order term vanishes by T1. The coefficient of (t − t₀)² is the second derivative, which gives the 'ratio of 2' in the PLL gain."
+      },
+      "corollary_2": {
+        "id": "C1.2",
+        "name": "Bowl vs Hill Classification",
+        "statement": "If a > 0 (second derivative positive), σ²_A has a bowl (minimum) — the system is locked. If a < 0 (second derivative negative), σ²_A has a hill (maximum) — the system is relaxing (anti-lock).",
+        "examples": ["Bowl (lock): Gold/Silver (a > 0, R² = 0.90), room acoustics (R² = 0.998)", "Hill (anti-lock): U-238 decay chain, Th-232 decay chain, stellar nucleosynthesis"]
+      },
+      "corollary_3": {
+        "id": "C1.3",
+        "name": "Vertex Location as Transition Date",
+        "statement": "When σ²_A(t) is parabolic with vertex at t₀, the year (or parameter value) t₀ marks the moment of dynamic equilibrium — where competing compositional forces are most balanced.",
+        "examples": ["California energy: vertex 2014 (solar/wind began to dominate)", "Gold/Silver: vertex 1751 (bimetallism equilibrium)", "Wisconsin: vertex ~1951 (coal's peak)"]
+      },
+      "location": "discoveries/theorems/VERTEX_THEOREM.md"
+    },
+
+    "theorem_2_clr_linearity": {
+      "id": "T2",
+      "name": "CLR Linearity Identity",
+      "level": "L5 — Core Science (inherited from CoDa)",
+      "status": "PROVED. Algebraic identity. No approximation.",
+      "statement": "For compositions x(1), ..., x(M) on S^D, the CLR of their geometric mean equals the arithmetic mean of their CLRs: clr(x̄_G) = (1/M) Σ_{t=1}^{M} clr(x(t)).",
+      "proof": {
+        "step_1": "x̄_G = C(∏ x(t)^{1/M}) by definition of the Aitchison barycenter.",
+        "step_2": "clr(x̄_G)_i = ln(x̄_G,i) − (1/D) Σ_j ln(x̄_G,j).",
+        "step_3": "ln(x̄_G,i) = (1/M) Σ_t ln(x_i(t)) by properties of geometric mean.",
+        "step_4": "Substituting: clr(x̄_G)_i = (1/M) Σ_t [ln(x_i(t)) − (1/D) Σ_j ln(x_j(t))] = (1/M) Σ_t clr_i(x(t)). QED."
+      },
+      "significance": "This identity is WHY geometric-mean decimation preserves CLR structure exactly. The arithmetic mean in CLR space IS the geometric mean on the simplex. This is the algebraic heart of EITT.",
+      "location": "science/eitt/EITT_HESSIAN_BOUND.md (Step 1), science/core/EITT_CODA_MATHEMATICS.md"
+    },
+
+    "theorem_3_hessian_bound": {
+      "id": "T3",
+      "name": "EITT Hessian Bound (Second-Order)",
+      "level": "Proof sketch — substantially complete",
+      "status": "PROVED under stated assumptions (A1-A3). Sharp constants remain open.",
+      "assumptions": {
+        "A1": "The composition x(t) is a stationary ergodic process on S^D with finite second moments in CLR space.",
+        "A2": "The Aitchison variance σ²_A of the process satisfies σ²_A < δ · min(x̄_i) for some constant δ controlling the distance from the boundary.",
+        "A3": "The autocovariance function of the CLR process decays sufficiently fast that block means are asymptotically independent."
+      },
+      "statement": "|𝔼[δ_M]| ≤ (D−1) · σ²_A / (2δ · M · H̄) + O(M^{−3/2})",
+      "proof_sketch": {
+        "step_1": "CLR linearity (T2): clr(x̄_G^{(b)}) = (1/M) Σ clr(x(t)). Exact, no approximation.",
+        "step_2": "Shannon entropy H(x) = H(clr⁻¹(clr(x))). Taylor expand H around x̄ to second order.",
+        "step_3": "First-order term: 𝔼[Σ clr_i · ∂H/∂clr_i] = 0 by stationarity (deviations from mean have zero expectation).",
+        "step_4": "Second-order (Hessian) term: The Hessian of H on the simplex has eigenvalues bounded by −1/min(x_i). The trace contributes (D−1)·σ²_A/(2δ·M·H̄).",
+        "step_5": "Remainder: Under A3 (mixing), the O(M^{−3/2}) term is controlled by the mixing rate."
+      },
+      "open_problems": [
+        "O-1: Direct measurement of σ²_A and δ from raw data (currently back-computed)",
+        "O-2: Concentration inequality on |δ_M − 𝔼[δ_M]| using explicit mixing coefficients",
+        "O-3: Extension to slowly drifting (non-stationary) processes with drift velocity bound",
+        "O-4: Higher-dimensional sharpness — is the bound tight in D > 10?"
+      ],
+      "location": "science/eitt/EITT_HESSIAN_BOUND.md"
+    },
+
+    "lemma_1_balance_preservation": {
+      "id": "L1",
+      "name": "Balance Mean Preservation Under Decimation",
+      "level": "Informally proved",
+      "statement": "Because D_M computes the arithmetic mean in CLR space, and ILR is a linear isometry from CLR, the ILR balance coordinates of the decimated series satisfy: ilr_k(x̄_G^{(b)}) = (1/M) Σ_{t∈B_b} ilr_k(x(t)).",
+      "proof": "Follows directly from T2 (CLR linearity) and the linearity of the ILR transform (Ψ is a constant orthonormal matrix). QED.",
+      "corollary": {
+        "id": "C-L1",
+        "statement": "The choice of SBP (sequential binary partition) does not affect EITT. Any ILR coordinate system gives the same balance-mean values under decimation.",
+        "significance": "This is why EITT is robust to SBP choice — the linearity is exact in any orthonormal basis."
+      },
+      "location": "science/core/EITT_CODA_MATHEMATICS.md (Proposition 3.3)"
+    },
+
+    "lemma_2_entropy_concavity": {
+      "id": "L2",
+      "name": "Shannon Entropy Concavity on the Simplex",
+      "level": "Known result (information theory)",
+      "statement": "Shannon entropy H(x) = −Σ x_i ln(x_i) is strictly concave on S^D. The Hessian has eigenvalues: (∂²H/∂x_i²) = −1/x_i (diagonal), off-diagonal terms arise from the simplex constraint.",
+      "consequence_for_eitt": "By Jensen's inequality applied to the concave function H: H(𝔼[X]) ≥ 𝔼[H(X)]. For block decimation: H(x̄_G) ≥ (1/M) Σ H(x(t)). This creates a systematic UPWARD bias in entropy under decimation. The EITT residual measures how small this bias actually is.",
+      "note": "This is a known result from information theory. HUF's contribution is the empirical observation that the bias is extremely small (< 1% typically) for legitimate compositional time series."
+    }
+  },
+
+  "fixed_point_and_banach_results": {
+
+    "result_1_adac_convergence": {
+      "id": "FP1",
+      "name": "ADAC Iterative Convergence",
+      "claim": "The ADAC (Apportioned Diffraction Analysis Correction) mapping is contractive, converging to a fixed point by the Banach contraction mapping theorem.",
+      "status": "CLAIMED — numerical evidence supports, formal proof not in repo",
+      "banach_theorem_statement": {
+        "theorem": "Banach Fixed-Point Theorem (Contraction Mapping Principle)",
+        "formal": "Let (X, d) be a complete metric space and T: X → X a contraction mapping with Lipschitz constant L < 1, i.e., d(Tx, Ty) ≤ L · d(x, y) for all x, y ∈ X. Then T has a unique fixed point x* ∈ X, and for any x₀ ∈ X, the iteration x_{n+1} = T(x_n) converges to x* with rate d(x_n, x*) ≤ L^n · d(x₀, x*) / (1 − L)."
+      },
+      "application_to_adac": {
+        "space": "(S^D, d_A) — the simplex with Aitchison metric (complete metric space)",
+        "mapping": "T: allocation → measured_response → corrected_allocation",
+        "contraction_condition": "|m| < 1 where m is the slope of the correction transfer function",
+        "numerical_evidence": "DADI error: 12.5% → 4.99% over 5 iterations. RMSE < 0.05 dB. Consistent with L ≈ 0.4.",
+        "what_is_missing": "Formal derivation of the contraction constant L from the physical parameters of the acoustic system. The mapping T is nonlinear and its Lipschitz constant depends on the geometry of the cabinet and the frequency dependence of diffraction."
+      },
+      "promotion_condition": "Derive L analytically from cabinet geometry parameters. Show L < 1 for the class of physically realizable cabinets.",
+      "location": "science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md"
+    },
+
+    "result_2_eitt_rg_fixed_point": {
+      "id": "FP2",
+      "name": "EITT as Renormalization Group Fixed Point (Conceptual)",
+      "claim": "The EITT invariance condition dH/dM = 0 is structurally analogous to an RG fixed point. The entropy beta function β_H(M) = M · dH/dM = 0 iff the signal is at a 'legitimate' compositional process.",
+      "status": "ANALOGY — not a formal fixed-point result",
+      "connection": "In statistical mechanics, a renormalization group fixed point is a point where the system looks the same at all scales. EITT says: a legitimate compositional time series has the same entropy at all temporal resolutions. The structural analogy is: decimation by M is the 'blocking' step of real-space RG, and entropy invariance is the RG fixed-point condition.",
+      "formal_status": "This is a framing device, not a theorem. The analogy may inspire future formal results but does not currently constitute a proof of anything.",
+      "important_distinction": "Decimation is NOT a contraction mapping on (S^D, d_A). Aitchison distances EXPAND under decimation. EITT invariance is an entropy-level phenomenon, not a distance-level contraction.",
+      "location": "codawork2026/reproducibility/HIGGINS_REPRODUCIBILITY_PACKAGE.json"
+    },
+
+    "result_3_h1_fixed_point": {
+      "id": "FP3",
+      "name": "H1 Operator Fixed Point and Lyapunov Stability",
+      "claim": "The Higgins Operator H1|ψ⟩ = μ(|ψ⟩)·u has a unique fixed point at μ = 1 (full coherence). Lyapunov function V = 1 − μ proves global asymptotic stability: V̇ = −γ(1−μ)² ≤ 0, with V̇ = 0 iff μ = 1.",
+      "status": "CLAIMED — proof in external H1 paper (not in public repo). L0 classification.",
+      "banach_extension": "The contraction mapping theorem in the completed space guarantees existence and uniqueness of the fixed point.",
+      "what_is_in_repo": "Summary in science/quantum/HUF_VCore_Stack_Brief_v1.0.md (lines 167-179). The Lyapunov argument is sketched. Full proof steps are not reproduced.",
+      "what_is_missing": "The actual derivation of V̇ and the verification that the system is a contraction in the appropriate Banach space.",
+      "location": "science/quantum/HUF_VCore_Stack_Brief_v1.0.md"
+    },
+
+    "result_4_fixed_point_v3_2": {
+      "id": "FP4",
+      "name": "HUF Refresh Chain Fixed Point v3.2",
+      "status": "ADMINISTRATIVE — not a mathematical fixed point",
+      "meaning": "The term 'FIXED POINT v3.2' in PHASE_MARKERS.json and FAST_REFRESH.json refers to a decision point in the project where the refresh chain was declared self-consistent and stable. It is an administrative marker, not a mathematical fixed point in the Banach or topological sense. The naming convention borrows from dynamical systems language to express: at this version, the system of documents is internally consistent and further changes should not break prior results.",
+      "location": "ai-refresh/PHASE_MARKERS.json, ai-refresh/HUF_FAST_REFRESH.json"
+    }
+  },
+
+  "canonical_values_and_constants": {
+    "purpose": "Complete registry of numerical constants that appear across HUF. Any document citing a different value should reference this table.",
+    "acoustic_constants": {
+      "total_baffle_step": { "value": "6.02 dB", "exact": "20·log₁₀(2)", "source": "DADC theory" },
+      "corner_frequency": { "value": "Fc = 115/L Hz·m", "note": "L is the baffle dimension in metres" },
+      "bandwidth_locked": { "value": "5.5 octaves", "source": "BTL measurement, RWA lineage" }
+    },
+    "eitt_benchmarks": {
+      "european_prices_341to1": { "value": "0.18%", "domain": "European prices", "compression": "341:1" },
+      "ember_monthly_mean": { "value": "1.02%", "domain": "EMBER 6 countries" },
+      "ngfs_geometric_5yr": { "value": "1.8%", "domain": "NGFS 35 scenarios" },
+      "ngfs_arithmetic_5yr": { "value": "14.2%", "domain": "NGFS 35 scenarios (WRONG mean)" },
+      "arithmetic_geometric_ratio": { "value": "7.9×", "note": "Factor of destruction by using arithmetic mean" },
+      "exp01_gold_silver": { "value": "0.60%", "domain": "Gold/Silver 338yr at 50:1" },
+      "exp03_qgp_freeze_out": { "value": "0.27%", "domain": "QGP STAR BES-I + ALICE" },
+      "geochemistry_pass_rate": { "value": "37/39 TAS types", "domain": "40,666 igneous rocks" }
+    },
+    "pll_benchmarks": {
+      "domains_tested": 30,
+      "confidence_threshold": { "value": "3³ = 27", "exceeded_by": 30 },
+      "highest_R2": { "value": 0.998, "domain": "Room acoustics" },
+      "exp01_R2": { "value": 0.9007, "domain": "Gold/Silver" },
+      "exp01_vertex": { "value": 1751, "domain": "Gold/Silver" },
+      "exp01_Q_factor": { "value": 22.18, "domain": "Gold/Silver" }
+    },
+    "nuclear_constants": {
+      "lithium7_CS_ratio": { "value": 2.525, "note": "Highest C/S ratio in any domain (cosmological lithium problem)" },
+      "sigma2A_light": { "value": 16.77, "region": "Z=1-20", "description": "HOT" },
+      "sigma2A_iron_peak": { "value": 2.49, "region": "Z=21-28", "description": "WARM" },
+      "sigma2A_heavy": { "value": 1.50, "region": "Z=29-82", "description": "COOL" },
+      "sigma2A_actinide": { "value": 1.15, "region": "Z=83+", "description": "COLD" },
+      "coulomb_cliff_Z": { "value": "≈419", "note": "SEMF Coulomb dominance transition" },
+      "absolute_instability_Z": { "value": "≈363", "note": "B/A becomes negative" }
+    },
+    "bell_test_values": {
+      "S_measured": 2.2018,
+      "classical_bound": 2.0,
+      "tsirelson_bound": 2.828,
+      "violation_percentage": "12.31%",
+      "contamination_risk": "VERY HIGH"
+    },
+    "operating_envelope_thresholds": {
+      "eitt_pass": { "value": "< 1%", "note": "Below this: PASS. Above: investigate." },
+      "entropy_minimum": { "value": "H > 1.0", "note": "Below: boundary regime, EITT unreliable" },
+      "zero_rate_maximum": { "value": "< 15%", "note": "Above: multiplicative replacement artifacts" },
+      "zero_rate_hard_fail": { "value": "> 35%", "note": "EITT correctly fails" },
+      "f17_R2_threshold": { "value": "> 0.96", "note": "All 10 US states exceed this" }
+    }
+  },
+
+  "open_problems_registry": {
+    "purpose": "Every formally stated open problem in the HUF programme, with cross-references and promotion conditions.",
+
+    "O1_eitt_general_invariance": {
+      "statement": "Prove a general theorem: Under conditions C, |δ_M| < f(D, σ²_A, ρ₁, M) for all legitimate compositional time series.",
+      "status": "OPEN — the central open problem of the programme",
+      "partial_progress": "The Hessian Bound (T3) provides a second-order expected-value bound under assumptions A1-A3. What remains is: (a) a concentration inequality (tail bound), (b) verification of mixing conditions in real data, (c) sharp constants.",
+      "if_solved": "Would promote EITT from 'empirical invariance' to 'mathematical theorem'. The strongest possible result for the programme."
+    },
+
+    "O2_pll_parabola_genericity": {
+      "statement": "Prove that σ²_A(t) is generically parabolic under mild regularity conditions (smooth, slowly-varying forces on the simplex).",
+      "status": "OPEN",
+      "partial_progress": "The vertex theorem (T1) proves the orthogonality condition at the extremum. What remains is showing that σ²_A has exactly one extremum (parabolic shape) when forcing is slow relative to the system timescale.",
+      "if_solved": "Would promote PLL universality from L1 to L2 (process control candidate)."
+    },
+
+    "O3_noise_conjugacy": {
+      "statement": "Prove that lock noise + anti-lock noise = 0 (observed empirically in all domains).",
+      "status": "OPEN",
+      "partial_progress": "Observed in 10/10 domains. Physically plausible (polynomial residuals in complementary regimes should cancel). No formal proof.",
+      "if_solved": "Would promote noise squeeze from L0 to L1."
+    },
+
+    "O4_adac_contraction_constant": {
+      "statement": "Derive the Lipschitz constant L for the ADAC correction mapping from cabinet geometry parameters. Show L < 1 for physically realizable cabinets.",
+      "status": "OPEN",
+      "partial_progress": "Numerical evidence: L ≈ 0.4 from 5-iteration convergence. The contraction condition |m| < 1 is asserted."
+    },
+
+    "O5_renyi_invariance": {
+      "statement": "Prove that geometric-mean decimation preserves the Rényi entropy family for q ∈ (0, ∞).",
+      "status": "OPEN",
+      "partial_progress": "Empirically confirmed for q ∈ [0.1, 5.0] across 3 domains."
+    },
+
+    "O6_shape_functional_invariance": {
+      "statement": "Prove that any shape functional (function of ratios only, invariant to scaling) is EITT-invariant in the interior regime.",
+      "status": "OPEN — conceptual framework sketched in EITT_WHY_IT_WORKS.md §7"
+    },
+
+    "O7_tail_bound": {
+      "statement": "Derive a concentration inequality for |δ_M − 𝔼[δ_M]| using explicit mixing coefficients.",
+      "status": "OPEN — Hessian Bound Open Problem 2"
+    },
+
+    "O8_nonstationary_extension": {
+      "statement": "Extend EITT bounds to slowly-drifting (non-stationary) processes with drift velocity as a parameter.",
+      "status": "OPEN — Hessian Bound Open Problem 3"
+    }
+  },
+
+  "identity_registry": {
+    "purpose": "All named identities referenced across HUF, with their RWA-001 lineage.",
+    "identities": {
+      "peter_higgins": {
+        "role": "Framework author, principal researcher, sole operator",
+        "background": "35 years man/machine interface (per RWA-001 v1.0)",
+        "employer": "Brock Electronics (day job). HUF/RWA is the mission.",
+        "email": "PeterHiggins@RogueWaveAudio.com",
+        "location": "Markham, Ontario, Canada"
+      },
+      "rogue_wave_audio": {
+        "abbreviation": "RWA",
+        "nature": "Theory and acoustics development company",
+        "philosophy": "Concepts are the product, not a loudspeaker. Ideas are the commodity.",
+        "standard": "RWA-001"
+      },
+      "huf": {
+        "full_name": "Higgins Unity Framework",
+        "NOT": ["Higgins Unified Framework", "HUF Framework", "Unity Framework"],
+        "tagline": "Compositional structure as an open-loop monitoring signal."
+      },
+      "hivip": {
+        "full_name": "Higgins Iterative Validation and Integrity Protocol",
+        "components": ["6-level promotion ladder (L0-L5)", "3-path contamination doctrine", "Sealed experiment protocol", "HIVP regression chain"]
+      },
+      "btl": {
+        "full_name": "Binaural Test Lab",
+        "dual_meaning": "Both the physical laboratory in Markham, Ontario and the loudspeaker system",
+        "lineage": "Named after Bell Telephone Labs (BTL) — developed stereo nearly a century ago"
+      },
+      "dadc_dadi_adac": {
+        "full_name": "Dimension-Apportioned Diffraction Correction / Diffraction-Apportioned Dimension Inference / Apportioned-Dimension Analysis Correction",
+        "origin": "AES manuscript, December 2024",
+        "significance": "The round-trip measurement chain from RWA engineering that became the universal DADC-DADI-ADAC chain in HUF"
+      }
+    }
+  },
+
+  "semf_formulas": {
+    "purpose": "The Semi-Empirical Mass Formula (SEMF) as used in HUF's nuclear programme. These formulas are not HUF inventions — they are standard nuclear physics written out for reference.",
+    "binding_energy": "B(Z, A) = a_V·A − a_S·A^{2/3} − a_C·Z(Z−1)/A^{1/3} − a_A·(A−2Z)²/A + δ(A, Z)",
+    "standard_coefficients": {
+      "a_V": { "value": 15.56, "unit": "MeV", "term": "Volume" },
+      "a_S": { "value": 17.23, "unit": "MeV", "term": "Surface" },
+      "a_C": { "value": 0.7, "unit": "MeV", "term": "Coulomb" },
+      "a_A": { "value": 23.285, "unit": "MeV", "term": "Asymmetry" }
+    },
+    "compositional_decomposition": {
+      "description": "HUF decomposes each nucleus into a 4-part composition on the simplex: x = C(E_V, E_S, E_C, E_A) where E_V = a_V·A, E_S = a_S·A^{2/3}, E_C = a_C·Z(Z−1)/A^{1/3}, E_A = a_A·(A−2Z)²/A. The closure operator C normalises to sum = 1.",
+      "sigma2A_meaning": "σ²_A of this 4-part composition measures how 'balanced' the four binding energy terms are. Light nuclei (shell effects, magic numbers) have high σ²_A (HOT). Actinides have low σ²_A (COLD) because the four terms scale smoothly."
+    }
+  },
+
+  "changelog": [
+    {
+      "date": "2026-04-18",
+      "version": "1.0",
+      "action": "Initial mathematical addendum created. Covers: notation table (14 symbols), 3 theorems with proofs, 2 lemmas, 3 corollaries, 4 fixed-point/Banach results, 8 open problems, complete canonical values registry, identity registry (per RWA-001), SEMF formulas.",
+      "author": "Peter Higgins / Claude",
+      "note": "This addendum APPENDS to existing documents. It does not replace HUF_FAST_REFRESH.json, CLAIM_CLASSIFICATION.json, or any discovery document."
+    }
+  ]
+}

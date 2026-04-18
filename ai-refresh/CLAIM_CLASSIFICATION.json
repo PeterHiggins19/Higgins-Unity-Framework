@@ -1,0 +1,529 @@
+{
+  "_meta": {
+    "type": "HUF-CLAIM-CLASSIFICATION",
+    "version": "1.0",
+    "created": "2026-04-18",
+    "author": "Peter Higgins / Claude",
+    "purpose": "Machine-readable classification of every scientific claim in the Higgins Unity Framework, assigned to the HIVIP promotion ladder. Each claim carries its current level, the evidence that supports it, and the specific conditions required for promotion or demotion. This is the honesty layer for the entire programme.",
+    "methodology": "HIVIP — Higgins Iterative Validation and Integrity Protocol",
+    "anti_corruption_rule": "No concept climbs the ladder by improving one domain at the cost of contaminating earlier DUTs or the core signal.",
+    "integrity_rule": "Prefer a weaker but cleaner claim over a stronger contaminated one.",
+    "update_protocol": "When a claim is promoted or demoted, update this file with the date, evidence, and reason. History is preserved in the changelog array. This file is part of the refresh chain.",
+    "companion_documents": {
+      "promotion_ladder_definition": "briefings/EITT_Precedent_and_Lineage_for_Claude.json → solidification_of_concepts",
+      "contamination_doctrine": "briefings/EITT_Project_Arc_and_Contamination_Context_for_Claude.json",
+      "sealed_experiments": ["codawork2026/experiments/EXP-01_Gold_Silver/EXP01_SEALED_CONCLUSION.json", "codawork2026/experiments/EXP-02_US_Monthly/EXP02_SEALED_CONCLUSION.json"]
+    }
+  },
+
+  "promotion_ladder": {
+    "L0": {"name": "exploratory_pattern", "definition": "Interesting visual, analogy, or domain-specific signal. May inspire work, but does not yet influence core claims."},
+    "L1": {"name": "candidate_overlay", "definition": "Testable add-on readout that may rank or explain cases, but does not alter the science signal."},
+    "L2": {"name": "process_control_candidate", "definition": "Methodological addition that can improve integrity, detection, or transparency, but must survive HIVP regression."},
+    "L3": {"name": "validated_companion", "definition": "A robust secondary instrument that adds information while remaining separate from the core observable."},
+    "L4": {"name": "canonical_method_component", "definition": "A promoted method element that has survived cross-domain validation and regression through prior DUTs."},
+    "L5": {"name": "core_science", "definition": "The non-negotiable primary claim of the programme."}
+  },
+
+  "claims": {
+
+    "EITT_entropy_invariance": {
+      "claim": "Shannon entropy of compositional time series is near-invariant under geometric-mean block decimation across temporal resolutions.",
+      "level": "L5",
+      "level_name": "core_science",
+      "justification": "This is the primary scientific claim of the entire programme. Validated across 8+ domains (European prices 0.18% at 341:1, EMBER 6 countries mean 1.02%, NGFS 35 scenarios geometric 1.8%, geochemistry 37/39 TAS types, Gold/Silver 0.60%, US Energy 5/5 interior PASS, QGP freeze-out 0.27%, neutron star correctly FAILS). Adversarial testing: 10/17 pass, 7 fail as expected (synthetic/shuffled). Two sealed experiments confirm.",
+      "evidence": {
+        "sealed_experiments": ["EXP-01 (Gold/Silver): EITT max Δ = 0.60% at 50:1", "EXP-02 (US Energy): 5/5 interior PASS, 5/5 boundary FAIL as designed"],
+        "cross_domain": ["European prices", "EMBER (6 countries)", "NGFS (35 scenarios)", "CheMixHub (7 datasets)", "Geochemistry (40,666 rocks)", "Gold/Silver (338 years)", "US Energy (10 states)", "QGP freeze-out (8 collision energies)"],
+        "adversarial": "10/17 pass, 7 fail (correct rejections of synthetic/shuffled data)"
+      },
+      "open_points": ["General mathematical theorem still incomplete — empirical invariance established, formal proof partial (Hessian bound covers second order)", "Exact tightness of higher-order terms in high-D near-boundary cases"],
+      "promotion_history": ["Discovered April 2026 as empirical observation", "Cross-domain validation through HIVP regression chain", "Sealed in EXP-01 and EXP-02 at FIXED POINT v3.2"],
+      "demotion_conditions": ["Discovery of a legitimate compositional time series with strong temporal autocorrelation where EITT fails by >5%", "Proof that the Hessian bound is not tight and the true bound permits >5% deviation in typical conditions"],
+      "contamination_risk": "LOW — the observable is defined cleanly, uses standard CoDa operations, and the operating envelope is documented"
+    },
+
+    "geometric_mean_superiority": {
+      "claim": "Geometric mean is the correct averaging operation on the simplex; arithmetic mean destroys compositional structure. EITT provides empirical proof.",
+      "level": "L5",
+      "level_name": "core_science",
+      "justification": "This is implicit in Aitchison geometry (1982) and is the primary gift to the CoDa community. EITT provides the FIRST measurable consequence: geometric 5yr mean 1.8% vs arithmetic 5yr mean 14.2% (NGFS data). The CoDa community has argued this theoretically for 40 years; EITT provides empirical ammunition.",
+      "evidence": {
+        "ngfs_comparison": "Geometric 5yr: 1.8% mean, 4.7% max. Arithmetic 5yr: 14.2% mean, 28.6% max. Factor of 8× worse.",
+        "sealed_experiments": "EXP-01 and EXP-02 both use geometric mean decimation exclusively for EITT verification",
+        "theoretical_basis": "Aitchison (1982/1986), Egozcue & Pawlowsky-Glahn — geometric mean IS the Fréchet mean in Aitchison geometry"
+      },
+      "open_points": ["The theoretical argument is established; EITT adds the measurable consequence. No open points on the claim itself."],
+      "promotion_history": ["Inherited from CoDa literature as theoretical property", "EITT provided first measurable empirical proof April 2026"],
+      "demotion_conditions": ["Discovery that arithmetic mean preserves entropy equally well in some legitimate compositional domain — would undermine the uniqueness claim"],
+      "contamination_risk": "NONE — this claim rests on 40 years of established CoDa theory plus new empirical evidence"
+    },
+
+    "simplex_closure_and_coda_geometry": {
+      "claim": "Compositional data lives on a simplex. The Aitchison geometry (CLR, ILR, ALR transforms, perturbation, powering) is the correct mathematical framework for analysis.",
+      "level": "L5",
+      "level_name": "core_science",
+      "justification": "Inherited directly from Aitchison (1982/1986) and the established CoDa literature. Not a HUF claim — HUF adopts it. Every HUF operation is built on this foundation.",
+      "evidence": {
+        "literature": "Aitchison (1982, 1986), Egozcue et al. (2003), Pawlowsky-Glahn & Egozcue (2001), Tolosana-Delgado, van den Boogaart",
+        "huf_validation": "Every sealed experiment verifies closure to machine precision and CLR zero-sum"
+      },
+      "open_points": [],
+      "promotion_history": ["Established science since 1982. Adopted by HUF, not claimed by HUF."],
+      "demotion_conditions": ["Not applicable — this is established mathematics, not a HUF-specific claim"],
+      "contamination_risk": "NONE"
+    },
+
+    "operating_envelope": {
+      "claim": "EITT is reliable when the composition has sufficient diversity (Shannon entropy H > 1.0) and low zero rates (< 15%). When >35% of observations are zero, multiplicative replacement introduces artifacts that EITT correctly detects.",
+      "level": "L4",
+      "level_name": "canonical_method_component",
+      "justification": "Established by EXP-02 with deliberate design: 4 interior states PASS (H > 1.0, zero rate < 6%), 4 boundary states FAIL (H < 0.7, zero rate > 37%), 2 bridge states at the crossover. The 1% threshold separates cleanly. F17 tuner provides early warning.",
+      "evidence": {
+        "exp02_sealed": "5 PASS / 5 FAIL exactly as designed. 1% threshold is a real boundary.",
+        "boundary_states": "Rhode Island (8.8%), West Virginia (5.3%), Wyoming (2.8%), Delaware (6.4%) — all fail by 3-9× threshold",
+        "interior_states": "California (0.83%), Minnesota (0.49%), Texas (0.21%), Wisconsin (0.13%) — all pass with margin",
+        "bridge_case": "Pennsylvania: geometric FAILS at 1.09%, arithmetic PASSES at 0.87% — the exact crossover"
+      },
+      "open_points": ["Wider calibration of soft/hard thresholds in high-D settings", "Whether the H > 1.0 / zero rate < 15% boundaries hold in all domains or are energy-specific"],
+      "promotion_history": ["Identified conceptually in Phase 1", "Quantified and sealed in EXP-02 at FIXED POINT v3.2"],
+      "demotion_conditions": ["Discovery of a high-entropy, low-zero-rate domain where EITT fails", "Discovery that the thresholds are domain-specific rather than universal"],
+      "contamination_risk": "LOW — the envelope is conservative by design"
+    },
+
+    "pll_parabola_universality": {
+      "claim": "Wherever two compositional forces compete on a simplex, σ²_A forms a parabola. The vertex is the lock point (dynamic equilibrium). The derivative dσ²_A/dt = 2a(t−t₀) is linear near the vertex — the ratio of 2. 30/30 domains produce diagnostic output.",
+      "level": "L1",
+      "level_name": "candidate_overlay",
+      "justification": "Validated across 30 domains (28 locks + 2 trajectory diagnostics). The vertex theorem is mathematically exact (chain rule identity). The universality of the parabolic shape is empirical — 30/30 is strong but the claim is large. Currently at L1 because: (a) the parabola does not modify the core EITT observable, (b) the 30-domain test exceeds the 3³=27 confidence threshold, (c) but formal theory linking curvature to physical mechanism is incomplete.",
+      "evidence": {
+        "vertex_theorem": "d(σ²_A)/dt = (2/D) Σ clr_i · clr_i' = 0 ⟹ clr(t*) ⊥ clr'(t*). EXACT.",
+        "domain_count": "30 tested, 28 locks + 2 trajectory diagnostics = 30/30 wins",
+        "highest_R2": "Room acoustics R² = 0.998",
+        "sealed_experiments": ["EXP-01: R² = 0.9007, vertex 1751, Q = 22.18", "EXP-02: 8/10 states show R² > 0.3 (correct — 2 coal-dominated states have no transition to detect)"],
+        "confidence_threshold": "3^3 = 27 required, 30 achieved"
+      },
+      "open_points": ["Formal theory connecting parabola curvature to specific physical mechanisms", "Whether the parabola is always the dominant mode or sometimes masked by higher-order terms", "Need more formally independent datasets (some of the 30 share conceptual heritage)"],
+      "promotion_conditions": {
+        "to_L2": "Formal proof that σ²_A is generically parabolic under mild regularity conditions (smooth, slow forces). Would make it a process-control candidate.",
+        "to_L3": "Independent reproduction by an external team on new domains. Would make it a validated companion."
+      },
+      "demotion_conditions": ["Discovery of a domain with clear two-force competition where σ²_A is NOT parabolic and cannot be recovered by regime splitting"],
+      "contamination_risk": "MEDIUM — the parabola is seductive. Risk of over-interpreting vertex locations or curvatures. The anti-corruption rule applies: the parabola must not contaminate the core EITT reading."
+    },
+
+    "vertex_theorem": {
+      "claim": "For a D-part compositional time series, σ²_A(t) = (1/D) Σ clr_i(t)². The vertex occurs where d(σ²_A)/dt = (2/D) Σ clr_i · clr_i' = 0, i.e., clr(t*) ⊥ clr'(t*). This is an exact identity from the chain rule.",
+      "level": "L4",
+      "level_name": "canonical_method_component",
+      "justification": "This is pure mathematics — the chain rule applied to σ²_A. It is not an empirical claim; it is a theorem. The physical interpretation (dynamic equilibrium = orthogonality of composition and its rate of change) follows directly.",
+      "evidence": {
+        "proof": "Direct computation from the definition of σ²_A. Chain rule. No approximations.",
+        "verification": "Every sealed experiment's vertex location is consistent with the clr⊥clr' condition"
+      },
+      "open_points": [],
+      "promotion_history": ["Derived April 2026 during PLL discovery"],
+      "demotion_conditions": ["Mathematical error in the derivation — none found"],
+      "contamination_risk": "NONE — this is a mathematical identity"
+    },
+
+    "noise_squeeze_stochastic_core": {
+      "claim": "Higher-order polynomial fits to the σ²_A trajectory extract additional signal from residuals. When squeeze plateaus, what remains is the irreducible stochastic core — the fundamental noise floor of the domain.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "Observed in all 10 domains tested, with squeeze ranging from 2.5% (Gold/Silver, D=2) to 86% (Stellar nucleosynthesis). The concept is physically reasonable (higher-order forces exist beyond the parabola) but no formal theory explains why the squeeze plateaus or what the plateau value means quantitatively.",
+      "evidence": {
+        "sealed_experiments": ["EXP-01: 2.5% squeeze (correct for D=2 with R²=0.90)", "EXP-02: 4.5% (Rhode Island) to 34.6% (Wisconsin)"],
+        "standouts": ["Room acoustics 77%", "Stellar nucleosynthesis 86%", "Wine fermentation 84%"],
+        "conjugate_property": "Lock noise + anti-lock noise = 0 (observed in all domains)"
+      },
+      "open_points": ["No formal theory for why squeeze plateaus", "No theory connecting stochastic core magnitude to physical domain properties", "Conjugate noise property needs mathematical proof"],
+      "promotion_conditions": {
+        "to_L1": "Demonstrate that squeeze magnitude predicts something useful (e.g., domain complexity, force count, signal quality)"
+      },
+      "demotion_conditions": ["Demonstration that squeeze is an artifact of polynomial overfitting rather than genuine signal extraction"],
+      "contamination_risk": "MEDIUM — higher-order polynomials can always fit noise. The squeeze must be validated against physical domain knowledge, not just R² improvement."
+    },
+
+    "dadc_dadi_adac_contamination_chain": {
+      "claim": "The DADC-DADI-ADAC chain decomposes PLL residuals per-species to identify boundary species — the carrier at the interface between competing compositional forces. Contamination entropy H_norm < 0.85 indicates structured contamination (DADI signature). Cross-correlation of species residuals measures coherent force crosstalk.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "Tested across 8 domains. Boundary species identifications are physically interpretable in every case (Λ in QGP, 2k-8kHz in room acoustics, ⁷Li in BBN, Gas in energy). 4/8 domains show DADI signature (H_norm < 0.85). Average cross-correlation |XCorr| = 0.68. But: the method is new, tested only internally, and the diagnostic thresholds are not yet calibrated cross-domain.",
+      "evidence": {
+        "boundary_species": ["QGP: Λ (C/S=0.626)", "Room acoustics: 2k-8kHz (C/S=1.168)", "Stellar: Oxygen (C/S=0.743)", "BBN: ⁷Li (C/S=2.525)", "Energy: Gas (C/S=0.534)", "Geochemistry: TiO₂ (C/S=0.416)"],
+        "sealed_experiments": ["EXP-01: degenerate D=2 case (perfect symmetry, H_norm=1.0)", "EXP-02: H_contam separates interior (<0.6) from boundary (>0.8) states. Hydro is boundary species in 5/10 states."],
+        "dadi_signature": "4/8 domains show structured contamination"
+      },
+      "open_points": ["Threshold calibration for H_norm, C/S ratio across domains", "Formal theory connecting boundary species to domain physics", "Independent reproduction needed", "The chain's connection to RWA/BTL DADC-DADI is lineage, not proof"],
+      "promotion_conditions": {
+        "to_L1": "Successful blind test: given only the DADC output, predict the boundary species BEFORE checking domain knowledge. If predictions match, the chain has diagnostic power beyond curve-fitting."
+      },
+      "demotion_conditions": ["Demonstration that boundary species identification is an artifact of polynomial residual structure rather than genuine force crosstalk"],
+      "contamination_risk": "HIGH — the DADC chain is the most contamination-prone claim in the framework. The lineage connection to RWA acoustics is emotionally powerful but scientifically irrelevant to whether the method works. Must be evaluated on its own evidence."
+    },
+
+    "f17_quadratic_tuner": {
+      "claim": "The geometric-arithmetic entropy gap, fitted quadratically in compression ratio M, provides a contamination signal that measures near-vertex stress. The quadratic coefficient 'a' is always negative (sub-linear growth). All 10 US states show R² > 0.96.",
+      "level": "L2",
+      "level_name": "process_control_candidate",
+      "justification": "Validated in EXP-02 across all 10 states. Pennsylvania is the canonical crossover case (geometric fails at 1.09%, arithmetic passes at 0.87%). F17 does NOT modify the EITT reading — it tells you when to distrust it. This separation from the core observable is what makes it a legitimate process-control candidate.",
+      "evidence": {
+        "exp02_sealed": "All 10 states R² > 0.96. Coefficients: a always negative, b always positive (linear dominant).",
+        "pennsylvania_crossover": "First case where geometric FAILS but arithmetic PASSES at M=12",
+        "correlations": "a vs max_rel: -0.61, a vs zero_rate: -0.69, a vs H_bar: +0.41"
+      },
+      "open_points": ["Wider cross-domain calibration needed (currently only US energy)", "Threshold tuning for when the gap indicates genuine stress vs noise", "Whether the quadratic form holds in all domains or is energy-specific"],
+      "promotion_conditions": {
+        "to_L3": "Successful application to 3+ additional domains (geochemistry, financial, nuclear) with the same diagnostic power. Would validate the tuner as domain-general."
+      },
+      "demotion_conditions": ["Discovery that the gap is not monotonically informative — i.e., cases where a large gap does NOT indicate stress"],
+      "contamination_risk": "LOW — F17 is separate from the core EITT observable by design. The constraint is: tuner does NOT modify EITT reading."
+    },
+
+    "pll_correspondence": {
+      "claim": "The σ²_A parabola system maps onto a phase-locked loop architecture: σ²_A is the phase detector, dσ²_A/dt is the error signal, clr⊥clr' is the lock condition, 2a is the PLL gain, and residuals are phase noise.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "The correspondence is structurally beautiful and physically motivated by Peter's 35-year PLL engineering background. The vertex theorem makes the mathematics exact. But: the PLL correspondence is an ANALOGY. The mathematical structure (parabola, derivative, orthogonality) stands on its own; the PLL language organizes intuition but does not add proof. Currently L0 because analogy is ahead of proof.",
+      "evidence": {
+        "structural_mapping": "Every PLL component has a compositional counterpart (documented in HUF_FAST_REFRESH.json → pll_correspondence)",
+        "engineering_lineage": "Peter's 35 years tuning ultrasonic spray fluxers at USI Corporation — the human PLL",
+        "vertex_theorem_supports": "The mathematics of lock detection IS exact. The PLL label is the interpretation."
+      },
+      "open_points": ["The PLL is an analogy, not a theorem. Need to determine whether it adds predictive power beyond the bare mathematics.", "Risk of importing PLL-specific expectations (bandwidth, capture range, pull-in time) that may not have compositional counterparts."],
+      "promotion_conditions": {
+        "to_L1": "Demonstrate that PLL-specific predictions (e.g., capture range scales with curvature, pull-in time relates to data length) are quantitatively correct in compositional data. Would validate the analogy as more than language."
+      },
+      "demotion_conditions": ["Discovery that the PLL framing leads to incorrect predictions or misleading interpretations"],
+      "contamination_risk": "HIGH — the PLL analogy is emotionally resonant (founder's engineering DNA) and risks theory→method contamination. The mathematical claims must stand independently of the PLL language. The analogy must be clearly labeled as interpretive, not constitutive."
+    },
+
+    "mc4_fourth_monitoring_category": {
+      "claim": "Composition Monitoring (MC-4) is a distinct monitoring category alongside MC-1 Magnitude, MC-2 Identity, MC-3 Trend. No existing monitoring framework performs compositional change detection at the carrier level with formal perturbation-based drift measurement.",
+      "level": "L3",
+      "level_name": "validated_companion",
+      "justification": "This is the CoDaWork 2026 falsifiable claim. The four-defeat test is the standard for novelty. MC-4 has been validated across energy (EMBER), finance (NGFS), and geochemistry domains. It does not depend on EITT — it stands on CoDa operations alone (Aitchison distance, perturbation difference, drift flags). EITT adds the entropy invariance layer on top.",
+      "evidence": {
+        "four_defeats": ["No published system using Aitchison metric on energy-mix compositions to detect drift", "No published system measuring change as perturbation rather than arithmetic difference", "No published system at individual carrier level within the simplex", "No theoretical proof that CoDa adds no information beyond percentage-based monitoring"],
+        "cross_domain": ["EMBER (3 countries, 25 years)", "NGFS (35 scenarios)", "Geochemistry (40,666 rocks, 39 TAS types)"],
+        "literature_verification": "5-AI literature verification (Claude, ChatGPT, Grok, Gemini, Copilot) — no prior art found"
+      },
+      "open_points": ["The four-defeat test may be defeated at CoDaWork by someone who has done unpublished work in this space", "The monitoring category taxonomy (MC-1 through MC-4) is HUF's own naming; the community may not adopt it"],
+      "promotion_conditions": {
+        "to_L4": "Acceptance at CoDaWork 2026, peer validation that the monitoring gap is real, and no defeat of the four-defeat test"
+      },
+      "demotion_conditions": ["Publication of prior art that performs carrier-level perturbation-based compositional monitoring"],
+      "contamination_risk": "LOW — the claim is narrowly scoped and falsifiable"
+    },
+
+    "huf_gov_open_loop_doctrine": {
+      "claim": "HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment. The instrument reads, never actuates.",
+      "level": "L4",
+      "level_name": "canonical_method_component",
+      "justification": "This is architectural doctrine, not an empirical claim. It defines HOW HUF operates. The five clauses are load-bearing: tool, verifiably clean, known certainty, expert interpretation, expert modification. The GOV/CLS fork originates from the ADAC moment in acoustic engineering — the decision NOT to close the feedback loop automatically.",
+      "evidence": {
+        "definition_source": "Peter Higgins, 2026-04-15",
+        "architectural_origin": "ADAC moment in DADC-DADI-ADAC chain (RWA lineage)",
+        "implementation": "Every HUF output is a diagnostic with documented precision bounds. No automatic actuation."
+      },
+      "open_points": ["Whether the doctrine scales to real-time operational monitoring (latency requirements)", "Whether the strict open-loop constraint is too restrictive for some applications"],
+      "promotion_history": ["Architectural principle from ADAC moment (2025)", "Formal definition locked 2026-04-15"],
+      "demotion_conditions": ["Not applicable — this is a design choice, not an empirical claim. It can be revised but not falsified."],
+      "contamination_risk": "NONE — doctrine is not science"
+    },
+
+    "nine_quantum_isomorphisms": {
+      "claim": "Nine structural isomorphisms exist between quantum information theory and Compositional Data Analysis: basis ambiguity ↔ log-ratio choice, pointer states ↔ balances, partial trace ↔ subcompositional closure, unitarity ↔ EITT, external interference ↔ subcompositional recalculation, no-cloning ↔ subcompositional incoherence, multiple observers ↔ multiple IAMs, non-contact injection ↔ perturbation, ground state ↔ isotropic barycenter.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "Structurally suggestive — every mapping has a clear mathematical counterpart. But: structural similarity does not imply physical or causal connection. The isomorphisms may be consequences of both theories operating on constrained systems (simplex/Hilbert space) rather than evidence of deep unity. Currently L0 — interesting, not yet influential.",
+      "evidence": {
+        "mapping_table": "9 explicit correspondences documented in HUF_FAST_REFRESH.json → nine_isomorphisms",
+        "mathematical_bridge": "Aitchison metric ↔ Fisher-Rao metric ↔ Ruppeiner thermodynamic metric (exact mathematical correspondence)"
+      },
+      "open_points": ["Whether the isomorphisms predict anything new in either domain", "Whether this is a genuine structural insight or a category error (mapping syntax, not semantics)", "CoDaWork presentation strategy explicitly HIDES these — they are not ready for public claims"],
+      "promotion_conditions": {
+        "to_L1": "Demonstrate that a quantum-inspired prediction (derived via the isomorphism) is confirmed in compositional data, or vice versa"
+      },
+      "demotion_conditions": ["Demonstration that the isomorphisms are generic consequences of working with constrained positive vectors and have no domain-specific content"],
+      "contamination_risk": "HIGH — the quantum connection is intellectually exciting and risks theory→method contamination. Must be kept separate from the core EITT claim. The CoDaWork strategy (hide it) is correct."
+    },
+
+    "bell_test_violation": {
+      "claim": "Compositional CHSH inequality is violated (S = 2.2018, classical bound = 2.0, 12.31% violation). Gas acts as crossover frequency / entangling gate. All 35 NGFS scenarios are statistically significant (p < 0.001).",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "The violation is real in the mathematical sense — the computed S value exceeds 2.0. But: the physical interpretation is controversial. Whether compositional data can meaningfully 'violate' a Bell inequality designed for quantum systems is an open question. The violation may measure non-classical correlations in the compositional structure, or it may be a mathematical artifact of applying quantum formalism to classical data. Currently L0 — observed, not understood.",
+      "evidence": {
+        "computation": "S = 2.2018 on MESSAGEix Net Zero scenario. All 35 scenarios significant.",
+        "gas_role": "Gas consistently acts as the crossover carrier"
+      },
+      "open_points": ["Physical meaning of a Bell violation in classical compositional data", "Whether this measures anything beyond pairwise correlation structure", "Whether calling it a 'Bell test' is misleading"],
+      "promotion_conditions": {
+        "to_L1": "Published theoretical analysis explaining what compositional Bell violation measures, distinct from standard correlation"
+      },
+      "demotion_conditions": ["Proof that the violation is a trivial consequence of compositional closure (i.e., any closed simplex data will violate)"],
+      "contamination_risk": "VERY HIGH — the Bell test is the single highest contamination risk in the framework. If compositional closure generically produces violations, the finding is trivial. If not, it's profound. Until resolved, it MUST NOT influence any other claim. The CoDaWork strategy (hide it) is correct."
+    },
+
+    "nuclear_stability_corridor": {
+      "claim": "EITT × SEMF compositional analysis supports a broad superheavy stability corridor at Z ≈ 114-126, N ≈ 184. The σ²_A landscape shows the superheavy region as a low-variance basin.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "The corridor prediction aligns with established shell-model predictions (not novel). The SEMF compositional lens provides a new VIEW of known physics but has not yet produced predictions that go beyond existing theory. The σ²_A landscape is interesting but has not been independently validated.",
+      "evidence": {
+        "semf_decomposition": "4-part composition [Volume, Surface, Coulomb, Asymmetry] on simplex. AME2020 data, 3554 nuclides.",
+        "sigma2_A_landscape": "Superheavy region A=210-295 is smooth and low-variance",
+        "external_alignment": "Corridor matches shell-model predictions (N=184, Z=114-126) — consistent but not independently predictive"
+      },
+      "open_points": ["Has not produced predictions beyond existing shell theory", "Single-isotope claims require shell-theory and null-model checks", "Resolution class is corridor-level only"],
+      "promotion_conditions": {
+        "to_L1": "Produce a prediction from the SEMF compositional lens that differs from standard shell-model predictions AND is subsequently confirmed"
+      },
+      "demotion_conditions": ["Demonstration that the σ²_A landscape adds no information beyond what SEMF alone provides (i.e., the compositional treatment is redundant)"],
+      "contamination_risk": "MEDIUM — nuclear predictions carry reputational risk if overclaimed. The resolution_class declaration is the safety fence."
+    },
+
+    "prime_2_staircase_mechanism": {
+      "claim": "The prime number 2 IS the staircase mechanism along the valley of stability. Every step is dN = 0, 2, 4, or 6 — all multiples of 2. This is structural identity (pairing energy), not statistical correlation.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "The observation is correct — pairing energy enforces even-N steps. But this is KNOWN PHYSICS (nuclear pairing) rediscovered through the compositional lens. The contribution is the compositional framing, not the underlying fact. The prime-Z enrichment hypothesis was tested and FAILED (p=0.85).",
+      "evidence": {
+        "step_statistics": "117 steps encoded as dN/2: {0, 1, 2, 3}. Dominant step: dN=2 (56.4%)",
+        "null_test": "Prime-Z enrichment: p=0.85 Monte Carlo — NOT significant",
+        "known_physics": "Nuclear pairing energy has been understood since the SEMF"
+      },
+      "open_points": ["Whether the compositional framing adds insight beyond restating known pairing physics"],
+      "promotion_conditions": {
+        "to_L1": "Demonstrate that the compositional staircase analysis reveals structure NOT explained by standard pairing energy alone"
+      },
+      "demotion_conditions": ["Already partially demoted: prime-Z-as-ranker is dead (p=0.85). The observation of 2-as-mechanism is correct but may be trivial."],
+      "contamination_risk": "LOW after null test — the false hypothesis was killed cleanly"
+    },
+
+    "extreme_extrapolation_coulomb_cliff": {
+      "claim": "SEMF compositional lens pushed to Z=1500 shows: Coulomb dominance transition at Z≈419, absolute instability (B/A negative) at Z≈363, practical instability at Z≈347. Z=114-126 is the last comfortable zone before Coulomb wins.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "Pure extrapolation of the SEMF formula far beyond its domain of validity. Labeled L0 explicitly because: (a) SEMF was calibrated on known nuclei, not Z>118, (b) no shell effects, pairing effects, or beyond-mean-field corrections are included, (c) the purpose is illumination ('the unrealistic illuminates the realistic'), not prediction.",
+      "evidence": {
+        "semf_extrapolation": "Calculations from first principles using SEMF formula",
+        "z522_characterization": "Z=522, N=1146, A=1668. B/A=1.157 MeV. Lifetime < 10⁻²⁰ seconds."
+      },
+      "open_points": ["SEMF is unreliable beyond Z≈120 without shell corrections", "These are illustrative, not predictive"],
+      "promotion_conditions": {
+        "to_L1": "Not expected to promote — this is permanently L0 illumination"
+      },
+      "demotion_conditions": ["Not applicable — labeled as illustrative from inception"],
+      "contamination_risk": "LOW if kept as illumination. HIGH if ever cited as prediction."
+    },
+
+    "cross_boundary_handshakes": {
+      "claim": "EITT can be applied across the nuclear stability boundary into QCD (QGP freeze-out), astrophysics (neutron star EOS, r-process), and particle physics (quark flavor simplex). Six handshake mechanisms defined.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "Two experiments completed: EXP-07 QGP freeze-out (EITT held at 0.27% — impressive), EXP-08 neutron star (EITT broke at 6.7% — correct, drift flag at muon threshold). These are promising but: (a) only 2 of 6 handshakes tested, (b) data provenance needs strengthening (compilation from multiple experiments), (c) independent reproduction needed.",
+      "evidence": {
+        "exp07": "QGP freeze-out: EITT Δ = 0.27% across nuclear-quark boundary. 8 collision energies, 7 hadron species.",
+        "exp08": "Neutron star: EITT Δ = 6.7% — correctly fails. Drift flag at muon threshold n_B ≈ 0.14 fm⁻³."
+      },
+      "open_points": ["4 of 6 handshakes untested", "Data compilation issues (mixed sources)", "Independent reproduction by domain experts needed", "Whether EITT adds diagnostic value beyond existing methods in these domains"],
+      "promotion_conditions": {
+        "to_L1": "Successful testing of 2+ additional handshakes with clean data. Publication/preprint with domain expert co-author."
+      },
+      "demotion_conditions": ["Demonstration that EITT provides no additional insight beyond existing domain-specific methods in QCD/astrophysics"],
+      "contamination_risk": "MEDIUM — cross-boundary claims are high-visibility and easy to overclaim. The resolution_class must be maintained."
+    },
+
+    "higgins_operator_h1": {
+      "claim": "H1|ψ⟩ = μ(|ψ⟩) · u where μ(|ψ⟩) = ⟨u|P|u⟩ is directional coherence. The unity-normalization + directional-coherence preservation as an abstract operator on Hilbert space. The Σ|ψ_i| = 1 invariant is the simplex constraint in abstract form.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "The H1 paper (Feb 2026) is a broad generalization that has not been peer-reviewed or independently validated. Applications span from CCC to urban infrastructure to EUV lithography — the breadth is a risk flag (too many domains without depth in any). Currently L0: the operator is well-defined mathematically but its utility beyond being an abstract restatement of simplex operations is unproven.",
+      "evidence": {
+        "document": "RogueWaveAudio/The Higgins Operator H1 101.pdf (local working folder ONLY, NOT in public repo)"
+      },
+      "open_points": ["Not peer-reviewed", "Not publicly available", "Whether H1 adds computational power beyond standard CoDa operations", "Whether the Hilbert space framing is necessary or merely elegant"],
+      "promotion_conditions": {
+        "to_L1": "Publication or preprint with worked examples showing H1 solves a problem that standard CoDa cannot"
+      },
+      "demotion_conditions": ["Demonstration that H1 is algebraically equivalent to existing CoDa operations with no added capability"],
+      "contamination_risk": "MEDIUM — the Hilbert space framing imports quantum language that may not be warranted for classical compositional data"
+    },
+
+    "eitt_slope_diagnostic": {
+      "claim": "The EITT slope (entropy change rate across compression ratios) is a constraint detector: flat means locked, rising means losing lock. Gives richer interpretation than pass/fail alone.",
+      "level": "L3",
+      "level_name": "validated_companion",
+      "justification": "Identified as one of the strongest discoveries of EXP-04. Cross-domain evidence supports it. The slope does not modify the core EITT observable — it reads the rate of change. Validated in energy, geochemistry, and nuclear domains.",
+      "evidence": {
+        "exp04": "Microphone Valley Response — slope behaviour documented",
+        "cross_domain": "Consistent slope→lock interpretation across multiple domains",
+        "chatgpt_assessment": "Rated as 'validated_companion' in methods table"
+      },
+      "open_points": ["Need canonical smoothing, derivative, and reporting conventions", "Need more formal theory linking slope to specific physical mechanisms"],
+      "promotion_conditions": {
+        "to_L4": "Standardized reporting convention adopted and validated across 5+ domains with published conventions"
+      },
+      "demotion_conditions": ["Discovery that the slope provides no information beyond what the pass/fail threshold already captures"],
+      "contamination_risk": "LOW — the slope is a read-only diagnostic"
+    },
+
+    "two_pass_instrument": {
+      "claim": "Pass 1 (EITT classification) + Pass 2 (integrity resolution via F17 and operating envelope) improves blind-test performance from 17/20 to 18/20 while reporting resolution boundaries.",
+      "level": "L2",
+      "level_name": "process_control_candidate",
+      "justification": "Demonstrated improvement in blind testing. The architecture separates science (Pass 1) from integrity (Pass 2). But: standard operating rules are not yet frozen, and broader independent domain retesting is needed.",
+      "evidence": {
+        "blind_test": "Pass 1: 17/20. Pass 2: 18/20 with resolution boundaries reported.",
+        "architecture": "Science signal and integrity channel remain separate"
+      },
+      "open_points": ["Standard operating rules not yet frozen", "More independent domain retesting needed"],
+      "promotion_conditions": {
+        "to_L3": "Frozen operating rules, published protocol, independent reproduction on 3+ new domains"
+      },
+      "demotion_conditions": ["Demonstration that Pass 2 adds no value beyond Pass 1 across a representative sample of domains"],
+      "contamination_risk": "LOW — the architecture explicitly separates science from integrity"
+    },
+
+    "isotropic_principle": {
+      "claim": "The geometry of the simplex exists before the signal. The barycenter (1/D, ..., 1/D) is the ground state. Every departure is a signal; every return is relaxation. The structure is there before the measurement.",
+      "level": "L4",
+      "level_name": "canonical_method_component",
+      "justification": "This is design philosophy inherited from acoustic engineering (omnidirectional radiation at long wavelengths). In CoDa terms, it restates that the maximum-entropy composition is the natural reference point. Not controversial — it's a framing of established CoDa concepts.",
+      "evidence": {
+        "acoustic_origin": "Omnidirectional radiation at wavelengths >> cabinet dimensions",
+        "coda_equivalent": "Maximum entropy = barycenter = Fréchet mean of uniform = the natural reference"
+      },
+      "open_points": [],
+      "promotion_history": ["Design principle from RWA acoustic engineering", "Adopted as HUF founding principle"],
+      "demotion_conditions": ["Not applicable — this is a design principle, not a falsifiable claim"],
+      "contamination_risk": "NONE"
+    },
+
+    "hivp_regression_chain": {
+      "claim": "Every new DUT (domain under test) may extend the theory only if the entire prior chain still passes. No forward-only modifications.",
+      "level": "L4",
+      "level_name": "canonical_method_component",
+      "justification": "This is methodology, not science. It is the application of regression testing (software engineering) to scientific method development. The value is in preventing contamination of established results by new work. Demonstrated through the experiment chain EXP-01 through EXP-08.",
+      "evidence": {
+        "experiment_chain": "EXP-01 through EXP-08 all maintain backward compatibility",
+        "sealed_experiments": "EXP-01 and EXP-02 sealed at FIXED POINT v3.2 — future work cannot modify their conclusions"
+      },
+      "open_points": ["Whether the regression chain is practical as the domain count grows (computational cost of re-running all prior DUTs)"],
+      "promotion_history": ["Established as HIVP during ChatGPT collaboration 2026-04-17"],
+      "demotion_conditions": ["Not applicable — this is methodology"],
+      "contamination_risk": "NONE — this IS the anti-contamination mechanism"
+    },
+
+    "three_diagnostic_protocol": {
+      "claim": "TV (Total Variation) + Aitchison distance + coherence residual together provide a robust diagnostic triple. Metric agreement = robustness; metric disagreement = diagnostic information about the type of compositional change.",
+      "level": "L3",
+      "level_name": "validated_companion",
+      "justification": "Inherited from the paired-measurement doctrine in acoustic engineering (a flat frequency response can hide directional redistribution). Validated in EMBER monitoring across 3 countries over 25 years. The three metrics capture different aspects of compositional change.",
+      "evidence": {
+        "ember_validation": "All drift flags in Germany, Japan, UK have physically interpretable causes when examined with all three metrics",
+        "acoustic_lineage": "Paired-measurement doctrine from RWA"
+      },
+      "open_points": ["Formalization of what disagreement patterns mean diagnostically", "Whether a fourth metric is needed for specific domain types"],
+      "promotion_conditions": {
+        "to_L4": "Published diagnostic guide with case studies showing how metric disagreement resolves ambiguous cases"
+      },
+      "demotion_conditions": ["Demonstration that a single metric (e.g., Aitchison distance alone) captures all diagnostic information"],
+      "contamination_risk": "LOW"
+    },
+
+    "energy_transition_parabola_dating": {
+      "claim": "The PLL parabola vertex dates the energy transition state-by-state. California's vertex at 2014 marks when solar+wind began to dominate. Minnesota's vertex extrapolates to 2037. Wisconsin's vertex extrapolates to 1951 (coal's peak).",
+      "level": "L1",
+      "level_name": "candidate_overlay",
+      "justification": "Demonstrated in EXP-02 sealed conclusion. 8/10 states show meaningful parabolic structure (R² > 0.3). The vertex dates are physically interpretable and match known policy/technology transitions. But: this is interpretation of the PLL parabola applied to one domain. Cross-domain validation of vertex-as-transition-date is needed.",
+      "evidence": {
+        "exp02_sealed": "California vertex 2014, Wisconsin vertex ~1951, Minnesota vertex ~2037. All physically interpretable.",
+        "r2_values": "8/10 states R² > 0.3. Two coal-dominated states correctly show no parabola."
+      },
+      "open_points": ["Whether vertex date has predictive value for future transitions", "Whether similar dating works in other domains (financial regime changes, geochemical differentiation sequences)"],
+      "promotion_conditions": {
+        "to_L2": "Demonstrate that vertex dates predict future transition acceleration/deceleration in held-out data"
+      },
+      "demotion_conditions": ["Demonstration that vertex dates are artifacts of the quadratic fit window rather than genuine transition markers"],
+      "contamination_risk": "LOW — clearly labeled as domain-specific interpretation"
+    },
+
+    "hydro_as_swing_carrier": {
+      "claim": "Hydro appears as the boundary species in 5 of 10 US states. Hydro's seasonal variability makes it the natural 'swing vote' in energy compositions.",
+      "level": "L1",
+      "level_name": "candidate_overlay",
+      "justification": "Discovered independently through the DADC chain in EXP-02. Physically interpretable: hydro is subject to weather/seasonal variability that other baseload carriers are not. But: this is one domain (US energy) and the DADC chain itself is L0.",
+      "evidence": {
+        "exp02_sealed": "Hydro is boundary species in California, Minnesota, Texas, Pennsylvania, Rhode Island (5/10 states)",
+        "physical_interpretation": "Hydro variability is driven by precipitation/snowmelt — independent of policy/technology"
+      },
+      "open_points": ["Whether similar 'swing carrier' identification works in other energy datasets (European, Asian)", "The DADC chain that produced this finding is itself L0"],
+      "promotion_conditions": {
+        "to_L2": "Replication of swing-carrier identification in independent energy datasets by domain experts"
+      },
+      "demotion_conditions": ["Demonstration that the DADC chain's boundary species identification is an artifact"],
+      "contamination_risk": "LOW — narrowly scoped domain finding"
+    },
+
+    "lithium_problem_independent_discovery": {
+      "claim": "The DADC chain independently identified ⁷Li as the highest-contamination species in Big Bang Nucleosynthesis (C/S = 2.525), rediscovering the cosmological lithium problem without being told it exists.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "justification": "Compelling narrative — the chain found a known unsolved problem independently. But: (a) BBN has very few species, so finding the outlier may not be difficult, (b) the DADC chain itself is L0, (c) 'finding a known problem' is not the same as 'solving a known problem'. The discovery is diagnostic, not predictive.",
+      "evidence": {
+        "c_s_ratio": "⁷Li C/S = 2.525 — highest of any species in any domain tested",
+        "known_problem": "The cosmological lithium problem is one of the major unsolved problems in BBN"
+      },
+      "open_points": ["Whether the DADC C/S ratio adds any information beyond 'Li is discrepant' (which is already known)", "Whether this could work as a blind discovery tool for other domains with unknown anomalies"],
+      "promotion_conditions": {
+        "to_L1": "Successful blind discovery of an UNKNOWN anomaly in a domain, subsequently confirmed by domain experts"
+      },
+      "demotion_conditions": ["Demonstration that C/S ratio is simply a transformation of existing discrepancy measures"],
+      "contamination_risk": "MEDIUM — the narrative is powerful ('we found the lithium problem!') and risks overclaiming. The finding is real but its significance needs calibration."
+    }
+  },
+
+  "summary_statistics": {
+    "total_claims": 22,
+    "by_level": {
+      "L5_core_science": 3,
+      "L4_canonical_method": 5,
+      "L3_validated_companion": 3,
+      "L2_process_control_candidate": 2,
+      "L1_candidate_overlay": 3,
+      "L0_exploratory_pattern": 6
+    },
+    "contamination_risk_summary": {
+      "NONE": 5,
+      "LOW": 8,
+      "MEDIUM": 5,
+      "HIGH": 3,
+      "VERY_HIGH": 1
+    },
+    "highest_risk_claims": [
+      "bell_test_violation (VERY HIGH — may be trivial consequence of closure)",
+      "pll_correspondence (HIGH — analogy ahead of proof, emotionally resonant)",
+      "nine_quantum_isomorphisms (HIGH — attractive but unvalidated)",
+      "dadc_dadi_adac_contamination_chain (HIGH — lineage emotion risk)"
+    ],
+    "strongest_claims": [
+      "EITT_entropy_invariance (L5 — core science, 8+ domains, sealed experiments)",
+      "geometric_mean_superiority (L5 — 40 years CoDa theory + new empirical proof)",
+      "simplex_closure_and_coda_geometry (L5 — established mathematics since 1982)"
+    ]
+  },
+
+  "changelog": [
+    {
+      "date": "2026-04-18",
+      "version": "1.0",
+      "action": "Initial classification of all 22 claims across the HUF programme",
+      "author": "Peter Higgins / Claude",
+      "notes": "First formal claim-level classification. Based on full repo audit including sealed EXP-01 and EXP-02 conclusions, ChatGPT precedent/lineage briefing, FAST_REFRESH v3.2, and MASTER_LINEAGE v1.2. Every claim classified against the HIVIP promotion ladder with evidence, open points, promotion/demotion conditions, and contamination risk."
+    }
+  ]
+}

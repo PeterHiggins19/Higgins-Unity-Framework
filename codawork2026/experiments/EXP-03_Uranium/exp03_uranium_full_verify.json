@@ -1,0 +1,528 @@
+{
+  "_meta": {
+    "type": "EXP-03-REVISED-FULL-VERIFY",
+    "experiment_id": "EXP-03",
+    "version": "2.0",
+    "created": "2026-04-18T13:20:30.177677",
+    "author": "Peter Higgins / Claude",
+    "fixed_point": "v3.2",
+    "data_source": "AME2020 Atomic Mass Evaluation (3,554 nuclides)",
+    "title": "The Uranium Test \u2014 Full PLL-EITT Verification"
+  },
+  "part_a_decay_chains": {
+    "description": "2-simplex (Z/A, N/A) decay chains \u2014 true parametric walks",
+    "chains": {
+      "U-238": {
+        "N": 15,
+        "D": 2,
+        "closure": true,
+        "clr_zero_sum": true,
+        "H_bar": 0.6687426090582769,
+        "sigma2_A_mean": 0.050042657321747945,
+        "sigma2_A_range": [
+          0.041100488473291334,
+          0.05666367843546623
+        ],
+        "eitt": [
+          {
+            "M": 2,
+            "n_blocks": 7,
+            "delta_geom": -0.00024385364690926448,
+            "relative_geom": 0.00036464499735205914,
+            "delta_arith": -0.00024339218226454573,
+            "relative_arith": 0.00036395494913549854,
+            "pass": true
+          },
+          {
+            "M": 3,
+            "n_blocks": 5,
+            "delta_geom": 5.3508744769503735e-06,
+            "relative_geom": 8.001396059517538e-06,
+            "delta_arith": 5.930964292577556e-06,
+            "relative_arith": 8.868829669653528e-06,
+            "pass": true
+          },
+          {
+            "M": 4,
+            "n_blocks": 3,
+            "delta_geom": -0.000822112069998715,
+            "relative_geom": 0.0012293400463242695,
+            "delta_arith": -0.0008205183285270312,
+            "relative_arith": 0.0012269568551680665,
+            "pass": true
+          },
+          {
+            "M": 5,
+            "n_blocks": 3,
+            "delta_geom": 1.455081101886524e-05,
+            "relative_geom": 2.1758462556103142e-05,
+            "delta_arith": 1.6091009993557392e-05,
+            "relative_arith": 2.4061589280540605e-05,
+            "pass": true
+          }
+        ],
+        "max_relative": 0.0012293400463242695,
+        "eitt_verdict": "PASS",
+        "pll": {
+          "a": -0.02163773840720937,
+          "b": 0.012443547285910773,
+          "c": 0.05129105527175771,
+          "R2": 0.6176257098284146,
+          "shape": "\u2229 (hill)",
+          "t_vertex": 0.2875426962774624,
+          "discriminator": -0.04327547681441874
+        },
+        "noise_squeeze": [
+          {
+            "order": 2,
+            "residual_var": 7.059381916093898e-06,
+            "squeeze_pct": 0.0,
+            "autocorr_lag1": 0.4595139791363752
+          },
+          {
+            "order": 3,
+            "residual_var": 5.177607065817981e-06,
+            "squeeze_pct": 26.656368399418472,
+            "autocorr_lag1": 0.1900051770286575
+          },
+          {
+            "order": 4,
+            "residual_var": 3.6479768970547154e-06,
+            "squeeze_pct": 48.324415077499914,
+            "autocorr_lag1": -0.06314625576797013
+          },
+          {
+            "order": 5,
+            "residual_var": 2.282262309466906e-06,
+            "squeeze_pct": 67.67050803323403,
+            "autocorr_lag1": -0.04113804291657946
+          }
+        ],
+        "final_squeeze_pct": 67.67050803323403,
+        "dadc": {
+          "proton_CS": 1.0,
+          "neutron_CS": 0.9999999999999998,
+          "contam_entropy": 1.0
+        }
+      },
+      "Th-232": {
+        "N": 11,
+        "D": 2,
+        "closure": true,
+        "clr_zero_sum": true,
+        "H_bar": 0.6690425472378964,
+        "sigma2_A_mean": 0.0494072148242049,
+        "sigma2_A_range": [
+          0.04435519579039657,
+          0.053894924435497156
+        ],
+        "eitt": [
+          {
+            "M": 2,
+            "n_blocks": 5,
+            "delta_geom": -0.00015250632539853815,
+            "relative_geom": 0.0002279471253781269,
+            "delta_arith": -0.00015213565836769138,
+            "relative_arith": 0.00022739309928161475,
+            "pass": true
+          },
+          {
+            "M": 3,
+            "n_blocks": 3,
+            "delta_geom": -0.00043630693495622097,
+            "relative_geom": 0.0006521363054674011,
+            "delta_arith": -0.0004357732492288324,
+            "relative_arith": 0.000651338619685545,
+            "pass": true
+          },
+          {
+            "M": 4,
+            "n_blocks": 2,
+            "delta_geom": -0.0005332720918346245,
+            "relative_geom": 0.0007970675318575892,
+            "delta_arith": -0.0005321738247975327,
+            "relative_arith": 0.0007954259814933769,
+            "pass": true
+          },
+          {
+            "M": 5,
+            "n_blocks": 2,
+            "delta_geom": -0.00014037424067026016,
+            "relative_geom": 0.000209813622840262,
+            "delta_arith": -0.00013868350518941863,
+            "relative_arith": 0.00020728652574035164,
+            "pass": true
+          }
+        ],
+        "max_relative": 0.0007970675318575892,
+        "eitt_verdict": "PASS",
+        "pll": {
+          "a": -0.0025491702333881494,
+          "b": -0.002632644366397834,
+          "c": 0.05161574658908967,
+          "R2": 0.34997612845588333,
+          "shape": "\u2229 (hill)",
+          "t_vertex": -0.5163728047496337,
+          "discriminator": -0.005098340466776299
+        },
+        "noise_squeeze": [
+          {
+            "order": 2,
+            "residual_var": 5.081317130168994e-06,
+            "squeeze_pct": 0.0,
+            "autocorr_lag1": 0.345841575537342
+          },
+          {
+            "order": 3,
+            "residual_var": 3.6344536084269287e-06,
+            "squeeze_pct": 28.474182671097047,
+            "autocorr_lag1": -0.0747043829715243
+          },
+          {
+            "order": 4,
+            "residual_var": 3.631610202974359e-06,
+            "squeeze_pct": 28.530140710710196,
+            "autocorr_lag1": -0.07707988191578706
+          },
+          {
+            "order": 5,
+            "residual_var": 3.097403818470186e-07,
+            "squeeze_pct": 93.90432885977505,
+            "autocorr_lag1": -0.3565912871584203
+          }
+        ],
+        "final_squeeze_pct": 93.90432885977505,
+        "dadc": {
+          "proton_CS": 1.0000000000000002,
+          "neutron_CS": 0.9999999999999998,
+          "contam_entropy": 1.0
+        }
+      },
+      "U-235": {
+        "N": 12,
+        "D": 2,
+        "closure": true,
+        "clr_zero_sum": true,
+        "H_bar": 0.6694891786653238,
+        "sigma2_A_mean": 0.048468482891188415,
+        "sigma2_A_range": [
+          0.04435519579039657,
+          0.053087662873066516
+        ],
+        "eitt": [
+          {
+            "M": 2,
+            "n_blocks": 6,
+            "delta_geom": 4.540790439766518e-06,
+            "relative_geom": 6.782470254140507e-06,
+            "delta_arith": 5.025793413993007e-06,
+            "relative_arith": 7.506907615762062e-06,
+            "pass": true
+          },
+          {
+            "M": 3,
+            "n_blocks": 4,
+            "delta_geom": 6.207007603786785e-06,
+            "relative_geom": 9.271259045830903e-06,
+            "delta_arith": 6.858840249202025e-06,
+            "relative_arith": 1.024488590372085e-05,
+            "pass": true
+          },
+          {
+            "M": 4,
+            "n_blocks": 3,
+            "delta_geom": 1.2314284017489463e-05,
+            "relative_geom": 1.839355199443089e-05,
+            "delta_arith": 1.3610330163560391e-05,
+            "relative_arith": 2.0329425175614627e-05,
+            "pass": true
+          },
+          {
+            "M": 5,
+            "n_blocks": 2,
+            "delta_geom": -0.00029889605259836305,
+            "relative_geom": 0.0004464538966772166,
+            "delta_arith": -0.0002979564641717447,
+            "relative_arith": 0.0004450504558800233,
+            "pass": true
+          }
+        ],
+        "max_relative": 0.0004464538966772166,
+        "eitt_verdict": "PASS",
+        "pll": {
+          "a": -0.008944707179948384,
+          "b": 0.00762154974122313,
+          "c": 0.04777480294692253,
+          "R2": 0.13682611775260267,
+          "shape": "\u2229 (hill)",
+          "t_vertex": 0.4260368499434271,
+          "discriminator": -0.017889414359896768
+        },
+        "noise_squeeze": [
+          {
+            "order": 2,
+            "residual_var": 4.921998774051276e-06,
+            "squeeze_pct": 0.0,
+            "autocorr_lag1": 0.14219705703664998
+          },
+          {
+            "order": 3,
+            "residual_var": 3.635159465242343e-06,
+            "squeeze_pct": 26.144649112737195,
+            "autocorr_lag1": -0.2418942529086181
+          },
+          {
+            "order": 4,
+            "residual_var": 3.6338542066682838e-06,
+            "squeeze_pct": 26.171167985129863,
+            "autocorr_lag1": -0.24614620738659526
+          },
+          {
+            "order": 5,
+            "residual_var": 2.4319536584606703e-06,
+            "squeeze_pct": 50.59012059730888,
+            "autocorr_lag1": -0.19504193191513744
+          }
+        ],
+        "final_squeeze_pct": 50.59012059730888,
+        "dadc": {
+          "proton_CS": 1.0,
+          "neutron_CS": 1.0,
+          "contam_entropy": 1.0
+        }
+      }
+    }
+  },
+  "part_b_semf_valley": {
+    "description": "4-simplex [Volume, Surface, Coulomb, Asymmetry] along valley of stability",
+    "n_nuclides": 117,
+    "Z_range": [
+      2,
+      118
+    ],
+    "D": 4,
+    "carriers": [
+      "Volume",
+      "Surface",
+      "Coulomb",
+      "Asymmetry"
+    ],
+    "H_bar": 0.9000386572515261,
+    "sigma2_A": {
+      "mean": 3.938137612467859,
+      "std": 13.39606574323791,
+      "min": 0.9851839788140211,
+      "max": 87.06379992116878
+    },
+    "eitt": [
+      {
+        "M": 2,
+        "n_blocks": 58,
+        "delta_geom": -0.002170282448150873,
+        "relative_geom": 0.0024113213701046207,
+        "delta_arith": -0.0002567813373210992,
+        "relative_arith": 0.0002853003426599917,
+        "gap": 0.002126021027444629,
+        "pass": true
+      },
+      {
+        "M": 3,
+        "n_blocks": 39,
+        "delta_geom": -0.002670146420096997,
+        "relative_geom": 0.0029667019283937204,
+        "delta_arith": 0.00048066902109744625,
+        "relative_arith": 0.0005340537511636211,
+        "gap": 0.0024326481772300994,
+        "pass": true
+      },
+      {
+        "M": 4,
+        "n_blocks": 29,
+        "delta_geom": -0.0031739710921044884,
+        "relative_geom": 0.0035264830755124842,
+        "delta_arith": -6.940039664427022e-05,
+        "relative_arith": 7.710823983516465e-05,
+        "gap": 0.0034493748356773197,
+        "pass": true
+      },
+      {
+        "M": 6,
+        "n_blocks": 19,
+        "delta_geom": -0.005313967030769917,
+        "relative_geom": 0.005904154213772696,
+        "delta_arith": -0.001119520104346905,
+        "relative_arith": 0.0012438578002478423,
+        "gap": 0.004660296413524854,
+        "pass": true
+      },
+      {
+        "M": 12,
+        "n_blocks": 9,
+        "delta_geom": -0.010409573698193064,
+        "relative_geom": 0.01156569622240569,
+        "delta_arith": -0.004087487770178866,
+        "relative_arith": 0.0045414580109936,
+        "gap": 0.00702423821141209,
+        "pass": false
+      }
+    ],
+    "eitt_max_relative": 0.01156569622240569,
+    "eitt_verdict": "FAIL",
+    "pll": {
+      "a": 56.14122030491915,
+      "b": -70.67764405850669,
+      "c": 20.48255686722959,
+      "R2": 0.20076282763788367,
+      "shape": "\u222a (bowl)",
+      "Z_vertex": 75.01771021593207,
+      "t_vertex": 0.6294630191028626,
+      "sigma2_at_vertex": -1.7619247388429677,
+      "discriminator": 112.2824406098383,
+      "Q_factor": 9.375549616147046
+    },
+    "noise_squeeze": [
+      {
+        "order": 2,
+        "residual_var": 143.42676900633856,
+        "squeeze_pct": 0.0,
+        "autocorr_lag1": -0.16946786968583566,
+        "kurtosis": 23.634772637367913
+      },
+      {
+        "order": 3,
+        "residual_var": 129.76868852166777,
+        "squeeze_pct": 9.522685743598668,
+        "autocorr_lag1": -0.25420570777596846,
+        "kurtosis": 19.9609045916508
+      },
+      {
+        "order": 4,
+        "residual_var": 121.53417391300687,
+        "squeeze_pct": 15.263953336607738,
+        "autocorr_lag1": -0.30059082054277686,
+        "kurtosis": 18.959228816199168
+      },
+      {
+        "order": 5,
+        "residual_var": 117.68960497623829,
+        "squeeze_pct": 17.944463372080044,
+        "autocorr_lag1": -0.3137384003626623,
+        "kurtosis": 19.864926296075236
+      }
+    ],
+    "stochastic_core": 10.848483994376279,
+    "dadc": {
+      "per_species": {
+        "Volume": {
+          "xcorr": 0.7903536691460207,
+          "contam_magnitude": 88.24970941802657,
+          "C_S_ratio": 1.243504229434854
+        },
+        "Surface": {
+          "xcorr": 0.6493245556139388,
+          "contam_magnitude": 62.161701578159885,
+          "C_S_ratio": 0.8759047404355476
+        },
+        "Coulomb": {
+          "xcorr": 0.9273583214468957,
+          "contam_magnitude": 58.215461181137314,
+          "C_S_ratio": 0.8202992698178521
+        },
+        "Asymmetry": {
+          "xcorr": -0.831475592165291,
+          "contam_magnitude": 75.24738358820483,
+          "C_S_ratio": 1.0602917603117468
+        }
+      },
+      "boundary_species": "Volume",
+      "boundary_CS": 1.243504229434854,
+      "contamination_entropy_norm": 0.9901663159960323,
+      "dadi_signature": false,
+      "xcorr_matrix": [
+        [
+          1.0,
+          0.9972466707983682,
+          0.9583077454351504,
+          -0.9975028884431658
+        ],
+        [
+          0.9972466707983682,
+          1.0,
+          0.9594190727389155,
+          -0.997619507838008
+        ],
+        [
+          0.9583077454351503,
+          0.9594190727389155,
+          1.0,
+          -0.9744984462982517
+        ],
+        [
+          -0.9975028884431659,
+          -0.9976195078380081,
+          -0.9744984462982517,
+          1.0
+        ]
+      ]
+    },
+    "regions": {
+      "Light (Z=1-20)": {
+        "Z_range": [
+          1,
+          20
+        ],
+        "n_nuclides": 19,
+        "sigma2_A_mean": 16.771434574691142,
+        "sigma2_A_std": 30.12082404460814,
+        "sigma2_A_min": 1.8366773862048011,
+        "sigma2_A_max": 87.06379992116878
+      },
+      "Medium (Z=21-28)": {
+        "Z_range": [
+          21,
+          28
+        ],
+        "n_nuclides": 8,
+        "sigma2_A_mean": 2.4883420258740214,
+        "sigma2_A_std": 0.42608358313377026,
+        "sigma2_A_min": 1.9735264712141474,
+        "sigma2_A_max": 3.442596590316957
+      },
+      "Heavy (Z=29-82)": {
+        "Z_range": [
+          29,
+          82
+        ],
+        "n_nuclides": 54,
+        "sigma2_A_mean": 1.4995444445915904,
+        "sigma2_A_std": 0.39774463507614827,
+        "sigma2_A_min": 0.9851839788140211,
+        "sigma2_A_max": 2.5469225387640195
+      },
+      "Actinide (Z=83+)": {
+        "Z_range": [
+          83,
+          200
+        ],
+        "n_nuclides": 36,
+        "sigma2_A_mean": 1.145075209018604,
+        "sigma2_A_std": 0.07722554643331177,
+        "sigma2_A_min": 1.0342944285425653,
+        "sigma2_A_max": 1.399973452311007
+      }
+    }
+  },
+  "checklist": {
+    "decay_chains_all_pass": true,
+    "semf_valley_eitt": "FAIL",
+    "semf_pll_R2_above_0.3": false,
+    "decay_chain_closure": true,
+    "clr_zero_sum": true,
+    "boundary_species_identified": true,
+    "contamination_entropy_structured": false,
+    "noise_squeeze_positive": true,
+    "valley_squeeze_positive": true
+  },
+  "checks_passed": 6,
+  "checks_total": 9
+}

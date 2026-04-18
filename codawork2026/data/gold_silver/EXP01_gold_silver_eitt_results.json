@@ -1,0 +1,109 @@
+{
+  "experiment": "EXP-01",
+  "title": "EITT on Gold/Silver Ratio \u2014 338-year 2-simplex",
+  "date": "2026-04-16",
+  "data_source": "DATA/Commodities/gold_silver_ratio_enriched.csv",
+  "coverage": "1688-01-01 to 2026-02-20 (624 annual observations)",
+  "composition": "2-simplex: x_gold = R/(R+1), x_silver = 1/(R+1) where R = oz_silver/oz_gold",
+  "native_entropy": {
+    "mean": 0.12793941260645753,
+    "std": 0.07445431377594534
+  },
+  "decimation_results": {
+    "1": {
+      "n_blocks": 624,
+      "H_mean": 0.12793941260645753,
+      "H_std": 0.07445431377594534,
+      "delta_M": 0.0,
+      "abs_relative_change": 0.0
+    },
+    "2": {
+      "n_blocks": 312,
+      "H_mean": 0.1279028120934894,
+      "H_std": 0.07438023628682076,
+      "delta_M": -3.660051296813793e-05,
+      "abs_relative_change": 0.0002860769189297543
+    },
+    "3": {
+      "n_blocks": 208,
+      "H_mean": 0.12786911552478725,
+      "H_std": 0.07430456846794592,
+      "delta_M": -7.02970816702786e-05,
+      "abs_relative_change": 0.0005494560295232312
+    },
+    "5": {
+      "n_blocks": 124,
+      "H_mean": 0.128120215749766,
+      "H_std": 0.07436042086920489,
+      "delta_M": 0.00018080314330848335,
+      "abs_relative_change": 0.0014131934767016244
+    },
+    "10": {
+      "n_blocks": 62,
+      "H_mean": 0.12800589439902474,
+      "H_std": 0.0741393614850118,
+      "delta_M": 6.648179256721343e-05,
+      "abs_relative_change": 0.0005196349679337036
+    },
+    "20": {
+      "n_blocks": 31,
+      "H_mean": 0.12784458144191946,
+      "H_std": 0.0738580077123734,
+      "delta_M": -9.483116453806728e-05,
+      "abs_relative_change": 0.0007412193209747536
+    },
+    "50": {
+      "n_blocks": 12,
+      "H_mean": 0.12870974312730618,
+      "H_std": 0.07413354136268513,
+      "delta_M": 0.0007703305208486555,
+      "abs_relative_change": 0.0060210571953944894
+    }
+  },
+  "aitchison_variance": 0.1479046849403191,
+  "min_proportion_delta": 0.009450093541064283,
+  "era_analysis": {
+    "Pre-Industrial (1688-1799)": {
+      "n": 112,
+      "ratio_mean": 14.966964285714287,
+      "ratio_std": 0.2991650263821025,
+      "H_mean": 0.23418959143606918,
+      "delta_M2": -1.339546526146762e-06,
+      "delta_min": 0.05973715651135005
+    },
+    "Industrial Revolution (1800-1899)": {
+      "n": 100,
+      "ratio_mean": 17.464299999999998,
+      "ratio_std": 4.41083671314185,
+      "H_mean": 0.21542759713535822,
+      "delta_M2": -6.979464640677335e-06,
+      "delta_min": 0.027754648903691368
+    },
+    "Gold Standard (1900-1970)": {
+      "n": 71,
+      "ratio_mean": 43.87901408450704,
+      "ratio_std": 19.958095547952716,
+      "H_mean": 0.11921572443276324,
+      "delta_M2": -0.0011406498419941902,
+      "delta_min": 0.009924573243350535
+    },
+    "Post-Bretton Woods (1971-2000)": {
+      "n": 30,
+      "ratio_mean": 53.638000000000005,
+      "ratio_std": 19.500901415062845,
+      "H_mean": 0.10025347189728338,
+      "delta_M2": -0.00017327004547755542,
+      "delta_min": 0.01100957833314984
+    },
+    "21st Century (2001-2026)": {
+      "n": 311,
+      "ratio_mean": 82.85862241484128,
+      "ratio_std": 13.65352869620325,
+      "H_mean": 0.06620668463154095,
+      "delta_M2": -5.935547737782876e-05,
+      "delta_min": 0.009450093541064283
+    }
+  },
+  "max_relative_change": 0.0060210571953944894,
+  "verdict": "HOLDS"
+}
