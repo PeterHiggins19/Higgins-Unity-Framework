@@ -196,6 +196,13 @@
       "period": "2026-04-15 onward",
       "event": "Mission: push EITT to pain point and protect users from pain. Two poles: reveal hidden structure + establish safety fences. Seven tracks of work in EITT_PHASE_2_ROADMAP.md. First Grok lit-verification return (Novel for Penrose x CoDa) filed.",
       "phase_status": "ACTIVE \u2014 see PHASE_MARKERS.json P02"
+    },
+    {
+      "phase": "Programme complete \u2014 75 systems, 44 orders of magnitude",
+      "period": "2026-04-19",
+      "event": "EXP-10 (full sweep of mapped/untouched), EXP-11 (final four: dark matter, Z-chains, NS EOS, stellar sequence), EXP-12 (gravity deep study with GW150914/GW170817). Master inventory: 75 systems, 100% complete. The 93% universal entropy bound confirmed in gravitational wave phase budgets. No-hair theorem reframed as compositional minimum. Dark matter confinement at 10\u00b2\u2070 m mirrors QCD confinement at 10\u207b\u00b9\u2075 m across 35 orders of magnitude.",
+      "key_transition": "From 'the simplex might be the same everywhere' to 'the simplex IS the same everywhere \u2014 measured 75 times across 44 orders of magnitude'. The lineage from screwdriver (DADC) through simplex (CoDa) to universe (gravity) is complete.",
+      "phase_status": "COMPLETE \u2014 experimental programme. Phase 2 (hardening) continues."
     }
   ],
 
@@ -342,6 +349,22 @@
     "eitt_pll_noise_squeeze.py": {
       "ancestor": "PLL phase noise measurement + BTL noise floor characterisation",
       "relationship": "The stochastic core (irreducible noise floor after squeeze) is the compositional equivalent of the VCO phase noise floor that Peter measured in every PLL tuning session. The Allan variance of the residuals is the compositional equivalent of the timing jitter specification."
+    },
+    "exp12_gravity_deep.py": {
+      "ancestor": "DADC gain apportionment + Isotropic Principle + 93% bound from QCD",
+      "relationship": "The gravity study extends the compositional framework from electromagnetic/nuclear into pure gravitational domain. The gravity activation scale (~10⁷ m) is a DADC-style dimensional threshold — below it gravity contributes negligible compositional variance, above it gravity progressively dominates. The no-hair theorem reframed as compositional minimum is the Isotropic Principle applied to black holes: maximum gravitational compression → minimum entropy departure from uniformity."
+    },
+    "The_Gravity_of_the_Situation.docx": {
+      "ancestor": "HUF Executive Summary + DADC flagship paper format",
+      "relationship": "The gravity executive summary carries the engineering report DNA from the DADC-DADI paper and the Organic Digital Loudspeakers document. Format: findings → implications → testable predictions."
+    },
+    "HUF_Programme_Conclusion.docx": {
+      "ancestor": "Entire HUF arc from DADC (Dec 2024) through programme completion (Apr 2026)",
+      "relationship": "The programme conclusion is the capstone document. It seals 75 systems across 44 orders of magnitude, connecting Peter's basement lab acoustic measurements to gravitational wave astronomy. The full lineage: screwdriver → simplex → universe."
+    },
+    "exp09_master_inventory.py (updated)": {
+      "ancestor": "BTL calibration chain — every measurement registered and tracked",
+      "relationship": "The master inventory is the compositional equivalent of the BTL lab's calibration register. Every system studied, its status, its flaws, its opportunities. 75 entries, zero unmeasured. The lab is complete."
     }
   },
 
@@ -353,14 +376,16 @@
   },
 
   "status": {
-    "lineage_version": "1.2",
+    "lineage_version": "1.3",
     "established": "2026-04-15",
-    "last_updated": "2026-04-18",
+    "last_updated": "2026-04-19",
     "update_log": [
       "v1.0 \u2014 initial establishment with arc from Isotropic Principle through DADC-DADI-ADAC, BTL, H1, RSM, to HUF/EITT",
       "v1.0.1 \u2014 public RWA repo review added; five concept branches mapped to HUF counterparts",
       "v1.1 \u2014 canonical HUF-GOV definition noted (2026-04-15, Peter Higgins); Coimbra welcome package added to cross_reference_map; mature expression of ADAC fork identified",
-      "v1.2 \u2014 PLL-EITT discovery lineage added (2026-04-18). Three new cross-references: Experiment Journal (PLL engineering DNA), contamination DADC script (DADC-DADI-ADAC acoustic chain descendant), noise squeeze (PLL phase noise descendant). FIXED POINT v3.2."
+      "v1.2 \u2014 PLL-EITT discovery lineage added (2026-04-18). Three new cross-references: Experiment Journal (PLL engineering DNA), contamination DADC script (DADC-DADI-ADAC acoustic chain descendant), noise squeeze (PLL phase noise descendant). FIXED POINT v3.2.",
+      "v1.3 \u2014 Programme completion lineage (2026-04-19). EXP-10/11/12 added. Gravity study extends the framework from electromagnetic/nuclear into pure gravitational domain. 75 systems, 44 orders of magnitude, 100% coverage. Arc entry: 'Programme complete'. Cross-references: gravity executive summary, programme conclusion, exp12_gravity_deep.py.",
+      "v1.3.1 \u2014 Terminology stabilisation (2026-04-19). HUF_COMPLETE_REFERENCE.json added to ai-refresh chain as position 2 (after FAST_REFRESH, before MATHEMATICAL_ADDENDUM). Master glossary locks all 32 canonical acronyms, 9 named concepts, 15 formulas, 24 variables, 11 constants, 12 experiments, and 7 document standards. Drift corrections applied repo-wide: 12 corrections logged. Refresh chain expanded from 5 to 8 files."
     ],
     "next_update_trigger": "Addition of a new major current-repo document, or discovery of a further ancestor thread not yet mapped",
     "maintenance_responsibility": "Any AI working on the repo should add cross-reference entries when promoting new files, per the application_rule above"

@@ -21,6 +21,214 @@ Full PLL-EITT chain:
 Peter Higgins / Claude — 2026-04-18  FIXED POINT v3.2
 """
 
+# ═══════════════════════════════════════════════════════════════════════════════
+#  REFERENCES — Formal Academic Citations
+# ═══════════════════════════════════════════════════════════════════════════════
+#
+#  Compositional Data Analysis (CoDa):
+#    [1] J. Aitchison, "The Statistical Analysis of Compositional Data,"
+#        Monographs on Statistics and Applied Probability, Chapman & Hall,
+#        London, 1986. (Defines CLR, ALR, ILR transforms; simplex geometry;
+#        Aitchison variance; subcompositional coherence.)
+#    [2] J. Aitchison, "The statistical analysis of compositional data,"
+#        J. R. Stat. Soc. B, vol. 44, no. 2, pp. 139-177, 1982.
+#        (Original journal paper introducing the log-ratio approach.)
+#    [3] V. Pawlowsky-Glahn, J. J. Egozcue, R. Tolosana-Delgado,
+#        "Modeling and Analysis of Compositional Data," Wiley, 2015.
+#        (Modern treatment; Aitchison geometry on the simplex.)
+#
+#  Information Theory:
+#    [4] C. E. Shannon, "A Mathematical Theory of Communication,"
+#        Bell System Technical Journal, vol. 27, pp. 379-423, 623-656, 1948.
+#        (Defines Shannon entropy H = -sum(p_i * ln(p_i)); channel capacity;
+#        source coding theorem.)
+#
+#  Nuclear & Particle Physics:
+#    [5] C. F. von Weizsaecker, "Zur Theorie der Kernmassen,"
+#        Zeitschrift fuer Physik, vol. 96, pp. 431-458, 1935.
+#        (Semi-Empirical Mass Formula — SEMF — for nuclear binding energy.)
+#    [6] H. A. Bethe and R. F. Bacher, "Nuclear Physics A: Stationary
+#        States of Nuclei," Rev. Mod. Phys., vol. 8, pp. 82-229, 1936.
+#        (Extended SEMF; Bethe-Weizsaecker mass formula.)
+#    [7] N. Cabibbo, "Unitary Symmetry and Leptonic Decays,"
+#        Phys. Rev. Lett., vol. 10, pp. 531-533, 1963.
+#        (Cabibbo angle; origin of CKM quark mixing framework.)
+#    [8] M. Kobayashi and T. Maskawa, "CP-Violation in the Renormalizable
+#        Theory of Weak Interaction," Prog. Theor. Phys., vol. 49,
+#        pp. 652-657, 1973. (3x3 CKM matrix; CP violation; Nobel 2008.)
+#    [9] B. Pontecorvo, "Mesonium and Anti-mesonium," Sov. Phys. JETP,
+#        vol. 6, p. 429, 1957. (Neutrino oscillation hypothesis.)
+#   [10] Z. Maki, M. Nakagawa, and S. Sakata, "Remarks on the Unified
+#        Model of Elementary Particles," Prog. Theor. Phys., vol. 28,
+#        pp. 870-880, 1962. (PMNS neutrino mixing matrix.)
+#
+#  Fusion & Plasma Physics:
+#   [11] H.-S. Bosch and G. M. Hale, "Improved formulas for fusion
+#        cross-sections and thermal reactivities," Nucl. Fusion, vol. 32,
+#        pp. 611-631, 1992. (Parametric fits for D-T, D-D, D-He3, T-T, He3-He3.)
+#   [12] J. D. Lawson, "Some Criteria for a Power Producing Thermonuclear
+#        Reactor," Proc. Phys. Soc. B, vol. 70, pp. 6-10, 1957.
+#        (Lawson criterion: n*tau_E > threshold for ignition.)
+#
+#  Gravitational Physics:
+#   [13] R. C. Tolman, "Static Solutions of Einstein's Field Equations
+#        for Spheres of Fluid," Phys. Rev., vol. 55, pp. 364-373, 1939.
+#   [14] J. R. Oppenheimer and G. M. Volkoff, "On Massive Neutron Cores,"
+#        Phys. Rev., vol. 55, pp. 374-381, 1939.
+#        (Tolman-Oppenheimer-Volkoff equation for neutron star structure.)
+#   [15] B. P. Abbott et al. (LIGO/Virgo), "Observation of Gravitational
+#        Waves from a Binary Black Hole Merger," Phys. Rev. Lett., vol. 116,
+#        061102, 2016. (GW150914 — first direct detection.)
+#
+#  Higgins Unity Framework:
+#   [16] P. Higgins, "Higgins Unity Framework (HUF): Compositional Data
+#        Analysis across Physical Scales via the Entropy-Invariant Time
+#        Transformer," CoDaWork 2026 submission, 2026.
+#        (EITT, PLL, Higgins Decomposition, DADC/DADI, Vertex Theorem,
+#        93% Bound, SPPI, IFR Standard.)
+#
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+# ╔═══════════════════════════════════════════════════════════════════════════════╗
+# ║  SCIENTIFIC GLOSSARY — Higgins Unity Framework (HUF)                        ║
+# ║  Source of truth: ai-refresh/HUF_COMPLETE_REFERENCE.json v1.0               ║
+# ║  This block makes the experiment standalone and self-documenting.           ║
+# ╚═══════════════════════════════════════════════════════════════════════════════╝
+#
+# ── FRAMEWORK FOUNDATION ─────────────────────────────────────────────────────
+#
+#   HUF  = Higgins Unity Framework
+#          The overarching scientific framework connecting Compositional Data
+#          Analysis (CoDa) to cross-domain measurement. Author: Peter Higgins.
+#          Repository: github.com/PeterHiggins19/Higgins-Unity-Framework
+#
+#   CoDa = Compositional Data Analysis
+#          The mathematical framework for data that sums to a constant,
+#          developed by John Aitchison (1982/1986) and advanced by Egozcue,
+#          Pawlowsky-Glahn, and Tolosana-Delgado. Always written "CoDa"
+#          (capital C, lowercase o, capital D, lowercase a).
+#
+#   EITT = Entropy-Invariant Time Transformer
+#          Shannon entropy of compositional data is near-invariant under
+#          geometric-mean decimation across temporal resolutions.
+#          NOT "Time Transformation", NOT "Temporal Transform",
+#          NOT "Energy-Information Transfer Theory".
+#
+#   HUF-GOV = HUF Governance — open-loop observation layer
+#             The measurement path that observes but does not control.
+#             "A tool that produces a verifiably clean usable output to a
+#             known degree of certainty; the diagnostic of the output is
+#             open to interpretation by expert decision and open to
+#             modification by expert judgment." — Peter Higgins, 2026-04-15
+#
+
+# ── METHODOLOGY ───────────────────────────────────────────────────────────
+#
+#   PLL — TWO meanings in HUF (ALWAYS disambiguate):
+#     CIP = Compositional Integrity Protocol — 6 immutable rules:
+#         Rule 1: All roots computed on simplex carrier
+#         Rule 2: Simplex normalisation only
+#         Rule 3: RMS aggregator (p=2 locked)
+#         Rule 4: Every observation retained
+#         Rule 5: No new constants (6.02 dB, 115 Hz*m, 5.5-octave BW)
+#         Rule 6: Polarity alignment mandatory
+#     (2) Phase-locked loop ANALOGY — the sigma^2_A parabola maps onto
+#         PLL architecture from signal processing. The word 'analogy' is
+#         mandatory when using this meaning.
+#
+#   Contamination Doctrine — A new domain must not alter constants or
+#     methods established on prior domains. If Domain N+1 requires a change,
+#     ALL prior domains must be re-verified with the change. If any prior
+#     domain fails, the change is rejected.
+#
+#   Boundary Species — Components of a composition that sit at or near
+#     a structural boundary (zero, dominant, or regime-change threshold).
+#     Identified by the F17 diagnostic. These species drive the largest
+#     residuals in the DADC-DADI-ADAC chain.
+#
+#   Vertex Theorem — For a D-part compositional time series x(t):
+#     sigma^2_A(t) = (1/D) * SUM(clr_i(t)^2)
+#     The vertex occurs where d(sigma^2_A)/dt = 0, i.e. clr(t*) _|_ clr'(t*).
+#     Physical meaning: composition restructures but stress is momentarily
+#     stationary. The discriminator epsilon(t) = 2a(t - t0) is LINEAR.
+#
+
+# ── FORMULAS & DEFINITIONS ────────────────────────────────────────────────
+#
+#   Simplex Closure (CoDa):
+#     x_i = y_i / SUM(y_j)   for i = 1, ..., D
+#     Constraint: SUM(x_i) = 1.  The data live on the (D-1)-simplex S^D.
+#     This is the foundational CoDa operation — all subsequent analysis
+#     occurs on the simplex, not in unconstrained Euclidean space.
+#
+#   Centred Log-Ratio Transform (CLR) — CoDa coordinate mapping:
+#     clr(x)_i = ln(x_i) - (1/D) * SUM(ln(x_j))
+#     Maps simplex compositions to unconstrained Euclidean space.
+#     The geometric mean g(x) = exp((1/D) * SUM(ln(x_j))) is the reference.
+#     Property: SUM(clr_i) = 0 (zero-sum constraint in CLR space).
+#
+#   Aitchison Variance — compositional dispersion measure:
+#     sigma^2_A(t) = (1/D) * SUM(clr_i(t)^2)
+#     Measures how far a composition departs from the barycenter.
+#     When sigma^2_A = 0, the composition is at the barycenter (1/D, ..., 1/D).
+#     The PLL parabola: sigma^2_A vs. time traces a diagnostic curve.
+#
+#   Variation Matrix — pairwise compositional coupling:
+#     T_ij = var(ln(x_i / x_j))
+#     Small T_ij => components i, j are tightly coupled.
+#     Large T_ij => components move independently.
+#     The variation matrix is symmetric with zero diagonal.
+#
+#   Shannon Entropy — information content of a composition:
+#     H(x) = -SUM(x_i * ln(x_i))   for i = 1, ..., D
+#     Maximum: H_max = ln(D) at the barycenter (1/D, ..., 1/D).
+#     Normalised: H/H_max in [0, 1].  The 93% bound: H/H_max <= 0.93.
+#     EITT discovery: H is near-invariant under geometric-mean decimation.
+#
+#   Geometric-Mean Decimation — temporal resolution compression (EITT core):
+#     Given compositions x(t_1), ..., x(t_k) in a block:
+#     x_bar_i = C[ exp( (1/k) * SUM(ln(x_i(t_j))) ) ]
+#     where C[.] is simplex closure.
+#     This is the Aitchison barycenter — the correct CoDa mean.
+#     CRITICAL: Arithmetic mean DESTROYS entropy invariance.
+#     Only geometric-mean decimation preserves it.
+#
+#   Bosch-Hale Parameterisation — fusion reactivity <sigma*v>(T):
+#     Reference: Bosch & Hale, Nuclear Fusion 32 (1992) 611.
+#     Gives <sigma*v> in cm^3/s as a function of ion temperature T in keV
+#     for the five primary fusion reactions: D-T, D-D(n), D-D(p), D-He3, T-T.
+#     At each T, the five reactivities form a 5-part composition on S^4.
+#
+#   Semi-Empirical Mass Formula (SEMF / Weizsaecker):
+#     B(A,Z) = a_V*A - a_S*A^(2/3) - a_C*Z*(Z-1)/A^(1/3) - a_A*(A-2Z)^2/A
+#     The four terms (Volume, Surface, Coulomb, Asymmetry) form a 4-part
+#     composition on the simplex: each term's share of total binding energy.
+#     Constants: a_V=15.56, a_S=17.23, a_C=0.697, a_A=23.29 (all MeV).
+#
+
+# ── DOCUMENT STANDARDS ────────────────────────────────────────────────────
+#
+#   First-Use Rule: Every acronym must be expanded fully on first use in
+#     every document. E.g., "The Entropy-Invariant Time Transformer (EITT)".
+#
+#   CoDa Advertising Rule: When any CoDa method is used, name it explicitly.
+#     E.g., "Aitchison variance (CoDa)", "CLR transform (CoDa)",
+#     "geometric-mean decimation (CoDa barycenter)".
+#
+#   PLL Disambiguation: Always clarify which PLL meaning is intended —
+#     PLL = Phase-Locked Loop (the engineering analogy from signal processing).
+#     (the engineering correspondence).
+#
+#   Formula Declaration: Every formula used must declare all variables,
+#     their units, and their domain. No assumed knowledge.
+#
+#   No-Assumed-Knowledge: A reader with basic statistics but no CoDa training
+#     should be able to follow any experiment from its glossary alone.
+#
+# ═════════════════════════════════════════════════════════════════════════════
+
+
 import numpy as np
 import pandas as pd
 import matplotlib

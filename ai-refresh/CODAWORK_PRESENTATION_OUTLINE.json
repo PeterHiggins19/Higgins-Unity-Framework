@@ -1,0 +1,157 @@
+{
+  "_meta": {
+    "type": "CODAWORK_2026_PRESENTATION_OUTLINE",
+    "version": "2.0",
+    "created": "2026-04-19",
+    "author": "Peter Higgins / Claude (Anthropic)",
+    "purpose": "Revised CoDaWork 2026 presentation outline. CoDa-first approach: geometric mean proof as the lead, CoDa bridges as the body, system of systems as the depth. Strategy only — final format TBD after ChatGPT verification review.",
+    "conference": "11th International Workshop on Compositional Data Analysis (CoDaWork 2026)",
+    "dates": "1–5 June 2026",
+    "location": "Coimbra, Portugal",
+    "submitted_abstract_page": 25,
+    "submitted_title": "Compositional monitoring of energy-mix drift on the simplex",
+    "revision_note": "v2.0 pivots from 'energy monitoring with a CoDa seed' to 'CoDa contribution with energy as the flagship domain'. The geometric mean proof is now the headline. All terminology updated to CIP (not PLL), HCDT, correct EITT expansion."
+  },
+
+  "core_message": {
+    "one_sentence": "The EITT provides the first empirical measurement of the information cost of arithmetic averaging on the simplex — proving the CoDa community's 40-year insistence on geometric mean is not theoretical preference but empirical necessity.",
+    "elevator_pitch": "We built a temporal diagnostic using standard CoDa tools. It shows that geometric-mean aggregation preserves 99.82% of compositional signal across 341:1 compression, while arithmetic mean destroys 20–40%. We tested it on 75 systems across 44 orders of magnitude. The simplex is the same everywhere.",
+    "falsifiable_claim": "No existing monitoring framework performs compositional change detection at the carrier level with formal perturbation-based drift measurement."
+  },
+
+  "presentation_structure": {
+    "_note": "7-beat narrative arc. Target: 15-minute talk. Each beat maps to ~2 minutes.",
+
+    "beat_1_the_problem": {
+      "duration": "2 minutes",
+      "title": "The Arithmetic Problem",
+      "content": "Compositional time series are everywhere. Energy agencies, geochemistry labs, epidemiologists — they all average compositions arithmetically. The CoDa community has argued for 40 years that this is wrong. But nobody has measured the cost.",
+      "visual": "Side-by-side: geometric vs arithmetic average of energy mix data. Show the compositions diverging.",
+      "coda_connection": "Ground this in Aitchison (1982): 'the geometric mean is the natural average on the simplex'. Cite Pawlowsky-Glahn et al. (2015). Start by crediting the community."
+    },
+
+    "beat_2_the_tool": {
+      "duration": "2 minutes",
+      "title": "The Entropy-Invariant Time Transformer",
+      "content": "Define EITT: Shannon entropy of compositional data measured at multiple temporal resolutions under geometric-mean decimation (the Aitchison barycenter). The invariance — or its absence — quantifies whether temporal aggregation preserves compositional structure.",
+      "formula": "x̄_G = C(∏ₜ x(t)^(1/k)) — the Aitchison barycenter. H(x̄_G) ≈ H(x) when the simplex geometry is respected.",
+      "visual": "The Higgins Decomposition 10-step pipeline diagram. Emphasise: every step uses standard CoDa tools.",
+      "coda_connection": "CLR transform (Step 3), Aitchison variance (Step 4), geometric-mean decimation (Step 6) — all standard CoDa. The novelty is assembling them into a temporal diagnostic."
+    },
+
+    "beat_3_the_proof": {
+      "duration": "3 minutes (longest beat — the headline)",
+      "title": "The Geometric Mean Proof",
+      "content": "Present the numbers. European daily electricity prices: 0.18% entropy variation at 341:1 compression (geometric). NGFS Phase 4 scenarios: geometric 5yr 1.8% vs arithmetic 5yr 14.2%. Geometric 10yr 2.3% vs arithmetic 10yr 21.7%. Up to 41% destruction at arithmetic 10yr.",
+      "key_numbers": {
+        "geometric_341_to_1": "0.18%",
+        "geometric_5yr": "1.8%",
+        "geometric_10yr": "2.3%",
+        "arithmetic_5yr": "14.2%",
+        "arithmetic_10yr": "21.7%",
+        "ratio": "Arithmetic destroys ~10× more signal than geometric at every scale"
+      },
+      "visual": "Bar chart: geometric vs arithmetic entropy variation side by side, across compression levels. The geometric bars are barely visible; the arithmetic bars are massive.",
+      "coda_connection": "This is the empirical ammunition. Aitchison was right. Pawlowsky-Glahn was right. Now there's a number."
+    },
+
+    "beat_4_drift_detection": {
+      "duration": "2 minutes",
+      "title": "Perturbation-Based Drift Detection",
+      "content": "Show the EMBER energy monitoring results. Germany: nuclear shutdown flagged at dₐ=9.07 (2023–2024). Japan: Fukushima aftermath flagged at dₐ=9.05 (2013–2014, NOT 2011–2012 — the annual resolution matters). UK: three distinct drift events over 25 years. Each flag has a known physical cause.",
+      "formula": "Drift flag when dₐ(t→t+1) > μ + 2σ — self-calibrated per country.",
+      "visual": "Aitchison distance time series for Germany, Japan, UK with drift flags marked and annotated with causes.",
+      "coda_connection": "Perturbation difference is Aitchison (1986). Drift detection via Aitchison distance is standard CoDa. The contribution is applying it to real-world policy data with interpretable results."
+    },
+
+    "beat_5_geochemistry_validation": {
+      "duration": "2 minutes",
+      "title": "Validation in CoDa's Home Territory",
+      "content": "40,666 real igneous rock samples. 8 major oxides. 37 of 39 TAS rock types pass EITT. Foidite fails at PR=32% — legitimate boundary condition (deep mantle phase chaos destroys temporal autocorrelation). The variation matrix identifies SiO₂/MgO as the dominant driver, matching known petrology.",
+      "visual": "Pass rate by TAS type. Highlight Foidite as the informative failure.",
+      "coda_connection": "Geochemistry IS CoDa. Aitchison himself used rock compositions. This validates EITT in the community's own backyard. The Foidite failure defines a boundary condition the community should find scientifically interesting."
+    },
+
+    "beat_6_the_vertex_theorem": {
+      "duration": "2 minutes",
+      "title": "A New Dynamic on the Simplex",
+      "content": "The Vertex Theorem: d(σ²_A)/dt = (2/D)Σ clr_i · clr_i' = 0 at dynamic equilibrium, where clr(t*) ⊥ clr'(t*). This is an exact identity from the chain rule applied to Aitchison variance. It gives a dynamic equilibrium condition — the point where composition restructures but stress is stationary. Tested on 30 domains: 28 show parabolic structure with R² > 0.6.",
+      "formula": "d(σ²_A)/dt = (2/D)(clr · clr') = 0 ⟺ clr(t*) ⊥ clr'(t*)",
+      "visual": "σ²_A trajectory with parabola fit for 3–4 domains (room acoustics R²=0.998, energy, geochemistry, stellar nucleosynthesis). Show the vertex as the lock point.",
+      "coda_connection": "This is a CoDa dynamics result. CoDa has been mostly static (cross-sectional). The Vertex Theorem extends it to temporal analysis using existing tools (CLR, σ²_A). CoDa scientists will immediately understand the CLR orthogonality condition."
+    },
+
+    "beat_7_what_this_means": {
+      "duration": "2 minutes",
+      "title": "What This Means for CoDa",
+      "content": "Summary: (1) Geometric mean proof — empirical ammunition for the community. (2) Temporal extension — EITT + Vertex Theorem take CoDa from static to dynamic. (3) New domains — nuclear physics, particle physics, gravitational waves. 75 systems, 44 orders of magnitude. (4) Operational chain — the Higgins Decomposition, 10 steps, all standard CoDa tools. The Compositional Integrity Protocol (CIP) — 6 rules — keeps it clean.",
+      "visual": "System-of-systems map showing the 12 experiments across the scale range. Simple version — just domain names and scale, no internal jargon.",
+      "coda_connection": "End where you started: CoDa tools work. They work in time. They work across domains. The simplex is the same everywhere. And now we can measure the cost of ignoring it.",
+      "open_question": "For the community — what other temporal compositional datasets would benefit from this analysis? (Invite collaboration.)"
+    }
+  },
+
+  "strategic_neighbours": {
+    "_note": "Other CoDaWork 2026 presenters whose work connects to ours. Potential allies.",
+    "Narayana_p29": {
+      "title": "COPD microbiome perturbation",
+      "connection": "Closest methodological ally — perturbation-based analysis of compositional time series in biology",
+      "bridge": "Our drift detection maps directly to their disease progression monitoring"
+    },
+    "Ascari_p9": {
+      "title": "Energy-mix clustering with zeros",
+      "connection": "Same domain (energy mix), complementary approach (clustering vs temporal monitoring)",
+      "bridge": "Their zero-handling technique could address our multiplicative delta zero replacement"
+    },
+    "Vega_Baquero_p57": {
+      "title": "Portfolio allocation as composition",
+      "connection": "Financial compositions — portfolio rebalancing is the same temporal problem as energy transition",
+      "bridge": "Best EITT bridge — financial data would be a compelling fourth flagship domain"
+    },
+    "Kanjiradan_Veetil_p26": {
+      "title": "Cancer mortality time series — VAR forecasting",
+      "connection": "Compositional time series in health data — needs drift detection",
+      "bridge": "Our temporal tools could extend their VAR approach with CoDa-native change detection"
+    }
+  },
+
+  "what_to_avoid": {
+    "terminology_traps": [
+      "Do NOT say 'PLL' to a CoDa audience — they will hear 'Phase-Locked Loop' and be confused about the engineering context. Say 'σ²_A parabola' or 'compositional stress trajectory'.",
+      "Do NOT use 'HCDT' — CoDa people won't know it. Describe the toolkit by its components.",
+      "Do NOT use 'DADC/DADI/ADAC' — these are acoustic engineering heritage terms. Say 'contamination analysis' or 'residual decomposition'.",
+      "Do NOT use 'BTL' or 'Rogue Wave Audio' — engineering origin story is not relevant to CoDa.",
+      "Do NOT use 'HUF-GOV' or 'open-loop doctrine' — governance concepts are internal to HUF.",
+      "DO use: CLR, σ²_A, Aitchison distance, perturbation, simplex, closure, log-ratio, geometric mean, Shannon entropy — all CoDa/information theory native terms.",
+      "DO use: CIP (Compositional Integrity Protocol) — it's new but the concept (analysis rules) is clear."
+    ],
+    "content_traps": [
+      "Do NOT lead with quantum analogies — the Bell test will make CoDa scientists suspicious of overclaiming",
+      "Do NOT present the nuclear staircase — it's exploratory and CoDa-irrelevant",
+      "Do NOT present dark matter or gravitational wave results as the lead — they are depth, not headline",
+      "Do NOT claim universality — say 'tested across 75 systems' not 'proven universal'",
+      "Do NOT present the 93% bound as a theorem — it's an observed pattern (L1)",
+      "DO acknowledge failures honestly — Foidite PR=32%, Estonia 8.43%, adversarial boundary at temporal autocorrelation",
+      "DO present the Contamination Doctrine — 'prefer a weaker but cleaner claim over a stronger contaminated one'. CoDa scientists will respect this."
+    ]
+  },
+
+  "depth_available_on_request": {
+    "_note": "If someone asks 'have you tested this beyond energy and geochemistry?', this is the depth you can reveal.",
+    "nuclear_physics": "SEMF binding energy as 4-part composition. 3,554 nuclides. Shell effects detected via σ²_A perturbations.",
+    "particle_physics": "CKM and PMNS mixing matrices as simplex compositions. QGP freeze-out: EITT at 0.27% across the nuclear-quark phase boundary.",
+    "gravitational_waves": "GW150914 mass budget as 4-part composition. Lowest entropy in all 75 systems (H/Hmax=0.175).",
+    "full_inventory": "75 systems, 44 orders of magnitude, 12 experiments, 100% coverage. The Higgins Decomposition applied uniformly to every system."
+  },
+
+  "maps_to_system_of_systems": {
+    "_note": "How the CoDa presentation maps to the internal HUF system. For Peter's reference.",
+    "beat_1": "Background — CoDa community context",
+    "beat_2": "EITT definition — maps to FAST_REFRESH canonical_names.EITT",
+    "beat_3": "Geometric mean proof — maps to FAST_REFRESH geometric_mean_empirical_proof",
+    "beat_4": "EMBER results — maps to EXP-01, EXP-02, FAST_REFRESH ember_monitoring",
+    "beat_5": "Geochemistry — maps to EXP-05, EXP-05b",
+    "beat_6": "Vertex Theorem — maps to FAST_REFRESH pll_parabola_discovery.vertex_theorem",
+    "beat_7": "System of systems — maps to FAST_REFRESH experiment_chain"
+  }
+}

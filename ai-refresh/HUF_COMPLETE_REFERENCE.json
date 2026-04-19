@@ -1,0 +1,608 @@
+{
+  "_meta": {
+    "type": "HUF-COMPLETE-REFERENCE",
+    "version": "1.1",
+    "created": "2026-04-19",
+    "updated": "2026-04-19",
+    "author": "Peter Higgins / Claude",
+    "purpose": "THE MASTER GLOSSARY. Single source of truth for every term, acronym, formula, variable, constant, methodology, and framework in the Higgins Unity Framework. Load this file before writing ANY HUF document. If a term is not in this file, it is not canonical. If a document disagrees with this file, this file wins.",
+    "usage_rule": "Every HUF document — paper, script, briefing, presentation — MUST use terms EXACTLY as defined here. No paraphrasing. No abbreviating differently. No expanding differently. The canonical expansion is the ONLY expansion.",
+    "learning_path": "This file is designed for rote learning. Read it top to bottom. Every entry contains: the canonical name, what it IS, what it is NOT, the formula (if applicable), and the one-sentence explanation a reader needs.",
+    "advertising_rule": "When any CoDa or HUF method is used in a document, it MUST be declared explicitly with its full name on first use, followed by the acronym in parentheses. Example: 'The Entropy-Invariant Time Transformer (EITT) measures...' — never just 'EITT' on first appearance in any document.",
+    "drift_prevention": "This file was created after a comprehensive terminology audit on 2026-04-19 that found 3 EITT naming variants, 8 HUF naming variants, and 1 PLL expansion collision across the repo. All have been corrected. v1.1 update: 'Pipeline Lock List' retired, replaced by CIP (Compositional Integrity Protocol). PLL = Phase-Locked Loop only. HCDT added as toolkit name. This file exists to prevent recurrence."
+  },
+
+  "canonical_acronyms": {
+    "_section": "ACRONYMS — Every acronym used in HUF, with its ONE correct expansion. Use ONLY these expansions.",
+
+    "EITT": {
+      "expansion": "Entropy-Invariant Time Transformer",
+      "NOT": ["Entropy-Invariant Time Transformation", "Entropy-Invariant Temporal Transform", "Entropy-Invariant Ternary Transform", "Entropy-Invariant Time Transfer", "Energy-Information Transfer Theory", "EITT Transform"],
+      "one_sentence": "Shannon entropy of compositional data is near-invariant under geometric-mean decimation across temporal resolutions.",
+      "double_meaning": "Ricardo Montalban's 'Explain It To Them' — the standard by which every HUF finding must be communicable.",
+      "category": "Science — the core discovery",
+      "first_use_template": "The Entropy-Invariant Time Transformer (EITT)"
+    },
+
+    "HUF": {
+      "expansion": "Higgins Unity Framework",
+      "NOT": ["Higgins Unified Framework", "Higgins Unification Framework", "Herfindahl Uniformity Framework"],
+      "one_sentence": "The overarching scientific framework connecting compositional data analysis to cross-domain measurement.",
+      "category": "Framework — the umbrella",
+      "first_use_template": "The Higgins Unity Framework (HUF)"
+    },
+
+    "HUF-GOV": {
+      "expansion": "HUF Governance — open-loop observation layer",
+      "NOT": ["HUF Government", "HUF Governor"],
+      "one_sentence": "The measurement path that observes but does not control. The instrument reads, never actuates.",
+      "canonical_definition": "HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment. — Peter Higgins, 2026-04-15",
+      "category": "Governance doctrine",
+      "first_use_template": "HUF Governance (HUF-GOV)"
+    },
+
+    "HUF-CLS": {
+      "expansion": "HUF Closed-Loop System — control path",
+      "one_sentence": "The control path that closes the feedback loop. Requires explicit human decision. Architecturally separated from HUF-GOV.",
+      "category": "Governance doctrine",
+      "first_use_template": "HUF Closed-Loop System (HUF-CLS)"
+    },
+
+    "HUF-QIT": {
+      "expansion": "HUF Quantum Information Theory correspondence",
+      "one_sentence": "The nine isomorphisms mapping quantum-mechanical concepts to compositional data analysis.",
+      "category": "Theoretical extension",
+      "first_use_template": "HUF Quantum Information Theory correspondence (HUF-QIT)"
+    },
+
+    "HUF-QTM": {
+      "expansion": "HUF Quantum Toolkit for Monitoring",
+      "tools_count": 5,
+      "one_sentence": "Five monitoring tools derived from the quantum-CoDa correspondence.",
+      "category": "Toolkit",
+      "first_use_template": "HUF Quantum Toolkit for Monitoring (HUF-QTM)"
+    },
+
+    "HIVP": {
+      "expansion": "Higgins Iterative Validation Protocol",
+      "NOT": ["HIVIP (these are DIFFERENT terms)"],
+      "one_sentence": "The regression-chain rule: every new DUT may extend the theory only if the entire prior chain still passes.",
+      "category": "Methodology — the chain discipline",
+      "first_use_template": "The Higgins Iterative Validation Protocol (HIVP)"
+    },
+
+    "HIVIP": {
+      "expansion": "Higgins Iterative Validation and Integrity Protocol",
+      "NOT": ["HIVP (these are DIFFERENT terms)"],
+      "one_sentence": "The umbrella methodology: theory + instrument development + contamination control + regression discipline.",
+      "relationship": "EITT is the science. The Higgins Decomposition is the engine. HIVP is the chain. HIVIP is the full methodology.",
+      "category": "Methodology — the umbrella",
+      "first_use_template": "The Higgins Iterative Validation and Integrity Protocol (HIVIP)"
+    },
+
+    "CoDa": {
+      "expansion": "Compositional Data Analysis",
+      "NOT": ["CODA", "Coda", "coda", "CoDA"],
+      "one_sentence": "The mathematical framework for data that sums to a constant, developed by John Aitchison (1982/1986) and advanced by Egozcue, Pawlowsky-Glahn, and Tolosana-Delgado.",
+      "note": "Always 'CoDa' with capital C, lowercase o, capital D, lowercase a. This is the standard in the CoDa community.",
+      "category": "Mathematical foundation (external)",
+      "first_use_template": "Compositional Data Analysis (CoDa)"
+    },
+
+    "MC-4": {
+      "expansion": "Fourth Monitoring Category: Composition",
+      "NOT": ["MC4", "Category 4", "Compositional Monitoring Category"],
+      "others": ["MC-1: Magnitude", "MC-2: Identity", "MC-3: Trend"],
+      "one_sentence": "The fourth dimension of monitoring — what share each component holds — complementing magnitude, identity, and trend.",
+      "note": "Always hyphenated: MC-4, not MC4.",
+      "category": "Monitoring framework",
+      "first_use_template": "the Fourth Monitoring Category (MC-4: Composition)"
+    },
+
+    "HCDT": {
+      "expansion": "Higgins Compositional Diagnostic Toolkit",
+      "NOT": ["Higgins CoDa Toolkit", "HUF Compositional Diagnostic", "HCD Toolkit"],
+      "one_sentence": "A CoDa-based analysis suite implementing the Entropy-Invariant Time Transformer (EITT), the Compositional Integrity Protocol (CIP), and the Higgins Decomposition for scale-invariant compositional diagnostics.",
+      "components": ["EITT (geometric-mean decimation)", "CIP (6-rule Compositional Integrity Protocol)", "PLL parabola (phase-locked loop diagnostic)", "Higgins Decomposition (10-step chain)", "DADC/DADI (contamination analysis)", "Vertex Theorem (parabolic stability locus)", "93% Bound (entropy ceiling)", "SPPI (Standard Power Plant Index)", "IFR (Isotropic Fusion Reactor standard)"],
+      "heritage": "Builds on Aitchison (1986) CoDa geometry, Shannon (1948) information theory, Pawlowsky-Glahn et al. (2015) modern CoDa. All HUF-original extensions are marked as such.",
+      "category": "Toolkit — the operational package",
+      "first_use_template": "The Higgins Compositional Diagnostic Toolkit (HCDT)"
+    },
+
+    "PLL": {
+      "expansion": "Phase-Locked Loop",
+      "NOT": ["Pipeline Lock List (RETIRED — replaced by CIP on 2026-04-19)"],
+      "one_sentence": "The engineering analogy from signal processing: the CL-01 through CL-05 architecture maps topologically onto a PLL signal chain. HUF-GOV is a phase discriminator (open loop). HUF-CLS is the full PLL (closed loop).",
+      "origin": "Peter Higgins's original intent — phase-locked loop control for BTL loudspeaker crossover networks. The σ²_A parabola diagnostic is named 'PLL parabola' because it functions as a compositional lock detector, analogous to the phase detector in a PLL.",
+      "CRITICAL_NOTE": "PLL means Phase-Locked Loop ONLY. The 6 immutable analysis rules are now called the Compositional Integrity Protocol (CIP). The old expansion 'Pipeline Lock List' was retired on 2026-04-19 to prevent term hijacking from the engineering community.",
+      "category": "Engineering analogy — signal processing heritage",
+      "first_use_template": "the phase-locked loop (PLL) analogy"
+    },
+
+    "CIP": {
+      "expansion": "Compositional Integrity Protocol",
+      "NOT": ["Pipeline Lock List (RETIRED)", "CIP Transform"],
+      "one_sentence": "Six immutable rules governing the EITT analysis chain. These cannot be changed without operator approval.",
+      "rules": ["Rule 1: All roots computed on simplex carrier", "Rule 2: Simplex normalisation only", "Rule 3: RMS aggregator (p=2 locked)", "Rule 4: Every observation retained", "Rule 5: No new constants (6.02 dB budget, 115 Hz·m, 5.5-octave BW locked from BTL)", "Rule 6: Polarity alignment mandatory"],
+      "origin": "These rules originate from BTL loudspeaker engineering constraints. They enforce the same discipline that makes a phase-locked loop work: every parameter must be traceable, no arbitrary constants, no drift.",
+      "relationship_to_PLL": "The CIP rules include a PLL parabola check (F15) as one of its 6 diagnostics. The protocol contains a phase-locked loop test — it is not itself a PLL.",
+      "category": "Analysis discipline — 6 immutable rules",
+      "first_use_template": "the Compositional Integrity Protocol (CIP)"
+    },
+
+    "DADC": {
+      "expansion": "Dimension-Apportioned Diffraction Correction",
+      "NOT": ["Direct Aperture Diffraction Correction"],
+      "one_sentence": "Forward mapping: cabinet geometry → acoustic composition. The gain vector (G_H, G_W, G_D)/6.02 is a 3-simplex composition.",
+      "category": "Engineering DNA — acoustic origin",
+      "first_use_template": "Dimension-Apportioned Diffraction Correction (DADC)"
+    },
+
+    "DADI": {
+      "expansion": "Dimension-Apportioned Diffraction Inference",
+      "one_sentence": "Inverse inference: acoustic composition → cabinet geometry. Recovers H, W, D from the measured response.",
+      "category": "Engineering DNA — acoustic origin",
+      "first_use_template": "Dimension-Apportioned Diffraction Inference (DADI)"
+    },
+
+    "ADAC": {
+      "expansion": "Apparent Dimension Apportioning Correction",
+      "alternate": "Adaptive Dimension Apportioning Correction",
+      "one_sentence": "Adaptive closure: measure, infer, correct, re-measure. The forking point where HUF-GOV and HUF-CLS diverge.",
+      "category": "Engineering DNA — acoustic origin",
+      "first_use_template": "Apparent Dimension Apportioning Correction (ADAC)"
+    },
+
+    "RSM": {
+      "expansion": "Ratio State Monitoring",
+      "one_sentence": "Canonical name for the practical measurement doctrine of HUF-GOV, locked for literature submission February 2026.",
+      "category": "Measurement doctrine",
+      "first_use_template": "Ratio State Monitoring (RSM)"
+    },
+
+    "IFR": {
+      "expansion": "Isotropic Fusion Reactor",
+      "one_sentence": "The theoretical optimal fusion reactor design derived from EITT compositional analysis. T=17.8 keV, n=2.70×10²⁰ m⁻³, B=12T.",
+      "category": "Fusion application",
+      "first_use_template": "the Isotropic Fusion Reactor (IFR)"
+    },
+
+    "SPPI": {
+      "expansion": "Self-heated Plasma Performance Index",
+      "one_sentence": "Fraction of heating provided by alpha particles. SPPI=1.000 means fully self-ignited.",
+      "category": "Fusion metric",
+      "first_use_template": "the Self-heated Plasma Performance Index (SPPI)"
+    },
+
+    "BTL": {
+      "expansion": "Binaural Test Lab",
+      "one_sentence": "Peter's purpose-built basement lab in Markham, Ontario, for loudspeaker measurement. The birthplace of the compositional viewpoint.",
+      "category": "Engineering DNA — physical lab",
+      "first_use_template": "the Binaural Test Lab (BTL)"
+    },
+
+    "RWA": {
+      "expansion": "Rogue Wave Audio",
+      "one_sentence": "Peter's loudspeaker engineering company. The engineering sibling of HUF.",
+      "repo": "github.com/PeterHiggins19/Rogue-Wave-Audio",
+      "category": "Engineering DNA — company",
+      "first_use_template": "Rogue Wave Audio (RWA)"
+    },
+
+    "DUT": {
+      "expansion": "Device Under Test",
+      "one_sentence": "Any system being measured. In HIVP, each new domain is a DUT that must not contaminate the prior chain.",
+      "category": "Measurement terminology",
+      "first_use_template": "Device Under Test (DUT)"
+    },
+
+    "CLR": {
+      "expansion": "Centred Log-Ratio transform",
+      "one_sentence": "The coordinate transform that maps simplex compositions to unconstrained Euclidean space: clr(x)ᵢ = ln(xᵢ) − (1/D)Σln(xⱼ).",
+      "category": "Mathematical tool (CoDa)",
+      "first_use_template": "the Centred Log-Ratio (CLR) transform"
+    },
+
+    "ILR": {
+      "expansion": "Isometric Log-Ratio transform",
+      "one_sentence": "The orthonormal coordinate system on the simplex. Preserves distances and angles. Used for ILR-based clustering.",
+      "category": "Mathematical tool (CoDa)",
+      "first_use_template": "the Isometric Log-Ratio (ILR) transform"
+    },
+
+    "ALR": {
+      "expansion": "Additive Log-Ratio transform",
+      "one_sentence": "Log-ratio relative to a reference component. Simplest but least symmetric of the three log-ratio transforms.",
+      "category": "Mathematical tool (CoDa)",
+      "first_use_template": "the Additive Log-Ratio (ALR) transform"
+    },
+
+    "SEMF": {
+      "expansion": "Semi-Empirical Mass Formula",
+      "one_sentence": "The Weizsäcker formula decomposing nuclear binding energy into Volume, Surface, Coulomb, and Asymmetry terms — a 4-part composition on the simplex.",
+      "category": "Nuclear physics",
+      "first_use_template": "the Semi-Empirical Mass Formula (SEMF)"
+    },
+
+    "EOS": {
+      "expansion": "Equation of State",
+      "one_sentence": "The relationship between pressure, density, and composition in neutron star matter. APR, SLy, BSk are specific EOS models.",
+      "category": "Nuclear/astrophysics",
+      "first_use_template": "the Equation of State (EOS)"
+    },
+
+    "QGP": {
+      "expansion": "Quark-Gluon Plasma",
+      "one_sentence": "The deconfined state of matter at extreme temperature/density where quarks and gluons are free. Created in heavy-ion collisions at RHIC/LHC.",
+      "category": "Particle/nuclear physics",
+      "first_use_template": "the Quark-Gluon Plasma (QGP)"
+    },
+
+    "QNM": {
+      "expansion": "Quasi-Normal Mode",
+      "one_sentence": "The damped oscillation modes of a black hole after merger. The (2,2,0) mode dominates at ~90%.",
+      "category": "Gravitational physics",
+      "first_use_template": "Quasi-Normal Mode (QNM)"
+    },
+
+    "CKM": {
+      "expansion": "Cabibbo-Kobayashi-Maskawa (mixing matrix)",
+      "one_sentence": "The 3×3 unitary matrix describing quark flavor mixing. Near-diagonal (H/Hmax=0.564). Compositions: |Vᵢⱼ|² on the simplex.",
+      "category": "Particle physics",
+      "first_use_template": "the Cabibbo-Kobayashi-Maskawa (CKM) matrix"
+    },
+
+    "PMNS": {
+      "expansion": "Pontecorvo-Maki-Nakagawa-Sakata (mixing matrix)",
+      "one_sentence": "The 3×3 unitary matrix describing neutrino flavor mixing. Near-maximal (H/Hmax=0.911). The lepton counterpart of CKM.",
+      "category": "Particle physics",
+      "first_use_template": "the Pontecorvo-Maki-Nakagawa-Sakata (PMNS) matrix"
+    },
+
+    "BBH": {
+      "expansion": "Binary Black Hole",
+      "one_sentence": "Two black holes in mutual orbit, eventually merging. GW150914 was the first detected BBH merger.",
+      "category": "Gravitational physics",
+      "first_use_template": "Binary Black Hole (BBH)"
+    },
+
+    "BNS": {
+      "expansion": "Binary Neutron Star",
+      "one_sentence": "Two neutron stars in mutual orbit. GW170817 was the first detected BNS merger, with electromagnetic counterpart.",
+      "category": "Gravitational physics",
+      "first_use_template": "Binary Neutron Star (BNS)"
+    },
+
+    "BBN": {
+      "expansion": "Big Bang Nucleosynthesis",
+      "one_sentence": "The formation of light elements (H, He, Li) in the first ~20 minutes after the Big Bang.",
+      "category": "Cosmology",
+      "first_use_template": "Big Bang Nucleosynthesis (BBN)"
+    }
+  },
+
+  "canonical_terms": {
+    "_section": "NAMED CONCEPTS — Every named concept in HUF, with its exact definition.",
+
+    "Higgins_Decomposition": {
+      "name": "The Higgins Decomposition",
+      "NOT": ["Higgins Process", "Higgins Method", "Higgins Procedure"],
+      "definition": "The operational 10-step state-machine / process-line implementation of CoDa + EITT.",
+      "steps": [
+        "Step 1: Raw Data — collect the multivariate time series",
+        "Step 2: Simplex Closure — normalize to sum-to-1 compositions",
+        "Step 3: CLR Transform — map to unconstrained Aitchison geometry",
+        "Step 4: Aitchison Variance — compute σ²_A(t) = (1/D)Σclr_i(t)²",
+        "Step 5: Variation Matrix — compute pairwise CLR variances",
+        "Step 6: Geometric-Mean Decimation — compress time resolution via Aitchison barycenter",
+        "Step 7: Shannon Entropy — compute H(x) = −Σxᵢln(xᵢ) at each resolution",
+        "Step 8: Pass Rate / Verdict — EITT pass if entropy variation < threshold",
+        "Step 9: F17 Diagnostic — identify boundary species and regime transitions",
+        "Step 10: Two-Pass Instrument — refine with targeted second pass"
+      ],
+      "step_count": 10,
+      "step_count_note": "EXACTLY 10 steps. Do not truncate or merge."
+    },
+
+    "Isotropic_Principle": {
+      "name": "The Isotropic Principle",
+      "definition": "Paint the inside of a sphere with radiation. Uniform. The geometry exists whether or not anything is radiating. The structure is there before the signal. The simplex is there before the measurement.",
+      "consequence": "The barycenter (1/D, ..., 1/D) is the ground state. Every departure is a signal; every return is relaxation."
+    },
+
+    "Vertex_Theorem": {
+      "name": "The Vertex Theorem",
+      "statement": "For a D-part compositional time series x(t), σ²_A(t) = (1/D)Σclr_i(t)². The vertex occurs where d(σ²_A)/dt = (2/D)Σclr_i · clr_i' = 0, i.e., clr(t*) ⊥ clr'(t*). This is exact — an identity from the chain rule.",
+      "physical_meaning": "At the vertex, the composition restructures but compositional stress is momentarily stationary. Dynamic equilibrium on the simplex.",
+      "discriminator": "ε(t) = dσ²_A/dt = 2a(t − t₀). LINEAR near the vertex. The ratio of 2."
+    },
+
+    "Contamination_Doctrine": {
+      "name": "The Contamination Doctrine",
+      "paths": [
+        "Path 1 (Data → Theory): Noisy/sparse/shuffled data creating false theoretical conclusions",
+        "Path 2 (Theory → Method): Attractive theory tempting premature corrections or overclaiming",
+        "Path 3 (Method → Data): Wrong averaging, bad zero handling, overaggressive correction injecting artifacts"
+      ],
+      "integrity_rule": "Prefer a weaker but cleaner claim over a stronger contaminated one."
+    },
+
+    "Promotion_Ladder": {
+      "name": "The Promotion Ladder",
+      "levels": [
+        "L0: Exploratory Pattern — interesting visual/analogy/signal; does not yet influence core claims",
+        "L1: Candidate Overlay — testable add-on that may rank or explain cases; does not alter science signal",
+        "L2: Process Control Candidate — methodological addition that must survive HIVP regression",
+        "L3: Validated Companion — robust secondary instrument, separate from core observable",
+        "L4: Canonical Method Component — survived cross-domain validation and regression through prior DUTs",
+        "L5: Core Science — non-negotiable primary claim of the programme"
+      ],
+      "anti_corruption_rule": "No concept climbs the ladder by improving one domain at the cost of contaminating earlier DUTs or the core signal."
+    },
+
+    "Boundary_Species": {
+      "name": "Boundary Species",
+      "definition": "A compositional component that carries disproportionate contamination signal in the DADC-DADI-ADAC residual chain. Identified by the Contamination-to-Signal (C/S) ratio.",
+      "examples": [
+        "Λ (Lambda) in QGP freeze-out — straddles meson/baryon boundary (C/S=0.626)",
+        "2k-8kHz in room acoustics — room modes vs surface absorption (C/S=1.168)",
+        "⁷Li in BBN cosmology — THE cosmological lithium problem (C/S=2.525, highest in any domain)",
+        "Gas in energy mix — the 'bridge fuel' between fossil and clean (C/S=0.534)",
+        "TiO₂ in geochemistry — trace oxide discriminant mafic/felsic (C/S=0.416)"
+      ]
+    },
+
+    "93_Percent_Bound": {
+      "name": "The 93% Universal Entropy Bound",
+      "definition": "Near-maximal entropy compositions cluster near H/Hmax ≈ 0.93 across multiple domains: proton mass (0.928), proton spin (0.969), QGP fluidity, AND gravitational wave phase budget (0.923). Not yet proven universal — observed pattern.",
+      "status": "L1 on promotion ladder — observed across 4+ domains but not formally proven"
+    },
+
+    "Gravity_Activation_Scale": {
+      "name": "The Gravity Activation Scale",
+      "definition": "~10⁷ m — below this scale gravity is compositionally silent (NONE role); above it gravity progressively dominates through ORTHOGONAL → BOUNDARY → DIRECT roles.",
+      "discovered": "EXP-12 (2026-04-19)"
+    },
+
+    "No_Hair_Compositional": {
+      "name": "No-Hair Theorem as Compositional Minimum",
+      "definition": "Maximum gravitational compression → minimum compositional entropy. A Kerr black hole described by only (M, a, Q) has the fewest 'channels' of any object in physics. GW150914 mass budget H/Hmax=0.175 — lowest in all 75 HUF systems.",
+      "discovered": "EXP-12 (2026-04-19)"
+    }
+  },
+
+  "canonical_formulas": {
+    "_section": "FORMULAS AND EQUATIONS — Every formula used in HUF, with exact notation.",
+
+    "simplex_closure": {
+      "name": "Simplex Closure",
+      "formula": "C(x) = x / Σxᵢ",
+      "meaning": "Normalize a vector to sum to 1. The map from ℝᴰ₊ to the D-simplex Sᴰ.",
+      "notation": "C(·) always means closure"
+    },
+
+    "clr_transform": {
+      "name": "Centred Log-Ratio Transform",
+      "formula": "clr(x)ᵢ = ln(xᵢ) − (1/D)Σⱼln(xⱼ)    for i=1..D",
+      "meaning": "Maps compositions from the simplex to ℝᴰ (with zero-sum constraint). Each component expressed relative to the geometric mean.",
+      "inverse": "x = C(exp(clr))"
+    },
+
+    "shannon_entropy": {
+      "name": "Shannon Entropy",
+      "formula": "H(x) = −Σᵢ xᵢ ln(xᵢ)",
+      "meaning": "Information-theoretic measure of compositional evenness. Maximum at uniform distribution (1/D, ..., 1/D).",
+      "normalized": "H/Hmax = H(x) / ln(D) — ranges from 0 (one component dominates) to 1 (all components equal)"
+    },
+
+    "aitchison_variance": {
+      "name": "Aitchison Variance (σ²_A)",
+      "formula": "σ²_A = (1/D) Σᵢ clr_i²",
+      "meaning": "Total compositional stress — how far the composition departs from the uniform barycenter. The phase detector in the PLL analogy.",
+      "note": "This is a SCALAR. It is NOT the same as the Aitchison distance (which measures distance between two compositions)."
+    },
+
+    "aitchison_distance": {
+      "name": "Aitchison Distance",
+      "formula": "dₐ(x,y) = ‖clr(x) − clr(y)‖",
+      "meaning": "Distance between two compositions in Aitchison geometry. Used for drift detection and fleet alignment.",
+      "note": "This measures distance BETWEEN compositions. Not the same as Aitchison variance (which measures departure from barycenter for a SINGLE composition)."
+    },
+
+    "perturbation": {
+      "name": "Perturbation (Simplex Addition)",
+      "formula": "x ⊕ y = C(x₁y₁, ..., xDyD)",
+      "meaning": "Component-wise multiplication followed by closure. The 'addition' operation in Aitchison geometry."
+    },
+
+    "powering": {
+      "name": "Powering (Simplex Scalar Multiplication)",
+      "formula": "α ⊙ x = C(x₁ᵅ, ..., xDᵅ)",
+      "meaning": "Component-wise exponentiation followed by closure. The 'scalar multiplication' in Aitchison geometry."
+    },
+
+    "perturbation_difference": {
+      "name": "Perturbation Difference",
+      "formula": "Δ(t) = C(x₁(t+1)/x₁(t), ..., xD(t+1)/xD(t))",
+      "meaning": "Compositional change between consecutive time points. Ratio-based, not arithmetic difference."
+    },
+
+    "geometric_mean_decimation": {
+      "name": "Geometric-Mean Decimation",
+      "formula": "x̄_G = C(∏ₜ x(t)^(1/k))",
+      "meaning": "The Aitchison barycenter — the compositional average that preserves simplex geometry. EITT proves this preserves entropy; arithmetic mean destroys it."
+    },
+
+    "effective_diversity": {
+      "name": "Effective Number of Carriers",
+      "formula": "N_eff = exp(H(x))",
+      "meaning": "How many 'effective' components the composition acts like. N_eff=1 means one component dominates; N_eff=D means all equal."
+    },
+
+    "drift_flag": {
+      "name": "Drift Flag Threshold",
+      "formula": "Flag when dₐ(t→t+1) > μ + 2σ    (self-calibrated per country/system)",
+      "meaning": "Compositional change exceeding 2 standard deviations from historical baseline triggers a drift flag."
+    },
+
+    "keff_fill": {
+      "name": "K_eff Fill Factor",
+      "formula": "K_eff_fill(t) = √((1/n) Σᵢ aᵢ²)    (n=4, RMS of polarity-aligned roots)",
+      "meaning": "Aggregate compositional health metric. Four polarity-aligned roots: a₀ (internal balance), a₁ (fleet alignment), a₂ (concentration resistance), a₃ (shape)."
+    },
+
+    "vertex_identity": {
+      "name": "Vertex Identity (PLL Lock Condition)",
+      "formula": "d(σ²_A)/dt = (2/D) Σᵢ clr_i · clr_i' = 0    ⟺    clr(t*) ⊥ clr'(t*)",
+      "meaning": "The vertex of the σ²_A parabola occurs where the CLR vector is orthogonal to its time derivative. Exact identity from the chain rule. The ratio of 2."
+    },
+
+    "pll_error_signal": {
+      "name": "PLL Error Signal (Discriminator)",
+      "formula": "ε(t) = dσ²_A/dt = 2a(t − t₀)",
+      "meaning": "LINEAR near the vertex. The slope is 2a where a is the parabola curvature. The factor of 2 is the minimum polynomial degree for stable lock geometry."
+    },
+
+    "baffle_step": {
+      "name": "Baffle Step Correction",
+      "formula": "Total gain = 6.02 dB = 20·log₁₀(2)",
+      "meaning": "Acoustic transition from 2π to 4π steradian radiation. The founding physical constant of HUF, carried from the DADC loudspeaker measurement.",
+      "corner_frequency": "Fc = 115 / dimension    (Hz·m)"
+    }
+  },
+
+  "canonical_variables": {
+    "_section": "VARIABLES AND SYMBOLS — Standard notation used throughout HUF.",
+
+    "D": "Number of compositional components (parts/carriers/channels)",
+    "x": "Composition vector x = (x₁, ..., xD) ∈ Sᴰ",
+    "Sᴰ": "The D-part simplex: {x ∈ ℝᴰ₊ : Σxᵢ = 1}",
+    "clr": "Centred log-ratio transform vector",
+    "σ²_A": "Aitchison variance — total compositional stress (scalar)",
+    "dₐ": "Aitchison distance between two compositions",
+    "H": "Shannon entropy of a composition",
+    "H_max": "Maximum Shannon entropy = ln(D)",
+    "H/H_max": "Normalized Shannon entropy (0 to 1)",
+    "N_eff": "Effective number of carriers = exp(H)",
+    "t*": "Vertex time — the PLL lock point where d(σ²_A)/dt = 0",
+    "R²": "Coefficient of determination for PLL parabola fit",
+    "a": "Parabola curvature coefficient in σ²_A(t) = a(t − t₀)² + c",
+    "t₀": "Vertex location parameter",
+    "c": "Vertex value (minimum σ²_A at lock)",
+    "ε": "Residual error signal = σ²_A − fit",
+    "C/S": "Contamination-to-Signal ratio for boundary species identification",
+    "α_s": "QCD strong coupling constant (running with energy scale Q)",
+    "Q": "Energy/momentum transfer scale in QCD",
+    "θ": "Strong CP violation angle in QCD vacuum",
+    "κ": "Tokamak elongation parameter (plasma shape)",
+    "ρ₀": "Nuclear saturation density ≈ 0.16 fm⁻³",
+    "M☉": "Solar mass ≈ 1.989 × 10³⁰ kg",
+    "PR": "Pass Rate — fraction of EITT tests passed at a given compression"
+  },
+
+  "canonical_constants": {
+    "_section": "CONSTANTS — Exact values that appear throughout HUF. Do not round or approximate.",
+
+    "6.02_dB": {
+      "value": "6.0206 dB = 20·log₁₀(2)",
+      "origin": "Baffle step correction, DADC (Dec 2024)",
+      "role": "The binary doubling constant. Fundamental to EITT's 2:1 compression test."
+    },
+    "115_Hz_m": {
+      "value": "115 Hz·m (approximately c/2π where c = speed of sound)",
+      "origin": "DADC corner frequency: Fc = 115/dimension",
+      "role": "Scale constant linking compositional dimension to temporal autocorrelation length."
+    },
+    "27_confidence": {
+      "value": "3³ = 27",
+      "role": "Confidence threshold for PLL discovery. 30 domains tested ≥ 27 required."
+    },
+    "proton_entropy": {
+      "value": "H/Hmax = 0.928",
+      "system": "Proton mass budget (Quark KE + Gluon Field + Trace Anomaly + Higgs Rest Mass)"
+    },
+    "spin_entropy": {
+      "value": "H/Hmax = 0.969",
+      "system": "Proton spin budget (Quark Spin + Gluon Spin + Quark Orbital + Gluon Orbital)"
+    },
+    "gw_phase_entropy": {
+      "value": "H/Hmax = 0.923",
+      "system": "GW150914 phase budget (Inspiral 50% / Merger 33% / Ringdown 17%)"
+    },
+    "bh_mass_entropy": {
+      "value": "H/Hmax = 0.175",
+      "system": "GW150914 mass budget — lowest entropy in all 75 HUF systems"
+    },
+    "bns_mass_entropy": {
+      "value": "H/Hmax = 0.111",
+      "system": "GW170817 BNS mass+EM budget — 5 channels, even lower than BBH"
+    },
+    "ckm_entropy": {
+      "value": "H/Hmax = 0.564",
+      "system": "Full CKM 3×3 matrix"
+    },
+    "pmns_entropy": {
+      "value": "H/Hmax = 0.911",
+      "system": "PMNS lepton mixing matrix"
+    },
+    "entropy_ratio_ckm_pmns": {
+      "value": "1.615",
+      "meaning": "PMNS/CKM entropy ratio — leptons mix 1.6× more than quarks"
+    }
+  },
+
+  "experiment_registry": {
+    "_section": "ALL EXPERIMENTS — with canonical names and one-line summaries.",
+    "EXP-01": "Gold/Silver Price Ratio — founding experiment, 338 years, PLL vertex at 1751",
+    "EXP-02": "US State Energy Mix — 10 states, 8/10 lock, CA vertex 2014",
+    "EXP-03": "Uranium Decay Chains + SEMF — nuclear compositional analysis, 3554 nuclides",
+    "EXP-04": "Microphone Valley Response — acoustic filter response, shape flip at order 4→5",
+    "EXP-05": "Geochemistry — 28 igneous rocks, vertex at andesite-dacite boundary",
+    "EXP-05b": "Geochemistry Real Data — 40,666 rocks, 37/39 TAS types pass",
+    "EXP-06": "Nuclear Fusion Energy Budget — 17 reactor designs, IFR reference, Krell cascade",
+    "EXP-07": "QCD/Quark Compositional Analysis — proton mass, spin, exotics, CKM",
+    "EXP-08": "Cross-Boundary Handshakes — QGP freeze-out (0.27% EITT), NS EOS (6.7% drift flag)",
+    "EXP-09": "Master Inventory — 75 systems, 100% coverage, 44 orders of magnitude",
+    "EXP-10": "Full Sweep — all mapped/untouched systems completed (CKM, PMNS, Higgs, etc.)",
+    "EXP-11": "Final Four — DM ratio, Z-chains, NS EOS comparison, stellar mass sequence",
+    "EXP-12": "Gravity Deep Study — 24 systems classified, GW150914/GW170817 compositional analysis"
+  },
+
+  "document_standards": {
+    "_section": "STANDARDS — Rules for writing any HUF document.",
+
+    "first_use_rule": "On first use of any acronym in any document, write the FULL canonical expansion followed by the acronym in parentheses. Example: 'The Entropy-Invariant Time Transformer (EITT) measures...' — NEVER just 'EITT' on first appearance.",
+
+    "coda_advertising_rule": "When any CoDa method is used (CLR transform, Aitchison distance, simplex closure, perturbation, etc.), explicitly name it as a CoDa method. Example: 'Using the CoDa Centred Log-Ratio (CLR) transform...' — not just 'the CLR transform'. We advertise what CoDa did not.",
+
+    "huf_method_declaration": "When any HUF-specific method is used (EITT, Higgins Decomposition, CIP, DADC chain), declare it fully. Example: 'Applying the Higgins Decomposition 10-step chain, starting from Step 2 (Simplex Closure)...'",
+
+    "formula_declaration": "When any formula is used, state it explicitly with variable definitions. Example: 'The Aitchison variance σ²_A = (1/D)Σclr_i² measures total compositional stress, where D is the number of components and clr_i is the centred log-ratio of component i.'",
+
+    "no_assumed_knowledge": "Every document must be readable by someone who has never seen HUF before. Define terms on first use. Include the formula when you use it. Make the document a LEARNING PATH, not just a results dump.",
+
+    "pll_disambiguation": "PLL means Phase-Locked Loop ONLY — the engineering analogy where the σ²_A parabola maps onto PLL architecture. The 6 immutable rules are the Compositional Integrity Protocol (CIP). 'Pipeline Lock List' is RETIRED as of 2026-04-19. When writing PLL, it means Phase-Locked Loop. When writing CIP, it means Compositional Integrity Protocol. Never conflate the two.",
+
+    "script_header_standard": "Every Python/JS script MUST begin with a docstring containing: (1) Experiment number and name, (2) 'HUF Programme — Higgins Unity Framework' (exact), (3) 'Peter Higgins / Claude (Anthropic)', (4) One-paragraph description using canonical terms."
+  },
+
+  "drift_corrections_log": {
+    "_section": "DRIFT CORRECTIONS — Record of all drift found and fixed on 2026-04-19.",
+    "date": "2026-04-19",
+    "total_drift_instances": 16,
+    "corrections": [
+      {"file": "codawork2026/experiments/HUF_Programme_Conclusion.docx", "error": "Energy-Information Transfer Theory (EITT)", "correct": "Entropy-Invariant Time Transformer (EITT)", "severity": "CRITICAL"},
+      {"file": "codawork2026/experiments/HUF_Programme_Conclusion.docx", "error": "Higgins Unified Framework", "correct": "Higgins Unity Framework", "severity": "HIGH"},
+      {"file": "codawork2026/experiments/HUF_Programme_Conclusion.docx", "error": "Phase-Lock Loop (PLL)", "correct": "Compositional Integrity Protocol (CIP) / phase-locked loop analogy", "severity": "HIGH"},
+      {"file": "science/quantum/Book1_HUF_QIT_Observer_Problem.md", "error": "Entropy-Invariant Totals Transformation", "correct": "Entropy-Invariant Time Transformer", "severity": "CRITICAL"},
+      {"file": "science/quantum/Book0_HUF_QIT_Primer.md", "error": "Entropy-Invariant Time Transformation", "correct": "Entropy-Invariant Time Transformer", "severity": "HIGH"},
+      {"file": "codawork2026/experiments/EXP-08_Composition_Atlas/exp08_composition_atlas.py", "error": "Higgins Unified Framework", "correct": "Higgins Unity Framework", "severity": "MEDIUM"},
+      {"file": "codawork2026/experiments/EXP-09_Master_Inventory/exp09_master_inventory.py", "error": "Higgins Unified Framework", "correct": "Higgins Unity Framework", "severity": "MEDIUM"},
+      {"file": "codawork2026/experiments/EXP-10_Full_Sweep/exp10_full_sweep.py", "error": "Higgins Unified Framework", "correct": "Higgins Unity Framework", "severity": "MEDIUM"},
+      {"file": "data/ngfs/HUF_NGFS_Phase4_Dashboard.html", "error": "Higgins Unification Framework", "correct": "Higgins Unity Framework", "severity": "MEDIUM"},
+      {"file": "science/coda-monitoring/HUF_NGFS_Phase4_Dashboard.html", "error": "Higgins Unification Framework", "correct": "Higgins Unity Framework", "severity": "MEDIUM"},
+      {"file": "archive/pre-codawork2026-drafts/POSTER_LAYOUT.md", "error": "CODA", "correct": "CoDa", "severity": "LOW"},
+      {"file": "drafts/proposals/Complementary_Integration_Brief.docx", "error": "Higgins Unification Framework", "correct": "Higgins Unity Framework", "severity": "MEDIUM"}
+    ]
+  }
+}

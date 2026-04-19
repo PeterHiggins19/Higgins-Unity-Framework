@@ -78,12 +78,18 @@
       "doctrine": "Instrument reads, never actuates. Human decides, loop stays open.",
       "NOT": ["HUF Governance", "HUF-Gov", "HUFGOV"]
     },
-    "pll": {
-      "full": "Pipeline Lock List",
-      "short": "PLL",
+    "cip": {
+      "full": "Compositional Integrity Protocol",
+      "short": "CIP",
       "rule_count": 6,
-      "description": "6 rules that cannot be changed without operator (Peter) approval",
-      "NOT": ["Phase-Locked Loop", "PLL Discipline List"]
+      "description": "6 rules that cannot be changed without operator (Peter) approval. Formerly called 'Pipeline Lock List' (retired 2026-04-19).",
+      "NOT": ["Pipeline Lock List (RETIRED)", "PLL Discipline List"]
+    },
+    "pll": {
+      "full": "Phase-Locked Loop",
+      "short": "PLL",
+      "description": "Engineering analogy from signal processing. The σ²_A parabola maps onto PLL architecture. PLL means Phase-Locked Loop ONLY — never 'Pipeline Lock List' (retired 2026-04-19, replaced by CIP).",
+      "NOT": ["Pipeline Lock List (RETIRED)"]
     },
     "keff": {
       "full": "Keff_fill",
@@ -174,7 +180,7 @@
       },
       "grok": {
         "provider": "xAI",
-        "role": "Adversarial testing, PLL compliance, robustness derivations",
+        "role": "Adversarial testing, CIP compliance, robustness derivations",
         "interface": "Grok web"
       },
       "gemini": {

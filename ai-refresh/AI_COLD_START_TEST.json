@@ -52,7 +52,7 @@
         "Q06_formula": "Write the perturbation difference formula and the drift flagging threshold.",
         "Q07_eitt_proof": "Name all four EITT proof domains and give one key number from each.",
         "Q08_quantum": "What is the Bell test result? How much does it exceed the classical bound?",
-        "Q09_pll": "How many rules are in the PLL discipline? What does PLL stand for?",
+        "Q09_cip": "How many rules are in the CIP? What does CIP stand for? What does PLL stand for?",
         "Q10_architecture": "What is Keff_fill? What aggregator does it use and at what value of p?"
       }
     },
@@ -109,7 +109,7 @@
       "test_result_2026-04-13": "10/10 questions. Integrity FAIL — caught 2 real bugs (stale hash, wrong char_count). Structure 4/5. 2 attempts (first attempt reviewed architecture instead of taking test)."
     },
     "grok": {
-      "history": "Adversarial reviewer. Performed PLL compliance checks, Keff_fill verification, SOPDT robustness derivation.",
+      "history": "Adversarial reviewer. Performed CIP compliance checks, Keff_fill verification, SOPDT robustness derivation.",
       "role": "Adversarial testing. Try to break the refresh. Find what's missing or wrong.",
       "access": "Can browse GitHub directly.",
       "test_result_2026-04-13": "10/10 questions. Integrity PASS. Structure 5/5. 6 adversarial findings (caught stale manifest paths). 1 attempt. Highest overall score."

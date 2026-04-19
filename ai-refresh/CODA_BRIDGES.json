@@ -1,0 +1,250 @@
+{
+  "_meta": {
+    "type": "HUF_CODA_BRIDGES",
+    "version": "1.0",
+    "created": "2026-04-19",
+    "author": "Peter Higgins / Claude (Anthropic)",
+    "purpose": "Maps every direct connection between HUF and the CoDa (Compositional Data Analysis) community. This document answers: what does HUF give CoDa that they did not have before? Structured for CoDaWork 2026 presentation strategy.",
+    "audience": "CoDa researchers familiar with Aitchison geometry, log-ratio transforms, simplex algebra, but NOT familiar with HUF, EITT, or Peter Higgins's work.",
+    "tone_rule": "Speak CoDa's language. Cite Aitchison, Egozcue, Pawlowsky-Glahn. Lead with what the CoDa community already knows and show how each HUF contribution extends it. No jargon from HUF internals that a CoDa scientist would not recognise.",
+    "citation_standard": "Aitchison (1982, 1986), Egozcue et al. (2003), Pawlowsky-Glahn et al. (2015), Shannon (1948)"
+  },
+
+  "executive_summary": {
+    "one_paragraph": "The Higgins Unity Framework (HUF) applies Aitchison geometry and compositional data analysis to temporal monitoring across 12 scientific domains spanning 44 orders of magnitude. Its central finding — the Entropy-Invariant Time Transformer (EITT) — demonstrates that Shannon entropy of compositional time series is near-invariant (0.18%) under geometric-mean temporal aggregation, while arithmetic aggregation destroys 20–40% of structural signal. This gives the CoDa community its first empirical proof of the practical cost of violating Aitchison's geometric-mean requirement. HUF also extends CoDa methods into new domains (nuclear physics, particle physics, gravitational waves, geochemistry) where compositional structure exists but CoDa has never been applied.",
+    "what_huf_gives_coda": [
+      "Empirical proof that geometric mean preserves information on the simplex (the 40-year gap)",
+      "Measurable cost of arithmetic averaging: 20–40% signal destruction",
+      "A temporal diagnostic (EITT) that extends CoDa from static cross-sections to time series",
+      "Cross-domain validation across 75 systems and 12 experiments",
+      "New applied domains where CoDa methods work but have never been tried",
+      "A structured 10-step operational chain (the Higgins Decomposition) for practitioners"
+    ]
+  },
+
+  "mathematical_bridges": {
+    "_section": "MATHEMATICAL BRIDGES — Every point where HUF directly uses or extends CoDa mathematics.",
+
+    "bridge_1_geometric_mean_proof": {
+      "coda_foundation": "Aitchison (1982, 1986) established that the geometric mean is the natural average on the simplex — the Fréchet mean in Aitchison geometry. The CoDa community has advocated for geometric averaging over arithmetic averaging for 40 years.",
+      "what_was_missing": "No empirical measurement of the cost of getting it wrong. The argument was theoretical: the simplex has its own geometry, therefore use the right operations. But nobody had measured what happens to real-world information when you use arithmetic mean instead.",
+      "huf_contribution": "EITT provides the measurement. Geometric-mean decimation of compositional time series preserves Shannon entropy to within 0.18% across 341:1 temporal compression. Arithmetic mean destroys 14–22% at 5-year windows and 22–41% at 10-year windows (NGFS Phase 4 scenario data, 35 scenarios, 6 carriers, 2020–2100).",
+      "key_numbers": {
+        "geometric_5yr": "1.8% entropy variation (mean across 35 NGFS scenarios)",
+        "geometric_10yr": "2.3% entropy variation",
+        "arithmetic_5yr": "14.2% entropy variation",
+        "arithmetic_10yr": "21.7% entropy variation",
+        "headline": "0.18% at 341:1 compression (European daily electricity prices)"
+      },
+      "why_coda_cares": "This converts a theoretical preference into an empirical fact. Any applied field using arithmetic averaging on compositional data — energy agencies, geochemistry labs, financial portfolio analysis — is destroying up to 40% of structural signal. The CoDa community can now point to a measured consequence.",
+      "who_it_vindicates": "Aitchison (1982), Egozcue et al. (2003), Pawlowsky-Glahn et al. (2015) — their insistence on geometric mean is not theoretical elegance but empirical necessity.",
+      "formula": "x̄_G = C(∏ₜ x(t)^(1/k)) — the Aitchison barycenter",
+      "coda_level": "CORE — this is a direct contribution to CoDa theory, not an application"
+    },
+
+    "bridge_2_simplex_closure": {
+      "coda_foundation": "Closure C(x) = x/Σxᵢ maps positive vectors to the simplex. Standard CoDa first step (Aitchison 1986, Chapter 2).",
+      "huf_usage": "Step 2 of the Higgins Decomposition. Applied to every domain: energy carrier shares, nuclear binding energy components, quark mass fractions, geochemical oxide compositions, gravitational wave mass budgets.",
+      "huf_contribution": "Demonstrates that closure is meaningful in domains where CoDa has never been applied — nuclear physics (SEMF 4-part decomposition), particle physics (quark flavor simplex), gravitational waves (mass-energy budget). In each case, the simplex structure is physical, not just a normalisation convenience.",
+      "why_coda_cares": "Expands the application frontier. CoDa has strong roots in geochemistry, ecology, and some economics. HUF shows the simplex appears naturally in nuclear physics, cosmology, and gravitational wave analysis — entirely new territory.",
+      "coda_level": "APPLICATION — standard CoDa tool applied to new domains"
+    },
+
+    "bridge_3_clr_transform": {
+      "coda_foundation": "The Centred Log-Ratio transform clr(x)ᵢ = ln(xᵢ) − (1/D)Σⱼln(xⱼ) maps compositions to ℝᴰ with zero-sum constraint (Aitchison 1986).",
+      "huf_usage": "Step 3 of the Higgins Decomposition. The CLR is the workhorse — every subsequent computation (Aitchison variance, variation matrix, drift detection, σ²_A parabola) operates in CLR space.",
+      "huf_contribution": "The Vertex Theorem: d(σ²_A)/dt = (2/D)Σ clr_i · clr_i' = 0 at the vertex, where clr(t*) ⊥ clr'(t*). This is a new identity derived entirely from CLR properties — the chain rule applied to the squared CLR norm. It gives the CoDa community a dynamic equilibrium condition on the simplex: the point where composition restructures but stress is stationary.",
+      "why_coda_cares": "CoDa has mostly been applied to static cross-sectional data (what is the composition at one time?). The Vertex Theorem is a CoDa result about dynamics — how compositions change over time. This extends CoDa into temporal monitoring, a natural next step for the field.",
+      "formula": "d(σ²_A)/dt = (2/D)(clr · clr') = 0 ⟺ clr(t*) ⊥ clr'(t*)",
+      "coda_level": "EXTENSION — new theorem using existing CoDa tools"
+    },
+
+    "bridge_4_aitchison_variance": {
+      "coda_foundation": "σ²_A = (1/D)Σ clr_i² measures total compositional variability — distance from the simplex barycenter (Pawlowsky-Glahn et al. 2015).",
+      "huf_usage": "Step 4 of the Higgins Decomposition. σ²_A is the primary diagnostic — it is tracked over time as the compositional stress signal. A quadratic (parabola) is fit to the σ²_A trajectory to identify dynamic equilibria.",
+      "huf_contribution": "Using σ²_A as a time series (not just a summary statistic) reveals parabolic structure in 28 of 30 domains tested. The vertex of the σ²_A parabola identifies dynamic equilibria — points where the composition restructures without increasing stress. This is new: CoDa uses σ²_A to summarise a dataset, HUF tracks it through time to detect transitions.",
+      "key_result": "28/30 domains show σ²_A parabola with R² > 0.6. Highest: room acoustics R²=0.998.",
+      "why_coda_cares": "Elevates σ²_A from a summary statistic to a dynamic diagnostic. CoDa practitioners already compute it; HUF shows them what to do with the time series.",
+      "coda_level": "EXTENSION — existing CoDa measure used in a new way"
+    },
+
+    "bridge_5_perturbation_difference": {
+      "coda_foundation": "Perturbation x ⊕ y = C(x₁y₁, ..., xDyD) is the simplex addition. Perturbation difference Δ(t) = C(x₁(t+1)/x₁(t), ..., xD(t+1)/xD(t)) measures compositional change (Aitchison 1986).",
+      "huf_usage": "The drift detection mechanism. Aitchison distance dₐ(t,t+1) = ‖clr(Δ(t))‖ is computed between consecutive compositions. Drift flag when dₐ > μ + 2σ (self-calibrated per system).",
+      "huf_contribution": "Demonstrated across 75 systems with real-world interpretability: Germany nuclear shutdown (dₐ=9.07), Japan Fukushima aftermath (dₐ=9.05), UK dash-for-gas (dₐ=2.98). Each drift flag has a known physical cause — the perturbation difference is not just a statistic but a diagnostic that maps onto real events.",
+      "why_coda_cares": "Shows perturbation difference working as a practical monitoring tool in real-world policy-relevant data. The CoDa community has the theory; HUF shows the practice.",
+      "coda_level": "APPLICATION — standard CoDa operation with real-world validation"
+    },
+
+    "bridge_6_variation_matrix": {
+      "coda_foundation": "The variation matrix V with elements Vᵢⱼ = var(ln(xᵢ/xⱼ)) captures pairwise compositional relationships (Aitchison 1986, Pawlowsky-Glahn et al. 2015).",
+      "huf_usage": "Step 5 of the Higgins Decomposition. Used to identify which component pairs drive compositional change. In energy: Coal/Wind has the highest variation (fuel switching). In geochemistry: SiO₂/MgO discriminates mafic from felsic.",
+      "huf_contribution": "Cross-domain comparison of variation matrices reveals universal patterns: in every domain, one or two component pairs dominate the variation structure. The variation matrix is the fingerprint of the domain's compositional dynamics.",
+      "why_coda_cares": "Applied-domain validation that the variation matrix captures domain-specific structure, not just noise.",
+      "coda_level": "APPLICATION — standard CoDa tool validated across domains"
+    },
+
+    "bridge_7_shannon_entropy_on_simplex": {
+      "coda_foundation": "Shannon entropy H(x) = −Σ xᵢ ln(xᵢ) measures compositional evenness. Well-defined on the simplex. Used in ecology (species diversity), economics (market concentration).",
+      "huf_usage": "Step 7 of the Higgins Decomposition. Shannon entropy is the lens through which EITT is measured — the invariant that geometric-mean decimation preserves.",
+      "huf_contribution": "Demonstrates that Shannon entropy and Aitchison variance are complementary lenses on the same simplex: H captures evenness (how spread the composition is), σ²_A captures stress (how far from the centroid). Together they give a complete diagnostic. The EITT finding connects them: entropy invariance under geometric decimation is a consequence of Aitchison geometry.",
+      "why_coda_cares": "Shannon entropy is widely used outside CoDa (information theory, ecology). This bridges CoDa and information theory — two communities that share the simplex but rarely talk to each other.",
+      "coda_level": "BRIDGE — connects CoDa geometry to information theory"
+    },
+
+    "bridge_8_effective_diversity": {
+      "coda_foundation": "N_eff = exp(H) is the effective number of components (Jost 2006, adapted from MacArthur 1965). Standard in ecology.",
+      "huf_usage": "Tracks how concentrated or diversified a composition is over time. Germany: N_eff went from 3.49 (2000) to 5.85 (2025) — diversification of the energy mix. Japan: 4.91 to 5.17 — mild diversification despite Fukushima shock.",
+      "huf_contribution": "Applied to energy policy monitoring, nuclear physics (number of effective binding modes), and particle physics (effective quark flavors). Makes the compositional diagnostic immediately interpretable to non-CoDa audiences.",
+      "why_coda_cares": "Demonstrates a CoDa-interpretable metric working in policy contexts. This is the 'so what?' that applied CoDa often struggles to communicate.",
+      "coda_level": "APPLICATION — existing metric in new contexts"
+    }
+  },
+
+  "flagship_domains": {
+    "_section": "FLAGSHIP DOMAIN RESULTS — Key domains where CoDa methods are validated and extended.",
+
+    "domain_1_energy": {
+      "name": "Global Electricity Mix Monitoring",
+      "data": "EMBER Global Electricity Review (CC BY 4.0). 9 carriers, 26 years, 3 countries.",
+      "coda_tools_used": ["Simplex closure", "CLR transform", "Aitchison variance", "Perturbation difference", "Geometric-mean decimation", "Shannon entropy"],
+      "key_results": [
+        "Drift flags correctly identify Germany's nuclear shutdown (2023–2024, dₐ=9.07), Japan's Fukushima aftermath (2013–2014, dₐ=9.05), and UK's coal collapse (2019–2020, dₐ=3.26)",
+        "EITT: 0.18% entropy variation under 341:1 geometric-mean compression (daily → annual)",
+        "Arithmetic mean destroys 14–22% of entropy structure at the same compression"
+      ],
+      "why_coda_cares": "Energy mix data IS compositional — shares of total generation by fuel type. Every energy agency averages this data arithmetically. CoDa has the correct tools but nobody has shown the measured cost of the wrong approach. HUF provides that measurement.",
+      "policy_relevance": "IEA, IRENA, EIA, NGFS, EMBER — all use arithmetic aggregation on inherently compositional data. This finding has direct policy implications."
+    },
+
+    "domain_2_geochemistry": {
+      "name": "Igneous Rock Geochemistry",
+      "data": "Ball 2022 (global igneous database) + AGDB3 (Alaska Geochemical Database). 40,666 real rock samples. 8 major oxides.",
+      "coda_tools_used": ["Simplex closure", "CLR transform", "Aitchison variance", "EITT geometric-mean decimation"],
+      "key_results": [
+        "37 of 39 TAS (Total Alkali-Silica) rock types pass EITT",
+        "Foidite fails (PR=32%) — deep mantle phase chaos. This is a LEGITIMATE boundary condition, not a flaw.",
+        "The variation matrix identifies SiO₂/MgO and SiO₂/FeOt as the dominant compositional drivers, matching known petrology"
+      ],
+      "why_coda_cares": "Geochemistry IS CoDa's home territory. Aitchison himself used geochemical examples. This validates EITT on 40,666 real samples in a domain CoDa already owns. The Foidite failure is scientifically interesting: it defines the boundary where temporal autocorrelation breaks — a condition the CoDa community should recognise as fundamental.",
+      "connection_to_existing_coda_work": "Builds directly on Pawlowsky-Glahn et al. (2015) Chapters 14-15 (geochemical applications). Extends from static cross-section to temporal series."
+    },
+
+    "domain_3_nuclear": {
+      "name": "Nuclear Binding Energy (SEMF Decomposition)",
+      "data": "AME2020 (Atomic Mass Evaluation). 3,554 nuclides. Weizsäcker SEMF 4-part decomposition.",
+      "coda_tools_used": ["Simplex closure of SEMF terms [Volume, Surface, Coulomb, Asymmetry]", "CLR transform", "Aitchison variance trajectory", "σ²_A parabola analysis"],
+      "key_results": [
+        "Nuclear binding energy naturally decomposes into a 4-part composition on the simplex",
+        "Shell effects (magic numbers) appear as σ²_A perturbations — CoDa detects nuclear structure",
+        "SEMF light nuclei (Z≤50) vs heavy nuclei (Z>50) show distinct Aitchison variance regimes (R²=0.933)"
+      ],
+      "why_coda_cares": "Nuclear physics has never used CoDa. The SEMF decomposition IS a composition (4 terms that account for the total binding energy). Applying CoDa to it reveals shell structure and regime transitions that match known physics. This is a completely new application domain for CoDa.",
+      "novelty": "First known application of Aitchison geometry to nuclear binding energy data."
+    },
+
+    "domain_4_particle_physics": {
+      "name": "Quark Flavor Mixing and QGP Freeze-out",
+      "data": "PDG values for CKM/PMNS matrices. STAR BES-I + ALICE hadron yield data. 7 species, 8 collision energies.",
+      "coda_tools_used": ["Simplex closure of mixing matrix |Vᵢⱼ|²", "Shannon entropy", "EITT across QCD phase transition", "CLR-based compositional distance"],
+      "key_results": [
+        "CKM (quark mixing) entropy H/Hmax=0.564 — strongly hierarchical. PMNS (neutrino mixing) entropy H/Hmax=0.911 — near-maximal. Ratio: 1.615.",
+        "QGP freeze-out: EITT holds at 0.27% across the nuclear-quark phase boundary (7.7–2760 GeV collision energies)",
+        "Proton mass budget H/Hmax=0.928 — near the 93% universal bound"
+      ],
+      "why_coda_cares": "Particle physics data — mixing matrices, hadron yields, mass budgets — are compositions. The community fits them with χ² treating components as independent, violating the compositional constraint. CoDa corrects this. The CKM and PMNS matrices are the most precisely measured compositions in all of physics.",
+      "novelty": "First known application of Aitchison geometry to quark mixing matrices and QGP hadron yields."
+    }
+  },
+
+  "presentation_story": {
+    "_section": "THE STORY FOR CODA — How to present this to the CoDa community.",
+
+    "opening_hook": "You've been right for 40 years. We can now prove it costs 20–40% of your signal to ignore you.",
+
+    "narrative_arc": [
+      {
+        "beat": 1,
+        "title": "The Problem",
+        "content": "Compositional time series are everywhere — energy mixes, geochemical profiles, particle yields. They are routinely aggregated with arithmetic mean. Nobody has measured the cost."
+      },
+      {
+        "beat": 2,
+        "title": "The Tool",
+        "content": "The Entropy-Invariant Time Transformer (EITT) measures Shannon entropy of compositional data at multiple temporal resolutions. Geometric-mean decimation (the Aitchison barycenter) preserves the simplex structure; arithmetic mean does not."
+      },
+      {
+        "beat": 3,
+        "title": "The Proof",
+        "content": "0.18% entropy variation under geometric mean at 341:1 compression. 14–41% under arithmetic mean at the same compression. Tested on European electricity prices, NGFS climate scenarios, EMBER generation data, geochemical oxide profiles. The geometric mean preserves information; the arithmetic mean destroys it. Measurably."
+      },
+      {
+        "beat": 4,
+        "title": "The Extension",
+        "content": "EITT extends CoDa from static cross-sections to temporal monitoring. The Vertex Theorem gives a dynamic equilibrium condition in CLR space. The σ²_A parabola tracks compositional stress over time. 28 of 30 domains show parabolic structure."
+      },
+      {
+        "beat": 5,
+        "title": "New Domains",
+        "content": "CoDa works in nuclear physics (SEMF binding energy), particle physics (CKM/PMNS mixing, QGP freeze-out), and gravitational wave analysis (merger mass budgets). 75 systems, 44 orders of magnitude, 12 experiments. The simplex is the same everywhere."
+      },
+      {
+        "beat": 6,
+        "title": "The Operational Chain",
+        "content": "The Higgins Decomposition: a 10-step operational process from raw data to diagnostic verdict. Every step uses standard CoDa tools. A practitioner can apply this to any compositional time series. The Compositional Integrity Protocol (CIP) — 6 immutable rules — prevents contamination."
+      },
+      {
+        "beat": 7,
+        "title": "What This Means for CoDa",
+        "content": "CoDa has been telling applied fields to use geometric mean for 40 years. Now there is a measurable consequence. EITT is the instrument. The Higgins Decomposition is the method. Together, they give CoDa practitioners a temporal monitoring tool and an empirical argument for adoption."
+      }
+    ],
+
+    "what_not_to_say": [
+      "Do NOT lead with HUF acronyms — lead with CoDa's own language",
+      "Do NOT mention PLL, DADC, DADI, BTL, RWA, or HUF-GOV — these are internal engineering heritage, not relevant to CoDa",
+      "Do NOT present the Bell test or quantum analogies — CoDa scientists will find this confusing or overclaiming",
+      "Do NOT present the nuclear staircase or stability island predictions — these are exploratory and not CoDa-relevant",
+      "Do NOT present dark matter or gravitational wave results as the lead — these are impressive but remote from CoDa's interests",
+      "DO lead with energy and geochemistry — these are domains CoDa already works in",
+      "DO credit Aitchison, Egozcue, Pawlowsky-Glahn explicitly and early",
+      "DO present the geometric mean proof as the headline finding — it is the gift to the community",
+      "DO show the measured cost of arithmetic averaging — this is what will get attention"
+    ],
+
+    "coda_friendly_terminology_map": {
+      "EITT": "Entropy-Invariant Time Transformer — say it once, then just 'the EITT' or 'geometric-mean entropy invariance'",
+      "Higgins Decomposition": "The 10-step chain — introduce as 'an operational pipeline built entirely on standard CoDa tools'",
+      "CIP": "Compositional Integrity Protocol — introduce as '6 rules ensuring analysis stays on the simplex'",
+      "σ²_A trajectory": "CoDa scientists know Aitchison variance. Just say 'we track σ²_A through time'",
+      "Vertex Theorem": "Say 'the CLR orthogonality condition for dynamic equilibrium' — CoDa people will immediately grasp this",
+      "PLL parabola": "Do NOT use 'PLL' with CoDa audience. Say 'the σ²_A parabola' or 'quadratic fit to compositional stress'",
+      "Drift flag": "Say 'perturbation-based change detection' — CoDa language",
+      "HCDT": "Drop this acronym for CoDa presentations. Just describe the toolkit by its components."
+    }
+  },
+
+  "system_of_systems_map": {
+    "_section": "HOW THE CODA BRIDGES MAP TO THE HUF SYSTEM OF SYSTEMS",
+    "_note": "This maps the CoDa-facing presentation to the internal experiment chain. For Peter's reference, not for CoDa audience.",
+
+    "coda_lead": {
+      "geometric_mean_proof": "EXP-01 (Gold/Silver), EXP-02 (US Electricity), NGFS comparison",
+      "geochemistry_validation": "EXP-05 (synthetic) + EXP-05b (40,666 real rocks)",
+      "energy_monitoring": "EXP-01, EXP-02, EMBER 3-country analysis",
+      "temporal_extension": "The Vertex Theorem, σ²_A parabola (28/30 domains)"
+    },
+    "depth_available_but_not_lead": {
+      "nuclear_physics": "EXP-03 (U-235), EXP-06 (fusion), EXP-10 (SEMF)",
+      "particle_physics": "EXP-07 (quarks), EXP-08 (QGP), EXP-10 (CKM/PMNS)",
+      "gravitational": "EXP-12 (GW150914, GW170817)",
+      "full_inventory": "EXP-09 (75 systems, 44 orders of magnitude)"
+    },
+    "do_not_present_to_coda": {
+      "internal_engineering": "DADC/DADI/ADAC, BTL heritage, Keff_fill, RWA",
+      "quantum_analogies": "Bell test, HUF-QIT, entanglement interpretation",
+      "exploratory": "Nuclear staircase, stability islands, DM confinement analogy",
+      "governance": "HUF-GOV, HUF-CLS, open-loop doctrine"
+    }
+  }
+}

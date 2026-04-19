@@ -1,9 +1,9 @@
 {
   "_meta": {
     "type": "HUF-FAST-REFRESH",
-    "version": "3.2",
+    "version": "3.4",
     "created": "2026-04-13",
-    "updated": "2026-04-18",
+    "updated": "2026-04-19",
     "author": "Peter Higgins / Claude",
     "purpose": "Single-file AI context loader for the Higgins Unity Framework. Load this FIRST in any new session. Contains all canonical names, numbers, formulas, and structure. Every value here is the source of truth — if a document disagrees with this file, this file wins.",
     "companion": "HUF_INTEGRITY_MANIFEST.json — hash-verified cross-reference. Load SECOND to verify corpus integrity.",
@@ -12,8 +12,9 @@
     "mathematical_addendum": "HUF_MATHEMATICAL_ADDENDUM.json — comprehensive mathematical registry: notation table, theorems with proofs, lemmas, corollaries, fixed-point results, canonical values, open problems, SEMF formulas. Load for the complete formal mathematical foundation.",
     "usage": "AI: read this file before doing ANY HUF/CoDa/EITT work. Human: use as quick reference. Both: if a value looks wrong in a document, check it against this file.",
     "refresh_protocol": "When new canonical results are produced, update this file FIRST, then rebuild documents FROM this file. Never the reverse.",
-    "refresh_chain": "This file → HUF_MATHEMATICAL_ADDENDUM.json → HUF_INTEGRITY_MANIFEST.json → HUF_ADMIN.json → PHASE_MARKERS.json → INDEX.json (repo root). Each pass tightens and modernizes. Old versions archived at ai-refresh/archive/ with date stamps. History is archived; the refresh stays lean and current.",
-    "version_note": "v3.2 [FIXED POINT — 2026-04-18]: PLL-EITT discovery completed to confidence threshold (30 domains ≥ 3^3=27). Full chain: parabola hunt (30 domains, 28 locks + 2 trajectory diagnostics), noise squeeze (stochastic core measured), DADC-DADI-ADAC contamination chain (8 boundary species identified). Experiment journal: 20 pages, 9 chapters, 9 figures. This version is a FLAGGED FIXED POINT — the PLL discovery, the noise analysis, and the DADC chain are stable findings. v3.1: HIVIP methodology, promotion ladder, contamination doctrine, nuclear staircase. v3.0: Geochemistry extension, Working Example, codawork2026/ consolidated. Previous versions archived at ai-refresh/archive/2026-04-15-pre-v3/"
+    "refresh_chain": "This file → HUF_COMPLETE_REFERENCE.json → HUF_MATHEMATICAL_ADDENDUM.json → HUF_INTEGRITY_MANIFEST.json → HUF_ADMIN.json → PHASE_MARKERS.json → INDEX.json (repo root). Each pass tightens and modernizes. Old versions archived at ai-refresh/archive/ with date stamps. History is archived; the refresh stays lean and current.",
+    "complete_reference": "HUF_COMPLETE_REFERENCE.json — the master glossary and single source of truth for every acronym, named concept, formula, variable, constant, experiment, and document standard in the HUF programme. Load AFTER this file to lock all terminology before touching any document. If a term appears different in any document, the COMPLETE_REFERENCE wins.",
+    "version_note": "v3.4 [CIP RESTORE POINT — 2026-04-19]: 'Pipeline Lock List' retired, replaced by Compositional Integrity Protocol (CIP). PLL now means Phase-Locked Loop only. HCDT (Higgins Compositional Diagnostic Toolkit) named as umbrella toolkit. 16 formal academic citations injected into all 21 experiments. Full terminology compliance sweep (48 replacements across 29 files). All test results annotated with terminology change note. v3.3 [PROGRAMME COMPLETE — 2026-04-19]: Full sweep of all mapped/untouched systems (EXP-10), final four untouched systems (EXP-11), gravity deep study with GW150914/GW170817 analysis (EXP-12). Master inventory: 75 systems, 100% done, zero remaining. 93% universal entropy bound extended to gravitational waves. Programme conclusion document sealed. v3.2 [FIXED POINT — 2026-04-18]: CIP lock hunt (30/30 confidence), noise squeeze, DADC-DADI-ADAC chain. v3.1: HIVIP methodology, promotion ladder, contamination doctrine, nuclear staircase. v3.0: Geochemistry extension, Working Example, codawork2026/ consolidated. Previous versions archived at ai-refresh/archive/2026-04-15-pre-v3/"
   },
 
   "identity": {
@@ -256,7 +257,14 @@
       "EXP-03": {"domain": "Uranium-235 Binding Energy", "samples": 235, "result": "PR=78%, nuclear shell effects detected", "status": "LEGITIMATE"},
       "EXP-04": {"domain": "Microphone Valley Response", "samples": 82, "result": "PR=88%, 3-part closure confirmed", "status": "LEGITIMATE"},
       "EXP-05": {"domain": "Geochemistry (synthetic)", "samples": 500, "result": "PR=89-95%", "status": "LEGITIMATE"},
-      "EXP-05b": {"domain": "Geochemistry (40,666 real rocks)", "samples": 40666, "result": "37/39 TAS types pass", "status": "LEGITIMATE"}
+      "EXP-05b": {"domain": "Geochemistry (40,666 real rocks)", "samples": 40666, "result": "37/39 TAS types pass", "status": "LEGITIMATE"},
+      "EXP-06": {"domain": "Nuclear Fusion Energy Budget", "systems": 17, "result": "IFR reference design, Krell cascade, 4-channel burning plasma", "status": "LEGITIMATE"},
+      "EXP-07": {"domain": "QCD / Quark Compositional Analysis", "systems": 12, "result": "Proton mass H/Hmax=0.928, spin crisis resolved, exotic hadron classifier", "status": "LEGITIMATE"},
+      "EXP-08": {"domain": "Cross-Boundary Handshakes", "systems": 2, "result": "QGP freeze-out 0.27% EITT, NS EOS 6.7% drift flag at muon threshold", "status": "LEGITIMATE"},
+      "EXP-09": {"domain": "Master Inventory", "systems": 75, "result": "100% coverage, 44 orders of magnitude, zero untouched", "status": "LEGITIMATE"},
+      "EXP-10": {"domain": "Full Sweep (6 mapped + 6 extensions)", "systems": 12, "result": "All mapped→COMPLETE. CKM/PMNS ratio 1.615, SEMF light/heavy split R²=0.933", "status": "LEGITIMATE"},
+      "EXP-11": {"domain": "Final Four (DM ratio, Z-chains, NS EOS, Stellar)", "systems": 4, "result": "DM confinement ~10²⁰ m, pp→CNO at 1.35 M☉, EOS-universality R²>0.94", "status": "LEGITIMATE"},
+      "EXP-12": {"domain": "Gravity Deep Study", "systems": 6, "result": "24 systems classified, GW150914 H/Hmax=0.175, GW phase 0.923 near 93% bound", "status": "LEGITIMATE"}
     },
 
     "geometric_mean_empirical_proof": {
@@ -350,8 +358,48 @@
       "experiments_completed": {
         "EXP07_QGP_freezeout": "EITT held at 0.27% across nuclear-quark boundary. 8 collision energies (7.7–2760 GeV), 7 hadron species. Data from STAR BES-I + ALICE.",
         "EXP08_neutron_star": "EITT broke at 6.7% — correctly. Drift flag at muon threshold n_B ≈ 0.14 fm⁻³. SLy4 EOS, 4-species (n,p,e,μ).",
-        "proven_chain_updated": "EMBER → Gold/Silver → U-235 → Geochemistry → NGFS → Nuclear staircase → QGP freeze-out → Neutron star. 8 domains."
+        "EXP10_full_sweep": "All 6 mapped systems → COMPLETE. All 6 extensions run. CKM full 3×3 (H=0.564), PMNS (H=0.911), ratio 1.615. Color confinement PLL R²=0.497. QCD coupling R²=0.998. EMC effect R²=0.999. Strong CP bowl confirmed. Higgs branching H=0.568. DGLAP PLL R²=0.980. Universe entropy declining. SEMF heavy R²=0.933. Kappa scan R²=0.978.",
+        "EXP11_final_four": "Dark matter confinement scale ~10²⁰ m (analogous to QCD at 10⁻¹⁵ m). 8 nuclide Z-chains mapped. NS EOS-universality: APR/SLy/BSk all give R²>0.94. Stellar pp→CNO crossover at 1.35 M☉, gravitational leverage peak at 0.9 M☉.",
+        "EXP12_gravity_deep": "24 systems classified into NONE/ORTHOGONAL/BOUNDARY/DIRECT gravity roles. Activation scale ~10⁷ m. GW150914 mass budget H/Hmax=0.175 (lowest entropy in HUF). GW phase budget 0.923 (near 93% universal bound). QNM (2,2,0) at 90%. GW170817 BNS H/Hmax=0.111 (matter = extra channels, tighter lock). No-hair theorem as compositional minimum.",
+        "proven_chain_updated": "EMBER → Gold/Silver → U-235 → Geochemistry → NGFS → Nuclear staircase → QGP → NS → CKM/PMNS → Higgs → DM ratio → Gravitational waves. 12 domains, 75 systems, 44 orders of magnitude."
       }
+    },
+
+    "gravity_programme": {
+      "_note": "The Gravity of the Situation — comprehensive gravity study. EXP-12, completed 2026-04-19.",
+      "status": "COMPLETE (L1 on promotion ladder)",
+      "key_findings": {
+        "gravity_activation_scale": "~10⁷ m — below this gravity is compositionally silent; above it progressively dominant",
+        "four_gravity_roles": "NONE (subatomic, acoustic, lab) → ORTHOGONAL (planetary, geochemistry) → BOUNDARY (stellar, NS, kilonova) → DIRECT (BBH, BNS, universe)",
+        "bh_merger_entropy": "GW150914 mass budget H/Hmax=0.175 — lowest entropy composition in entire HUF programme",
+        "gw_phase_budget": "Inspiral 50% / merger 33% / ringdown 17% = H/Hmax=0.923 — near 93% universal bound",
+        "no_hair_theorem": "Maximum gravitational compression → minimum compositional entropy. No-hair as compositional statement.",
+        "qnm_composition": "(2,2,0) mode at 90%, confirming compositional minimum at ringdown",
+        "bns_matter_bonus": "GW170817: 5 channels vs BBH 3, but even lower entropy (0.111). Matter = extra channels but tighter lock.",
+        "dm_confinement": "Dark matter confinement scale ~10²⁰ m, analogous to QCD confinement at ~10⁻¹⁵ m — compositional mirror across 35 orders of magnitude",
+        "universal_93_percent_bound": "Appears in proton mass (0.928), spin (0.969), QGP fluidity, AND GW phase budget (0.923). Extends the bound from QCD/nuclear into pure gravity."
+      },
+      "documents": ["The_Gravity_of_the_Situation.docx (8-page executive summary)", "HUF_Programme_Conclusion.docx (7-page master conclusion)"],
+      "scripts": ["exp12_gravity_deep.py"],
+      "sealed_conclusions": ["EXP-12_Gravity_Deep/sealed_conclusion.json"]
+    },
+
+    "programme_completion": {
+      "_note": "HUF experimental programme status as of 2026-04-19.",
+      "status": "100% COMPLETE",
+      "total_experiments": 12,
+      "total_systems": 75,
+      "total_sealed": 16,
+      "total_complete": 59,
+      "total_mapped_remaining": 0,
+      "total_untouched_remaining": 0,
+      "scale_range": "10⁻¹⁸ m (quarks) → 10²⁶ m (universe)",
+      "orders_of_magnitude": 44,
+      "flaws_found": 20,
+      "flaws_fatal": 0,
+      "opportunities_remaining": 20,
+      "conclusion_document": "codawork2026/experiments/HUF_Programme_Conclusion.docx",
+      "master_inventory": "codawork2026/experiments/EXP-09_Master_Inventory/exp09_master_inventory.json"
     },
 
     "pll_parabola_discovery": {
@@ -510,9 +558,17 @@
       "Kanjiradan_Veetil_p26": "Cancer mortality time series — VAR forecasting, needs drift detection"
     },
     "presentation_strategy": {
-      "show": "Protocol, EMBER results, falsifiable claim, open question, EITT seed (2 min at end)",
-      "hide": "Quantum correspondence, Bell test, QTM tools, full HUF framework",
-      "posture": "Stanley Steamer — their tools, their geometry, your application, their language"
+      "revised": "2026-04-19 — CoDa-first approach. Lead with the geometric mean proof.",
+      "story": "You've been right for 40 years. We can now prove it costs 20-40% of your signal to ignore you.",
+      "lead": "Geometric mean proof (EITT) — 0.18% entropy invariance vs 14-41% arithmetic destruction. The headline finding.",
+      "body": "CoDa bridges — 8 direct mathematical connections to Aitchison geometry. Show CoDa tools working in time series. Vertex Theorem as the new CoDa dynamics result.",
+      "evidence": "4 flagship domains: energy (EMBER), geochemistry (40K rocks), nuclear (SEMF), particle physics (CKM/PMNS). Energy and geochemistry are CoDa home territory; nuclear and particle are new territory.",
+      "method": "The Higgins Decomposition — 10-step operational chain built entirely on standard CoDa tools. CIP (6 rules) ensures analysis stays on the simplex.",
+      "close": "What this means for CoDa: empirical ammunition, temporal extension, new domains. The simplex is the same everywhere.",
+      "show": "Geometric mean proof, EMBER drift detection, geochemistry validation, Vertex Theorem, Higgins Decomposition, CoDa bridges, falsifiable claim",
+      "hide": "Quantum correspondence, Bell test, QTM tools, DADC/DADI heritage, PLL engineering analogy details, nuclear staircase, dark matter, gravitational waves (mention as depth but do NOT lead)",
+      "posture": "Stanley Steamer — their tools, their geometry, your application, their language. Credit Aitchison, Egozcue, Pawlowsky-Glahn explicitly and early.",
+      "bridges_document": "ai-refresh/CODA_BRIDGES.json — full map of every HUF-CoDa mathematical connection"
     },
     "consolidated_package": {
       "location": "codawork2026/",
@@ -533,8 +589,8 @@
     }
   },
 
-  "pll_discipline": {
-    "_note": "Pipeline Lock List — rules that cannot be changed without operator approval",
+  "cip_rules": {
+    "_note": "Compositional Integrity Protocol (CIP) — 6 immutable rules that cannot be changed without operator approval. Formerly 'pll_discipline' — renamed 2026-04-19.",
     "rule_1": "All roots computed on simplex carrier",
     "rule_2": "Simplex normalisation only",
     "rule_3": "RMS aggregator (p=2 locked)",
@@ -548,15 +604,22 @@
     "_updated": "2026-04-17 — paths updated for codawork2026/ consolidation and new deliverables",
 
     "refresh_chain": {
-      "_note": "Load in this order. Each file tightens context.",
+      "_note": "Load in this order. Each file tightens context. The COMPLETE_REFERENCE is the terminology gate — load it before any document work.",
       "1_fast_refresh": "ai-refresh/HUF_FAST_REFRESH.json (THIS FILE)",
-      "2_integrity_manifest": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
-      "3_admin": "ai-refresh/HUF_ADMIN.json",
-      "4_phase_markers": "ai-refresh/PHASE_MARKERS.json",
-      "5_repo_index": "INDEX.json"
+      "2_complete_reference": "ai-refresh/HUF_COMPLETE_REFERENCE.json",
+      "3_mathematical_addendum": "ai-refresh/HUF_MATHEMATICAL_ADDENDUM.json",
+      "4_integrity_manifest": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+      "5_admin": "ai-refresh/HUF_ADMIN.json",
+      "6_phase_markers": "ai-refresh/PHASE_MARKERS.json",
+      "7_master_lineage": "ai-refresh/MASTER_LINEAGE.json",
+      "8_repo_index": "INDEX.json",
+      "9_coda_bridges": "ai-refresh/CODA_BRIDGES.json",
+      "10_chatgpt_verification": "ai-refresh/CHATGPT_VERIFICATION_CHECKLIST.json",
+      "11_master_catalog": "ai-refresh/HUF_MASTER_CHECKSUM_CATALOG.json"
     },
 
     "canonical_sources": {
+      "complete_reference": "ai-refresh/HUF_COMPLETE_REFERENCE.json",
       "huf_spec": "ai-refresh/huf_spec_v2.0.json",
       "master_lineage": "ai-refresh/MASTER_LINEAGE.json",
       "knowledge_base": "science/quantum/HUF_QIT_CoDaWork2026_KnowledgeBase.json",
@@ -614,14 +677,26 @@
     "uk_flag_precision_loss": "UK flags rounded to 'approximately 3.0' losing specific values (2.98, 3.23, 3.26) and year-pairs — caught 2026-04-13",
     "arithmetic_vs_geometric": "Descriptions of EITT sometimes omit that arithmetic mean DESTROYS entropy — both results must be stated together",
     "geochemistry_anomaly_miscount": "Foidite is the SOLE anomaly (1 of 39 TAS types). Do not say 'several fail' or '2 fail' — it is exactly 1 (Foidite, PR=32%, deep mantle phase chaos)",
-    "experiment_chain_completeness": "There are 6 experiments (EXP-01 through EXP-05b). Do not omit EXP-05b (real geochemistry) when listing the chain — it is the strongest result",
+    "experiment_chain_completeness": "There are 12 experiments (EXP-01 through EXP-12). The full chain runs: EXP-01 Gold/Silver, EXP-02 US Energy, EXP-03 Nuclear, EXP-04 Acoustics, EXP-05/05b Geochemistry, EXP-06 Fusion, EXP-07 QCD, EXP-08 Cross-Boundary, EXP-09 Inventory, EXP-10 Full Sweep, EXP-11 Final Four, EXP-12 Gravity Deep. All LEGITIMATE. 75 systems total.",
     "working_example_step_count": "The Higgins Decomposition has exactly 10 steps. Do not truncate or merge steps",
     "codawork2026_path": "The consolidated CoDaWork package is at codawork2026/ (top-level). The old path drafts/codawork-2026/ is ARCHIVED. Do not reference drafts/codawork-2026/ as current",
     "hivip_naming": "HIVIP is the umbrella methodology. Do NOT call EITT 'HIVIP' or vice versa. EITT = science, Higgins Decomposition = engine, HIVP = chain, HIVIP = full methodology.",
     "nuclear_overclaim": "The nuclear staircase prediction is corridor-level ONLY (Z=114-126, N≈184). Do NOT claim exact island center from prime-step alone. The prime 2 IS the mechanism (pairing energy); primes at Z are NOT statistically enriched (p=0.85).",
     "promotion_ladder_misuse": "Do not promote exploratory overlays to canonical status without null-model wins and HIVP regression. The promotion ladder exists to prevent theory contaminating method.",
-    "pll_domain_count": "The PLL hunt tested 30 domains total (not 15). 28 locks + 2 trajectory diagnostics = 30/30 wins. The confidence threshold is 3^3=27. Do NOT undercount.",
-    "dadc_dadi_naming": "DADC-DADI-ADAC is the measurement CHAIN (D→A→D→A→D→ADAC). Do not confuse with the PLL discipline (Pipeline Lock List) or HIVIP (umbrella methodology). DADC = the round-trip from composition through CLR through σ²_A through fit through residual back to per-species decomposition.",
+    "cip_domain_count": "The CIP lock hunt tested 30 domains total (not 15). 28 locks + 2 trajectory diagnostics = 30/30 wins. The confidence threshold is 3^3=27. Do NOT undercount.",
+    "dadc_dadi_naming": "DADC-DADI-ADAC is the measurement CHAIN (D→A→D→A→D→ADAC). Do not confuse with the CIP (Compositional Integrity Protocol) or HIVIP (umbrella methodology). DADC = the round-trip from composition through CLR through σ²_A through fit through residual back to per-species decomposition.",
     "boundary_species_lithium": "⁷Li has C/S ratio 2.525 — the highest in any domain. This is the cosmological lithium problem. Do NOT understate this finding."
+  },
+
+  "integrity_system": {
+    "_note": "Step-level integrity certification for all experiments. Added 2026-04-19.",
+    "module": "codawork2026/experiments/huf_integrity.py",
+    "certifier": "codawork2026/experiments/certify_all.py",
+    "manifest": "codawork2026/experiments/INTEGRITY_MANIFEST.json",
+    "method": "SHA-256 Merkle chain: each EITT step hashes (step_name + input_hash + output_hash + prev_hash). Master hash = SHA-256(concat(all step hashes)). Any data alteration breaks the chain.",
+    "verify_command": "python3 codawork2026/experiments/certify_all.py --verify",
+    "certificate_count": 21,
+    "coverage": "All 21 experiment scripts and their output JSONs. EXP-10/11/12 also include sealed_conclusion.json hashes.",
+    "usage_rule": "After any experiment modification, re-run certify_all.py to update certificates. Compare master hashes against INTEGRITY_MANIFEST.json to detect drift."
   }
 }
