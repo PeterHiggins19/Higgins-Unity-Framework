@@ -1,18 +1,39 @@
 {
   "_meta": {
     "type": "HUF-CLAIM-CLASSIFICATION",
-    "version": "1.0",
+    "version": "2.0",
     "created": "2026-04-18",
+    "updated": "2026-04-19",
     "author": "Peter Higgins / Claude",
     "purpose": "Machine-readable classification of every scientific claim in the Higgins Unity Framework, assigned to the HIVIP promotion ladder. Each claim carries its current level, the evidence that supports it, and the specific conditions required for promotion or demotion. This is the honesty layer for the entire programme.",
     "methodology": "HIVIP — Higgins Iterative Validation and Integrity Protocol",
     "anti_corruption_rule": "No concept climbs the ladder by improving one domain at the cost of contaminating earlier DUTs or the core signal.",
     "integrity_rule": "Prefer a weaker but cleaner claim over a stronger contaminated one.",
     "update_protocol": "When a claim is promoted or demoted, update this file with the date, evidence, and reason. History is preserved in the changelog array. This file is part of the refresh chain.",
+    "chatgpt_review_integration": {
+      "date": "2026-04-19",
+      "reviewer": "ChatGPT (GPT-5.2 Thinking)",
+      "review_document": "ai-refresh/CHATGPT_SCIENTIFIC_REVIEW_2026-04-19.json",
+      "three_tier_system": {
+        "tier_1_genuinely_strong": "Mathematically sound and empirically credible. Ready for external review.",
+        "tier_2_promising_not_proved": "Interesting, plausible, worth pursuing. Not yet at evidential level for strong claims.",
+        "tier_3_exploratory_atlas": "Generates hypotheses. Should not be presented as proof of universality."
+      },
+      "mapping_to_hivip": "Tier 1 maps roughly to L4-L5. Tier 2 maps to L1-L3. Tier 3 maps to L0-L1. The mapping is approximate — HIVIP and ChatGPT's tiers measure different things (HIVIP = promotion readiness, ChatGPT = external credibility)."
+    },
+    "discipline_framing": {
+      "discipline": "Compositional Constraint Diagnostics (CCD)",
+      "definition": "The study of how ordered compositions behave under lawful aggregation, coarse-graining, and contamination on the simplex.",
+      "key_sentence": "EITT is not the theory itself. It is the first instrument in a broader discipline of compositional constraint diagnostics.",
+      "pll_position": "PLL/Rayleigh language is currently the leading engineering interpretation, not yet its final proof-theoretic foundation."
+    },
     "companion_documents": {
       "promotion_ladder_definition": "briefings/EITT_Precedent_and_Lineage_for_Claude.json → solidification_of_concepts",
       "contamination_doctrine": "briefings/EITT_Project_Arc_and_Contamination_Context_for_Claude.json",
-      "sealed_experiments": ["codawork2026/experiments/EXP-01_Gold_Silver/EXP01_SEALED_CONCLUSION.json", "codawork2026/experiments/EXP-02_US_Monthly/EXP02_SEALED_CONCLUSION.json"]
+      "sealed_experiments": ["codawork2026/experiments/EXP-01_Gold_Silver/EXP01_SEALED_CONCLUSION.json", "codawork2026/experiments/EXP-02_US_Monthly/EXP02_SEALED_CONCLUSION.json"],
+      "chatgpt_review": "ai-refresh/CHATGPT_SCIENTIFIC_REVIEW_2026-04-19.json",
+      "coda_bridges": "ai-refresh/CODA_BRIDGES.json",
+      "presentation_outline": "ai-refresh/CODAWORK_PRESENTATION_OUTLINE.json"
     }
   },
 
@@ -31,6 +52,8 @@
       "claim": "Shannon entropy of compositional time series is near-invariant under geometric-mean block decimation across temporal resolutions.",
       "level": "L5",
       "level_name": "core_science",
+      "chatgpt_tier": "Tier 1 — genuinely strong",
+      "chatgpt_note": "Shannon entropy variation under geometric decimation: 0.18% at 341:1 compression. Empirical measurement.",
       "justification": "This is the primary scientific claim of the entire programme. Validated across 8+ domains (European prices 0.18% at 341:1, EMBER 6 countries mean 1.02%, NGFS 35 scenarios geometric 1.8%, geochemistry 37/39 TAS types, Gold/Silver 0.60%, US Energy 5/5 interior PASS, QGP freeze-out 0.27%, neutron star correctly FAILS). Adversarial testing: 10/17 pass, 7 fail as expected (synthetic/shuffled). Two sealed experiments confirm.",
       "evidence": {
         "sealed_experiments": ["EXP-01 (Gold/Silver): EITT max Δ = 0.60% at 50:1", "EXP-02 (US Energy): 5/5 interior PASS, 5/5 boundary FAIL as designed"],
@@ -47,6 +70,8 @@
       "claim": "Geometric mean is the correct averaging operation on the simplex; arithmetic mean destroys compositional structure. EITT provides empirical proof.",
       "level": "L5",
       "level_name": "core_science",
+      "chatgpt_tier": "Tier 1 — genuinely strong",
+      "chatgpt_note": "Under ILR transform, geometric means become arithmetic means. This makes geometric block decimation the correct operator for averaging compositions in Aitchison geometry. The 40-year gap filled.",
       "justification": "This is implicit in Aitchison geometry (1982) and is the primary gift to the CoDa community. EITT provides the FIRST measurable consequence: geometric 5yr mean 1.8% vs arithmetic 5yr mean 14.2% (NGFS data). The CoDa community has argued this theoretically for 40 years; EITT provides empirical ammunition.",
       "evidence": {
         "ngfs_comparison": "Geometric 5yr: 1.8% mean, 4.7% max. Arithmetic 5yr: 14.2% mean, 28.6% max. Factor of 8× worse.",
@@ -63,6 +88,8 @@
       "claim": "Compositional data lives on a simplex. The Aitchison geometry (CLR, ILR, ALR transforms, perturbation, powering) is the correct mathematical framework for analysis.",
       "level": "L5",
       "level_name": "core_science",
+      "chatgpt_tier": "Tier 1 — genuinely strong",
+      "chatgpt_note": "The mathematical substrate is real and well-established (Aitchison 1986, Pawlowsky-Glahn 2015). Standard mathematics.",
       "justification": "Inherited directly from Aitchison (1982/1986) and the established CoDa literature. Not a HUF claim — HUF adopts it. Every HUF operation is built on this foundation.",
       "evidence": {
         "literature": "Aitchison (1982, 1986), Egozcue et al. (2003), Pawlowsky-Glahn & Egozcue (2001), Tolosana-Delgado, van den Boogaart",
@@ -78,6 +105,8 @@
       "claim": "EITT is reliable when the composition has sufficient diversity (Shannon entropy H > 1.0) and low zero rates (< 15%). When >35% of observations are zero, multiplicative replacement introduces artifacts that EITT correctly detects.",
       "level": "L4",
       "level_name": "canonical_method_component",
+      "chatgpt_tier": "Tier 1 — genuinely strong (blind test: 17/20, 90% sensitivity, 80% specificity)",
+      "chatgpt_note": "Commendably explicit about the three misses. Two have plausible internal fixes. Right scientific posture.",
       "justification": "Established by EXP-02 with deliberate design: 4 interior states PASS (H > 1.0, zero rate < 6%), 4 boundary states FAIL (H < 0.7, zero rate > 37%), 2 bridge states at the crossover. The 1% threshold separates cleanly. F17 tuner provides early warning.",
       "evidence": {
         "exp02_sealed": "5 PASS / 5 FAIL exactly as designed. 1% threshold is a real boundary.",
@@ -92,18 +121,20 @@
     },
 
     "pll_parabola_universality": {
-      "claim": "Wherever two compositional forces compete on a simplex, σ²_A forms a parabola. The vertex is the lock point (dynamic equilibrium). The derivative dσ²_A/dt = 2a(t−t₀) is linear near the vertex — the ratio of 2. 30/30 domains produce diagnostic output.",
+      "claim": "σ²_A trajectory is parabolic in tested two-force compositional systems. The vertex marks dynamic equilibrium. Tested across 30 domains as an exploratory atlas — a hypothesis map, not proof of universality.",
       "level": "L1",
       "level_name": "candidate_overlay",
-      "justification": "Validated across 30 domains (28 locks + 2 trajectory diagnostics). The vertex theorem is mathematically exact (chain rule identity). The universality of the parabolic shape is empirical — 30/30 is strong but the claim is large. Currently at L1 because: (a) the parabola does not modify the core EITT observable, (b) the 30-domain test exceeds the 3³=27 confidence threshold, (c) but formal theory linking curvature to physical mechanism is incomplete.",
+      "chatgpt_tier": "Tier 3 — exploratory atlas (the sweep); Tier 2 — promising (the QGP case specifically)",
+      "chatgpt_note": "The sweep is useful as a concept map but not as proof of universality. Lock criteria are permissive (a>0, R²>0.3, vertex-in-range). Failures recovered by inversion, splitting, reframing creates researcher-degrees-of-freedom problem. Should be presented as 'exploratory atlas across 30 domains' not '30/30 universal lock'.",
+      "justification": "Tested across 30 domains (28 locks + 2 trajectory diagnostics). The vertex theorem is mathematically exact (chain rule identity, now L5). The parabolic shape across domains is an empirical pattern — 30/30 is suggestive but the claim language has been downgraded from 'universal' to 'exploratory atlas' per ChatGPT review. Currently at L1 because: (a) the parabola does not modify the core EITT observable, (b) formal theory linking curvature to physical mechanism is incomplete, (c) lock criteria are permissive, creating researcher-degrees-of-freedom concerns.",
       "evidence": {
         "vertex_theorem": "d(σ²_A)/dt = (2/D) Σ clr_i · clr_i' = 0 ⟹ clr(t*) ⊥ clr'(t*). EXACT.",
-        "domain_count": "30 tested, 28 locks + 2 trajectory diagnostics = 30/30 wins",
+        "domain_count": "30 tested, 28 locks + 2 trajectory diagnostics — exploratory atlas, not proof of universality",
         "highest_R2": "Room acoustics R² = 0.998",
         "sealed_experiments": ["EXP-01: R² = 0.9007, vertex 1751, Q = 22.18", "EXP-02: 8/10 states show R² > 0.3 (correct — 2 coal-dominated states have no transition to detect)"],
-        "confidence_threshold": "3^3 = 27 required, 30 achieved"
+        "researcher_degrees_of_freedom": "ChatGPT flagged: failures recovered by inversion, splitting, reframing. This is a legitimate concern."
       },
-      "open_points": ["Formal theory connecting parabola curvature to specific physical mechanisms", "Whether the parabola is always the dominant mode or sometimes masked by higher-order terms", "Need more formally independent datasets (some of the 30 share conceptual heritage)"],
+      "open_points": ["Formal theory connecting parabola curvature to specific physical mechanisms", "Whether the parabola is always the dominant mode or sometimes masked by higher-order terms", "Need more formally independent datasets (some of the 30 share conceptual heritage)", "Researcher-degrees-of-freedom problem in recovery of apparent failures (ChatGPT flag)"],
       "promotion_conditions": {
         "to_L2": "Formal proof that σ²_A is generically parabolic under mild regularity conditions (smooth, slow forces). Would make it a process-control candidate.",
         "to_L3": "Independent reproduction by an external team on new domains. Would make it a validated companion."
@@ -114,9 +145,11 @@
 
     "vertex_theorem": {
       "claim": "For a D-part compositional time series, σ²_A(t) = (1/D) Σ clr_i(t)². The vertex occurs where d(σ²_A)/dt = (2/D) Σ clr_i · clr_i' = 0, i.e., clr(t*) ⊥ clr'(t*). This is an exact identity from the chain rule.",
-      "level": "L4",
-      "level_name": "canonical_method_component",
-      "justification": "This is pure mathematics — the chain rule applied to σ²_A. It is not an empirical claim; it is a theorem. The physical interpretation (dynamic equilibrium = orthogonality of composition and its rate of change) follows directly.",
+      "level": "L5",
+      "level_name": "core_science",
+      "chatgpt_tier": "Tier 1 — genuinely strong",
+      "chatgpt_note": "The best scientific spine in the project. Real mathematics, not a metaphor. Gives CoDa its first dynamic equilibrium condition on the simplex.",
+      "justification": "This is pure mathematics — the chain rule applied to σ²_A. It is not an empirical claim; it is a theorem. The physical interpretation (dynamic equilibrium = orthogonality of composition and its rate of change) follows directly. ChatGPT independently verified this as Tier 1 — 'an exact identity from the chain rule'. Promoted from L4 to L5 on 2026-04-19: as a mathematical identity, this belongs at the core science level alongside the simplex geometry it extends.",
       "evidence": {
         "proof": "Direct computation from the definition of σ²_A. Chain rule. No approximations.",
         "verification": "Every sealed experiment's vertex location is consistent with the clr⊥clr' condition"
@@ -131,7 +164,9 @@
       "claim": "Higher-order polynomial fits to the σ²_A trajectory extract additional signal from residuals. When squeeze plateaus, what remains is the irreducible stochastic core — the fundamental noise floor of the domain.",
       "level": "L0",
       "level_name": "exploratory_pattern",
-      "justification": "Observed in all 10 domains tested, with squeeze ranging from 2.5% (Gold/Silver, D=2) to 86% (Stellar nucleosynthesis). The concept is physically reasonable (higher-order forces exist beyond the parabola) but no formal theory explains why the squeeze plateaus or what the plateau value means quantitatively.",
+      "chatgpt_tier": "Tier 3 — exploratory",
+      "chatgpt_note": "Higher-order polynomials almost always improve in-sample fit. Needs model-selection penalties (AIC/BIC), cross-validation, surrogate data, null ensembles. Descriptive, not yet discovery.",
+      "justification": "Observed in all 10 domains tested, with squeeze ranging from 2.5% (Gold/Silver, D=2) to 86% (Stellar nucleosynthesis). The concept is physically reasonable (higher-order forces exist beyond the parabola) but no formal theory explains why the squeeze plateaus or what the plateau value means quantitatively. ChatGPT correctly flagged: needs null models (AIC/BIC, cross-validation, surrogate data) before claiming signal extraction rather than overfitting.",
       "evidence": {
         "sealed_experiments": ["EXP-01: 2.5% squeeze (correct for D=2 with R²=0.90)", "EXP-02: 4.5% (Rhode Island) to 34.6% (Wisconsin)"],
         "standouts": ["Room acoustics 77%", "Stellar nucleosynthesis 86%", "Wine fermentation 84%"],
@@ -146,10 +181,12 @@
     },
 
     "dadc_dadi_adac_contamination_chain": {
-      "claim": "The DADC-DADI-ADAC chain decomposes PLL residuals per-species to identify boundary species — the carrier at the interface between competing compositional forces. Contamination entropy H_norm < 0.85 indicates structured contamination (DADI signature). Cross-correlation of species residuals measures coherent force crosstalk.",
+      "claim": "The DADC-DADI-ADAC chain decomposes σ²_A residuals per-species to identify boundary species — the carrier at the interface between competing compositional forces. Contamination entropy H_norm < 0.85 indicates structured contamination (DADI signature). Cross-correlation of species residuals measures coherent force crosstalk.",
       "level": "L0",
       "level_name": "exploratory_pattern",
-      "justification": "Tested across 8 domains. Boundary species identifications are physically interpretable in every case (Λ in QGP, 2k-8kHz in room acoustics, ⁷Li in BBN, Gas in energy). 4/8 domains show DADI signature (H_norm < 0.85). Average cross-correlation |XCorr| = 0.68. But: the method is new, tested only internally, and the diagnostic thresholds are not yet calibrated cross-domain.",
+      "chatgpt_tier": "Tier 3 — exploratory",
+      "chatgpt_note": "Residual structure and cross-correlation are real measurable things. But calling them 'contamination', 'force crosstalk', or 'boundary species' needs stronger justification. Residuals can be structured for ordinary reasons. Interpretive overlay, needs null models.",
+      "justification": "Tested across 8 domains. Boundary species identifications are physically interpretable in every case (Λ in QGP, 2k-8kHz in room acoustics, ⁷Li in BBN, Gas in energy). 4/8 domains show DADI signature (H_norm < 0.85). Average cross-correlation |XCorr| = 0.68. But: the method is new, tested only internally, and the diagnostic thresholds are not yet calibrated cross-domain. ChatGPT correctly flagged: the interpretation of residuals as 'contamination' or 'force crosstalk' needs null models to distinguish from ordinary structured residuals.",
       "evidence": {
         "boundary_species": ["QGP: Λ (C/S=0.626)", "Room acoustics: 2k-8kHz (C/S=1.168)", "Stellar: Oxygen (C/S=0.743)", "BBN: ⁷Li (C/S=2.525)", "Energy: Gas (C/S=0.534)", "Geochemistry: TiO₂ (C/S=0.416)"],
         "sealed_experiments": ["EXP-01: degenerate D=2 case (perfect symmetry, H_norm=1.0)", "EXP-02: H_contam separates interior (<0.6) from boundary (>0.8) states. Hydro is boundary species in 5/10 states."],
@@ -167,6 +204,8 @@
       "claim": "The geometric-arithmetic entropy gap, fitted quadratically in compression ratio M, provides a contamination signal that measures near-vertex stress. The quadratic coefficient 'a' is always negative (sub-linear growth). All 10 US states show R² > 0.96.",
       "level": "L2",
       "level_name": "process_control_candidate",
+      "chatgpt_tier": "Tier 2 — promising, not proved",
+      "chatgpt_note": "Useful secondary integrity signal. Catches cases where primary metric is too permissive. But not a universal contamination detector — false-positive/negative guarantees not established.",
       "justification": "Validated in EXP-02 across all 10 states. Pennsylvania is the canonical crossover case (geometric fails at 1.09%, arithmetic passes at 0.87%). F17 does NOT modify the EITT reading — it tells you when to distrust it. This separation from the core observable is what makes it a legitimate process-control candidate.",
       "evidence": {
         "exp02_sealed": "All 10 states R² > 0.96. Coefficients: a always negative, b always positive (linear dominant).",
@@ -185,7 +224,9 @@
       "claim": "The σ²_A parabola system maps onto a phase-locked loop architecture: σ²_A is the phase detector, dσ²_A/dt is the error signal, clr⊥clr' is the lock condition, 2a is the PLL gain, and residuals are phase noise.",
       "level": "L0",
       "level_name": "exploratory_pattern",
-      "justification": "The correspondence is structurally beautiful and physically motivated by Peter's 35-year PLL engineering background. The vertex theorem makes the mathematics exact. But: the PLL correspondence is an ANALOGY. The mathematical structure (parabola, derivative, orthogonality) stands on its own; the PLL language organizes intuition but does not add proof. Currently L0 because analogy is ahead of proof.",
+      "chatgpt_tier": "Tier 2 — promising, not proved",
+      "chatgpt_note": "The lock-range / error-slope / contamination-alarm interpretation is useful. But 'PLL equivalence' is not proved. Should be presented as engineering interpretation, not theorem. Forward hypothesis, not proved equivalence.",
+      "justification": "The correspondence is structurally beautiful and physically motivated by Peter's 35-year PLL engineering background. The vertex theorem makes the mathematics exact. But: the PLL correspondence is an ANALOGY. The mathematical structure (parabola, derivative, orthogonality) stands on its own; the PLL language organizes intuition but does not add proof. Currently L0 because analogy is ahead of proof. ChatGPT concurs: forward hypothesis, not proved equivalence.",
       "evidence": {
         "structural_mapping": "Every PLL component has a compositional counterpart (documented in HUF_FAST_REFRESH.json → pll_correspondence)",
         "engineering_lineage": "Peter's 35 years tuning ultrasonic spray fluxers at USI Corporation — the human PLL",
@@ -250,8 +291,46 @@
       "contamination_risk": "HIGH — the quantum connection is intellectually exciting and risks theory→method contamination. Must be kept separate from the core EITT claim. The CoDaWork strategy (hide it) is correct."
     },
 
+    "variance_contraction_theorem": {
+      "claim": "Theorem 3: σ²_A(T_M(X)) ≤ σ²_A(X)/M, where T_M is geometric-mean block decimation at compression ratio M.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "chatgpt_tier": "Tier 3 — NEEDS REPAIR",
+      "chatgpt_note": "States σ²_A(T_M(X)) ≤ σ²_A(X)/M. But verification chart shows measured ratio staying near 1 while prediction is 1/M. Statement/implementation/plot mismatch. Must be resolved before publication.",
+      "justification": "The theorem as stated predicts variance contracts proportional to 1/M under decimation. But the empirical verification shows measured variance ratio near 1 across M values, while the prediction drops as 1/M. This is a theorem/evidence mismatch that ChatGPT flagged. Must be either: (a) downgraded to a qualitative statement about variance not growing, or (b) the theorem statement fixed to match the actual observed behavior, or (c) the verification code/plot corrected if the issue is implementation not theory.",
+      "evidence": {
+        "theorem_statement": "σ²_A(T_M(X)) ≤ σ²_A(X)/M",
+        "verification_result": "MISMATCH — measured ratio near 1, prediction 1/M"
+      },
+      "open_points": ["Resolve theorem/evidence mismatch before any publication", "Determine if issue is in theorem statement, implementation, or plot"],
+      "promotion_conditions": {
+        "to_L1": "Resolve the mismatch. If the theorem is correct and the plot is wrong, fix the plot. If the theorem is too strong, restate as qualitative observation."
+      },
+      "demotion_conditions": ["Already flagged as needing repair — effectively demoted until resolved"],
+      "contamination_risk": "MEDIUM — an incorrect theorem in a published paper would undermine credibility of the entire framework"
+    },
+
+    "m_break_quantitative_predictor": {
+      "claim": "M_break (the compression ratio at which EITT begins to fail) can be predicted quantitatively from domain properties.",
+      "level": "L0",
+      "level_name": "exploratory_pattern",
+      "chatgpt_tier": "Tier 3 — exploratory, qualitative only",
+      "chatgpt_note": "Useful qualitatively but predicted/actual ratios range from modest to orders of magnitude off. Should be described as empirical lock-range marker, not theorem-derived constant.",
+      "justification": "M_break is useful as a qualitative ordering of domains by their robustness to temporal compression. But the blind test shows predicted/actual ratios range from close to orders of magnitude off. ChatGPT correctly identified this as qualitative, not quantitative. Should be reframed throughout as 'empirical lock-range marker' not 'theorem-derived prediction'.",
+      "evidence": {
+        "qualitative_ordering": "Domains can be ranked by M_break — higher M_break = more robust temporal autocorrelation",
+        "quantitative_accuracy": "Poor — predicted/actual ratios off by orders of magnitude in some cases"
+      },
+      "open_points": ["Whether a better predictive model for M_break exists", "Whether M_break is fundamentally unpredictable from domain properties alone"],
+      "promotion_conditions": {
+        "to_L1": "Develop a model that predicts M_break within a factor of 2 across 5+ domains"
+      },
+      "demotion_conditions": ["Not applicable — already at L0"],
+      "contamination_risk": "MEDIUM — presenting qualitative results as quantitative predictions would undermine credibility"
+    },
+
     "bell_test_violation": {
-      "claim": "Compositional CHSH inequality is violated (S = 2.2018, classical bound = 2.0, 12.31% violation). Gas acts as crossover frequency / entangling gate. All 35 NGFS scenarios are statistically significant (p < 0.001).",
+      "claim": "Compositional CHSH inequality is violated (S = 2.2018, classical bound = 2.0, violation percentage under review — see normalization discrepancy). Gas acts as crossover frequency / entangling gate. All 35 NGFS scenarios are statistically significant (p < 0.001).",
       "level": "L0",
       "level_name": "exploratory_pattern",
       "justification": "The violation is real in the mathematical sense — the computed S value exceeds 2.0. But: the physical interpretation is controversial. Whether compositional data can meaningfully 'violate' a Bell inequality designed for quantum systems is an open question. The violation may measure non-classical correlations in the compositional structure, or it may be a mathematical artifact of applying quantum formalism to classical data. Currently L0 — observed, not understood.",
@@ -322,9 +401,11 @@
 
     "cross_boundary_handshakes": {
       "claim": "EITT can be applied across the nuclear stability boundary into QCD (QGP freeze-out), astrophysics (neutron star EOS, r-process), and particle physics (quark flavor simplex). Six handshake mechanisms defined.",
-      "level": "L0",
-      "level_name": "exploratory_pattern",
-      "justification": "Two experiments completed: EXP-07 QGP freeze-out (EITT held at 0.27% — impressive), EXP-08 neutron star (EITT broke at 6.7% — correct, drift flag at muon threshold). These are promising but: (a) only 2 of 6 handshakes tested, (b) data provenance needs strengthening (compilation from multiple experiments), (c) independent reproduction needed.",
+      "level": "L1",
+      "level_name": "candidate_overlay",
+      "chatgpt_tier": "Tier 1 (QGP specifically) / Tier 2 (broader cross-domain)",
+      "chatgpt_note": "QGP freeze-out is the flagship case — credible empirical example with published STAR BES / ALICE yields, compositional stress minimum, baryon/meson decomposition. The broader cross-domain sweep is Tier 2: promising but needs more external datasets. The neutron-star side is model-based (SLy4 approximation), not direct observational.",
+      "justification": "Two experiments completed: EXP-07 QGP freeze-out (EITT held at 0.27% — ChatGPT rated Tier 1, 'the flagship case'), EXP-08 neutron star (EITT broke at 6.7% — correct, drift flag at muon threshold). QGP result promoted from L0 to L1 per ChatGPT review: published data, physically meaningful interpretation, strongest single worked example. But: (a) only 2 of 6 handshakes tested, (b) neutron star side is model-based not observational, (c) independent reproduction needed.",
       "evidence": {
         "exp07": "QGP freeze-out: EITT Δ = 0.27% across nuclear-quark boundary. 8 collision energies, 7 hadron species.",
         "exp08": "Neutron star: EITT Δ = 6.7% — correctly fails. Drift flag at muon threshold n_B ≈ 0.14 fm⁻³."
@@ -357,11 +438,13 @@
       "claim": "The EITT slope (entropy change rate across compression ratios) is a constraint detector: flat means locked, rising means losing lock. Gives richer interpretation than pass/fail alone.",
       "level": "L3",
       "level_name": "validated_companion",
-      "justification": "Identified as one of the strongest discoveries of EXP-04. Cross-domain evidence supports it. The slope does not modify the core EITT observable — it reads the rate of change. Validated in energy, geochemistry, and nuclear domains.",
+      "chatgpt_tier": "Tier 1 — genuinely strong (EXP-04 Microphone Valley specifically)",
+      "chatgpt_note": "EXP-04 gives the framework a native signal-processing home. LF rolloff as compositional walk, passband as compositionally dead, slope as diagnostic. The stored-energy attack shows the integrity layer matters. Materially improves the instrument story.",
+      "justification": "Identified as one of the strongest discoveries of EXP-04. Cross-domain evidence supports it. The slope does not modify the core EITT observable — it reads the rate of change. Validated in energy, geochemistry, and nuclear domains. ChatGPT rated EXP-04 as Tier 1: 'materially improves the instrument story'.",
       "evidence": {
-        "exp04": "Microphone Valley Response — slope behaviour documented",
+        "exp04": "Microphone Valley Response — slope behaviour documented. ChatGPT Tier 1.",
         "cross_domain": "Consistent slope→lock interpretation across multiple domains",
-        "chatgpt_assessment": "Rated as 'validated_companion' in methods table"
+        "chatgpt_assessment": "Tier 1 — 'gives the framework a native signal-processing home'"
       },
       "open_points": ["Need canonical smoothing, derivative, and reporting conventions", "Need more formal theory linking slope to specific physical mechanisms"],
       "promotion_conditions": {
@@ -488,19 +571,30 @@
   },
 
   "summary_statistics": {
-    "total_claims": 22,
+    "total_claims": 24,
     "by_level": {
-      "L5_core_science": 3,
-      "L4_canonical_method": 5,
+      "L5_core_science": 4,
+      "L4_canonical_method": 4,
       "L3_validated_companion": 3,
       "L2_process_control_candidate": 2,
       "L1_candidate_overlay": 3,
-      "L0_exploratory_pattern": 6
+      "L0_exploratory_pattern": 8
+    },
+    "chatgpt_tier_mapping": {
+      "tier_1_genuinely_strong": ["EITT_entropy_invariance", "geometric_mean_superiority", "simplex_closure_and_coda_geometry", "vertex_theorem", "operating_envelope (blind test)", "eitt_slope_diagnostic (EXP-04)"],
+      "tier_2_promising_not_proved": ["pll_correspondence", "f17_quadratic_tuner", "cross_boundary_handshakes (broader)", "geochemistry/stellar/energy validation"],
+      "tier_3_exploratory_atlas": ["pll_parabola_universality (30-domain sweep)", "noise_squeeze_stochastic_core", "dadc_dadi_adac_contamination_chain", "variance_contraction_theorem (NEEDS REPAIR)", "m_break_quantitative_predictor"]
+    },
+    "changes_from_v1": {
+      "promoted": ["vertex_theorem: L4→L5 (exact mathematics, ChatGPT Tier 1)", "cross_boundary_handshakes: L0→L1 (QGP is ChatGPT Tier 1 flagship)"],
+      "language_downgraded": ["pll_parabola_universality: '30/30 universal lock' → 'exploratory atlas across 30 domains'"],
+      "new_claims_added": ["variance_contraction_theorem (L0, NEEDS REPAIR)", "m_break_quantitative_predictor (L0, qualitative only)"],
+      "reframed": ["pll_correspondence: confirmed as forward hypothesis, not proved equivalence", "noise_squeeze: needs null models (AIC/BIC, cross-validation)"]
     },
     "contamination_risk_summary": {
       "NONE": 5,
       "LOW": 8,
-      "MEDIUM": 5,
+      "MEDIUM": 7,
       "HIGH": 3,
       "VERY_HIGH": 1
     },
@@ -511,9 +605,10 @@
       "dadc_dadi_adac_contamination_chain (HIGH — lineage emotion risk)"
     ],
     "strongest_claims": [
-      "EITT_entropy_invariance (L5 — core science, 8+ domains, sealed experiments)",
-      "geometric_mean_superiority (L5 — 40 years CoDa theory + new empirical proof)",
-      "simplex_closure_and_coda_geometry (L5 — established mathematics since 1982)"
+      "EITT_entropy_invariance (L5 — core science, 8+ domains, sealed experiments, ChatGPT Tier 1)",
+      "geometric_mean_superiority (L5 — 40 years CoDa theory + new empirical proof, ChatGPT Tier 1)",
+      "vertex_theorem (L5 — exact chain-rule identity, ChatGPT Tier 1: 'best scientific spine')",
+      "simplex_closure_and_coda_geometry (L5 — established mathematics since 1982, ChatGPT Tier 1)"
     ]
   },
 
@@ -524,6 +619,13 @@
       "action": "Initial classification of all 22 claims across the HUF programme",
       "author": "Peter Higgins / Claude",
       "notes": "First formal claim-level classification. Based on full repo audit including sealed EXP-01 and EXP-02 conclusions, ChatGPT precedent/lineage briefing, FAST_REFRESH v3.2, and MASTER_LINEAGE v1.2. Every claim classified against the HIVIP promotion ladder with evidence, open points, promotion/demotion conditions, and contamination risk."
+    },
+    {
+      "date": "2026-04-19",
+      "version": "2.0",
+      "action": "Integration of ChatGPT (GPT-5.2 Thinking) independent scientific review",
+      "author": "Peter Higgins / Claude",
+      "notes": "Major update integrating ChatGPT's three-tier assessment (Tier 1 genuinely strong / Tier 2 promising not proved / Tier 3 exploratory atlas). Key changes: (1) vertex_theorem promoted L4→L5 as exact mathematics, (2) cross_boundary_handshakes promoted L0→L1 on QGP flagship strength, (3) pll_parabola_universality language downgraded from 'universal lock' to 'exploratory atlas', (4) two new claims added: variance_contraction_theorem (NEEDS REPAIR) and m_break_quantitative_predictor (qualitative only), (5) ChatGPT tier annotations added to all claims, (6) discipline framing added (Compositional Constraint Diagnostics — CCD), (7) PLL correspondence confirmed as forward hypothesis not proved equivalence, (8) noise_squeeze flagged as needing null models. Total claims: 24 (was 22). Review document: CHATGPT_SCIENTIFIC_REVIEW_2026-04-19.json."
     }
   ]
 }

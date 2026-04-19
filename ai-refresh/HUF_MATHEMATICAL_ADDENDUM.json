@@ -293,7 +293,9 @@
       "S_measured": 2.2018,
       "classical_bound": 2.0,
       "tsirelson_bound": 2.828,
-      "violation_percentage": "12.31%",
+      "violation_magnitude": "10.09% — (2.2018-2.0)/2.0",
+      "configurations_exceeding_bound": "12.31% of 18,360 configurations (2,260) exceed S=2",
+      "normalization_note": "CORRECTED 2026-04-19: 10.09% = violation magnitude above classical bound. 12.31% = fraction of configurations exceeding S=2. Previously conflated.",
       "contamination_risk": "VERY HIGH"
     },
     "operating_envelope_thresholds": {

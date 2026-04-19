@@ -1,0 +1,120 @@
+{
+  "experiment": "EXP-06J",
+  "title": "Krell Scaling \u2014 Logarithmic Power Cascade",
+  "series": 2,
+  "date_sealed": "2026-04-19",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "levels": [
+    {
+      "name": "Level 0: IFR (baseline)",
+      "fuel": "D-T",
+      "T_keV": 17.8,
+      "n_20": 2.7,
+      "B_T": 12.0,
+      "R": 6.2,
+      "V": 830,
+      "P_fusion_MW": 15594.3,
+      "P_net_MW": 5146.1,
+      "P_driver_MW": 0,
+      "Q_eng": 10000000000.0,
+      "power_density_MW_m3": 18.788324988124007,
+      "comp": {
+        "Alpha": 50.19208970184286,
+        "Brem": 3.296854559384076,
+        "Cyclo": 32.531127401536594,
+        "Cond": 13.979928337236489
+      },
+      "ignited_self": true,
+      "sustained": true
+    },
+    {
+      "name": "Level 1: Boosted (10 IFR driver)",
+      "fuel": "D-T",
+      "T_keV": 25.0,
+      "n_20": 8.0,
+      "B_T": 30.0,
+      "R": 6.2,
+      "V": 830,
+      "P_fusion_MW": 211783.4,
+      "P_net_MW": 18427.3,
+      "P_driver_MW": 51461.2,
+      "Q_eng": 4.115,
+      "power_density_MW_m3": 255.1607274188955,
+      "comp": {
+        "Alpha": 41.04204948178423,
+        "Brem": 2.065286146017958,
+        "Cyclo": 56.09568095200647,
+        "Cond": 0.7969834201913535
+      },
+      "ignited_self": false,
+      "sustained": true
+    },
+    {
+      "name": "Level 2: Hot (10 \u00d7 Level 1 driver)",
+      "fuel": "D-T",
+      "T_keV": 100.0,
+      "n_20": 20.0,
+      "B_T": 45.0,
+      "R": 4.0,
+      "V": 200,
+      "P_fusion_MW": 476448.2,
+      "P_net_MW": -27045.1,
+      "P_driver_MW": 184273.0,
+      "Q_eng": 2.586,
+      "power_density_MW_m3": 2382.2408133437652,
+      "comp": {
+        "Alpha": 19.45052481516806,
+        "Brem": 1.3104507383754516,
+        "Cyclo": 78.85314651475578,
+        "Cond": 0.3858779317007123
+      },
+      "ignited_self": false,
+      "sustained": false
+    },
+    {
+      "name": "Level 3: Catalysed D-D (10 \u00d7 L2 driver)",
+      "fuel": "catalysed",
+      "T_keV": 250.0,
+      "n_20": 50.0,
+      "B_T": 45.0,
+      "R": 3.0,
+      "V": 80,
+      "P_fusion_MW": 701216.6,
+      "P_net_MW": 231391.5,
+      "P_driver_MW": 10.0,
+      "Q_eng": 70121.656,
+      "power_density_MW_m3": 8765.20701409538,
+      "comp": {
+        "Alpha": 34.03692671429013,
+        "Brem": 1.2318085552490574,
+        "Cyclo": 49.1465692749749,
+        "Cond": 15.584695455485914
+      },
+      "ignited_self": false,
+      "sustained": false
+    },
+    {
+      "name": "Level 4: Radiation-dominated (10 \u00d7 L3)",
+      "fuel": "catalysed",
+      "T_keV": 500.0,
+      "n_20": 100.0,
+      "B_T": 45.0,
+      "R": 2.0,
+      "V": 20,
+      "P_fusion_MW": 817872.9,
+      "P_net_MW": -2044016.6,
+      "P_driver_MW": 2313914.7,
+      "Q_eng": 0.353,
+      "power_density_MW_m3": 40893.64583599094,
+      "comp": {
+        "Alpha": 43.32810818353629,
+        "Brem": 1.9012706274171394,
+        "Cyclo": 54.518109342489204,
+        "Cond": 0.2525118465573657
+      },
+      "ignited_self": false,
+      "sustained": true
+    }
+  ]
+}

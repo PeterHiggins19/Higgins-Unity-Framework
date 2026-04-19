@@ -78,12 +78,18 @@
       "doctrine": "Instrument reads, never actuates. Human decides, loop stays open.",
       "NOT": ["HUF Governance", "HUF-Gov", "HUFGOV"]
     },
-    "pll": {
-      "full": "Pipeline Lock List",
-      "short": "PLL",
+    "cip": {
+      "full": "Compositional Integrity Protocol",
+      "short": "CIP",
       "rule_count": 6,
-      "description": "6 rules that cannot be changed without operator (Peter) approval",
-      "NOT": ["Phase-Locked Loop", "PLL Discipline List"]
+      "description": "6 rules that cannot be changed without operator (Peter) approval. Formerly called 'Pipeline Lock List' (retired 2026-04-19).",
+      "NOT": ["Pipeline Lock List (RETIRED)", "PLL Discipline List"]
+    },
+    "pll": {
+      "full": "Phase-Locked Loop",
+      "short": "PLL",
+      "description": "Engineering analogy from signal processing. The σ²_A parabola maps onto PLL architecture. PLL means Phase-Locked Loop ONLY — never 'Pipeline Lock List' (retired 2026-04-19, replaced by CIP).",
+      "NOT": ["Pipeline Lock List (RETIRED)"]
     },
     "keff": {
       "full": "Keff_fill",
@@ -113,7 +119,9 @@
     "bell_test": {
       "result": "S = 2.2018",
       "classical_bound": 2.0,
-      "excess_percent": 12.31,
+      "violation_magnitude_percent": 10.09,
+      "configurations_exceeding_bound_percent": 12.31,
+      "normalization_note": "10.09% = (2.2018-2.0)/2.0 is the violation magnitude. 12.31% = fraction of 18,360 configurations exceeding S=2. Previously conflated.",
       "description": "Gas carrier acts as entangling gate. 9 structural isomorphisms between QIT and CoDa."
     }
   },
@@ -174,7 +182,7 @@
       },
       "grok": {
         "provider": "xAI",
-        "role": "Adversarial testing, PLL compliance, robustness derivations",
+        "role": "Adversarial testing, CIP compliance, robustness derivations",
         "interface": "Grok web"
       },
       "gemini": {

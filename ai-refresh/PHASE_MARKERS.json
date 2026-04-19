@@ -1,9 +1,9 @@
 {
   "_meta": {
     "type": "HUF-PHASE-MARKERS",
-    "version": "2.1",
+    "version": "2.2",
     "created": "2026-04-15",
-    "updated": "2026-04-18",
+    "updated": "2026-04-19",
     "author": "Peter Higgins / Claude",
     "purpose": "Machine-readable record of completed and active phases of the Higgins Unity Framework. Each phase marks a coherent body of work that has reached a stable state (or is actively in progress). Phase completion is not retirement — it signals stable foundation for the next phase."
   },
@@ -54,7 +54,13 @@
         "DADC-DADI-ADAC chain: contamination residuals decomposed to per-species, 8 boundary species identified (added 2026-04-18)",
         "Cosmological lithium problem independently identified as boundary species (⁷Li, C/S=2.525) via non-contact DADC chain (added 2026-04-18)",
         "Experiment journal: 20 pages, 9 chapters, 9 figures — complete documentation of PLL discovery arc (added 2026-04-18)",
-        "FIXED POINT v3.2 flagged — refresh chain stabilised at this critical decision point (added 2026-04-18)"
+        "FIXED POINT v3.2 flagged — refresh chain stabilised at this critical decision point (added 2026-04-18)",
+        "EXP-10 Full Sweep: all 6 mapped systems → COMPLETE, 6 extensions run. CKM/PMNS entropy ratio 1.615, QCD coupling R²=0.998, SEMF heavy R²=0.933 (added 2026-04-19)",
+        "EXP-11 Final Four: DM confinement ~10²⁰ m, Z-chains mapped, EOS-universality R²>0.94, pp→CNO at 1.35 M☉ (added 2026-04-19)",
+        "EXP-12 Gravity Deep: 24 systems classified, GW150914 H/Hmax=0.175 (lowest in HUF), GW phase 0.923 near 93% bound, no-hair as compositional minimum (added 2026-04-19)",
+        "Master inventory updated: 75 systems, 100% done, zero untouched, zero mapped. Programme complete. (added 2026-04-19)",
+        "Programme conclusion document sealed: HUF_Programme_Conclusion.docx (7 pages) + gravity executive summary (8 pages) (added 2026-04-19)",
+        "Refresh chain updated to v3.3 — programme completion marker (added 2026-04-19)"
       ]
     },
     {
@@ -130,7 +136,13 @@
       "pll_noise_squeeze": "Discovered 2026-04-18. Lock vs anti-lock noise analysis. All 10 domains show >20% noise reduction at polynomial order 5. Stochastic core measured universally. Noise colour, SNR, Q-factor computed per domain. Script: eitt_pll_noise_squeeze.py. L0 on promotion ladder.",
       "pll_dadc_dadi_contamination": "Discovered 2026-04-18. Peter's insight: contamination residuals lay in the noise — non-contact measurement via DADC-DADI-ADAC chain. Per-species decomposition identifies boundary species: Λ (QGP), 2k-8kHz (acoustics), O (stellar), ⁷Li (BBN — cosmological lithium problem, C/S=2.525), TiO₂ (geochem), Gas (energy). 4/8 domains show structured contamination (H_norm<0.85). Chain completes the round-trip from RWA engineering DNA to universal measurement. Script: eitt_contamination_dadc.py. L0 on promotion ladder.",
       "pll_experiment_journal": "Completed 2026-04-18. Comprehensive journal: EITT_PLL_Experiment_Journal_Complete.docx (20 pages, 9 chapters, 9 embedded figures, 7 data tables). Supersedes prior 14-page journey document. Full arc from screwdriver to DADC-DADI-ADAC.",
-      "fixed_point_v3_2": "FLAGGED FIXED POINT 2026-04-18. HUF_FAST_REFRESH.json updated to v3.2. All refresh files stabilised. The PLL discovery (30/30 confidence), noise squeeze (stochastic core), and DADC-DADI chain (boundary species) are stable findings at this marker. The refresh chain is self-consistent and ready for GitHub push."
+      "fixed_point_v3_2": "FLAGGED FIXED POINT 2026-04-18. HUF_FAST_REFRESH.json updated to v3.2. All refresh files stabilised. The PLL discovery (30/30 confidence), noise squeeze (stochastic core), and DADC-DADI chain (boundary species) are stable findings at this marker. The refresh chain is self-consistent and ready for GitHub push.",
+      "exp10_full_sweep": "Completed 2026-04-19. All 6 mapped systems (exotic hadrons, color confinement, QCD coupling, strong CP, EMC effect, CKM full 3×3) → COMPLETE. 6 extensions: PMNS comparison, Higgs branching, DGLAP PLL, universe composition, SEMF split, kappa scan. Key: CKM/PMNS entropy ratio 1.615.",
+      "exp11_final_four": "Completed 2026-04-19. Dark matter ratio (confinement scale ~10²⁰ m), nuclide Z-chains (8 isobars), neutron star EOS (APR/SLy/BSk universality R²>0.94), stellar mass sequence (pp→CNO at 1.35 M☉). 74/74 = 100%.",
+      "exp12_gravity_deep": "Completed 2026-04-19. Part A: 24 systems classified NONE/ORTHOGONAL/BOUNDARY/DIRECT. Gravity activation scale ~10⁷ m. Part B: GW150914 mass budget H/Hmax=0.175 (lowest in HUF), phase budget 0.923 (near 93% bound), QNM (2,2,0) at 90%. GW170817 BNS H/Hmax=0.111. No-hair as compositional minimum.",
+      "programme_completion": "PROGRAMME COMPLETE 2026-04-19. 75 systems, 12 experiments, 44 orders of magnitude, 100% coverage. Zero untouched, zero mapped. 20 flaws (all diagnosed, none fatal), 20 extension opportunities. Conclusion document and gravity executive summary sealed. Refresh chain v3.3.",
+      "terminology_stabilisation": "Completed 2026-04-19. HUF_COMPLETE_REFERENCE.json created: 32 acronyms, 9 named concepts, 15 formulas, 24 variables, 11 constants, 12 experiments, 7 document standards. 12 drift corrections applied repo-wide. Refresh chain expanded to 8 files with COMPLETE_REFERENCE at position 2. All documents now standalone with full declarations. CoDa advertising rule enforced.",
+      "next_collective_sync_v3_3": "Push to GitHub at v3.3 programme completion, distribute EXP-10/11/12 findings to collective."
     },
     "canonical_hufgov_definition_locked": {
       "date": "2026-04-15",
