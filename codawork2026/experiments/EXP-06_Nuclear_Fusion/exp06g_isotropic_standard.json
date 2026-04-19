@@ -1,0 +1,154 @@
+{
+  "experiment": "EXP-06G",
+  "title": "The Isotropic Fusion Reactor - Standard Power Plant Index",
+  "series": 2,
+  "date_sealed": "2026-04-19",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "ifr": {
+    "T_keV": 17.8,
+    "n_20": 2.7,
+    "B_T": 12.0,
+    "T_MK": 206,
+    "sigma2_A": 1.1094128687453205e-05,
+    "I_MA": 34.0,
+    "tau_E": 1.1034,
+    "n_greenwald": 2.702,
+    "ac_ratio": 3.5903,
+    "Q": 10000000000.0,
+    "P_fusion_MW": 15594.3,
+    "P_electric_MW": 6237.7,
+    "composition": {
+      "Alpha": 50.192,
+      "Brem": 3.297,
+      "Cyclo": 32.531,
+      "Cond": 13.98
+    },
+    "H_ratio": 0.7927
+  },
+  "huf_diagnostics": {
+    "EITT": 0.0013,
+    "PLL_R2": 0.9998,
+    "PLL_shape": "bowl",
+    "squeeze": 100.0
+  },
+  "sppi": [
+    {
+      "rank": 1,
+      "SPPI": 1.0,
+      "name": "IFR (theoretical ceiling)",
+      "type": "fusion",
+      "scores": {
+        "stability": 1.0,
+        "power_density": 1.0,
+        "fuel_years": 1.0,
+        "carnot_ratio": 1.0,
+        "eitt": 1.0,
+        "availability": 1.0
+      }
+    },
+    {
+      "rank": 2,
+      "SPPI": 0.804,
+      "name": "ITER+HTS 12T (best real)",
+      "type": "fusion",
+      "scores": {
+        "stability": 0.3732562901173272,
+        "power_density": 1.2828785361906792,
+        "fuel_years": 1.0,
+        "carnot_ratio": 0.9999995282254852,
+        "eitt": 0.9999749996749958,
+        "availability": 0.9411764705882354
+      }
+    },
+    {
+      "rank": 3,
+      "SPPI": 0.5148,
+      "name": "ITER 5.3T (sub-ignition)",
+      "type": "fusion",
+      "scores": {
+        "stability": 0.30046013764778573,
+        "power_density": 0.3655878190918675,
+        "fuel_years": 1.0,
+        "carnot_ratio": 0.82499973629339,
+        "eitt": 0.9999829997789972,
+        "availability": 0.29411764705882354
+      }
+    },
+    {
+      "rank": 4,
+      "SPPI": 0.1758,
+      "name": "Fission PWR (1 GW_e)",
+      "type": "fission",
+      "scores": {
+        "stability": 0.001,
+        "power_density": 2.0,
+        "fuel_years": 0.35778259169342463,
+        "carnot_ratio": 1.2569335203034253,
+        "eitt": 0.9500123501605521,
+        "availability": 1.0823529411764707
+      }
+    },
+    {
+      "rank": 5,
+      "SPPI": 0.1503,
+      "name": "Natural gas CCGT",
+      "type": "fossil",
+      "scores": {
+        "stability": 0.001,
+        "power_density": 0.6653067800296821,
+        "fuel_years": 0.2641694773671675,
+        "carnot_ratio": 1.8656768596653752,
+        "eitt": 0.9400122201588621,
+        "availability": 1.0588235294117647
+      }
+    },
+    {
+      "rank": 6,
+      "SPPI": 0.15,
+      "name": "Coal (supercritical)",
+      "type": "fossil",
+      "scores": {
+        "stability": 0.001,
+        "power_density": 0.6653067800296821,
+        "fuel_years": 0.32869286046103036,
+        "carnot_ratio": 1.5997335712952685,
+        "eitt": 0.9200119601554821,
+        "availability": 1.0
+      }
+    },
+    {
+      "rank": 7,
+      "SPPI": 0.063,
+      "name": "Wind (1 GW_e farm)",
+      "type": "wind",
+      "scores": {
+        "stability": 0.001,
+        "power_density": 0.001,
+        "fuel_years": 1.5080736154883518,
+        "carnot_ratio": 2.0,
+        "eitt": 0.8000104001352019,
+        "availability": 0.4117647058823529
+      }
+    },
+    {
+      "rank": 8,
+      "SPPI": 0.0502,
+      "name": "Solar PV (1 GW_e farm)",
+      "type": "solar",
+      "scores": {
+        "stability": 0.001,
+        "power_density": 0.001,
+        "fuel_years": 1.5080736154883518,
+        "carnot_ratio": 0.5801187961843499,
+        "eitt": 0.8500110501436519,
+        "availability": 0.29411764705882354
+      }
+    }
+  ],
+  "verdict": "The IFR is the compositionally perfect fusion reactor. All other power sources are indexed against it.",
+  "files": [
+    "exp06g_isotropic_standard.py",
+    "exp06g_isotropic_standard.json"
+  ]
+}

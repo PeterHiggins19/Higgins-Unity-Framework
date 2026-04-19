@@ -1,0 +1,58 @@
+{
+  "experiment": "EXP-06D",
+  "title": "Degrees of Freedom Analysis - Burning Plasma",
+  "date": "2026-04-19T12:59:48.160396",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "survey": {
+    "active_channels": 4,
+    "dead_channels": [
+      "P_ohmic",
+      "P_line"
+    ],
+    "simplex_dim": 3,
+    "control_params": 2,
+    "ohmic_max_pct": 0.010663,
+    "line_max_pct": 0.3951
+  },
+  "pca": {
+    "N": 2911,
+    "D": 6,
+    "eigenvalues": [
+      0.917306,
+      0.11786,
+      0.003466,
+      0.0,
+      0.0,
+      -0.0
+    ],
+    "variance_explained": [
+      88.32,
+      11.35,
+      0.33,
+      0.0,
+      0.0,
+      -0.0
+    ],
+    "dof_95": 2,
+    "dof_99": 2,
+    "controllable": true
+  },
+  "control_surface": {
+    "grid_size": 14241,
+    "n_ignited": 2551,
+    "bs_distribution": {
+      "Brem": 14215,
+      "Alpha": 26
+    }
+  },
+  "reduction": {
+    "rad_mean_pct": 11.65,
+    "rad_std_pct": 2.79,
+    "rad_cv": 0.2395,
+    "slowly_varying": true,
+    "min_ignition_ratio": 1.2129
+  },
+  "formal_dof": 2,
+  "verdict": "CONTROLLABLE"
+}
