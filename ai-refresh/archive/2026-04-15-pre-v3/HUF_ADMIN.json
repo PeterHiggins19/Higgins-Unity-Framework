@@ -77,7 +77,7 @@
       "NOT": ["HUF Governance", "HUF-Gov", "HUFGOV"]
     },
     "pll": {
-      "full": "Pipeline Lock List",
+      "full": "Compositional Integrity Protocol",
       "short": "PLL",
       "rule_count": 6,
       "description": "6 rules that cannot be changed without operator (Peter) approval",

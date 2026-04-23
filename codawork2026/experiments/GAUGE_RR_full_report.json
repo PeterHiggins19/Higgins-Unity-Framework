@@ -1,0 +1,411 @@
+{
+  "framework": "Higgins Unity Framework",
+  "analysis": "Gauge R&R \u2014 Full Pipeline Assessment",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "date": "2026-04-22T19:42:52.562240Z",
+  "repeatability": {
+    "description": "Same data, same code, 2 runs. Tests determinism.",
+    "tests": 4,
+    "all_identical": 4,
+    "verdict": "DETERMINISTIC",
+    "details": {
+      "EXP-01": {
+        "experiment": "EXP-01",
+        "n_runs": 2,
+        "data_hash_match": true,
+        "all_outputs_identical": true,
+        "deltas": {
+          "step3_closure_check": {
+            "run_1": true,
+            "run_2": true,
+            "delta": 0,
+            "match": true
+          },
+          "step5_sigma2_final": {
+            "run_1": 0.15765715182046303,
+            "run_2": 0.15765715182046303,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_R2": {
+            "run_1": 0.9033773846717489,
+            "run_2": 0.9033773846717489,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_shape": {
+            "run_1": "hill",
+            "run_2": "hill",
+            "match": true
+          },
+          "step7_squeeze_count": {
+            "run_1": 9,
+            "run_2": 9,
+            "delta": 0,
+            "match": true
+          },
+          "step7_squeeze_mean": {
+            "run_1": 0.11789446817371313,
+            "run_2": 0.11789446817371313,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_mean": {
+            "run_1": 0.16931760945351057,
+            "run_2": 0.16931760945351057,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_cv": {
+            "run_1": 47.65251018774939,
+            "run_2": 47.65251018774939,
+            "delta": 0.0,
+            "match": true
+          },
+          "step9_angular_velocity_std": {
+            "run_1": 0.28494808737262833,
+            "run_2": 0.28494808737262833,
+            "delta": 0.0,
+            "match": true
+          }
+        }
+      },
+      "EXP-02": {
+        "experiment": "EXP-02",
+        "n_runs": 2,
+        "data_hash_match": true,
+        "all_outputs_identical": true,
+        "deltas": {
+          "step3_closure_check": {
+            "run_1": true,
+            "run_2": true,
+            "delta": 0,
+            "match": true
+          },
+          "step5_sigma2_final": {
+            "run_1": 0.11269178908190412,
+            "run_2": 0.11269178908190412,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_R2": {
+            "run_1": 0.9984595187101861,
+            "run_2": 0.9984595187101861,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_shape": {
+            "run_1": "bowl",
+            "run_2": "bowl",
+            "match": true
+          },
+          "step7_squeeze_count": {
+            "run_1": 0,
+            "run_2": 0,
+            "delta": 0,
+            "match": true
+          },
+          "step7_squeeze_mean": {
+            "run_1": 0.03400533901632747,
+            "run_2": 0.03400533901632747,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_mean": {
+            "run_1": 0.7728621857944471,
+            "run_2": 0.7728621857944471,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_cv": {
+            "run_1": 8.330489743468197,
+            "run_2": 8.330489743468197,
+            "delta": 0.0,
+            "match": true
+          },
+          "step9_angular_velocity_std": {
+            "run_1": 0.4334366827173481,
+            "run_2": 0.4334366827173481,
+            "delta": 0.0,
+            "match": true
+          }
+        }
+      },
+      "EXP-05": {
+        "experiment": "EXP-05",
+        "n_runs": 2,
+        "data_hash_match": true,
+        "all_outputs_identical": true,
+        "deltas": {
+          "step3_closure_check": {
+            "run_1": true,
+            "run_2": true,
+            "delta": 0,
+            "match": true
+          },
+          "step5_sigma2_final": {
+            "run_1": 0.2222535927158974,
+            "run_2": 0.2222535927158974,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_R2": {
+            "run_1": 0.9799235664591651,
+            "run_2": 0.9799235664591651,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_shape": {
+            "run_1": "bowl",
+            "run_2": "bowl",
+            "match": true
+          },
+          "step7_squeeze_count": {
+            "run_1": 0,
+            "run_2": 0,
+            "delta": 0,
+            "match": true
+          },
+          "step7_squeeze_mean": {
+            "run_1": 0.054485718607450356,
+            "run_2": 0.054485718607450356,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_mean": {
+            "run_1": 0.7555052746717533,
+            "run_2": 0.7555052746717533,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_cv": {
+            "run_1": 14.692919582187011,
+            "run_2": 14.692919582187011,
+            "delta": 0.0,
+            "match": true
+          },
+          "step9_angular_velocity_std": {
+            "run_1": 0.62128161374543,
+            "run_2": 0.62128161374543,
+            "delta": 0.0,
+            "match": true
+          }
+        }
+      },
+      "EXP-06": {
+        "experiment": "EXP-06",
+        "n_runs": 2,
+        "data_hash_match": true,
+        "all_outputs_identical": true,
+        "deltas": {
+          "step3_closure_check": {
+            "run_1": true,
+            "run_2": true,
+            "delta": 0,
+            "match": true
+          },
+          "step5_sigma2_final": {
+            "run_1": 0.04722630017735945,
+            "run_2": 0.04722630017735945,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_R2": {
+            "run_1": 0.9467175257065913,
+            "run_2": 0.9467175257065913,
+            "delta": 0.0,
+            "match": true
+          },
+          "step6_pll_shape": {
+            "run_1": "bowl",
+            "run_2": "bowl",
+            "match": true
+          },
+          "step7_squeeze_count": {
+            "run_1": 0,
+            "run_2": 0,
+            "delta": 0,
+            "match": true
+          },
+          "step7_squeeze_mean": {
+            "run_1": 0.028157330168159578,
+            "run_2": 0.028157330168159578,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_mean": {
+            "run_1": 0.9026441954987676,
+            "run_2": 0.9026441954987676,
+            "delta": 0.0,
+            "match": true
+          },
+          "step8_entropy_cv": {
+            "run_1": 1.0217846274992284,
+            "run_2": 1.0217846274992284,
+            "delta": 0.0,
+            "match": true
+          },
+          "step9_angular_velocity_std": {
+            "run_1": 0.8674096737593128,
+            "run_2": 0.8674096737593128,
+            "delta": 0.0,
+            "match": true
+          }
+        }
+      }
+    }
+  },
+  "reproducibility": {
+    "description": "Current canonical run vs previous EXP-01..05 re-run. Differences expected where data loading was refined.",
+    "details": {
+      "EXP-01": {
+        "PLL Shape": {
+          "previous": "concave_up",
+          "current": "concave_down",
+          "match": false
+        },
+        "Squeeze Mean \u03c3\u00b2_A": {
+          "previous": 0.1764608815058676,
+          "current": 0.11789446817371313,
+          "abs_delta": 0.05856641333215448,
+          "rel_pct": 33.18945980115545,
+          "within_5pct": false
+        },
+        "Entropy H/H_max": {
+          "previous": 0.28083013189282124,
+          "current": 0.16931760945351057,
+          "abs_delta": 0.11151252243931067,
+          "rel_pct": 39.7081757885829,
+          "within_5pct": false
+        },
+        "Angular Velocity \u03c3": {
+          "previous": 1.4820298889549963,
+          "current": 0.28494808737262833,
+          "abs_delta": 1.1970818015823679,
+          "rel_pct": 80.77312141298648,
+          "within_5pct": false
+        }
+      },
+      "EXP-02": {
+        "PLL Shape": {
+          "previous": "concave_down",
+          "current": "concave_up",
+          "match": false
+        },
+        "Squeeze Mean \u03c3\u00b2_A": {
+          "previous": 0.14154954762131122,
+          "current": 0.03400533901632747,
+          "abs_delta": 0.10754420860498376,
+          "rel_pct": 75.9763704033147,
+          "within_5pct": false
+        },
+        "Entropy H/H_max": {
+          "previous": 0.8152401429794982,
+          "current": 0.7728621857944471,
+          "abs_delta": 0.04237795718505111,
+          "rel_pct": 5.198217672423527,
+          "within_5pct": false
+        },
+        "Angular Velocity \u03c3": {
+          "previous": 0.6716381533602981,
+          "current": 0.4334366827173481,
+          "abs_delta": 0.23820147064295,
+          "rel_pct": 35.46574438203001,
+          "within_5pct": false
+        }
+      },
+      "EXP-03": {
+        "PLL Shape": {
+          "previous": "concave_up",
+          "current": "concave_up",
+          "match": true
+        },
+        "Squeeze Mean \u03c3\u00b2_A": {
+          "previous": 0.07081115530205684,
+          "current": 0.054196193829142016,
+          "abs_delta": 0.016614961472914823,
+          "rel_pct": 23.463762739134708,
+          "within_5pct": false
+        },
+        "Entropy H/H_max": {
+          "previous": 0.6220822543560202,
+          "current": 0.6879925071388765,
+          "abs_delta": 0.06591025278285634,
+          "rel_pct": 10.595102548148825,
+          "within_5pct": false
+        },
+        "Angular Velocity \u03c3": {
+          "previous": 0.32704377393119144,
+          "current": 0.37934211150359604,
+          "abs_delta": 0.052298337572404596,
+          "rel_pct": 15.991234734041424,
+          "within_5pct": false
+        }
+      },
+      "EXP-04": {
+        "PLL Shape": {
+          "previous": "concave_down",
+          "current": "concave_down",
+          "match": true
+        },
+        "Squeeze Mean \u03c3\u00b2_A": {
+          "previous": 0.22246606781106323,
+          "current": 2.6383136375438743,
+          "abs_delta": 2.415847569732811,
+          "rel_pct": 1085.939799045916,
+          "within_5pct": false
+        },
+        "Entropy H/H_max": {
+          "previous": 0.35965090779504494,
+          "current": 0.46727950221905423,
+          "abs_delta": 0.1076285944240093,
+          "rel_pct": 29.92585089910126,
+          "within_5pct": false
+        },
+        "Angular Velocity \u03c3": {
+          "previous": 0.6829155276376119,
+          "current": 0.22075384339600285,
+          "abs_delta": 0.462161684241609,
+          "rel_pct": 67.67479513027773,
+          "within_5pct": false
+        }
+      },
+      "EXP-05": {
+        "PLL Shape": {
+          "previous": "concave_up",
+          "current": "concave_up",
+          "match": true
+        },
+        "Squeeze Mean \u03c3\u00b2_A": {
+          "previous": 0.22771258573805833,
+          "current": 0.054485718607450356,
+          "abs_delta": 0.17322686713060798,
+          "rel_pct": 76.0725923730337,
+          "within_5pct": false
+        },
+        "Entropy H/H_max": {
+          "previous": 0.749742257130859,
+          "current": 0.7555052746717533,
+          "abs_delta": 0.005763017540894366,
+          "rel_pct": 0.7686664965302199,
+          "within_5pct": true
+        },
+        "Angular Velocity \u03c3": {
+          "previous": 0.5642547068169929,
+          "current": 0.62128161374543,
+          "abs_delta": 0.05702690692843715,
+          "rel_pct": 10.10658949574929,
+          "within_5pct": false
+        }
+      }
+    }
+  },
+  "chain_summary": {
+    "total_experiments": 19,
+    "all_completed": 19,
+    "pll_shapes": {
+      "hill": 6,
+      "bowl": 13
+    }
+  }
+}

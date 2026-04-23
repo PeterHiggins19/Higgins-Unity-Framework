@@ -1,0 +1,92 @@
+{
+  "extensions": "H\u02e2 PID + Transfer Entropy + Match Density + D=4 Protocol",
+  "timestamp": "2026-04-23T16:06:21Z",
+  "pid_results": {
+    "EXP-03": {
+      "target": "Sym+Pairing",
+      "sources": [
+        "Volume",
+        "Surf+Coulomb"
+      ],
+      "I_X1_Y": 0.44724489626112546,
+      "I_X2_Y": 0.7197199442830734,
+      "redundancy": 0.44724489626112546,
+      "unique_X1": 0.0,
+      "unique_X2": 0.27247504802194794,
+      "synergy": 0.0,
+      "co_information": 0.0,
+      "dominant": "synergy"
+    },
+    "EXP-05": {
+      "target": "CaO+MgO",
+      "sources": [
+        "SiO2",
+        "Al2O3"
+      ],
+      "I_X1_Y": 1.9784429486755124,
+      "I_X2_Y": 1.161227414513706,
+      "redundancy": 1.161227414513706,
+      "unique_X1": 0.8172155341618064,
+      "unique_X2": 0.0,
+      "synergy": 0.0,
+      "co_information": 0.0,
+      "dominant": "synergy"
+    }
+  },
+  "transfer_entropy": {
+    "EXP-05": {
+      "SiO2\u2192Al2O3": 0.8900532887535055,
+      "SiO2\u2192CaO+MgO": 0.34772682673382516,
+      "Al2O3\u2192SiO2": 0.5423540014820012,
+      "Al2O3\u2192CaO+MgO": 0.44254410488576434,
+      "CaO+MgO\u2192SiO2": 0.3085366743042308,
+      "CaO+MgO\u2192Al2O3": 0.7611488194906086
+    }
+  },
+  "match_density": {
+    "natural": {
+      "EXP-01": {
+        "density": 590.5661370902997,
+        "concentration": 0.4837572399899268,
+        "n_matches": 209,
+        "n_constants_hit": 6,
+        "dominant": "1/pi",
+        "traj_length": 0.353897704039951
+      },
+      "EXP-03": {
+        "density": 221.88767211800265,
+        "concentration": 0.4593572778827977,
+        "n_matches": 46,
+        "n_constants_hit": 4,
+        "dominant": "1/(e^pi)",
+        "traj_length": 0.20731210328592128
+      },
+      "EXP-05": {
+        "density": 166.04659361622618,
+        "concentration": 0.40978816654492334,
+        "n_matches": 37,
+        "n_constants_hit": 3,
+        "dominant": "1/(e^pi)",
+        "traj_length": 0.22282902162700155
+      }
+    },
+    "synthetic": {
+      "uniform": {
+        "density": 16.72121408092409,
+        "concentration": 0.16099773242630383,
+        "n_matches": 21,
+        "n_constants_hit": 9,
+        "dominant": "ln2",
+        "traj_length": 1.2558896679612062
+      },
+      "near_constant": {
+        "density": 0.0,
+        "concentration": 0.0,
+        "n_matches": 0,
+        "n_constants_hit": 0,
+        "dominant": null,
+        "traj_length": 5.303214469539818e-05
+      }
+    }
+  }
+}

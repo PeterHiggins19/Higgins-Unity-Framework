@@ -1,0 +1,124 @@
+{
+  "_meta": {
+    "type": "DISCOVERY-NARRATIVE",
+    "experiment": "EXP-13",
+    "title": "From Ternary Graphs to the Calibration Proof",
+    "subtitle": "How arranging display charts revealed 7 theorems in Aitchison geometry",
+    "date": "2026-04-20",
+    "author": "Peter Higgins",
+    "programme": "Higgins Unity Framework (HUF) — CoDaWork2026 Series",
+    "tagline": "The instrument IS the measurement"
+  },
+
+  "discovery_arc": {
+    "phase_1_practical_problem": {
+      "title": "Arranging Ternary Diagrams",
+      "narrative": "EXP-13 began as a practical visualization task: produce ternary charts for 9 D=3 physical systems with the apex component rotated to the top vertex. For stellar burning, this meant rotating 120° to place CNO at the top. For QCD running coupling, 0° placed the strong force at the apex. For Kerr black holes, 120° placed rotational energy up. Each rotation was forced by the physics — the component with the most compositional action had to go up, or the chart was unreadable.",
+      "parameters_discovered": [
+        "Rotation angle θ — which vertex goes up",
+        "Zoom/coverage σ — how much of the simplex to show",
+        "Lift λ — how far the trajectory departs from a straight line",
+        "Vertex position t* — where the trajectory turns",
+        "Opening angle α — how sharp the turn is",
+        "Curvature K — which direction the trajectory bends",
+        "Slice angle φ — what angle to orient the 2D projection"
+      ]
+    },
+
+    "phase_2_peter_insight": {
+      "title": "The Instrument IS the Measurement",
+      "narrative": "Peter Higgins observed that the display calibration parameters were not arbitrary rendering choices — they were diagnostic data. Every rotation, every zoom level, every slice angle encoded real information about the trajectory's geometry. If we lock onto parabolas and display them, the act of displaying them IS measurement. The 7 display parameters should be computed, tracked, and compared across systems as first-class diagnostic quantities.",
+      "quote": "All data we display must show it in this form to be diagnostic. The act of display rotations and scale and slice angles are all data to be analyzed and tracked.",
+      "significance": "This single observation transformed a visualization problem into a measurement problem, and ultimately into a theorem-proving programme."
+    },
+
+    "phase_3_calibration_septuple": {
+      "title": "The Calibration Septuple (θ, σ, λ, t*, α, K, φ)",
+      "narrative": "The 7 display parameters were formalized as the Calibration Septuple — a coordinate-free fingerprint for any D=3 compositional trajectory. Computed for all 9 systems, the septuple revealed that systems from entirely different physical domains could share geometric fingerprints despite different physics.",
+      "systems_tested": 9,
+      "parameters": {
+        "theta": "Rotation angle — which component mediates the process",
+        "sigma": "Coverage — total compositional spread",
+        "lambda": "Lift — geodesic deviation",
+        "t_star": "Vertex position — compositional transition point",
+        "alpha": "Opening angle — dispersion at vertex",
+        "K": "Curvature — directional bending",
+        "phi": "Slice angle — principal axis of variation"
+      }
+    },
+
+    "phase_4_mathematical_proof": {
+      "title": "7 Theorems in Aitchison Geometry",
+      "narrative": "Each display parameter was proven to equal a named quantity in Aitchison geometry. The rotation θ equals the Centred Log-Ratio (CLR) critical-point direction. The coverage σ equals the total Aitchison variance. The lift λ equals the Aitchison geodesic deviation in ILR space. The vertex t* locates the CLR Jacobian null. The opening angle α is the Aitchison dispersion angle. The curvature K gives the ILR geodesic curvature integral. The slice angle φ recovers the ILR principal axis orientation.",
+      "key_result": "The ILR isometry (verified to 10⁻¹⁵ machine precision) guarantees that every display-space quantity has an exact Aitchison correspondent. The proofs were not a stretch — they were an inevitability.",
+      "theorems": [
+        "Theorem 1: θ = CLR critical-point direction",
+        "Theorem 2: λ = Aitchison geodesic deviation (max ILR perpendicular distance)",
+        "Theorem 3: σ = Total Aitchison variance = tr(Σ_ILR)",
+        "Theorem 4: t* = CLR Jacobian null (compositional transition point)",
+        "Theorem 5: α = Aitchison dispersion angle",
+        "Theorem 6: K = ILR geodesic curvature integral",
+        "Theorem 7: φ = ILR principal axis (PCA eigenvalue orientation)"
+      ]
+    },
+
+    "phase_5_real_data_validation": {
+      "title": "Real Data: Ember Electricity as Proof of Universality",
+      "narrative": "The framework was validated on 4 real measurement datasets from the Ember Global Electricity Review: World, Germany, France, and China electricity generation as Coal/Gas/Nuclear compositions. The F-statistic classifier achieved perfect separation: France's stable nuclear grid is a geodesic; World, Germany, and China are parabolas reflecting energy transitions in progress. The calibration septuples of real data sit alongside physics models in the same parameter space.",
+      "real_data_results": {
+        "world": {"F": 13.8, "class": "PARABOLA", "interpretation": "Slow global coal decommissioning"},
+        "germany": {"F": 12.2, "class": "PARABOLA", "interpretation": "Energiewende — nuclear phase-out + coal reduction"},
+        "france": {"F": 6.8, "class": "GEODESIC", "interpretation": "Stable nuclear-dominated grid"},
+        "china": {"F": 36.3, "class": "PARABOLA", "interpretation": "Rapid nuclear growth bending away from coal"}
+      }
+    },
+
+    "phase_6_distortion_tensor": {
+      "title": "The Aitchison-Cartesian Distortion Tensor",
+      "narrative": "A corollary revealed that standard Cartesian ternary diagrams distort geometric quantities by factors of 10–80, and can even reverse the sign of curvature. For GW150914, the Cartesian curvature is positive but the Aitchison curvature is negative — the standard display gives the wrong qualitative picture. This provides the strongest quantitative argument for Aitchison geometry over Cartesian analysis.",
+      "strongest_example": "GW150914: K_ILR = −8.88 vs K_Cart = +1.00 — curvature SIGN REVERSAL"
+    },
+
+    "phase_7_bell_test_reinterpretation": {
+      "title": "The Bell Test as Self-Diagnosis",
+      "narrative": "Peter Higgins asked whether the Bell test result (S=2.2018 exceeding classical bound of 2.0) might actually be the test detecting its own incompatibility with the simplex. The CHSH inequality assumes Euclidean independence — no pre-existing correlations. But compositional closure forces Σx_k = 1, which guarantees induced correlations. The 'violation' is not measuring quantum-like behaviour — it is measuring the Aitchison-Cartesian gap: the distance between the simplex geometry and the Euclidean independence assumption.",
+      "interpretation": {
+        "orthogonal": "The Bell formalism does not speak the language of the simplex — it assumes Euclidean independence",
+        "shadow": "Compositional closure leaves an imprint that the test reads as a violation",
+        "boundary": "The test sits at the edge where classical correlation testing meets compositional geometry",
+        "contamination_path": "Path 1 (Data → Theory): compositional structure creates an apparent theoretical conclusion that is a geometric artifact",
+        "proposed_resolution": "Reformulate S using Aitchison independence (ILR covariance = 0) as the null hypothesis. The classical bound would change on the simplex. The violation likely would not survive."
+      },
+      "connection_to_distortion_tensor": "The Bell 'violation' is the distortion tensor seen from a different angle: applying a Cartesian criterion (S ≤ 2) to an Aitchison object (compositions with closure correlations)."
+    }
+  },
+
+  "summary": {
+    "origin": "Practical ternary diagram layout",
+    "insight": "Display calibration parameters ARE Aitchison geometric quantities",
+    "proof": "7 formal theorems with machine-precision numerical verification",
+    "validation": "9 physics models + 4 real Ember electricity datasets",
+    "corollary": "Aitchison-Cartesian distortion tensor (factors of 10–80, curvature sign reversal)",
+    "bonus": "Bell test S=2.2018 reinterpreted as Aitchison-Cartesian gap, not quantum correlations",
+    "lesson": "You cannot draw a ternary diagram properly without computing Aitchison quantities. The geometry forces your hand."
+  },
+
+  "documents_produced": [
+    "EXP-13_Journal.docx — 33-page prize-quality standalone journal",
+    "The_Calibration_Proof.docx — 22-page formal theorem document",
+    "exp13_real_data_results.json — Full septuple data for all 9 systems",
+    "calibration_proof.json — Theorem verification results",
+    "diagnostic_display_map.json — Display parameter diagnostics",
+    "DISCOVERY_NARRATIVE.json — This file"
+  ],
+
+  "figures_produced": [
+    "ternary_optimized_3x3.png — 9 optimized ternary diagrams",
+    "exp13_real_data_ternary.png — Physics models + real data ternary grid",
+    "exp13_real_data_ilr.png — ILR trajectories (geodesic vs parabola)",
+    "exp13_real_data_classifier.png — F-statistic parabola classifier",
+    "exp13_real_data_clr.png — CLR traces with critical points",
+    "calibration_proof.png — Full theorem verification",
+    "diagnostic_display_map_A/B/C/D.png — Diagnostic dashboards"
+  ]
+}

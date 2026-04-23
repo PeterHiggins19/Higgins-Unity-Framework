@@ -1,0 +1,129 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-16",
+  "name": "Spring-Mass Force Composition",
+  "domain": "FORCE",
+  "carriers": [
+    "Spring",
+    "Damping",
+    "Gravity",
+    "Inertia"
+  ],
+  "D": 4,
+  "N": 1000,
+  "data_source": {
+    "type": "DERIVED",
+    "url": null,
+    "description": "Spring-mass system with gravity and viscous damping. m=5kg, k=200N/m, c=2N\u00b7s/m, g=9.81m/s\u00b2, x\u2080=0.3m. RK4 integration, 1000 timesteps over 10s. Force decomposition: |F_spring|, |F_damping|, F_gravity, |F_inertia|."
+  },
+  "data_hash_sha256_16": "b824007d557d44c7",
+  "run_timestamp": "2026-04-22T17:41:36.631873Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-16: Spring-Mass Force Composition: 4-part simplex, carriers=['Spring', 'Damping', 'Gravity', 'Inertia']",
+    "step2_n_samples": 1000,
+    "step2_D": 4,
+    "step2_carriers": [
+      "Spring",
+      "Damping",
+      "Gravity",
+      "Inertia"
+    ],
+    "data_hash_sha256_16": "b824007d557d44c7",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": true,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.979610756835493,
+      -2.4757790312777543,
+      1.1916955406287038,
+      0.304472733813554
+    ],
+    "step4_clr_std_per_part": [
+      0.8528336631175897,
+      0.9172194301574192,
+      0.429679624291935,
+      0.9227491039217183
+    ],
+    "step5_sigma2_range": [
+      2.5449783153464587,
+      10.59308535028067
+    ],
+    "step5_sigma2_final": 2.60470722832486,
+    "step6_pll_coeffs": [
+      2.3261768672860594e-06,
+      -0.003143420886444168,
+      3.6320448032336334
+    ],
+    "step6_pll_R2": 0.2458176355747368,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      675.6624852244327,
+      2.5700990191130053
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 535,
+    "step7_squeeze_closest": {
+      "time_index": 139,
+      "sigma2_A": 2.7180167564744675,
+      "constant": "1/e",
+      "constant_value": 0.36787944117144233,
+      "test_type": "reciprocal",
+      "test_value": 0.367915318262091,
+      "delta": 3.587709064867273e-05
+    },
+    "step7_squeeze_mean": 2.834543797896658,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.5127431745962071,
+      0.8695281128961816
+    ],
+    "step8_entropy_mean": 0.7383658502888013,
+    "step8_entropy_cv": 8.089495555638464,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.7383658502888013,
+        "H_mean_decimated": 0.7377820879017022,
+        "variation_pct": 0.07906140118354442,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.7383658502888013,
+        "H_mean_decimated": 0.7367668937265335,
+        "variation_pct": 0.21655342830961358,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.7383658502888013,
+        "H_mean_decimated": 0.7357703354134281,
+        "variation_pct": 0.35152152206904486,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 46,
+      "stalls": 42,
+      "spikes": 0,
+      "reversals": 4
+    },
+    "step10_ternary_type": "projected_ternary",
+    "step11_complex_range_re": [
+      -0.15428032594321983,
+      0.2612563502400211
+    ],
+    "step11_complex_range_im": [
+      -0.2338931339789472,
+      0.41209439069346454
+    ],
+    "step12_radius_range": [
+      0.0009685504579239362,
+      0.46813674770076824
+    ],
+    "step12_theta_range": [
+      -3.021690785456847,
+      2.7691997659274676
+    ],
+    "step9_angular_velocity_std": 0.2331331667666326
+  }
+}

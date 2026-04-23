@@ -1,0 +1,2655 @@
+{
+  "pretest": "Higgins Transcendental Pretest (HTP)",
+  "version": "1.0",
+  "library_size": 35,
+  "hypothesis": "Transcendental Naturalness Hypothesis \u2014 Peter Higgins, 2026",
+  "timestamp": "2026-04-23T08:09:43Z",
+  "summary": {
+    "total_systems": 19,
+    "NATURAL": 17,
+    "INVESTIGATE": 2,
+    "FLAG": 0,
+    "natural_pct": 89.5
+  },
+  "systems": [
+    {
+      "system": "EXP-01 Gold/Silver (338yr)",
+      "domain": "COMMODITIES",
+      "N": 624,
+      "D": 2,
+      "carriers": [
+        "Gold",
+        "Silver"
+      ],
+      "data_hash": "082c75284061f414",
+      "classification": "NATURAL",
+      "n_natural_matches": 209,
+      "n_investigate_matches": 803,
+      "n_total_matches": 1012,
+      "nearest_approach": {
+        "constant": "1/pi",
+        "constant_value": 0.3183098861837907,
+        "delta": 3.272478707166959e-05,
+        "relative_pct": 0.010280795065464744,
+        "test_type": "direct",
+        "time_index": 488,
+        "sigma2_A": 0.31834261097086236
+      },
+      "top_matches": [
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 3.272478707166959e-05,
+          "relative_pct": 0.010280795065464744,
+          "test_type": "direct",
+          "time_index": 488,
+          "sigma2_A": 0.31834261097086236,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 5.739432438006675e-05,
+          "relative_pct": 0.018030958783016728,
+          "test_type": "direct",
+          "time_index": 559,
+          "sigma2_A": 0.31836728050817076,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 8.503058715619849e-05,
+          "relative_pct": 0.026713146794033978,
+          "test_type": "direct",
+          "time_index": 560,
+          "sigma2_A": 0.3182248555966345,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.00014846966699266773,
+          "relative_pct": 0.04664312151050879,
+          "test_type": "direct",
+          "time_index": 487,
+          "sigma2_A": 0.318161416516798,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.00020095604049463756,
+          "relative_pct": 0.06313220205124463,
+          "test_type": "direct",
+          "time_index": 558,
+          "sigma2_A": 0.31851084222428533,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.00021822034688284697,
+          "relative_pct": 0.06855594386309684,
+          "test_type": "direct",
+          "time_index": 489,
+          "sigma2_A": 0.31852810653067354,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.00023174505713791094,
+          "relative_pct": 0.07280485690102077,
+          "test_type": "direct",
+          "time_index": 561,
+          "sigma2_A": 0.3180781411266528,
+          "is_natural_match": true
+        },
+        {
+          "constant": "pi",
+          "constant_value": 3.141592653589793,
+          "delta": 0.00032294750093653235,
+          "relative_pct": 0.010279738226644724,
+          "test_type": "reciprocal",
+          "time_index": 488,
+          "sigma2_A": 0.31834261097086236,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0003367498601886676,
+          "relative_pct": 0.1057930886866108,
+          "test_type": "direct",
+          "time_index": 557,
+          "sigma2_A": 0.31864663604397936,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0003419173658982255,
+          "relative_pct": 0.10741650848406387,
+          "test_type": "direct",
+          "time_index": 486,
+          "sigma2_A": 0.31796796881789247,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        2.4503938924710907e-06,
+        0.3212527776491585
+      ],
+      "sigma2_A_final": 0.2958093698806383,
+      "pll_R2": 0.9071481156571747,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.017474651336669922,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-02 US Energy (55yr)",
+      "domain": "ENERGY",
+      "N": 55,
+      "D": 3,
+      "carriers": [
+        "Fossil",
+        "Nuclear",
+        "Renewable"
+      ],
+      "data_hash": "6d0d391b56ce25bf",
+      "classification": "NATURAL",
+      "n_natural_matches": 21,
+      "n_investigate_matches": 79,
+      "n_total_matches": 100,
+      "nearest_approach": {
+        "constant": "1/(e^pi)",
+        "constant_value": 0.04321391826377226,
+        "delta": 0.00034196074514830643,
+        "relative_pct": 0.7913208495953122,
+        "test_type": "direct",
+        "time_index": 31,
+        "sigma2_A": 0.04287195751862395
+      },
+      "top_matches": [
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.00034196074514830643,
+          "relative_pct": 0.7913208495953122,
+          "test_type": "direct",
+          "time_index": 31,
+          "sigma2_A": 0.04287195751862395,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.00036850242448992904,
+          "relative_pct": 0.8276254071217747,
+          "test_type": "direct",
+          "time_index": 32,
+          "sigma2_A": 0.044156764842432986,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0009428465786607276,
+          "relative_pct": 2.1818122876655432,
+          "test_type": "direct",
+          "time_index": 32,
+          "sigma2_A": 0.044156764842432986,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.001653309748298963,
+          "relative_pct": 3.7131944394350205,
+          "test_type": "direct",
+          "time_index": 31,
+          "sigma2_A": 0.04287195751862395,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0020650588346902213,
+          "relative_pct": 4.637948206600254,
+          "test_type": "direct",
+          "time_index": 33,
+          "sigma2_A": 0.046590326101613136,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.002390530480394157,
+          "relative_pct": 5.531853107609134,
+          "test_type": "direct",
+          "time_index": 30,
+          "sigma2_A": 0.0408233877833781,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.003376407837840878,
+          "relative_pct": 7.813241597838257,
+          "test_type": "direct",
+          "time_index": 33,
+          "sigma2_A": 0.046590326101613136,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0037018794835448135,
+          "relative_pct": 8.314109517529788,
+          "test_type": "direct",
+          "time_index": 30,
+          "sigma2_A": 0.0408233877833781,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.004042984207625132,
+          "relative_pct": 9.080201997189578,
+          "test_type": "direct",
+          "time_index": 34,
+          "sigma2_A": 0.048568251474548046,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.004554651145050312,
+          "relative_pct": 10.53977821971454,
+          "test_type": "direct",
+          "time_index": 29,
+          "sigma2_A": 0.038659267118721946,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.006753938146955358,
+        0.10196704182358589
+      ],
+      "sigma2_A_final": 0.10196704182358589,
+      "pll_R2": 0.9992131967073475,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.0012819766998291016,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-03 Nuclear SEMF (Z=1-92)",
+      "domain": "NUCLEAR",
+      "N": 92,
+      "D": 3,
+      "carriers": [
+        "Volume",
+        "Surf+Coulomb",
+        "Sym+Pairing"
+      ],
+      "data_hash": "fa82e9d6273e4966",
+      "classification": "NATURAL",
+      "n_natural_matches": 46,
+      "n_investigate_matches": 118,
+      "n_total_matches": 164,
+      "nearest_approach": {
+        "constant": "1/(pi^e)",
+        "constant_value": 0.044525267266922915,
+        "delta": 5.868368472425334e-06,
+        "relative_pct": 0.013179861307165803,
+        "test_type": "direct",
+        "time_index": 38,
+        "sigma2_A": 0.04453113563539534
+      },
+      "top_matches": [
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 5.868368472425334e-06,
+          "relative_pct": 0.013179861307165803,
+          "test_type": "direct",
+          "time_index": 38,
+          "sigma2_A": 0.04453113563539534,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.00032680872176557574,
+          "relative_pct": 0.7562580180088667,
+          "test_type": "direct",
+          "time_index": 39,
+          "sigma2_A": 0.043540726985537834,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0005488863530765942,
+          "relative_pct": 1.2701610386872622,
+          "test_type": "direct",
+          "time_index": 40,
+          "sigma2_A": 0.042665031910695664,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.000984540281385081,
+          "relative_pct": 2.2111945459707094,
+          "test_type": "direct",
+          "time_index": 39,
+          "sigma2_A": 0.043540726985537834,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0010603537121561882,
+          "relative_pct": 2.3814651258565434,
+          "test_type": "direct",
+          "time_index": 37,
+          "sigma2_A": 0.0455856209790791,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.001317217371623082,
+          "relative_pct": 3.0481322327287117,
+          "test_type": "direct",
+          "time_index": 38,
+          "sigma2_A": 0.04453113563539534,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0014455537480448644,
+          "relative_pct": 3.3451114967668247,
+          "test_type": "direct",
+          "time_index": 41,
+          "sigma2_A": 0.041768364515727394,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0018602353562272508,
+          "relative_pct": 4.177931925877936,
+          "test_type": "direct",
+          "time_index": 40,
+          "sigma2_A": 0.042665031910695664,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0021189339726503872,
+          "relative_pct": 4.758947228654837,
+          "test_type": "direct",
+          "time_index": 36,
+          "sigma2_A": 0.0466442012395733,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.002343916530032533,
+          "relative_pct": 5.423985197837338,
+          "test_type": "direct",
+          "time_index": 42,
+          "sigma2_A": 0.040870001733739725,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.020885776787061078,
+        0.22819788007298236
+      ],
+      "sigma2_A_final": 0.020885776787061078,
+      "pll_R2": 0.8969420943276523,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.0018627643585205078,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-04 Bessel Acoustics",
+      "domain": "ACOUSTICS",
+      "N": 200,
+      "D": 3,
+      "carriers": [
+        "Low",
+        "Mid",
+        "High"
+      ],
+      "data_hash": "c6fdc076a68d5821",
+      "classification": "NATURAL",
+      "n_natural_matches": 81,
+      "n_investigate_matches": 332,
+      "n_total_matches": 413,
+      "nearest_approach": {
+        "constant": "1/pi",
+        "constant_value": 0.3183098861837907,
+        "delta": 2.0007435887203773e-05,
+        "relative_pct": 0.006285521360040816,
+        "test_type": "reciprocal",
+        "time_index": 41,
+        "sigma2_A": 3.1413952005234607
+      },
+      "top_matches": [
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 2.0007435887203773e-05,
+          "relative_pct": 0.006285521360040816,
+          "test_type": "reciprocal",
+          "time_index": 41,
+          "sigma2_A": 3.1413952005234607,
+          "is_natural_match": true
+        },
+        {
+          "constant": "phi^2",
+          "constant_value": 2.618033988749895,
+          "delta": 2.3663965401876652e-05,
+          "relative_pct": 0.0009038830474915316,
+          "test_type": "direct",
+          "time_index": 170,
+          "sigma2_A": 2.618057652715297,
+          "is_natural_match": true
+        },
+        {
+          "constant": "pi",
+          "constant_value": 3.141592653589793,
+          "delta": 0.00019745306633245363,
+          "relative_pct": 0.006285126307092378,
+          "test_type": "direct",
+          "time_index": 41,
+          "sigma2_A": 3.1413952005234607,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.0006325387776138225,
+          "relative_pct": 0.17194186649833507,
+          "test_type": "reciprocal",
+          "time_index": 157,
+          "sigma2_A": 2.7136159864822904,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0006679093787242962,
+          "relative_pct": 0.2098299197463972,
+          "test_type": "reciprocal",
+          "time_index": 61,
+          "sigma2_A": 3.135014455274253,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.0009342270660278595,
+          "relative_pct": 0.25394924572381394,
+          "test_type": "reciprocal",
+          "time_index": 156,
+          "sigma2_A": 2.725202459549518,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0010049021910614742,
+          "relative_pct": 0.31569933410150136,
+          "test_type": "reciprocal",
+          "time_index": 75,
+          "sigma2_A": 3.151542050858281,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0010512228470012652,
+          "relative_pct": 0.3302513973424922,
+          "test_type": "reciprocal",
+          "time_index": 87,
+          "sigma2_A": 3.131251651257206,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0012563072001057218,
+          "relative_pct": 0.3946805470504098,
+          "test_type": "reciprocal",
+          "time_index": 86,
+          "sigma2_A": 3.1540410400207413,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.0022641486720079707,
+          "relative_pct": 0.6154594192048946,
+          "test_type": "reciprocal",
+          "time_index": 158,
+          "sigma2_A": 2.7016542429464825,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.9064071613320435,
+        3.4653849142150124
+      ],
+      "sigma2_A_final": 2.5065414023847397,
+      "pll_R2": 0.6533007415429721,
+      "pll_shape": "hill",
+      "elapsed_s": 0.004750251770019531,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-05 Geochemistry (basalt-rhyolite)",
+      "domain": "GEOCHEMISTRY",
+      "N": 150,
+      "D": 3,
+      "carriers": [
+        "SiO2",
+        "Al2O3",
+        "CaO+MgO"
+      ],
+      "data_hash": "8bf0db689b629d52",
+      "classification": "NATURAL",
+      "n_natural_matches": 37,
+      "n_investigate_matches": 218,
+      "n_total_matches": 255,
+      "nearest_approach": {
+        "constant": "1/(e^pi)",
+        "constant_value": 0.04321391826377226,
+        "delta": 0.00011303365300384394,
+        "relative_pct": 0.2615677021322179,
+        "test_type": "direct",
+        "time_index": 84,
+        "sigma2_A": 0.0433269519167761
+      },
+      "top_matches": [
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.00011303365300384394,
+          "relative_pct": 0.2615677021322179,
+          "test_type": "direct",
+          "time_index": 84,
+          "sigma2_A": 0.0433269519167761,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.00028643015357445595,
+          "relative_pct": 0.643297999442308,
+          "test_type": "direct",
+          "time_index": 85,
+          "sigma2_A": 0.04423883711334846,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0004562635386880509,
+          "relative_pct": 0.28667883624865265,
+          "test_type": "direct",
+          "time_index": 138,
+          "sigma2_A": 0.1596112066305834,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0007496670970142533,
+          "relative_pct": 1.6836891568108983,
+          "test_type": "direct",
+          "time_index": 86,
+          "sigma2_A": 0.04527493436393717,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0010249188495762007,
+          "relative_pct": 2.3717332071584587,
+          "test_type": "direct",
+          "time_index": 85,
+          "sigma2_A": 0.04423883711334846,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0010621179932702035,
+          "relative_pct": 2.3854275526364632,
+          "test_type": "direct",
+          "time_index": 87,
+          "sigma2_A": 0.04558738526019312,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0011983153501468127,
+          "relative_pct": 2.6913153445280305,
+          "test_type": "direct",
+          "time_index": 84,
+          "sigma2_A": 0.0433269519167761,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0014840280952473778,
+          "relative_pct": 3.4341438010528442,
+          "test_type": "direct",
+          "time_index": 83,
+          "sigma2_A": 0.04172989016852488,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.001641869245647208,
+          "relative_pct": 3.6875000340917112,
+          "test_type": "direct",
+          "time_index": 88,
+          "sigma2_A": 0.04616713651257012,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.00206101610016491,
+          "relative_pct": 4.769334008512558,
+          "test_type": "direct",
+          "time_index": 86,
+          "sigma2_A": 0.04527493436393717,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.0009492176210000485,
+        0.2222535927158974
+      ],
+      "sigma2_A_final": 0.2222535927158974,
+      "pll_R2": 0.9799235664591651,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.0033888816833496094,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-06 Fusion DT",
+      "domain": "NUCLEAR",
+      "N": 100,
+      "D": 3,
+      "carriers": [
+        "Fusion",
+        "Radiation",
+        "Loss"
+      ],
+      "data_hash": "ba0583783f6a8b0b",
+      "classification": "NATURAL",
+      "n_natural_matches": 39,
+      "n_investigate_matches": 157,
+      "n_total_matches": 196,
+      "nearest_approach": {
+        "constant": "1/(pi^e)",
+        "constant_value": 0.044525267266922915,
+        "delta": 0.00574392602230623,
+        "relative_pct": 12.90037404575738,
+        "test_type": "reciprocal",
+        "time_index": 11,
+        "sigma2_A": 19.892899300102027
+      },
+      "top_matches": [
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.00574392602230623,
+          "relative_pct": 12.90037404575738,
+          "test_type": "reciprocal",
+          "time_index": 11,
+          "sigma2_A": 19.892899300102027,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.005782023345545041,
+          "relative_pct": 12.985937424884163,
+          "test_type": "reciprocal",
+          "time_index": 12,
+          "sigma2_A": 19.8778345608651,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.00580559431084729,
+          "relative_pct": 13.038875827613886,
+          "test_type": "reciprocal",
+          "time_index": 10,
+          "sigma2_A": 19.868525366982258,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0058939373923614785,
+          "relative_pct": 13.237286947719204,
+          "test_type": "reciprocal",
+          "time_index": 13,
+          "sigma2_A": 19.833712307793338,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.006004928552467537,
+          "relative_pct": 13.486563744735788,
+          "test_type": "reciprocal",
+          "time_index": 9,
+          "sigma2_A": 19.79014693658203,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0060613651555572745,
+          "relative_pct": 13.613315601723883,
+          "test_type": "reciprocal",
+          "time_index": 14,
+          "sigma2_A": 19.76806820522036,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.00627107232726596,
+          "relative_pct": 14.084300246131562,
+          "test_type": "reciprocal",
+          "time_index": 15,
+          "sigma2_A": 19.686457882378605,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.006399329908706494,
+          "relative_pct": 14.372355971146412,
+          "test_type": "reciprocal",
+          "time_index": 8,
+          "sigma2_A": 19.636875998276178,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0065132871403735665,
+          "relative_pct": 14.62829431506227,
+          "test_type": "reciprocal",
+          "time_index": 16,
+          "sigma2_A": 19.593031417383557,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.006780664527378084,
+          "relative_pct": 15.228801405568044,
+          "test_type": "reciprocal",
+          "time_index": 17,
+          "sigma2_A": 19.490923661795357,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        13.251489293367733,
+        19.892899300102027
+      ],
+      "sigma2_A_final": 13.377309640805592,
+      "pll_R2": 0.8229759191643982,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0027685165405273438,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-07 QCD Quarks",
+      "domain": "QCD",
+      "N": 20,
+      "D": 3,
+      "carriers": [
+        "u-type",
+        "d-type",
+        "s/heavy"
+      ],
+      "data_hash": "5f06b71b7ca36aa9",
+      "classification": "NATURAL",
+      "n_natural_matches": 7,
+      "n_investigate_matches": 33,
+      "n_total_matches": 40,
+      "nearest_approach": {
+        "constant": "ln_phi",
+        "constant_value": 0.48121182505960347,
+        "delta": 0.00392322677364465,
+        "relative_pct": 0.8152806247350042,
+        "test_type": "direct",
+        "time_index": 9,
+        "sigma2_A": 0.4772885982859588
+      },
+      "top_matches": [
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.00392322677364465,
+          "relative_pct": 0.8152806247350042,
+          "test_type": "direct",
+          "time_index": 9,
+          "sigma2_A": 0.4772885982859588,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt5",
+          "constant_value": 0.4472135954999579,
+          "delta": 0.004431854619874942,
+          "relative_pct": 0.9909928196436861,
+          "test_type": "direct",
+          "time_index": 15,
+          "sigma2_A": 0.442781740880083,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.006136256896757786,
+          "relative_pct": 1.668007561721318,
+          "test_type": "direct",
+          "time_index": 5,
+          "sigma2_A": 0.3740156980682001,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.007027989921067235,
+          "relative_pct": 1.4604773937541413,
+          "test_type": "direct",
+          "time_index": 13,
+          "sigma2_A": 0.4882398149806707,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln10",
+          "constant_value": 0.43429448190325176,
+          "delta": 0.008487258976831225,
+          "relative_pct": 1.9542636000431477,
+          "test_type": "direct",
+          "time_index": 15,
+          "sigma2_A": 0.442781740880083,
+          "is_natural_match": true
+        },
+        {
+          "constant": "omega_lambert",
+          "constant_value": 0.5671432904097838,
+          "delta": 0.008829073210795513,
+          "relative_pct": 1.5567623491439266,
+          "test_type": "direct",
+          "time_index": 7,
+          "sigma2_A": 0.5583142171989883,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.009611752248828265,
+          "relative_pct": 1.997405663844138,
+          "test_type": "direct",
+          "time_index": 17,
+          "sigma2_A": 0.4716000728107752,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.011589056723235514,
+          "relative_pct": 2.4083067206006583,
+          "test_type": "direct",
+          "time_index": 10,
+          "sigma2_A": 0.46962276833636796,
+          "is_natural_match": false
+        },
+        {
+          "constant": "khinchin",
+          "constant_value": 2.6854520010653062,
+          "delta": 0.011767433371962177,
+          "relative_pct": 0.4381919083749809,
+          "test_type": "reciprocal",
+          "time_index": 5,
+          "sigma2_A": 0.3740156980682001,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/sqrt5",
+          "constant_value": 0.4472135954999579,
+          "delta": 0.013221632811927952,
+          "relative_pct": 2.9564469741012593,
+          "test_type": "direct",
+          "time_index": 19,
+          "sigma2_A": 0.4604352283118859,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        0.10724143943348843,
+        0.5583142171989883
+      ],
+      "sigma2_A_final": 0.4604352283118859,
+      "pll_R2": 0.8117978199077815,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0005283355712890625,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-08 NS EOS",
+      "domain": "NUCLEAR",
+      "N": 50,
+      "D": 3,
+      "carriers": [
+        "Pressure",
+        "Thermal",
+        "Rest"
+      ],
+      "data_hash": "424c6fb15a7f4e27",
+      "classification": "NATURAL",
+      "n_natural_matches": 7,
+      "n_investigate_matches": 28,
+      "n_total_matches": 35,
+      "nearest_approach": {
+        "constant": "1/(2pi)",
+        "constant_value": 0.15915494309189535,
+        "delta": 0.0017070169890750775,
+        "relative_pct": 1.0725504064862463,
+        "test_type": "direct",
+        "time_index": 4,
+        "sigma2_A": 0.15744792610282027
+      },
+      "top_matches": [
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0017070169890750775,
+          "relative_pct": 1.0725504064862463,
+          "test_type": "direct",
+          "time_index": 4,
+          "sigma2_A": 0.15744792610282027,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0021147537612406855,
+          "relative_pct": 4.749558825920178,
+          "test_type": "direct",
+          "time_index": 2,
+          "sigma2_A": 0.0466400210281636,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.0030810393835210004,
+          "relative_pct": 0.8375133368991794,
+          "test_type": "reciprocal",
+          "time_index": 10,
+          "sigma2_A": 2.695704940062571,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.003426102764391342,
+          "relative_pct": 7.928239099909542,
+          "test_type": "direct",
+          "time_index": 2,
+          "sigma2_A": 0.0466400210281636,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0034731892535963538,
+          "relative_pct": 1.0911345843625322,
+          "test_type": "direct",
+          "time_index": 6,
+          "sigma2_A": 0.32178307543738704,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt5",
+          "constant_value": 0.4472135954999579,
+          "delta": 0.0048281759913140765,
+          "relative_pct": 1.0796129723910708,
+          "test_type": "direct",
+          "time_index": 7,
+          "sigma2_A": 0.452041771491272,
+          "is_natural_match": true
+        },
+        {
+          "constant": "feigenbaum_delta",
+          "constant_value": 4.66920160910299,
+          "delta": 0.006193854533329102,
+          "relative_pct": 0.1326533967017761,
+          "test_type": "direct",
+          "time_index": 32,
+          "sigma2_A": 4.6753954636363195,
+          "is_natural_match": true
+        },
+        {
+          "constant": "khinchin",
+          "constant_value": 2.6854520010653062,
+          "delta": 0.01025293899726476,
+          "relative_pct": 0.381795652768974,
+          "test_type": "direct",
+          "time_index": 10,
+          "sigma2_A": 2.695704940062571,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/phi",
+          "constant_value": 0.6180339887498948,
+          "delta": 0.011770074706532685,
+          "relative_pct": 1.904438092529533,
+          "test_type": "direct",
+          "time_index": 8,
+          "sigma2_A": 0.6298040634564275,
+          "is_natural_match": false
+        },
+        {
+          "constant": "feigenbaum_delta",
+          "constant_value": 4.66920160910299,
+          "delta": 0.011836493324016928,
+          "relative_pct": 0.2535014401807092,
+          "test_type": "reciprocal",
+          "time_index": 5,
+          "sigma2_A": 0.2136278274431314,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        0.0466400210281636,
+        4.842780401149536
+      ],
+      "sigma2_A_final": 4.285016383339941,
+      "pll_R2": 0.8664849182632813,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0009789466857910156,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-09 Cross-Domain Inventory",
+      "domain": "CROSS-DOMAIN",
+      "N": 15,
+      "D": 3,
+      "carriers": [
+        "A",
+        "B",
+        "C"
+      ],
+      "data_hash": "8e39a355f8605846",
+      "classification": "NATURAL",
+      "n_natural_matches": 4,
+      "n_investigate_matches": 13,
+      "n_total_matches": 17,
+      "nearest_approach": {
+        "constant": "1/(pi^e)",
+        "constant_value": 0.044525267266922915,
+        "delta": 0.0034817655786000684,
+        "relative_pct": 7.819752226813952,
+        "test_type": "direct",
+        "time_index": 3,
+        "sigma2_A": 0.04800703284552298
+      },
+      "top_matches": [
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0034817655786000684,
+          "relative_pct": 7.819752226813952,
+          "test_type": "direct",
+          "time_index": 3,
+          "sigma2_A": 0.04800703284552298,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.004793114581750725,
+          "relative_pct": 11.091599128998588,
+          "test_type": "direct",
+          "time_index": 3,
+          "sigma2_A": 0.04800703284552298,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.008557556543512167,
+          "relative_pct": 19.219551209453233,
+          "test_type": "direct",
+          "time_index": 2,
+          "sigma2_A": 0.05308282381043508,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.009868905546662823,
+          "relative_pct": 22.837330987725483,
+          "test_type": "direct",
+          "time_index": 2,
+          "sigma2_A": 0.05308282381043508,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.01988441070589831,
+          "relative_pct": 44.6587116180437,
+          "test_type": "direct",
+          "time_index": 4,
+          "sigma2_A": 0.06440967797282122,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.021195759709048967,
+          "relative_pct": 49.0484560545349,
+          "test_type": "direct",
+          "time_index": 4,
+          "sigma2_A": 0.06440967797282122,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.04010489844246099,
+          "relative_pct": 90.07222393980835,
+          "test_type": "direct",
+          "time_index": 14,
+          "sigma2_A": 0.0846301657093839,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.04141624744561165,
+          "relative_pct": 95.84006521420285,
+          "test_type": "direct",
+          "time_index": 14,
+          "sigma2_A": 0.0846301657093839,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.04265588166696568,
+          "relative_pct": 95.80151739741274,
+          "test_type": "direct",
+          "time_index": 5,
+          "sigma2_A": 0.08718114893388859,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.04396723067011633,
+          "relative_pct": 101.74321708516676,
+          "test_type": "direct",
+          "time_index": 5,
+          "sigma2_A": 0.08718114893388859,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        0.04800703284552298,
+        0.10571845258714498
+      ],
+      "sigma2_A_final": 0.0846301657093839,
+      "pll_R2": 0.9003427915560122,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0003514289855957031,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-10 CKM+PMNS+SEMF",
+      "domain": "PARTICLE",
+      "N": 11,
+      "D": 3,
+      "carriers": [
+        "C1",
+        "C2",
+        "C3"
+      ],
+      "data_hash": "53cc1a1c12c73c31",
+      "classification": "NATURAL",
+      "n_natural_matches": 1,
+      "n_investigate_matches": 5,
+      "n_total_matches": 6,
+      "nearest_approach": {
+        "constant": "1/(2pi)",
+        "constant_value": 0.15915494309189535,
+        "delta": 0.007739959234301513,
+        "relative_pct": 4.863159813913223,
+        "test_type": "reciprocal",
+        "time_index": 4,
+        "sigma2_A": 6.604366189679764
+      },
+      "top_matches": [
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.007739959234301513,
+          "relative_pct": 4.863159813913223,
+          "test_type": "reciprocal",
+          "time_index": 4,
+          "sigma2_A": 6.604366189679764,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.013360708906223429,
+          "relative_pct": 8.394780989308648,
+          "test_type": "reciprocal",
+          "time_index": 5,
+          "sigma2_A": 5.796575489920791,
+          "is_natural_match": false
+        },
+        {
+          "constant": "feigenbaum_delta",
+          "constant_value": 4.66920160910299,
+          "delta": 0.03048025463246784,
+          "relative_pct": 0.6527937147336729,
+          "test_type": "direct",
+          "time_index": 7,
+          "sigma2_A": 4.699681863735458,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.03123267244247599,
+          "relative_pct": 19.624066859451787,
+          "test_type": "reciprocal",
+          "time_index": 3,
+          "sigma2_A": 7.817247105787979,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.03996699928318387,
+          "relative_pct": 25.112006266815794,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 5.022048238743745,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.04846737845193261,
+          "relative_pct": 15.226476008334771,
+          "test_type": "reciprocal",
+          "time_index": 10,
+          "sigma2_A": 3.70586535236953,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        3.70586535236953,
+        10.30133910320848
+      ],
+      "sigma2_A_final": 3.70586535236953,
+      "pll_R2": 0.9790974904796375,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.000274658203125,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-11 Stellar Nucleosynthesis",
+      "domain": "ASTROPHYSICS",
+      "N": 30,
+      "D": 3,
+      "carriers": [
+        "H",
+        "He",
+        "Metals"
+      ],
+      "data_hash": "fc68b83ae1798114",
+      "classification": "NATURAL",
+      "n_natural_matches": 4,
+      "n_investigate_matches": 56,
+      "n_total_matches": 60,
+      "nearest_approach": {
+        "constant": "dottie",
+        "constant_value": 0.7390851332151607,
+        "delta": 0.00030811901204075287,
+        "relative_pct": 0.04168924501300367,
+        "test_type": "direct",
+        "time_index": 24,
+        "sigma2_A": 0.7387770142031199
+      },
+      "top_matches": [
+        {
+          "constant": "dottie",
+          "constant_value": 0.7390851332151607,
+          "delta": 0.00030811901204075287,
+          "relative_pct": 0.04168924501300367,
+          "test_type": "direct",
+          "time_index": 24,
+          "sigma2_A": 0.7387770142031199,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln10",
+          "constant_value": 0.43429448190325176,
+          "delta": 0.0036053497520149302,
+          "relative_pct": 0.8301624594019359,
+          "test_type": "direct",
+          "time_index": 16,
+          "sigma2_A": 0.4378998316552667,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0043603695647494445,
+          "relative_pct": 1.3698504991553377,
+          "test_type": "direct",
+          "time_index": 12,
+          "sigma2_A": 0.32267025574854014,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt5",
+          "constant_value": 0.4472135954999579,
+          "delta": 0.009313763844691236,
+          "relative_pct": 2.08262090831094,
+          "test_type": "direct",
+          "time_index": 16,
+          "sigma2_A": 0.4378998316552667,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.010465745333839038,
+          "relative_pct": 6.575821731026076,
+          "test_type": "direct",
+          "time_index": 5,
+          "sigma2_A": 0.16962068842573438,
+          "is_natural_match": false
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.010520778491165672,
+          "relative_pct": 2.186309218370217,
+          "test_type": "direct",
+          "time_index": 18,
+          "sigma2_A": 0.49173260355076914,
+          "is_natural_match": false
+        },
+        {
+          "constant": "ln2",
+          "constant_value": 0.6931471805599453,
+          "delta": 0.010551903634456905,
+          "relative_pct": 1.5223179045369206,
+          "test_type": "direct",
+          "time_index": 23,
+          "sigma2_A": 0.6825952769254884,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.011946348324431089,
+          "relative_pct": 3.247354156674319,
+          "test_type": "direct",
+          "time_index": 13,
+          "sigma2_A": 0.35593309284701125,
+          "is_natural_match": false
+        },
+        {
+          "constant": "omega_lambert",
+          "constant_value": 0.5671432904097838,
+          "delta": 0.013219831723689901,
+          "relative_pct": 2.330950916149963,
+          "test_type": "direct",
+          "time_index": 20,
+          "sigma2_A": 0.5539234586860939,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.013351501432664281,
+          "relative_pct": 8.38899576305034,
+          "test_type": "direct",
+          "time_index": 6,
+          "sigma2_A": 0.17250644452455963,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        0.07266457722235871,
+        1.4827330759841388
+      ],
+      "sigma2_A_final": 1.4827330759841388,
+      "pll_R2": 0.9489600174488972,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.0006177425384521484,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-12 GW150914",
+      "domain": "GRAVITY",
+      "N": 40,
+      "D": 3,
+      "carriers": [
+        "h+",
+        "hx",
+        "noise"
+      ],
+      "data_hash": "4f37f92c65d2808c",
+      "classification": "NATURAL",
+      "n_natural_matches": 24,
+      "n_investigate_matches": 120,
+      "n_total_matches": 144,
+      "nearest_approach": {
+        "constant": "1/phi",
+        "constant_value": 0.6180339887498948,
+        "delta": 0.0009081770327113992,
+        "relative_pct": 0.1469461306729069,
+        "test_type": "reciprocal",
+        "time_index": 3,
+        "sigma2_A": 1.6204151260785058
+      },
+      "top_matches": [
+        {
+          "constant": "1/phi",
+          "constant_value": 0.6180339887498948,
+          "delta": 0.0009081770327113992,
+          "relative_pct": 0.1469461306729069,
+          "test_type": "reciprocal",
+          "time_index": 3,
+          "sigma2_A": 1.6204151260785058,
+          "is_natural_match": true
+        },
+        {
+          "constant": "phi",
+          "constant_value": 1.618033988749895,
+          "delta": 0.002381137328610894,
+          "relative_pct": 0.14716238009626598,
+          "test_type": "direct",
+          "time_index": 3,
+          "sigma2_A": 1.6204151260785058,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt3",
+          "constant_value": 0.5773502691896258,
+          "delta": 0.00309024650954115,
+          "relative_pct": 0.5352463962437654,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 1.7228294251572955,
+          "is_natural_match": true
+        },
+        {
+          "constant": "euler_gamma",
+          "constant_value": 0.5772156649015329,
+          "delta": 0.0032248507976341267,
+          "relative_pct": 0.5586907968244856,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 1.7228294251572955,
+          "is_natural_match": true
+        },
+        {
+          "constant": "omega_lambert",
+          "constant_value": 0.5671432904097838,
+          "delta": 0.0033919596258005225,
+          "relative_pct": 0.5980780665411196,
+          "test_type": "reciprocal",
+          "time_index": 13,
+          "sigma2_A": 1.7738317328836202,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt5",
+          "constant_value": 0.4472135954999579,
+          "delta": 0.0036887463800015508,
+          "relative_pct": 0.8248287657439738,
+          "test_type": "reciprocal",
+          "time_index": 9,
+          "sigma2_A": 2.254665103847515,
+          "is_natural_match": true
+        },
+        {
+          "constant": "omega_lambert",
+          "constant_value": 0.5671432904097838,
+          "delta": 0.003916909569115834,
+          "relative_pct": 0.6906384392356487,
+          "test_type": "reciprocal",
+          "time_index": 7,
+          "sigma2_A": 1.751128865287669,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln2",
+          "constant_value": 0.6931471805599453,
+          "delta": 0.005064952642630738,
+          "relative_pct": 0.7307182059860816,
+          "test_type": "reciprocal",
+          "time_index": 32,
+          "sigma2_A": 1.4533146758154143,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/phi",
+          "constant_value": 0.6180339887498948,
+          "delta": 0.00527721114518398,
+          "relative_pct": 0.8538706998717437,
+          "test_type": "reciprocal",
+          "time_index": 39,
+          "sigma2_A": 1.6319688929578837,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt3",
+          "constant_value": 0.5773502691896258,
+          "delta": 0.005424454362772058,
+          "relative_pct": 0.9395430559659862,
+          "test_type": "reciprocal",
+          "time_index": 18,
+          "sigma2_A": 1.7159289165877645,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        1.4533146758154143,
+        2.254665103847515
+      ],
+      "sigma2_A_final": 1.6319688929578837,
+      "pll_R2": 0.38349664247408466,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0008127689361572266,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-13 QCD Running",
+      "domain": "QCD",
+      "N": 25,
+      "D": 3,
+      "carriers": [
+        "u-frac",
+        "d-frac",
+        "s-frac"
+      ],
+      "data_hash": "bcca0142eef7d4c1",
+      "classification": "NATURAL",
+      "n_natural_matches": 8,
+      "n_investigate_matches": 38,
+      "n_total_matches": 46,
+      "nearest_approach": {
+        "constant": "1/(pi^e)",
+        "constant_value": 0.044525267266922915,
+        "delta": 0.0014526995530793271,
+        "relative_pct": 3.2626408380001206,
+        "test_type": "direct",
+        "time_index": 18,
+        "sigma2_A": 0.04597796682000224
+      },
+      "top_matches": [
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0014526995530793271,
+          "relative_pct": 3.2626408380001206,
+          "test_type": "direct",
+          "time_index": 18,
+          "sigma2_A": 0.04597796682000224,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.002764048556229984,
+          "relative_pct": 6.396199806179535,
+          "test_type": "direct",
+          "time_index": 18,
+          "sigma2_A": 0.04597796682000224,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0028198516998043377,
+          "relative_pct": 6.525332145519232,
+          "test_type": "direct",
+          "time_index": 17,
+          "sigma2_A": 0.04039406656396792,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.004131200702954994,
+          "relative_pct": 9.278328815387022,
+          "test_type": "direct",
+          "time_index": 17,
+          "sigma2_A": 0.04039406656396792,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.007578069363519534,
+          "relative_pct": 17.01970550359651,
+          "test_type": "direct",
+          "time_index": 19,
+          "sigma2_A": 0.05210333663044245,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.007907168673844042,
+          "relative_pct": 18.29773598769658,
+          "test_type": "direct",
+          "time_index": 16,
+          "sigma2_A": 0.035306749589928216,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.00888941836667019,
+          "relative_pct": 20.570729810729755,
+          "test_type": "direct",
+          "time_index": 19,
+          "sigma2_A": 0.05210333663044245,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.009218517676994699,
+          "relative_pct": 20.70401424371232,
+          "test_type": "direct",
+          "time_index": 16,
+          "sigma2_A": 0.035306749589928216,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.012537070405975313,
+          "relative_pct": 29.011649278018787,
+          "test_type": "direct",
+          "time_index": 15,
+          "sigma2_A": 0.030676847857796945,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.01384841940912597,
+          "relative_pct": 31.102383565957236,
+          "test_type": "direct",
+          "time_index": 15,
+          "sigma2_A": 0.030676847857796945,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        0.0008127525390320895,
+        0.0929841527154952
+      ],
+      "sigma2_A_final": 0.0929841527154952,
+      "pll_R2": 0.9984199735387083,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.0005502700805664062,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-14 AME2020 (500 nuclides)",
+      "domain": "NUCLEAR",
+      "N": 500,
+      "D": 3,
+      "carriers": [
+        "Volume",
+        "Surf+Coulomb",
+        "Symmetry"
+      ],
+      "data_hash": "0523ff5e868eb7b1",
+      "classification": "NATURAL",
+      "n_natural_matches": 1,
+      "n_investigate_matches": 533,
+      "n_total_matches": 534,
+      "nearest_approach": {
+        "constant": "1/(pi^e)",
+        "constant_value": 0.044525267266922915,
+        "delta": 0.009879579735224138,
+        "relative_pct": 22.188703946452254,
+        "test_type": "reciprocal",
+        "time_index": 5,
+        "sigma2_A": 18.380715232239062
+      },
+      "top_matches": [
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.009879579735224138,
+          "relative_pct": 22.188703946452254,
+          "test_type": "reciprocal",
+          "time_index": 5,
+          "sigma2_A": 18.380715232239062,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.011042141205082304,
+          "relative_pct": 24.79971908733567,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 17.996160474242714,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.011190928738374795,
+          "relative_pct": 25.896584221006734,
+          "test_type": "reciprocal",
+          "time_index": 5,
+          "sigma2_A": 18.380715232239062,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.012146448360313603,
+          "relative_pct": 27.279899944221103,
+          "test_type": "reciprocal",
+          "time_index": 4,
+          "sigma2_A": 17.645486622949498,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.01235349020823296,
+          "relative_pct": 28.586831985076728,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 17.996160474242714,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.013046214245618089,
+          "relative_pct": 29.300698336986525,
+          "test_type": "reciprocal",
+          "time_index": 10,
+          "sigma2_A": 17.36971107443477,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0132541664459968,
+          "relative_pct": 29.767741463605095,
+          "test_type": "reciprocal",
+          "time_index": 11,
+          "sigma2_A": 17.307196276248654,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.01345779736346426,
+          "relative_pct": 31.14227523021536,
+          "test_type": "reciprocal",
+          "time_index": 4,
+          "sigma2_A": 17.645486622949498,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.013555280714943573,
+          "relative_pct": 30.44401874935755,
+          "test_type": "reciprocal",
+          "time_index": 7,
+          "sigma2_A": 17.217468408049683,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.01362949667961428,
+          "relative_pct": 30.610701554933524,
+          "test_type": "reciprocal",
+          "time_index": 12,
+          "sigma2_A": 17.19549581388241,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        0.0,
+        18.380715232239062
+      ],
+      "sigma2_A_final": 7.744324090487862,
+      "pll_R2": 0.8449427078140694,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.014638423919677734,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-15 X-ray Crystallography",
+      "domain": "ENERGY",
+      "N": 20,
+      "D": 3,
+      "carriers": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "data_hash": "4c7fe957d6b6e86c",
+      "classification": "INVESTIGATE",
+      "n_natural_matches": 0,
+      "n_investigate_matches": 36,
+      "n_total_matches": 36,
+      "nearest_approach": {
+        "constant": "1/(e^pi)",
+        "constant_value": 0.04321391826377226,
+        "delta": 0.023917586657796964,
+        "relative_pct": 55.34695213659418,
+        "test_type": "direct",
+        "time_index": 12,
+        "sigma2_A": 0.019296331605975294
+      },
+      "top_matches": [
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.023917586657796964,
+          "relative_pct": 55.34695213659418,
+          "test_type": "direct",
+          "time_index": 12,
+          "sigma2_A": 0.019296331605975294,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.023960486778119683,
+          "relative_pct": 55.44622598642391,
+          "test_type": "direct",
+          "time_index": 16,
+          "sigma2_A": 0.019253431485652575,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.024301447759431744,
+          "relative_pct": 56.23523331325523,
+          "test_type": "direct",
+          "time_index": 18,
+          "sigma2_A": 0.018912470504340514,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.02440733945152653,
+          "relative_pct": 56.48027402316828,
+          "test_type": "direct",
+          "time_index": 17,
+          "sigma2_A": 0.018806578812245726,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.02454460646026992,
+          "relative_pct": 56.79791938896345,
+          "test_type": "direct",
+          "time_index": 11,
+          "sigma2_A": 0.01866931180350234,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.024593531609608518,
+          "relative_pct": 56.91113557324918,
+          "test_type": "direct",
+          "time_index": 19,
+          "sigma2_A": 0.01862038665416374,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.024870799622771878,
+          "relative_pct": 57.55275296020065,
+          "test_type": "direct",
+          "time_index": 13,
+          "sigma2_A": 0.01834311864100038,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.02509520003763196,
+          "relative_pct": 58.07203106289519,
+          "test_type": "direct",
+          "time_index": 15,
+          "sigma2_A": 0.018118718226140296,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.02522893566094762,
+          "relative_pct": 56.662064507560586,
+          "test_type": "direct",
+          "time_index": 12,
+          "sigma2_A": 0.019296331605975294,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.02527183578127034,
+          "relative_pct": 56.75841456440705,
+          "test_type": "direct",
+          "time_index": 16,
+          "sigma2_A": 0.019253431485652575,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        0.0044543161127191784,
+        0.019296331605975294
+      ],
+      "sigma2_A_final": 0.01862038665416374,
+      "pll_R2": 0.9195189539426463,
+      "pll_shape": "hill",
+      "elapsed_s": 0.001081228256225586,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-16 Spring-Mass",
+      "domain": "FORCE",
+      "N": 200,
+      "D": 3,
+      "carriers": [
+        "KE",
+        "PE",
+        "Damp"
+      ],
+      "data_hash": "e9c4f6ae157df78e",
+      "classification": "NATURAL",
+      "n_natural_matches": 52,
+      "n_investigate_matches": 168,
+      "n_total_matches": 220,
+      "nearest_approach": {
+        "constant": "1/(pi^e)",
+        "constant_value": 0.044525267266922915,
+        "delta": 0.0004500938344234387,
+        "relative_pct": 1.010872841537789,
+        "test_type": "reciprocal",
+        "time_index": 6,
+        "sigma2_A": 22.23439624523803
+      },
+      "top_matches": [
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0004500938344234387,
+          "relative_pct": 1.010872841537789,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 22.23439624523803,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0006034141503240553,
+          "relative_pct": 0.37913629234603585,
+          "test_type": "reciprocal",
+          "time_index": 110,
+          "sigma2_A": 6.259453447457768,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0006191439131337517,
+          "relative_pct": 0.38901959380316625,
+          "test_type": "reciprocal",
+          "time_index": 199,
+          "sigma2_A": 6.307723587859303,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0006245989828413401,
+          "relative_pct": 0.3924471151868022,
+          "test_type": "reciprocal",
+          "time_index": 107,
+          "sigma2_A": 6.258623519726019,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0008482410642328964,
+          "relative_pct": 0.532965579173451,
+          "test_type": "reciprocal",
+          "time_index": 106,
+          "sigma2_A": 6.316851953780582,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0008669523869008489,
+          "relative_pct": 0.5447222499399685,
+          "test_type": "reciprocal",
+          "time_index": 103,
+          "sigma2_A": 6.317598672812307,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0010315147017028736,
+          "relative_pct": 0.648119801787923,
+          "test_type": "reciprocal",
+          "time_index": 109,
+          "sigma2_A": 6.24272497047478,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.001622914292733424,
+          "relative_pct": 1.01970712389144,
+          "test_type": "reciprocal",
+          "time_index": 104,
+          "sigma2_A": 6.347915453275239,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.0017524523207378684,
+          "relative_pct": 1.1010982673192942,
+          "test_type": "reciprocal",
+          "time_index": 108,
+          "sigma2_A": 6.214754750305826,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0017614428375740954,
+          "relative_pct": 4.076100729451268,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 22.23439624523803,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        5.58943487370693,
+        25.4023497626434
+      ],
+      "sigma2_A_final": 6.307723587859303,
+      "pll_R2": 0.8613508299203163,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.004013776779174805,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-17 Uncertainty D=4",
+      "domain": "INFORMATION",
+      "N": 100,
+      "D": 4,
+      "carriers": [
+        "C1",
+        "C2",
+        "C3",
+        "C4"
+      ],
+      "data_hash": "edd7c2a8b22f96ac",
+      "classification": "INVESTIGATE",
+      "n_natural_matches": 0,
+      "n_investigate_matches": 86,
+      "n_total_matches": 86,
+      "nearest_approach": {
+        "constant": "1/pi",
+        "constant_value": 0.3183098861837907,
+        "delta": 0.022872648768969772,
+        "relative_pct": 7.185654534073506,
+        "test_type": "reciprocal",
+        "time_index": 6,
+        "sigma2_A": 3.3848136705797462
+      },
+      "top_matches": [
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.022872648768969772,
+          "relative_pct": 7.185654534073506,
+          "test_type": "reciprocal",
+          "time_index": 6,
+          "sigma2_A": 3.3848136705797462,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.023458962549818135,
+          "relative_pct": 14.739700881469348,
+          "test_type": "reciprocal",
+          "time_index": 20,
+          "sigma2_A": 5.476034240032023,
+          "is_natural_match": false
+        },
+        {
+          "constant": "feigenbaum_delta",
+          "constant_value": 4.66920160910299,
+          "delta": 0.024630235001403378,
+          "relative_pct": 0.5275042087149272,
+          "test_type": "direct",
+          "time_index": 11,
+          "sigma2_A": 4.693831844104394,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.02918008711036535,
+          "relative_pct": 18.3343894594068,
+          "test_type": "reciprocal",
+          "time_index": 19,
+          "sigma2_A": 5.309686673403557,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.030198219323988723,
+          "relative_pct": 18.974100795947262,
+          "test_type": "reciprocal",
+          "time_index": 21,
+          "sigma2_A": 5.281137041712878,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.031324224609222184,
+          "relative_pct": 19.681590782345804,
+          "test_type": "reciprocal",
+          "time_index": 52,
+          "sigma2_A": 5.2499179415205575,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.03155264245570491,
+          "relative_pct": 19.82510994803759,
+          "test_type": "reciprocal",
+          "time_index": 22,
+          "sigma2_A": 5.243629911880992,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.03313228692791423,
+          "relative_pct": 20.817629841872893,
+          "test_type": "reciprocal",
+          "time_index": 53,
+          "sigma2_A": 5.200553359143918,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.03362577115445417,
+          "relative_pct": 21.12769512602496,
+          "test_type": "reciprocal",
+          "time_index": 25,
+          "sigma2_A": 5.187240870588983,
+          "is_natural_match": false
+        },
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 0.03420711921025202,
+          "relative_pct": 21.492966882279603,
+          "test_type": "reciprocal",
+          "time_index": 65,
+          "sigma2_A": 5.17164529636326,
+          "is_natural_match": false
+        }
+      ],
+      "sigma2_A_range": [
+        3.3848136705797462,
+        5.476034240032023
+      ],
+      "sigma2_A_final": 4.773223239371545,
+      "pll_R2": 0.44079569433127486,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0020246505737304688,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "EXP-18 Steel Stress-Strain",
+      "domain": "MATTER",
+      "N": 80,
+      "D": 3,
+      "carriers": [
+        "Elastic",
+        "Plastic",
+        "Thermal"
+      ],
+      "data_hash": "d36b949f9fa60c90",
+      "classification": "NATURAL",
+      "n_natural_matches": 35,
+      "n_investigate_matches": 112,
+      "n_total_matches": 147,
+      "nearest_approach": {
+        "constant": "ln_phi",
+        "constant_value": 0.48121182505960347,
+        "delta": 0.00014857056712552774,
+        "relative_pct": 0.030874255242402993,
+        "test_type": "reciprocal",
+        "time_index": 70,
+        "sigma2_A": 2.0787287132437515
+      },
+      "top_matches": [
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.00014857056712552774,
+          "relative_pct": 0.030874255242402993,
+          "test_type": "reciprocal",
+          "time_index": 70,
+          "sigma2_A": 2.0787287132437515,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.00042805561635256284,
+          "relative_pct": 0.13447763796610623,
+          "test_type": "reciprocal",
+          "time_index": 7,
+          "sigma2_A": 3.1373735876948885,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.0004619772859966731,
+          "relative_pct": 0.09600289559373401,
+          "test_type": "reciprocal",
+          "time_index": 69,
+          "sigma2_A": 2.0760938110611664,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.0007467873438988248,
+          "relative_pct": 0.15518890122999926,
+          "test_type": "reciprocal",
+          "time_index": 71,
+          "sigma2_A": 2.0813168940540243,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.0010850781086527705,
+          "relative_pct": 0.22548866261097622,
+          "test_type": "reciprocal",
+          "time_index": 68,
+          "sigma2_A": 2.0734116131181866,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.001332898836738261,
+          "relative_pct": 0.27698796399551623,
+          "test_type": "reciprocal",
+          "time_index": 72,
+          "sigma2_A": 2.08385895974015,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.0016803396790681657,
+          "relative_pct": 0.3491891910303818,
+          "test_type": "reciprocal",
+          "time_index": 16,
+          "sigma2_A": 2.070855716909744,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.0017209484159655952,
+          "relative_pct": 0.3576280395338241,
+          "test_type": "reciprocal",
+          "time_index": 67,
+          "sigma2_A": 2.0706815832837417,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.0019071334607582702,
+          "relative_pct": 0.39631891018514565,
+          "test_type": "reciprocal",
+          "time_index": 73,
+          "sigma2_A": 2.0863555427847795,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.0023697976342061944,
+          "relative_pct": 0.4924645469617602,
+          "test_type": "reciprocal",
+          "time_index": 66,
+          "sigma2_A": 2.067903230957087,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        1.9505321678657765,
+        7.972208857071414
+      ],
+      "sigma2_A_final": 2.100417501480588,
+      "pll_R2": 0.4809278568642642,
+      "pll_shape": "bowl",
+      "elapsed_s": 0.0024864673614501953,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    },
+    {
+      "system": "CONTROL: Uniform Random (synthetic)",
+      "domain": "SYNTHETIC",
+      "N": 50,
+      "D": 3,
+      "carriers": [
+        "R1",
+        "R2",
+        "R3"
+      ],
+      "data_hash": "6bae895b12e28b71",
+      "classification": "NATURAL",
+      "n_natural_matches": 21,
+      "n_investigate_matches": 130,
+      "n_total_matches": 151,
+      "nearest_approach": {
+        "constant": "ln2",
+        "constant_value": 0.6931471805599453,
+        "delta": 0.00022084317493897831,
+        "relative_pct": 0.03186093532986378,
+        "test_type": "direct",
+        "time_index": 33,
+        "sigma2_A": 0.6933680237348843
+      },
+      "top_matches": [
+        {
+          "constant": "ln2",
+          "constant_value": 0.6931471805599453,
+          "delta": 0.00022084317493897831,
+          "relative_pct": 0.03186093532986378,
+          "test_type": "direct",
+          "time_index": 33,
+          "sigma2_A": 0.6933680237348843,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln2",
+          "constant_value": 0.6931471805599453,
+          "delta": 0.00022594093061867326,
+          "relative_pct": 0.03259638601373972,
+          "test_type": "direct",
+          "time_index": 7,
+          "sigma2_A": 0.693373121490564,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln2",
+          "constant_value": 1.4426950408889634,
+          "delta": 0.0004595097298867312,
+          "relative_pct": 0.03185078737108498,
+          "test_type": "reciprocal",
+          "time_index": 33,
+          "sigma2_A": 0.6933680237348843,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln2",
+          "constant_value": 1.4426950408889634,
+          "delta": 0.0004701132046143197,
+          "relative_pct": 0.03258576423224164,
+          "test_type": "reciprocal",
+          "time_index": 7,
+          "sigma2_A": 0.693373121490564,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/phi",
+          "constant_value": 0.6180339887498948,
+          "delta": 0.0014318009367264573,
+          "relative_pct": 0.23167025807473454,
+          "test_type": "direct",
+          "time_index": 43,
+          "sigma2_A": 0.6166021878131683,
+          "is_natural_match": true
+        },
+        {
+          "constant": "pi/4",
+          "constant_value": 0.7853981633974483,
+          "delta": 0.001528530222216773,
+          "relative_pct": 0.19461851242492212,
+          "test_type": "direct",
+          "time_index": 26,
+          "sigma2_A": 0.786926693619665,
+          "is_natural_match": true
+        },
+        {
+          "constant": "dottie",
+          "constant_value": 0.7390851332151607,
+          "delta": 0.0017534029932849693,
+          "relative_pct": 0.23723965135888114,
+          "test_type": "direct",
+          "time_index": 8,
+          "sigma2_A": 0.7408385362084456,
+          "is_natural_match": true
+        },
+        {
+          "constant": "dottie",
+          "constant_value": 0.7390851332151607,
+          "delta": 0.002017412318549683,
+          "relative_pct": 0.27296074942998194,
+          "test_type": "direct",
+          "time_index": 12,
+          "sigma2_A": 0.7411025455337104,
+          "is_natural_match": true
+        },
+        {
+          "constant": "apery",
+          "constant_value": 1.2020569031595942,
+          "delta": 0.003719908032576269,
+          "relative_pct": 0.3094618917622393,
+          "test_type": "reciprocal",
+          "time_index": 24,
+          "sigma2_A": 0.8344898005039099,
+          "is_natural_match": true
+        },
+        {
+          "constant": "phi",
+          "constant_value": 1.618033988749895,
+          "delta": 0.0037572078505978546,
+          "relative_pct": 0.2322082154467411,
+          "test_type": "reciprocal",
+          "time_index": 43,
+          "sigma2_A": 0.6166021878131683,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.6166021878131683,
+        0.8806711003591048
+      ],
+      "sigma2_A_final": 0.6677424321300136,
+      "pll_R2": 0.5416183483819548,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0014996528625488281,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T08:09:43Z"
+    }
+  ]
+}

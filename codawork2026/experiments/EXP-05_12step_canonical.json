@@ -1,0 +1,117 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-05",
+  "name": "Geochemistry (Basalt-to-Rhyolite)",
+  "domain": "GEOCHEMISTRY",
+  "carriers": [
+    "SiO2",
+    "Al2O3",
+    "CaO+MgO"
+  ],
+  "D": 3,
+  "N": 150,
+  "data_source": {
+    "type": "SIMULATED",
+    "url": null,
+    "description": "Synthetic basalt-to-rhyolite differentiation series. 150 samples along fractionation index 0\u21921. Based on standard TAS oxide fractionation trends (Le Maitre et al., 2002). Deterministic seed=42. Real data validation in EXP-05b (40,666 rocks)."
+  },
+  "data_hash_sha256_16": "8bf0db689b629d52",
+  "run_timestamp": "2026-04-22T17:41:30.178852Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-05: Geochemistry (Basalt-to-Rhyolite): 3-part simplex, carriers=['SiO2', 'Al2O3', 'CaO+MgO']",
+    "step2_n_samples": 150,
+    "step2_D": 3,
+    "step2_carriers": [
+      "SiO2",
+      "Al2O3",
+      "CaO+MgO"
+    ],
+    "data_hash_sha256_16": "8bf0db689b629d52",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.9971171499825281,
+      -0.37443677650156126,
+      -0.6226803734809672
+    ],
+    "step4_clr_std_per_part": [
+      0.2761174973134153,
+      0.10593887111562098,
+      0.3671371351144166
+    ],
+    "step5_sigma2_range": [
+      0.0009492176210000485,
+      0.2222535927158974
+    ],
+    "step5_sigma2_final": 0.2222535927158974,
+    "step6_pll_coeffs": [
+      1.286873774806868e-05,
+      -0.0007408072676939768,
+      0.01357298139525484
+    ],
+    "step6_pll_R2": 0.9799235664591651,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      28.783214103697002,
+      0.0029115742974495824
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 0,
+    "step7_squeeze_closest": null,
+    "step7_squeeze_mean": 0.054485718607450356,
+    "step7_cancellation": false,
+    "step8_entropy_range": [
+      0.5164918018615079,
+      0.9129301440238432
+    ],
+    "step8_entropy_mean": 0.7555052746717533,
+    "step8_entropy_cv": 14.692919582187011,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.7555052746717533,
+        "H_mean_decimated": 0.7554094833702262,
+        "variation_pct": 0.012679104268169015,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.7585937302057343,
+        "H_mean_decimated": 0.7584775463335133,
+        "variation_pct": 0.015315691073468262,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.7643859884268482,
+        "H_mean_decimated": 0.764290601611433,
+        "variation_pct": 0.01247888067800957,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 146,
+      "stalls": 10,
+      "spikes": 0,
+      "reversals": 136
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.07979151638480156,
+      0.08156622985792467
+    ],
+    "step11_complex_range_im": [
+      -0.10285543891939009,
+      0.10090639579110564
+    ],
+    "step12_radius_range": [
+      0.003038923988009812,
+      0.1274488925129813
+    ],
+    "step12_theta_range": [
+      -2.947101292908151,
+      2.8425876581641116
+    ],
+    "step9_angular_velocity_std": 0.62128161374543
+  }
+}

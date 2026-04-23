@@ -1,0 +1,1081 @@
+{
+  "experiment": "EXP-20",
+  "title": "Dielectric Function Decomposition \u2014 hBN Materials Domain",
+  "domain": "MATERIALS",
+  "source": "Choi et al., Nature Communications 17:2869 (2026)",
+  "hypothesis": "Transcendental Naturalness Hypothesis in materials domain",
+  "decompositions": {
+    "A_permittivity": {
+      "framework": "Higgins Unity Framework",
+      "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+      "experiment": "EXP-20a",
+      "name": "hBN \u03b5\u2081\u2225, \u03b5\u2081\u22a5, \u03b5\u2082",
+      "domain": "MATERIALS",
+      "carriers": [
+        "\u03b5\u2081_inplane",
+        "\u03b5\u2081_outplane",
+        "\u03b5\u2082_absorption"
+      ],
+      "D": 3,
+      "N": 200,
+      "data_source": {
+        "type": "LOCAL FILE",
+        "url": null,
+        "description": null
+      },
+      "data_hash_sha256_16": "162fce5132551044",
+      "run_timestamp": "2026-04-23T15:48:35.635279Z",
+      "pipeline_version": "1.0",
+      "steps": {
+        "step1_system": "EXP-20a: hBN \u03b5\u2081\u2225, \u03b5\u2081\u22a5, \u03b5\u2082: 3-part simplex, carriers=['\u03b5\u2081_inplane', '\u03b5\u2081_outplane', '\u03b5\u2082_absorption']",
+        "step2_n_samples": 200,
+        "step2_D": 3,
+        "step2_carriers": [
+          "\u03b5\u2081_inplane",
+          "\u03b5\u2081_outplane",
+          "\u03b5\u2082_absorption"
+        ],
+        "data_hash_sha256_16": "162fce5132551044",
+        "step3_closure_check": true,
+        "step3_zero_replacement_applied": false,
+        "step3_zero_delta": 1e-06,
+        "step4_clr_mean_per_part": [
+          1.06676906690273,
+          0.07242842868601251,
+          -1.1391974955887425
+        ],
+        "step4_clr_std_per_part": [
+          0.7650266223098563,
+          1.1798924817898002,
+          0.9444879557060888
+        ],
+        "step5_sigma2_range": [
+          0.00013649741603186973,
+          3.0463445159309526
+        ],
+        "step5_sigma2_final": 2.869469499900788,
+        "step6_pll_coeffs": [
+          -5.693690336550431e-05,
+          0.0306679659960193,
+          -0.824538957774877
+        ],
+        "step6_pll_R2": 0.8035718961245694,
+        "step6_pll_shape": "hill",
+        "step6_vertex": [
+          269.31536651323876,
+          3.305138293441864
+        ],
+        "step6_curvature": "concave_down",
+        "step7_squeeze_count": 58,
+        "step7_squeeze_closest": {
+          "time_index": 62,
+          "sigma2_A": 0.15918354171909344,
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "test_type": "direct",
+          "test_value": 0.15918354171909344,
+          "delta": 2.859862719808981e-05
+        },
+        "step7_squeeze_mean": 1.4965065480544717,
+        "step7_cancellation": true,
+        "step8_entropy_range": [
+          0.26515449579692796,
+          0.809913932462428
+        ],
+        "step8_entropy_mean": 0.6185544381223546,
+        "step8_entropy_cv": 16.51792431132392,
+        "step8_eitt_invariance": {
+          "compression_2x": {
+            "H_mean_original": 0.6185544381223546,
+            "H_mean_decimated": 0.6186637708749911,
+            "variation_pct": 0.017675526339842523,
+            "pass": true
+          },
+          "compression_4x": {
+            "H_mean_original": 0.6185544381223546,
+            "H_mean_decimated": 0.6180873931887397,
+            "variation_pct": 0.07550587382940081,
+            "pass": true
+          },
+          "compression_8x": {
+            "H_mean_original": 0.6185544381223546,
+            "H_mean_decimated": 0.619919100626096,
+            "variation_pct": 0.22062124521876175,
+            "pass": true
+          }
+        },
+        "step9_chaos_detection": {
+          "total_deviations": 7,
+          "stalls": 2,
+          "spikes": 0,
+          "reversals": 5
+        },
+        "step10_ternary_type": "ternary",
+        "step11_complex_range_re": [
+          -0.25731700996193596,
+          0.6040607908932756
+        ],
+        "step11_complex_range_im": [
+          -0.07080268992225303,
+          0.6281795511112968
+        ],
+        "step12_radius_range": [
+          0.01767186182264106,
+          0.6331511173146609
+        ],
+        "step12_theta_range": [
+          -3.139780112696575,
+          3.13376512786289
+        ],
+        "step9_angular_velocity_std": 0.08578986976903194
+      }
+    },
+    "B_four_carrier": {
+      "framework": "Higgins Unity Framework",
+      "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+      "experiment": "EXP-20b",
+      "name": "hBN 4-carrier",
+      "domain": "MATERIALS",
+      "carriers": [
+        "\u03b5\u2081\u2225",
+        "\u03b5\u2082\u2225",
+        "\u03b5\u2081\u22a5",
+        "\u03b5\u2082\u22a5"
+      ],
+      "D": 4,
+      "N": 200,
+      "data_source": {
+        "type": "LOCAL FILE",
+        "url": null,
+        "description": null
+      },
+      "data_hash_sha256_16": "872a80eaa2a859ed",
+      "run_timestamp": "2026-04-23T15:48:35.645587Z",
+      "pipeline_version": "1.0",
+      "steps": {
+        "step1_system": "EXP-20b: hBN 4-carrier: 4-part simplex, carriers=['\u03b5\u2081\u2225', '\u03b5\u2082\u2225', '\u03b5\u2081\u22a5', '\u03b5\u2082\u22a5']",
+        "step2_n_samples": 200,
+        "step2_D": 4,
+        "step2_carriers": [
+          "\u03b5\u2081\u2225",
+          "\u03b5\u2082\u2225",
+          "\u03b5\u2081\u22a5",
+          "\u03b5\u2082\u22a5"
+        ],
+        "data_hash_sha256_16": "872a80eaa2a859ed",
+        "step3_closure_check": true,
+        "step3_zero_replacement_applied": false,
+        "step3_zero_delta": 1e-06,
+        "step4_clr_mean_per_part": [
+          1.5376144855120355,
+          -0.13603667689539276,
+          0.5432738472953179,
+          -1.9448516559119613
+        ],
+        "step4_clr_std_per_part": [
+          0.8057820460819827,
+          0.797259078085465,
+          1.319868537702802,
+          0.5548786316231533
+        ],
+        "step5_sigma2_range": [
+          0.00018579505871833406,
+          3.8328574625623637
+        ],
+        "step5_sigma2_final": 3.3348499960274687,
+        "step6_pll_coeffs": [
+          -9.794681132801726e-05,
+          0.042739372959328836,
+          -1.1101147519218353
+        ],
+        "step6_pll_R2": 0.7961316246360685,
+        "step6_pll_shape": "hill",
+        "step6_vertex": [
+          218.1764387214075,
+          3.5522473408043584
+        ],
+        "step6_curvature": "concave_down",
+        "step7_squeeze_count": 50,
+        "step7_squeeze_closest": {
+          "time_index": 93,
+          "sigma2_A": 2.3036387143243013,
+          "constant": "1/ln10",
+          "constant_value": 0.43429448190325176,
+          "test_type": "reciprocal",
+          "test_value": 0.4340958474876639,
+          "delta": 0.00019863441558787276
+        },
+        "step7_squeeze_mean": 1.8759208790005488,
+        "step7_cancellation": true,
+        "step8_entropy_range": [
+          0.3340179286200982,
+          0.7830268437515887
+        ],
+        "step8_entropy_mean": 0.5864939570924357,
+        "step8_entropy_cv": 16.482586053912236,
+        "step8_eitt_invariance": {
+          "compression_2x": {
+            "H_mean_original": 0.5864939570924357,
+            "H_mean_decimated": 0.5864112332465846,
+            "variation_pct": 0.014104807875799607,
+            "pass": true
+          },
+          "compression_4x": {
+            "H_mean_original": 0.5864939570924357,
+            "H_mean_decimated": 0.5861588637148512,
+            "variation_pct": 0.05713500941182155,
+            "pass": true
+          },
+          "compression_8x": {
+            "H_mean_original": 0.5864939570924357,
+            "H_mean_decimated": 0.587629163068764,
+            "variation_pct": 0.19355800048753227,
+            "pass": true
+          }
+        },
+        "step9_chaos_detection": {
+          "total_deviations": 2,
+          "stalls": 2,
+          "spikes": 0,
+          "reversals": 0
+        },
+        "step10_ternary_type": "projected_ternary",
+        "step11_complex_range_re": [
+          -0.14182102830150994,
+          0.6164856587527664
+        ],
+        "step11_complex_range_im": [
+          -0.25718419440280454,
+          0.5127621576285245
+        ],
+        "step12_radius_range": [
+          0.01558044097296618,
+          0.6634113977681828
+        ],
+        "step12_theta_range": [
+          -3.1021617742425267,
+          2.5035438113556614
+        ],
+        "step9_angular_velocity_std": 0.0846521863585584
+      }
+    },
+    "C_refractive_index": {
+      "framework": "Higgins Unity Framework",
+      "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+      "experiment": "EXP-20c",
+      "name": "hBN refractive index",
+      "domain": "MATERIALS",
+      "carriers": [
+        "n\u2225",
+        "n\u22a5",
+        "k_avg"
+      ],
+      "D": 3,
+      "N": 200,
+      "data_source": {
+        "type": "LOCAL FILE",
+        "url": null,
+        "description": null
+      },
+      "data_hash_sha256_16": "c7a86907b3e1adca",
+      "run_timestamp": "2026-04-23T15:48:35.658248Z",
+      "pipeline_version": "1.0",
+      "steps": {
+        "step1_system": "EXP-20c: hBN refractive index: 3-part simplex, carriers=['n\u2225', 'n\u22a5', 'k_avg']",
+        "step2_n_samples": 200,
+        "step2_D": 3,
+        "step2_carriers": [
+          "n\u2225",
+          "n\u22a5",
+          "k_avg"
+        ],
+        "data_hash_sha256_16": "c7a86907b3e1adca",
+        "step3_closure_check": true,
+        "step3_zero_replacement_applied": false,
+        "step3_zero_delta": 1e-06,
+        "step4_clr_mean_per_part": [
+          1.1215427556622999,
+          0.649701933286343,
+          -1.7712446889486428
+        ],
+        "step4_clr_std_per_part": [
+          0.46032058717604557,
+          0.6038633437509149,
+          0.7704661120160687
+        ],
+        "step5_sigma2_range": [
+          0.00015518429212756164,
+          1.5459507185619743
+        ],
+        "step5_sigma2_final": 1.1701640106692923,
+        "step6_pll_coeffs": [
+          -6.046244621799429e-05,
+          0.020732500319181252,
+          -0.4994581584017891
+        ],
+        "step6_pll_R2": 0.7958767398238603,
+        "step6_pll_shape": "hill",
+        "step6_vertex": [
+          171.44940054551606,
+          1.277829217364884
+        ],
+        "step6_curvature": "concave_down",
+        "step7_squeeze_count": 68,
+        "step7_squeeze_closest": {
+          "time_index": 82,
+          "sigma2_A": 0.4811993307400067,
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "test_type": "direct",
+          "test_value": 0.4811993307400067,
+          "delta": 1.24943195967675e-05
+        },
+        "step7_squeeze_mean": 0.7759465280056274,
+        "step7_cancellation": true,
+        "step8_entropy_range": [
+          0.6232959509630404,
+          0.8757586178377418
+        ],
+        "step8_entropy_mean": 0.6911112096131429,
+        "step8_entropy_cv": 8.214828656019808,
+        "step8_eitt_invariance": {
+          "compression_2x": {
+            "H_mean_original": 0.6911112096131429,
+            "H_mean_decimated": 0.6911336828443124,
+            "variation_pct": 0.003251753242742284,
+            "pass": true
+          },
+          "compression_4x": {
+            "H_mean_original": 0.6911112096131429,
+            "H_mean_decimated": 0.6911623271107892,
+            "variation_pct": 0.007396421434824657,
+            "pass": true
+          },
+          "compression_8x": {
+            "H_mean_original": 0.6911112096131429,
+            "H_mean_decimated": 0.6912891659078145,
+            "variation_pct": 0.025749299417566686,
+            "pass": true
+          }
+        },
+        "step9_chaos_detection": {
+          "total_deviations": 8,
+          "stalls": 5,
+          "spikes": 0,
+          "reversals": 3
+        },
+        "step10_ternary_type": "ternary",
+        "step11_complex_range_re": [
+          -0.23762334565481813,
+          0.3767157559643715
+        ],
+        "step11_complex_range_im": [
+          -0.039813693884032955,
+          0.21899355402416668
+        ],
+        "step12_radius_range": [
+          0.013906507521155756,
+          0.3779453321768406
+        ],
+        "step12_theta_range": [
+          -3.1388224316630677,
+          3.1323043779332362
+        ],
+        "step9_angular_velocity_std": 0.06776733955060617
+      }
+    },
+    "D_hyperbolic_window": {
+      "framework": "Higgins Unity Framework",
+      "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+      "experiment": "EXP-20d",
+      "name": "hBN hyperbolic window",
+      "domain": "MATERIALS",
+      "carriers": [
+        "|\u03b5\u2081\u2225|",
+        "\u03b5\u2081\u22a5",
+        "\u03b5\u2082\u2225"
+      ],
+      "D": 3,
+      "N": 79,
+      "data_source": {
+        "type": "LOCAL FILE",
+        "url": null,
+        "description": null
+      },
+      "data_hash_sha256_16": "d07bc7ace2eb767c",
+      "run_timestamp": "2026-04-23T15:48:35.671369Z",
+      "pipeline_version": "1.0",
+      "steps": {
+        "step1_system": "EXP-20d: hBN hyperbolic window: 3-part simplex, carriers=['|\u03b5\u2081\u2225|', '\u03b5\u2081\u22a5', '\u03b5\u2082\u2225']",
+        "step2_n_samples": 79,
+        "step2_D": 3,
+        "step2_carriers": [
+          "|\u03b5\u2081\u2225|",
+          "\u03b5\u2081\u22a5",
+          "\u03b5\u2082\u2225"
+        ],
+        "data_hash_sha256_16": "d07bc7ace2eb767c",
+        "step3_closure_check": true,
+        "step3_zero_replacement_applied": false,
+        "step3_zero_delta": 1e-06,
+        "step4_clr_mean_per_part": [
+          0.8611458391557899,
+          -0.5611062648414529,
+          -0.30003957431433725
+        ],
+        "step4_clr_std_per_part": [
+          0.6043425385410441,
+          1.3200939415891164,
+          0.8029716562693608
+        ],
+        "step5_sigma2_range": [
+          0.05942286330580916,
+          2.7526413992824836
+        ],
+        "step5_sigma2_final": 2.7526413992824836,
+        "step6_pll_coeffs": [
+          -0.0004029032400939331,
+          0.0644500106528476,
+          0.013327271138632947
+        ],
+        "step6_pll_R2": 0.9816934233824037,
+        "step6_pll_shape": "hill",
+        "step6_vertex": [
+          79.98199597231047,
+          2.5907475173643446
+        ],
+        "step6_curvature": "concave_down",
+        "step7_squeeze_count": 39,
+        "step7_squeeze_closest": {
+          "time_index": 77,
+          "sigma2_A": 2.7190715420884004,
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "test_type": "reciprocal",
+          "test_value": 0.36777259609430635,
+          "delta": 0.00010684507713598634
+        },
+        "step7_squeeze_mean": 1.7476483124958402,
+        "step7_cancellation": true,
+        "step8_entropy_range": [
+          0.5703570893961764,
+          0.8755198414842346
+        ],
+        "step8_entropy_mean": 0.7449681405264705,
+        "step8_entropy_cv": 13.421800709934928,
+        "step8_eitt_invariance": {
+          "compression_2x": {
+            "H_mean_original": 0.746262602756339,
+            "H_mean_decimated": 0.746326075863979,
+            "variation_pct": 0.008505465422700954,
+            "pass": true
+          },
+          "compression_4x": {
+            "H_mean_original": 0.7478378463769783,
+            "H_mean_decimated": 0.7484772552330419,
+            "variation_pct": 0.0855010025450486,
+            "pass": true
+          },
+          "compression_8x": {
+            "H_mean_original": 0.7475924510651492,
+            "H_mean_decimated": 0.7497676439144865,
+            "variation_pct": 0.29095971290750194,
+            "pass": true
+          }
+        },
+        "step9_chaos_detection": {
+          "total_deviations": 1,
+          "stalls": 1,
+          "spikes": 0,
+          "reversals": 0
+        },
+        "step10_ternary_type": "ternary",
+        "step11_complex_range_re": [
+          -0.21372622974647362,
+          0.45615588924377076
+        ],
+        "step11_complex_range_im": [
+          -0.07328892911745881,
+          0.46870610734560036
+        ],
+        "step12_radius_range": [
+          0.05625123059333631,
+          0.4690667574217843
+        ],
+        "step12_theta_range": [
+          -3.129590589916654,
+          3.130780805586027
+        ],
+        "step9_angular_velocity_std": 0.05102567869750907
+      }
+    }
+  },
+  "htp_results": {
+    "A": {
+      "system": "hBN \u03b5-decomposition A",
+      "domain": "MATERIALS",
+      "N": 200,
+      "D": 3,
+      "carriers": [
+        "\u03b5\u2081\u2225",
+        "\u03b5\u2081\u22a5",
+        "\u03b5\u2082"
+      ],
+      "data_hash": "162fce5132551044",
+      "classification": "NATURAL",
+      "n_natural_matches": 58,
+      "n_investigate_matches": 385,
+      "n_total_matches": 443,
+      "nearest_approach": {
+        "constant": "1/(2pi)",
+        "constant_value": 0.15915494309189535,
+        "delta": 2.859862719808981e-05,
+        "relative_pct": 0.01796904742165444,
+        "test_type": "direct",
+        "time_index": 62,
+        "sigma2_A": 0.15918354171909344
+      },
+      "top_matches": [
+        {
+          "constant": "1/(2pi)",
+          "constant_value": 0.15915494309189535,
+          "delta": 2.859862719808981e-05,
+          "relative_pct": 0.01796904742165444,
+          "test_type": "direct",
+          "time_index": 62,
+          "sigma2_A": 0.15918354171909344,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 5.465714004728589e-05,
+          "relative_pct": 0.12648040780210132,
+          "test_type": "direct",
+          "time_index": 39,
+          "sigma2_A": 0.043268575403819544,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.00024500866852156244,
+          "relative_pct": 0.06660026114571088,
+          "test_type": "reciprocal",
+          "time_index": 128,
+          "sigma2_A": 2.7164726505798074,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln10",
+          "constant_value": 0.43429448190325176,
+          "delta": 0.00027859181357731133,
+          "relative_pct": 0.06414813569732933,
+          "test_type": "reciprocal",
+          "time_index": 100,
+          "sigma2_A": 2.301108974486549,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln2",
+          "constant_value": 0.6931471805599453,
+          "delta": 0.00035205866716847556,
+          "relative_pct": 0.05079132932259378,
+          "test_type": "direct",
+          "time_index": 87,
+          "sigma2_A": 0.6934992392271138,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln2",
+          "constant_value": 1.4426950408889634,
+          "delta": 0.000732391997707138,
+          "relative_pct": 0.05076554482753686,
+          "test_type": "reciprocal",
+          "time_index": 87,
+          "sigma2_A": 0.6934992392271138,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.001126438496091342,
+          "relative_pct": 0.23408371063030714,
+          "test_type": "reciprocal",
+          "time_index": 97,
+          "sigma2_A": 2.0732338185824473,
+          "is_natural_match": true
+        },
+        {
+          "constant": "2pi",
+          "constant_value": 6.283185307179586,
+          "delta": 0.0011288257082107123,
+          "relative_pct": 0.017965819135094437,
+          "test_type": "reciprocal",
+          "time_index": 62,
+          "sigma2_A": 0.15918354171909344,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0012566918631033708,
+          "relative_pct": 2.8224240756819587,
+          "test_type": "direct",
+          "time_index": 39,
+          "sigma2_A": 0.043268575403819544,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.0014018730955718262,
+          "relative_pct": 0.38106861614985255,
+          "test_type": "reciprocal",
+          "time_index": 180,
+          "sigma2_A": 2.728679971465467,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.00013649741603186973,
+        3.0463445159309526
+      ],
+      "sigma2_A_final": 2.869469499900788,
+      "pll_R2": 0.8035718961245694,
+      "pll_shape": "hill",
+      "elapsed_s": 0.004120349884033203,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T15:48:35Z"
+    },
+    "B": {
+      "system": "hBN 4-carrier",
+      "domain": "MATERIALS",
+      "N": 200,
+      "D": 4,
+      "carriers": [
+        "\u03b5\u2081\u2225",
+        "\u03b5\u2082\u2225",
+        "\u03b5\u2081\u22a5",
+        "\u03b5\u2082\u22a5"
+      ],
+      "data_hash": "872a80eaa2a859ed",
+      "classification": "NATURAL",
+      "n_natural_matches": 50,
+      "n_investigate_matches": 281,
+      "n_total_matches": 331,
+      "nearest_approach": {
+        "constant": "1/ln10",
+        "constant_value": 0.43429448190325176,
+        "delta": 0.00019863441558787276,
+        "relative_pct": 0.045737264428822,
+        "test_type": "reciprocal",
+        "time_index": 93,
+        "sigma2_A": 2.3036387143243013
+      },
+      "top_matches": [
+        {
+          "constant": "1/ln10",
+          "constant_value": 0.43429448190325176,
+          "delta": 0.00019863441558787276,
+          "relative_pct": 0.045737264428822,
+          "test_type": "reciprocal",
+          "time_index": 93,
+          "sigma2_A": 2.3036387143243013,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0004839890448422035,
+          "relative_pct": 0.15204964276942073,
+          "test_type": "reciprocal",
+          "time_index": 140,
+          "sigma2_A": 3.1463767081346923,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.0006003968091429501,
+          "relative_pct": 1.3893598018078446,
+          "test_type": "direct",
+          "time_index": 34,
+          "sigma2_A": 0.04381431507291521,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0007109521940077065,
+          "relative_pct": 1.59673874554339,
+          "test_type": "direct",
+          "time_index": 34,
+          "sigma2_A": 0.04381431507291521,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln10",
+          "constant_value": 2.302585092994046,
+          "delta": 0.0010536213302554387,
+          "relative_pct": 0.04575819297455007,
+          "test_type": "direct",
+          "time_index": 93,
+          "sigma2_A": 2.3036387143243013,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0012893846026779676,
+          "relative_pct": 0.4050721195424897,
+          "test_type": "reciprocal",
+          "time_index": 141,
+          "sigma2_A": 3.1289182780023364,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.002304048090866928,
+          "relative_pct": 0.7238380555785129,
+          "test_type": "reciprocal",
+          "time_index": 139,
+          "sigma2_A": 3.164498497986429,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 0.002506283573729416,
+          "relative_pct": 5.799713783025599,
+          "test_type": "direct",
+          "time_index": 33,
+          "sigma2_A": 0.04070763469004284,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0025633116526370125,
+          "relative_pct": 5.756982068788736,
+          "test_type": "direct",
+          "time_index": 35,
+          "sigma2_A": 0.04708857891955993,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/pi",
+          "constant_value": 0.3183098861837907,
+          "delta": 0.0030141326730503404,
+          "relative_pct": 0.9469177062599915,
+          "test_type": "reciprocal",
+          "time_index": 142,
+          "sigma2_A": 3.112123406017551,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.00018579505871833406,
+        3.8328574625623637
+      ],
+      "sigma2_A_final": 3.3348499960274687,
+      "pll_R2": 0.7961316246360685,
+      "pll_shape": "hill",
+      "elapsed_s": 0.0047261714935302734,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T15:48:35Z"
+    },
+    "C": {
+      "system": "hBN refractive index",
+      "domain": "MATERIALS",
+      "N": 200,
+      "D": 3,
+      "carriers": [
+        "n\u2225",
+        "n\u22a5",
+        "k_avg"
+      ],
+      "data_hash": "c7a86907b3e1adca",
+      "classification": "NATURAL",
+      "n_natural_matches": 68,
+      "n_investigate_matches": 334,
+      "n_total_matches": 402,
+      "nearest_approach": {
+        "constant": "ln_phi",
+        "constant_value": 0.48121182505960347,
+        "delta": 1.24943195967675e-05,
+        "relative_pct": 0.0025964282143773046,
+        "test_type": "direct",
+        "time_index": 82,
+        "sigma2_A": 0.4811993307400067
+      },
+      "top_matches": [
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 1.24943195967675e-05,
+          "relative_pct": 0.0025964282143773046,
+          "test_type": "direct",
+          "time_index": 82,
+          "sigma2_A": 0.4811993307400067,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(e^pi)",
+          "constant_value": 0.04321391826377226,
+          "delta": 4.100190621794675e-05,
+          "relative_pct": 0.09488125091475466,
+          "test_type": "direct",
+          "time_index": 38,
+          "sigma2_A": 0.043254920169990205,
+          "is_natural_match": true
+        },
+        {
+          "constant": "apery",
+          "constant_value": 1.2020569031595942,
+          "delta": 0.0009417714404282851,
+          "relative_pct": 0.07834666045782429,
+          "test_type": "direct",
+          "time_index": 153,
+          "sigma2_A": 1.2029986746000225,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.00127034709693271,
+          "relative_pct": 2.8530925807073815,
+          "test_type": "direct",
+          "time_index": 38,
+          "sigma2_A": 0.043254920169990205,
+          "is_natural_match": true
+        },
+        {
+          "constant": "pi/4",
+          "constant_value": 0.7853981633974483,
+          "delta": 0.0015092475464442145,
+          "relative_pct": 0.1921633658927293,
+          "test_type": "reciprocal",
+          "time_index": 143,
+          "sigma2_A": 1.270797537413587,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/(pi^e)",
+          "constant_value": 0.044525267266922915,
+          "delta": 0.0015780458072765235,
+          "relative_pct": 3.5441579672421812,
+          "test_type": "direct",
+          "time_index": 39,
+          "sigma2_A": 0.04610331307419944,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt2",
+          "constant_value": 0.7071067811865475,
+          "delta": 0.0015996650711213034,
+          "relative_pct": 0.22622680388342692,
+          "test_type": "reciprocal",
+          "time_index": 127,
+          "sigma2_A": 1.417420146668503,
+          "is_natural_match": true
+        },
+        {
+          "constant": "apery",
+          "constant_value": 1.2020569031595942,
+          "delta": 0.0021101242762837646,
+          "relative_pct": 0.17554279425019936,
+          "test_type": "direct",
+          "time_index": 185,
+          "sigma2_A": 1.1999467788833105,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln2",
+          "constant_value": 0.6931471805599453,
+          "delta": 0.0023192742945298273,
+          "relative_pct": 0.3346005523179431,
+          "test_type": "reciprocal",
+          "time_index": 125,
+          "sigma2_A": 1.43788387350652,
+          "is_natural_match": true
+        },
+        {
+          "constant": "apery",
+          "constant_value": 1.2020569031595942,
+          "delta": 0.002375667868069087,
+          "relative_pct": 0.19763356142497648,
+          "test_type": "direct",
+          "time_index": 184,
+          "sigma2_A": 1.1996812352915251,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.00015518429212756164,
+        1.5459507185619743
+      ],
+      "sigma2_A_final": 1.1701640106692923,
+      "pll_R2": 0.7958767398238603,
+      "pll_shape": "hill",
+      "elapsed_s": 0.008197307586669922,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T15:48:35Z"
+    },
+    "D": {
+      "system": "hBN hyperbolic window",
+      "domain": "MATERIALS",
+      "N": 79,
+      "D": 3,
+      "carriers": [
+        "|\u03b5\u2081\u2225|",
+        "\u03b5\u2081\u22a5",
+        "\u03b5\u2082\u2225"
+      ],
+      "data_hash": "d07bc7ace2eb767c",
+      "classification": "NATURAL",
+      "n_natural_matches": 39,
+      "n_investigate_matches": 161,
+      "n_total_matches": 200,
+      "nearest_approach": {
+        "constant": "1/e",
+        "constant_value": 0.36787944117144233,
+        "delta": 0.00010684507713598634,
+        "relative_pct": 0.02904350316390567,
+        "test_type": "reciprocal",
+        "time_index": 77,
+        "sigma2_A": 2.7190715420884004
+      },
+      "top_matches": [
+        {
+          "constant": "1/e",
+          "constant_value": 0.36787944117144233,
+          "delta": 0.00010684507713598634,
+          "relative_pct": 0.02904350316390567,
+          "test_type": "reciprocal",
+          "time_index": 77,
+          "sigma2_A": 2.7190715420884004,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt5",
+          "constant_value": 0.4472135954999579,
+          "delta": 0.00039900033173656535,
+          "relative_pct": 0.08921918648079269,
+          "test_type": "reciprocal",
+          "time_index": 53,
+          "sigma2_A": 2.2380647606721746,
+          "is_natural_match": true
+        },
+        {
+          "constant": "ln_phi",
+          "constant_value": 0.48121182505960347,
+          "delta": 0.00040058101916928823,
+          "relative_pct": 0.08324421768306957,
+          "test_type": "reciprocal",
+          "time_index": 45,
+          "sigma2_A": 2.0763584728679922,
+          "is_natural_match": true
+        },
+        {
+          "constant": "e",
+          "constant_value": 2.718281828459045,
+          "delta": 0.0007897136293553153,
+          "relative_pct": 0.029051940865270492,
+          "test_type": "direct",
+          "time_index": 77,
+          "sigma2_A": 2.7190715420884004,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/sqrt2",
+          "constant_value": 0.7071067811865475,
+          "delta": 0.001348281436074683,
+          "relative_pct": 0.190675789279269,
+          "test_type": "reciprocal",
+          "time_index": 25,
+          "sigma2_A": 1.4169152767604767,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln10",
+          "constant_value": 0.43429448190325176,
+          "delta": 0.001390666585339373,
+          "relative_pct": 0.32021281487273723,
+          "test_type": "reciprocal",
+          "time_index": 57,
+          "sigma2_A": 2.3099819512231097,
+          "is_natural_match": true
+        },
+        {
+          "constant": "1/ln10",
+          "constant_value": 0.43429448190325176,
+          "delta": 0.0019427851796430806,
+          "relative_pct": 0.4473428193535917,
+          "test_type": "reciprocal",
+          "time_index": 56,
+          "sigma2_A": 2.29233051703026,
+          "is_natural_match": true
+        },
+        {
+          "constant": "sqrt5",
+          "constant_value": 2.23606797749979,
+          "delta": 0.0019967831723848306,
+          "relative_pct": 0.08929885819560324,
+          "test_type": "direct",
+          "time_index": 53,
+          "sigma2_A": 2.2380647606721746,
+          "is_natural_match": true
+        },
+        {
+          "constant": "feigenbaum_alpha",
+          "constant_value": 2.5029078750958926,
+          "delta": 0.0023860892571501147,
+          "relative_pct": 0.09533268407087087,
+          "test_type": "direct",
+          "time_index": 68,
+          "sigma2_A": 2.5052939643530427,
+          "is_natural_match": true
+        },
+        {
+          "constant": "sqrt2",
+          "constant_value": 1.4142135623730951,
+          "delta": 0.0027017143873815375,
+          "relative_pct": 0.1910400564146744,
+          "test_type": "direct",
+          "time_index": 25,
+          "sigma2_A": 1.4169152767604767,
+          "is_natural_match": true
+        }
+      ],
+      "sigma2_A_range": [
+        0.05942286330580916,
+        2.7526413992824836
+      ],
+      "sigma2_A_final": 2.7526413992824836,
+      "pll_R2": 0.9816934233824037,
+      "pll_shape": "hill",
+      "elapsed_s": 0.001566171646118164,
+      "library_size": 35,
+      "thresholds": {
+        "natural": 0.01,
+        "investigate": 0.05
+      },
+      "timestamp": "2026-04-23T15:48:35Z"
+    }
+  },
+  "conclusion": "All four decompositions classified NATURAL by HTP. The dielectric function of hBN exhibits transcendental proximity in its compositional variance trajectory, confirming the Transcendental Naturalness Hypothesis in the materials/photonics domain."
+}

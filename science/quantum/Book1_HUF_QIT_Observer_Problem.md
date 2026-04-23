@@ -254,7 +254,7 @@ Zurek, W. H. (2003). Decoherence and the transition from quantum to classical. R
 | CoDa | Compositional Data Analysis; statistical framework for parts-of-a-whole data on a simplex |
 | CLR | Centered log-ratio transformation; coordinates on the simplex |
 | Decoherence | Dynamical process by which quantum coherence is lost through interaction with environment |
-| EITT | Entropy-Invariant Totals Transformation; preserves Shannon entropy under decimation |
+| EITT | Entropy-Invariant Time Transformer; preserves Shannon entropy under geometric-mean decimation |
 | HUF | Higgins Unity Framework; structural theory originating in loudspeaker diffraction engineering |
 | IAM | Integrated Assessment Model; GCAM, MESSAGE-ix, REMIND used in this study |
 | ILR | Isometric log-ratio transformation; orthonormal coordinates on the simplex |

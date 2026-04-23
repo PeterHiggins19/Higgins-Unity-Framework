@@ -9,7 +9,6 @@
     "project_status": "ACTIVE — codawork2026/ package consolidated, 78 aged drafts archived, geochemistry + Working Example added 2026-04-17",
     "refresh_entry": "ai-refresh/HUF_FAST_REFRESH.json → ai-refresh/HUF_INTEGRITY_MANIFEST.json → ai-refresh/HUF_ADMIN.json → this file"
   },
-
   "repository_structure": {
     "codawork2026": {
       "purpose": "Complete CoDaWork 2026 deliverables package — self-contained. Everything needed for Coimbra.",
@@ -29,7 +28,12 @@
     "ai-refresh": {
       "purpose": "AI speed-loading context. Any AI starts here.",
       "status": "STABLE — validated across Claude, ChatGPT, Grok, Copilot, Gemini on 2026-04-13",
-      "load_order": ["HUF_FAST_REFRESH.json", "HUF_INTEGRITY_MANIFEST.json", "HUF_ADMIN.json", "huf_spec_v2.0.json"],
+      "load_order": [
+        "HUF_FAST_REFRESH.json",
+        "HUF_INTEGRITY_MANIFEST.json",
+        "HUF_ADMIN.json",
+        "huf_spec_v2.0.json"
+      ],
       "test_results": "ai-refresh/test-results/ — 5 platform results + template"
     },
     "science": {
@@ -90,14 +94,20 @@
     },
     "dormant": {
       "purpose": "Paused branches — sleeping, not dead. Nothing dies here. [NEW]",
-      "branches": ["pre-coda-metrics", "early-governance", "planck-case", "peterson-outreach", "hagf", "deceptive-drift"]
+      "branches": [
+        "pre-coda-metrics",
+        "early-governance",
+        "planck-case",
+        "peterson-outreach",
+        "hagf",
+        "deceptive-drift"
+      ]
     },
     "archive": {
       "purpose": "Superseded, rejected, or completed work. What failed always speaks louder.",
       "status": "archived"
     }
   },
-
   "ai_training_notes": {
     "start_here": "ai-refresh/HUF_FAST_REFRESH.json",
     "verify_with": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
@@ -109,5 +119,8 @@
       "HUF-GOV: open loop ONLY. Instrument reads, never actuates.",
       "Dormant branches are valuable. Do not discard."
     ]
-  }
+  },
+  "last_updated": "2026-04-23",
+  "refresh_chain_version": "5.7",
+  "status": "Hˢ RELEASE STATE — 15/15 NATURAL across 12 domains. Ready for CoDaWork 2026."
 }

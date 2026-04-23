@@ -1,7 +1,7 @@
 {
   "_meta": {
     "type": "HUF-MATHEMATICAL-ADDENDUM",
-    "version": "1.0",
+    "version": "1.1",
     "created": "2026-04-18",
     "author": "Peter Higgins / Claude",
     "purpose": "Comprehensive mathematical registry for the Higgins Unity Framework. Contains all formal definitions, theorems, lemmas, corollaries, proof sketches, canonical formulas, symbolic notation, numerical constants, fixed-point results, and open problems. This file appends to (does not replace) HUF_FAST_REFRESH.json and CLAIM_CLASSIFICATION.json. Both human scientists and AI systems should reference this as the complete mathematical foundation.",
@@ -13,9 +13,9 @@
       "claim_classification": "ai-refresh/CLAIM_CLASSIFICATION.json",
       "rwa_001": "archive/legacy-references/machine-readable/RWA_Corporate_Reference_v1.0.json"
     },
-    "update_protocol": "When a new theorem is proved or an open problem is resolved, add it here with date, evidence, and promotion status. This file is part of the refresh chain."
+    "update_protocol": "When a new theorem is proved or an open problem is resolved, add it here with date, evidence, and promotion status. This file is part of the refresh chain.",
+    "updated": "2026-04-22"
   },
-
   "notation_table": {
     "purpose": "Standard symbolic notation used throughout HUF. Where HUF engineering notation differs from standard CoDa literature, both forms are given.",
     "symbols": {
@@ -32,20 +32,32 @@
       "clr": {
         "latex": "\\mathrm{clr}",
         "definition": "Centred log-ratio transform: clr(x)_i = ln(x_i) − (1/D) Σ_{j=1}^{D} ln(x_j)",
-        "properties": ["Linear: clr(x ⊕ y) = clr(x) + clr(y)", "Σ clr_i = 0 (zero-sum constraint)", "Maps simplex to hyperplane in ℝ^D"],
+        "properties": [
+          "Linear: clr(x ⊕ y) = clr(x) + clr(y)",
+          "Σ clr_i = 0 (zero-sum constraint)",
+          "Maps simplex to hyperplane in ℝ^D"
+        ],
         "note": "The primary coordinate system for HUF analysis"
       },
       "ilr": {
         "latex": "\\mathrm{ilr}",
         "definition": "Isometric log-ratio transform: ilr(x) = Ψ^T · clr(x) where Ψ is an orthonormal basis (SBP matrix)",
-        "properties": ["Linear isometry from S^D to ℝ^{D−1}", "Preserves Aitchison inner product as Euclidean inner product", "Balance coordinates: b_k = √(rs/(r+s)) · ln(g(x⁺)/g(x⁻))"],
+        "properties": [
+          "Linear isometry from S^D to ℝ^{D−1}",
+          "Preserves Aitchison inner product as Euclidean inner product",
+          "Balance coordinates: b_k = √(rs/(r+s)) · ln(g(x⁺)/g(x⁻))"
+        ],
         "note": "Used for statistical analysis; SBP choice does not affect EITT"
       },
       "d_A": {
         "latex": "d_A",
         "definition": "Aitchison distance: d_A(x, y) = ‖clr(x) − clr(y)‖₂",
         "equivalent_form": "d_A(x,y) = √((1/2D) Σ_{i<j} [ln(x_i/x_j) − ln(y_i/y_j)]²)",
-        "properties": ["Metric on the simplex", "Invariant under permutation", "Subcompositionally coherent"],
+        "properties": [
+          "Metric on the simplex",
+          "Invariant under permutation",
+          "Subcompositionally coherent"
+        ],
         "note": "Measures compositional distance. Used for drift detection."
       },
       "inner_product_A": {
@@ -58,13 +70,21 @@
         "latex": "\\sigma_A^2",
         "definition": "Aitchison variance (total variance): σ²_A = (1/D) Σ_{i=1}^{D} clr_i²",
         "equivalent_form": "σ²_A = (1/D) ‖clr(x)‖²",
-        "properties": ["Non-negative", "Zero iff x = barycenter (1/D, ..., 1/D)", "Measures departure from isotropy"],
+        "properties": [
+          "Non-negative",
+          "Zero iff x = barycenter (1/D, ..., 1/D)",
+          "Measures departure from isotropy"
+        ],
         "note": "The primary observable in PLL analysis. Its parabolic trajectory is the PLL lock signal."
       },
       "H": {
         "latex": "H",
         "definition": "Shannon entropy: H(x) = −Σ_{i=1}^{D} x_i ln(x_i)",
-        "properties": ["Maximum H = ln(D) at barycenter", "Minimum H → 0 as x approaches a vertex", "Concave function on S^D"],
+        "properties": [
+          "Maximum H = ln(D) at barycenter",
+          "Minimum H → 0 as x approaches a vertex",
+          "Concave function on S^D"
+        ],
         "note": "The entropy whose near-invariance under decimation is the core EITT claim"
       },
       "D_M": {
@@ -99,9 +119,7 @@
       }
     }
   },
-
   "theorems_and_proofs": {
-
     "theorem_1_vertex_theorem": {
       "id": "T1",
       "name": "Vertex Theorem (Orthogonality Condition)",
@@ -124,17 +142,23 @@
         "id": "C1.2",
         "name": "Bowl vs Hill Classification",
         "statement": "If a > 0 (second derivative positive), σ²_A has a bowl (minimum) — the system is locked. If a < 0 (second derivative negative), σ²_A has a hill (maximum) — the system is relaxing (anti-lock).",
-        "examples": ["Bowl (lock): Gold/Silver (a > 0, R² = 0.90), room acoustics (R² = 0.998)", "Hill (anti-lock): U-238 decay chain, Th-232 decay chain, stellar nucleosynthesis"]
+        "examples": [
+          "Bowl (lock): Gold/Silver (a > 0, R² = 0.90), room acoustics (R² = 0.998)",
+          "Hill (anti-lock): U-238 decay chain, Th-232 decay chain, stellar nucleosynthesis"
+        ]
       },
       "corollary_3": {
         "id": "C1.3",
         "name": "Vertex Location as Transition Date",
         "statement": "When σ²_A(t) is parabolic with vertex at t₀, the year (or parameter value) t₀ marks the moment of dynamic equilibrium — where competing compositional forces are most balanced.",
-        "examples": ["California energy: vertex 2014 (solar/wind began to dominate)", "Gold/Silver: vertex 1751 (bimetallism equilibrium)", "Wisconsin: vertex ~1951 (coal's peak)"]
+        "examples": [
+          "California energy: vertex 2014 (solar/wind began to dominate)",
+          "Gold/Silver: vertex 1751 (bimetallism equilibrium)",
+          "Wisconsin: vertex ~1951 (coal's peak)"
+        ]
       },
       "location": "discoveries/theorems/VERTEX_THEOREM.md"
     },
-
     "theorem_2_clr_linearity": {
       "id": "T2",
       "name": "CLR Linearity Identity",
@@ -150,7 +174,6 @@
       "significance": "This identity is WHY geometric-mean decimation preserves CLR structure exactly. The arithmetic mean in CLR space IS the geometric mean on the simplex. This is the algebraic heart of EITT.",
       "location": "science/eitt/EITT_HESSIAN_BOUND.md (Step 1), science/core/EITT_CODA_MATHEMATICS.md"
     },
-
     "theorem_3_hessian_bound": {
       "id": "T3",
       "name": "EITT Hessian Bound (Second-Order)",
@@ -177,7 +200,6 @@
       ],
       "location": "science/eitt/EITT_HESSIAN_BOUND.md"
     },
-
     "lemma_1_balance_preservation": {
       "id": "L1",
       "name": "Balance Mean Preservation Under Decimation",
@@ -191,7 +213,6 @@
       },
       "location": "science/core/EITT_CODA_MATHEMATICS.md (Proposition 3.3)"
     },
-
     "lemma_2_entropy_concavity": {
       "id": "L2",
       "name": "Shannon Entropy Concavity on the Simplex",
@@ -199,11 +220,23 @@
       "statement": "Shannon entropy H(x) = −Σ x_i ln(x_i) is strictly concave on S^D. The Hessian has eigenvalues: (∂²H/∂x_i²) = −1/x_i (diagonal), off-diagonal terms arise from the simplex constraint.",
       "consequence_for_eitt": "By Jensen's inequality applied to the concave function H: H(𝔼[X]) ≥ 𝔼[H(X)]. For block decimation: H(x̄_G) ≥ (1/M) Σ H(x(t)). This creates a systematic UPWARD bias in entropy under decimation. The EITT residual measures how small this bias actually is.",
       "note": "This is a known result from information theory. HUF's contribution is the empirical observation that the bias is extremely small (< 1% typically) for legitimate compositional time series."
+    },
+    "compositional_uncertainty_principle": {
+      "name": "Compositional Uncertainty Principle (Higgins)",
+      "statement": "Let x(t) be an oscillating D-part composition on the simplex S^D with at least one carrier approaching zero (x_i → 0). Then the EITT angular velocity deviates at every zero-crossing. The deviation floor f(N) scales as f(N) = A × N^α where α = +0.18 ± 0.02, independent of system physics, integration method, timestep, or initial conditions.",
+      "proof_sketch": "At a carrier zero-crossing, x_i → 0 forces clr_i → −∞ (simplex boundary singularity). The CLR transform maps the composition to unbounded coordinates, creating a curvature spike in the Fisher information metric. The angular velocity on the ternary projection must change sign at the crossing, guaranteeing a deviation. The floor is topological because the singularity exists in every dimension D ≥ 2.",
+      "evidence": "EXP-17: 35 simulations (5 systems × 7 carrier counts), 3 integrator comparison (CV<1.2%), 4 timestep comparison (CV=0%), 10 random IC comparison (CV<1.2%).",
+      "formula": "f(N) = 6.37 × N^{0.18}",
+      "classification": "Higgins_Tool"
+    },
+    "force_matter_asymmetry_theorem": {
+      "name": "Force-Matter Asymmetry (Higgins)",
+      "statement": "For any physical system decomposed simultaneously into force carriers and matter/energy carriers, the force simplex exhibits strictly more EITT deviations than the matter simplex. Forces are reversible and turbulent; matter is irreversible and directional.",
+      "evidence": "EXP-18: 41 vs 5 deviations (8.2:1). EXP-18b Bridge 5: 296 vs 0 deviations. Consistent across mechanical (steel) and electromagnetic (charged droplet) systems.",
+      "classification": "Higgins_Tool"
     }
   },
-
   "fixed_point_and_banach_results": {
-
     "result_1_adac_convergence": {
       "id": "FP1",
       "name": "ADAC Iterative Convergence",
@@ -223,7 +256,6 @@
       "promotion_condition": "Derive L analytically from cabinet geometry parameters. Show L < 1 for the class of physically realizable cabinets.",
       "location": "science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md"
     },
-
     "result_2_eitt_rg_fixed_point": {
       "id": "FP2",
       "name": "EITT as Renormalization Group Fixed Point (Conceptual)",
@@ -234,7 +266,6 @@
       "important_distinction": "Decimation is NOT a contraction mapping on (S^D, d_A). Aitchison distances EXPAND under decimation. EITT invariance is an entropy-level phenomenon, not a distance-level contraction.",
       "location": "codawork2026/reproducibility/HIGGINS_REPRODUCIBILITY_PACKAGE.json"
     },
-
     "result_3_h1_fixed_point": {
       "id": "FP3",
       "name": "H1 Operator Fixed Point and Lyapunov Stability",
@@ -245,7 +276,6 @@
       "what_is_missing": "The actual derivation of V̇ and the verification that the system is a contraction in the appropriate Banach space.",
       "location": "science/quantum/HUF_VCore_Stack_Brief_v1.0.md"
     },
-
     "result_4_fixed_point_v3_2": {
       "id": "FP4",
       "name": "HUF Refresh Chain Fixed Point v3.2",
@@ -254,109 +284,215 @@
       "location": "ai-refresh/PHASE_MARKERS.json, ai-refresh/HUF_FAST_REFRESH.json"
     }
   },
-
   "canonical_values_and_constants": {
     "purpose": "Complete registry of numerical constants that appear across HUF. Any document citing a different value should reference this table.",
     "acoustic_constants": {
-      "total_baffle_step": { "value": "6.02 dB", "exact": "20·log₁₀(2)", "source": "DADC theory" },
-      "corner_frequency": { "value": "Fc = 115/L Hz·m", "note": "L is the baffle dimension in metres" },
-      "bandwidth_locked": { "value": "5.5 octaves", "source": "BTL measurement, RWA lineage" }
+      "total_baffle_step": {
+        "value": "6.02 dB",
+        "exact": "20·log₁₀(2)",
+        "source": "DADC theory"
+      },
+      "corner_frequency": {
+        "value": "Fc = 115/L Hz·m",
+        "note": "L is the baffle dimension in metres"
+      },
+      "bandwidth_locked": {
+        "value": "5.5 octaves",
+        "source": "BTL measurement, RWA lineage"
+      }
     },
     "eitt_benchmarks": {
-      "european_prices_341to1": { "value": "0.18%", "domain": "European prices", "compression": "341:1" },
-      "ember_monthly_mean": { "value": "1.02%", "domain": "EMBER 6 countries" },
-      "ngfs_geometric_5yr": { "value": "1.8%", "domain": "NGFS 35 scenarios" },
-      "ngfs_arithmetic_5yr": { "value": "14.2%", "domain": "NGFS 35 scenarios (WRONG mean)" },
-      "arithmetic_geometric_ratio": { "value": "7.9×", "note": "Factor of destruction by using arithmetic mean" },
-      "exp01_gold_silver": { "value": "0.60%", "domain": "Gold/Silver 338yr at 50:1" },
-      "exp03_qgp_freeze_out": { "value": "0.27%", "domain": "QGP STAR BES-I + ALICE" },
-      "geochemistry_pass_rate": { "value": "37/39 TAS types", "domain": "40,666 igneous rocks" }
+      "european_prices_341to1": {
+        "value": "0.18%",
+        "domain": "European prices",
+        "compression": "341:1"
+      },
+      "ember_monthly_mean": {
+        "value": "1.02%",
+        "domain": "EMBER 6 countries"
+      },
+      "ngfs_geometric_5yr": {
+        "value": "1.8%",
+        "domain": "NGFS 35 scenarios"
+      },
+      "ngfs_arithmetic_5yr": {
+        "value": "14.2%",
+        "domain": "NGFS 35 scenarios (WRONG mean)"
+      },
+      "arithmetic_geometric_ratio": {
+        "value": "7.9×",
+        "note": "Factor of destruction by using arithmetic mean"
+      },
+      "exp01_gold_silver": {
+        "value": "0.60%",
+        "domain": "Gold/Silver 338yr at 50:1"
+      },
+      "exp03_qgp_freeze_out": {
+        "value": "0.27%",
+        "domain": "QGP STAR BES-I + ALICE"
+      },
+      "geochemistry_pass_rate": {
+        "value": "37/39 TAS types",
+        "domain": "40,666 igneous rocks"
+      }
     },
     "pll_benchmarks": {
       "domains_tested": 30,
-      "confidence_threshold": { "value": "3³ = 27", "exceeded_by": 30 },
-      "highest_R2": { "value": 0.998, "domain": "Room acoustics" },
-      "exp01_R2": { "value": 0.9007, "domain": "Gold/Silver" },
-      "exp01_vertex": { "value": 1751, "domain": "Gold/Silver" },
-      "exp01_Q_factor": { "value": 22.18, "domain": "Gold/Silver" }
+      "confidence_threshold": {
+        "value": "3³ = 27",
+        "exceeded_by": 30
+      },
+      "highest_R2": {
+        "value": 0.998,
+        "domain": "Room acoustics"
+      },
+      "exp01_R2": {
+        "value": 0.9007,
+        "domain": "Gold/Silver"
+      },
+      "exp01_vertex": {
+        "value": 1751,
+        "domain": "Gold/Silver"
+      },
+      "exp01_Q_factor": {
+        "value": 22.18,
+        "domain": "Gold/Silver"
+      }
     },
     "nuclear_constants": {
-      "lithium7_CS_ratio": { "value": 2.525, "note": "Highest C/S ratio in any domain (cosmological lithium problem)" },
-      "sigma2A_light": { "value": 16.77, "region": "Z=1-20", "description": "HOT" },
-      "sigma2A_iron_peak": { "value": 2.49, "region": "Z=21-28", "description": "WARM" },
-      "sigma2A_heavy": { "value": 1.50, "region": "Z=29-82", "description": "COOL" },
-      "sigma2A_actinide": { "value": 1.15, "region": "Z=83+", "description": "COLD" },
-      "coulomb_cliff_Z": { "value": "≈419", "note": "SEMF Coulomb dominance transition" },
-      "absolute_instability_Z": { "value": "≈363", "note": "B/A becomes negative" }
+      "lithium7_CS_ratio": {
+        "value": 2.525,
+        "note": "Highest C/S ratio in any domain (cosmological lithium problem)"
+      },
+      "sigma2A_light": {
+        "value": 16.77,
+        "region": "Z=1-20",
+        "description": "HOT"
+      },
+      "sigma2A_iron_peak": {
+        "value": 2.49,
+        "region": "Z=21-28",
+        "description": "WARM"
+      },
+      "sigma2A_heavy": {
+        "value": 1.5,
+        "region": "Z=29-82",
+        "description": "COOL"
+      },
+      "sigma2A_actinide": {
+        "value": 1.15,
+        "region": "Z=83+",
+        "description": "COLD"
+      },
+      "coulomb_cliff_Z": {
+        "value": "≈419",
+        "note": "SEMF Coulomb dominance transition"
+      },
+      "absolute_instability_Z": {
+        "value": "≈363",
+        "note": "B/A becomes negative"
+      }
     },
     "bell_test_values": {
       "S_measured": 2.2018,
       "classical_bound": 2.0,
       "tsirelson_bound": 2.828,
-      "violation_percentage": "12.31%",
+      "violation_magnitude": "10.09% — (2.2018-2.0)/2.0",
+      "configurations_exceeding_bound": "12.31% of 18,360 configurations (2,260) exceed S=2",
+      "normalization_note": "CORRECTED 2026-04-19: 10.09% = violation magnitude above classical bound. 12.31% = fraction of configurations exceeding S=2. Previously conflated.",
       "contamination_risk": "VERY HIGH"
     },
     "operating_envelope_thresholds": {
-      "eitt_pass": { "value": "< 1%", "note": "Below this: PASS. Above: investigate." },
-      "entropy_minimum": { "value": "H > 1.0", "note": "Below: boundary regime, EITT unreliable" },
-      "zero_rate_maximum": { "value": "< 15%", "note": "Above: multiplicative replacement artifacts" },
-      "zero_rate_hard_fail": { "value": "> 35%", "note": "EITT correctly fails" },
-      "f17_R2_threshold": { "value": "> 0.96", "note": "All 10 US states exceed this" }
+      "eitt_pass": {
+        "value": "< 1%",
+        "note": "Below this: PASS. Above: investigate."
+      },
+      "entropy_minimum": {
+        "value": "H > 1.0",
+        "note": "Below: boundary regime, EITT unreliable"
+      },
+      "zero_rate_maximum": {
+        "value": "< 15%",
+        "note": "Above: multiplicative replacement artifacts"
+      },
+      "zero_rate_hard_fail": {
+        "value": "> 35%",
+        "note": "EITT correctly fails"
+      },
+      "f17_R2_threshold": {
+        "value": "> 0.96",
+        "note": "All 10 US states exceed this"
+      }
+    },
+    "compositional_floor_exponent": {
+      "symbol": "α",
+      "value": 0.18,
+      "uncertainty": "±0.02",
+      "description": "Exponent in the compositional floor scaling law f(N) = A × N^α. Positive value indicates floor is near-constant (topological invariant).",
+      "source": "EXP-17"
+    },
+    "compositional_floor_prefactor": {
+      "symbol": "A",
+      "value": 6.37,
+      "description": "Prefactor in the compositional floor scaling law f(N) = A × N^α. Units: deviations per normalised time.",
+      "source": "EXP-17"
     }
   },
-
   "open_problems_registry": {
     "purpose": "Every formally stated open problem in the HUF programme, with cross-references and promotion conditions.",
-
     "O1_eitt_general_invariance": {
       "statement": "Prove a general theorem: Under conditions C, |δ_M| < f(D, σ²_A, ρ₁, M) for all legitimate compositional time series.",
       "status": "OPEN — the central open problem of the programme",
       "partial_progress": "The Hessian Bound (T3) provides a second-order expected-value bound under assumptions A1-A3. What remains is: (a) a concentration inequality (tail bound), (b) verification of mixing conditions in real data, (c) sharp constants.",
       "if_solved": "Would promote EITT from 'empirical invariance' to 'mathematical theorem'. The strongest possible result for the programme."
     },
-
     "O2_pll_parabola_genericity": {
       "statement": "Prove that σ²_A(t) is generically parabolic under mild regularity conditions (smooth, slowly-varying forces on the simplex).",
       "status": "OPEN",
       "partial_progress": "The vertex theorem (T1) proves the orthogonality condition at the extremum. What remains is showing that σ²_A has exactly one extremum (parabolic shape) when forcing is slow relative to the system timescale.",
       "if_solved": "Would promote PLL universality from L1 to L2 (process control candidate)."
     },
-
     "O3_noise_conjugacy": {
       "statement": "Prove that lock noise + anti-lock noise = 0 (observed empirically in all domains).",
       "status": "OPEN",
       "partial_progress": "Observed in 10/10 domains. Physically plausible (polynomial residuals in complementary regimes should cancel). No formal proof.",
       "if_solved": "Would promote noise squeeze from L0 to L1."
     },
-
     "O4_adac_contraction_constant": {
       "statement": "Derive the Lipschitz constant L for the ADAC correction mapping from cabinet geometry parameters. Show L < 1 for physically realizable cabinets.",
       "status": "OPEN",
       "partial_progress": "Numerical evidence: L ≈ 0.4 from 5-iteration convergence. The contraction condition |m| < 1 is asserted."
     },
-
     "O5_renyi_invariance": {
       "statement": "Prove that geometric-mean decimation preserves the Rényi entropy family for q ∈ (0, ∞).",
       "status": "OPEN",
       "partial_progress": "Empirically confirmed for q ∈ [0.1, 5.0] across 3 domains."
     },
-
     "O6_shape_functional_invariance": {
       "statement": "Prove that any shape functional (function of ratios only, invariant to scaling) is EITT-invariant in the interior regime.",
       "status": "OPEN — conceptual framework sketched in EITT_WHY_IT_WORKS.md §7"
     },
-
     "O7_tail_bound": {
       "statement": "Derive a concentration inequality for |δ_M − 𝔼[δ_M]| using explicit mixing coefficients.",
       "status": "OPEN — Hessian Bound Open Problem 2"
     },
-
     "O8_nonstationary_extension": {
       "statement": "Extend EITT bounds to slowly-drifting (non-stationary) processes with drift velocity as a parameter.",
       "status": "OPEN — Hessian Bound Open Problem 3"
+    },
+    "noise_floor_unification": {
+      "problem": "Can the compositional floor (α=+0.18) be connected formally to the quantum (ℏω/2) and thermodynamic (residual entropy) floors via a unified information-theoretic inequality?",
+      "status": "OPEN",
+      "context": "The three floors operate at different scales and have different origins (fundamental, statistical, topological). A unifying inequality would establish Information Mechanics as a bridge between quantum information theory and classical thermodynamics.",
+      "posed_by": "Information Mechanics Declaration, 2026-04-22"
+    },
+    "relativistic_asymmetry": {
+      "problem": "Does the force-matter asymmetry generalise to relativistic systems where force and matter are unified in the stress-energy tensor?",
+      "status": "OPEN",
+      "context": "EXP-18/18b tested Newtonian and electromagnetic systems. In general relativity, the stress-energy tensor contains both force and matter information. How does the asymmetry manifest?",
+      "posed_by": "Closing Experiment Journal, 2026-04-22"
     }
   },
-
   "identity_registry": {
     "purpose": "All named identities referenced across HUF, with their RWA-001 lineage.",
     "identities": {
@@ -375,12 +511,21 @@
       },
       "huf": {
         "full_name": "Higgins Unity Framework",
-        "NOT": ["Higgins Unified Framework", "HUF Framework", "Unity Framework"],
+        "NOT": [
+          "Higgins Unified Framework",
+          "HUF Framework",
+          "Unity Framework"
+        ],
         "tagline": "Compositional structure as an open-loop monitoring signal."
       },
       "hivip": {
         "full_name": "Higgins Iterative Validation and Integrity Protocol",
-        "components": ["6-level promotion ladder (L0-L5)", "3-path contamination doctrine", "Sealed experiment protocol", "HIVP regression chain"]
+        "components": [
+          "6-level promotion ladder (L0-L5)",
+          "3-path contamination doctrine",
+          "Sealed experiment protocol",
+          "HIVP regression chain"
+        ]
       },
       "btl": {
         "full_name": "Binaural Test Lab",
@@ -394,22 +539,36 @@
       }
     }
   },
-
   "semf_formulas": {
     "purpose": "The Semi-Empirical Mass Formula (SEMF) as used in HUF's nuclear programme. These formulas are not HUF inventions — they are standard nuclear physics written out for reference.",
     "binding_energy": "B(Z, A) = a_V·A − a_S·A^{2/3} − a_C·Z(Z−1)/A^{1/3} − a_A·(A−2Z)²/A + δ(A, Z)",
     "standard_coefficients": {
-      "a_V": { "value": 15.56, "unit": "MeV", "term": "Volume" },
-      "a_S": { "value": 17.23, "unit": "MeV", "term": "Surface" },
-      "a_C": { "value": 0.7, "unit": "MeV", "term": "Coulomb" },
-      "a_A": { "value": 23.285, "unit": "MeV", "term": "Asymmetry" }
+      "a_V": {
+        "value": 15.56,
+        "unit": "MeV",
+        "term": "Volume"
+      },
+      "a_S": {
+        "value": 17.23,
+        "unit": "MeV",
+        "term": "Surface"
+      },
+      "a_C": {
+        "value": 0.7,
+        "unit": "MeV",
+        "term": "Coulomb"
+      },
+      "a_A": {
+        "value": 23.285,
+        "unit": "MeV",
+        "term": "Asymmetry"
+      }
     },
     "compositional_decomposition": {
       "description": "HUF decomposes each nucleus into a 4-part composition on the simplex: x = C(E_V, E_S, E_C, E_A) where E_V = a_V·A, E_S = a_S·A^{2/3}, E_C = a_C·Z(Z−1)/A^{1/3}, E_A = a_A·(A−2Z)²/A. The closure operator C normalises to sum = 1.",
       "sigma2A_meaning": "σ²_A of this 4-part composition measures how 'balanced' the four binding energy terms are. Light nuclei (shell effects, magic numbers) have high σ²_A (HOT). Actinides have low σ²_A (COLD) because the four terms scale smoothly."
     }
   },
-
   "changelog": [
     {
       "date": "2026-04-18",
