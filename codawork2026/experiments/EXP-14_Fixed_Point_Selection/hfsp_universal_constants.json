@@ -1,0 +1,1038 @@
+{
+  "_meta": {
+    "type": "HFSP-UNIVERSAL-CONSTANTS-SWEEP",
+    "date": "2026-04-21",
+    "purpose": "Test all known damping factors and transcendental constants against blend data",
+    "constants_tested": 55,
+    "peter_hypothesis": "Bessel time delay filter 1/\u221a3, plus all known physics constants"
+  },
+  "constants_ranked": [
+    {
+      "name": "\u03b6=1 (critical)",
+      "value": 1.0,
+      "hits": 42,
+      "avg_delta": 0.005602024485296932,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-03/EXP-06",
+        "EXP-01/EXP-04",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "cross",
+        "PVR"
+      ]
+    },
+    {
+      "name": "H(1/2) binary",
+      "value": 1.0,
+      "hits": 42,
+      "avg_delta": 0.005602024485296932,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-03/EXP-06",
+        "EXP-01/EXP-04",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "cross",
+        "PVR"
+      ]
+    },
+    {
+      "name": "\u03b1 (fine structure)",
+      "value": 0.0072973525205055605,
+      "hits": 36,
+      "avg_delta": 0.005448771959640073,
+      "experiments": [
+        "EXP-03",
+        "EXP-06",
+        "EXP-04",
+        "|EXP-03-EXP-06|",
+        "|EXP-01-EXP-04|",
+        "EXP-01"
+      ],
+      "sources": [
+        "cross",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "Catalan G",
+      "value": 0.916,
+      "hits": 20,
+      "avg_delta": 0.004774843760774861,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-04/EXP-07",
+        "EXP-01",
+        "EXP-03/EXP-04"
+      ],
+      "sources": [
+        "ratio",
+        "cross",
+        "shape",
+        "\u03b1-score"
+      ]
+    },
+    {
+      "name": "\u03c6/\u221a2",
+      "value": 0.4370160244488211,
+      "hits": 19,
+      "avg_delta": 0.010022943993927131,
+      "experiments": [
+        "EXP-06",
+        "EXP-01",
+        "EXP-07",
+        "EXP-03"
+      ],
+      "sources": [
+        "ratio",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "log\u2081\u2080(e)",
+      "value": 0.4342944819032518,
+      "hits": 18,
+      "avg_delta": 0.00916371251481412,
+      "experiments": [
+        "EXP-06",
+        "EXP-01",
+        "EXP-07",
+        "EXP-03"
+      ],
+      "sources": [
+        "ratio",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "\u221a2/2",
+      "value": 0.7071067811865476,
+      "hits": 16,
+      "avg_delta": 0.00772110067836055,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "1/\u221a2 (Butterworth)",
+      "value": 0.7071067811865475,
+      "hits": 16,
+      "avg_delta": 0.007721100678360605,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "\u221a2-1",
+      "value": 0.41421356237309515,
+      "hits": 15,
+      "avg_delta": 0.00881987648242956,
+      "experiments": [
+        "EXP-06",
+        "EXP-04",
+        "EXP-01",
+        "EXP-07"
+      ],
+      "sources": [
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "tan(\u03c0/8)",
+      "value": 0.41421356237309503,
+      "hits": 15,
+      "avg_delta": 0.008819876482429581,
+      "experiments": [
+        "EXP-06",
+        "EXP-04",
+        "EXP-01",
+        "EXP-07"
+      ],
+      "sources": [
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "e/\u03c0",
+      "value": 0.8652559794322651,
+      "hits": 15,
+      "avg_delta": 0.009200218805285891,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-03/EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "cross",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "\u221a3/2",
+      "value": 0.8660254037844386,
+      "hits": 15,
+      "avg_delta": 0.009046333934851184,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-03/EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "cross",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "sin(\u03c0/3)",
+      "value": 0.8660254037844386,
+      "hits": 15,
+      "avg_delta": 0.009046333934851184,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-03/EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "cross",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "e^(-\u03c0/4)",
+      "value": 0.45593812776599624,
+      "hits": 14,
+      "avg_delta": 0.009334521453826536,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-06",
+        "EXP-04",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "ZN critical",
+      "value": 0.45,
+      "hits": 14,
+      "avg_delta": 0.008333668807295016,
+      "experiments": [
+        "EXP-01",
+        "EXP-03",
+        "EXP-07",
+        "EXP-06"
+      ],
+      "sources": [
+        "ratio",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "1/\u221a5",
+      "value": 0.4472135954999579,
+      "hits": 14,
+      "avg_delta": 0.008654406274003339,
+      "experiments": [
+        "EXP-03",
+        "EXP-01",
+        "EXP-07",
+        "EXP-06"
+      ],
+      "sources": [
+        "ratio",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "sin(1)",
+      "value": 0.8414709848078965,
+      "hits": 13,
+      "avg_delta": 0.009322585432408314,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-03/EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-06/EXP-07",
+        "EXP-01"
+      ],
+      "sources": [
+        "cross",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "3/4",
+      "value": 0.75,
+      "hits": 12,
+      "avg_delta": 0.006296583293166587,
+      "experiments": [
+        "EXP-07",
+        "EXP-06",
+        "EXP-04",
+        "mean(all)",
+        "EXP-01"
+      ],
+      "sources": [
+        "cross",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "\u03b6=0.5 (quarter decay)",
+      "value": 0.5,
+      "hits": 12,
+      "avg_delta": 0.012110742472515293,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-06",
+        "EXP-04",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "2/3",
+      "value": 0.6666666666666666,
+      "hits": 12,
+      "avg_delta": 0.007305271361923614,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "\u03c0/4",
+      "value": 0.7853981633974483,
+      "hits": 12,
+      "avg_delta": 0.009335714037275214,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "\u221a\u03b1",
+      "value": 0.08542454284633638,
+      "hits": 12,
+      "avg_delta": 0.009810698685729166,
+      "experiments": [
+        "EXP-03",
+        "|EXP-01-EXP-06|",
+        "EXP-04",
+        "EXP-06",
+        "EXP-01"
+      ],
+      "sources": [
+        "cross",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "ln(2)",
+      "value": 0.6931471805599453,
+      "hits": 11,
+      "avg_delta": 0.010813906176044708,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-06",
+        "EXP-04",
+        "EXP-01"
+      ],
+      "sources": [
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "log\u2082(e)^(-1)",
+      "value": 0.6931471805599453,
+      "hits": 11,
+      "avg_delta": 0.010813906176044708,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-06",
+        "EXP-04",
+        "EXP-01"
+      ],
+      "sources": [
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "cos(\u03c0/3)",
+      "value": 0.5000000000000001,
+      "hits": 11,
+      "avg_delta": 0.010484446333653065,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-06",
+        "EXP-04",
+        "EXP-01"
+      ],
+      "sources": [
+        "ratio",
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "Ap\u00e9ry \u03b6(3)^(-1)",
+      "value": 0.8319052293562718,
+      "hits": 10,
+      "avg_delta": 0.009874234057805121,
+      "experiments": [
+        "EXP-03",
+        "EXP-07",
+        "EXP-06",
+        "EXP-04",
+        "EXP-06/EXP-07",
+        "EXP-01"
+      ],
+      "sources": [
+        "cross",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "cos(1)",
+      "value": 0.5403023058681398,
+      "hits": 9,
+      "avg_delta": 0.006667461019421333,
+      "experiments": [
+        "EXP-04",
+        "EXP-01",
+        "EXP-07",
+        "EXP-06"
+      ],
+      "sources": [
+        "shape",
+        "\u03b1-score",
+        "opt-\u03b1"
+      ]
+    },
+    {
+      "name": "3\u00d73/4",
+      "value": 0.0,
+      "hits": 9,
+      "avg_delta": 0.010721600507906763,
+      "experiments": [
+        "EXP-01"
+      ],
+      "sources": [
+        "PVR"
+      ]
+    },
+    {
+      "name": "2\u00d7cos(1)",
+      "value": 0.0,
+      "hits": 9,
+      "avg_delta": 0.02058471295901909,
+      "experiments": [
+        "EXP-07"
+      ],
+      "sources": [
+        "PVR"
+      ]
+    },
+    {
+      "name": "1/\u221a3 (Bessel)",
+      "value": 0.5773502691896258,
+      "hits": 8,
+      "avg_delta": 0.0062133353908066236,
+      "experiments": [
+        "EXP-06",
+        "EXP-04",
+        "EXP-01",
+        "EXP-07"
+      ],
+      "sources": [
+        "ratio",
+        "\u03b1-score"
+      ]
+    }
+  ],
+  "key_matches": {
+    "alpha_score": [
+      [
+        "EXP-04",
+        "e/\u03c0",
+        0.9159512977371915,
+        "Catalan G",
+        0.916,
+        4.8702262808508756e-05
+      ],
+      [
+        "EXP-01",
+        "log\u2081\u2080(2)",
+        0.577449235511445,
+        "1/\u221a3 (Bessel)",
+        0.5773502691896258,
+        9.896632181916054e-05
+      ],
+      [
+        "EXP-01",
+        "log\u2081\u2080(2)",
+        0.577449235511445,
+        "\u221a3/3",
+        0.5773502691896257,
+        9.896632181927156e-05
+      ],
+      [
+        "EXP-07",
+        "ln(2)",
+        0.7073340938596906,
+        "\u221a2/2",
+        0.7071067811865476,
+        0.00022731267314302084
+      ],
+      [
+        "EXP-07",
+        "log\u2082(e)^(-1)",
+        0.7073340938596906,
+        "\u221a2/2",
+        0.7071067811865476,
+        0.00022731267314302084
+      ],
+      [
+        "EXP-07",
+        "ln(2)",
+        0.7073340938596906,
+        "1/\u221a2 (Butterworth)",
+        0.7071067811865475,
+        0.00022731267314313186
+      ],
+      [
+        "EXP-07",
+        "log\u2082(e)^(-1)",
+        0.7073340938596906,
+        "1/\u221a2 (Butterworth)",
+        0.7071067811865475,
+        0.00022731267314313186
+      ],
+      [
+        "EXP-01",
+        "log\u2081\u2080(2)",
+        0.577449235511445,
+        "Euler-Mascheroni \u03b3",
+        0.5772,
+        0.00024923551144495626
+      ],
+      [
+        "EXP-06",
+        "cos(1)",
+        0.4562497487729159,
+        "e^(-\u03c0/4)",
+        0.45593812776599624,
+        0.0003116210069196712
+      ],
+      [
+        "EXP-06",
+        "3/4",
+        0.006985658437522282,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0003116940829832786
+      ],
+      [
+        "EXP-06",
+        "\u03c6/\u221a2",
+        0.5768549109102311,
+        "Euler-Mascheroni \u03b3",
+        0.5772,
+        0.00034508908976893515
+      ],
+      [
+        "EXP-04",
+        "log\u2081\u2080(2)",
+        0.5399546048908112,
+        "cos(1)",
+        0.5403023058681398,
+        0.00034770097732861327
+      ],
+      [
+        "EXP-03",
+        "log\u2081\u2080(2)",
+        0.8410634183311869,
+        "sin(1)",
+        0.8414709848078965,
+        0.00040756647670958657
+      ],
+      [
+        "EXP-01",
+        "1/\u221a(2\u221a2) (Linkwitz-Riley)",
+        0.5407514207459014,
+        "cos(1)",
+        0.5403023058681398,
+        0.00044911487776166936
+      ],
+      [
+        "EXP-06",
+        "\u03c6/\u221a2",
+        0.5768549109102311,
+        "\u221a3/3",
+        0.5773502691896257,
+        0.0004953582793946198
+      ],
+      [
+        "EXP-06",
+        "\u03c6/\u221a2",
+        0.5768549109102311,
+        "1/\u221a3 (Bessel)",
+        0.5773502691896258,
+        0.0004953582793947309
+      ],
+      [
+        "EXP-03",
+        "2-\u221a3",
+        0.8097045785391112,
+        "cos(\u03c0/5)",
+        0.8090169943749475,
+        0.0006875841641637015
+      ],
+      [
+        "EXP-04",
+        "1/e\u00b2",
+        0.915274475664171,
+        "Catalan G",
+        0.916,
+        0.0007255243358290642
+      ],
+      [
+        "EXP-07",
+        "\u03c6 (golden)",
+        0.7508217446552454,
+        "3/4",
+        0.75,
+        0.0008217446552454266
+      ],
+      [
+        "EXP-07",
+        "1/\u03c6",
+        0.7508217446552454,
+        "3/4",
+        0.75,
+        0.0008217446552454266
+      ]
+    ],
+    "optimal_alpha": [
+      [
+        "EXP-06",
+        "power_p2",
+        0.75,
+        "3/4",
+        0.75,
+        0.0
+      ],
+      [
+        "EXP-07",
+        "sigmoid_k20",
+        0.45,
+        "ZN critical",
+        0.45,
+        0.0
+      ],
+      [
+        "EXP-06",
+        "arithmetic",
+        0.81,
+        "cos(\u03c0/5)",
+        0.8090169943749475,
+        0.000983005625052602
+      ],
+      [
+        "EXP-03",
+        "arithmetic",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-03",
+        "quadratic",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-03",
+        "power_p2",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-03",
+        "sigmoid_k10",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-04",
+        "arithmetic",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-04",
+        "quadratic",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-04",
+        "power_p2",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-04",
+        "sigmoid_k5",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-04",
+        "sigmoid_k20",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-06",
+        "quadratic",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-06",
+        "sigmoid_k10",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-06",
+        "sigmoid_k20",
+        0.01,
+        "\u03b1 (fine structure)",
+        0.0072973525205055605,
+        0.0027026474794944397
+      ],
+      [
+        "EXP-07",
+        "sigmoid_k20",
+        0.45,
+        "1/\u221a5",
+        0.4472135954999579,
+        0.0027864045000420834
+      ],
+      [
+        "EXP-01",
+        "sigmoid_k20",
+        0.6900000000000001,
+        "ln(2)",
+        0.6931471805599453,
+        0.0031471805599452285
+      ],
+      [
+        "EXP-01",
+        "sigmoid_k20",
+        0.6900000000000001,
+        "log\u2082(e)^(-1)",
+        0.6931471805599453,
+        0.0031471805599452285
+      ],
+      [
+        "EXP-07",
+        "geometric",
+        0.35000000000000003,
+        "ln(\u221a2)",
+        0.3465735902799727,
+        0.0034264097200273347
+      ],
+      [
+        "EXP-07",
+        "log_ratio",
+        0.35000000000000003,
+        "ln(\u221a2)",
+        0.3465735902799727,
+        0.0034264097200273347
+      ]
+    ],
+    "score_ratios": [
+      [
+        "EXP-01",
+        "A2/best_single",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-01",
+        "A2/best_single",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-01",
+        "best_single/A2",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-01",
+        "best_single/A2",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-03",
+        "A1/best_single",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-03",
+        "A1/best_single",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-03",
+        "best_single/A1",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-03",
+        "best_single/A1",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A1/A2",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A1/A2",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A1/best_single",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A1/best_single",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A2/A1",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A2/A1",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A2/best_single",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "A2/best_single",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "best_single/A1",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "best_single/A1",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "best_single/A2",
+        1.0,
+        "\u03b6=1 (critical)",
+        1.0,
+        0.0
+      ],
+      [
+        "EXP-04",
+        "best_single/A2",
+        1.0,
+        "H(1/2) binary",
+        1.0,
+        0.0
+      ]
+    ]
+  }
+}

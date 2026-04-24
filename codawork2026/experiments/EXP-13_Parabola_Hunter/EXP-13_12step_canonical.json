@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-13",
+  "name": "Parabola Hunter (QCD + Stellar)",
+  "domain": "CROSS-DOMAIN",
+  "carriers": [
+    "Channel_1",
+    "Channel_2",
+    "Channel_3"
+  ],
+  "D": 3,
+  "N": 80,
+  "data_source": {
+    "type": "DERIVED",
+    "url": null,
+    "description": "QCD running coupling at 40 energy scales (1\u21921000 GeV) + stellar nucleosynthesis evolution (40 time steps). Tests for ILR parabolas on 2-simplex."
+  },
+  "data_hash_sha256_16": "0ae27a8abcaecec3",
+  "run_timestamp": "2026-04-22T17:41:34.786917Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-13: Parabola Hunter (QCD + Stellar): 3-part simplex, carriers=['Channel_1', 'Channel_2', 'Channel_3']",
+    "step2_n_samples": 80,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Channel_1",
+      "Channel_2",
+      "Channel_3"
+    ],
+    "data_hash_sha256_16": "0ae27a8abcaecec3",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.45768492320804005,
+      -0.18488159918971628,
+      -0.2728033240183238
+    ],
+    "step4_clr_std_per_part": [
+      0.9292364134020794,
+      0.7416765826160244,
+      0.7195814326152418
+    ],
+    "step5_sigma2_range": [
+      0.00236713018037899,
+      1.9313619033579483
+    ],
+    "step5_sigma2_final": 1.9313619033579483,
+    "step6_pll_coeffs": [
+      0.0003380146181118653,
+      0.0003815374780690819,
+      -0.0957730051130911
+    ],
+    "step6_pll_R2": 0.925808264630879,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      -0.564380144563471,
+      -0.09588067120160561
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 17,
+    "step7_squeeze_closest": {
+      "time_index": 44,
+      "sigma2_A": 0.7074820709324924,
+      "constant": "1/sqrt2",
+      "constant_value": 0.7071067811865475,
+      "test_type": "direct",
+      "test_value": 0.7074820709324924,
+      "delta": 0.0003752897459449178
+    },
+    "step7_squeeze_mean": 0.6454529836045669,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.13306298791497675,
+      0.9533005328173925
+    ],
+    "step8_entropy_mean": 0.7933121283396084,
+    "step8_entropy_cv": 22.19505661344515,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.7933121283396084,
+        "H_mean_decimated": 0.7933088101080749,
+        "variation_pct": 0.00041827565910148196,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.7933121283396084,
+        "H_mean_decimated": 0.7930706507660478,
+        "variation_pct": 0.030439163216380252,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.7933121283396084,
+        "H_mean_decimated": 0.7922947031915044,
+        "variation_pct": 0.12825029540811972,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 2,
+      "stalls": 1,
+      "spikes": 1,
+      "reversals": 0
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.3796122212964165,
+      0.37813654037548244
+    ],
+    "step11_complex_range_im": [
+      -0.2029434651162329,
+      0.0962308072939147
+    ],
+    "step12_radius_range": [
+      0.07939246781454348,
+      0.4304549785877532
+    ],
+    "step12_theta_range": [
+      -2.6506440085849565,
+      2.6268073978454747
+    ],
+    "step9_angular_velocity_std": 0.12268363867421679
+  }
+}

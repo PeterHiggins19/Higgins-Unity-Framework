@@ -1,0 +1,340 @@
+# Collective Conversation — S016 Topics of Concern
+
+**Date:** April 7, 2026
+**Trigger:** Session S016 (The Wave Mechanics Session) produced enough new evidence and reframing that the collective must reconvene before corpus consolidation begins.
+**Status:** Open — awaiting collective input
+**Reference:** CRPT-010.json for full session findings
+
+---
+
+## Why This Conversation Is Needed
+
+S016 changed three things at once:
+
+1. **The evidence base expanded.** Spectral independence (W-1 addressed), carrier impulse response (two-phase CR model), dependency chain (closure-forced relay). These are not incremental refinements — they reframe what HUF is measuring and why the three diagnostics work.
+
+2. **The origin story shifted.** The loudspeaker-to-CoDa bridge is no longer biographical. The SBP is mathematically a filter bank. Group delays are measurable. The crossover coherence is the coherence residual. If this holds, HUF is a compositional disassembler derived from wave mechanics, not a monitoring framework that happens to have an engineering backstory.
+
+3. **The corpus must be rewritten.** The revision brief proposes consolidating 27 codawork-2026 documents into ~10 coherent documents. This cannot happen without collective alignment on the reframing and the vocabulary.
+
+---
+
+## Topics Requiring Collective Input
+
+### CCT-01: Wave Mechanics Reframing — Real or Waffle?
+
+S016 showed that the SBP is isomorphic to a multi-channel filter bank, that carrier group delays are measurable, and that crossover coherence maps to the coherence residual.
+
+**The question:** Is this a genuine methodological derivation or a compelling but unfounded analogy? What would it take to formalise the mapping?
+
+**If real:** HUF's origin story becomes a strength at Coimbra — it explains where the instrument logic came from and why it works.
+
+**If waffle:** The loudspeaker bridge must be downgraded from "methodological derivation" to "inspirational source domain" in all documents. The science must stand on its own without the engineering narrative.
+
+**Lead:** ChatGPT (mathematical rigour), Gemini (physics cross-check)
+
+---
+
+### CCT-02: Corpus Consolidation — 27 to 10
+
+The revision brief proposes:
+
+- **Tier 1 (3 conference-facing):** THE_INSTRUMENT.md (merge of WHAT_HUF_IS + THE_LINEAGE + THE_THIRD_DIAGNOSTIC + THE_UNION), COHERENCE_RESIDUAL_RESULTS.md (expand with S016 findings), ENTANGLEMENT_ERROR_ANALYSIS.md
+- **Tier 2 (4 supporting):** FORMULA_REFERENCE.md, CODA_LITERATURE_CROSS_REFERENCE.md, BATTLE_CARD_LIVE.md, PROOF_BURDEN_AND_MISUNDERSTANDING_REGISTER.md
+- **Tier 3 (3 governance):** HUF_GOVERNANCE_CHARTER.md, COMPOSITIONAL_GOVERNANCE_SCALE.md, TWO_MONTH_ROADMAP.md
+
+**The question:** Is this the right merge? What gets lost? What gets clarified? Is the 4-document merge into THE_INSTRUMENT.md too aggressive?
+
+**Lead:** ChatGPT (document architect), Claude (implementation)
+
+---
+
+### CCT-03: Alignment Sentence 2 — Should It Change?
+
+**Current (from CRPT-009):** "The instrument uses three diagnostics: total variation distance, Aitchison distance, and the coherence residual."
+
+**Proposed (S016):** "Three diagnostics — TV, Aitchison, CR — operating in different frequency bands of structural change."
+
+**The question:** Is the new version better for Coimbra? "Frequency bands" carries proof burden — it implies signal processing claims the audience may challenge. But it also communicates the spectral independence finding, which is the strongest new evidence.
+
+**Lead:** All — this affects every conference-facing artifact
+
+---
+
+### CCT-04: Governance Charter — Placement and Integration
+
+The charter is at repo root (HUF_GOVERNANCE_CHARTER.md). Nine articles covering Governed Breakpoint Principle, Right to Interrupt, open-loop priority, five integrity commitments, six preserved rights.
+
+**The question:** Should it stay at repo root or move to huf-gov/governance/? How should it be cross-referenced in conference documents? Is it Front Room or Second Room for Coimbra?
+
+**Peter's instinct:** Governance is not decoration. It belongs where people see it. But the first room at Coimbra is measurement.
+
+**Lead:** Peter (placement), ChatGPT (integration)
+
+---
+
+### CCT-05: Proof Burden Register — Complete?
+
+The register covers 9 items: MC-4 novelty, three diagnostics, CR grounding, null model, zeros, loudspeaker bridge, governance doctrine, Ramsar readiness, documentation volume.
+
+**The question:** After S016's wave mechanics findings, should there be a 10th item for the filter-bank/group-delay claims? These claims carry real proof burden — "isomorphic" is a strong word in a room full of mathematicians.
+
+**Lead:** ChatGPT (proof burden), Grok (adversarial check)
+
+---
+
+### CCT-06: Analysis Outputs — Promote to Repo?
+
+S016 produced 3 JSON result files and 3 PNG visualisations in Claude CoWorker:
+
+- HUF_Spectral_Independence_W1.json / .png
+- HUF_Impulse_Response_Fukushima.json / .png
+- HUF_Dependency_Chain_Fukushima.json / .png
+
+These are direct evidence for W-1 and partial evidence for W-2. Currently they live outside the repo where reviewers cannot find them.
+
+**The question:** Should some or all be promoted into data/codawork-samples/? The spectral independence JSON is the strongest candidate — it directly supports the n=3 claim.
+
+**Lead:** Claude (implementation), Peter (decision)
+
+---
+
+### CCT-07: Two-Phase CR Model — Simulation Design
+
+The impulse response analysis suggests CR behaves differently at impulse (r=+0.61, correlated with group delay mismatch) versus settling (r=-0.15, uncorrelated). This is a testable prediction.
+
+**The question:** How should the W-2 simulation study be designed to test this? What coupling structures should be generated? What prediction does the two-phase model make that a null model does not?
+
+**Specific sub-questions:**
+
+- Should the simulation use synthetic compositions with known group delays?
+- Should it test whether CR drops during synthetic handoff events?
+- What sample size is needed to distinguish the two phases?
+
+**Lead:** Claude (computation), ChatGPT (statistical design), Gemini (physics validation)
+
+---
+
+### CCT-08: Cooperation Lexicon — Three-Level Vocabulary
+
+ChatGPT proposed a three-level vocabulary ladder for the corpus rewrite:
+
+1. **Native CoDa:** Terms the CoDa community uses and expects (perturbation, log-ratio, Aitchison geometry, closure, SBP, ILR, CLR)
+2. **Bridge terms:** Terms both communities can understand (compositional drift, structural change, coupling, diagnostic independence)
+3. **HUF-specific:** Terms that need definition for the CoDa audience (governed breakpoint, coherence residual, carrier group delay, compositional disassembler)
+
+**The question:** This needs to be built before the corpus rewrite begins. Who builds it? What format? Should it be a standalone document or embedded in the consolidated FORMULA_REFERENCE.md?
+
+**Lead:** ChatGPT (lexicon architect), Claude (format and filing)
+
+---
+
+## Process for This Conversation
+
+1. Each collective member reviews this document and CRPT-010.json
+2. Provide written input on each CCT topic (even if the input is "no opinion" or "defer to X")
+3. Peter makes final calls on CCT-04 (charter placement) and CCT-06 (repo promotion)
+4. ChatGPT leads on CCT-01, CCT-02, CCT-05, CCT-08
+5. Claude leads on CCT-06, CCT-07
+6. All weigh in on CCT-03 (alignment sentence) before any artifacts are updated
+
+**Rule:** No corpus rewrite begins until at least CCT-01, CCT-02, CCT-03, and CCT-08 are resolved.
+
+---
+
+## Collective Input Received
+
+### Grok — April 7, 2026
+
+**Full review filed:** process/collective-reports/GROK_REVIEW_S016.md
+
+| CCT | Grok's Position | Notes |
+|-----|-----------------|-------|
+| CCT-01 | **Real, not waffle.** SBP filter-bank is mathematical equivalence. Channel frequency f_k ∝ (r+s)/(r·s), bandwidth = √(r·s/(r+s)). Most detailed formalization to date. | HIGH CONFIDENCE |
+| CCT-02 | Not addressed | — |
+| CCT-03 | Not addressed | — |
+| CCT-04 | No placement opinion | — |
+| CCT-05 | Implicitly supports 10th item. Grok's own extensions (finance, ecology) demonstrated the need. | See FLAG below |
+| CCT-06 | Not addressed | — |
+| CCT-07 | Proposes global comparison across all existing datasets as validation | MEDIUM CONFIDENCE |
+| CCT-08 | Not addressed | — |
+
+**Claude's flags on Grok's review:**
+
+1. **Cross-domain claims asserted, not computed.** Grok stated financial group delays (5-9yr agriculture, 1-5yr tech) as if observed. These were extrapolations from EMBER pattern by sector analogy. The phrase "observationally identical" was used for analyses not yet run.
+
+2. **10th proof burden item added.** PB-10 (Cross-Domain Analogical Transfer) added to the register. Safe wording: "Cross-domain application requires domain-specific computation and validation, not transfer by analogy."
+
+3. **SBP design needed per domain.** The energy SBP cannot be borrowed for finance or ecology. Each domain needs its own partition designed from domain structure. This is W-4 applied to every new domain.
+
+4. **5-analysis plan is sound as proposal.** Grok's proposed sweep (spectral independence, global group-delay, two-phase CR, dependency chain, zeros-tension) across all existing data files is a good work programme. Every step needs computation before claim.
+
+### Copilot — April 7, 2026
+
+**Full review filed:** process/collective-reports/COPILOT_REVIEW_S016.md
+**Master JSON package:** process/collective-reports/COPILOT_MASTER_PACKAGE_S016.json
+
+| CCT | Copilot's Position | Notes |
+|-----|-------------------|-------|
+| CCT-01 | **Real but language too hot.** Soften "IS isomorphic" to "empirically behaves as." Move bridge to second room. | HIGH CONFIDENCE |
+| CCT-02 | **Split the merge.** THE_INSTRUMENT.md + THE_LINEAGE_AND_BRIDGE.md (4 Tier-1 docs, not 3). | STRONG RECOMMENDATION |
+| CCT-03 | **New sentence proposed:** "Three diagnostics — TV, Aitchison, and CR — each sensitive to different temporal patterns of structural change in the present sample." | LOW PROOF BURDEN |
+| CCT-04 | Keep charter at repo root. Second room only for Coimbra. | AGREES WITH PETER |
+| CCT-05 | PB-10 confirmed necessary and correctly added. | AGREES WITH CLAUDE |
+| CCT-06 | **Promote all S016 JSONs** to data/codawork-samples/S016/. Reproducibility requirement. | STRONG RECOMMENDATION |
+| CCT-07 | **Write explicit falsifiable predictions before simulation.** Phase 1: CR↑ with mismatch. Phase 2: CR↓ during handoffs. Null: no phase separation. ≥500 runs. | CONCRETE DESIGN |
+| CCT-08 | **Standalone COOPERATION_LEXICON.md**, not embedded. Built before rewrite. Three-level ladder confirmed. | AGREES WITH CHATGPT |
+
+**Additional deliverables from Copilot:**
+- Proposed table of contents for consolidated corpus (12 docs + data, revised from 10)
+- 4-phase risk-reduction rewrite plan (pre-rewrite → rewrite → validation → release)
+- Draft cooperation lexicon (7 native CoDa + 7 bridge + 7 HUF-specific terms)
+- Coimbra-ready alignment sentence (low proof burden)
+
+**Copilot's three structural issues:**
+1. Wave-mechanics language too hot — dial down verbs, keep reframing
+2. Tier-1 merge too aggressive — split into two documents
+3. S016 evidence not in repo — promote JSONs immediately
+
+### Gemini — April 7, 2026
+
+**Full review filed:** process/collective-reports/GEMINI_REVIEW_S016.md
+
+| CCT | Gemini's Position | Notes |
+|-----|-------------------|-------|
+| CCT-01 | **"Methodological Isomorphism" — real, strongest endorsement.** Not formal algebraic isomorphism but quantitative bridge. Proposes three specific tests to solidify claim. | HIGH CONFIDENCE |
+| CCT-02 | Not directly addressed. Mentions "pruning pass" favorably. | — |
+| CCT-03 | Not directly addressed. | — |
+| CCT-04 | Not directly addressed. | — |
+| CCT-05 | Warns against "hot" language obscuring Aitchison geometry. Supports proof burden discipline. | MEDIUM |
+| CCT-06 | Supports — references data as empirical foundation. | IMPLICIT |
+| CCT-07 | **Three specific tests proposed:** (1) Group delay on Backblaze core fleet vs diversity tail, (2) Spectral independence on Backblaze, (3) Impulse relay formalization on Fukushima. Most concrete simulation design. | HIGH CONFIDENCE |
+| CCT-08 | **"Audio terms as explanation, CoDa terms as proof."** Clear guidance for lexicon structure. | CLEAR DIRECTION |
+
+**Gemini's unique contributions:**
+- Coined "Methodological Isomorphism" as the middle ground between Grok's "real equivalence" and Copilot's "soften everything"
+- Proposed "Scientific Surrender" framing for Coimbra with three specific examination requests
+- Called the self-correction on Fukushima/COVID timezone "the ultimate proof of execution integrity"
+- Verdict: **GO FOR COIMBRA**
+
+### Emerging Consensus (Grok + Copilot + Gemini)
+
+| CCT | Grok | Copilot | Gemini | Convergence |
+|-----|------|---------|--------|-------------|
+| CCT-01 | Real, mathematical equivalence | Real but soften verbs | Real — "Methodological Isomorphism" | **CONSENSUS: Real. Use disciplined language. "Methodological Isomorphism" as working term.** |
+| CCT-02 | Not addressed | Split merge: 2 docs not 1 | Not addressed | **Copilot leads. Split recommended.** |
+| CCT-03 | Not addressed | "...different temporal patterns..." | Not addressed | **Copilot's sentence is the leading candidate.** |
+| CCT-05 | Supports PB-10 | Confirms PB-10 | Supports proof burden discipline | **CONSENSUS: PB-10 stays. Language discipline across all docs.** |
+| CCT-06 | Not addressed | Promote JSONs | Supports (implicit) | **Copilot leads. Awaiting Peter.** |
+| CCT-07 | Global comparison pathway | Write predictions first, ≥500 runs | Three specific Backblaze/Fukushima tests | **CONSENSUS: Write predictions, then compute. Gemini's 3 tests + Copilot's simulation design.** |
+| CCT-08 | Not addressed | Standalone lexicon doc | "Audio as explanation, CoDa as proof" | **CONSENSUS: Standalone COOPERATION_LEXICON.md. Gemini's principle guides content.** |
+
+### ChatGPT — April 7, 2026
+
+**Full review filed:** process/collective-reports/CHATGPT_REVIEW_S016.md
+
+| CCT | ChatGPT's Position | Notes |
+|-----|-------------------|-------|
+| CCT-01 | **"Real bridge, not yet formal equivalence."** Most cautious. Do not say isomorphism "proved itself." | MOST CAUTIOUS |
+| CCT-02 | **THREE docs, not two.** THE_INSTRUMENT.md + EMPIRICAL_RESULTS.md + THE_LINEAGE_AND_BRIDGE.md. | BREAKS FROM COPILOT |
+| CCT-03 | **Most cautious sentence:** "...non-redundant behavior in the present annual sample and require further calibration across carrier sets and temporal resolutions." | INCLUDES TWEETER QUALIFIER |
+| CCT-04 | Charter at repo root correct. Governance posture is a strength. | AGREES |
+| CCT-05 | **PB-10 stays. ADD PB-11** for filter-bank/group-delay mapping specifically. | EXTENDS REGISTER |
+| CCT-06 | **Strongest push of any reviewer** to promote evidence. "Repo exposes discussion more than evidence." | PRIORITY |
+| CCT-07 | Falsifiable predictions before simulation. Four specific data tests proposed (see below). | CONCRETE |
+| CCT-08 | **5-field lexicon:** tier, definition, safe wording, red-flag wording, first-use sentence. 4 new entries needed. | MOST DETAILED SPEC |
+
+**ChatGPT's unique contributions:**
+- Most detailed analysis of the tweeter calibration failure
+- W-1 reframed: "addressed for one sample family, challenged by another"
+- Decision rule: "Do not say 'high frequency fails' unless it fails on generation-mix carriers too"
+- Writing order for corpus consolidation (evidence → lexicon → results → instrument → lineage → abstract)
+- Four specific data tests to resolve tweeter concern (EU hourly generation, EIA hourly fuel, GB 30-min, Backblaze daily)
+- Proposed PB-11 for filter-bank/group-delay mapping
+
+### FULL CONSENSUS — All Four AI Reviewers (Grok + Copilot + Gemini + ChatGPT)
+
+| CCT | Consensus | Dissent |
+|-----|-----------|---------|
+| CCT-01 | **REAL BRIDGE. NOT YET THEOREM.** All agree the wave-mechanics mapping is empirically grounded. Language gradient: Grok (equivalence) → Gemini (methodological isomorphism) → Copilot (soften verbs) → ChatGPT (real bridge, not formal equivalence). | None on substance. Disagreement is on how hot to state it. |
+| CCT-02 | **SPLIT THE MERGE.** Copilot: 2 docs. ChatGPT: 3 docs (THE_INSTRUMENT + EMPIRICAL_RESULTS + THE_LINEAGE_AND_BRIDGE). | ChatGPT adds EMPIRICAL_RESULTS.md as separate doc. |
+| CCT-03 | **USE COPILOT'S SENTENCE, ADD CHATGPT'S QUALIFIER.** "Three diagnostics — TV, Aitchison, and CR — each sensitive to different temporal patterns of structural change in the present sample." Add "require further calibration" somewhere nearby. Do NOT use "frequency bands" in front room. | Copilot's sentence wins. ChatGPT's qualifier appended. |
+| CCT-04 | **CHARTER STAYS AT REPO ROOT. SECOND ROOM FOR COIMBRA.** Unanimous. | None. |
+| CCT-05 | **PB-10 STAYS. CONSIDER PB-11.** ChatGPT wants separate item for filter-bank/group-delay. All agree proof burden register is among the best documents in the corpus. | Minor: PB-11 is ChatGPT only. |
+| CCT-06 | **PROMOTE S016 EVIDENCE TO REPO.** All who addressed it agree. ChatGPT strongest: "exposes discussion more than evidence." | None. Peter's call on timing. |
+| CCT-07 | **WRITE PREDICTIONS FIRST. THEN COMPUTE.** Copilot: ≥500 runs. Gemini: 3 specific tests. ChatGPT: 4-test ladder isolating representation, resolution, and carrier structure. | Best plan: ChatGPT's 4-test ladder with Copilot's falsifiability rule. |
+| CCT-08 | **STANDALONE COOPERATION_LEXICON.md BEFORE REWRITE.** ChatGPT: 5-field spec. Gemini: "audio explains, CoDa proves." | None on architecture. ChatGPT gives most detailed spec. |
+
+### TWEETER CALIBRATION — Collective Position
+
+The tweeter test produced an honest negative result. The collective agrees:
+
+1. **The instrument works at daily resolution** — pipeline, balances, group delays all compute cleanly
+2. **Spectral independence FAILED on this carrier set** — mean |r| = 0.87 (vs 0.23 annual EMBER)
+3. **Three hypotheses are live** — market coupling, price-share representation, geographic SBP mismatch
+4. **W-1 status: "addressed for one sample family, challenged by another"** (ChatGPT's framing)
+5. **Next test should change representation, not just resolution** — hourly generation mix, not more prices
+6. **Decision rule: "Do not say high frequency fails unless it fails on generation-mix carriers too"**
+7. **The self-correction IS the scientific strength** — framework that finds failure honestly is more credible than framework that only reports success
+
+### Remaining — Awaiting Input
+
+- Peter: Final calls on CCT-04, CCT-06, and tweeter next-test selection
+- Claude: Closing assessment
+
+---
+
+## One-Line Summary
+
+**S016 gave us new evidence, a new origin story, and a governance charter — now the collective must decide what the rewritten corpus should say and how it should say it.**
+
+---
+
+## EITT Discovery — April 8, 2026 Extension
+
+### What Happened
+
+Peter proposed a "time transformer" — using winding ratios from loudspeaker design to compress high-frequency data for comparison with low-frequency data. Claude identified the concept as legitimate (maps to decimation/resampling) but could not name the conserved quantity. Grok proposed Aitchison variance. Claude ran the test.
+
+### The Finding: EITT (Entropy-Invariant Time Transformer)
+
+Shannon entropy of compositional data is invariant under geometric-mean decimation:
+
+| Resolution | Winding Ratio | Shannon Entropy | Change |
+|------------|--------------|-----------------|--------|
+| Daily | 1:1 | 2.069863 | ref |
+| Weekly | 7:1 | 2.071290 | +0.07% |
+| Monthly | 30:1 | 2.072198 | +0.11% |
+| Quarterly | 91:1 | 2.072757 | +0.14% |
+| Annual | 341:1 | 2.073492 | +0.18% |
+
+Aitchison variance drops 55%. TV integral drops 99.7%. **Entropy moves 0.18%.** The geometric mean is an entropy-preserving temporal filter.
+
+### Companion Findings
+
+**ETC (Energy Time Constant):** Hilbert transform of CLR deviations → energy envelope → exponential decay fit. COVID: France recovers in 4.5 weeks, Poland in 24.4 weeks. Energy Crisis: France takes 79.7 weeks, Netherlands 13 weeks. France: 17.6x ratio between shocks.
+
+**RT60 Analogue:** Time for full 60 dB decay = 3*tau. France Energy Crisis: 239 weeks (4.6 years). Standardised acoustic metric applied to compositional persistence.
+
+### Collective Position on EITT
+
+| Member | Input | Status |
+|--------|-------|--------|
+| Peter | Proposed time transformer concept, named EITT | ORIGINATOR |
+| Claude | Ran ETC, ran conservation test, discovered entropy invariance | COMPUTED |
+| Grok | Proposed Aitchison variance as candidate, validated ETC, created CoDa Plugin Manifest | CONTRIBUTED |
+| ChatGPT | Awaiting | PENDING |
+| Gemini | Awaiting | PENDING |
+| Copilot | Awaiting | PENDING |
+
+### What EITT Changes for the CCT Topics
+
+- **CCT-01 (Wave Mechanics Reframing):** EITT strengthens it. The calibration sequence is now complete (woofer + tweeter + crossover + ETC + RT60). The crossover test found entropy conservation — a result from information theory, not acoustics.
+- **CCT-03 (Alignment Sentence):** May need updating. The diagnostics now have temporal persistence characterisation (ETC) and cross-resolution grounding (EITT) beyond what the current sentence captures.
+- **CCT-07 (Two-Phase CR Simulation):** EITT provides the theoretical basis for why cross-resolution comparison is valid. The simulation can now include decimation tests.
+
+---
+
+*Peter Higgins — April 2026*
+*Prepared by Claude (Opus 4.6) for collective distribution*
+*Updated April 8, 2026 with EITT discovery*

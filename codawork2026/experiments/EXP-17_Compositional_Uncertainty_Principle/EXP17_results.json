@@ -1,0 +1,252 @@
+{
+  "experiment": "EXP-17",
+  "title": "Compositional Uncertainty Principle",
+  "conjecture": "Compositional chaos floor scales with carrier count N, analogous to quantum uncertainty scaling with hbar",
+  "scaling_law": {
+    "alpha": 0.1785706661106778,
+    "A": 6.366524900330531,
+    "formula": "floor = 6.3665 * N^0.1786",
+    "carrier_counts": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "mean_floors": [
+      8.6,
+      5.65,
+      9.333333333333334,
+      8.166666666666668,
+      8.166666666666668,
+      9.65,
+      9.65
+    ],
+    "std_floors": [
+      4.488689489520669,
+      2.0825998708878823,
+      4.616696750804508,
+      3.231356784180086,
+      3.231356784180086,
+      4.297092039973079,
+      4.297092039973079
+    ],
+    "mean_aitchison_var": [
+      0.034757508390124994,
+      0.27630270630299736,
+      0.6293114338136602,
+      16.908823406367432,
+      14.688066771932574,
+      1.2233268784588014,
+      1.1187295776591635
+    ],
+    "mean_dev_rates": [
+      8.6,
+      5.65,
+      9.333333333333334,
+      8.166666666666666,
+      8.166666666666666,
+      9.650000000000002,
+      9.650000000000002
+    ]
+  },
+  "artifact_check": {
+    "integrator_comparison": {
+      "RK4": {
+        "n_devs": 114,
+        "chaos_pct": 9.5
+      },
+      "RK2": {
+        "n_devs": 113,
+        "chaos_pct": 9.416666666666666
+      },
+      "Euler": {
+        "n_devs": 111,
+        "chaos_pct": 9.25
+      }
+    },
+    "timestep_comparison": {
+      "0.0005": {
+        "n_devs": 114,
+        "chaos_pct": 9.5
+      },
+      "0.001": {
+        "n_devs": 114,
+        "chaos_pct": 9.5
+      },
+      "0.002": {
+        "n_devs": 114,
+        "chaos_pct": 9.5
+      },
+      "0.005": {
+        "n_devs": 114,
+        "chaos_pct": 9.5
+      }
+    },
+    "ic_variation": {
+      "trial_0": {
+        "x0": 0.2872700594236812,
+        "n_devs": 111,
+        "chaos_pct": 9.25
+      },
+      "trial_1": {
+        "x0": 0.5753571532049581,
+        "n_devs": 110,
+        "chaos_pct": 9.166666666666666
+      },
+      "trial_2": {
+        "x0": 0.4659969709057026,
+        "n_devs": 114,
+        "chaos_pct": 9.5
+      },
+      "trial_3": {
+        "x0": 0.3993292420985183,
+        "n_devs": 113,
+        "chaos_pct": 9.416666666666666
+      },
+      "trial_4": {
+        "x0": 0.17800932022121826,
+        "n_devs": 113,
+        "chaos_pct": 9.416666666666666
+      },
+      "trial_5": {
+        "x0": 0.17799726016810133,
+        "n_devs": 113,
+        "chaos_pct": 9.416666666666666
+      },
+      "trial_6": {
+        "x0": 0.12904180608409974,
+        "n_devs": 112,
+        "chaos_pct": 9.333333333333334
+      },
+      "trial_7": {
+        "x0": 0.5330880728874676,
+        "n_devs": 110,
+        "chaos_pct": 9.166666666666666
+      },
+      "trial_8": {
+        "x0": 0.40055750587160444,
+        "n_devs": 113,
+        "chaos_pct": 9.416666666666666
+      },
+      "trial_9": {
+        "x0": 0.4540362888980227,
+        "n_devs": 113,
+        "chaos_pct": 9.416666666666666
+      }
+    }
+  },
+  "fisher_info": {
+    "2": {
+      "mean_trace": 4.008729142610426,
+      "fisher_at_events": 4.009758360578267,
+      "fisher_at_normal": 4.008653654351604,
+      "n_devs": 82
+    },
+    "3": {
+      "mean_trace": 87.87506953595837,
+      "fisher_at_events": 35.886838164070554,
+      "fisher_at_normal": 91.19346728310016,
+      "n_devs": 72
+    },
+    "4": {
+      "mean_trace": 1000003868.2964058,
+      "fisher_at_events": 1500.111719753204,
+      "fisher_at_normal": 1104976492.5809863,
+      "n_devs": 114
+    },
+    "5": {
+      "mean_trace": 1010327336877.4471,
+      "fisher_at_events": 1005386752933.419,
+      "fisher_at_normal": 1010756952872.58,
+      "n_devs": 96
+    },
+    "6": {
+      "mean_trace": 1011268104046.4056,
+      "fisher_at_events": 1005232362838.1635,
+      "fisher_at_normal": 1011792951107.9918,
+      "n_devs": 96
+    },
+    "7": {
+      "mean_trace": 1973312190.4115136,
+      "fisher_at_events": 2689649.27606471,
+      "fisher_at_normal": 2152459694.1510997,
+      "n_devs": 100
+    },
+    "8": {
+      "mean_trace": 25495428905.031216,
+      "fisher_at_events": 23390648828.03151,
+      "fisher_at_normal": 25686772548.39482,
+      "n_devs": 100
+    }
+  },
+  "prediction_horizon": {
+    "2": {
+      "horizon_time": 12.0,
+      "max_divergence": 3.986507451262519e-08
+    },
+    "3": {
+      "horizon_time": 12.0,
+      "max_divergence": 1.7117083775555922e-07
+    },
+    "4": {
+      "horizon_time": 12.0,
+      "max_divergence": 2.0836052439639386e-07
+    },
+    "5": {
+      "horizon_time": 12.0,
+      "max_divergence": 2.2023481961781306e-07
+    },
+    "6": {
+      "horizon_time": 12.0,
+      "max_divergence": 3.5248997553073657e-07
+    },
+    "7": {
+      "horizon_time": 12.0,
+      "max_divergence": 3.981652120163626e-07
+    },
+    "8": {
+      "horizon_time": 12.0,
+      "max_divergence": 4.1139544333968745e-07
+    }
+  },
+  "parameters": {
+    "systems_tested": [
+      [
+        5.0,
+        200.0,
+        2.0,
+        "Standard (m=5, k=200, c=2)"
+      ],
+      [
+        3.0,
+        300.0,
+        1.0,
+        "Light stiff (m=3, k=300, c=1)"
+      ],
+      [
+        10.0,
+        100.0,
+        5.0,
+        "Heavy soft (m=10, k=100, c=5)"
+      ],
+      [
+        2.0,
+        400.0,
+        0.5,
+        "Ultra-light stiff (m=2, k=400, c=0.5)"
+      ],
+      [
+        8.0,
+        150.0,
+        3.0,
+        "Heavy medium (m=8, k=150, c=3)"
+      ]
+    ],
+    "dt": 0.001,
+    "t_end": 12.0,
+    "x0": 0.3
+  }
+}

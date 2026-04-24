@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-10",
+  "name": "Full Sweep (CKM+PMNS+SEMF)",
+  "domain": "CROSS-DOMAIN",
+  "carriers": [
+    "Component_1",
+    "Component_2",
+    "Component_3"
+  ],
+  "D": 3,
+  "N": 52,
+  "data_source": {
+    "type": "DERIVED",
+    "url": "https://pdg.lbl.gov/ (CKM, PMNS matrices)",
+    "description": "Combined dataset: CKM quark mixing matrix (3 rows), PMNS neutrino mixing matrix (3 rows), SEMF binding energy decomposition for Z=2..92 (46 nuclei). Tests cross-domain universality."
+  },
+  "data_hash_sha256_16": "84d5c71ac2d3c2da",
+  "run_timestamp": "2026-04-22T17:41:33.133979Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-10: Full Sweep (CKM+PMNS+SEMF): 3-part simplex, carriers=['Component_1', 'Component_2', 'Component_3']",
+    "step2_n_samples": 52,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Component_1",
+      "Component_2",
+      "Component_3"
+    ],
+    "data_hash_sha256_16": "84d5c71ac2d3c2da",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      1.2544189074514007,
+      0.5883957183829405,
+      -1.8428146258343412
+    ],
+    "step4_clr_std_per_part": [
+      0.7996655613903174,
+      0.4067373101050073,
+      0.9046637109569566
+    ],
+    "step5_sigma2_range": [
+      1.6233166794275604,
+      11.805568166807237
+    ],
+    "step5_sigma2_final": 1.6233166794275604,
+    "step6_pll_coeffs": [
+      0.005426839860448726,
+      -0.40117817632851005,
+      8.804316948468228
+    ],
+    "step6_pll_R2": 0.8727416050695158,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      36.962411518011706,
+      1.3900605257183036
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 25,
+    "step7_squeeze_closest": {
+      "time_index": 30,
+      "sigma2_A": 2.0753420429185505,
+      "constant": "ln_phi",
+      "constant_value": 0.48121182505960347,
+      "test_type": "reciprocal",
+      "test_value": 0.4818482829913191,
+      "delta": 0.0006364579317156283
+    },
+    "step7_squeeze_mean": 3.114232968701275,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.12019239313623246,
+      0.9630393710792228
+    ],
+    "step8_entropy_mean": 0.6328311425954081,
+    "step8_entropy_cv": 20.30844490681942,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.6328311425954081,
+        "H_mean_decimated": 0.6669404603370332,
+        "variation_pct": 5.389955620978739,
+        "pass": false
+      },
+      "compression_4x": {
+        "H_mean_original": 0.6328311425954081,
+        "H_mean_decimated": 0.688491145751635,
+        "variation_pct": 8.795395708237503,
+        "pass": false
+      },
+      "compression_8x": {
+        "H_mean_original": 0.6338115355617204,
+        "H_mean_decimated": 0.6940840886957456,
+        "variation_pct": 9.509538680233725,
+        "pass": false
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 27,
+      "stalls": 4,
+      "spikes": 0,
+      "reversals": 23
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.3109868492007424,
+      0.6227997692799794
+    ],
+    "step11_complex_range_im": [
+      -0.049087549556169154,
+      0.7730054637898965
+    ],
+    "step12_radius_range": [
+      0.01879825608848102,
+      0.7936125085348141
+    ],
+    "step12_theta_range": [
+      -3.029468246638945,
+      1.3424138102335808
+    ],
+    "step9_angular_velocity_std": 0.5401420185736528
+  }
+}

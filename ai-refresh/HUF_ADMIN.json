@@ -1,14 +1,13 @@
 {
   "_meta": {
     "type": "HUF_ADMINISTRATIVE_REGISTER",
-    "version": "2.1",
+    "version": "2.2",
     "created": "2026-04-13",
-    "updated": "2026-04-18",
+    "updated": "2026-04-22",
     "author": "Peter Higgins",
     "purpose": "Single source of truth for all HUF project identity, contact information, websites, canonical names, terms, standards, and administrative references. Extends RWA-001. If any AI or document uses a different name, URL, or term — this file wins.",
     "update_authority": "Peter Higgins only"
   },
-
   "principal": {
     "name": "Peter Higgins",
     "role": "Independent Researcher, Framework Author, Sole Operator",
@@ -17,7 +16,6 @@
     "email_primary": "PeterHiggins@roguewaveaudio.com",
     "email_personal": "peterhiggins2016@gmail.com"
   },
-
   "corporate": {
     "entity": "Rogue Wave Audio",
     "standard": "RWA-001",
@@ -25,26 +23,35 @@
     "website": null,
     "note": "Rogue Wave Audio is Peter's corporate identity. RWA-001 is the governance standard under which HUF operates."
   },
-
   "project": {
     "full_name": "Higgins Unity Framework",
     "abbreviation": "HUF",
     "tagline": "Compositional structure as an open-loop monitoring signal.",
-    "status": "ACTIVE — Phase 2 EITT hardening in progress. HIVIP methodology established. Nuclear staircase programme (prime-2 mechanism, stability corridor). codawork2026/ package consolidated (65 files). Refresh chain v3.1.",
-    "status_date": "2026-04-18",
+    "status": "EXPERIMENT LADDER CLOSED — 21 experiments complete, Information Mechanics framework established. Refresh chain v5.0. Four physical domains (Energy, Matter, Force, Gravity) form K₄ complete graph with all 6 bridges validated. Compositional Uncertainty Principle: floor = 6.37×N^0.18 (topological invariant). Force-matter asymmetry: 8:1 (steel), 296:0 (EM). 12-step Higgins Decomposition pipeline finalized. Three noise floors triad: quantum, thermodynamic, compositional. Closing documents produced: Experiment Journal, Complete Summary, Information Mechanics Declaration.",
+    "status_date": "2026-04-22",
     "founded": "2025",
     "domain": "Compositional data analysis (CoDa), Aitchison geometry, monitoring systems",
     "milestones": {
       "2025": "Framework conception, initial development",
       "2026-02": "Ratio State Monitoring name locked for literature submission",
       "2026-03": "GitHub repo launched, multi-AI collaboration established",
-      "2026-04-13": "Full repo restructure. AI refresh layer (FAST_REFRESH + INTEGRITY_MANIFEST + ADMIN + spec) validated across Claude, ChatGPT, Grok, Copilot, Gemini. 286 files organized into 12 top-level folders. All five cold-start tests passed (10/10 questions). System declared STABLE.",
-      "2026-04-17": "codawork2026/ package consolidated. 78 aged drafts archived. Geochemistry extension (40,666 rocks, 37/39 TAS pass). Gold Standard Working Example (10-step Higgins Decomposition, 23pp, 11 plots). CoDaWork talk deck (16 slides). Refresh chain v3.0. Geometric mean empirical proof articulated.",
-      "2026-04-18": "HIVIP methodology established (Higgins Iterative Validation and Integrity Protocol). Nuclear staircase programme: prime-2 mechanism confirmed (every step dN=0,2,4,6), stability corridor Z=114-126/N≈184. 3 ChatGPT methodology briefings (precedent/lineage, project arc, nuclear assessment). 2 general conference handouts. Refresh chain v3.1.",
-      "2026-06": "CoDaWork 2026, Coimbra, Portugal (upcoming)"
+      "2026-04-13": "Full repo restructure. AI refresh layer validated across 5 AI systems. 286 files. System declared STABLE.",
+      "2026-04-17": "codawork2026/ consolidated. Geochemistry extension (40,666 rocks). Gold Standard Working Example. Refresh chain v3.0.",
+      "2026-04-18": "HIVIP methodology established. Nuclear staircase programme. Refresh chain v3.1.",
+      "2026-04-19": "Programme complete: 75 systems, 12 experiments. F17 full chain (44 domains). Nature's Confirmation Series (23 systems, 96%). CIP terminology sweep. Refresh chain v3.3–v3.8.",
+      "2026-04-20": "EXP-13 Calibration Proof (7 theorems, 10⁻¹⁵ precision). HDCP (5 theorems). HFPA hierarchy locked. Higgins Tagging Convention. EXP-14 HFSP on AME2020 (Ne-20 discovery). Refresh chain v4.0–v4.3.",
+      "2026-04-21": "EXP-14 addendum: intermediate rocks decoded via pairwise CoDa balance (Peter Higgins insight). Super squeeze: 1/π→φ² at δ=0.00003 (tightest in programme). EXP-15 X-ray crystallography: first ENERGY-domain confirmation, dual-anchor validated. Refresh chain v4.4.",
+      "2026-04-22": "Refresh chain audit and update to v4.5. Naming drift corrected ('Unified'→'Unity'). Definitive Higgins Decomposition Reference v1.0 (19pp). All 4 new methods (super squeeze, pairwise balance, dual-anchor, anti-lock) documented in refresh chain. Experiment registry extended to EXP-15 (81 systems).",
+      "2026-06": "CoDaWork 2026, Coimbra, Portugal (upcoming)",
+      "2026-04-22_v5": "EXP-16 spring-mass force composition (21 diagrams, interactive simulator). EXP-17 Compositional Uncertainty Principle (α=+0.18, artifact-free). EXP-18 force-matter bridge (8:1 asymmetry in mild steel). EXP-18b K₄ complete graph (6/6 bridges). Information Mechanics Declaration. Experiment ladder CLOSED. Refresh chain v5.0.",
+      "2026-04-22_simplex_scope": "Higgins Simplex Scope named as CoDaWork 2026 centerpiece. Full programme review and reflection. 37 claims classified. Mathematical addendum updated with Compositional Uncertainty Principle theorem. All tracking files refreshed to current state.",
+      "2026-04-22_canonical_validation": "Canonical Validation Run: all 19 experiments (EXP-01 through EXP-18b) re-run through 12-step Higgins Decomposition pipeline v1.0. All 19 complete. Gauge R&R: 4/4 DETERMINISTIC (bit-identical outputs on identical data). Deliverables: 19 JSON results, 19 PNG diagnostic plots, combined results JSON, gauge R&R report, Canonical_Validation_Report.docx. Pipeline scripts (higgins_decomposition_12step.py, run_full_experiment_chain.py, gauge_rr_full.py) distributed to all experiment folders. Refresh chain v5.1.",
+      "2026-04-22_exp19b_euler_family": "POINT OF INTEREST — EULER-FAMILY DISCOVERY. EXP-19b Fourier conjugate pair oracle validates 6 pipeline optimizations (O(N²)→O(N), 7.8× speedup). Peter Higgins directive 'I do not trust loss of test and data' retained all 28 constants. Hunt through real-world data revealed: EXP-01 Gold/Silver σ²_A≈1/(2π) δ=0.020%, EXP-03 SEMF σ²_A≈1/(π^e) δ=0.013%, EXP-14 AME2020 σ²_A≈2π δ=0.029%. All three below p<0.05 under uniform null. Trajectory crossings in EXP-07, EXP-11, EXP-12, EXP-14, EXP-16. Pipeline's log→complex→polar structure maps exactly to Euler identity e^(iπ)=-1. Cross-domain confirmation across commodities, nuclear physics, QCD, gravity — 44 orders of magnitude. Refresh chain v5.3.",
+      "2026-04-23_naturalness": "TRANSCENDENTAL NATURALNESS HYPOTHESIS (Peter Higgins). Character Analysis of Higgins Decomposition: 19-page DUT exploded diagnostic, 63 atomic operations, full state machine, variable registry. Constant library expanded 29→35 (Euler reciprocals + Lambert W + Dottie + Glaisher-Kinkelin). Conjugate pair catalog expanded 12→13 (P13 Airy ↔ cubic phase). Hypothesis: absence of transcendental proximity in decomposed system is diagnostic — either non-natural or improperly decomposed. No prior art (Gemini confirmed). HTP rapid pretest tool built. Full sweep: 17/18 real-world = NATURAL, 2 INVESTIGATE, 0 FLAG. Important finding: uniform random passes (necessary not sufficient). Refresh chain v5.4.",
+      "2026-04-23_adversarial": "ADVERSARIAL ROBUSTNESS ANALYSIS. 21 attack vectors, 14 survived, 6 broken (input validation), 1 crash (D=1). Fail-safe property confirmed: no plausible-but-wrong output possible. 4 input guards specified. Character Analysis now 28 pages (Sections 1-16). Hˢ symbol adopted. PLL fully retired → HVLD. Document positioned as standalone Hˢ tool spec. Three interactive tools updated (Spectrum Analyzer, EXP-16, EXP-19). Refresh chain v5.5.",
+      "2026-04-23_release": "Hˢ RELEASE VALIDATION. 15/15 NATURAL across 12 domains. Pipeline v1.0 with 4 guards, 35 constants, HVLD, match density, PID, transfer entropy. All extensions built and tested. Input guards operational (D≥2, N≥5, NaN/Inf, scale). Match density discriminator resolves IVT false positive (39× gap). Character Analysis 30+ pages. Legacy tools archived. Refresh chain v5.7. RELEASE STATE for CoDaWork 2026."
     }
   },
-
   "web_presence": {
     "github_repo": "https://github.com/PeterHiggins19/Higgins-Unity-Framework",
     "github_pages": "https://peterhiggins19.github.io/Higgins-Unity-Framework/",
@@ -52,72 +59,137 @@
     "github_branch": "master",
     "note": "GitHub Pages is live and serves the README as a public site. This is the primary web-indexable URL."
   },
-
   "canonical_names": {
     "framework": {
       "full": "Higgins Unity Framework",
       "short": "HUF",
-      "NOT": ["Higgins Unified Framework", "HUF Framework", "Unity Framework"]
+      "NOT": [
+        "Higgins Unified Framework",
+        "HUF Framework",
+        "Unity Framework"
+      ]
     },
     "eitt": {
       "full": "Entropy-Invariant Time Transformer",
       "short": "EITT",
       "double_meaning": "Ricardo Montalban — 'Explain It To Them'",
-      "NOT": ["Entropy-Invariant Ternary Transform", "Entropy-Invariant Temporal Transform", "Entropy-Invariant Time Transfer", "EITT Transform"]
+      "NOT": [
+        "Entropy-Invariant Ternary Transform",
+        "Entropy-Invariant Temporal Transform",
+        "Entropy-Invariant Time Transfer",
+        "EITT Transform"
+      ]
     },
     "monitoring_category": {
       "full": "Fourth Monitoring Category (MC-4): Composition Monitoring",
       "short": "MC-4",
       "canonical_paper_name": "Ratio State Monitoring",
       "paper_name_locked": "February 2026",
-      "NOT": ["MC4", "Category 4", "Compositional Monitoring Category"]
+      "NOT": [
+        "MC4",
+        "Category 4",
+        "Compositional Monitoring Category"
+      ]
     },
     "governance": {
       "full": "HUF-GOV",
       "description": "Open-loop governance layer",
       "doctrine": "Instrument reads, never actuates. Human decides, loop stays open.",
-      "NOT": ["HUF Governance", "HUF-Gov", "HUFGOV"]
+      "NOT": [
+        "HUF Governance",
+        "HUF-Gov",
+        "HUFGOV"
+      ]
+    },
+    "cip": {
+      "full": "Compositional Integrity Protocol",
+      "short": "CIP",
+      "rule_count": 6,
+      "description": "6 rules that cannot be changed without operator (Peter) approval. Formerly called 'Pipeline Lock List' (retired 2026-04-19).",
+      "NOT": [
+        "Pipeline Lock List (RETIRED)",
+        "PLL Discipline List"
+      ]
     },
     "pll": {
-      "full": "Pipeline Lock List",
+      "full": "RETIRED — replaced by HVLD (Higgins Vertex Lock Diagnostic) on 2026-04-23",
       "short": "PLL",
-      "rule_count": 6,
-      "description": "6 rules that cannot be changed without operator (Peter) approval",
-      "NOT": ["Phase-Locked Loop", "PLL Discipline List"]
+      "status": "RETIRED",
+      "replacement": "HVLD",
+      "reason": "Engineering analogy too thin — only 'lock point' concept survived; no phase detector, loop filter, VCO, or feedback loop in the pipeline. Risk of confusion with actual PLL circuits.",
+      "NOT": [
+        "Do not use PLL in any new HUF documentation"
+      ]
     },
     "keff": {
       "full": "Keff_fill",
       "aggregator": "RMS (root mean square)",
       "p_value": 2,
       "description": "RMS aggregator of 4 polarity-aligned roots (a0-a3), locked at p=2",
-      "NOT": ["K_eff", "Keff", "K-effective"]
+      "NOT": [
+        "K_eff",
+        "Keff",
+        "K-effective"
+      ]
     },
     "hivp": {
       "full": "Higgins Iterative Validation Protocol",
       "short": "HIVP",
       "description": "Regression-chain rule for advancing the method without breaking prior DUTs",
-      "NOT": ["HIVIP", "HUF Validation"]
+      "NOT": [
+        "HIVIP",
+        "HUF Validation"
+      ]
     },
     "hivip": {
       "full": "Higgins Iterative Validation and Integrity Protocol",
       "short": "HIVIP",
       "description": "Umbrella methodology: theory + instrument development + contamination control + regression discipline",
       "one_line": "EITT is the science. The Higgins Decomposition is the engine. HIVP is the chain. HIVIP is the full methodology.",
-      "NOT": ["HIVP", "HUF Protocol"]
+      "NOT": [
+        "HIVP",
+        "HUF Protocol"
+      ]
     },
     "higgins_decomposition": {
       "full": "The Higgins Decomposition",
-      "description": "Operational 10-step state-machine / process-line implementation of CoDa + EITT",
-      "NOT": ["Higgins Method", "HUF Decomposition"]
+      "description": "Operational 12-step state-machine / process-line implementation of CoDa + EITT",
+      "NOT": [
+        "Higgins Method",
+        "HUF Decomposition"
+      ]
     },
     "bell_test": {
       "result": "S = 2.2018",
       "classical_bound": 2.0,
-      "excess_percent": 12.31,
+      "violation_magnitude_percent": 10.09,
+      "configurations_exceeding_bound_percent": 12.31,
+      "normalization_note": "10.09% = (2.2018-2.0)/2.0 is the violation magnitude. 12.31% = fraction of 18,360 configurations exceeding S=2. Previously conflated.",
       "description": "Gas carrier acts as entangling gate. 9 structural isomorphisms between QIT and CoDa."
+    },
+    "hvld": {
+      "full": "Higgins Vertex Lock Diagnostic",
+      "short": "HVLD",
+      "description": "Quadratic parabola fit to the σ²_A variance trajectory. The vertex is the diagnostic lock point — where compositional variance changes character (accelerating ↔ decelerating). Replaces PLL (Phase-Locked Loop) as of 2026-04-23.",
+      "NOT": [
+        "PLL (RETIRED 2026-04-23)",
+        "Phase-Locked Loop (RETIRED 2026-04-23)",
+        "Pipeline Lock List (RETIRED 2026-04-19)"
+      ],
+      "provenance": "Higgins_Tool",
+      "higgins_tagged_name": "Higgins Vertex Lock Diagnostic"
+    },
+    "hs_symbol": {
+      "full": "Hˢ — Higgins Decomposition on the Simplex",
+      "short": "Hˢ",
+      "description": "Shorthand symbol indicating a Higgins Decomposition is being applied. The superscript S stands for simplex — the geometric space where all compositions live. Used in tool interfaces, diagrams, and inline references as a compact operator notation.",
+      "NOT": [
+        "HD (ambiguous — could mean 'hard drive', 'high definition', etc.)"
+      ],
+      "provenance": "Higgins_Tool",
+      "established_by": "Peter Higgins, 2026-04-23"
     }
   },
-
   "canonical_conferences": {
     "codawork_2026": {
       "full_name": "11th International Workshop on Compositional Data Analysis",
@@ -128,7 +200,6 @@
       "presentation_strategy": "Stanley Steamer — their tools, their geometry, your application. Gas turbine stays in the garage."
     }
   },
-
   "canonical_data_sources": {
     "ember": {
       "full": "EMBER Global Electricity Review",
@@ -157,7 +228,6 @@
       "usage": "Companion geochemistry dataset for cross-validation with Ball 2022"
     }
   },
-
   "ai_collaborators": {
     "model": "Multi-AI collaborative development with human gate",
     "gate": "Peter Higgins — all changes go through Peter, no AI pushes directly",
@@ -174,7 +244,7 @@
       },
       "grok": {
         "provider": "xAI",
-        "role": "Adversarial testing, PLL compliance, robustness derivations",
+        "role": "Adversarial testing, CIP compliance, robustness derivations",
         "interface": "Grok web"
       },
       "gemini": {
@@ -193,24 +263,68 @@
       "date": "2026-04-13",
       "protocol": "AI_COLD_START_TEST v1.1",
       "results": {
-        "claude":  {"questions": "5/5 (abbreviated)", "integrity": "n/a", "structure": "n/a", "attempts": 1, "note": "Built the system"},
-        "chatgpt": {"questions": "10/10", "integrity": "FAIL (caught 2 real bugs)", "structure": "4/5", "attempts": 2, "note": "Found stale hash + wrong char_count"},
-        "grok":    {"questions": "10/10", "integrity": "PASS", "structure": "5/5", "attempts": 1, "note": "6 adversarial findings, caught path bugs"},
-        "copilot": {"questions": "10/10", "integrity": "NOT DONE", "structure": "NOT DONE", "attempts": 3, "note": "Weak instruction-following, needed content pasted"},
-        "gemini":  {"questions": "10/10", "integrity": "PASS", "structure": "3/5", "attempts": 1, "note": "Best instruction-following, inferred structure from manifest paths"}
+        "claude": {
+          "questions": "5/5 (abbreviated)",
+          "integrity": "n/a",
+          "structure": "n/a",
+          "attempts": 1,
+          "note": "Built the system"
+        },
+        "chatgpt": {
+          "questions": "10/10",
+          "integrity": "FAIL (caught 2 real bugs)",
+          "structure": "4/5",
+          "attempts": 2,
+          "note": "Found stale hash + wrong char_count"
+        },
+        "grok": {
+          "questions": "10/10",
+          "integrity": "PASS",
+          "structure": "5/5",
+          "attempts": 1,
+          "note": "6 adversarial findings, caught path bugs"
+        },
+        "copilot": {
+          "questions": "10/10",
+          "integrity": "NOT DONE",
+          "structure": "NOT DONE",
+          "attempts": 3,
+          "note": "Weak instruction-following, needed content pasted"
+        },
+        "gemini": {
+          "questions": "10/10",
+          "integrity": "PASS",
+          "structure": "3/5",
+          "attempts": 1,
+          "note": "Best instruction-following, inferred structure from manifest paths"
+        }
       },
       "conclusion": "All 5 platforms achieved 100% question accuracy from FAST_REFRESH. System validated for cross-AI cold-start onboarding."
     }
   },
-
   "mathematical_foundations": {
     "note": "HUF does not claim new mathematics. These are the foundations it builds on.",
-    "aitchison": {"author": "John Aitchison", "year": 1982, "contribution": "Compositional data analysis, simplex geometry, log-ratio transforms"},
-    "shannon": {"author": "Claude Shannon", "year": 1948, "contribution": "Information entropy"},
-    "stevens": {"author": "S.S. Stevens", "year": 1946, "contribution": "Measurement scales (nominal, ordinal, interval, ratio)"},
-    "amari": {"author": "Shun-ichi Amari", "year": 1985, "contribution": "Information geometry"}
+    "aitchison": {
+      "author": "John Aitchison",
+      "year": 1982,
+      "contribution": "Compositional data analysis, simplex geometry, log-ratio transforms"
+    },
+    "shannon": {
+      "author": "Claude Shannon",
+      "year": 1948,
+      "contribution": "Information entropy"
+    },
+    "stevens": {
+      "author": "S.S. Stevens",
+      "year": 1946,
+      "contribution": "Measurement scales (nominal, ordinal, interval, ratio)"
+    },
+    "amari": {
+      "author": "Shun-ichi Amari",
+      "year": 1985,
+      "contribution": "Information geometry"
+    }
   },
-
   "key_claims": {
     "claims": [
       "Composition can be monitored directly, not only as a statistical correction",
@@ -226,17 +340,14 @@
     ],
     "falsifiable": "No existing monitoring framework performs compositional change detection at the carrier level with formal perturbation-based drift measurement."
   },
-
   "license": {
     "type": "MIT",
     "file": "LICENSE"
   },
-
   "citation": {
     "file": "CITATION.cff",
     "preferred": "Higgins, P. (2026). Higgins Unity Framework. https://github.com/PeterHiggins19/Higgins-Unity-Framework"
   },
-
   "file_hierarchy": {
     "truth_sources": [
       "ai-refresh/HUF_ADMIN.json (this file — identity, contacts, terms)",
@@ -245,5 +356,10 @@
       "ai-refresh/huf_spec_v2.0.json (complete framework specification)"
     ],
     "conflict_resolution": "HUF_ADMIN.json wins on identity/contact/naming. FAST_REFRESH wins on numbers/formulas/science. If both address the same field, they must agree — any disagreement is a bug to be reported to Peter."
+  },
+  "milestones": {
+    "2026-04-22_fourier_pair_fix": "EXP-04 sinc->Bessel J1 fix. Fourier pair contamination (sinc<->rect) identified and resolved. Miller backward recurrence for J1. Validation report updated with Section 7: Fourier Pair Watchpoint.",
+    "2026-04-22_exp19_fourier_conjugate_pairs": "EXP-19: Fourier Conjugate Pair Study. 12 pairs, all 24 functions through 12-step pipeline. Self-conjugates perfectly preserved. Information recovery via simplex confirmed.",
+    "2026-04-22_exp19b_pipeline_optimization": "EXP-19b: Pipeline Optimization via Conjugate Pair Validation. 6 optimization variants tested against 12-pair oracle. ALL 6 PASS with zero deviation. Key achievement: O(N²·D) → O(N·D) via Welford incremental variance. 7.8× speedup at N=10000. Ternary+Complex+Helix fused into single pass. All 28 transcendental constants RETAINED in super squeeze (Peter Higgins directive: no test/data loss). Step reordering (entropy first) proven safe. Full streamlined pipeline (OPT-F = Welford + CLR merge + ternary fusion, full squeeze) recommended for production."
   }
 }

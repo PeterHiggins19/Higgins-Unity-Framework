@@ -94,6 +94,11 @@ HUF/
 │   └── evidence/                   #   Case studies (energy, backblaze, etc.)
 │
 ├── tools/                          # Everything runnable
+│   ├── interactive/                #   ★ LIVE HTML TOOLS — open in browser ★
+│   │   ├── EXP-19_Interactive_Simulator.html
+│   │   ├── EXP16_Interactive_Simulator.html
+│   │   ├── EXP-19_Fourier_Conjugate_Preservation_Theorem.html
+│   │   └── HUF_Spectrum_Analyzer_Universal.html
 │   ├── pipeline/                   #   EITT pipeline, preparsers, scripts
 │   ├── diagnostics/                #   Validators, dashboards, UML diagrams
 │   ├── spectrum-analyzer/          #   HUF Spectrum Analyzer (all versions)
@@ -130,6 +135,32 @@ HUF/
 │
 └── archive/                        # Superseded work — what failed speaks loudest
 ```
+
+---
+
+## Interactive Tools — Live Hˢ Decomposition
+
+**Download any HTML file and open in a browser. No installation required. Everything runs locally.**
+
+| Tool | What It Does | Try It |
+|------|-------------|--------|
+| **Hˢ Simplex Scope** | Real-time Fourier conjugate pair decomposition. 12 pairs, all 12 pipeline steps visualised simultaneously. See self-conjugate preservation in action. | [`EXP-19_Interactive_Simulator.html`](tools/interactive/EXP-19_Interactive_Simulator.html) |
+| **Spring-Mass Force Decomposition** | Damped oscillator decomposed into KE/PE/Damping carriers. Watch chaos detection at carrier zero-crossings. EITT entropy panel. 3D helix. | [`EXP16_Interactive_Simulator.html`](tools/interactive/EXP16_Interactive_Simulator.html) |
+| **Fourier Conjugate Preservation Theorem** | Mathematical proof visualisation. 3 theorems + 1 corollary. Interactive step-through of the formal proof. | [`EXP-19_Fourier_Conjugate_Preservation_Theorem.html`](tools/interactive/EXP-19_Fourier_Conjugate_Preservation_Theorem.html) |
+| **Spectrum Analyzer** | Universal JSON reader. Drop any Hˢ pipeline output and get 5 readings: Source, Calibration, Complexity, Velocity, Peak. | [`HUF_Spectrum_Analyzer_Universal.html`](tools/interactive/HUF_Spectrum_Analyzer_Universal.html) |
+
+All tools use the Hˢ symbol (H-superscript-S = Higgins Decomposition on the Simplex) and the current 12-step pipeline v1.0 with HVLD vertex lock diagnostic.
+
+---
+
+## Hˢ Release State (April 2026)
+
+**15/15 experiments classified NATURAL** across 12 physical domains (Acoustics, Astrophysics, Commodities, Energy, Force, Geochemistry, Gravity, Materials, Matter, Nuclear, Particle, QCD). Pipeline v1.0 with 35 transcendental constants, 13 Fourier conjugate pairs, 4 input guards. Tightest match: EXP-03 Nuclear SEMF locks to 1/(π^e) at δ = 5.87 × 10⁻⁶ — six millionths.
+
+Key documents:
+- [**Character Analysis**](codawork2026/experiments/Higgins_Decomposition_Character_Analysis.docx) — 30+ page cornerstone specification (DUT exploded diagnostic, state machine, adversarial robustness, theorems, disclosures)
+- [**EXP-03 Precision Inference Paper**](codawork2026/experiments/Hs_EXP03_Precision_Inference.docx) — Standalone paper on the nuclear SEMF result
+- [**Release Validation**](codawork2026/experiments/Hs_release_validation.json) — Full sweep results for all 15 experiments
 
 ---
 

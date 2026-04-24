@@ -1,0 +1,233 @@
+{
+  "experiment": "EXP-16: Force Composition in Perturbed Spring-Mass System",
+  "date": "2026-04-22",
+  "author": "Peter Higgins / Claude",
+  "domain": "MECHANICS (first test)",
+  "system": "Spring-mass with gravity, damping, and external perturbation",
+  "parameters": {
+    "mass_kg": 5.0,
+    "spring_N_per_m": 200.0,
+    "damping_N_s_per_m": 2.0,
+    "gravity_m_s2": 9.81,
+    "x0_m": 0.3,
+    "t_end_s": 10.0,
+    "perturbation_onset_s": 5.0
+  },
+  "composition": {
+    "carriers": [
+      "Damping",
+      "Gravity",
+      "Inertia",
+      "Spring"
+    ],
+    "D": 4,
+    "description": "Force magnitudes closed to simplex at each timestep"
+  },
+  "scenarios": {
+    "S1_Baseline": {
+      "name": "S1_Baseline",
+      "description": "Unperturbed oscillation (baseline)",
+      "D": 4,
+      "elements": [
+        "Damping",
+        "Gravity",
+        "Inertia",
+        "Spring"
+      ],
+      "pll_full": {
+        "R2": 0.06699012126412174,
+        "shape": "bowl"
+      },
+      "pll_pre": {
+        "R2": 0.01360790296644332,
+        "shape": "bowl"
+      },
+      "pll_post": {
+        "R2": 0.13811876444856264,
+        "shape": "bowl"
+      },
+      "squeeze_full": 0,
+      "squeeze_pre": 0,
+      "squeeze_post": 6,
+      "best_squeeze": null,
+      "H_mean": 0.8078219833910014,
+      "H_cv": 7.352716682195701,
+      "sA_range": 514.5303382562493,
+      "detect_time_composition": 5.47054705470547,
+      "detect_time_magnitude": null,
+      "detect_lead": null
+    },
+    "S2_Mass_Step": {
+      "name": "S2_Mass_Step",
+      "description": "Mass doubles at t=5s (sudden load)",
+      "D": 4,
+      "elements": [
+        "Damping",
+        "Gravity",
+        "Inertia",
+        "Spring"
+      ],
+      "pll_full": {
+        "R2": 0.013182022490019318,
+        "shape": "bowl"
+      },
+      "pll_pre": {
+        "R2": 0.01360790296644332,
+        "shape": "bowl"
+      },
+      "pll_post": {
+        "R2": 0.027321072963729542,
+        "shape": "bowl"
+      },
+      "squeeze_full": 0,
+      "squeeze_pre": 0,
+      "squeeze_post": 6,
+      "best_squeeze": null,
+      "H_mean": 0.9003096854606619,
+      "H_cv": 9.311227405806632,
+      "sA_range": 517.6374586807646,
+      "detect_time_composition": 5.74057405740574,
+      "detect_time_magnitude": 5.26052605260526,
+      "detect_lead": -0.48004800480048004
+    },
+    "S3_Spring_Shift": {
+      "name": "S3_Spring_Shift",
+      "description": "Spring constant halves at t=5s (fatigue)",
+      "D": 4,
+      "elements": [
+        "Damping",
+        "Gravity",
+        "Inertia",
+        "Spring"
+      ],
+      "pll_full": {
+        "R2": 0.027410273671168217,
+        "shape": "bowl"
+      },
+      "pll_pre": {
+        "R2": 0.01360790296644332,
+        "shape": "bowl"
+      },
+      "pll_post": {
+        "R2": 0.0792043295156255,
+        "shape": "bowl"
+      },
+      "squeeze_full": 0,
+      "squeeze_pre": 0,
+      "squeeze_post": 6,
+      "best_squeeze": null,
+      "H_mean": 0.8929165958888383,
+      "H_cv": 8.821910608482959,
+      "sA_range": 520.6874388629664,
+      "detect_time_composition": 5.23052305230523,
+      "detect_time_magnitude": 5.26052605260526,
+      "detect_lead": 0.030003000300030003
+    },
+    "S4_Impulse": {
+      "name": "S4_Impulse",
+      "description": "Hammer strike impulse at t=5s",
+      "D": 4,
+      "elements": [
+        "Damping",
+        "Gravity",
+        "Inertia",
+        "Spring"
+      ],
+      "pll_full": {
+        "R2": 0.058862200648647556,
+        "shape": "bowl"
+      },
+      "pll_pre": {
+        "R2": 0.013742616252004347,
+        "shape": "bowl"
+      },
+      "pll_post": {
+        "R2": 0.025273920546232786,
+        "shape": "bowl"
+      },
+      "squeeze_full": 0,
+      "squeeze_pre": 0,
+      "squeeze_post": 7,
+      "best_squeeze": null,
+      "H_mean": 0.933053900001501,
+      "H_cv": 11.78132221013256,
+      "sA_range": 523.2180769703515,
+      "detect_time_composition": 5.000500050005001,
+      "detect_time_magnitude": 5.08050805080508,
+      "detect_lead": 0.08000800080007942
+    },
+    "S5_Damping_Ramp": {
+      "name": "S5_Damping_Ramp",
+      "description": "Damping triples linearly t=5-8s (wear)",
+      "D": 4,
+      "elements": [
+        "Damping",
+        "Gravity",
+        "Inertia",
+        "Spring"
+      ],
+      "pll_full": {
+        "R2": 0.09341650495966436,
+        "shape": "bowl"
+      },
+      "pll_pre": {
+        "R2": 0.01360790296644332,
+        "shape": "bowl"
+      },
+      "pll_post": {
+        "R2": 0.3850999112975655,
+        "shape": "bowl"
+      },
+      "squeeze_full": 0,
+      "squeeze_pre": 0,
+      "squeeze_post": 7,
+      "best_squeeze": null,
+      "H_mean": 0.8005754636527468,
+      "H_cv": 8.173548621663809,
+      "sA_range": 514.5303382562493,
+      "detect_time_composition": 7.190719071907191,
+      "detect_time_magnitude": null,
+      "detect_lead": null
+    },
+    "S6_Cascade": {
+      "name": "S6_Cascade",
+      "description": "Mass+spring+impulse cascade",
+      "D": 4,
+      "elements": [
+        "Damping",
+        "Gravity",
+        "Inertia",
+        "Spring"
+      ],
+      "pll_full": {
+        "R2": 0.06301687814528167,
+        "shape": "bowl"
+      },
+      "pll_pre": {
+        "R2": 0.00874515045448776,
+        "shape": "bowl"
+      },
+      "pll_post": {
+        "R2": 0.012749891728150775,
+        "shape": "bowl"
+      },
+      "squeeze_full": 0,
+      "squeeze_pre": 0,
+      "squeeze_post": 0,
+      "best_squeeze": null,
+      "H_mean": 0.9355701521243445,
+      "H_cv": 11.564014116093984,
+      "sA_range": 522.5190269285303,
+      "detect_time_composition": 5.02050205020502,
+      "detect_time_magnitude": 5.0705070507050705,
+      "detect_lead": 0.0500050005000503
+    }
+  },
+  "summary": {
+    "total_scenarios": 6,
+    "bowl_count": 6,
+    "hill_count": 0,
+    "coda_leads_count": 3,
+    "mean_squeezes": 0.0
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "experiment": "EXP-07",
+  "title": "EITT at the Quark Scale",
+  "series": 2,
+  "date_sealed": "2026-04-19",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "proton_mass": {
+    "names": [
+      "Quark energy (kinetic+potential)",
+      "Gluon field energy",
+      "Quantum anomaly (trace)",
+      "Quark rest mass (Higgs)"
+    ],
+    "comp": [
+      0.32000000000000006,
+      0.36000000000000004,
+      0.23000000000000004,
+      0.09000000000000001
+    ],
+    "M_proton": 938.272,
+    "H_ratio": 0.9284853446162855
+  },
+  "n_scales_covered": 9,
+  "scale_range_m": "1e-18 to 1e+7",
+  "orders_of_magnitude": 25,
+  "verdict": "EITT reaches quarks. Composition is scale-invariant."
+}

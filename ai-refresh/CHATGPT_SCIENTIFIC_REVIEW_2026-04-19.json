@@ -1,0 +1,224 @@
+{
+  "_meta": {
+    "type": "EXTERNAL_SCIENTIFIC_REVIEW",
+    "version": "1.0",
+    "reviewer": "ChatGPT (OpenAI, GPT-5.2 Thinking)",
+    "date": "2026-04-19",
+    "initiated_by": "Peter Higgins",
+    "method": "ChatGPT was given the CHATGPT_VERIFICATION_CHECKLIST.json, then progressively loaded with experiment scripts, journals, proofs, and documents. Three rounds of assessment followed by a strategic rewrite of the fixed-point proof paper.",
+    "purpose": "Independent scientific review of HUF/EITT by a different AI platform. This is the system working as designed: cross-platform verification from the repo.",
+    "repo_commit": "92b8735",
+    "documents_reviewed": [
+      "ai-refresh/CHATGPT_VERIFICATION_CHECKLIST.json",
+      "codawork2026/experiments (21 scripts)",
+      "EITT_PLL_Experiment_Journal_Complete.docx",
+      "EITT_PLL_Journey_and_Discoveries.docx",
+      "EITT_Fixed_Point_Proofs.pdf",
+      "HIGGINS_Gold_Standard_Report.pdf",
+      "EXP-04_Microphone_Valley_Journal.pdf",
+      "HUF_Programme_Conclusion.docx",
+      "The_Gravity_of_the_Situation.docx",
+      "HIGGINS_EXP_Series_Conclusion_2026.docx",
+      "HUF_Executive_Summary (v1 and v2)",
+      "6 SVG visualizations",
+      "10 Python experiment scripts"
+    ]
+  },
+
+  "overall_verdict": {
+    "one_sentence": "A serious exploratory research programme with a strong AI-onboarding structure, a promising compositional diagnostics framework with one genuinely strong worked example (QGP), an instrument paper in the making that is stronger than its current theorem language.",
+    "core_math": "STRONG",
+    "exploratory_diagnostics": "PROMISING",
+    "universality_language": "TOO AGGRESSIVE",
+    "residual_contamination_interpretation": "NOT MATURE YET",
+    "repo_architecture": "UNUSUALLY STRONG — one of the best structural features of the project"
+  },
+
+  "three_tier_assessment": {
+    "tier_1_genuinely_strong": {
+      "description": "Results that are mathematically sound and empirically credible. Ready for external review.",
+      "items": [
+        {
+          "item": "Vertex Theorem / CLR orthogonality identity",
+          "assessment": "The exact chain-rule identity d(sigma2_A)/dt = (2/D) sum(clr_i * clr_i') is real mathematics, not a metaphor. This is the best scientific spine in the project.",
+          "status": "STRONG — exact identity"
+        },
+        {
+          "item": "QGP freeze-out worked example",
+          "assessment": "Published STAR BES / ALICE yields, compositional stress minimum, baryon/meson decomposition, genuinely meaningful stationary-point interpretation. The flagship case.",
+          "status": "STRONG — credible empirical example"
+        },
+        {
+          "item": "Geometric-mean decimation as natural simplex operator",
+          "assessment": "Under ILR transform, geometric means become arithmetic means. This makes geometric block decimation the correct operator for averaging compositions in Aitchison geometry.",
+          "status": "STRONG — follows from standard CoDa theory"
+        },
+        {
+          "item": "Geometric mean proof (EITT headline finding)",
+          "assessment": "0.18% entropy variation under geometric vs 14-41% under arithmetic. Measurable consequence of the wrong averaging operation. The 40-year gap filled.",
+          "status": "STRONG — empirical measurement"
+        },
+        {
+          "item": "Simplex/Aitchison/ILR mathematical foundation",
+          "assessment": "The mathematical substrate is real and well-established (Aitchison 1986, Pawlowsky-Glahn 2015).",
+          "status": "STRONG — standard mathematics"
+        },
+        {
+          "item": "EXP-04 Microphone Valley instrumentation story",
+          "assessment": "Gives the framework a native signal-processing home. LF rolloff as compositional walk, passband as compositionally dead, slope as diagnostic. The stored-energy attack shows the integrity layer matters.",
+          "status": "STRONG — materially improves the instrument story"
+        },
+        {
+          "item": "Blind test (17/20, 90% sensitivity, 80% specificity)",
+          "assessment": "Commendably explicit about the three misses. Two have plausible internal fixes. Right scientific posture.",
+          "status": "STRONG — honest and nontrivial"
+        },
+        {
+          "item": "Boundary diagnostic (monotonic trajectories as diagnostic, not failure)",
+          "assessment": "Reframing 'no lock' as 'the system is monotonic and the slope is the finding' is a smart scientific move. Cosmic-ray and demographic panels are persuasive as descriptive diagnostics.",
+          "status": "STRONG — useful contribution"
+        }
+      ]
+    },
+
+    "tier_2_promising_not_proved": {
+      "description": "Results that are interesting, plausible, and worth pursuing, but not yet at the evidential level needed for strong claims.",
+      "items": [
+        {
+          "item": "Cross-domain sigma2_A vertex interpretation",
+          "assessment": "The QGP case is legitimate. But claiming many ordered compositional systems have an interpretable vertex needs much more testing. The neutron-star side is model-based (SLy4 approximation), not direct observational.",
+          "status": "PROMISING — needs more external datasets"
+        },
+        {
+          "item": "PLL structural analogy",
+          "assessment": "The lock-range / error-slope / contamination-alarm interpretation is useful. But 'PLL equivalence' is not proved. Should be presented as engineering interpretation, not theorem.",
+          "status": "PROMISING — forward hypothesis, not proved equivalence"
+        },
+        {
+          "item": "Geochemistry / stellar / energy domain validation",
+          "assessment": "Most naturally convincing domains. Competing channels are physically meaningful, plots support the idea. Framework looks like a promising diagnostic language for boundary finding.",
+          "status": "PROMISING — good domain fit"
+        },
+        {
+          "item": "Rayleigh-style contamination envelope",
+          "assessment": "Progressive contamination exhibits rise-peak-decay envelope in tested attacks. Interesting engineering motif but still only proposition/proof-sketch, not derivation.",
+          "status": "PROMISING — hypothesis, not theorem"
+        },
+        {
+          "item": "F17 contamination diagnostic",
+          "assessment": "Useful secondary integrity signal. Catches cases where primary metric is too permissive. But not a universal contamination detector — false-positive/negative guarantees not established.",
+          "status": "PROMISING — useful instrument, not universal detector"
+        }
+      ]
+    },
+
+    "tier_3_exploratory_atlas": {
+      "description": "Interesting exploratory work that generates hypotheses but should not be presented as proof of universality.",
+      "items": [
+        {
+          "item": "30/30 universal lock claim",
+          "assessment": "The sweep is useful as a concept map but not as proof of universality. Lock criteria are permissive (a>0, R2>0.3, vertex-in-range). Failures recovered by inversion, splitting, reframing creates researcher-degrees-of-freedom problem.",
+          "status": "EXPLORATORY — hypothesis map, not confirmatory"
+        },
+        {
+          "item": "Noise squeeze as discovery",
+          "assessment": "Higher-order polynomials almost always improve in-sample fit. Needs model-selection penalties (AIC/BIC), cross-validation, surrogate data, null ensembles. Descriptive, not yet discovery.",
+          "status": "EXPLORATORY — needs null models"
+        },
+        {
+          "item": "DADC-DADI-ADAC boundary species / contamination interpretation",
+          "assessment": "Residual structure and cross-correlation are real measurable things. But calling them 'contamination', 'force crosstalk', or 'boundary species' needs stronger justification. Residuals can be structured for ordinary reasons.",
+          "status": "EXPLORATORY — interpretive overlay, needs null models"
+        },
+        {
+          "item": "Variance contraction theorem (Theorem 3)",
+          "assessment": "States sigma2_A(T_M(X)) <= sigma2_A(X)/M. But verification chart shows measured ratio staying near 1 while prediction is 1/M. Statement/implementation/plot mismatch. Must be resolved.",
+          "status": "NEEDS REPAIR — theorem/evidence mismatch"
+        },
+        {
+          "item": "M_break as quantitative predictor",
+          "assessment": "Useful qualitatively but predicted/actual ratios range from modest to orders of magnitude off. Should be described as empirical lock-range marker, not theorem-derived constant.",
+          "status": "EXPLORATORY — qualitative only"
+        }
+      ]
+    }
+  },
+
+  "discipline_framing": {
+    "_note": "The most important strategic outcome of this review. ChatGPT proposed, Peter approved.",
+    "discipline_name": "Compositional Constraint Diagnostics (CCD)",
+    "definition": "The study of how ordered compositions behave under lawful aggregation, coarse-graining, and contamination on the simplex. Its aim is to determine whether a system is being forced through a smooth constrained manifold, how strongly that constraint holds, where it breaks, and whether the observed structure is genuine or corrupted.",
+    "hierarchy": {
+      "discipline": "Compositional Constraint Diagnostics (CCD)",
+      "method": "Higgins Fixed Point Analysis (HFPA) — identify invariants under simplex-respecting transformations",
+      "mathematical_substrate": "Simplex geometry, ILR/Aitchison structure, entropy",
+      "instrument": "EITT (Entropy-Invariant Time Transformer)",
+      "protocol": "CIP (Compositional Integrity Protocol — 6 immutable rules, Rule 5 = The Fixed-Point Rule)",
+      "engineering_interpretation": "PLL/Rayleigh (forward hypothesis, not proved equivalence)"
+    },
+    "key_sentence": "CCD is the discipline. Higgins Fixed Point Analysis is the method. EITT is the first instrument. CIP is the protocol.",
+    "pll_position": "PLL/Rayleigh language is currently the leading engineering interpretation of the instrument's observed behavior, not yet its final proof-theoretic foundation."
+  },
+
+  "specific_corrections_needed": {
+    "bell_test_normalization": {
+      "issue": "Checklist states (2.2018-2.0)/2.0 = 10.09%, but FAST_REFRESH reports 12.31%. Normalization basis not standardized.",
+      "action": "Fix to consistent normalization. Document which basis is used."
+    },
+    "integrity_manifest_lag": {
+      "issue": "FAST_REFRESH shows updated 2026-04-19, integrity manifest shows 2026-04-18. Manifest may be one step behind.",
+      "action": "Verify manifest is current or update."
+    },
+    "variance_contraction_theorem": {
+      "issue": "Theorem 3 statement and verification plot do not match. Measured ratio near 1, prediction 1/M.",
+      "action": "Downgrade to qualitative statement or fix the theorem."
+    },
+    "m_break_language": {
+      "issue": "Presented as theorem-derived in some places, but blind test shows predicted/actual ratios off by orders of magnitude.",
+      "action": "Reframe as empirical lock-range marker throughout."
+    },
+    "universality_language": {
+      "issue": "'30/30 wins', 'universal lock', 'every two-force system' — too aggressive for exploratory atlas.",
+      "action": "Replace with 'exploratory atlas across 30 domains' or 'hypothesis map'."
+    }
+  },
+
+  "recommended_claim_set": {
+    "strong_claims": [
+      "Geometric-mean block aggregation is the natural simplex-respecting decimation rule (equivalent to averaging in ILR space)",
+      "Under stationarity, geometric decimation preserves the Aitchison location parameter up to boundary effects",
+      "Arithmetic and geometric decimation separate for nondegenerate compositional processes",
+      "Relative EITT, geometric-arithmetic separation, slope, and empirical M_break together form a useful diagnostic toolkit",
+      "Shannon entropy variation under geometric decimation: 0.18% at 341:1 compression",
+      "Arithmetic mean destroys 14-41% of entropy structure on the same data",
+      "The Vertex Theorem is an exact chain-rule identity"
+    ],
+    "moderate_claims": [
+      "The toolkit performs nontrivially in blind classification and contamination experiments (17/20, 90% sensitivity)",
+      "The same instrument vocabulary appears meaningful across several empirical domains",
+      "The QGP freeze-out is a credible flagship worked example",
+      "EXP-04 microphone valley provides a native signal-processing validation"
+    ],
+    "hypothesis_only_claims": [
+      "EITT behaves like a compositional PLL (engineering interpretation)",
+      "Progressive contamination follows a Rayleigh-type envelope",
+      "A unified coherence-budget interpretation may exist across domains",
+      "The 93% universal entropy bound is an empirical pattern",
+      "M_break admits reliable prediction rather than qualitative ordering only"
+    ]
+  },
+
+  "recommended_publication_posture": {
+    "paper_1": "Narrow foundations paper — conservative mathematical core (geometric-mean decimation, ILR averaging, Aitchison preservation, geometric-arithmetic separation)",
+    "paper_2": "Instrument / diagnostics paper — EITT as compositional diagnostic, blind test, contamination detection, EXP-04 validation",
+    "paper_3": "Forward hypothesis paper — PLL/Rayleigh as engineering interpretation, cross-domain atlas, discipline framing",
+    "codawork_2026": "Lead with geometric mean proof (gift to CoDa community), QGP vertex theorem second (strongest science), domain validation as evidence, discipline framing as close"
+  },
+
+  "chatgpt_revised_paper": {
+    "title": "EITT Fixed-Point Framework: Toward a Discipline of Compositional Constraint Diagnostics",
+    "subtitle": "A Conservative Mathematical Core for Geometric-Mean Decimation on the Simplex",
+    "status": "ChatGPT drafted a full conservative rewrite. Available from Peter. Key features: only claims what proofs support, moves Rayleigh/PLL to forward hypothesis section, introduces CCD discipline framing.",
+    "location": "Peter has the full text from ChatGPT canvas. Should be saved to repo when reviewed."
+  }
+}
