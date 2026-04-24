@@ -1,0 +1,363 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 1836" width="950" height="1836" style="background:#0a0e1a;font-family:Consolas,monospace">
+<text x="475" y="25" text-anchor="middle" fill="#e0e0e0" font-size="18" font-weight="bold">COMPOSITION DISASSEMBLY</text>
+<text x="475" y="45" text-anchor="middle" fill="#8ab4f8" font-size="12">Physics Drivers Per Channel — Why Each System Is Where It Is</text>
+<rect x="30" y="70" width="890" height="135" fill="#1a1a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="86" fill="#ffcc44" font-size="13" font-weight="bold">Sun (pp-chain core)</text>
+<text x="40" y="100" fill="#888" font-size="9">T=1.36 keV  n=1.5e+11×10²⁰  B=0.0T  R=200000m</text>
+<rect x="40.0" y="106" width="196.0" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="138.0" y="117" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">98.0%</text>
+<rect x="236.0" y="106" width="4.0" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="250" y="117" fill="#aaa" font-size="9">H/H_max=0.071</text>
+<text x="40" y="132" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 98.0%</text>
+<text x="40" y="146" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="158" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="170" fill="#555" font-size="7">n²=22499999999999998951424.00×10</text>
+<text x="40" y="182" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="132" fill="#44cc44" font-size="10" font-weight="bold">Brem: 0.0%</text>
+<text x="270" y="146" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="158" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="170" fill="#555" font-size="7">n²=2.2e+22, √T=1.17, Z²_eff=1.0</text>
+<text x="270" y="182" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="132" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 0.0%</text>
+<text x="500" y="146" fill="#888" font-size="8">P_cyc = 0 (no magnetic field)</text>
+<text x="500" y="158" fill="#666" font-size="8">N/A</text>
+<text x="500" y="170" fill="#555" font-size="7">B=0 → no cyclotron radiation</text>
+<text x="500" y="182" fill="#444" font-size="7">No B-field: ICF, muon-catalysed, gr</text>
+<text x="730" y="132" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 2.0%</text>
+<text x="730" y="146" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="158" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="170" fill="#555" font-size="7">R=200000m → R^1.97 = 27735058832</text>
+<text x="730" y="182" fill="#444" font-size="7">R &gt; 5m: conduction manageable</text>
+<rect x="30" y="213" width="890" height="135" fill="#0a1a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="229" fill="#44cc44" font-size="13" font-weight="bold">Spherical Tokamak</text>
+<text x="40" y="243" fill="#888" font-size="9">T=15.0 keV  n=2×10²⁰  B=3.5T  R=1.7m</text>
+<rect x="40.0" y="249" width="145.8" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="112.9" y="260" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">72.9%</text>
+<rect x="185.8" y="249" width="8.2" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="194.0" y="249" width="5.6" height="14" fill="#4488cc" opacity="0.8"/>
+<rect x="199.6" y="249" width="40.4" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="219.8" y="260" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">20.2%</text>
+<text x="250" y="260" fill="#aaa" font-size="9">H/H_max=0.566</text>
+<text x="40" y="275" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 72.9%</text>
+<text x="40" y="289" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="301" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="313" fill="#555" font-size="7">n²=4.00×10⁴⁰, T=15.0 keV: &lt;σv&gt; n</text>
+<text x="40" y="325" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="275" fill="#44cc44" font-size="10" font-weight="bold">Brem: 4.1%</text>
+<text x="270" y="289" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="301" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="313" fill="#555" font-size="7">n²=4, √T=3.87, Z²_eff=1.0</text>
+<text x="270" y="325" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="275" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 2.8%</text>
+<text x="500" y="289" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="301" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="313" fill="#555" font-size="7">T²=225.0, B²=12.2 → T²B²=2756</text>
+<text x="500" y="325" fill="#444" font-size="7">B=3.5T: cyclotron &lt; 5% — field too </text>
+<text x="730" y="275" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 20.2%</text>
+<text x="730" y="289" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="301" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="313" fill="#555" font-size="7">R=1.7m → R^1.97 = 2.844, n×T = 3</text>
+<text x="730" y="325" fill="#444" font-size="7">R &lt; 2m: conduction dominates — too </text>
+<rect x="30" y="356" width="890" height="135" fill="#0a1a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="372" fill="#44cc44" font-size="13" font-weight="bold">IFR (HF Tokamak)</text>
+<text x="40" y="386" fill="#888" font-size="9">T=17.8 keV  n=2.7×10²⁰  B=12.0T  R=6.2m</text>
+<rect x="40.0" y="392" width="100.4" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="90.2" y="403" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">50.2%</text>
+<rect x="140.4" y="392" width="6.6" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="147.0" y="392" width="65.0" height="14" fill="#4488cc" opacity="0.8"/>
+<text x="179.5" y="403" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">32.5%</text>
+<rect x="212.0" y="392" width="28.0" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="226.0" y="403" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">14.0%</text>
+<text x="250" y="403" fill="#aaa" font-size="9">H/H_max=0.793</text>
+<text x="40" y="418" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 50.2%</text>
+<text x="40" y="432" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="444" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="456" fill="#555" font-size="7">n²=7.29×10⁴⁰, T=17.8 keV: &lt;σv&gt; n</text>
+<text x="40" y="468" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="418" fill="#44cc44" font-size="10" font-weight="bold">Brem: 3.3%</text>
+<text x="270" y="432" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="444" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="456" fill="#555" font-size="7">n²=7.3, √T=4.22, Z²_eff=1.0</text>
+<text x="270" y="468" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="418" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 32.5%</text>
+<text x="500" y="432" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="444" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="456" fill="#555" font-size="7">T²=316.8, B²=144.0 → T²B²=45625</text>
+<text x="500" y="468" fill="#444" font-size="7">B=12.0T: cyclotron significant — th</text>
+<text x="730" y="418" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 14.0%</text>
+<text x="730" y="432" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="444" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="456" fill="#555" font-size="7">R=6.2m → R^1.97 = 36.392, n×T = </text>
+<text x="730" y="468" fill="#444" font-size="7">R &gt; 5m: conduction manageable</text>
+<rect x="30" y="499" width="890" height="135" fill="#0a1a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="515" fill="#44cc44" font-size="13" font-weight="bold">Krell Level 1 (Boosted)</text>
+<text x="40" y="529" fill="#888" font-size="9">T=25.0 keV  n=8×10²⁰  B=30.0T  R=6.2m</text>
+<rect x="40.0" y="535" width="116.6" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="98.3" y="546" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">58.3%</text>
+<rect x="156.6" y="535" width="4.2" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="160.8" y="535" width="56.8" height="14" fill="#4488cc" opacity="0.8"/>
+<text x="189.2" y="546" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">28.4%</text>
+<rect x="217.6" y="535" width="22.4" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="228.8" y="546" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">11.2%</text>
+<text x="250" y="546" fill="#aaa" font-size="9">H/H_max=0.720</text>
+<text x="40" y="561" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 58.3%</text>
+<text x="40" y="575" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="587" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="599" fill="#555" font-size="7">n²=64.00×10⁴⁰, T=25.0 keV: &lt;σv&gt; </text>
+<text x="40" y="611" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="561" fill="#44cc44" font-size="10" font-weight="bold">Brem: 2.1%</text>
+<text x="270" y="575" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="587" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="599" fill="#555" font-size="7">n²=64, √T=5.00, Z²_eff=1.0</text>
+<text x="270" y="611" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="561" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 28.4%</text>
+<text x="500" y="575" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="587" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="599" fill="#555" font-size="7">T²=625.0, B²=900.0 → T²B²=562500</text>
+<text x="500" y="611" fill="#444" font-size="7">B=30.0T: CYCLOTRON WALL — B&gt;20T pus</text>
+<text x="730" y="561" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 11.2%</text>
+<text x="730" y="575" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="587" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="599" fill="#555" font-size="7">R=6.2m → R^1.97 = 36.392, n×T = </text>
+<text x="730" y="611" fill="#444" font-size="7">R &gt; 5m: conduction manageable</text>
+<rect x="30" y="642" width="890" height="135" fill="#0a0e1a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="658" fill="#4488cc" font-size="13" font-weight="bold">Conventional Tokamak (ITER)</text>
+<text x="40" y="672" fill="#888" font-size="9">T=15.0 keV  n=1×10²⁰  B=5.3T  R=6.2m</text>
+<rect x="40.0" y="678" width="65.0" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="72.5" y="689" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">32.5%</text>
+<rect x="105.0" y="678" width="16.4" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="121.4" y="678" width="12.2" height="14" fill="#4488cc" opacity="0.8"/>
+<rect x="133.6" y="678" width="106.4" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="186.8" y="689" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">53.2%</text>
+<text x="250" y="689" fill="#aaa" font-size="9">H/H_max=0.777</text>
+<text x="40" y="704" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 32.5%</text>
+<text x="40" y="718" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="730" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="742" fill="#555" font-size="7">n²=1.00×10⁴⁰, T=15.0 keV: &lt;σv&gt; n</text>
+<text x="40" y="754" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="704" fill="#44cc44" font-size="10" font-weight="bold">Brem: 8.2%</text>
+<text x="270" y="718" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="730" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="742" fill="#555" font-size="7">n²=1, √T=3.87, Z²_eff=1.0</text>
+<text x="270" y="754" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="704" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 6.1%</text>
+<text x="500" y="718" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="730" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="742" fill="#555" font-size="7">T²=225.0, B²=28.1 → T²B²=6320</text>
+<text x="500" y="754" fill="#444" font-size="7">B=5.3T: cyclotron significant — the</text>
+<text x="730" y="704" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 53.2%</text>
+<text x="730" y="718" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="730" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="742" fill="#555" font-size="7">R=6.2m → R^1.97 = 36.392, n×T = </text>
+<text x="730" y="754" fill="#444" font-size="7">R &gt; 5m: conduction manageable</text>
+<rect x="30" y="785" width="890" height="135" fill="#0a0e1a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="801" fill="#4488cc" font-size="13" font-weight="bold">Compact HF Tokamak (SPARC)</text>
+<text x="40" y="815" fill="#888" font-size="9">T=20.0 keV  n=1.8×10²⁰  B=12.0T  R=1.85m</text>
+<rect x="40.0" y="821" width="91.4" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="85.7" y="832" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">45.7%</text>
+<rect x="131.4" y="821" width="8.4" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="139.8" y="821" width="56.2" height="14" fill="#4488cc" opacity="0.8"/>
+<text x="167.9" y="832" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">28.1%</text>
+<rect x="196.0" y="821" width="44.0" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="218.0" y="832" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">22.0%</text>
+<text x="250" y="832" fill="#aaa" font-size="9">H/H_max=0.852</text>
+<text x="40" y="847" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 45.7%</text>
+<text x="40" y="861" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="873" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="885" fill="#555" font-size="7">n²=3.24×10⁴⁰, T=20.0 keV: &lt;σv&gt; n</text>
+<text x="40" y="897" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="847" fill="#44cc44" font-size="10" font-weight="bold">Brem: 4.2%</text>
+<text x="270" y="861" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="873" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="885" fill="#555" font-size="7">n²=3.2, √T=4.47, Z²_eff=1.0</text>
+<text x="270" y="897" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="847" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 28.1%</text>
+<text x="500" y="861" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="873" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="885" fill="#555" font-size="7">T²=400.0, B²=144.0 → T²B²=57600</text>
+<text x="500" y="897" fill="#444" font-size="7">B=12.0T: cyclotron significant — th</text>
+<text x="730" y="847" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 22.0%</text>
+<text x="730" y="861" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="873" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="885" fill="#555" font-size="7">R=1.85m → R^1.97 = 3.360, n×T = </text>
+<text x="730" y="897" fill="#444" font-size="7">R &lt; 2m: conduction dominates — too </text>
+<rect x="30" y="928" width="890" height="135" fill="#0a0e1a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="944" fill="#4488cc" font-size="13" font-weight="bold">Inertial Confinement (NIF)</text>
+<text x="40" y="958" fill="#888" font-size="9">T=40.0 keV  n=1e+06×10²⁰  B=0.0T  R=0.001m</text>
+<rect x="40.0" y="964" width="45.0" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="62.5" y="975" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">22.5%</text>
+<rect x="85.0" y="964" width="17.4" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="102.4" y="964" width="137.6" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="171.2" y="975" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">68.8%</text>
+<text x="250" y="975" fill="#aaa" font-size="9">H/H_max=0.581</text>
+<text x="40" y="990" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 22.5%</text>
+<text x="40" y="1004" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="1016" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="1028" fill="#555" font-size="7">n²=1000000000000.00×10⁴⁰, T=40.0</text>
+<text x="40" y="1040" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="990" fill="#44cc44" font-size="10" font-weight="bold">Brem: 8.7%</text>
+<text x="270" y="1004" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="1016" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="1028" fill="#555" font-size="7">n²=1e+12, √T=6.32, Z²_eff=1.0</text>
+<text x="270" y="1040" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="990" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 0.0%</text>
+<text x="500" y="1004" fill="#888" font-size="8">P_cyc = 0 (no magnetic field)</text>
+<text x="500" y="1016" fill="#666" font-size="8">N/A</text>
+<text x="500" y="1028" fill="#555" font-size="7">B=0 → no cyclotron radiation</text>
+<text x="500" y="1040" fill="#444" font-size="7">No B-field: ICF, muon-catalysed, gr</text>
+<text x="730" y="990" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 68.8%</text>
+<text x="730" y="1004" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="1016" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="1028" fill="#555" font-size="7">R=0.001m → microscale, τ_E ~ nan</text>
+<text x="730" y="1040" fill="#444" font-size="7">R &lt; 2m: conduction dominates — too </text>
+<rect x="30" y="1071" width="890" height="135" fill="#0e0a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="1087" fill="#888888" font-size="13" font-weight="bold">Stellarator (W7-X)</text>
+<text x="40" y="1101" fill="#888" font-size="9">T=12.0 keV  n=1.5×10²⁰  B=5.0T  R=5.5m</text>
+<rect x="40.0" y="1107" width="36.6" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="58.3" y="1118" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">18.3%</text>
+<rect x="76.6" y="1107" width="20.4" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="97.0" y="1107" width="25.0" height="14" fill="#4488cc" opacity="0.8"/>
+<text x="109.5" y="1118" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">12.5%</text>
+<rect x="122.0" y="1107" width="118.0" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="181.0" y="1118" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">59.0%</text>
+<text x="250" y="1118" fill="#aaa" font-size="9">H/H_max=0.804</text>
+<text x="40" y="1133" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 18.3%</text>
+<text x="40" y="1147" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="1159" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="1171" fill="#555" font-size="7">n²=2.25×10⁴⁰, T=12.0 keV: &lt;σv&gt; r</text>
+<text x="40" y="1183" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="1133" fill="#44cc44" font-size="10" font-weight="bold">Brem: 10.2%</text>
+<text x="270" y="1147" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="1159" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="1171" fill="#555" font-size="7">n²=2.2, √T=3.46, Z²_eff=1.0</text>
+<text x="270" y="1183" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="1133" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 12.5%</text>
+<text x="500" y="1147" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="1159" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="1171" fill="#555" font-size="7">T²=144.0, B²=25.0 → T²B²=3600</text>
+<text x="500" y="1183" fill="#444" font-size="7">B=5.0T: cyclotron significant — the</text>
+<text x="730" y="1133" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 59.0%</text>
+<text x="730" y="1147" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="1159" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="1171" fill="#555" font-size="7">R=5.5m → R^1.97 = 28.742, n×T = </text>
+<text x="730" y="1183" fill="#444" font-size="7">R &gt; 5m: conduction manageable</text>
+<rect x="30" y="1214" width="890" height="135" fill="#0e0a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="1230" fill="#888888" font-size="13" font-weight="bold">FRC (TAE/Helion)</text>
+<text x="40" y="1244" fill="#888" font-size="9">T=100.0 keV  n=5×10²⁰  B=3.0T  R=0.3m</text>
+<rect x="40.0" y="1250" width="16.4" height="14" fill="#ff6b35" opacity="0.8"/>
+<rect x="56.4" y="1250" width="44.6" height="14" fill="#44cc44" opacity="0.8"/>
+<text x="78.7" y="1261" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">22.3%</text>
+<rect x="101.0" y="1250" width="2.2" height="14" fill="#4488cc" opacity="0.8"/>
+<rect x="103.2" y="1250" width="136.8" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="171.6" y="1261" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">68.4%</text>
+<text x="250" y="1261" fill="#aaa" font-size="9">H/H_max=0.612</text>
+<text x="40" y="1276" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 8.2%</text>
+<text x="40" y="1290" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="1302" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="1314" fill="#555" font-size="7">n²=25.00×10⁴⁰, T=100.0 keV: D-T </text>
+<text x="40" y="1326" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="1276" fill="#44cc44" font-size="10" font-weight="bold">Brem: 22.3%</text>
+<text x="270" y="1290" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="1302" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="1314" fill="#555" font-size="7">n²=25, √T=10.00, Z²_eff=1.0</text>
+<text x="270" y="1326" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="1276" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 1.1%</text>
+<text x="500" y="1290" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="1302" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="1314" fill="#555" font-size="7">T²=10000.0, B²=9.0 → T²B²=90000</text>
+<text x="500" y="1326" fill="#444" font-size="7">B=3.0T: cyclotron &lt; 5% — field too </text>
+<text x="730" y="1276" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 68.4%</text>
+<text x="730" y="1290" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="1302" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="1314" fill="#555" font-size="7">R=0.3m → R^1.97 = 0.093, n×T = 5</text>
+<text x="730" y="1326" fill="#444" font-size="7">R &lt; 2m: conduction dominates — too </text>
+<rect x="30" y="1357" width="890" height="135" fill="#0e0a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="1373" fill="#888888" font-size="13" font-weight="bold">Proton-Boron (p-B11)</text>
+<text x="40" y="1387" fill="#888" font-size="9">T=300.0 keV  n=5×10²⁰  B=5.0T  R=2.0m</text>
+<rect x="40.0" y="1393" width="30.4" height="14" fill="#ff6b35" opacity="0.8"/>
+<text x="55.2" y="1404" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">15.2%</text>
+<rect x="70.4" y="1393" width="156.6" height="14" fill="#44cc44" opacity="0.8"/>
+<text x="148.7" y="1404" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">78.3%</text>
+<rect x="227.0" y="1393" width="6.2" height="14" fill="#4488cc" opacity="0.8"/>
+<rect x="233.2" y="1393" width="6.8" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="250" y="1404" fill="#aaa" font-size="9">H/H_max=0.505</text>
+<text x="40" y="1419" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 15.2%</text>
+<text x="40" y="1433" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="1445" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="1457" fill="#555" font-size="7">n²=25.00×10⁴⁰, T=300.0 keV: D-T </text>
+<text x="40" y="1469" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="1419" fill="#44cc44" font-size="10" font-weight="bold">Brem: 78.3%</text>
+<text x="270" y="1433" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="1445" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="1457" fill="#555" font-size="7">n²=25, √T=17.32, Z²_eff=25.0</text>
+<text x="270" y="1469" fill="#444" font-size="7">Z_eff=5 → 25× Brem penalty (p-B11 w</text>
+<text x="500" y="1419" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 3.1%</text>
+<text x="500" y="1433" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="1445" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="1457" fill="#555" font-size="7">T²=90000.0, B²=25.0 → T²B²=22500</text>
+<text x="500" y="1469" fill="#444" font-size="7">B=5.0T: cyclotron significant — the</text>
+<text x="730" y="1419" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 3.4%</text>
+<text x="730" y="1433" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="1445" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="1457" fill="#555" font-size="7">R=2.0m → R^1.97 = 3.918, n×T = 1</text>
+<text x="730" y="1469" fill="#444" font-size="7">R = 2-5m: marginal confinement</text>
+<rect x="30" y="1500" width="890" height="135" fill="#0e0a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="1516" fill="#888888" font-size="13" font-weight="bold">Spheromak</text>
+<text x="40" y="1530" fill="#888" font-size="9">T=5.0 keV  n=3×10²⁰  B=1.0T  R=0.5m</text>
+<rect x="40.0" y="1536" width="0.6" height="14" fill="#ff6b35" opacity="0.8"/>
+<rect x="40.6" y="1536" width="24.2" height="14" fill="#44cc44" opacity="0.8"/>
+<text x="52.7" y="1547" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">12.1%</text>
+<rect x="65.2" y="1536" width="174.8" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="152.6" y="1547" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">87.4%</text>
+<text x="250" y="1547" fill="#aaa" font-size="9">H/H_max=0.291</text>
+<text x="40" y="1562" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 0.3%</text>
+<text x="40" y="1576" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="1588" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="1600" fill="#555" font-size="7">n²=9.00×10⁴⁰, T=5.0 keV: &lt;σv&gt; ri</text>
+<text x="40" y="1612" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="1562" fill="#44cc44" font-size="10" font-weight="bold">Brem: 12.1%</text>
+<text x="270" y="1576" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="1588" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="1600" fill="#555" font-size="7">n²=9, √T=2.24, Z²_eff=1.0</text>
+<text x="270" y="1612" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="1562" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 0.2%</text>
+<text x="500" y="1576" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="1588" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="1600" fill="#555" font-size="7">T²=25.0, B²=1.0 → T²B²=25</text>
+<text x="500" y="1612" fill="#444" font-size="7">B=1.0T: cyclotron &lt; 5% — field too </text>
+<text x="730" y="1562" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 87.4%</text>
+<text x="730" y="1576" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="1588" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="1600" fill="#555" font-size="7">R=0.5m → R^1.97 = 0.255, n×T = 1</text>
+<text x="730" y="1612" fill="#444" font-size="7">R &lt; 2m: conduction dominates — too </text>
+<rect x="30" y="1643" width="890" height="135" fill="#0e0a0a" stroke="#333" stroke-width="1" rx="4"/>
+<text x="40" y="1659" fill="#888888" font-size="13" font-weight="bold">Electrostatic (Fusor)</text>
+<text x="40" y="1673" fill="#888" font-size="9">T=20.0 keV  n=0.01×10²⁰  B=1.0T  R=0.1m</text>
+<rect x="40.0" y="1679" width="1.6" height="14" fill="#ff6b35" opacity="0.8"/>
+<rect x="41.6" y="1679" width="4.2" height="14" fill="#44cc44" opacity="0.8"/>
+<rect x="45.8" y="1679" width="1.0" height="14" fill="#4488cc" opacity="0.8"/>
+<rect x="46.8" y="1679" width="193.2" height="14" fill="#aaaaaa" opacity="0.8"/>
+<text x="143.4" y="1690" text-anchor="middle" fill="#000" font-size="8" font-weight="bold">96.6%</text>
+<text x="250" y="1690" fill="#aaa" font-size="9">H/H_max=0.130</text>
+<text x="40" y="1705" fill="#ff6b35" font-size="10" font-weight="bold">Alpha: 0.8%</text>
+<text x="40" y="1719" fill="#888" font-size="8">P_α = ¼ n² &lt;σv&gt;(T) × E_α  [E_α</text>
+<text x="40" y="1731" fill="#666" font-size="8">∝ n² × &lt;σv&gt;(T)  — density sq</text>
+<text x="40" y="1743" fill="#555" font-size="7">n²=0.00×10⁴⁰, T=20.0 keV: &lt;σv&gt; n</text>
+<text x="40" y="1755" fill="#444" font-size="7">Needs n &gt; n_Greenwald AND T in 15-2</text>
+<text x="270" y="1705" fill="#44cc44" font-size="10" font-weight="bold">Brem: 2.1%</text>
+<text x="270" y="1719" fill="#888" font-size="8">P_brem = C_B × n² × √T × Z_eff</text>
+<text x="270" y="1731" fill="#666" font-size="8">∝ n² × √T × Z²_eff  — Z_eff </text>
+<text x="270" y="1743" fill="#555" font-size="7">n²=0.0001, √T=4.47, Z²_eff=1.0</text>
+<text x="270" y="1755" fill="#444" font-size="7">D-T: Z_eff=1, Brem stays small</text>
+<text x="500" y="1705" fill="#4488cc" font-size="10" font-weight="bold">Cyclo: 0.5%</text>
+<text x="500" y="1719" fill="#888" font-size="8">P_cyc = C_C × n × T² × B² / (1</text>
+<text x="500" y="1731" fill="#666" font-size="8">∝ T² × B²  — the cyclotron w</text>
+<text x="500" y="1743" fill="#555" font-size="7">T²=400.0, B²=1.0 → T²B²=400</text>
+<text x="500" y="1755" fill="#444" font-size="7">B=1.0T: cyclotron &lt; 5% — field too </text>
+<text x="730" y="1705" fill="#aaaaaa" font-size="10" font-weight="bold">Cond: 96.6%</text>
+<text x="730" y="1719" fill="#888" font-size="8">P_cond = 3nT / (2τ_E)  [τ_E fr</text>
+<text x="730" y="1731" fill="#666" font-size="8">∝ nT/τ_E ∝ nT/R^1.97  — size</text>
+<text x="730" y="1743" fill="#555" font-size="7">R=0.1m → R^1.97 = 0.011, n×T = 0</text>
+<text x="730" y="1755" fill="#444" font-size="7">R &lt; 2m: conduction dominates — too </text>
+<text x="475" y="1821" text-anchor="middle" fill="#555" font-size="10">EXP-08 — HUF Programme — Peter Higgins / Claude (Anthropic)</text>
+</svg>

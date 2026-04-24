@@ -1,0 +1,1369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Higgins Simplex Scope — Real-Time Compositional Decomposition</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0D1117; color: #E6EDF3; font-family: 'Segoe UI', Arial, sans-serif; overflow: hidden; height: 100vh; }
+
+.header { background: #161B22; padding: 8px 16px; border-bottom: 1px solid #30363D; display: flex; align-items: center; justify-content: space-between; height: 48px; }
+.header h1 { font-size: 14px; color: #FFD700; font-weight: 700; letter-spacing: 0.5px; }
+.header .subtitle { font-size: 11px; color: #8B949E; }
+
+.main { display: grid; grid-template-columns: 220px 1fr 1fr 1fr; grid-template-rows: 1fr 1fr; height: calc(100vh - 48px); gap: 2px; background: #30363D; }
+
+.panel { background: #161B22; position: relative; overflow: hidden; }
+.panel-title { position: absolute; top: 6px; left: 10px; font-size: 10px; color: #FFD700; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; z-index: 10; }
+.panel-sub { position: absolute; top: 20px; left: 10px; font-size: 9px; color: #8B949E; z-index: 10; }
+
+/* Controls Panel */
+.controls { grid-row: 1 / 3; padding: 10px; overflow-y: auto; }
+.ctrl-section { margin-bottom: 12px; }
+.ctrl-section h3 { font-size: 10px; color: #FFD700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; border-bottom: 1px solid #30363D; padding-bottom: 3px; }
+.ctrl-row { margin-bottom: 5px; }
+.ctrl-row label { display: flex; justify-content: space-between; font-size: 11px; color: #CADCFC; margin-bottom: 2px; }
+.ctrl-row label span.val { color: #FFD700; font-weight: 600; font-family: 'Consolas', monospace; }
+.ctrl-row input[type="range"] { width: 100%; height: 4px; -webkit-appearance: none; background: #30363D; border-radius: 2px; outline: none; }
+.ctrl-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 14px; height: 14px; border-radius: 50%; background: #FFD700; cursor: pointer; }
+
+select { width: 100%; padding: 5px; background: #0D1117; color: #E6EDF3; border: 1px solid #30363D; border-radius: 4px; font-size: 11px; }
+
+.btn-row { display: flex; gap: 5px; margin-top: 6px; }
+.btn { flex: 1; padding: 7px 3px; border: none; border-radius: 4px; font-size: 11px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
+.btn-play { background: #27AE60; color: white; }
+.btn-pause { background: #F0B429; color: #0D1117; }
+.btn-reset { background: #F85149; color: white; }
+.btn:hover { opacity: 0.85; }
+
+.stats { margin-top: 8px; background: #0D1117; border-radius: 4px; padding: 6px; font-family: 'Consolas', monospace; font-size: 10px; line-height: 1.5; }
+.stats .label { color: #8B949E; }
+.stats .value { color: #58A6FF; }
+.stats .gold { color: #FFD700; }
+.stats .chaos { color: #F85149; font-weight: bold; }
+
+.step-list { font-size: 9px; line-height: 1.4; color: #8B949E; margin-top: 4px; }
+.step-list .active { color: #27AE60; font-weight: 700; }
+
+/* 3D Helix container must fill its panel */
+#helixContainer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+#helixContainer canvas { display: block; width: 100% !important; height: 100% !important; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>HIGGINS SIMPLEX SCOPE</h1>
+    <div class="subtitle">Compositional Structure in Motion — Real-Time Information Dynamics on the Simplex</div>
+    <div style="font-size:9px;color:#58A6FF;margin-top:2px;">12-Step Hˢ Higgins Decomposition | EITT Chaos Detection | Ternary · Complex Plane · 3D Helix Projections</div>
+  </div>
+  <div style="font-size:10px;color:#8B949E;text-align:right;">Peter Higgins<br>CoDaWork 2026 — Coimbra</div>
+</div>
+
+<div class="main">
+  <!-- Controls -->
+  <div class="panel controls" id="controlPanel">
+    <div class="ctrl-section">
+      <h3>System Parameters</h3>
+      <div class="ctrl-row">
+        <label>Mass (kg) <span class="val" id="massVal">5.0</span></label>
+        <input type="range" id="massSlider" min="1" max="20" step="0.5" value="5">
+      </div>
+      <div class="ctrl-row">
+        <label>Spring k (N/m) <span class="val" id="springVal">200</span></label>
+        <input type="range" id="springSlider" min="20" max="500" step="10" value="200">
+      </div>
+      <div class="ctrl-row">
+        <label>Damping c (N·s/m) <span class="val" id="dampVal">2.0</span></label>
+        <input type="range" id="dampSlider" min="0" max="20" step="0.5" value="2">
+      </div>
+      <div class="ctrl-row">
+        <label>Initial x₀ (m) <span class="val" id="x0Val">0.30</span></label>
+        <input type="range" id="x0Slider" min="0.01" max="1.0" step="0.01" value="0.30">
+      </div>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Perturbation at t = 5s</h3>
+      <div class="ctrl-row">
+        <select id="perturbType">
+          <option value="none">S1: None (Baseline)</option>
+          <option value="mass_step">S2: Mass doubles</option>
+          <option value="spring_shift">S3: Spring halves</option>
+          <option value="impulse">S4: Impulse (500N)</option>
+          <option value="damping_ramp">S5: Damping triples</option>
+          <option value="cascade">S6: Cascade (all)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Simulation</h3>
+      <div class="ctrl-row">
+        <label>Speed <span class="val" id="speedVal">1.0x</span></label>
+        <input type="range" id="speedSlider" min="0.25" max="4" step="0.25" value="1">
+      </div>
+      <div class="btn-row">
+        <button class="btn btn-play" id="btnPlay" onclick="startSim()">Play</button>
+        <button class="btn btn-pause" id="btnPause" onclick="pauseSim()">Pause</button>
+        <button class="btn btn-reset" id="btnReset" onclick="resetSim()">Reset</button>
+      </div>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Live Metrics</h3>
+      <div class="stats">
+        <div><span class="label">Time:</span> <span class="value" id="statTime">0.000 s</span></div>
+        <div><span class="label">Position:</span> <span class="value" id="statX">0.300 m</span></div>
+        <div><span class="label">Velocity:</span> <span class="value" id="statV">0.000 m/s</span></div>
+        <div><span class="label">Entropy H:</span> <span class="gold" id="statH">--</span></div>
+        <div><span class="label">Helix turns:</span> <span class="gold" id="statTurns">0.0</span></div>
+        <div><span class="label">Deviations:</span> <span class="chaos" id="statDevCount">0</span></div>
+        <div><span class="label">Chaos %:</span> <span class="chaos" id="statChaos">0.0%</span></div>
+      </div>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Pipeline Steps</h3>
+      <div class="step-list" id="stepList">
+        <div>0. Define system</div>
+        <div>1. Identify carriers</div>
+        <div id="step2">2. Simulate (RK4)</div>
+        <div id="step3">3. Close to simplex</div>
+        <div id="step4">4. CLR transform</div>
+        <div id="step5">5. Aitchison variance</div>
+        <div id="step6">6. HVLD vertex lock</div>
+        <div id="step7">7. Super squeeze</div>
+        <div id="step8">8. EITT entropy</div>
+        <div id="step9">9. Ternary projection</div>
+        <div id="step10">10. Complex plane</div>
+        <div id="step11">11. 3D helix</div>
+        <div id="step12">12. Chaos detection</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Spring Animation -->
+  <div class="panel" id="springPanel">
+    <div class="panel-title">Spring-Mass System</div>
+    <div class="panel-sub">Real-time RK4 integration</div>
+    <canvas id="springCanvas"></canvas>
+  </div>
+
+  <!-- Ternary Diagram -->
+  <div class="panel" id="ternaryPanel">
+    <div class="panel-title">Ternary Force Diagram</div>
+    <div class="panel-sub">Gravity / Spring / Damping</div>
+    <canvas id="ternaryCanvas"></canvas>
+  </div>
+
+  <!-- 3D Helix -->
+  <div class="panel" id="helixPanel">
+    <div class="panel-title">3D Helix</div>
+    <div class="panel-sub">Re(z), Im(z), Time | RED = deviation</div>
+    <div id="helixContainer"></div>
+  </div>
+
+  <!-- EITT + Chaos Detection (replaces Force Bars) -->
+  <div class="panel" id="eittPanel">
+    <div class="panel-title">EITT Entropy + Chaos Detection</div>
+    <div class="panel-sub">Entropy H(t) | Angular velocity w(t) | Red = deviation events</div>
+    <canvas id="eittCanvas"></canvas>
+  </div>
+
+  <!-- Complex Plane -->
+  <div class="panel" id="complexPanel">
+    <div class="panel-title">Complex Plane</div>
+    <div class="panel-sub">z = Re + i*Im (centered) | Red dots = deviations</div>
+    <canvas id="complexCanvas"></canvas>
+  </div>
+
+  <!-- Composition Time Series -->
+  <div class="panel" id="compPanel">
+    <div class="panel-title">Composition Trajectories</div>
+    <div class="panel-sub">Force shares over time</div>
+    <canvas id="compCanvas"></canvas>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// CONSTANTS & STATE
+// ============================================================
+var G = 9.81;
+var COLORS = {
+  gravity: '#FFD700', spring: '#58A6FF', damping: '#F85149', inertia: '#BC8CFF',
+  pre: '#58A6FF', post: '#F0B429', bg: '#0D1117', panel: '#161B22',
+  grid: '#30363D', text: '#E6EDF3', grey: '#8B949E', gold: '#FFD700',
+  green: '#27AE60', red: '#F85149', teal: '#028090', chaos: '#FF0040'
+};
+
+var state = {
+  running: false,
+  t: 0, x: 0.3, v: 0, dt: 0.001,
+  m0: 5, k0: 200, c0: 2, x0: 0.3,
+  perturbType: 'none',
+  speed: 1,
+  history: [],
+  maxHistory: 12000,
+  tEnd: 12,
+  cumPhase: 0,
+  lastAngle: null,
+  deviationEvents: []  // indices into history where chaos detected
+};
+
+// ============================================================
+// PHYSICS
+// ============================================================
+function getParams(t) {
+  var m = state.m0, k = state.k0, c = state.c0, Fext = 0;
+  var tp = 5.0;
+  switch(state.perturbType) {
+    case 'mass_step': if(t >= tp) m = m * 2; break;
+    case 'spring_shift': if(t >= tp) k = k * 0.5; break;
+    case 'impulse':
+      if(Math.abs(t - tp) < 0.1) Fext = 500 * Math.exp(-Math.pow((t-tp)/0.01, 2));
+      break;
+    case 'damping_ramp':
+      if(t >= tp) c = c * (1 + 2*Math.min((t-tp)/3, 1));
+      break;
+    case 'cascade':
+      if(t >= tp) m = m * 1.5;
+      if(t >= tp+1) k = k * 0.7;
+      if(Math.abs(t - tp) < 0.2) Fext = 300 * Math.exp(-Math.pow((t-tp)/0.02, 2));
+      break;
+  }
+  return {m: m, k: k, c: c, Fext: Fext};
+}
+
+function deriv(t, x, v) {
+  var p = getParams(t);
+  var dvdt = v;
+  var dadt = (p.m*G - p.k*x - p.c*v + p.Fext) / p.m;
+  return [dvdt, dadt];
+}
+
+function rk4Step(t, x, v, dt) {
+  var d1 = deriv(t, x, v);
+  var d2 = deriv(t+dt/2, x+d1[0]*dt/2, v+d1[1]*dt/2);
+  var d3 = deriv(t+dt/2, x+d2[0]*dt/2, v+d2[1]*dt/2);
+  var d4 = deriv(t+dt, x+d3[0]*dt, v+d3[1]*dt);
+  return [
+    x + (d1[0] + 2*d2[0] + 2*d3[0] + d4[0])*dt/6,
+    v + (d1[1] + 2*d2[1] + 2*d3[1] + d4[1])*dt/6
+  ];
+}
+
+function computeForces(t, x, v) {
+  var p = getParams(t);
+  var a = (p.m*G - p.k*x - p.c*v + p.Fext) / p.m;
+  return {
+    gravity: p.m * G,
+    spring: p.k * Math.abs(x),
+    damping: p.c * Math.abs(v),
+    inertia: p.m * Math.abs(a),
+    a: a
+  };
+}
+
+function toComposition(forces) {
+  var arr = [Math.max(forces.gravity,1e-10), Math.max(forces.spring,1e-10),
+             Math.max(forces.damping,1e-10), Math.max(forces.inertia,1e-10)];
+  var s = arr[0] + arr[1] + arr[2] + arr[3];
+  return [arr[0]/s, arr[1]/s, arr[2]/s, arr[3]/s];
+}
+
+function shannonEntropy(comp) {
+  var s = 0;
+  for(var i = 0; i < comp.length; i++) {
+    if(comp[i] > 1e-15) s += comp[i] * Math.log(comp[i]);
+  }
+  return -s;
+}
+
+function ternaryCoords(comp) {
+  var g = Math.max(comp[0], 1e-10);
+  var sp = Math.max(comp[1], 1e-10);
+  var d = Math.max(comp[2], 1e-10);
+  var sum = g + sp + d;
+  var sn = sp/sum, dn = d/sum;
+  return [sn + dn*0.5, dn * Math.sqrt(3)/2];
+}
+
+// ============================================================
+// CHAOS / DEVIATION DETECTION
+// ============================================================
+// Compute angular velocity around the centroid in the complex plane.
+// When angular velocity drops to near-zero or reverses sign, the helix
+// is failing to spiral — that's a deviation event.
+function computeAngularVelocities() {
+  var hist = state.history;
+  if(hist.length < 20) return [];
+
+  var pts = [];
+  for(var i = 0; i < hist.length; i++) pts.push(hist[i].ternXY);
+
+  // Centroid
+  var mx = 0, my = 0;
+  for(var i = 0; i < pts.length; i++) { mx += pts[i][0]; my += pts[i][1]; }
+  mx /= pts.length; my /= pts.length;
+
+  // Angular velocity: dtheta/dt between consecutive points
+  var omega = new Array(hist.length);
+  omega[0] = 0;
+  for(var i = 1; i < hist.length; i++) {
+    var a1 = Math.atan2(pts[i-1][1]-my, pts[i-1][0]-mx);
+    var a2 = Math.atan2(pts[i][1]-my, pts[i][0]-mx);
+    var da = a2 - a1;
+    if(da > Math.PI) da -= 2*Math.PI;
+    if(da < -Math.PI) da += 2*Math.PI;
+    var dt = hist[i].t - hist[i-1].t;
+    omega[i] = dt > 0 ? da / dt : 0;
+  }
+  return omega;
+}
+
+function detectDeviations(omega) {
+  // A deviation is where angular velocity changes sign (reversal)
+  // or magnitude drops below a threshold relative to the running mean
+  if(omega.length < 30) return [];
+
+  var events = [];
+  var windowSize = 20;
+
+  for(var i = windowSize; i < omega.length; i++) {
+    // Running mean of |omega| over last windowSize points
+    var meanOmega = 0;
+    for(var j = i - windowSize; j < i; j++) meanOmega += Math.abs(omega[j]);
+    meanOmega /= windowSize;
+
+    // Deviation conditions:
+    // 1. Sign reversal from dominant direction
+    // 2. Angular velocity near zero while mean is high (stall)
+    // 3. Sudden spike > 3x the running mean
+    var absOmega = Math.abs(omega[i]);
+    var isStall = (meanOmega > 0.5) && (absOmega < meanOmega * 0.15);
+    var isSpike = absOmega > meanOmega * 3.5 && meanOmega > 0.3;
+
+    // Check for sign reversal over short window
+    var signChanges = 0;
+    for(var j = Math.max(0, i-5); j < i; j++) {
+      if(omega[j] * omega[j+1] < 0) signChanges++;
+    }
+    var isReversal = signChanges >= 2 && meanOmega > 0.3;
+
+    if(isStall || isSpike || isReversal) {
+      // Avoid marking consecutive points - require gap of 5
+      if(events.length === 0 || (i - events[events.length-1]) > 5) {
+        events.push(i);
+      }
+    }
+  }
+  return events;
+}
+
+// ============================================================
+// SIMULATION LOOP
+// ============================================================
+var animFrame = null;
+var lastRealTime = null;
+
+function simStep() {
+  if(!state.running) return;
+
+  var now = performance.now();
+  if(lastRealTime === null) lastRealTime = now;
+  var elapsed = (now - lastRealTime) / 1000 * state.speed;
+  lastRealTime = now;
+
+  var steps = Math.min(Math.floor(elapsed / state.dt), 200);
+
+  for(var i = 0; i < steps; i++) {
+    if(state.t >= state.tEnd) { pauseSim(); return; }
+
+    var result = rk4Step(state.t, state.x, state.v, state.dt);
+    state.x = result[0]; state.v = result[1]; state.t += state.dt;
+
+    // Record every 10th step
+    if(Math.round(state.t / state.dt) % 10 === 0) {
+      var forces = computeForces(state.t, state.x, state.v);
+      var comp = toComposition(forces);
+      var txy = ternaryCoords(comp);
+      var H = shannonEntropy(comp);
+
+      var entry = { t: state.t, x: state.x, v: state.v, a: forces.a, comp: comp, ternXY: txy, entropy: H };
+      state.history.push(entry);
+
+      if(state.history.length > state.maxHistory) {
+        state.history = state.history.slice(Math.floor(state.maxHistory * 0.1));
+      }
+    }
+  }
+
+  // Recompute deviations periodically (every ~100 frames)
+  if(state.history.length % 20 === 0) {
+    var omega = computeAngularVelocities();
+    state.deviationEvents = detectDeviations(omega);
+    state.cachedOmega = omega;
+  }
+
+  updateDisplays();
+  animFrame = requestAnimationFrame(simStep);
+}
+
+function startSim() {
+  if(state.running) return;
+  state.running = true;
+  lastRealTime = null;
+  updateStepHighlights();
+  animFrame = requestAnimationFrame(simStep);
+}
+
+function pauseSim() {
+  state.running = false;
+  if(animFrame) cancelAnimationFrame(animFrame);
+}
+
+function resetSim() {
+  pauseSim();
+  state.t = 0;
+  state.x = state.x0;
+  state.v = 0;
+  state.history = [];
+  state.cumPhase = 0;
+  state.lastAngle = null;
+  state.deviationEvents = [];
+  state.cachedOmega = [];
+  lastRealTime = null;
+
+  updateHelixGeometry();
+  updateDisplays();
+  resetStepHighlights();
+}
+
+// ============================================================
+// SLIDER BINDINGS
+// ============================================================
+document.getElementById('massSlider').oninput = function() {
+  state.m0 = parseFloat(this.value);
+  document.getElementById('massVal').textContent = state.m0.toFixed(1);
+};
+document.getElementById('springSlider').oninput = function() {
+  state.k0 = parseFloat(this.value);
+  document.getElementById('springVal').textContent = state.k0;
+};
+document.getElementById('dampSlider').oninput = function() {
+  state.c0 = parseFloat(this.value);
+  document.getElementById('dampVal').textContent = state.c0.toFixed(1);
+};
+document.getElementById('x0Slider').oninput = function() {
+  state.x0 = parseFloat(this.value);
+  document.getElementById('x0Val').textContent = state.x0.toFixed(2);
+  if(!state.running && state.t === 0) { state.x = state.x0; updateDisplays(); }
+};
+document.getElementById('speedSlider').oninput = function() {
+  state.speed = parseFloat(this.value);
+  document.getElementById('speedVal').textContent = state.speed.toFixed(2) + 'x';
+};
+document.getElementById('perturbType').onchange = function() {
+  state.perturbType = this.value;
+};
+
+// ============================================================
+// STEP HIGHLIGHTS
+// ============================================================
+function updateStepHighlights() {
+  for(var i=2; i<=12; i++) {
+    var el = document.getElementById('step'+i);
+    if(el) el.className = 'active';
+  }
+}
+function resetStepHighlights() {
+  for(var i=2; i<=12; i++) {
+    var el = document.getElementById('step'+i);
+    if(el) el.className = '';
+  }
+}
+
+// ============================================================
+// CANVAS RENDERERS
+// ============================================================
+function setupCanvas(id) {
+  var canvas = document.getElementById(id);
+  var parent = canvas.parentElement;
+  var dpr = window.devicePixelRatio || 1;
+  canvas.width = parent.clientWidth * dpr;
+  canvas.height = parent.clientHeight * dpr;
+  canvas.style.width = parent.clientWidth + 'px';
+  canvas.style.height = parent.clientHeight + 'px';
+  var ctx = canvas.getContext('2d');
+  ctx.scale(dpr, dpr);
+  return { ctx: ctx, w: parent.clientWidth, h: parent.clientHeight };
+}
+
+// --- SPRING ANIMATION ---
+function drawSpring() {
+  var c = setupCanvas('springCanvas');
+  var ctx = c.ctx, w = c.w, h = c.h;
+  ctx.fillStyle = COLORS.panel;
+  ctx.fillRect(0, 0, w, h);
+
+  var margin = 40;
+  var anchorY = margin + 30;
+  var restLen = (h - margin*2 - 60) * 0.4;
+  var maxExt = (h - margin*2 - 60) * 0.3;
+
+  var xEq = state.m0 * G / state.k0;
+  var displacement = state.x;
+  var normalizedDisp = Math.max(-1, Math.min(1, (displacement - xEq) / 0.5));
+  var massY = anchorY + restLen + normalizedDisp * maxExt;
+  var cx = w * 0.4;
+
+  // Anchor
+  ctx.fillStyle = COLORS.grey;
+  ctx.fillRect(cx - 30, anchorY - 8, 60, 8);
+
+  // Spring coils
+  var nCoils = 12;
+  var springLen = massY - anchorY;
+  ctx.strokeStyle = COLORS.spring;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(cx, anchorY);
+  for(var i = 0; i <= nCoils; i++) {
+    var y = anchorY + (i/nCoils) * springLen;
+    var xOff = (i % 2 === 0 ? -1 : 1) * 15;
+    if(i === 0 || i === nCoils) ctx.lineTo(cx, y);
+    else ctx.lineTo(cx + xOff, y);
+  }
+  ctx.stroke();
+
+  // Mass block
+  var blockSize = 24 + state.m0;
+  ctx.fillStyle = state.t >= 5 && state.perturbType !== 'none' ? COLORS.post : COLORS.pre;
+  ctx.fillRect(cx - blockSize/2, massY - blockSize/2, blockSize, blockSize);
+  ctx.fillStyle = '#0D1117';
+  ctx.font = 'bold 10px Consolas';
+  ctx.textAlign = 'center';
+  ctx.fillText(state.m0.toFixed(1)+'kg', cx, massY + 3);
+
+  // Arrows for forces
+  var arrowX = cx + blockSize/2 + 20;
+  var forces = state.history.length > 0 ? computeForces(state.t, state.x, state.v) : null;
+
+  if(forces) {
+    var scale = 0.15;
+    drawArrow(ctx, arrowX, massY, arrowX, massY + forces.gravity*scale, COLORS.gravity, 'Fg');
+    var sDir = displacement > 0 ? -1 : 1;
+    drawArrow(ctx, arrowX+30, massY, arrowX+30, massY + sDir*forces.spring*scale, COLORS.spring, 'Fs');
+    var dDir = state.v > 0 ? -1 : 1;
+    drawArrow(ctx, arrowX+60, massY, arrowX+60, massY + dDir*forces.damping*scale*3, COLORS.damping, 'Fd');
+  }
+
+  // Time display
+  ctx.fillStyle = COLORS.gold;
+  ctx.font = 'bold 14px Consolas';
+  ctx.textAlign = 'left';
+  ctx.fillText('t = ' + state.t.toFixed(2) + ' s', 12, h - 12);
+
+  // Perturbation marker
+  if(state.t >= 5 && state.perturbType !== 'none') {
+    ctx.fillStyle = COLORS.red;
+    ctx.font = 'bold 10px Arial';
+    ctx.fillText('PERTURBED', 12, h - 28);
+  }
+
+  // Deviation flash
+  if(state.deviationEvents.length > 0) {
+    var lastDev = state.deviationEvents[state.deviationEvents.length - 1];
+    if(state.history.length - lastDev < 15) {
+      ctx.fillStyle = COLORS.chaos;
+      ctx.globalAlpha = 0.3;
+      ctx.fillRect(0, 0, w, h);
+      ctx.globalAlpha = 1;
+      ctx.fillStyle = COLORS.chaos;
+      ctx.font = 'bold 12px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText('DEVIATION DETECTED', w/2, 50);
+    }
+  }
+}
+
+function drawArrow(ctx, x1, y1, x2, y2, color, label) {
+  var dx = x2-x1, dy = y2-y1;
+  var len = Math.sqrt(dx*dx + dy*dy);
+  if(len < 2) return;
+  ctx.strokeStyle = color;
+  ctx.fillStyle = color;
+  ctx.lineWidth = 2;
+  ctx.beginPath();
+  ctx.moveTo(x1, y1);
+  ctx.lineTo(x2, y2);
+  ctx.stroke();
+  var angle = Math.atan2(dy, dx);
+  ctx.beginPath();
+  ctx.moveTo(x2, y2);
+  ctx.lineTo(x2 - 6*Math.cos(angle-0.4), y2 - 6*Math.sin(angle-0.4));
+  ctx.lineTo(x2 - 6*Math.cos(angle+0.4), y2 - 6*Math.sin(angle+0.4));
+  ctx.fill();
+  ctx.font = '9px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText(label, (x1+x2)/2 - 8, (y1+y2)/2);
+}
+
+// --- EITT + CHAOS DETECTION PANEL ---
+function drawEITT() {
+  var c = setupCanvas('eittCanvas');
+  var ctx = c.ctx, w = c.w, h = c.h;
+  ctx.fillStyle = COLORS.panel;
+  ctx.fillRect(0, 0, w, h);
+
+  if(state.history.length < 20) return;
+
+  var hist = state.history;
+  var omega = state.cachedOmega || [];
+  var devSet = {};
+  for(var d = 0; d < state.deviationEvents.length; d++) devSet[state.deviationEvents[d]] = true;
+
+  // Split panel: top = entropy, bottom = angular velocity
+  var midY = h * 0.48;
+  var margin = {top: 36, right: 12, bottom: 8, left: 50};
+
+  var tMax = Math.max(hist[hist.length-1].t, 1);
+  function mapX(t) { return margin.left + (t/tMax) * (w - margin.left - margin.right); }
+
+  // === TOP: ENTROPY H(t) ===
+  var eTop = margin.top;
+  var eBot = midY - 8;
+  var eH = eBot - eTop;
+
+  // Get entropy range
+  var Hmin = Infinity, Hmax = -Infinity;
+  for(var i = 0; i < hist.length; i++) {
+    var hv = hist[i].entropy;
+    if(hv < Hmin) Hmin = hv;
+    if(hv > Hmax) Hmax = hv;
+  }
+  var Hrange = Math.max(Hmax - Hmin, 0.001);
+  Hmin -= Hrange * 0.1;
+  Hmax += Hrange * 0.1;
+  Hrange = Hmax - Hmin;
+
+  function mapEY(v) { return eBot - ((v - Hmin) / Hrange) * eH; }
+
+  // Grid
+  ctx.strokeStyle = COLORS.grid;
+  ctx.lineWidth = 0.5;
+  for(var g = 0; g < 5; g++) {
+    var gv = Hmin + Hrange * g / 4;
+    var gy = mapEY(gv);
+    ctx.beginPath(); ctx.moveTo(margin.left, gy); ctx.lineTo(w - margin.right, gy); ctx.stroke();
+    ctx.fillStyle = COLORS.grey;
+    ctx.font = '8px Consolas';
+    ctx.textAlign = 'right';
+    ctx.fillText(gv.toFixed(3), margin.left - 4, gy + 3);
+  }
+
+  // Entropy trace
+  ctx.strokeStyle = COLORS.teal;
+  ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  for(var i = 0; i < hist.length; i++) {
+    var px = mapX(hist[i].t);
+    var py = mapEY(hist[i].entropy);
+    if(i === 0) ctx.moveTo(px, py);
+    else ctx.lineTo(px, py);
+  }
+  ctx.stroke();
+
+  // Running mean (window of 30)
+  var winSize = 30;
+  if(hist.length > winSize) {
+    ctx.strokeStyle = COLORS.gold;
+    ctx.lineWidth = 1;
+    ctx.globalAlpha = 0.7;
+    ctx.beginPath();
+    var started = false;
+    for(var i = winSize; i < hist.length; i++) {
+      var sum = 0;
+      for(var j = i - winSize; j < i; j++) sum += hist[j].entropy;
+      var mean = sum / winSize;
+      var px = mapX(hist[i].t);
+      var py = mapEY(mean);
+      if(!started) { ctx.moveTo(px, py); started = true; }
+      else ctx.lineTo(px, py);
+    }
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+
+  // Mark deviation events as red vertical lines on entropy
+  ctx.strokeStyle = COLORS.chaos;
+  ctx.lineWidth = 1.5;
+  ctx.globalAlpha = 0.6;
+  for(var d = 0; d < state.deviationEvents.length; d++) {
+    var idx = state.deviationEvents[d];
+    if(idx < hist.length) {
+      var px = mapX(hist[idx].t);
+      ctx.beginPath(); ctx.moveTo(px, eTop); ctx.lineTo(px, eBot); ctx.stroke();
+    }
+  }
+  ctx.globalAlpha = 1;
+
+  // Entropy title
+  ctx.fillStyle = COLORS.teal;
+  ctx.font = 'bold 9px Arial';
+  ctx.textAlign = 'left';
+  ctx.fillText('ENTROPY H(t)', margin.left, eTop - 4);
+  ctx.fillStyle = COLORS.gold;
+  ctx.fillText('  running mean', margin.left + 80, eTop - 4);
+  ctx.fillStyle = COLORS.chaos;
+  ctx.fillText('  deviation', margin.left + 155, eTop - 4);
+
+  // === BOTTOM: ANGULAR VELOCITY w(t) ===
+  var oTop = midY + 8;
+  var oBot = h - margin.bottom - 16;
+  var oH = oBot - oTop;
+
+  if(omega.length > 10) {
+    // Omega range
+    var oMin = Infinity, oMax = -Infinity;
+    for(var i = 10; i < omega.length; i++) {
+      if(omega[i] < oMin) oMin = omega[i];
+      if(omega[i] > oMax) oMax = omega[i];
+    }
+    var oRange = Math.max(oMax - oMin, 0.1);
+    oMin -= oRange * 0.1;
+    oMax += oRange * 0.1;
+    oRange = oMax - oMin;
+
+    function mapOY(v) { return oBot - ((v - oMin) / oRange) * oH; }
+
+    // Zero line
+    if(oMin < 0 && oMax > 0) {
+      ctx.strokeStyle = COLORS.grey;
+      ctx.lineWidth = 0.5;
+      ctx.setLineDash([3,3]);
+      var zy = mapOY(0);
+      ctx.beginPath(); ctx.moveTo(margin.left, zy); ctx.lineTo(w-margin.right, zy); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+
+    // Grid
+    ctx.strokeStyle = COLORS.grid;
+    ctx.lineWidth = 0.5;
+    for(var g = 0; g < 4; g++) {
+      var gv = oMin + oRange * g / 3;
+      var gy = mapOY(gv);
+      ctx.beginPath(); ctx.moveTo(margin.left, gy); ctx.lineTo(w-margin.right, gy); ctx.stroke();
+    }
+
+    // Angular velocity trace - color by sign
+    for(var i = 1; i < omega.length; i++) {
+      var px1 = mapX(hist[i-1].t);
+      var px2 = mapX(hist[i].t);
+      var py1 = mapOY(omega[i-1]);
+      var py2 = mapOY(omega[i]);
+
+      var isDev = devSet[i];
+      if(isDev) {
+        ctx.strokeStyle = COLORS.chaos;
+        ctx.lineWidth = 2.5;
+      } else {
+        ctx.strokeStyle = omega[i] >= 0 ? COLORS.pre : COLORS.post;
+        ctx.lineWidth = 1;
+      }
+      ctx.beginPath();
+      ctx.moveTo(px1, py1);
+      ctx.lineTo(px2, py2);
+      ctx.stroke();
+    }
+
+    // Deviation markers
+    ctx.fillStyle = COLORS.chaos;
+    for(var d = 0; d < state.deviationEvents.length; d++) {
+      var idx = state.deviationEvents[d];
+      if(idx < hist.length && idx < omega.length) {
+        var px = mapX(hist[idx].t);
+        var py = mapOY(omega[idx]);
+        ctx.beginPath();
+        ctx.arc(px, py, 4, 0, Math.PI*2);
+        ctx.fill();
+      }
+    }
+  }
+
+  // Omega title
+  ctx.fillStyle = COLORS.pre;
+  ctx.font = 'bold 9px Arial';
+  ctx.textAlign = 'left';
+  ctx.fillText('ANGULAR VELOCITY w(t)', margin.left, oTop - 2);
+  ctx.fillStyle = COLORS.grey;
+  ctx.font = '8px Arial';
+  ctx.fillText('rad/s around centroid | sign = spiral direction', margin.left + 130, oTop - 2);
+
+  // Perturbation line (both panels)
+  if(state.perturbType !== 'none') {
+    var px = mapX(5);
+    ctx.strokeStyle = COLORS.red;
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4,4]);
+    ctx.beginPath(); ctx.moveTo(px, eTop); ctx.lineTo(px, oBot); ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = COLORS.red;
+    ctx.font = '8px Arial';
+    ctx.textAlign = 'center';
+    ctx.fillText('t=5', px, oBot + 10);
+  }
+
+  // Time axis
+  ctx.fillStyle = COLORS.grey;
+  ctx.font = '8px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('Time (s)', w/2, h - 2);
+}
+
+// --- TERNARY ---
+function drawTernary() {
+  var c = setupCanvas('ternaryCanvas');
+  var ctx = c.ctx, w = c.w, h = c.h;
+  ctx.fillStyle = COLORS.panel;
+  ctx.fillRect(0, 0, w, h);
+
+  if(state.history.length < 2) return;
+
+  var pts = [];
+  for(var i = 0; i < state.history.length; i++) pts.push(state.history[i].ternXY);
+
+  var xMin = Infinity, xMax = -Infinity, yMin = Infinity, yMax = -Infinity;
+  for(var i = 0; i < pts.length; i++) {
+    if(pts[i][0] < xMin) xMin = pts[i][0];
+    if(pts[i][0] > xMax) xMax = pts[i][0];
+    if(pts[i][1] < yMin) yMin = pts[i][1];
+    if(pts[i][1] > yMax) yMax = pts[i][1];
+  }
+
+  var xRange = Math.max(xMax - xMin, 0.001);
+  var yRange = Math.max(yMax - yMin, 0.0005);
+  var xPad = xRange * 0.2;
+  var yPad = yRange * 0.5;
+
+  var margin = 44;
+  var plotW = w - margin*2;
+  var plotH = h - margin*2;
+
+  function mapX(v) { return margin + (v - (xMin-xPad)) / (xRange+2*xPad) * plotW; }
+  function mapY(v) { return h - margin - (v - (yMin-yPad)) / (yRange+2*yPad) * plotH; }
+
+  // Grid
+  ctx.strokeStyle = COLORS.grid;
+  ctx.lineWidth = 0.5;
+  for(var i = 0; i <= 8; i++) {
+    var gx = xMin - xPad + (xRange+2*xPad)*i/8;
+    var gy = yMin - yPad + (yRange+2*yPad)*i/8;
+    ctx.beginPath(); ctx.moveTo(mapX(gx), margin); ctx.lineTo(mapX(gx), h-margin); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(margin, mapY(gy)); ctx.lineTo(w-margin, mapY(gy)); ctx.stroke();
+  }
+
+  // Deviation set for quick lookup
+  var devSet = {};
+  for(var d = 0; d < state.deviationEvents.length; d++) devSet[state.deviationEvents[d]] = true;
+
+  // Draw trajectory
+  var tMax = state.history[state.history.length-1].t;
+  ctx.lineWidth = 1.5;
+  for(var i = 1; i < pts.length; i++) {
+    var tFrac = state.history[i].t / Math.max(tMax, 0.01);
+    if(devSet[i]) {
+      ctx.strokeStyle = COLORS.chaos;
+      ctx.lineWidth = 3;
+    } else {
+      var isPre = state.history[i].t < 5;
+      ctx.strokeStyle = isPre ? COLORS.pre : COLORS.post;
+      ctx.lineWidth = 1.5;
+    }
+    ctx.globalAlpha = 0.3 + 0.7 * tFrac;
+    ctx.beginPath();
+    ctx.moveTo(mapX(pts[i-1][0]), mapY(pts[i-1][1]));
+    ctx.lineTo(mapX(pts[i][0]), mapY(pts[i][1]));
+    ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+
+  // Deviation markers on ternary
+  ctx.fillStyle = COLORS.chaos;
+  for(var d = 0; d < state.deviationEvents.length; d++) {
+    var idx = state.deviationEvents[d];
+    if(idx < pts.length) {
+      ctx.beginPath();
+      ctx.arc(mapX(pts[idx][0]), mapY(pts[idx][1]), 4, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  // Current position
+  var last = pts[pts.length-1];
+  ctx.fillStyle = COLORS.gold;
+  ctx.beginPath();
+  ctx.arc(mapX(last[0]), mapY(last[1]), 5, 0, Math.PI*2);
+  ctx.fill();
+
+  // Start marker
+  ctx.fillStyle = COLORS.green;
+  ctx.beginPath();
+  ctx.arc(mapX(pts[0][0]), mapY(pts[0][1]), 4, 0, Math.PI*2);
+  ctx.fill();
+
+  // Axis labels
+  ctx.fillStyle = COLORS.grey;
+  ctx.font = '9px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('Gravity <---> Spring', w/2, h - 8);
+  ctx.save();
+  ctx.translate(10, h/2);
+  ctx.rotate(-Math.PI/2);
+  ctx.fillText('Base <---> Damping', 0, 0);
+  ctx.restore();
+}
+
+// --- COMPLEX PLANE ---
+function drawComplex() {
+  var c = setupCanvas('complexCanvas');
+  var ctx = c.ctx, w = c.w, h = c.h;
+  ctx.fillStyle = COLORS.panel;
+  ctx.fillRect(0, 0, w, h);
+
+  if(state.history.length < 10) return;
+
+  var pts = [];
+  for(var i = 0; i < state.history.length; i++) pts.push(state.history[i].ternXY);
+
+  var mx = 0, my = 0;
+  for(var i = 0; i < pts.length; i++) { mx += pts[i][0]; my += pts[i][1]; }
+  mx /= pts.length; my /= pts.length;
+
+  var centered = [];
+  for(var i = 0; i < pts.length; i++) centered.push([pts[i][0] - mx, pts[i][1] - my]);
+
+  var rMax = 0;
+  for(var i = 0; i < centered.length; i++) {
+    var r = Math.sqrt(centered[i][0]*centered[i][0] + centered[i][1]*centered[i][1]);
+    if(r > rMax) rMax = r;
+  }
+  rMax = Math.max(rMax, 0.001) * 1.3;
+
+  var margin = 36;
+  var cx = w/2, cy = h/2;
+  var scale = Math.min(w - margin*2, h - margin*2) / 2 / rMax;
+
+  // Grid circles
+  ctx.strokeStyle = COLORS.grid;
+  ctx.lineWidth = 0.5;
+  for(var r = rMax*0.25; r <= rMax; r += rMax*0.25) {
+    ctx.beginPath();
+    ctx.arc(cx, cy, r * scale, 0, Math.PI*2);
+    ctx.stroke();
+  }
+  ctx.beginPath(); ctx.moveTo(margin, cy); ctx.lineTo(w-margin, cy); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(cx, margin); ctx.lineTo(cx, h-margin); ctx.stroke();
+
+  // Deviation set
+  var devSet = {};
+  for(var d = 0; d < state.deviationEvents.length; d++) devSet[state.deviationEvents[d]] = true;
+
+  // Draw spiral
+  for(var i = 1; i < centered.length; i++) {
+    var tFrac = i / centered.length;
+    if(devSet[i]) {
+      ctx.strokeStyle = COLORS.chaos;
+      ctx.lineWidth = 3;
+    } else {
+      var isPre = state.history[i].t < 5;
+      ctx.strokeStyle = isPre ? COLORS.pre : COLORS.post;
+      ctx.lineWidth = 1.5;
+    }
+    ctx.globalAlpha = 0.3 + 0.7 * tFrac;
+    ctx.beginPath();
+    ctx.moveTo(cx + centered[i-1][0]*scale, cy - centered[i-1][1]*scale);
+    ctx.lineTo(cx + centered[i][0]*scale, cy - centered[i][1]*scale);
+    ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+
+  // Deviation dots
+  ctx.fillStyle = COLORS.chaos;
+  for(var d = 0; d < state.deviationEvents.length; d++) {
+    var idx = state.deviationEvents[d];
+    if(idx < centered.length) {
+      ctx.beginPath();
+      ctx.arc(cx + centered[idx][0]*scale, cy - centered[idx][1]*scale, 5, 0, Math.PI*2);
+      ctx.fill();
+    }
+  }
+
+  // Current point
+  var lp = centered[centered.length-1];
+  ctx.fillStyle = COLORS.gold;
+  ctx.beginPath();
+  ctx.arc(cx + lp[0]*scale, cy - lp[1]*scale, 4, 0, Math.PI*2);
+  ctx.fill();
+
+  ctx.fillStyle = COLORS.grey;
+  ctx.font = '9px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('Re(z)', w/2, h - 6);
+  ctx.save();
+  ctx.translate(8, h/2);
+  ctx.rotate(-Math.PI/2);
+  ctx.fillText('Im(z)', 0, 0);
+  ctx.restore();
+}
+
+// --- COMPOSITION TRAJECTORIES ---
+function drawComp() {
+  var c = setupCanvas('compCanvas');
+  var ctx = c.ctx, w = c.w, h = c.h;
+  ctx.fillStyle = COLORS.panel;
+  ctx.fillRect(0, 0, w, h);
+
+  if(state.history.length < 2) return;
+
+  var margin = {top: 36, right: 12, bottom: 24, left: 40};
+  var plotW = w - margin.left - margin.right;
+  var plotH = h - margin.top - margin.bottom;
+  var tMax = Math.max(state.history[state.history.length-1].t, 1);
+
+  function mapX(t) { return margin.left + (t/tMax) * plotW; }
+  function mapY(v) { return margin.top + (1 - v) * plotH; }
+
+  // Grid
+  ctx.strokeStyle = COLORS.grid;
+  ctx.lineWidth = 0.5;
+  for(var v = 0; v <= 1; v += 0.25) {
+    ctx.beginPath(); ctx.moveTo(margin.left, mapY(v)); ctx.lineTo(w-margin.right, mapY(v)); ctx.stroke();
+    ctx.fillStyle = COLORS.grey;
+    ctx.font = '8px Consolas';
+    ctx.textAlign = 'right';
+    ctx.fillText((v*100).toFixed(0)+'%', margin.left-4, mapY(v)+3);
+  }
+
+  // Perturbation line
+  if(state.perturbType !== 'none') {
+    var px = mapX(5);
+    if(px >= margin.left && px <= w - margin.right) {
+      ctx.strokeStyle = COLORS.red;
+      ctx.lineWidth = 1;
+      ctx.setLineDash([4,4]);
+      ctx.beginPath(); ctx.moveTo(px, margin.top); ctx.lineTo(px, h-margin.bottom); ctx.stroke();
+      ctx.setLineDash([]);
+    }
+  }
+
+  // Deviation event background bars
+  ctx.fillStyle = COLORS.chaos;
+  ctx.globalAlpha = 0.1;
+  for(var d = 0; d < state.deviationEvents.length; d++) {
+    var idx = state.deviationEvents[d];
+    if(idx < state.history.length) {
+      var px = mapX(state.history[idx].t);
+      ctx.fillRect(px - 2, margin.top, 4, plotH);
+    }
+  }
+  ctx.globalAlpha = 1;
+
+  // Draw each carrier
+  var labels = ['Gravity', 'Spring', 'Damping', 'Inertia'];
+  var colors = [COLORS.gravity, COLORS.spring, COLORS.damping, COLORS.inertia];
+  for(var ci = 0; ci < 4; ci++) {
+    ctx.strokeStyle = colors[ci];
+    ctx.lineWidth = 1.5;
+    ctx.globalAlpha = 0.85;
+    ctx.beginPath();
+    for(var i = 0; i < state.history.length; i++) {
+      var x = mapX(state.history[i].t);
+      var y = mapY(state.history[i].comp[ci]);
+      if(i === 0) ctx.moveTo(x, y);
+      else ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+  ctx.globalAlpha = 1;
+
+  // Legend
+  for(var ci = 0; ci < 4; ci++) {
+    ctx.fillStyle = colors[ci];
+    ctx.fillRect(margin.left + ci*70, margin.top - 14, 10, 10);
+    ctx.fillStyle = COLORS.text;
+    ctx.font = '9px Arial';
+    ctx.textAlign = 'left';
+    ctx.fillText(labels[ci], margin.left + ci*70 + 14, margin.top - 5);
+  }
+
+  ctx.fillStyle = COLORS.grey;
+  ctx.font = '9px Arial';
+  ctx.textAlign = 'center';
+  ctx.fillText('Time (s)', w/2, h - 4);
+}
+
+// ============================================================
+// THREE.JS 3D HELIX
+// ============================================================
+var helixScene, helixCamera, helixRenderer, helixLine;
+var helixCurrentDot;
+var helixDevMarkers = [];
+
+function initHelix() {
+  var container = document.getElementById('helixContainer');
+  var w = container.clientWidth || container.offsetWidth || container.parentElement.clientWidth;
+  var h = container.clientHeight || container.offsetHeight || container.parentElement.clientHeight;
+
+  // If dimensions are still 0, defer initialization until layout completes
+  if(w < 10 || h < 10) {
+    setTimeout(initHelix, 50);
+    return;
+  }
+
+  helixScene = new THREE.Scene();
+  helixScene.background = new THREE.Color(COLORS.panel);
+
+  helixCamera = new THREE.PerspectiveCamera(50, w/h, 0.01, 100);
+  helixCamera.position.set(1.5, 0.8, 1.5);
+  helixCamera.lookAt(0, 0.5, 0);
+
+  helixRenderer = new THREE.WebGLRenderer({ antialias: true });
+  helixRenderer.setSize(w, h);
+  helixRenderer.setPixelRatio(window.devicePixelRatio);
+  container.appendChild(helixRenderer.domElement);
+
+  // Grid helper
+  var gridH = new THREE.GridHelper(2, 20, 0x30363D, 0x30363D);
+  helixScene.add(gridH);
+
+  // Axes
+  var axMat = new THREE.LineBasicMaterial({ color: 0x8B949E });
+  var axX = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-1,0,0), new THREE.Vector3(1,0,0)]);
+  helixScene.add(new THREE.Line(axX, axMat));
+  var axZ = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,-1), new THREE.Vector3(0,0,1)]);
+  helixScene.add(new THREE.Line(axZ, axMat));
+  var axY = new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0,0,0), new THREE.Vector3(0,1.5,0)]);
+  helixScene.add(new THREE.Line(axY, new THREE.LineBasicMaterial({ color: 0xFFD700 })));
+
+  // Helix line
+  var geo = new THREE.BufferGeometry();
+  var posArr = new Float32Array(state.maxHistory * 3);
+  var colArr = new Float32Array(state.maxHistory * 3);
+  geo.setAttribute('position', new THREE.BufferAttribute(posArr, 3));
+  geo.setAttribute('color', new THREE.BufferAttribute(colArr, 3));
+  geo.setDrawRange(0, 0);
+
+  var mat = new THREE.LineBasicMaterial({ vertexColors: true, linewidth: 2 });
+  helixLine = new THREE.Line(geo, mat);
+  helixScene.add(helixLine);
+
+  // Current position dot
+  var dotGeo = new THREE.SphereGeometry(0.025, 12, 12);
+  var dotMat = new THREE.MeshBasicMaterial({ color: 0xFFD700 });
+  helixCurrentDot = new THREE.Mesh(dotGeo, dotMat);
+  helixScene.add(helixCurrentDot);
+
+  // Perturbation plane
+  var planeGeo = new THREE.PlaneGeometry(2, 2);
+  var planeMat = new THREE.MeshBasicMaterial({ color: 0xF85149, transparent: true, opacity: 0.08, side: THREE.DoubleSide });
+  var plane = new THREE.Mesh(planeGeo, planeMat);
+  plane.rotation.x = Math.PI / 2;
+  plane.position.y = 5/12 * 1.5;
+  helixScene.add(plane);
+
+  // Mouse rotation
+  var isDragging = false, prevMouse = {x:0, y:0};
+  var rotY = 0.8, rotX = 0.3;
+  var radius = 2.2;
+
+  function updateCamera() {
+    helixCamera.position.x = radius * Math.sin(rotY) * Math.cos(rotX);
+    helixCamera.position.y = radius * Math.sin(rotX) + 0.5;
+    helixCamera.position.z = radius * Math.cos(rotY) * Math.cos(rotX);
+    helixCamera.lookAt(0, 0.5, 0);
+  }
+  updateCamera();
+
+  helixRenderer.domElement.addEventListener('mousedown', function(e) { isDragging = true; prevMouse = {x:e.clientX, y:e.clientY}; });
+  window.addEventListener('mouseup', function() { isDragging = false; });
+  helixRenderer.domElement.addEventListener('mousemove', function(e) {
+    if(!isDragging) return;
+    rotY += (e.clientX - prevMouse.x) * 0.01;
+    rotX = Math.max(-1, Math.min(1, rotX + (e.clientY - prevMouse.y) * 0.01));
+    prevMouse = {x:e.clientX, y:e.clientY};
+    updateCamera();
+  });
+
+  renderHelix();
+}
+
+function updateHelixGeometry() {
+  if(!helixLine || state.history.length < 2) return;
+
+  var pts = [];
+  for(var i = 0; i < state.history.length; i++) pts.push(state.history[i].ternXY);
+  var mx = 0, my = 0;
+  for(var i = 0; i < pts.length; i++) { mx += pts[i][0]; my += pts[i][1]; }
+  mx /= pts.length; my /= pts.length;
+
+  var posAttr = helixLine.geometry.attributes.position;
+  var colAttr = helixLine.geometry.attributes.color;
+  var tMax = Math.max(state.tEnd, 1);
+  var scaleFactor = 3;
+
+  // Deviation set
+  var devSet = {};
+  for(var d = 0; d < state.deviationEvents.length; d++) devSet[state.deviationEvents[d]] = true;
+
+  var n = Math.min(pts.length, state.maxHistory);
+  for(var i = 0; i < n; i++) {
+    var re = (pts[i][0] - mx) * scaleFactor;
+    var im = (pts[i][1] - my) * scaleFactor;
+    var t = state.history[i].t / tMax;
+
+    posAttr.array[i*3] = re;
+    posAttr.array[i*3+1] = t * 1.5;
+    posAttr.array[i*3+2] = im;
+
+    // Color: RED for deviation, cyan pre, orange post
+    if(devSet[i]) {
+      colAttr.array[i*3] = 1.0; colAttr.array[i*3+1] = 0.0; colAttr.array[i*3+2] = 0.25;
+    } else if(state.history[i].t < 5) {
+      colAttr.array[i*3] = 0.345; colAttr.array[i*3+1] = 0.651; colAttr.array[i*3+2] = 1.0;
+    } else {
+      colAttr.array[i*3] = 0.941; colAttr.array[i*3+1] = 0.702; colAttr.array[i*3+2] = 0.161;
+    }
+  }
+
+  posAttr.needsUpdate = true;
+  colAttr.needsUpdate = true;
+  helixLine.geometry.setDrawRange(0, n);
+
+  // Update dot
+  if(n > 0) {
+    helixCurrentDot.position.set(
+      posAttr.array[(n-1)*3],
+      posAttr.array[(n-1)*3+1],
+      posAttr.array[(n-1)*3+2]
+    );
+  }
+
+  // Update deviation sphere markers
+  // Remove old ones
+  for(var i = 0; i < helixDevMarkers.length; i++) {
+    helixScene.remove(helixDevMarkers[i]);
+  }
+  helixDevMarkers = [];
+
+  // Add new ones (limit to 50 most recent for performance)
+  var devToShow = state.deviationEvents.slice(-50);
+  for(var d = 0; d < devToShow.length; d++) {
+    var idx = devToShow[d];
+    if(idx < n) {
+      var sg = new THREE.SphereGeometry(0.015, 8, 8);
+      var sm = new THREE.MeshBasicMaterial({ color: 0xFF0040 });
+      var sphere = new THREE.Mesh(sg, sm);
+      sphere.position.set(posAttr.array[idx*3], posAttr.array[idx*3+1], posAttr.array[idx*3+2]);
+      helixScene.add(sphere);
+      helixDevMarkers.push(sphere);
+    }
+  }
+}
+
+function renderHelix() {
+  if(helixRenderer) {
+    helixRenderer.render(helixScene, helixCamera);
+  }
+  requestAnimationFrame(renderHelix);
+}
+
+// ============================================================
+// MASTER UPDATE
+// ============================================================
+function updateDisplays() {
+  document.getElementById('statTime').textContent = state.t.toFixed(3) + ' s';
+  document.getElementById('statX').textContent = state.x.toFixed(4) + ' m';
+  document.getElementById('statV').textContent = state.v.toFixed(4) + ' m/s';
+
+  if(state.history.length > 0) {
+    var last = state.history[state.history.length-1];
+    document.getElementById('statH').textContent = last.entropy.toFixed(4);
+
+    // Deviation stats
+    var nDev = state.deviationEvents.length;
+    document.getElementById('statDevCount').textContent = nDev;
+    var chaosPercent = state.history.length > 0 ? (nDev / state.history.length * 100) : 0;
+    document.getElementById('statChaos').textContent = chaosPercent.toFixed(1) + '%';
+
+    // Cumulative phase
+    if(state.history.length >= 2) {
+      var pts = [];
+      for(var i = 0; i < state.history.length; i++) pts.push(state.history[i].ternXY);
+      var pmx = 0, pmy = 0;
+      for(var i = 0; i < pts.length; i++) { pmx += pts[i][0]; pmy += pts[i][1]; }
+      pmx /= pts.length; pmy /= pts.length;
+      var cumP = 0;
+      for(var i = 1; i < pts.length; i++) {
+        var a1 = Math.atan2(pts[i-1][1]-pmy, pts[i-1][0]-pmx);
+        var a2 = Math.atan2(pts[i][1]-pmy, pts[i][0]-pmx);
+        var da = a2 - a1;
+        if(da > Math.PI) da -= 2*Math.PI;
+        if(da < -Math.PI) da += 2*Math.PI;
+        cumP += da;
+      }
+      document.getElementById('statTurns').textContent = (cumP / (2*Math.PI)).toFixed(1);
+    }
+  }
+
+  drawSpring();
+  drawEITT();
+  drawTernary();
+  drawComplex();
+  drawComp();
+  updateHelixGeometry();
+}
+
+// ============================================================
+// INIT
+// ============================================================
+window.addEventListener('load', function() {
+  state.cachedOmega = [];
+  // Check that Three.js loaded successfully before initialising helix
+  if(typeof THREE !== 'undefined') {
+    initHelix();
+  } else {
+    // Three.js CDN may have failed — retry with a fallback or show error
+    console.warn('Three.js not loaded — retrying...');
+    var s = document.createElement('script');
+    s.src = 'https://cdn.jsdelivr.net/npm/three@0.128.0/build/three.min.js';
+    s.onload = function() { initHelix(); };
+    s.onerror = function() {
+      document.getElementById('helixContainer').innerHTML = '<div style="color:#F85149;padding:40px;text-align:center;font-size:12px;">3D Helix requires Three.js<br>Check internet connection</div>';
+    };
+    document.head.appendChild(s);
+  }
+  updateDisplays();
+});
+
+window.addEventListener('resize', function() {
+  var container = document.getElementById('helixContainer');
+  if(helixRenderer && container) {
+    var w = container.clientWidth || container.parentElement.clientWidth;
+    var h = container.clientHeight || container.parentElement.clientHeight;
+    if(w > 0 && h > 0) {
+      helixRenderer.setSize(w, h);
+      helixCamera.aspect = w / h;
+      helixCamera.updateProjectionMatrix();
+    }
+  }
+  updateDisplays();
+});
+</script>
+</body>
+</html>

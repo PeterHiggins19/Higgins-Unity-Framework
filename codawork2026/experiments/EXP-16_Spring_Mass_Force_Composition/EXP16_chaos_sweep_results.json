@@ -1,0 +1,124 @@
+{
+  "sweep_params": {
+    "masses": [
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0,
+      11.0,
+      12.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      18.0,
+      19.0,
+      20.0
+    ],
+    "springs": [
+      20,
+      45,
+      70,
+      95,
+      120,
+      145,
+      170,
+      195,
+      220,
+      245,
+      270,
+      295,
+      320,
+      345,
+      370,
+      395,
+      420,
+      445,
+      470,
+      495
+    ],
+    "dampings": [
+      0.0,
+      1.0,
+      2.0,
+      3.0,
+      4.0,
+      5.0,
+      6.0,
+      7.0,
+      8.0,
+      9.0,
+      10.0,
+      11.0,
+      12.0,
+      13.0,
+      14.0,
+      15.0,
+      16.0,
+      17.0,
+      18.0,
+      19.0,
+      20.0
+    ],
+    "perturbation_types": [
+      "none",
+      "mass_step",
+      "spring_shift",
+      "impulse",
+      "damping_ramp",
+      "cascade"
+    ],
+    "defaults": {
+      "m": 5.0,
+      "k": 200.0,
+      "c": 2.0
+    }
+  },
+  "total_simulations": 7806,
+  "global_stats": {
+    "total_parameter_combos": 7440,
+    "zero_chaos_runs": 49,
+    "zero_chaos_pct": 0.6586021505376344,
+    "max_chaos_observed": 16.416666666666664,
+    "mean_chaos_nonzero": 4.5176904343120015
+  },
+  "per_scenario": {
+    "S1 Baseline": {
+      "mean_chaos": 4.373185483870968,
+      "max_chaos": 16.416666666666664,
+      "pct_with_chaos": 99.03225806451613
+    },
+    "S2 Mass x2": {
+      "mean_chaos": 4.824529569892474,
+      "max_chaos": 15.916666666666668,
+      "pct_with_chaos": 99.2741935483871
+    },
+    "S3 Spring /2": {
+      "mean_chaos": 4.1235215053763445,
+      "max_chaos": 15.916666666666668,
+      "pct_with_chaos": 98.95161290322581
+    },
+    "S4 Impulse": {
+      "mean_chaos": 5.137432795698925,
+      "max_chaos": 16.416666666666664,
+      "pct_with_chaos": 100.0
+    },
+    "S5 Damp x3": {
+      "mean_chaos": 3.8804435483870967,
+      "max_chaos": 16.416666666666664,
+      "pct_with_chaos": 98.79032258064517
+    },
+    "S6 Cascade": {
+      "mean_chaos": 4.588508064516129,
+      "max_chaos": 15.75,
+      "pct_with_chaos": 100.0
+    }
+  }
+}
