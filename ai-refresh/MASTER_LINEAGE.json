@@ -1,40 +1,49 @@
 {
   "_meta": {
     "type": "HUF-MASTER-LINEAGE",
-    "version": "1.2",
+    "version": "1.5",
     "created": "2026-04-15",
+    "updated": "2026-04-22",
     "author": "Peter Higgins / Claude",
     "purpose": "Machine-readable record of the arc from Rogue Wave Audio loudspeaker engineering through the Higgins Operator H1 to the Higgins Unity Framework (HUF) and EITT. Establishes that the compositional viewpoint was discovered empirically in acoustic engineering before it was formalized mathematically. Cross-references the current repo back to the prior work it grew out of.",
     "founding_principle": "The past is our strength and our future. What was built in the Binaural Test Lab in 2024-2025 is the engineering DNA of everything in this repo. The math book did not invent the structure; the physics did. The screwdriver came first.",
     "companion_documents": {
-      "narrative_origin": "briefings/THE_LINEAGE.md \u2014 the first-person founding narrative including the Isotropic Principle and the screwdriver-and-math-book framing",
-      "technical_bridge": "science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md \u2014 the line-by-line mapping from DADC-DADI-ADAC to MC-4/EITT",
-      "biographical_foundation": "briefings/HUF_Biographical_Foundation_v1.0.json \u2014 the human origin story, 35 years at the machine interface",
-      "acoustic_primary_source": "RogueWaveAudio/Dimension-Apportioned Diffraction Correction and Inference (DADC-DADI).docx (local working folder) \u2014 published in public RWA repo at docs/papers/Dimension-Apportioned_Diffraction_Correction_and_Inference_DADC-DADI.docx",
-      "flagship_publication": "RogueWaveAudio/Organic_Digital_Loudspeakers_v2.6.docx (local working folder) \u2014 published in public RWA repo at docs/papers/Organic_Digital_Loudspeakers_v2.6.docx",
-      "generalization_primary_source": "RogueWaveAudio/The Higgins Operator H1 101.pdf (local working folder ONLY) \u2014 NOT YET in public RWA repo. See 'observations' section at end of this file for note."
-    }
+      "narrative_origin": "briefings/THE_LINEAGE.md — the first-person founding narrative including the Isotropic Principle and the screwdriver-and-math-book framing",
+      "technical_bridge": "science/coda-monitoring/ORIGIN_BRIDGE_DADC_TO_MC4.md — the line-by-line mapping from DADC-DADI-ADAC to MC-4/EITT",
+      "biographical_foundation": "briefings/HUF_Biographical_Foundation_v1.0.json — the human origin story, 35 years at the machine interface",
+      "acoustic_primary_source": "RogueWaveAudio/Dimension-Apportioned Diffraction Correction and Inference (DADC-DADI).docx (local working folder) — published in public RWA repo at docs/papers/Dimension-Apportioned_Diffraction_Correction_and_Inference_DADC-DADI.docx",
+      "flagship_publication": "RogueWaveAudio/Organic_Digital_Loudspeakers_v2.6.docx (local working folder) — published in public RWA repo at docs/papers/Organic_Digital_Loudspeakers_v2.6.docx",
+      "generalization_primary_source": "RogueWaveAudio/The Higgins Operator H1 101.pdf (local working folder ONLY) — NOT YET in public RWA repo. See 'observations' section at end of this file for note."
+    },
+    "last_updated": "2026-04-22"
   },
-
   "public_rwa_repo": {
     "url": "https://github.com/PeterHiggins19/Rogue-Wave-Audio",
     "default_branch": "master",
     "initial_commit": "2026-03-11",
     "current_state_as_of_review": "2026-04-15",
-    "commit_history": "Single commit ('Initial RWA repo structure') \u2014 the repo is at its initial state, no subsequent updates",
+    "commit_history": "Single commit ('Initial RWA repo structure') — the repo is at its initial state, no subsequent updates",
     "structure": {
-      "docs/papers/": ["Dimension-Apportioned_Diffraction_Correction_and_Inference_DADC-DADI.docx", "Organic_Digital_Loudspeakers_v2.6.docx"],
+      "docs/papers/": [
+        "Dimension-Apportioned_Diffraction_Correction_and_Inference_DADC-DADI.docx",
+        "Organic_Digital_Loudspeakers_v2.6.docx"
+      ],
       "docs/btl-lab/": "BTL Small Studio Lab certification and design documents",
       "docs/reference/": "Supporting reference materials",
       "data/btl-lab/": "Design and measurement spreadsheets",
       "src/builders/": "docx-js builder scripts (for generating .docx from .js)",
       "src/tools/": "DADC-DADI calculator and other tools (Jupyter notebooks)",
-      "concepts/": ["ai-reports/ (9 Grok reports, numbered 24, 25, 46-52)", "entropix/", "regimes/", "tensor-acoustic-forge/", "v-infinity-core/"],
+      "concepts/": [
+        "ai-reports/ (9 Grok reports, numbered 24, 25, 46-52)",
+        "entropix/",
+        "regimes/",
+        "tensor-acoustic-forge/",
+        "v-infinity-core/"
+      ],
       "archive/": "Superseded designs, logs, reference materials"
     },
-    "cross_referencing_to_huf": "NONE. The public RWA README does not reference HUF or the Higgins-Unity-Framework repo. RWA presents itself purely as an audio engineering project. This is a deliberate separation \u2014 RWA is the engineering home, HUF is the scientific framework home. The lineage connection lives in HUF-side documents (THE_LINEAGE.md, ORIGIN_BRIDGE_DADC_TO_MC4.md, this MASTER_LINEAGE.json). Whether to add a reciprocal link in the RWA README is Peter's design choice."
+    "cross_referencing_to_huf": "NONE. The public RWA README does not reference HUF or the Higgins-Unity-Framework repo. RWA presents itself purely as an audio engineering project. This is a deliberate separation — RWA is the engineering home, HUF is the scientific framework home. The lineage connection lives in HUF-side documents (THE_LINEAGE.md, ORIGIN_BRIDGE_DADC_TO_MC4.md, this MASTER_LINEAGE.json). Whether to add a reciprocal link in the RWA README is Peter's design choice."
   },
-
   "rwa_concept_branches": {
     "_note": "The public RWA concepts/ folder contains five active R&D branches that preexisted the HUF repo. Several appear to have conceptual counterparts in HUF; mapping them is part of the 'past is our strength' principle.",
     "ai-reports": {
@@ -46,7 +55,7 @@
     "entropix": {
       "rwa_location": "concepts/entropix/",
       "content": "Regime-balanced predictive systems per README",
-      "huf_counterpart": "EITT work in science/eitt/ \u2014 entropy invariance under temporal transformation. Name 'entropix' precedes EITT and suggests entropy-based prediction was an explicit RWA-side R&D thread before EITT was named.",
+      "huf_counterpart": "EITT work in science/eitt/ — entropy invariance under temporal transformation. Name 'entropix' precedes EITT and suggests entropy-based prediction was an explicit RWA-side R&D thread before EITT was named.",
       "status": "Likely conceptual ancestor of EITT; cross-reference deserves deeper examination if time permits"
     },
     "regimes": {
@@ -64,20 +73,19 @@
     "v-infinity-core": {
       "rwa_location": "concepts/v-infinity-core/",
       "content": "Engine architecture per README",
-      "huf_counterpart": "HUF_VCore_Stack_Brief_v1.0 documents (science/quantum/) reference 'V\u221eCore stack' as part of the HUF operating manual. This is a direct RWA\u2192HUF name carry-through.",
-      "status": "Direct ancestor of HUF V\u221eCore stack documentation"
+      "huf_counterpart": "HUF_VCore_Stack_Brief_v1.0 documents (science/quantum/) reference 'V∞Core stack' as part of the HUF operating manual. This is a direct RWA→HUF name carry-through.",
+      "status": "Direct ancestor of HUF V∞Core stack documentation"
     }
   },
-
   "observations_from_public_repo_review": {
     "review_date": "2026-04-15",
     "reviewer": "Claude (via Chrome browser tools, github.com blocked for WebFetch)",
     "findings": [
-      "Public RWA repo contains 2 canonical papers: DADC-DADI (Dec 2024) and Organic Digital Loudspeakers v2.6 (Mar 2026). The Higgins Operator H1 101 paper (Feb 2026) is NOT in the public RWA repo \u2014 it exists only in the local RogueWaveAudio/ working folder. Peter may want to add it, or may be deliberately holding it back. Not flagging as an error, just noting the state.",
+      "Public RWA repo contains 2 canonical papers: DADC-DADI (Dec 2024) and Organic Digital Loudspeakers v2.6 (Mar 2026). The Higgins Operator H1 101 paper (Feb 2026) is NOT in the public RWA repo — it exists only in the local RogueWaveAudio/ working folder. Peter may want to add it, or may be deliberately holding it back. Not flagging as an error, just noting the state.",
       "Public RWA README makes no reference to HUF or to the Higgins-Unity-Framework repo. The two public projects are presented as independent. This is defensible (RWA = engineering, HUF = scientific framework) but means a reader arriving at RWA has no path to HUF and vice versa. A cross-reference could be added to either or both READMEs if Peter wants to make the lineage visible to the public.",
       "CITATION.cff has a repository-code URL typo: 'https://github.com/peterhiggins/RWA' should be 'https://github.com/PeterHiggins19/Rogue-Wave-Audio'. Minor but worth fixing next time the RWA repo is touched.",
-      "Two different contact emails in use: CITATION.cff in RWA uses peterhiggins2016@gmail.com; HUF ai-refresh/HUF_FAST_REFRESH.json uses PeterHiggins@roguewaveaudio.com. Not inconsistent \u2014 one is personal, one is business \u2014 but consistency per project might be worth deciding deliberately.",
-      "RWA repo is at initial commit (March 11, 2026) with no subsequent updates. The BTL lab work, the H1 paper, and the concept R&D all happened in the local folder during March-April 2026 without being pushed. Nothing wrong with this \u2014 just noting the public state is snapshot-from-March, not current."
+      "Two different contact emails in use: CITATION.cff in RWA uses peterhiggins2016@gmail.com; HUF ai-refresh/HUF_FAST_REFRESH.json uses PeterHiggins@roguewaveaudio.com. Not inconsistent — one is personal, one is business — but consistency per project might be worth deciding deliberately.",
+      "RWA repo is at initial commit (March 11, 2026) with no subsequent updates. The BTL lab work, the H1 paper, and the concept R&D all happened in the local folder during March-April 2026 without being pushed. Nothing wrong with this — just noting the public state is snapshot-from-March, not current."
     ],
     "recommended_adjustments": [
       "MASTER_LINEAGE.json (this file) is updated to reflect public RWA repo state and the five concept branches. Done.",
@@ -85,20 +93,18 @@
       "HUF repo could add a line to the root README noting the RWA repo as the engineering sibling. Low-priority but symmetric with MASTER_LINEAGE's acknowledgment of RWA as ancestor."
     ]
   },
-
   "the_isotropic_principle": {
     "statement": "Paint the inside of a sphere with radiation. Uniform. The geometry of that sphere exists whether or not anything is radiating. The structure is there before the signal. The simplex is there before the measurement.",
-    "role": "Pre-origin. Ground state. The barycenter of the simplex (1/D, 1/D, ..., 1/D) in CoDa language. Every departure is a signal; every return is relaxation. The same sphere regardless of what paints it \u2014 acoustic radiation, electricity generation shares, financial portfolio weights, wetland habitat proportions.",
+    "role": "Pre-origin. Ground state. The barycenter of the simplex (1/D, 1/D, ..., 1/D) in CoDa language. Every departure is a signal; every return is relaxation. The same sphere regardless of what paints it — acoustic radiation, electricity generation shares, financial portfolio weights, wetland habitat proportions.",
     "consequence": "HUF is inert. The probe reads the departure from isotropy. It does not create the departure. The geometry was always there; the instrument makes it readable."
   },
-
   "the_arc": [
     {
       "phase": "Pre-origin",
       "period": "background conditioning",
       "duration": "35 years at the man-machine interface",
       "event": "Cognitive conditioning at the machine interface. Dage X-ray, Fuji placement, Electrovert wave solder, AOI, PLCs, first-gen industrial AI. Thirty-five years of working inside controller systems until thinking like a controller became natural.",
-      "note": "The biographical foundation establishes this as the preparation. Not study \u2014 exposure. The environment shaped the perceptual channel."
+      "note": "The biographical foundation establishes this as the preparation. Not study — exposure. The environment shaped the perceptual channel."
     },
     {
       "phase": "The Montreal incident",
@@ -124,7 +130,7 @@
       "period": "December 5-6, 2024",
       "event": "Dimension-Apportioned Diffraction Correction (DADC) formal writeup. DADI inverse method documented one day later.",
       "technical_content": "Total baffle step correction = 6.02 dB (= 20 log10 2) apportioned across three cabinet dimensions (H, W, D). Each dimension receives a share proportional to its contribution. Gains sum to 6.02 dB exactly. Corner frequency Fc = 115/dimension (Hz*m). DADI inverts the acoustic response to recover H, W, D.",
-      "compositional_structure_present": "The gain vector (G_H, G_W, G_D) / 6.02 = (0.533, 0.246, 0.221) is a 3-simplex composition. The Dominance Index max/min is a pairwise log-ratio. The closure constraint is physical. The compositional geometry was in the data from the first measurement \u2014 before anyone involved knew the word 'simplex'.",
+      "compositional_structure_present": "The gain vector (G_H, G_W, G_D) / 6.02 = (0.533, 0.246, 0.221) is a 3-simplex composition. The Dominance Index max/min is a pairwise log-ratio. The closure constraint is physical. The compositional geometry was in the data from the first measurement — before anyone involved knew the word 'simplex'.",
       "document": "RogueWaveAudio/Dimension-Apportioned Diffraction Correction and Inference (DADC-DADI).docx"
     },
     {
@@ -141,8 +147,8 @@
     {
       "phase": "DADC-DADI-ADAC complete architecture",
       "period": "early-mid 2025",
-      "event": "ADAC \u2014 Adaptive Dimension Apportioning Correction / Apparent Dimension Apportioning Correction \u2014 completes the DADC-DADI triple. Measure, infer, correct, re-measure. Loop converges by Banach fixed-point theorem.",
-      "critical_moment": "The moment when the error signal was sitting there, geometrically native, and every engineering instinct said 'close the loop' \u2014 but something said: not automatically. Not by default. Fork right there. Observe OR control. Not a whiteboard choice; a mechanism that physically prevented automatic closure. Birth of HUF-GOV vs HUF-CLS.",
+      "event": "ADAC — Adaptive Dimension Apportioning Correction / Apparent Dimension Apportioning Correction — completes the DADC-DADI triple. Measure, infer, correct, re-measure. Loop converges by Banach fixed-point theorem.",
+      "critical_moment": "The moment when the error signal was sitting there, geometrically native, and every engineering instinct said 'close the loop' — but something said: not automatically. Not by default. Fork right there. Observe OR control. Not a whiteboard choice; a mechanism that physically prevented automatic closure. Birth of HUF-GOV vs HUF-CLS.",
       "governance_principle_locked": "Scientific measurement path (HUF-GOV) stays open, stateless, no feedback. Control path (HUF-CLS) closes the loop explicitly and only on human decision. Same architecture up to the fork. The fork is the doctrine."
     },
     {
@@ -154,15 +160,15 @@
     {
       "phase": "HUF framework formalization begins",
       "period": "late 2025",
-      "event": "Higgins Unity Framework repository initialized. First articulation of MC-4 (Composition Monitoring \u2014 the fourth monitoring category alongside MC-1 Magnitude, MC-2 Identity, MC-3 Trend). First cross-domain tests across energy, finance, infrastructure.",
+      "event": "Higgins Unity Framework repository initialized. First articulation of MC-4 (Composition Monitoring — the fourth monitoring category alongside MC-1 Magnitude, MC-2 Identity, MC-3 Trend). First cross-domain tests across energy, finance, infrastructure.",
       "key_transition": "From single-object (cabinet) to arbitrary-system (any conserved-budget composition). The simplex is the simplex regardless of what lives on it."
     },
     {
       "phase": "Higgins Operator H1 generalization",
       "period": "February 2026",
-      "event": "H1 paper formalizes the unity-normalization + directional-coherence preservation as an abstract operator on Hilbert space. Applications range from Conformal Cyclic Cosmology to Toronto urban infrastructure to EUV lithography to Planck CMB anomalies to stellar fusion \u2014 every context where a system has many components summing to something preserved under some operation.",
+      "event": "H1 paper formalizes the unity-normalization + directional-coherence preservation as an abstract operator on Hilbert space. Applications range from Conformal Cyclic Cosmology to Toronto urban infrastructure to EUV lithography to Planck CMB anomalies to stellar fusion — every context where a system has many components summing to something preserved under some operation.",
       "document": "RogueWaveAudio/The Higgins Operator H1 101.pdf",
-      "key_object": "H1|\u03c8\u27e9 = \u03bc(|\u03c8\u27e9) \u00b7 u where \u03bc(|\u03c8\u27e9) = \u27e8u|P|u\u27e9 is directional coherence, u = |\u03c8\u27e9 / ||\u03c8||, P is projection onto the ideal coherent unity subspace. The \u2211|\u03c8_i| = 1 invariant is the simplex constraint in abstract form."
+      "key_object": "H1|ψ⟩ = μ(|ψ⟩) · u where μ(|ψ⟩) = ⟨u|P|u⟩ is directional coherence, u = |ψ⟩ / ||ψ||, P is projection onto the ideal coherent unity subspace. The ∑|ψ_i| = 1 invariant is the simplex constraint in abstract form."
     },
     {
       "phase": "Ratio State Monitoring naming",
@@ -180,35 +186,152 @@
       "period": "April 2026",
       "event": "Aitchison geometry adopted explicitly. CoDaWork 2026 abstract submitted. EITT (Entropy-Invariant Time Transformer) discovered: Shannon entropy of compositional time series is near-invariant under geometric-mean block decimation across temporal resolutions. Four empirical proofs validate (European prices 0.18% at 341:1, EMBER 1.02% mean across six countries, NGFS 1.8% geometric vs 14.2% arithmetic, CheMixHub 54-82% interior pass).",
       "transition_steps": [
-        "Euclidean \u2192 Aitchison geometry (the space the data already lived in got named)",
-        "Spatial \u2192 Temporal (apportionment across cabinet dimensions became apportionment across time blocks)",
-        "Single object \u2192 Arbitrary system (3-part cabinet became arbitrary-D compositional series)"
+        "Euclidean → Aitchison geometry (the space the data already lived in got named)",
+        "Spatial → Temporal (apportionment across cabinet dimensions became apportionment across time blocks)",
+        "Single object → Arbitrary system (3-part cabinet became arbitrary-D compositional series)"
       ]
     },
     {
-      "phase": "Phase 1 stable \u2014 CoDaWork 2026 content",
+      "phase": "Phase 1 stable — CoDaWork 2026 content",
       "period": "2026-04-14 to 2026-04-15",
-      "event": "Four AI cold-start tests passed (Claude 5/5, ChatGPT 10/10, Grok 10/10, Gemini 5/5). Second-order Hessian bound formalized in EITT_HESSIAN_BOUND.md. Shape/magnitude decomposition synthesis in EITT_WHY_IT_WORKS.md \u00a77 resolves the Fisher-Rao loose end. Grok tensor-exploration residuals safely contained in dormant/. Abstract v4 drafted. Five-AI literature verification briefings issued.",
-      "phase_status": "STABLE \u2014 see PHASE_MARKERS.json P01"
+      "event": "Four AI cold-start tests passed (Claude 5/5, ChatGPT 10/10, Grok 10/10, Gemini 5/5). Second-order Hessian bound formalized in EITT_HESSIAN_BOUND.md. Shape/magnitude decomposition synthesis in EITT_WHY_IT_WORKS.md §7 resolves the Fisher-Rao loose end. Grok tensor-exploration residuals safely contained in dormant/. Abstract v4 drafted. Five-AI literature verification briefings issued.",
+      "phase_status": "STABLE — see PHASE_MARKERS.json P01"
     },
     {
-      "phase": "Phase 2 started \u2014 EITT hardening for broader adoption",
+      "phase": "Phase 2 started — EITT hardening for broader adoption",
       "period": "2026-04-15 onward",
       "event": "Mission: push EITT to pain point and protect users from pain. Two poles: reveal hidden structure + establish safety fences. Seven tracks of work in EITT_PHASE_2_ROADMAP.md. First Grok lit-verification return (Novel for Penrose x CoDa) filed.",
-      "phase_status": "ACTIVE \u2014 see PHASE_MARKERS.json P02"
+      "phase_status": "ACTIVE — see PHASE_MARKERS.json P02"
+    },
+    {
+      "phase": "Programme complete — 75 systems, 44 orders of magnitude",
+      "period": "2026-04-19",
+      "event": "EXP-10 (full sweep of mapped/untouched), EXP-11 (final four: dark matter, Z-chains, NS EOS, stellar sequence), EXP-12 (gravity deep study with GW150914/GW170817). Master inventory: 75 systems, 100% complete. The 93% universal entropy bound confirmed in gravitational wave phase budgets. No-hair theorem reframed as compositional minimum. Dark matter confinement at 10²⁰ m mirrors QCD confinement at 10⁻¹⁵ m across 35 orders of magnitude.",
+      "key_transition": "From 'the simplex might be the same everywhere' to 'the simplex IS the same everywhere — measured 75 times across 44 orders of magnitude'. The lineage from screwdriver (DADC) through simplex (CoDa) to universe (gravity) is complete.",
+      "phase_status": "COMPLETE — experimental programme. Phase 2 (hardening) continues."
+    },
+    {
+      "phase": "F17 Full Chain v3.0 — 44 domains across ALL HUF experiments",
+      "period": "2026-04-19",
+      "event": "F17 quadratic contamination tuner tested across 44 domains from EXP-01 through EXP-12 using real and prescribed data. 38 real (Gold/Silver, US 10 states, AME2020, real geochem, OWID 15 countries, EMBER 3 countries, India 5 states), 5 physics (SEMF, Fusion, QCD, Stellar, Kerr BH), 1 prescribed (Microphone). Key findings: EXP-02 perfect 10/10, long series 19/19 a≤0, India 5/5 all pass, deterministic walks correctly show b<0, boundary transitions confirmed.",
+      "outputs": [
+        "codawork2026/experiments/f17_full_chain_v3.py",
+        "codawork2026/experiments/f17_full_chain_v3.json",
+        "codawork2026/experiments/f17_full_chain_v3.png"
+      ],
+      "significance": "Complete F17 validation across entire HUF programme. 44 domains from 14 data sources. F17 remains L2 with strongest evidence base ever assembled."
+    },
+    {
+      "phase": "Nature's Confirmation Series — 23 nuclear/quantum systems",
+      "period": "2026-04-19",
+      "event": "All nuclear and quantum physics experiments in HUF catalogued as a special series (NS-01 through NS-23). Framed as nature's own confirmation bias: these systems were not designed to validate CoDa — they ARE CoDa. Binding energies sum, probabilities sum, branching ratios sum. 22/23 (96%) confirm across 41 orders of magnitude (proton 10⁻¹⁵ m to gravitational waves 10²⁶ m). Universal 93% entropy bound at proton (0.928), spin (0.969), GW phase (0.923). F17 physics scorecard: 8 domains, a_zero_doctrine 100%.",
+      "outputs": [
+        "codawork2026/experiments/NATURES_CONFIRMATION_SERIES.json"
+      ],
+      "significance": "The binding thesis — the simplex is the same everywhere. Nature does compositional data analysis without being told to. HUF reads what was always there. L1 candidate overlay."
+    },
+    {
+      "phase": "Simplex Parabola Hunter (EXP-13) — parabolic trajectory classification",
+      "period": "2026-04-20",
+      "event": "Peter Higgins identified that the stellar burning sequence (pp-chain/CNO/triple-α) traces a parabolic arc on the ternary simplex with CNO at the vertex. This triggered EXP-13: systematic testing of all 9 D=3 systems for parabolic vs geodesic trajectories in ILR coordinates. Result: 6/9 (67%) show statistically significant ILR parabolas; 3/9 are perfect geodesics. Clean split: power-law rates → geodesic; threshold/transition physics → parabola.",
+      "outputs": [
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/exp13_parabola_hunter.py",
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/exp13_parabola_hunter.json",
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/sealed_conclusion.json"
+      ],
+      "significance": "New CoDa diagnostic (ILR Curvature Index) distinguishes simple from structured compositional evolution. The Cartesian Parabola Theorem establishes that curvature on the simplex is a geometric property of the Aitchison metric. Strongest evidence: QCD running coupling F=3381."
+    },
+    {
+      "phase": "The Calibration Proof — from ternary display to 7 Aitchison theorems",
+      "period": "2026-04-20",
+      "event": "Peter Higgins observed that ternary diagram display calibration parameters (rotation, zoom, lift, vertex, opening, curvature, slice) are not arbitrary rendering choices — they ARE Aitchison geometric quantities. 'The instrument IS the measurement.' This single insight transformed a visualization problem into a theorem-proving programme. 7 formal theorems proven with machine-precision (10⁻¹⁵) verification: θ = CLR critical-point direction, λ = Aitchison geodesic deviation, σ = total Aitchison variance, t* = CLR Jacobian null, α = Aitchison dispersion angle, K = ILR geodesic curvature integral, φ = ILR principal axis orientation. The Calibration Septuple (θ, σ, λ, t*, α, K, φ) formalized as coordinate-free fingerprint for any D=3 compositional trajectory.",
+      "outputs": [
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/The_Calibration_Proof.docx",
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/calibration_proof.json",
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/diagnostic_display_map.json"
+      ],
+      "significance": "You cannot draw a ternary diagram properly without computing Aitchison quantities. The geometry forces your hand. The ILR isometry guarantees every display-space quantity has an exact Aitchison correspondent."
+    },
+    {
+      "phase": "Real Ember Data Validation + Distortion Tensor + Bell Reinterpretation",
+      "period": "2026-04-20",
+      "event": "Calibration Septuple validated on 4 real Ember electricity datasets (Coal/Gas/Nuclear D=3): World F=13.8 (parabola), Germany F=12.2 (parabola), France F=6.8 (geodesic — stable nuclear grid), China F=36.3 (parabola). Aitchison-Cartesian Distortion Tensor quantified: Cartesian displays distort by 10–80×; GW150914 shows curvature SIGN REVERSAL (K_ILR=−8.88 vs K_Cart=+1.00). Bell test S=2.2018 reinterpreted: the violation measures the Aitchison-Cartesian gap — CHSH assumes Euclidean independence but compositional closure guarantees correlations. Proposed resolution: reformulate S using Aitchison independence (ILR covariance = 0) as null hypothesis.",
+      "outputs": [
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/exp13_real_data_results.json",
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/EXP-13_Journal.docx",
+        "codawork2026/experiments/EXP-13_Parabola_Hunter/DISCOVERY_NARRATIVE.json"
+      ],
+      "significance": "Real measurement data validates physics models in the same parameter space. The distortion tensor provides the strongest quantitative argument for Aitchison geometry. The Bell reinterpretation connects the distortion tensor to quantum foundations: the 'violation' is a geometric artifact of applying Cartesian criteria to Aitchison objects. Prize-quality 33-page journal produced for CoDaWork2026."
+    },
+    {
+      "phase": "Higgins Diffraction Composition Principle (HDCP)",
+      "period": "2026-04-20",
+      "event": "Peter Higgins proposed that diffraction is nature's fixed-point composition. Every diffracting wave partitions its energy into a composition [T, R, D, A] on the simplex, with ratios determined by geometry (λ/a) and invariant under amplitude scaling. This formalizes the founding observation: the DADC baffle step (6.02 dB) was the FIRST natural diffraction composition measured in HUF. Five theorems proven: Diffraction Closure, Geometric Invariance (Fixed-Point Property), Babinet Closure, Diffraction Vertex, Universal Anchor. Babinet's Principle (1837) identified as compositional closure — 145 years before Aitchison. Catalog spans acoustic, electromagnetic, X-ray, electron, neutron, and gravitational wave diffraction.",
+      "outputs": [
+        "science/core/HIGGINS_DIFFRACTION_COMPOSITION_PRINCIPLE.json",
+        "Higgins_Diffraction_Composition_Principle.docx"
+      ],
+      "significance": "Closes the lineage circle: the framework that began with loudspeaker diffraction correction now has a formal principle explaining WHY diffraction produces compositions. The screwdriver came first — and the screwdriver was measuring diffraction compositions all along. The hierarchy extends: CCD → HFPA → HDCP → EITT → CIP.",
+      "key_transition": "From 'diffraction correction is an engineering task' to 'diffraction is nature's own compositional data analysis'. The 6.02 dB is not just an anchor constant — it is the founding theorem made audible."
+    },
+    {
+      "phase": "EXP-14: Higgins Fixed-Point Selection Principle (HFSP)",
+      "period": "2026-04-20",
+      "event": "Peter Higgins proposed that proper system dynamics must be derived from the data source itself — the domain's own physics provides the diagnostic anchor. EXP-14 tested 6 anchors on AME2020 nuclear data (113 valley nuclides). Key discovery: Ne-20 (Z=10) is the structural attractor (F17 R²=0.935, only b>0 anchor), distinct from Fe-56 (Z=26, energetic attractor). Lyapunov stability confirmed with perfect observability (r=1.0000). Systems theory framework maps HUF-GOV to observer, σ²_A to Lyapunov function, native anchor to equilibrium. Five diffraction domains swept backward. Hierarchy extended: CCD→HFPA→HFSP→HDCP→EITT→CIP.",
+      "outputs": [
+        "codawork2026/experiments/EXP-14_Fixed_Point_Selection/exp14_hfsp.json",
+        "codawork2026/experiments/EXP-14_Fixed_Point_Selection/exp14_hfsp.png",
+        "codawork2026/experiments/EXP-14_Fixed_Point_Selection/EXP-14_Journal.docx"
+      ],
+      "significance": "The HFSP closes the methodological gap: HFPA says 'find fixed points', HFSP says 'the fixed point comes FROM the data'. The Ne-20 discovery shows that even within one domain, different diagnostics need different anchors — energetic vs structural. This is the systems theory foundation for the entire HUF programme."
+    },
+    {
+      "phase": "HFSP Master Catalog",
+      "date": "2026-04-20",
+      "discovery": "Classified all 75 HUF systems into 7 fixed-point categories with domain-native anchors. The catalog is the practitioner's reference — consult before any CIP processing.",
+      "key_result": "75 systems mapped: ENERGETIC(27), CONSERVED(12), EQUILIBRIUM(12), STRUCTURAL(8), TRANSITION(8), SCALING(6), DIFFRACTION(2). Only 1/75 tested with native anchor (SEMF via EXP-14).",
+      "files": [
+        "science/core/HFSP_MASTER_CATALOG.json",
+        "science/core/HFSP_Master_Catalog.docx"
+      ]
+    },
+    {
+      "phase": "EXP-14 Intermediate Rocks Decode + Super Squeeze",
+      "date": "2026-04-21",
+      "discovery": "Peter Higgins insight: pairwise CoDa balances break anti-lock. 28-constant super squeeze (transcendental cancellation test) discovers reciprocal constant pairs encoding compositional structure.",
+      "key_result": "Intermediate rocks holdout decoded: ln(Al₂O₃/MgO) yields 1/π→φ² at δ=0.00003 — tightest reciprocal match in programme. Pairwise balance method established as general anti-lock recovery tool.",
+      "files": [
+        "codawork2026/experiments/EXP-14_Fixed_Point_Selection/intermediate_rocks_decode.json",
+        "codawork2026/experiments/EXP-14_Fixed_Point_Selection/EXP14_Intermediate_Rocks_Decode.docx"
+      ]
+    },
+    {
+      "phase": "EXP-15 X-Ray Crystallography — Dual-Anchor Confirmation",
+      "date": "2026-04-21",
+      "discovery": "First confirmation that the Higgins Decomposition operates in the ENERGY domain (electron scattering via Cromer-Mann factors) as well as MATTER domain (oxide compositions). Dual-anchor validated: same 1/π→φ² reciprocal pair in both domains.",
+      "key_result": "6 crystals tested. Olivine R²=0.992 bowl, Almandine R²=0.903 bowl. Perovskite anti-lock broken by pairwise balance (ln(Ti/O) R²=0.995). 82 super squeeze matches. Programme extended from 75 to 81 systems.",
+      "files": [
+        "codawork2026/experiments/EXP-15_Xray_Crystallography/EXP15_Xray_Crystallography_Journal.docx",
+        "codawork2026/experiments/EXP-15_Xray_Crystallography/xray_crystallography_decomposition.json"
+      ],
+      "significance": "Crosses the ENERGY-MATTER boundary. The decomposition does not care whether compositions arise from chemical abundances or quantum-mechanical scattering — the CoDa structure is universal. This is the strongest universality evidence in the programme."
+    },
+    {
+      "date": "2026-04-22",
+      "event": "Information Mechanics — Experiment Ladder Closure",
+      "detail": "EXP-16 through EXP-18b. Ladder CLOSED. Information Mechanics framework declared."
     }
   ],
-
   "the_three_layers": {
     "layer_1_screwdriver": {
       "description": "Engineering and physics. The instrument was built because the measurement required it.",
       "artifacts": [
-        "DADC \u2014 forward mapping, cabinet geometry to acoustic composition",
-        "DADI \u2014 inverse inference, composition back to geometry",
-        "ADAC \u2014 adaptive closure, the forking point (GOV vs CLS)",
-        "BTL \u2014 Binaural Test Lab, the purpose-built validation environment",
-        "Higgins Operator H1 \u2014 generalization to Hilbert space",
-        "The Isotropic Principle \u2014 design doctrine"
+        "DADC — forward mapping, cabinet geometry to acoustic composition",
+        "DADI — inverse inference, composition back to geometry",
+        "ADAC — adaptive closure, the forking point (GOV vs CLS)",
+        "BTL — Binaural Test Lab, the purpose-built validation environment",
+        "Higgins Operator H1 — generalization to Hilbert space",
+        "The Isotropic Principle — design doctrine"
       ]
     },
     "layer_2_math_book": {
@@ -220,13 +343,13 @@
         "Perturbation and powering operations",
         "Subcompositional coherence",
         "Sequential Binary Partition (SBP) and balances",
-        "Geometric mean / Fr\u00e9chet mean / barycenter"
+        "Geometric mean / Fréchet mean / barycenter"
       ]
     },
     "layer_3_alliance": {
       "description": "HUF as the calibration joint of engineering discipline and compositional mathematics.",
       "artifacts": [
-        "MC-4 (Composition Monitoring) \u2014 the fourth monitoring category",
+        "MC-4 (Composition Monitoring) — the fourth monitoring category",
         "EITT (Entropy Invariance under Temporal Transformation)",
         "K_eff (effective number of carriers = exp(H))",
         "Total Variation (TV) as diagnostic",
@@ -239,18 +362,17 @@
       ]
     }
   },
-
   "invariants_carried_forward": [
     {
       "name": "6.02 dB",
-      "value": "20 * log10(2) \u2248 6.0206",
-      "acoustic_origin": "Baffle step correction from 2\u03c0 to 4\u03c0 steradian radiation",
+      "value": "20 * log10(2) ≈ 6.0206",
+      "acoustic_origin": "Baffle step correction from 2π to 4π steradian radiation",
       "carried_to": "Binary doubling; the 2:1 compression ratio as the fundamental EITT test; the primary decimation diagnostic",
       "status": "Physical constant of acoustic wave propagation that became a structural constant of the compositional framework"
     },
     {
-      "name": "115 Hz\u00b7m",
-      "value": "115 (approximately c / 2 where c is speed of sound / \u03c0, varies slightly with conditions)",
+      "name": "115 Hz·m",
+      "value": "115 (approximately c / 2 where c is speed of sound / π, varies slightly with conditions)",
       "acoustic_origin": "Wavenumber-dimension product: Fc = 115 / dimension (m)",
       "carried_to": "Scale constant linking compositional dimension to temporal autocorrelation length; relates block width M to the characteristic timescale of the process",
       "status": "Empirical acoustic constant inherited into the temporal framework"
@@ -279,7 +401,7 @@
     {
       "name": "The GOV/CLS fork",
       "value": "Observation and control are architecturally separated",
-      "acoustic_origin": "ADAC moment \u2014 the error signal existed, the loop could close, and something said: not automatically",
+      "acoustic_origin": "ADAC moment — the error signal existed, the loop could close, and something said: not automatically",
       "carried_to": "HUF-GOV (open-loop, stateless, no feedback) vs HUF-CLS (closed-loop, stateful, requires human decision). Fork is the entire doctrine.",
       "status": "Architectural principle inherited intact"
     },
@@ -289,22 +411,27 @@
       "acoustic_origin": "ADAC converges when the room is slower than the adaptation loop. Fails when the room changes faster than the instrument can track.",
       "carried_to": "EITT's mixing assumption (A3) in EITT_HESSIAN_BOUND.md. The system must be slower than the observer. Adversarial failures in EITT_Adversarial_001.json are exactly the cases where this fails.",
       "status": "Mathematical condition inherited with different formalism"
+    },
+    {
+      "name": "Diffraction as composition",
+      "value": "Energy partition [T, R, D, A] / E_total ∈ simplex",
+      "acoustic_origin": "DADC baffle step: 6.02 dB total, apportioned (G_H, G_W, G_D) / 6.02 on 3-simplex",
+      "carried_to": "HDCP: all diffracting waves produce simplex compositions. Acoustic, electromagnetic, X-ray, electron, neutron, gravitational. The ratio λ/a determines the composition; amplitude does not.",
+      "status": "Founding observation elevated to formal principle"
     }
   ],
-
   "cross_reference_map": {
     "_purpose": "Every major current-repo document, with its direct ancestor in the RWA / H1 prior work.",
-
     "science/eitt/EITT_HESSIAN_BOUND.md": {
       "ancestor": "ADAC Banach convergence + DADI error reduction (12.5% to 4.99% over 5 iterations)",
-      "relationship": "The Hessian bound formalizes what ADAC proved by construction \u2014 contractive mapping under stationarity. (A3) is the stationarity assumption that ADAC required for the loop to close."
+      "relationship": "The Hessian bound formalizes what ADAC proved by construction — contractive mapping under stationarity. (A3) is the stationarity assumption that ADAC required for the loop to close."
     },
     "science/eitt/EITT_WHY_IT_WORKS.md": {
       "ancestor": "The Isotropic Principle + DADC gain apportionment",
-      "relationship": "The shape/magnitude decomposition in \u00a77 restates what DADC was doing: gains encode shape (apportionment), corner frequencies encode magnitude (scale). The compositional viewpoint was present in DADC before it was named."
+      "relationship": "The shape/magnitude decomposition in §7 restates what DADC was doing: gains encode shape (apportionment), corner frequencies encode magnitude (scale). The compositional viewpoint was present in DADC before it was named."
     },
     "science/eitt/EITT_SAFETY_BOUNDARIES.md": {
-      "ancestor": "Montreal incident \u2014 Drift Awareness, Human Primacy, Designed Failure",
+      "ancestor": "Montreal incident — Drift Awareness, Human Primacy, Designed Failure",
       "relationship": "The safety fence is the Montreal incident's lessons applied to statistical methodology. Shear bolts for EITT: document where the method must not be applied, so no one walks into a live machine."
     },
     "science/coda-monitoring/": {
@@ -313,7 +440,7 @@
     },
     "science/loudspeaker-analogy/": {
       "ancestor": "BTL validation work, tweeter calibration, amplifier demonstrations",
-      "relationship": "Direct preservation of the acoustic work as an active branch. Not historical \u2014 current validation domain."
+      "relationship": "Direct preservation of the acoustic work as an active branch. Not historical — current validation domain."
     },
     "science/governance/": {
       "ancestor": "HUF-GOV / HUF-CLS fork at ADAC moment + Montreal incident",
@@ -342,30 +469,58 @@
     "eitt_pll_noise_squeeze.py": {
       "ancestor": "PLL phase noise measurement + BTL noise floor characterisation",
       "relationship": "The stochastic core (irreducible noise floor after squeeze) is the compositional equivalent of the VCO phase noise floor that Peter measured in every PLL tuning session. The Allan variance of the residuals is the compositional equivalent of the timing jitter specification."
+    },
+    "exp12_gravity_deep.py": {
+      "ancestor": "DADC gain apportionment + Isotropic Principle + 93% bound from QCD",
+      "relationship": "The gravity study extends the compositional framework from electromagnetic/nuclear into pure gravitational domain. The gravity activation scale (~10⁷ m) is a DADC-style dimensional threshold — below it gravity contributes negligible compositional variance, above it gravity progressively dominates. The no-hair theorem reframed as compositional minimum is the Isotropic Principle applied to black holes: maximum gravitational compression → minimum entropy departure from uniformity."
+    },
+    "The_Gravity_of_the_Situation.docx": {
+      "ancestor": "HUF Executive Summary + DADC flagship paper format",
+      "relationship": "The gravity executive summary carries the engineering report DNA from the DADC-DADI paper and the Organic Digital Loudspeakers document. Format: findings → implications → testable predictions."
+    },
+    "HUF_Programme_Conclusion.docx": {
+      "ancestor": "Entire HUF arc from DADC (Dec 2024) through programme completion (Apr 2026)",
+      "relationship": "The programme conclusion is the capstone document. It seals 75 systems across 44 orders of magnitude, connecting Peter's basement lab acoustic measurements to gravitational wave astronomy. The full lineage: screwdriver → simplex → universe."
+    },
+    "exp09_master_inventory.py (updated)": {
+      "ancestor": "BTL calibration chain — every measurement registered and tracked",
+      "relationship": "The master inventory is the compositional equivalent of the BTL lab's calibration register. Every system studied, its status, its flaws, its opportunities. 75 entries, zero unmeasured. The lab is complete."
+    },
+    "science/core/HIGGINS_DIFFRACTION_COMPOSITION_PRINCIPLE.json": {
+      "ancestor": "DADC-DADI baffle step diffraction correction (Dec 2024)",
+      "relationship": "The HDCP formalizes what DADC measured empirically: diffraction naturally produces simplex-constrained energy partitions. The 6.02 dB gain apportioned across cabinet dimensions IS a diffraction composition. HDCP extends this founding case across all wave physics."
+    },
+    "codawork2026/experiments/EXP-14_Fixed_Point_Selection/": {
+      "ancestor": "DADC-DADI-ADAC + HFPA + HDCP",
+      "relationship": "EXP-14 unifies the fixed-point analysis method (HFPA) with the diffraction composition principle (HDCP) through the selection principle (HFSP). The DADC engineering DNA provides the founding case: the 6.02 dB baffle step IS a diffraction composition anchored to ka=1."
     }
   },
-
   "operating_principle_addition": {
     "name": "The past is our strength and our future",
-    "statement": "What was built in the Binaural Test Lab in 2024-2025 is the engineering DNA of everything in this repo. The math book did not invent the structure; the physics did. The screwdriver came first. Every new concept should be checked against the RWA lineage for prior embodiment. The constants that carried forward (6.02 dB, 115 Hz\u00b7m, the Isotropic Principle, paired measurement, inert probe, GOV/CLS fork, Banach convergence) are the ancestral structure; new work extends them, it does not replace them.",
+    "statement": "What was built in the Binaural Test Lab in 2024-2025 is the engineering DNA of everything in this repo. The math book did not invent the structure; the physics did. The screwdriver came first. Every new concept should be checked against the RWA lineage for prior embodiment. The constants that carried forward (6.02 dB, 115 Hz·m, the Isotropic Principle, paired measurement, inert probe, GOV/CLS fork, Banach convergence) are the ancestral structure; new work extends them, it does not replace them.",
     "application_rule": "When any new document is written, the author should ask: does this have an ancestor in the RWA / H1 work? If yes, cite the ancestor. If no, note the absence explicitly. The continuity is the framework's strength.",
     "maintenance_rule": "MASTER_LINEAGE.json is updated whenever a new current-repo document is added, with the cross_reference_map getting a new entry identifying its ancestor (or noting its absence)."
   },
-
   "status": {
-    "lineage_version": "1.2",
+    "lineage_version": "1.8",
     "established": "2026-04-15",
-    "last_updated": "2026-04-18",
+    "last_updated": "2026-04-22",
     "update_log": [
-      "v1.0 \u2014 initial establishment with arc from Isotropic Principle through DADC-DADI-ADAC, BTL, H1, RSM, to HUF/EITT",
-      "v1.0.1 \u2014 public RWA repo review added; five concept branches mapped to HUF counterparts",
-      "v1.1 \u2014 canonical HUF-GOV definition noted (2026-04-15, Peter Higgins); Coimbra welcome package added to cross_reference_map; mature expression of ADAC fork identified",
-      "v1.2 \u2014 PLL-EITT discovery lineage added (2026-04-18). Three new cross-references: Experiment Journal (PLL engineering DNA), contamination DADC script (DADC-DADI-ADAC acoustic chain descendant), noise squeeze (PLL phase noise descendant). FIXED POINT v3.2."
+      "v1.0 — initial establishment with arc from Isotropic Principle through DADC-DADI-ADAC, BTL, H1, RSM, to HUF/EITT",
+      "v1.0.1 — public RWA repo review added; five concept branches mapped to HUF counterparts",
+      "v1.1 — canonical HUF-GOV definition noted (2026-04-15, Peter Higgins); Coimbra welcome package added to cross_reference_map; mature expression of ADAC fork identified",
+      "v1.2 — PLL-EITT discovery lineage added (2026-04-18). Three new cross-references: Experiment Journal (PLL engineering DNA), contamination DADC script (DADC-DADI-ADAC acoustic chain descendant), noise squeeze (PLL phase noise descendant). FIXED POINT v3.2.",
+      "v1.3 — Programme completion lineage (2026-04-19). EXP-10/11/12 added. Gravity study extends the framework from electromagnetic/nuclear into pure gravitational domain. 75 systems, 44 orders of magnitude, 100% coverage. Arc entry: 'Programme complete'. Cross-references: gravity executive summary, programme conclusion, exp12_gravity_deep.py.",
+      "v1.3.1 — Terminology stabilisation (2026-04-19). HUF_COMPLETE_REFERENCE.json added to ai-refresh chain as position 2 (after FAST_REFRESH, before MATHEMATICAL_ADDENDUM). Master glossary locks all 32 canonical acronyms, 9 named concepts, 15 formulas, 24 variables, 11 constants, 12 experiments, and 7 document standards. Drift corrections applied repo-wide: 12 corrections logged. Refresh chain expanded from 5 to 8 files.",
+      "v1.4 — Higgins Fixed Point Analysis naming (2026-04-20). Peter Higgins named the overarching analytical method 'Higgins Fixed Point Analysis' (HFPA). The project hierarchy is now: CCD (discipline) → HFPA (method) → EITT (instrument) → CIP (protocol). CIP Rule 5 renamed to 'The Fixed-Point Rule'. The 6.02 dB from BTL is the founding anchor constant; other domains use their own anchor constants.",
+      "v1.5 — EXP-13 Calibration Proof and HDCP (2026-04-20). 7 calibration theorems to 10⁻¹⁵ precision. Diffraction Composition Principle (HDCP) with 5 theorems. Babinet's Principle (1837) as compositional closure. Bell S=2.2018 reinterpretation. Distortion tensor. Higgins Tagging Convention. HFSP established on AME2020. Hierarchy extended: CCD→HFPA→HFSP→HDCP→EITT→CIP.",
+      "v1.6 — EXP-14 intermediate rocks decode (2026-04-21). Peter Higgins insight: pairwise CoDa balances break anti-lock. Super squeeze discovers 1/π→φ² at δ=0.00003.",
+      "v1.7 — EXP-15 X-ray crystallography dual-anchor (2026-04-21). First ENERGY-domain confirmation. 6 crystals. Olivine R²=0.992 bowl. Dual-anchor: 1/π→φ² in both MATTER and ENERGY domains. Programme extended to 81 systems.",
+      "v1.8 — Refresh chain audit (2026-04-22). All 6 chain files updated. Version inconsistencies fixed. 4 new methods documented. Naming drift corrected. Experiment registries extended to EXP-15."
     ],
     "next_update_trigger": "Addition of a new major current-repo document, or discovery of a further ancestor thread not yet mapped",
     "maintenance_responsibility": "Any AI working on the repo should add cross-reference entries when promoting new files, per the application_rule above"
   },
-
   "v1_1_additions": {
     "canonical_hufgov_definition": {
       "statement": "HUF-GOV is a tool that produces a verifiably clean usable output to a known degree of certainty; the diagnostic of the output is open to interpretation by expert decision and open to modification by expert judgment.",
@@ -377,8 +532,8 @@
     "coimbra_welcome_package": {
       "location": "briefings/coimbra-welcome-package/",
       "purpose": "Self-contained introduction to HUF for CoDaWork 2026 attendees and new users. Six files covering welcome, success/failure, work-verification-possibilities, best-use-cases, meet-the-collective, standardization-benefits.",
-      "rwa_ancestor": "BTL certification documentation pattern \u2014 purpose-built lab hands off complete validation package, not just the hardware. Welcome package is the HUF-side equivalent: hands off the complete usable tool, not just the code.",
-      "relationship_note": "The welcome package is what the framework produces for external users. Everything upstream in the repo feeds this output. This is the \u2018verifiably clean usable output\u2019 clause of the canonical definition, manifested as documentation."
+      "rwa_ancestor": "BTL certification documentation pattern — purpose-built lab hands off complete validation package, not just the hardware. Welcome package is the HUF-side equivalent: hands off the complete usable tool, not just the code.",
+      "relationship_note": "The welcome package is what the framework produces for external users. Everything upstream in the repo feeds this output. This is the ‘verifiably clean usable output’ clause of the canonical definition, manifested as documentation."
     }
   }
 }

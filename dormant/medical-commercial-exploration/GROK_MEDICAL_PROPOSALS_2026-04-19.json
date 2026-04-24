@@ -1,0 +1,95 @@
+{
+  "_meta": {
+    "type": "DORMANT_EXPLORATION",
+    "created": "2026-04-19",
+    "source": "Grok (xAI) independent review session",
+    "assessed_by": "Claude (Anthropic) — GROK_REVIEW_ASSESSMENT_2026-04-19.docx",
+    "status": "DORMANT — conceptually sound, no experimental validation",
+    "promotion_level": "L0 (exploratory pattern)",
+    "reawaken_if": "Real data obtained for any domain below; domain expert collaborator available; post-CoDaWork bandwidth permits",
+    "cip_warning": "Grok's CIP citations in these proposals are INCORRECT — Grok used fabricated rules, not canonical CIP. See Grok Assessment report Section 3."
+  },
+
+  "proposals": {
+
+    "southmedic_respiratory": {
+      "company": "Southmedic Inc., Barrie, Ontario",
+      "contact_basis": "Peter Higgins has existing relationship from Fuji/X-ray installation era",
+      "products": ["Oxy2Mask", "Capnoxygen", "anesthesia circuits"],
+      "application": "Respiratory gas-mix monitoring: O2/CO2/N2/anaesthetic agent compositions as D-part simplex. EITT monitors temporal stability of gas delivery. Drift flag = delivery anomaly.",
+      "huf_alignment": "HIGH — direct analogue of EMBER energy-mix monitoring. D components summing to 100%, time-series monitoring for drift.",
+      "data_needed": "Time-series of gas composition readings from clinical monitors during procedures",
+      "sterile_processing": "Enzymatic detergent concentrations as compositions during wash cycles. EITT monitors process consistency.",
+      "readiness": "CONCEPT ONLY — no worked example exists. Do not send business proposal until at least one gas-mix EITT run is completed.",
+      "priority": "HIGHEST among medical proposals — most commercially immediate, clearest HUF alignment"
+    },
+
+    "blood_composition_cbc": {
+      "application": "Differential white cell counts (neutrophils, lymphocytes, monocytes, eosinophils, basophils) as D=5 composition. Shannon entropy of differential = diversity measure. EITT monitors temporal stability of patient haematological state.",
+      "extensions": ["Plasma protein fractions", "Electrolyte ratios", "Hormone panel ratios"],
+      "huf_alignment": "HIGH — CBC differential is a classic simplex composition",
+      "data_needed": "Serial CBC differentials from longitudinal patient cohorts (e.g., chemotherapy monitoring, ICU stays)",
+      "readiness": "CONCEPT ONLY",
+      "literature_note": "CoDa methods in haematology are sparse. Gloor et al. (2017) established CoDa in microbiome; similar adoption path for blood."
+    },
+
+    "microbiome_hmp": {
+      "application": "16S rRNA OTU abundance tables as high-dimensional compositions on simplex. EITT monitors temporal stability of microbiome state. F17 provides contamination/dysbiosis early warning.",
+      "datasets": ["Human Microbiome Project (HMP)", "Earth Microbiome Project", "American Gut Project"],
+      "huf_alignment": "HIGH — OTU tables are the canonical example of high-dimensional compositional data",
+      "coda_literature": "Gloor et al. (2017) — established CoDa for microbiome. EITT adds temporal stability dimension.",
+      "comparison_tool": "QIIME2 — EITT + CIP could serve as a post-processing integrity complement",
+      "data_needed": "Longitudinal 16S OTU tables from HMP (publicly available)",
+      "readiness": "CONCEPT + public data available. Could be EXP-13 if Peter decides to extend chain.",
+      "priority": "SECOND HIGHEST — data is free, CoDa community already engaged with microbiome"
+    },
+
+    "drug_formulation": {
+      "application": "API + excipient compositions in pharmaceutical formulations as simplex data. EITT monitors stability over shelf life. Aligned with ICH Q1A stability guidelines.",
+      "subtypes": ["IV fluid compositions", "TPN mixtures", "Biologics (mAbs, insulin)", "Liposomal nanoparticles"],
+      "huf_alignment": "MODERATE — formulation stability is compositional, but time series may be short",
+      "data_needed": "Stability study composition data at multiple time points (ICH standard timepoints)",
+      "readiness": "CONCEPT ONLY — needs pharmaceutical industry collaborator",
+      "priority": "LOW — long regulatory pathway, needs industry partner"
+    },
+
+    "pharmacokinetics": {
+      "application": "Multi-compartment PK systems as compositions: fraction of drug in plasma/tissue/elimination at each timepoint. EITT monitors compartment balance stability.",
+      "tools_comparison": ["NONMEM", "Phoenix WinNonlin", "Monolix"],
+      "cip_role": "CIP framed as post-processing integrity layer (NOTE: Grok used wrong CIP rules)",
+      "huf_alignment": "MODERATE — PK is compositional but data is sparse (few timepoints per patient)",
+      "readiness": "CONCEPT ONLY",
+      "priority": "LOW — sparse data challenge for EITT"
+    },
+
+    "pharmacodynamics": {
+      "application": "Fractional receptor occupancy, % inhibition, biomarker response, tumor cell fractions (viable/apoptotic/necrotic) as compositions.",
+      "huf_alignment": "MODERATE — cell viability assays produce simplex data",
+      "readiness": "CONCEPT ONLY",
+      "priority": "LOW"
+    },
+
+    "toxicology": {
+      "application": "Metabolite profiling (parent/metabolites composition), organ distribution fractions, cytotoxicity assays (% viable/apoptosis/necrosis), API impurity profiles.",
+      "regulatory_alignment": "OECD 407/408, ICH Q1A",
+      "f17_role": "F17 as impurity deviation detector",
+      "huf_alignment": "MODERATE — impurity profiles are simplex data",
+      "readiness": "CONCEPT ONLY",
+      "priority": "LOW"
+    },
+
+    "pulmonary_function": {
+      "application": "Gas exchange ratios (O2/CO2/N2) during respiratory function tests",
+      "readiness": "CONCEPT ONLY",
+      "priority": "LOW — overlap with Southmedic respiratory"
+    }
+  },
+
+  "summary": {
+    "total_proposals": 8,
+    "validated": 0,
+    "priority_order": ["southmedic_respiratory", "microbiome_hmp", "blood_composition_cbc", "drug_formulation", "pharmacokinetics", "pharmacodynamics", "toxicology", "pulmonary_function"],
+    "common_thread": "All proposals involve compositions on a simplex monitored over time — the exact HUF use case. None have been tested with real data.",
+    "action_required": "Real data + worked example for at least one domain before any commercial engagement"
+  }
+}

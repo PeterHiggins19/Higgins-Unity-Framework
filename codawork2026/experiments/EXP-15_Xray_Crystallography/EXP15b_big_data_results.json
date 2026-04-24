@@ -1,0 +1,3572 @@
+{
+  "experiment": "EXP-15b: Big Data Crystallography",
+  "date": "2026-04-22",
+  "author": "Peter Higgins / Claude",
+  "source": "COD-referenced mineral formulas, Cromer-Mann coefficients (ITC Vol C)",
+  "hypothesis": "Anti-lock systems still encode information via S_norm super squeeze",
+  "total_minerals": 106,
+  "total_bowl": 57,
+  "total_hill": 49,
+  "statistics": {
+    "bowl_mean_squeezes": 17.75438596491228,
+    "hill_mean_squeezes": 26.408163265306122,
+    "bowl_mean_delta": 0.0011922307922925168,
+    "hill_mean_delta": 0.0009803776242663942,
+    "bowl_median_delta": 0.0009216279261267668,
+    "hill_median_delta": 0.0007281018556740682,
+    "z_contrast_bowl": 13.368421052631579,
+    "z_contrast_hill": 22.183673469387756,
+    "z_r2_correlation": 0.2647094532180811,
+    "pairwise_recoveries": 30,
+    "pairwise_recovery_rate": 0.6122448979591837
+  },
+  "results": [
+    {
+      "name": "Halite",
+      "type": "Halide",
+      "D": 2,
+      "elements": [
+        "Cl",
+        "Na"
+      ],
+      "pll_R2": 0.7704317747954388,
+      "pll_shape": "hill",
+      "pll_vertex": 1.810943357206794,
+      "squeeze_count": 22,
+      "best_delta": 0.0011647827056809335,
+      "best_squeeze": {
+        "input": "e^(-\u03c0/4)",
+        "input_val": 0.45593812776599624,
+        "output": "\u03c6/\u221a2",
+        "output_val": 0.4370160244488211,
+        "actual": 0.43818080715450203,
+        "delta": 0.0011647827056809335
+      },
+      "sA_range": 0.29658021704679804,
+      "sA_min": 0.05368446313580541,
+      "sA_max": 0.3502646801826034,
+      "z_contrast": 6,
+      "z_max": 17
+    },
+    {
+      "name": "Sylvite",
+      "type": "Halide",
+      "D": 2,
+      "elements": [
+        "Cl",
+        "K"
+      ],
+      "pll_R2": 0.8712030596407725,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.41512684902138014,
+      "squeeze_count": 19,
+      "best_delta": 0.00092848936728962,
+      "best_squeeze": {
+        "input": "1/\u221a2",
+        "input_val": 0.7071067811865475,
+        "output": "1/3",
+        "output_val": 0.3333333333333333,
+        "actual": 0.3324048439660437,
+        "delta": 0.00092848936728962
+      },
+      "sA_range": 0.02318916868386531,
+      "sA_min": 0.002715099102727472,
+      "sA_max": 0.025904267786592782,
+      "z_contrast": 2,
+      "z_max": 19
+    },
+    {
+      "name": "Fluorite",
+      "type": "Halide",
+      "D": 2,
+      "elements": [
+        "Ca",
+        "F"
+      ],
+      "pll_R2": 0.8442029840086143,
+      "pll_shape": "hill",
+      "pll_vertex": 1.117516726393323,
+      "squeeze_count": 24,
+      "best_delta": 7.520958018036872e-05,
+      "best_squeeze": {
+        "input": "\u03c6/\u221a2",
+        "input_val": 0.4370160244488211,
+        "output": "e^(-\u03c0/4)",
+        "output_val": 0.45593812776599624,
+        "actual": 0.45586291818581587,
+        "delta": 7.520958018036872e-05
+      },
+      "sA_range": 0.17312828174426456,
+      "sA_min": 0.0006538592594499429,
+      "sA_max": 0.1737821410037145,
+      "z_contrast": 11,
+      "z_max": 20
+    },
+    {
+      "name": "Periclase",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "Mg",
+        "O"
+      ],
+      "pll_R2": 0.773427399434179,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5621938439095995,
+      "squeeze_count": 23,
+      "best_delta": 0.0017438972354456572,
+      "best_squeeze": {
+        "input": "cos(1)",
+        "input_val": 0.5403023058681398,
+        "output": "\u03c0/4",
+        "output_val": 0.7853981633974483,
+        "actual": 0.7871420606328939,
+        "delta": 0.0017438972354456572
+      },
+      "sA_range": 0.24658617487157378,
+      "sA_min": 0.047071002728780204,
+      "sA_max": 0.293657177600354,
+      "z_contrast": 4,
+      "z_max": 12
+    },
+    {
+      "name": "Corundum",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "Al",
+        "O"
+      ],
+      "pll_R2": 0.7101974646290845,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5905700054442178,
+      "squeeze_count": 26,
+      "best_delta": 0.0004602651301708338,
+      "best_squeeze": {
+        "input": "log\u2081\u2080(2)",
+        "input_val": 0.3010299956639812,
+        "output": "cos(1)",
+        "output_val": 0.5403023058681398,
+        "actual": 0.5407625709983106,
+        "delta": 0.0004602651301708338
+      },
+      "sA_range": 0.12148845571828905,
+      "sA_min": 3.814958398522988e-05,
+      "sA_max": 0.12152660530227428,
+      "z_contrast": 5,
+      "z_max": 13
+    },
+    {
+      "name": "Hematite",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "Fe",
+        "O"
+      ],
+      "pll_R2": 0.9361496224002485,
+      "pll_shape": "hill",
+      "pll_vertex": 0.7988471937053551,
+      "squeeze_count": 22,
+      "best_delta": 0.0014381017357791848,
+      "best_squeeze": {
+        "input": "\u03c0/4",
+        "input_val": 0.7853981633974483,
+        "output": "\u221a3/2",
+        "output_val": 0.8660254037844386,
+        "actual": 0.8674635055202178,
+        "delta": 0.0014381017357791848
+      },
+      "sA_range": 0.4302120814302888,
+      "sA_min": 0.2979109231724816,
+      "sA_max": 0.7281230046027704,
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Rutile",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "O",
+        "Ti"
+      ],
+      "pll_R2": 0.9536307227130237,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8952056481290367,
+      "squeeze_count": 23,
+      "best_delta": 0.0021002506474701033,
+      "best_squeeze": {
+        "input": "\u221a2-1",
+        "input_val": 0.41421356237309515,
+        "output": "3/4",
+        "output_val": 0.75,
+        "actual": 0.7478997493525299,
+        "delta": 0.0021002506474701033
+      },
+      "sA_range": 0.2440838866650057,
+      "sA_min": 0.04267690450014004,
+      "sA_max": 0.28676079116514575,
+      "z_contrast": 14,
+      "z_max": 22
+    },
+    {
+      "name": "Cassiterite",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.34207327023771217,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5665066565427915,
+      "squeeze_count": 24,
+      "best_delta": 0.0020462753555773316,
+      "best_squeeze": {
+        "input": "\u03c6\u00b2",
+        "input_val": 0.3819660112501052,
+        "output": "ln(2)",
+        "output_val": 0.6931471805599453,
+        "actual": 0.691100905204368,
+        "delta": 0.0020462753555773316
+      },
+      "sA_range": 0.04902882742327872,
+      "sA_min": 7.518634208122705e-08,
+      "sA_max": 0.049028902609620804,
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Lime",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "Ca",
+        "O"
+      ],
+      "pll_R2": 0.9375176925530943,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8469612602884108,
+      "squeeze_count": 26,
+      "best_delta": 0.0008185404530228757,
+      "best_squeeze": {
+        "input": "sin(1)",
+        "input_val": 0.8414709848078965,
+        "output": "\u221a3/2",
+        "output_val": 0.8660254037844386,
+        "actual": 0.8668439442374615,
+        "delta": 0.0008185404530228757
+      },
+      "sA_range": 0.5732427039731993,
+      "sA_min": 0.3799758837594028,
+      "sA_max": 0.953218587732602,
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Manganosite",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "Mn",
+        "O"
+      ],
+      "pll_R2": 0.952919354607181,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8300901972906423,
+      "squeeze_count": 17,
+      "best_delta": 4.5065412150657735e-05,
+      "best_squeeze": {
+        "input": "\u221a3/2",
+        "input_val": 0.8660254037844386,
+        "output": "G_Cat",
+        "output_val": 0.915965594,
+        "actual": 0.9160106594121507,
+        "delta": 4.5065412150657735e-05
+      },
+      "sA_range": 0.5721403386546696,
+      "sA_min": 0.6438803044420888,
+      "sA_max": 1.2160206430967584,
+      "z_contrast": 17,
+      "z_max": 25
+    },
+    {
+      "name": "W\u00fcstite",
+      "type": "Simple oxide",
+      "D": 2,
+      "elements": [
+        "Fe",
+        "O"
+      ],
+      "pll_R2": 0.9379189636075969,
+      "pll_shape": "hill",
+      "pll_vertex": 0.7990581586702584,
+      "squeeze_count": 25,
+      "best_delta": 0.0019144179128965932,
+      "best_squeeze": {
+        "input": "2-\u221a3",
+        "input_val": 0.2679491924311228,
+        "output": "\u03b3_EM",
+        "output_val": 0.5772156649,
+        "actual": 0.5791300828128966,
+        "delta": 0.0019144179128965932
+      },
+      "sA_range": 0.6065306977975385,
+      "sA_min": 0.6930883780073321,
+      "sA_max": 1.2996190758048707,
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Spinel",
+      "type": "Spinel oxide",
+      "D": 3,
+      "elements": [
+        "Al",
+        "Mg",
+        "O"
+      ],
+      "pll_R2": 0.8617126039682987,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5228426947129562,
+      "squeeze_count": 18,
+      "best_delta": 0.0021770886562499925,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "2/\u03c0",
+        "output_val": 0.6366197723675814,
+        "actual": 0.6387968610238314,
+        "delta": 0.0021770886562499925
+      },
+      "sA_range": 0.27363752574366,
+      "sA_min": 0.3543287540280679,
+      "sA_max": 0.6279662797717279,
+      "z_contrast": 5,
+      "z_max": 13
+    },
+    {
+      "name": "Magnetite",
+      "type": "Spinel oxide",
+      "D": 2,
+      "elements": [
+        "Fe",
+        "O"
+      ],
+      "pll_R2": 0.9368350287580682,
+      "pll_shape": "hill",
+      "pll_vertex": 0.7989243041196078,
+      "squeeze_count": 26,
+      "best_delta": 0.0017248384262138483,
+      "best_squeeze": {
+        "input": "log\u2081\u2080(2)",
+        "input_val": 0.3010299956639812,
+        "output": "ln(2)",
+        "output_val": 0.6931471805599453,
+        "actual": 0.6914223421337314,
+        "delta": 0.0017248384262138483
+      },
+      "sA_range": 0.48143064860950996,
+      "sA_min": 0.3957634778158307,
+      "sA_max": 0.8771941264253407,
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Chromite",
+      "type": "Spinel oxide",
+      "D": 3,
+      "elements": [
+        "Al",
+        "Fe",
+        "O"
+      ],
+      "pll_R2": 0.885624335973005,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.42953639515278697,
+      "squeeze_count": 23,
+      "best_delta": 0.002124398267254912,
+      "best_squeeze": {
+        "input": "1/\u221a2",
+        "input_val": 0.7071067811865475,
+        "output": "2-\u221a3",
+        "output_val": 0.2679491924311228,
+        "actual": 0.2658247941638679,
+        "delta": 0.002124398267254912
+      },
+      "sA_range": 0.10003523206121115,
+      "sA_min": 0.0017141456848507632,
+      "sA_max": 0.10174937774606191,
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Ilmenite",
+      "type": "Complex oxide",
+      "D": 3,
+      "elements": [
+        "Fe",
+        "O",
+        "Ti"
+      ],
+      "pll_R2": 0.9219266422552393,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8033933792784171,
+      "squeeze_count": 22,
+      "best_delta": 8.073594301993836e-05,
+      "best_squeeze": {
+        "input": "1/e",
+        "input_val": 0.36787944117144233,
+        "output": "\u03c0/4",
+        "output_val": 0.7853981633974483,
+        "actual": 0.7853174274544283,
+        "delta": 8.073594301993836e-05
+      },
+      "sA_range": 0.12051397801108385,
+      "sA_min": 0.01401190884871142,
+      "sA_max": 0.13452588685979527,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Ti)",
+        "R2": 0.967545968915382,
+        "shape": "bowl",
+        "vertex": 0.8772037308039325
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Perovskite",
+      "type": "Complex oxide",
+      "D": 3,
+      "elements": [
+        "Ca",
+        "O",
+        "Ti"
+      ],
+      "pll_R2": 0.6467903680608424,
+      "pll_shape": "hill",
+      "pll_vertex": 0.9843727305923555,
+      "squeeze_count": 23,
+      "best_delta": 0.00023363111191276875,
+      "best_squeeze": {
+        "input": "\u221a3/2",
+        "input_val": 0.8660254037844386,
+        "output": "3/4",
+        "output_val": 0.75,
+        "actual": 0.7497663688880872,
+        "delta": 0.00023363111191276875
+      },
+      "sA_range": 0.06219140703812934,
+      "sA_min": 0.007082039682191631,
+      "sA_max": 0.06927344672032097,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Ti)",
+        "R2": 0.967545968915382,
+        "shape": "bowl",
+        "vertex": 0.877203730803933
+      },
+      "z_contrast": 14,
+      "z_max": 22
+    },
+    {
+      "name": "Calcite",
+      "type": "Carbonate",
+      "D": 3,
+      "elements": [
+        "C",
+        "Ca",
+        "O"
+      ],
+      "pll_R2": 0.2628463333084745,
+      "pll_shape": "hill",
+      "pll_vertex": 0.593119205402824,
+      "squeeze_count": 49,
+      "best_delta": 0.00011061200403889027,
+      "best_squeeze": {
+        "input": "G_Cat",
+        "input_val": 0.915965594,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.4998893879959611,
+        "delta": 0.00011061200403889027
+      },
+      "sA_range": 0.5270271996554718,
+      "sA_min": 1.1355350624853253,
+      "sA_max": 1.6625622621407972,
+      "best_pairwise_bowl": {
+        "pair": "ln(C/Ca)",
+        "R2": 0.811595080885281,
+        "shape": "bowl",
+        "vertex": 0.73880039389278
+      },
+      "z_contrast": 14,
+      "z_max": 20
+    },
+    {
+      "name": "Magnesite",
+      "type": "Carbonate",
+      "D": 3,
+      "elements": [
+        "C",
+        "Mg",
+        "O"
+      ],
+      "pll_R2": 0.45674067217717096,
+      "pll_shape": "hill",
+      "pll_vertex": -2.633222976817359,
+      "squeeze_count": 16,
+      "best_delta": 0.0007281018556740682,
+      "best_squeeze": {
+        "input": "\u221a2-1",
+        "input_val": 0.41421356237309515,
+        "output": "\u03b3_EM",
+        "output_val": 0.5772156649,
+        "actual": 0.577943766755674,
+        "delta": 0.0007281018556740682
+      },
+      "sA_range": 0.5211078345028155,
+      "sA_min": 0.8104560621447858,
+      "sA_max": 1.3315638966476013,
+      "best_pairwise_bowl": {
+        "pair": "ln(C/Mg)",
+        "R2": 0.703573138966938,
+        "shape": "bowl",
+        "vertex": 0.45997268492599785
+      },
+      "z_contrast": 6,
+      "z_max": 12
+    },
+    {
+      "name": "Siderite",
+      "type": "Carbonate",
+      "D": 3,
+      "elements": [
+        "C",
+        "Fe",
+        "O"
+      ],
+      "pll_R2": 0.2185302657619007,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5828643181221188,
+      "squeeze_count": 43,
+      "best_delta": 0.0003439758313420471,
+      "best_squeeze": {
+        "input": "1/e",
+        "input_val": 0.36787944117144233,
+        "output": "G_Cat",
+        "output_val": 0.915965594,
+        "actual": 0.916309569831342,
+        "delta": 0.0003439758313420471
+      },
+      "sA_range": 0.7788192738859971,
+      "sA_min": 1.3605166140473173,
+      "sA_max": 2.1393358879333144,
+      "best_pairwise_bowl": {
+        "pair": "ln(C/Fe)",
+        "R2": 0.4532432280795303,
+        "shape": "bowl",
+        "vertex": 0.6775886685108546
+      },
+      "z_contrast": 20,
+      "z_max": 26
+    },
+    {
+      "name": "Dolomite",
+      "type": "Carbonate",
+      "D": 4,
+      "elements": [
+        "C",
+        "Ca",
+        "Mg",
+        "O"
+      ],
+      "pll_R2": 0.624595570672589,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5956977502478144,
+      "squeeze_count": 27,
+      "best_delta": 0.0006567758501077048,
+      "best_squeeze": {
+        "input": "log\u2081\u2080(2)",
+        "input_val": 0.3010299956639812,
+        "output": "\u03b3_EM",
+        "output_val": 0.5772156649,
+        "actual": 0.5778724407501077,
+        "delta": 0.0006567758501077048
+      },
+      "sA_range": 0.42692660717005126,
+      "sA_min": 1.0766885721126527,
+      "sA_max": 1.503615179282704,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Mg)",
+        "R2": 0.900875682787919,
+        "shape": "bowl",
+        "vertex": -0.04788841675173618
+      },
+      "z_contrast": 14,
+      "z_max": 20
+    },
+    {
+      "name": "Ankerite",
+      "type": "Carbonate",
+      "D": 4,
+      "elements": [
+        "C",
+        "Ca",
+        "Fe",
+        "O"
+      ],
+      "pll_R2": 0.34802052714904375,
+      "pll_shape": "hill",
+      "pll_vertex": -0.7263034376996655,
+      "squeeze_count": 18,
+      "best_delta": 0.0011487201918708445,
+      "best_squeeze": {
+        "input": "1/e",
+        "input_val": 0.36787944117144233,
+        "output": "3/4",
+        "output_val": 0.75,
+        "actual": 0.7511487201918708,
+        "delta": 0.0011487201918708445
+      },
+      "sA_range": 0.46112207739568567,
+      "sA_min": 0.9315965256092877,
+      "sA_max": 1.3927186030049734,
+      "best_pairwise_bowl": {
+        "pair": "ln(C/Ca)",
+        "R2": 0.8115950808852811,
+        "shape": "bowl",
+        "vertex": 0.7388003938927801
+      },
+      "z_contrast": 20,
+      "z_max": 26
+    },
+    {
+      "name": "Anhydrite",
+      "type": "Sulfate",
+      "D": 3,
+      "elements": [
+        "Ca",
+        "O",
+        "S"
+      ],
+      "pll_R2": 0.8995772213035049,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6980884015927084,
+      "squeeze_count": 16,
+      "best_delta": 0.0007090706589230056,
+      "best_squeeze": {
+        "input": "G_Cat",
+        "input_val": 0.915965594,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.499290929341077,
+        "delta": 0.0007090706589230056
+      },
+      "sA_range": 0.24869844955768375,
+      "sA_min": 0.02605458275544139,
+      "sA_max": 0.27475303231312515,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/S)",
+        "R2": 0.8667683806368547,
+        "shape": "bowl",
+        "vertex": 0.40739264435095596
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Barite",
+      "type": "Sulfate",
+      "D": 3,
+      "elements": [
+        "Ba",
+        "O",
+        "S"
+      ],
+      "pll_R2": 0.9692873545968874,
+      "pll_shape": "hill",
+      "pll_vertex": 4.063547880692476,
+      "squeeze_count": 46,
+      "best_delta": 0.00012515007882296647,
+      "best_squeeze": {
+        "input": "\u03c0/4",
+        "input_val": 0.7853981633974483,
+        "output": "ln(2)",
+        "output_val": 0.6931471805599453,
+        "actual": 0.6932723306387683,
+        "delta": 0.00012515007882296647
+      },
+      "sA_range": 0.8482470870149121,
+      "sA_min": 0.7875338426729177,
+      "sA_max": 1.6357809296878298,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ba/S)",
+        "R2": 0.8976493826706219,
+        "shape": "bowl",
+        "vertex": -0.6007968501084412
+      },
+      "z_contrast": 48,
+      "z_max": 56
+    },
+    {
+      "name": "Celestine",
+      "type": "Sulfate",
+      "D": 3,
+      "elements": [
+        "O",
+        "S",
+        "Sr"
+      ],
+      "pll_R2": 0.9279076548105817,
+      "pll_shape": "hill",
+      "pll_vertex": 1.073854537586735,
+      "squeeze_count": 33,
+      "best_delta": 0.0005697242928679458,
+      "best_squeeze": {
+        "input": "log\u2081\u2080(2)",
+        "input_val": 0.3010299956639812,
+        "output": "cos(1)",
+        "output_val": 0.5403023058681398,
+        "actual": 0.5408720301610077,
+        "delta": 0.0005697242928679458
+      },
+      "sA_range": 0.2579713172314027,
+      "sA_min": 0.4191653646059648,
+      "sA_max": 0.6771366818373675,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Sr)",
+        "R2": 0.9548945076606241,
+        "shape": "bowl",
+        "vertex": 0.749213555115496
+      },
+      "z_contrast": 30,
+      "z_max": 38
+    },
+    {
+      "name": "Apatite",
+      "type": "Phosphate",
+      "D": 4,
+      "elements": [
+        "Ca",
+        "F",
+        "O",
+        "P"
+      ],
+      "pll_R2": 0.865724374358032,
+      "pll_shape": "hill",
+      "pll_vertex": 1.147184666071691,
+      "squeeze_count": 22,
+      "best_delta": 0.0012938932178286344,
+      "best_squeeze": {
+        "input": "ln(\u221a2)",
+        "input_val": 0.3465735902799727,
+        "output": "log\u2081\u2080(2)",
+        "output_val": 0.3010299956639812,
+        "actual": 0.29973610244615256,
+        "delta": 0.0012938932178286344
+      },
+      "sA_range": 1.179004179316681,
+      "sA_min": 3.6358427374306364,
+      "sA_max": 4.814846916747317,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/P)",
+        "R2": 0.9064950011689442,
+        "shape": "bowl",
+        "vertex": 0.37695578617226616
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Monazite_proxy",
+      "type": "Phosphate",
+      "D": 3,
+      "elements": [
+        "Ca",
+        "O",
+        "P"
+      ],
+      "pll_R2": 0.8818317678668531,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6461152974282398,
+      "squeeze_count": 18,
+      "best_delta": 0.0010915621732229264,
+      "best_squeeze": {
+        "input": "\u03c0/4",
+        "input_val": 0.7853981633974483,
+        "output": "\u221a2-1",
+        "output_val": 0.41421356237309515,
+        "actual": 0.4131220001998722,
+        "delta": 0.0010915621732229264
+      },
+      "sA_range": 0.2803937669732754,
+      "sA_min": 0.04756109863848505,
+      "sA_max": 0.32795486561176046,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/P)",
+        "R2": 0.9064950011689442,
+        "shape": "bowl",
+        "vertex": 0.37695578617226644
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Forsterite",
+      "type": "Nesosilicate",
+      "D": 3,
+      "elements": [
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8776514066389617,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6505775480371727,
+      "squeeze_count": 17,
+      "best_delta": 0.0015216301684875533,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "log\u2081\u2080(2)",
+        "output_val": 0.3010299956639812,
+        "actual": 0.29950836549549364,
+        "delta": 0.0015216301684875533
+      },
+      "sA_range": 0.28923980172109465,
+      "sA_min": 0.10710814226106688,
+      "sA_max": 0.39634794398216155,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.6262836315232032
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Fayalite",
+      "type": "Nesosilicate",
+      "D": 3,
+      "elements": [
+        "Fe",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9091132505705763,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.4009494700215515,
+      "squeeze_count": 12,
+      "best_delta": 0.0015207589562614698,
+      "best_squeeze": {
+        "input": "\u03c0/4",
+        "input_val": 0.7853981633974483,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.5015207589562615,
+        "delta": 0.0015207589562614698
+      },
+      "sA_range": 0.5911731810562679,
+      "sA_min": 0.8809816159655719,
+      "sA_max": 1.4721547970218398,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Si)",
+        "R2": 0.8740991585958966,
+        "shape": "bowl",
+        "vertex": 0.4132666076483022
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo90",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9919192058708249,
+      "pll_shape": "bowl",
+      "pll_vertex": 1.0030938812427304,
+      "squeeze_count": 16,
+      "best_delta": 0.00044399293168584375,
+      "best_squeeze": {
+        "input": "log\u2081\u2080(2)",
+        "input_val": 0.3010299956639812,
+        "output": "\u221a2-1",
+        "output_val": 0.41421356237309515,
+        "actual": 0.414657555304781,
+        "delta": 0.00044399293168584375
+      },
+      "sA_range": 0.735557875022786,
+      "sA_min": 1.0981942424454243,
+      "sA_max": 1.8337521174682103,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258835
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo50",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9248706167495871,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.483849385645263,
+      "squeeze_count": 16,
+      "best_delta": 0.0015159398025956228,
+      "best_squeeze": {
+        "input": "2/3",
+        "input_val": 0.6666666666666666,
+        "output": "ln(\u221a2)",
+        "output_val": 0.3465735902799727,
+        "actual": 0.3450576504773771,
+        "delta": 0.0015159398025956228
+      },
+      "sA_range": 0.7199913167724281,
+      "sA_min": 0.4240246145259805,
+      "sA_max": 1.1440159312984086,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.1218638561925871
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo10",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9354213383384887,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.3824926556959633,
+      "squeeze_count": 20,
+      "best_delta": 0.00030055720012789333,
+      "best_squeeze": {
+        "input": "\u221a3/2",
+        "input_val": 0.8660254037844386,
+        "output": "e/\u03c0",
+        "output_val": 0.8652559794322651,
+        "actual": 0.8649554222321372,
+        "delta": 0.00030055720012789333
+      },
+      "sA_range": 1.6970407737070294,
+      "sA_min": 4.890776901514996,
+      "sA_max": 6.587817675222025,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258579
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Almandine",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Al",
+        "Fe",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9028714822532672,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5164598618119153,
+      "squeeze_count": 16,
+      "best_delta": 0.000589766958750626,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.4994102330412494,
+        "delta": 0.000589766958750626
+      },
+      "sA_range": 0.8770108057427288,
+      "sA_min": 0.713828201305122,
+      "sA_max": 1.5908390070478509,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Si)",
+        "R2": 0.8740991585958966,
+        "shape": "bowl",
+        "vertex": 0.4132666076483018
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Pyrope",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Al",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8687788784869475,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5854643399790131,
+      "squeeze_count": 18,
+      "best_delta": 0.0010253046809770017,
+      "best_squeeze": {
+        "input": "1/\u221a2",
+        "input_val": 0.7071067811865475,
+        "output": "e^(-\u03c0/4)",
+        "output_val": 0.45593812776599624,
+        "actual": 0.45696343244697324,
+        "delta": 0.0010253046809770017
+      },
+      "sA_range": 0.6214620014190637,
+      "sA_min": 0.4301136432199273,
+      "sA_max": 1.051575644638991,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.6262836315232034
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Grossular",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Al",
+        "Ca",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8721198354451972,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5308814439316782,
+      "squeeze_count": 21,
+      "best_delta": 0.0008255365719419538,
+      "best_squeeze": {
+        "input": "2/\u03c0",
+        "input_val": 0.6366197723675814,
+        "output": "1/3",
+        "output_val": 0.3333333333333333,
+        "actual": 0.33415886990527527,
+        "delta": 0.0008255365719419538
+      },
+      "sA_range": 0.7574588859221507,
+      "sA_min": 0.48031969706343075,
+      "sA_max": 1.2377785829855814,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.3225937820515968
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Andradite",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Ca",
+        "Fe",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8909147277040455,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6026872814358725,
+      "squeeze_count": 20,
+      "best_delta": 0.00021076402694930607,
+      "best_squeeze": {
+        "input": "\u221a3/2",
+        "input_val": 0.8660254037844386,
+        "output": "3/4",
+        "output_val": 0.75,
+        "actual": 0.7497892359730507,
+        "delta": 0.00021076402694930607
+      },
+      "sA_range": 0.34435081345590723,
+      "sA_min": 0.08183151835319936,
+      "sA_max": 0.4261823318091066,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596546,
+        "shape": "bowl",
+        "vertex": 0.32259378205159644
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Zircon_proxy",
+      "type": "Nesosilicate",
+      "D": 2,
+      "elements": [
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.34207327023771217,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5665066565427915,
+      "squeeze_count": 24,
+      "best_delta": 0.0020462753555773316,
+      "best_squeeze": {
+        "input": "\u03c6\u00b2",
+        "input_val": 0.3819660112501052,
+        "output": "ln(2)",
+        "output_val": 0.6931471805599453,
+        "actual": 0.691100905204368,
+        "delta": 0.0020462753555773316
+      },
+      "sA_range": 0.04902882742327872,
+      "sA_min": 7.518634208122705e-08,
+      "sA_max": 0.049028902609620804,
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Kyanite",
+      "type": "Nesosilicate",
+      "D": 3,
+      "elements": [
+        "Al",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8863709951052993,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6384865866868085,
+      "squeeze_count": 21,
+      "best_delta": 0.00023185128278757627,
+      "best_squeeze": {
+        "input": "\u221a3/2",
+        "input_val": 0.8660254037844386,
+        "output": "2/\u03c0",
+        "output_val": 0.6366197723675814,
+        "actual": 0.636851623650369,
+        "delta": 0.00023185128278757627
+      },
+      "sA_range": 0.3786308880187563,
+      "sA_min": 0.232268715144008,
+      "sA_max": 0.6108996031627643,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.6262836315232035
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Staurolite_proxy",
+      "type": "Nesosilicate",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Fe",
+        "H",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9670989423422046,
+      "pll_shape": "hill",
+      "pll_vertex": 1.3901486769680624,
+      "squeeze_count": 29,
+      "best_delta": 0.00011291984140449074,
+      "best_squeeze": {
+        "input": "2/\u03c0",
+        "input_val": 0.6366197723675814,
+        "output": "sin(1)",
+        "output_val": 0.8414709848078965,
+        "actual": 0.841583904649301,
+        "delta": 0.00011291984140449074
+      },
+      "sA_range": 29.249241640454482,
+      "sA_min": 17.22752751398666,
+      "sA_max": 46.47676915444114,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/O)",
+        "R2": 0.9755566722500959,
+        "shape": "bowl",
+        "vertex": 1.5517612606901356
+      },
+      "z_contrast": 25,
+      "z_max": 26
+    },
+    {
+      "name": "Topaz",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Al",
+        "F",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8653659565954988,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6375155256651872,
+      "squeeze_count": 8,
+      "best_delta": 0.0012033047900293914,
+      "best_squeeze": {
+        "input": "\u03c0/4",
+        "input_val": 0.7853981633974483,
+        "output": "2-\u221a3",
+        "output_val": 0.2679491924311228,
+        "actual": 0.2691524972211522,
+        "delta": 0.0012033047900293914
+      },
+      "sA_range": 0.11901071804590307,
+      "sA_min": 0.3098361982616285,
+      "sA_max": 0.4288469163075316,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391818,
+        "shape": "bowl",
+        "vertex": 0.6262836315232032
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Epidote",
+      "type": "Sorosilicate",
+      "D": 6,
+      "elements": [
+        "Al",
+        "Ca",
+        "Fe",
+        "H",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9633605455593871,
+      "pll_shape": "hill",
+      "pll_vertex": 1.5034546325739788,
+      "squeeze_count": 25,
+      "best_delta": 5.969170590358619e-05,
+      "best_squeeze": {
+        "input": "1/\u221ae",
+        "input_val": 0.6065306597126334,
+        "output": "\u03c0/4",
+        "output_val": 0.7853981633974483,
+        "actual": 0.7853384716915447,
+        "delta": 5.969170590358619e-05
+      },
+      "sA_range": 27.238820296340734,
+      "sA_min": 12.80344402805837,
+      "sA_max": 40.042264324399106,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/O)",
+        "R2": 0.9755566722500958,
+        "shape": "bowl",
+        "vertex": 1.55176126069014
+      },
+      "z_contrast": 25,
+      "z_max": 26
+    },
+    {
+      "name": "Zoisite",
+      "type": "Sorosilicate",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "H",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9629582631856661,
+      "pll_shape": "hill",
+      "pll_vertex": 1.4370548038736843,
+      "squeeze_count": 26,
+      "best_delta": 0.001631594065484021,
+      "best_squeeze": {
+        "input": "ln(\u221a2)",
+        "input_val": 0.3465735902799727,
+        "output": "1/e",
+        "output_val": 0.36787944117144233,
+        "actual": 0.3662478471059583,
+        "delta": 0.001631594065484021
+      },
+      "sA_range": 26.86810344189865,
+      "sA_min": 13.059634560709124,
+      "sA_max": 39.927738002607775,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/O)",
+        "R2": 0.9755566722500958,
+        "shape": "bowl",
+        "vertex": 1.55176126069014
+      },
+      "z_contrast": 19,
+      "z_max": 20
+    },
+    {
+      "name": "Beryl_proxy",
+      "type": "Cyclosilicate",
+      "D": 3,
+      "elements": [
+        "Al",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8609661616533666,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5817708623825755,
+      "squeeze_count": 19,
+      "best_delta": 0.0017372807446834337,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "\u03c6/\u221a2",
+        "output_val": 0.4370160244488211,
+        "actual": 0.43875330519350453,
+        "delta": 0.0017372807446834337
+      },
+      "sA_range": 0.6156608408245721,
+      "sA_min": 1.043910793247835,
+      "sA_max": 1.6595716340724072,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391818,
+        "shape": "bowl",
+        "vertex": 0.6262836315232032
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Tourmaline_proxy",
+      "type": "Cyclosilicate",
+      "D": 6,
+      "elements": [
+        "Al",
+        "Fe",
+        "H",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9595912058564752,
+      "pll_shape": "hill",
+      "pll_vertex": 1.5702081320899224,
+      "squeeze_count": 25,
+      "best_delta": 0.0005380632788503092,
+      "best_squeeze": {
+        "input": "1/3",
+        "input_val": 0.3333333333333333,
+        "output": "1/\u03c0",
+        "output_val": 0.3183098861837907,
+        "actual": 0.318847949462641,
+        "delta": 0.0005380632788503092
+      },
+      "sA_range": 22.423835134189456,
+      "sA_min": 11.730294762744453,
+      "sA_max": 34.15412989693391,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Na)",
+        "R2": 0.9855662947482298,
+        "shape": "bowl",
+        "vertex": 1.145800134046534
+      },
+      "z_contrast": 25,
+      "z_max": 26
+    },
+    {
+      "name": "Cordierite",
+      "type": "Cyclosilicate",
+      "D": 4,
+      "elements": [
+        "Al",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8390697950716748,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5417357209408942,
+      "squeeze_count": 17,
+      "best_delta": 0.0016346097606895205,
+      "best_squeeze": {
+        "input": "1/\u221ae",
+        "input_val": 0.6065306597126334,
+        "output": "1/3",
+        "output_val": 0.3333333333333333,
+        "actual": 0.33496794309402284,
+        "delta": 0.0016346097606895205
+      },
+      "sA_range": 0.7093183680766562,
+      "sA_min": 1.1359422057814215,
+      "sA_max": 1.8452605738580776,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.626283631523203
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Enstatite",
+      "type": "Pyroxene",
+      "D": 3,
+      "elements": [
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8803655740996126,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5740774843732879,
+      "squeeze_count": 17,
+      "best_delta": 0.00102698363564252,
+      "best_squeeze": {
+        "input": "1/4",
+        "input_val": 0.25,
+        "output": "2-\u221a3",
+        "output_val": 0.2679491924311228,
+        "actual": 0.2669222087954803,
+        "delta": 0.00102698363564252
+      },
+      "sA_range": 0.27639921897232234,
+      "sA_min": 0.056699487204340926,
+      "sA_max": 0.33309870617666326,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.6262836315232032
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Ferrosilite",
+      "type": "Pyroxene",
+      "D": 3,
+      "elements": [
+        "Fe",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9222359107799512,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.4385345159066419,
+      "squeeze_count": 13,
+      "best_delta": 0.00024568022151622015,
+      "best_squeeze": {
+        "input": "\u03c0/4",
+        "input_val": 0.7853981633974483,
+        "output": "1/\u221a5",
+        "output_val": 0.4472135954999579,
+        "actual": 0.4469679152784417,
+        "delta": 0.00024568022151622015
+      },
+      "sA_range": 0.31413557254846003,
+      "sA_min": 0.21097319619387703,
+      "sA_max": 0.525108768742337,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Si)",
+        "R2": 0.8740991585958966,
+        "shape": "bowl",
+        "vertex": 0.4132666076483021
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Diopside",
+      "type": "Pyroxene",
+      "D": 4,
+      "elements": [
+        "Ca",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8397975430837376,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5480638860641511,
+      "squeeze_count": 18,
+      "best_delta": 0.0006940487172024667,
+      "best_squeeze": {
+        "input": "1/\u221a2",
+        "input_val": 0.7071067811865475,
+        "output": "\u03b3_EM",
+        "output_val": 0.5772156649,
+        "actual": 0.5765216161827975,
+        "delta": 0.0006940487172024667
+      },
+      "sA_range": 0.4919375591987214,
+      "sA_min": 0.644644270732392,
+      "sA_max": 1.1365818299311135,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.32259378205159667
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Hedenbergite",
+      "type": "Pyroxene",
+      "D": 4,
+      "elements": [
+        "Ca",
+        "Fe",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9582617049992102,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.7848099848766514,
+      "squeeze_count": 16,
+      "best_delta": 0.001646354353522561,
+      "best_squeeze": {
+        "input": "1/3",
+        "input_val": 0.3333333333333333,
+        "output": "1/\u03c0",
+        "output_val": 0.3183098861837907,
+        "actual": 0.31995624053731325,
+        "delta": 0.001646354353522561
+      },
+      "sA_range": 0.35722524876832007,
+      "sA_min": 0.08449705189994092,
+      "sA_max": 0.441722300668261,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596546,
+        "shape": "bowl",
+        "vertex": 0.32259378205159667
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Augite_proxy",
+      "type": "Pyroxene",
+      "D": 5,
+      "elements": [
+        "Ca",
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.7915699633920177,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.549695590408031,
+      "squeeze_count": 15,
+      "best_delta": 0.0006195965876928389,
+      "best_squeeze": {
+        "input": "\u03c6",
+        "input_val": 0.6180339887498949,
+        "output": "log\u2081\u2080(e)",
+        "output_val": 0.4342944819032518,
+        "actual": 0.43491407849094466,
+        "delta": 0.0006195965876928389
+      },
+      "sA_range": 0.6178947381235851,
+      "sA_min": 1.540778348930738,
+      "sA_max": 2.158673087054323,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258643
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Jadeite",
+      "type": "Pyroxene",
+      "D": 4,
+      "elements": [
+        "Al",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.7935587688857064,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5031688144799303,
+      "squeeze_count": 15,
+      "best_delta": 8.772961351083408e-05,
+      "best_squeeze": {
+        "input": "1/\u221ae",
+        "input_val": 0.6065306597126334,
+        "output": "e^(-\u03c0/4)",
+        "output_val": 0.45593812776599624,
+        "actual": 0.45602585737950707,
+        "delta": 8.772961351083408e-05
+      },
+      "sA_range": 0.6023347802663163,
+      "sA_min": 0.9930770319085392,
+      "sA_max": 1.5954118121748555,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.6262836315232032
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Wollastonite",
+      "type": "Pyroxenoid",
+      "D": 3,
+      "elements": [
+        "Ca",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8964268589610185,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.507828614650849,
+      "squeeze_count": 16,
+      "best_delta": 0.0003405239033251739,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "log\u2081\u2080(e)",
+        "output_val": 0.4342944819032518,
+        "actual": 0.434635005806577,
+        "delta": 0.0003405239033251739
+      },
+      "sA_range": 0.24431061078226682,
+      "sA_min": 0.03868882829361972,
+      "sA_max": 0.28299943907588654,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596546,
+        "shape": "bowl",
+        "vertex": 0.3225937820515968
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Tremolite",
+      "type": "Amphibole",
+      "D": 5,
+      "elements": [
+        "Ca",
+        "H",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9630398285984453,
+      "pll_shape": "hill",
+      "pll_vertex": 1.423146047082005,
+      "squeeze_count": 26,
+      "best_delta": 0.0011260544924401872,
+      "best_squeeze": {
+        "input": "ln(\u221a2)",
+        "input_val": 0.3465735902799727,
+        "output": "1/e",
+        "output_val": 0.36787944117144233,
+        "actual": 0.3690054956638825,
+        "delta": 0.0011260544924401872
+      },
+      "sA_range": 25.455586417315196,
+      "sA_min": 12.396999788332012,
+      "sA_max": 37.852586205647206,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796703,
+        "shape": "bowl",
+        "vertex": 1.0977093400306734
+      },
+      "z_contrast": 19,
+      "z_max": 20
+    },
+    {
+      "name": "Actinolite",
+      "type": "Amphibole",
+      "D": 6,
+      "elements": [
+        "Ca",
+        "Fe",
+        "H",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.963309709663807,
+      "pll_shape": "hill",
+      "pll_vertex": 1.4949633827462192,
+      "squeeze_count": 26,
+      "best_delta": 0.00048244485912252166,
+      "best_squeeze": {
+        "input": "e^(-\u03c0/4)",
+        "input_val": 0.45593812776599624,
+        "output": "cos(1)",
+        "output_val": 0.5403023058681398,
+        "actual": 0.5398198610090172,
+        "delta": 0.00048244485912252166
+      },
+      "sA_range": 26.05639400584289,
+      "sA_min": 12.297066365386847,
+      "sA_max": 38.35346037122974,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796703,
+        "shape": "bowl",
+        "vertex": 1.0977093400306754
+      },
+      "z_contrast": 25,
+      "z_max": 26
+    },
+    {
+      "name": "Hornblende_proxy",
+      "type": "Amphibole",
+      "D": 7,
+      "elements": [
+        "Al",
+        "Ca",
+        "Fe",
+        "H",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9620378786623498,
+      "pll_shape": "hill",
+      "pll_vertex": 1.546991285515702,
+      "squeeze_count": 25,
+      "best_delta": 0.0013915807880183206,
+      "best_squeeze": {
+        "input": "\u221a2-1",
+        "input_val": 0.41421356237309515,
+        "output": "e^(-\u03c0/4)",
+        "output_val": 0.45593812776599624,
+        "actual": 0.45732970855401456,
+        "delta": 0.0013915807880183206
+      },
+      "sA_range": 25.582012464211417,
+      "sA_min": 12.253673241668174,
+      "sA_max": 37.83568570587959,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796703,
+        "shape": "bowl",
+        "vertex": 1.0977093400306746
+      },
+      "z_contrast": 25,
+      "z_max": 26
+    },
+    {
+      "name": "Talc",
+      "type": "Phyllosilicate",
+      "D": 4,
+      "elements": [
+        "H",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9626947213852232,
+      "pll_shape": "hill",
+      "pll_vertex": 1.394593508689407,
+      "squeeze_count": 25,
+      "best_delta": 1.8570526490568895e-05,
+      "best_squeeze": {
+        "input": "1/2",
+        "input_val": 0.5,
+        "output": "\u03c6",
+        "output_val": 0.6180339887498949,
+        "actual": 0.6180154182234043,
+        "delta": 1.8570526490568895e-05
+      },
+      "sA_range": 21.47255297280099,
+      "sA_min": 8.509728418838359,
+      "sA_max": 29.98228139163935,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796704,
+        "shape": "bowl",
+        "vertex": 1.0977093400306754
+      },
+      "z_contrast": 13,
+      "z_max": 14
+    },
+    {
+      "name": "Pyrophyllite",
+      "type": "Phyllosilicate",
+      "D": 4,
+      "elements": [
+        "Al",
+        "H",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9606925941848108,
+      "pll_shape": "hill",
+      "pll_vertex": 1.4071046964644531,
+      "squeeze_count": 28,
+      "best_delta": 0.002131831147114349,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "G_Cat",
+        "output_val": 0.915965594,
+        "actual": 0.9180974251471143,
+        "delta": 0.002131831147114349
+      },
+      "sA_range": 21.14466875501884,
+      "sA_min": 8.321362026094489,
+      "sA_max": 29.466030781113332,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/O)",
+        "R2": 0.9755566722500958,
+        "shape": "bowl",
+        "vertex": 1.551761260690147
+      },
+      "z_contrast": 13,
+      "z_max": 14
+    },
+    {
+      "name": "Muscovite",
+      "type": "Phyllosilicate",
+      "D": 5,
+      "elements": [
+        "Al",
+        "H",
+        "K",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9594247424494662,
+      "pll_shape": "hill",
+      "pll_vertex": 1.438558845158465,
+      "squeeze_count": 25,
+      "best_delta": 0.00029997135923875984,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "G_Cat",
+        "output_val": 0.915965594,
+        "actual": 0.9162655653592388,
+        "delta": 0.00029997135923875984
+      },
+      "sA_range": 21.911359699935733,
+      "sA_min": 8.187373120026326,
+      "sA_max": 30.09873281996206,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/O)",
+        "R2": 0.9755566722500958,
+        "shape": "bowl",
+        "vertex": 1.551761260690147
+      },
+      "z_contrast": 18,
+      "z_max": 19
+    },
+    {
+      "name": "Phlogopite",
+      "type": "Phyllosilicate",
+      "D": 6,
+      "elements": [
+        "Al",
+        "H",
+        "K",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9589877964534043,
+      "pll_shape": "hill",
+      "pll_vertex": 1.4822443360894113,
+      "squeeze_count": 25,
+      "best_delta": 0.0011625482557505729,
+      "best_squeeze": {
+        "input": "\u03c6/\u221a2",
+        "input_val": 0.4370160244488211,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.4988374517442494,
+        "delta": 0.0011625482557505729
+      },
+      "sA_range": 21.461555177512807,
+      "sA_min": 8.310536266446219,
+      "sA_max": 29.772091443959027,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796703,
+        "shape": "bowl",
+        "vertex": 1.0977093400306754
+      },
+      "z_contrast": 18,
+      "z_max": 19
+    },
+    {
+      "name": "Biotite",
+      "type": "Phyllosilicate",
+      "D": 7,
+      "elements": [
+        "Al",
+        "Fe",
+        "H",
+        "K",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9605648737455884,
+      "pll_shape": "hill",
+      "pll_vertex": 1.605296855995192,
+      "squeeze_count": 26,
+      "best_delta": 0.0001886543967095644,
+      "best_squeeze": {
+        "input": "\u221a2-1",
+        "input_val": 0.41421356237309515,
+        "output": "1/\u221a5",
+        "output_val": 0.4472135954999579,
+        "actual": 0.4474022498966675,
+        "delta": 0.0001886543967095644
+      },
+      "sA_range": 22.382210527417037,
+      "sA_min": 8.423518476253129,
+      "sA_max": 30.805729003670166,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796703,
+        "shape": "bowl",
+        "vertex": 1.0977093400306743
+      },
+      "z_contrast": 25,
+      "z_max": 26
+    },
+    {
+      "name": "Chlorite_proxy",
+      "type": "Phyllosilicate",
+      "D": 5,
+      "elements": [
+        "Al",
+        "H",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9549473540826817,
+      "pll_shape": "hill",
+      "pll_vertex": 1.5036841304145945,
+      "squeeze_count": 28,
+      "best_delta": 0.0005662352421449413,
+      "best_squeeze": {
+        "input": "cos(1)",
+        "input_val": 0.5403023058681398,
+        "output": "2/3",
+        "output_val": 0.6666666666666666,
+        "actual": 0.6661004314245217,
+        "delta": 0.0005662352421449413
+      },
+      "sA_range": 15.589420008585131,
+      "sA_min": 3.2654149393201823,
+      "sA_max": 18.854834947905314,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796703,
+        "shape": "bowl",
+        "vertex": 1.0977093400306748
+      },
+      "z_contrast": 13,
+      "z_max": 14
+    },
+    {
+      "name": "Serpentine",
+      "type": "Phyllosilicate",
+      "D": 4,
+      "elements": [
+        "H",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9584502010165156,
+      "pll_shape": "hill",
+      "pll_vertex": 1.4378067914561286,
+      "squeeze_count": 26,
+      "best_delta": 0.001850575317192793,
+      "best_squeeze": {
+        "input": "\u03c6\u00b2",
+        "input_val": 0.3819660112501052,
+        "output": "\u221a2-1",
+        "output_val": 0.41421356237309515,
+        "actual": 0.41236298705590235,
+        "delta": 0.001850575317192793
+      },
+      "sA_range": 16.250574690349474,
+      "sA_min": 3.5308324612352995,
+      "sA_max": 19.781407151584773,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/Mg)",
+        "R2": 0.9823919578796703,
+        "shape": "bowl",
+        "vertex": 1.0977093400306746
+      },
+      "z_contrast": 13,
+      "z_max": 14
+    },
+    {
+      "name": "Kaolinite",
+      "type": "Phyllosilicate",
+      "D": 4,
+      "elements": [
+        "Al",
+        "H",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9553184217862297,
+      "pll_shape": "hill",
+      "pll_vertex": 1.4534023265902745,
+      "squeeze_count": 28,
+      "best_delta": 0.0017157212856316884,
+      "best_squeeze": {
+        "input": "\u221a2-1",
+        "input_val": 0.41421356237309515,
+        "output": "e^(-\u03c0/4)",
+        "output_val": 0.45593812776599624,
+        "actual": 0.45422240648036455,
+        "delta": 0.0017157212856316884
+      },
+      "sA_range": 15.948314946006972,
+      "sA_min": 3.2298614205358884,
+      "sA_max": 19.17817636654286,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/O)",
+        "R2": 0.9755566722500958,
+        "shape": "bowl",
+        "vertex": 1.5517612606901434
+      },
+      "z_contrast": 13,
+      "z_max": 14
+    },
+    {
+      "name": "Quartz",
+      "type": "Tectosilicate",
+      "D": 2,
+      "elements": [
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.34207327023771217,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5665066565427915,
+      "squeeze_count": 24,
+      "best_delta": 0.0020462753555773316,
+      "best_squeeze": {
+        "input": "\u03c6\u00b2",
+        "input_val": 0.3819660112501052,
+        "output": "ln(2)",
+        "output_val": 0.6931471805599453,
+        "actual": 0.691100905204368,
+        "delta": 0.0020462753555773316
+      },
+      "sA_range": 0.04902882742327872,
+      "sA_min": 7.518634208122705e-08,
+      "sA_max": 0.049028902609620804,
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Albite",
+      "type": "Feldspar",
+      "D": 4,
+      "elements": [
+        "Al",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.7730968111349626,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.48097893917507367,
+      "squeeze_count": 16,
+      "best_delta": 0.004698709833856507,
+      "best_squeeze": {
+        "input": "cos(1)",
+        "input_val": 0.5403023058681398,
+        "output": "1/3",
+        "output_val": 0.3333333333333333,
+        "actual": 0.3380320431671898,
+        "delta": 0.004698709833856507
+      },
+      "sA_range": 0.7103029131354814,
+      "sA_min": 1.7725321810814725,
+      "sA_max": 2.482835094216954,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.626283631523203
+      },
+      "z_contrast": 6,
+      "z_max": 14
+    },
+    {
+      "name": "Anorthite",
+      "type": "Feldspar",
+      "D": 4,
+      "elements": [
+        "Al",
+        "Ca",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9229719590657758,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.7019851603335264,
+      "squeeze_count": 18,
+      "best_delta": 0.00035537865906948296,
+      "best_squeeze": {
+        "input": "2-\u221a3",
+        "input_val": 0.2679491924311228,
+        "output": "1/\u221a5",
+        "output_val": 0.4472135954999579,
+        "actual": 0.44685821684088844,
+        "delta": 0.00035537865906948296
+      },
+      "sA_range": 0.5499380796421041,
+      "sA_min": 0.27784461070355765,
+      "sA_max": 0.8277826903456618,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.32259378205159667
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Orthoclase",
+      "type": "Feldspar",
+      "D": 4,
+      "elements": [
+        "Al",
+        "K",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9022038567577003,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6441407104702449,
+      "squeeze_count": 24,
+      "best_delta": 0.001027234409824218,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "1/e",
+        "output_val": 0.36787944117144233,
+        "actual": 0.3668522067616181,
+        "delta": 0.001027234409824218
+      },
+      "sA_range": 0.5676694857556464,
+      "sA_min": 1.0828629984325877,
+      "sA_max": 1.650532484188234,
+      "best_pairwise_bowl": {
+        "pair": "ln(K/Si)",
+        "R2": 0.8882597947961558,
+        "shape": "bowl",
+        "vertex": 0.31286463024154015
+      },
+      "z_contrast": 11,
+      "z_max": 19
+    },
+    {
+      "name": "Oligoclase",
+      "type": "Feldspar",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9780393551858629,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.8950517442406876,
+      "squeeze_count": 11,
+      "best_delta": 0.0039543303997435775,
+      "best_squeeze": {
+        "input": "1/e",
+        "input_val": 0.36787944117144233,
+        "output": "1/4",
+        "output_val": 0.25,
+        "actual": 0.2539543303997436,
+        "delta": 0.0039543303997435775
+      },
+      "sA_range": 0.8917989473479659,
+      "sA_min": 4.191003525687772,
+      "sA_max": 5.082802473035738,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.32259378205159656
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Labradorite",
+      "type": "Feldspar",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.6517220251224208,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.486664246886567,
+      "squeeze_count": 15,
+      "best_delta": 0.0001956359589658785,
+      "best_squeeze": {
+        "input": "\u03b3_EM",
+        "input_val": 0.5772156649,
+        "output": "cos(1)",
+        "output_val": 0.5403023058681398,
+        "actual": 0.5401066699091739,
+        "delta": 0.0001956359589658785
+      },
+      "sA_range": 0.6309023255991861,
+      "sA_min": 3.618509818767983,
+      "sA_max": 4.249412144367169,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.3225937820515974
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Bytownite",
+      "type": "Feldspar",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.7159256082563948,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.3170279829787753,
+      "squeeze_count": 16,
+      "best_delta": 0.0015109468550214,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "\u221a3/2",
+        "output_val": 0.8660254037844386,
+        "actual": 0.86753635063946,
+        "delta": 0.0015109468550214
+      },
+      "sA_range": 1.0816493357919352,
+      "sA_min": 5.784346416595069,
+      "sA_max": 6.865995752387004,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.3225937820515971
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Nepheline",
+      "type": "Feldspathoid",
+      "D": 5,
+      "elements": [
+        "Al",
+        "K",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9680123509486575,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.7740668727756317,
+      "squeeze_count": 13,
+      "best_delta": 0.001880178442742575,
+      "best_squeeze": {
+        "input": "1/\u03c0",
+        "input_val": 0.3183098861837907,
+        "output": "1/e",
+        "output_val": 0.36787944117144233,
+        "actual": 0.3697596196141849,
+        "delta": 0.001880178442742575
+      },
+      "sA_range": 0.6705767585150786,
+      "sA_min": 1.3676857157643216,
+      "sA_max": 2.0382624742794,
+      "best_pairwise_bowl": {
+        "pair": "ln(K/Si)",
+        "R2": 0.8882597947961557,
+        "shape": "bowl",
+        "vertex": 0.3128646302415405
+      },
+      "z_contrast": 11,
+      "z_max": 19
+    },
+    {
+      "name": "Leucite",
+      "type": "Feldspathoid",
+      "D": 4,
+      "elements": [
+        "Al",
+        "K",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8854799638918297,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6150683382977323,
+      "squeeze_count": 16,
+      "best_delta": 0.004222217805144424,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "1/3",
+        "output_val": 0.3333333333333333,
+        "actual": 0.33755555113847774,
+        "delta": 0.004222217805144424
+      },
+      "sA_range": 0.48464378981189027,
+      "sA_min": 0.5110301480465189,
+      "sA_max": 0.9956739378584092,
+      "best_pairwise_bowl": {
+        "pair": "ln(K/Si)",
+        "R2": 0.8882597947961558,
+        "shape": "bowl",
+        "vertex": 0.31286463024154004
+      },
+      "z_contrast": 11,
+      "z_max": 19
+    },
+    {
+      "name": "Sodalite",
+      "type": "Feldspathoid",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Cl",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8763525474791093,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.747731610888537,
+      "squeeze_count": 21,
+      "best_delta": 7.663729778695227e-05,
+      "best_squeeze": {
+        "input": "G_Cat",
+        "input_val": 0.915965594,
+        "output": "1/\u221a5",
+        "output_val": 0.4472135954999579,
+        "actual": 0.447136958202171,
+        "delta": 7.663729778695227e-05
+      },
+      "sA_range": 0.7280329018474307,
+      "sA_min": 0.8070920949963072,
+      "sA_max": 1.535124996843738,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Si)",
+        "R2": 0.8558369454391817,
+        "shape": "bowl",
+        "vertex": 0.6262836315232032
+      },
+      "z_contrast": 9,
+      "z_max": 17
+    },
+    {
+      "name": "Pyrite_proxy",
+      "type": "Sulfide",
+      "D": 2,
+      "elements": [
+        "Fe",
+        "S"
+      ],
+      "pll_R2": 0.3296052878593704,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5657004837027575,
+      "squeeze_count": 27,
+      "best_delta": 0.00022517771014185506,
+      "best_squeeze": {
+        "input": "1/\u221a2",
+        "input_val": 0.7071067811865475,
+        "output": "\u03b3_EM",
+        "output_val": 0.5772156649,
+        "actual": 0.5769904871898581,
+        "delta": 0.00022517771014185506
+      },
+      "sA_range": 0.033415017070521406,
+      "sA_min": 1.1905870584516828e-06,
+      "sA_max": 0.033416207657579855,
+      "z_contrast": 10,
+      "z_max": 26
+    },
+    {
+      "name": "Galena_proxy",
+      "type": "Sulfide",
+      "D": 2,
+      "elements": [
+        "Pb",
+        "S"
+      ],
+      "pll_R2": 0.9363180527818458,
+      "pll_shape": "hill",
+      "pll_vertex": 9.209793721274313,
+      "squeeze_count": 35,
+      "best_delta": 0.0006973972137854778,
+      "best_squeeze": {
+        "input": "2/3",
+        "input_val": 0.6666666666666666,
+        "output": "\u03c6",
+        "output_val": 0.6180339887498949,
+        "actual": 0.6173365915361094,
+        "delta": 0.0006973972137854778
+      },
+      "sA_range": 1.1729652573361293,
+      "sA_min": 1.3354041427382999,
+      "sA_max": 2.508369400074429,
+      "z_contrast": 66,
+      "z_max": 82
+    },
+    {
+      "name": "Sphalerite_proxy",
+      "type": "Sulfide",
+      "D": 2,
+      "elements": [
+        "S",
+        "Zn"
+      ],
+      "pll_R2": 0.09922248749131601,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5703787950191542,
+      "squeeze_count": 21,
+      "best_delta": 0.0011017530937043607,
+      "best_squeeze": {
+        "input": "1/\u221a5",
+        "input_val": 0.4472135954999579,
+        "output": "2-\u221a3",
+        "output_val": 0.2679491924311228,
+        "actual": 0.26684743933741845,
+        "delta": 0.0011017530937043607
+      },
+      "sA_range": 0.18286734886235448,
+      "sA_min": 0.19761348030494866,
+      "sA_max": 0.38048082916730314,
+      "z_contrast": 14,
+      "z_max": 30
+    },
+    {
+      "name": "Chalcopyrite_proxy",
+      "type": "Sulfide",
+      "D": 3,
+      "elements": [
+        "Cu",
+        "Fe",
+        "S"
+      ],
+      "pll_R2": 0.4913931367019767,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5351107737804497,
+      "squeeze_count": 31,
+      "best_delta": 0.0005429300275417992,
+      "best_squeeze": {
+        "input": "1/3",
+        "input_val": 0.3333333333333333,
+        "output": "log\u2081\u2080(e)",
+        "output_val": 0.4342944819032518,
+        "actual": 0.4348374119307936,
+        "delta": 0.0005429300275417992
+      },
+      "sA_range": 0.03024128227376701,
+      "sA_min": 0.003599327757326876,
+      "sA_max": 0.033840610031093885,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/S)",
+        "R2": 0.5081665913926428,
+        "shape": "bowl",
+        "vertex": 0.521717577265838
+      },
+      "z_contrast": 13,
+      "z_max": 29
+    },
+    {
+      "name": "Arsenopyrite_proxy",
+      "type": "Sulfide",
+      "D": 3,
+      "elements": [
+        "As",
+        "Fe",
+        "S"
+      ],
+      "pll_R2": 0.13706002455335187,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.13237385025934043,
+      "squeeze_count": 48,
+      "best_delta": 0.00017244947498579188,
+      "best_squeeze": {
+        "input": "1/2",
+        "input_val": 0.5,
+        "output": "ln(\u221a2)",
+        "output_val": 0.3465735902799727,
+        "actual": 0.3467460397549585,
+        "delta": 0.00017244947498579188
+      },
+      "sA_range": 0.24168947765737286,
+      "sA_min": 0.2721444603203573,
+      "sA_max": 0.5138339379777301,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/S)",
+        "R2": 0.5081665913926428,
+        "shape": "bowl",
+        "vertex": 0.5217175772658385
+      },
+      "z_contrast": 17,
+      "z_max": 33
+    },
+    {
+      "name": "Titanite",
+      "type": "Nesosilicate",
+      "D": 4,
+      "elements": [
+        "Ca",
+        "O",
+        "Si",
+        "Ti"
+      ],
+      "pll_R2": 0.8800736059019242,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6096658727451371,
+      "squeeze_count": 18,
+      "best_delta": 0.0003284490129805695,
+      "best_squeeze": {
+        "input": "sin(1)",
+        "input_val": 0.8414709848078965,
+        "output": "ln(2)",
+        "output_val": 0.6931471805599453,
+        "actual": 0.6928187315469647,
+        "delta": 0.0003284490129805695
+      },
+      "sA_range": 0.46120125064340467,
+      "sA_min": 0.18825483826732944,
+      "sA_max": 0.6494560889107341,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Ti)",
+        "R2": 0.967545968915382,
+        "shape": "bowl",
+        "vertex": 0.8772037308039339
+      },
+      "z_contrast": 14,
+      "z_max": 22
+    },
+    {
+      "name": "Scapolite_proxy",
+      "type": "Tectosilicate",
+      "D": 5,
+      "elements": [
+        "Al",
+        "C",
+        "Ca",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.512414881058417,
+      "pll_shape": "hill",
+      "pll_vertex": 0.48677134197224375,
+      "squeeze_count": 18,
+      "best_delta": 0.004422282106704534,
+      "best_squeeze": {
+        "input": "1/\u221ae",
+        "input_val": 0.6065306597126334,
+        "output": "log\u2081\u2080(2)",
+        "output_val": 0.3010299956639812,
+        "actual": 0.29660771355727666,
+        "delta": 0.004422282106704534
+      },
+      "sA_range": 1.4651492153479495,
+      "sA_min": 6.908259628226306,
+      "sA_max": 8.373408843574255,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.3225937820515967
+      },
+      "z_contrast": 14,
+      "z_max": 20
+    },
+    {
+      "name": "Prehnite",
+      "type": "Phyllosilicate",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "H",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9597281012652483,
+      "pll_shape": "hill",
+      "pll_vertex": 1.4987741610086842,
+      "squeeze_count": 25,
+      "best_delta": 0.0009005390298909011,
+      "best_squeeze": {
+        "input": "1/e",
+        "input_val": 0.36787944117144233,
+        "output": "\u03c6\u00b2",
+        "output_val": 0.3819660112501052,
+        "actual": 0.3828665502799961,
+        "delta": 0.0009005390298909011
+      },
+      "sA_range": 22.7687773511678,
+      "sA_min": 8.20524228307521,
+      "sA_max": 30.974019634243007,
+      "best_pairwise_bowl": {
+        "pair": "ln(H/O)",
+        "R2": 0.9755566722500958,
+        "shape": "bowl",
+        "vertex": 1.551761260690147
+      },
+      "z_contrast": 19,
+      "z_max": 20
+    },
+    {
+      "name": "Olivine_Fo95",
+      "type": "Olivine_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9961635767307018,
+      "pll_shape": "bowl",
+      "pll_vertex": 1.3555145583877566,
+      "squeeze_count": 31,
+      "best_delta": 0.0001966829498692979,
+      "best_squeeze": {
+        "input": "2-\u221a3",
+        "input_val": 0.2679491924311228,
+        "output": "\u03b3_EM",
+        "output_val": 0.5772156649,
+        "actual": 0.5770189819501307,
+        "delta": 0.0001966829498692979
+      },
+      "sA_range": 1.176858315479857,
+      "sA_min": 2.5437017123770884,
+      "sA_max": 3.7205600278569455,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.970326131330537,
+        "shape": "bowl",
+        "vertex": 0.12186385619258695
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo80",
+      "type": "Olivine_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.954619144614954,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.7361678671455762,
+      "squeeze_count": 14,
+      "best_delta": 0.003298177938119373,
+      "best_squeeze": {
+        "input": "G_Cat",
+        "input_val": 0.915965594,
+        "output": "1/\u03c0",
+        "output_val": 0.3183098861837907,
+        "actual": 0.32160806412191006,
+        "delta": 0.003298177938119373
+      },
+      "sA_range": 0.4429220250845028,
+      "sA_min": 0.25808285316775287,
+      "sA_max": 0.7010048782522557,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258674
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo70",
+      "type": "Olivine_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9078909608528274,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6111548215613344,
+      "squeeze_count": 23,
+      "best_delta": 0.0009758560679241635,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "log\u2081\u2080(2)",
+        "output_val": 0.3010299956639812,
+        "actual": 0.30005413959605703,
+        "delta": 0.0009758560679241635
+      },
+      "sA_range": 0.3761723568198165,
+      "sA_min": 0.08274585409500552,
+      "sA_max": 0.458918210914822,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258688
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo60",
+      "type": "Olivine_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9111934852068998,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5352867149045383,
+      "squeeze_count": 17,
+      "best_delta": 0.000931779375092423,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.4990682206249076,
+        "delta": 0.000931779375092423
+      },
+      "sA_range": 0.5517030211581644,
+      "sA_min": 0.17046434261841487,
+      "sA_max": 0.7221673637765793,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258662
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo40",
+      "type": "Olivine_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9337905749698174,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.44684933304698815,
+      "squeeze_count": 16,
+      "best_delta": 0.0010936138208984536,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "log\u2081\u2080(e)",
+        "output_val": 0.4342944819032518,
+        "actual": 0.43538809572415027,
+        "delta": 0.0010936138208984536
+      },
+      "sA_range": 0.8934646185660289,
+      "sA_min": 0.8399504642593019,
+      "sA_max": 1.7334150828253307,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.1218638561925859
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo30",
+      "type": "Olivine_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9381454559339165,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.4193202394458362,
+      "squeeze_count": 15,
+      "best_delta": 6.046739567600046e-05,
+      "best_squeeze": {
+        "input": "sin(1)",
+        "input_val": 0.8414709848078965,
+        "output": "\u03c0/4",
+        "output_val": 0.7853981633974483,
+        "actual": 0.7854586307931243,
+        "delta": 6.046739567600046e-05
+      },
+      "sA_range": 1.0870832214120605,
+      "sA_min": 1.4850329232763237,
+      "sA_max": 2.5721161446883842,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258558
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Olivine_Fo20",
+      "type": "Olivine_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9388420166766717,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.39845976466700556,
+      "squeeze_count": 24,
+      "best_delta": 0.000534413424639113,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "\u03c6",
+        "output_val": 0.6180339887498949,
+        "actual": 0.618568402174534,
+        "delta": 0.000534413424639113
+      },
+      "sA_range": 1.3280602323702508,
+      "sA_min": 2.5680508072322055,
+      "sA_max": 3.8961110396024563,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.970326131330537,
+        "shape": "bowl",
+        "vertex": 0.12186385619258747
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Plag_An10",
+      "type": "Plag_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9837261773527268,
+      "pll_shape": "bowl",
+      "pll_vertex": 1.1439933231229462,
+      "squeeze_count": 25,
+      "best_delta": 0.0008104922747619314,
+      "best_squeeze": {
+        "input": "1/3",
+        "input_val": 0.3333333333333333,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.5008104922747619,
+        "delta": 0.0008104922747619314
+      },
+      "sA_range": 1.3563242564633144,
+      "sA_min": 6.088830490171938,
+      "sA_max": 7.445154746635253,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596548,
+        "shape": "bowl",
+        "vertex": 0.322593782051596
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Plag_An30",
+      "type": "Plag_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9093882296546587,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.7557648639180823,
+      "squeeze_count": 0,
+      "best_delta": 999,
+      "best_squeeze": null,
+      "sA_range": 0.6614755623075164,
+      "sA_min": 3.509653566725662,
+      "sA_max": 4.1711291290331785,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.3225937820515973
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Plag_An50",
+      "type": "Plag_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.6502814727262218,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.566548401856242,
+      "squeeze_count": 22,
+      "best_delta": 0.0008257539852088991,
+      "best_squeeze": {
+        "input": "1/\u221a2",
+        "input_val": 0.7071067811865475,
+        "output": "1/\u221ae",
+        "output_val": 0.6065306597126334,
+        "actual": 0.6073564136978423,
+        "delta": 0.0008257539852088991
+      },
+      "sA_range": 0.5884753083352092,
+      "sA_min": 3.269832566820579,
+      "sA_max": 3.858307875155788,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596546,
+        "shape": "bowl",
+        "vertex": 0.3225937820515969
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Plag_An70",
+      "type": "Plag_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.6847237789684868,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.4065118084113959,
+      "squeeze_count": 16,
+      "best_delta": 0.0034793725812855003,
+      "best_squeeze": {
+        "input": "ln(2)",
+        "input_val": 0.6931471805599453,
+        "output": "sin(1)",
+        "output_val": 0.8414709848078965,
+        "actual": 0.844950357389182,
+        "delta": 0.0034793725812855003
+      },
+      "sA_range": 0.8340423947752864,
+      "sA_min": 4.362761723398116,
+      "sA_max": 5.196804118173403,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.3225937820515965
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Plag_An90",
+      "type": "Plag_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Na",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.7404467899638413,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.19496873901185385,
+      "squeeze_count": 21,
+      "best_delta": 0.0002957383242662148,
+      "best_squeeze": {
+        "input": "e^(-\u03c0/4)",
+        "input_val": 0.45593812776599624,
+        "output": "1/\u03c0",
+        "output_val": 0.3183098861837907,
+        "actual": 0.3186056245080569,
+        "delta": 0.0002957383242662148
+      },
+      "sA_range": 1.4548079700177254,
+      "sA_min": 8.963673544887634,
+      "sA_max": 10.41848151490536,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.32259378205159667
+      },
+      "z_contrast": 12,
+      "z_max": 20
+    },
+    {
+      "name": "Garnet_Alm80Pyr20",
+      "type": "Garnet_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9039074667845044,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.4545287135425471,
+      "squeeze_count": 17,
+      "best_delta": 0.0009147664849639137,
+      "best_squeeze": {
+        "input": "\u03c6",
+        "input_val": 0.6180339887498949,
+        "output": "ln(\u221a2)",
+        "output_val": 0.3465735902799727,
+        "actual": 0.3456588237950088,
+        "delta": 0.0009147664849639137
+      },
+      "sA_range": 1.4990222815164604,
+      "sA_min": 3.408708654805603,
+      "sA_max": 4.907730936322063,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258742
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Garnet_Alm50Pyr50",
+      "type": "Garnet_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8812812546047177,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.530750286525029,
+      "squeeze_count": 14,
+      "best_delta": 0.00022585402266384058,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "1/\u221ae",
+        "output_val": 0.6065306597126334,
+        "actual": 0.6063048056899696,
+        "delta": 0.00022585402266384058
+      },
+      "sA_range": 0.9341300914785153,
+      "sA_min": 1.0073868590281203,
+      "sA_max": 1.9415169505066356,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.1218638561925871
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Garnet_Alm20Pyr80",
+      "type": "Garnet_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9019756922773152,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.6927843780486221,
+      "squeeze_count": 14,
+      "best_delta": 0.0014415423914743153,
+      "best_squeeze": {
+        "input": "sin(1)",
+        "input_val": 0.8414709848078965,
+        "output": "ln(\u221a2)",
+        "output_val": 0.3465735902799727,
+        "actual": 0.348015132671447,
+        "delta": 0.0014415423914743153
+      },
+      "sA_range": 0.7224648135437133,
+      "sA_min": 1.1233979889760328,
+      "sA_max": 1.845862802519746,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258697
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Garnet_Grs50And50",
+      "type": "Garnet_series",
+      "D": 5,
+      "elements": [
+        "Al",
+        "Ca",
+        "Fe",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8511076915531219,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.5322591637642294,
+      "squeeze_count": 16,
+      "best_delta": 0.00030369588203060793,
+      "best_squeeze": {
+        "input": "3/4",
+        "input_val": 0.75,
+        "output": "2/3",
+        "output_val": 0.6666666666666666,
+        "actual": 0.6669703625486972,
+        "delta": 0.00030369588203060793
+      },
+      "sA_range": 1.0073406690748041,
+      "sA_min": 1.6982838873795165,
+      "sA_max": 2.7056245564543207,
+      "best_pairwise_bowl": {
+        "pair": "ln(Ca/Si)",
+        "R2": 0.9174217530596547,
+        "shape": "bowl",
+        "vertex": 0.32259378205159667
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Px_En80Fs20",
+      "type": "Px_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9211162076824408,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.7819169961163982,
+      "squeeze_count": 1,
+      "best_delta": 0.004836978625760324,
+      "best_squeeze": {
+        "input": "1/4",
+        "input_val": 0.25,
+        "output": "2-\u221a3",
+        "output_val": 0.2679491924311228,
+        "actual": 0.2631122138053625,
+        "delta": 0.004836978625760324
+      },
+      "sA_range": 0.48035417996642327,
+      "sA_min": 0.763062528804481,
+      "sA_max": 1.2434167087709043,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258697
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Px_En50Fs50",
+      "type": "Px_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.8849248603949317,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.4964449591756368,
+      "squeeze_count": 15,
+      "best_delta": 0.001387549078884276,
+      "best_squeeze": {
+        "input": "2/3",
+        "input_val": 0.6666666666666666,
+        "output": "e^(-\u03c0/4)",
+        "output_val": 0.45593812776599624,
+        "actual": 0.4573256768448805,
+        "delta": 0.001387549078884276
+      },
+      "sA_range": 0.6258654724020889,
+      "sA_min": 0.6464002018199291,
+      "sA_max": 1.272265674222018,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.1218638561925871
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Px_En20Fs80",
+      "type": "Px_series",
+      "D": 4,
+      "elements": [
+        "Fe",
+        "Mg",
+        "O",
+        "Si"
+      ],
+      "pll_R2": 0.9162241718041593,
+      "pll_shape": "bowl",
+      "pll_vertex": 0.40284195147100854,
+      "squeeze_count": 22,
+      "best_delta": 0.0005186686196085866,
+      "best_squeeze": {
+        "input": "2/3",
+        "input_val": 0.6666666666666666,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.5005186686196086,
+        "delta": 0.0005186686196085866
+      },
+      "sA_range": 1.2441854397914187,
+      "sA_min": 3.0253235903454807,
+      "sA_max": 4.269509030136899,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/Mg)",
+        "R2": 0.9703261313305371,
+        "shape": "bowl",
+        "vertex": 0.12186385619258873
+      },
+      "z_contrast": 18,
+      "z_max": 26
+    },
+    {
+      "name": "Galena_pure",
+      "type": "High_Z_contrast",
+      "D": 2,
+      "elements": [
+        "Pb",
+        "S"
+      ],
+      "pll_R2": 0.9363180527818458,
+      "pll_shape": "hill",
+      "pll_vertex": 9.209793721274313,
+      "squeeze_count": 35,
+      "best_delta": 0.0006973972137854778,
+      "best_squeeze": {
+        "input": "2/3",
+        "input_val": 0.6666666666666666,
+        "output": "\u03c6",
+        "output_val": 0.6180339887498949,
+        "actual": 0.6173365915361094,
+        "delta": 0.0006973972137854778
+      },
+      "sA_range": 1.1729652573361293,
+      "sA_min": 1.3354041427382999,
+      "sA_max": 2.508369400074429,
+      "z_contrast": 66,
+      "z_max": 82
+    },
+    {
+      "name": "PbO_proxy",
+      "type": "High_Z_contrast",
+      "D": 2,
+      "elements": [
+        "O",
+        "Pb"
+      ],
+      "pll_R2": 0.9753515053560103,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8398458784986956,
+      "squeeze_count": 24,
+      "best_delta": 0.0001085438428600205,
+      "best_squeeze": {
+        "input": "1/4",
+        "input_val": 0.25,
+        "output": "e^(-\u03c0/4)",
+        "output_val": 0.45593812776599624,
+        "actual": 0.4558295839231362,
+        "delta": 0.0001085438428600205
+      },
+      "sA_range": 2.2522351757789254,
+      "sA_min": 2.707833021942397,
+      "sA_max": 4.960068197721323,
+      "z_contrast": 74,
+      "z_max": 82
+    },
+    {
+      "name": "CuFeS2",
+      "type": "High_Z_contrast",
+      "D": 3,
+      "elements": [
+        "Cu",
+        "Fe",
+        "S"
+      ],
+      "pll_R2": 0.4913931367019767,
+      "pll_shape": "hill",
+      "pll_vertex": 0.5351107737804497,
+      "squeeze_count": 31,
+      "best_delta": 0.0005429300275417992,
+      "best_squeeze": {
+        "input": "1/3",
+        "input_val": 0.3333333333333333,
+        "output": "log\u2081\u2080(e)",
+        "output_val": 0.4342944819032518,
+        "actual": 0.4348374119307936,
+        "delta": 0.0005429300275417992
+      },
+      "sA_range": 0.03024128227376701,
+      "sA_min": 0.003599327757326876,
+      "sA_max": 0.033840610031093885,
+      "best_pairwise_bowl": {
+        "pair": "ln(Fe/S)",
+        "R2": 0.5081665913926428,
+        "shape": "bowl",
+        "vertex": 0.521717577265838
+      },
+      "z_contrast": 13,
+      "z_max": 29
+    },
+    {
+      "name": "BaO_proxy",
+      "type": "High_Z_contrast",
+      "D": 2,
+      "elements": [
+        "Ba",
+        "O"
+      ],
+      "pll_R2": 0.9636043333158733,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8565265156612807,
+      "squeeze_count": 21,
+      "best_delta": 0.0010001305280876727,
+      "best_squeeze": {
+        "input": "\u221a2-1",
+        "input_val": 0.41421356237309515,
+        "output": "\u221a3/2",
+        "output_val": 0.8660254037844386,
+        "actual": 0.8670255343125263,
+        "delta": 0.0010001305280876727
+      },
+      "sA_range": 1.5792597255602698,
+      "sA_min": 1.8848651488933597,
+      "sA_max": 3.4641248744536295,
+      "z_contrast": 48,
+      "z_max": 56
+    },
+    {
+      "name": "BaTiO3",
+      "type": "High_Z_contrast",
+      "D": 3,
+      "elements": [
+        "Ba",
+        "O",
+        "Ti"
+      ],
+      "pll_R2": 0.9559109174664996,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8525486928493555,
+      "squeeze_count": 24,
+      "best_delta": 0.0009817064366711148,
+      "best_squeeze": {
+        "input": "2-\u221a3",
+        "input_val": 0.2679491924311228,
+        "output": "1/\u221a5",
+        "output_val": 0.4472135954999579,
+        "actual": 0.44819530193662904,
+        "delta": 0.0009817064366711148
+      },
+      "sA_range": 0.7650318386087819,
+      "sA_min": 0.5327943531864262,
+      "sA_max": 1.297826191795208,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Ti)",
+        "R2": 0.967545968915382,
+        "shape": "bowl",
+        "vertex": 0.8772037308039331
+      },
+      "z_contrast": 48,
+      "z_max": 56
+    },
+    {
+      "name": "SrTiO3",
+      "type": "High_Z_contrast",
+      "D": 3,
+      "elements": [
+        "O",
+        "Sr",
+        "Ti"
+      ],
+      "pll_R2": 0.9152207360064109,
+      "pll_shape": "hill",
+      "pll_vertex": 0.7133423845980438,
+      "squeeze_count": 29,
+      "best_delta": 0.0004930832106518901,
+      "best_squeeze": {
+        "input": "\u221a3/2",
+        "input_val": 0.8660254037844386,
+        "output": "\u03b3_EM",
+        "output_val": 0.5772156649,
+        "actual": 0.5767225816893481,
+        "delta": 0.0004930832106518901
+      },
+      "sA_range": 0.48883949657369996,
+      "sA_min": 0.17228124913440324,
+      "sA_max": 0.6611207457081032,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Ti)",
+        "R2": 0.9675459689153821,
+        "shape": "bowl",
+        "vertex": 0.877203730803933
+      },
+      "z_contrast": 30,
+      "z_max": 38
+    },
+    {
+      "name": "PbTiO3",
+      "type": "High_Z_contrast",
+      "D": 3,
+      "elements": [
+        "O",
+        "Pb",
+        "Ti"
+      ],
+      "pll_R2": 0.9748609387343952,
+      "pll_shape": "hill",
+      "pll_vertex": 0.8295674361296103,
+      "squeeze_count": 23,
+      "best_delta": 0.0018911898467729449,
+      "best_squeeze": {
+        "input": "2-\u221a3",
+        "input_val": 0.2679491924311228,
+        "output": "1/2",
+        "output_val": 0.5,
+        "actual": 0.501891189846773,
+        "delta": 0.0018911898467729449
+      },
+      "sA_range": 1.3280478279747214,
+      "sA_min": 1.0831466720816914,
+      "sA_max": 2.411194500056413,
+      "best_pairwise_bowl": {
+        "pair": "ln(O/Pb)",
+        "R2": 0.9790546668435448,
+        "shape": "bowl",
+        "vertex": 0.837003829500303
+      },
+      "z_contrast": 74,
+      "z_max": 82
+    }
+  ],
+  "errors": [
+    "Diamond: single element, skip",
+    "Graphite: single element, skip"
+  ]
+}

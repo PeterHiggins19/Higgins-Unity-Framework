@@ -1,0 +1,121 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-06",
+  "name": "Nuclear Fusion Energy Budget (DT)",
+  "domain": "NUCLEAR",
+  "carriers": [
+    "Kinetic",
+    "Radiation",
+    "Neutron",
+    "Thermal"
+  ],
+  "D": 4,
+  "N": 50,
+  "data_source": {
+    "type": "DERIVED",
+    "url": null,
+    "description": "DT fusion energy partition modeled across burn stages. 4-carrier system: [Kinetic products, Radiation losses, Neutron energy, Thermal losses]. Based on ITER/NIF energy budget literature. Deterministic seed=606."
+  },
+  "data_hash_sha256_16": "3d7a97906c32c25e",
+  "run_timestamp": "2026-04-22T17:41:30.777523Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-06: Nuclear Fusion Energy Budget (DT): 4-part simplex, carriers=['Kinetic', 'Radiation', 'Neutron', 'Thermal']",
+    "step2_n_samples": 50,
+    "step2_D": 4,
+    "step2_carriers": [
+      "Kinetic",
+      "Radiation",
+      "Neutron",
+      "Thermal"
+    ],
+    "data_hash_sha256_16": "3d7a97906c32c25e",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.32877751030542696,
+      -0.12421889222271122,
+      0.6805274246037513,
+      -0.8850860426864675
+    ],
+    "step4_clr_std_per_part": [
+      0.10687893967268589,
+      0.14311756539405066,
+      0.05264141512854411,
+      0.11202426666015604
+    ],
+    "step5_sigma2_range": [
+      0.015830233582701428,
+      0.04722630017735945
+    ],
+    "step5_sigma2_final": 0.04722630017735945,
+    "step6_pll_coeffs": [
+      1.2635280465216883e-05,
+      -3.6993561032819055e-05,
+      0.018459653942706315
+    ],
+    "step6_pll_R2": 0.9467175257065913,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      1.4638994810861947,
+      0.018432576515306578
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 0,
+    "step7_squeeze_closest": null,
+    "step7_squeeze_mean": 0.028157330168159578,
+    "step7_cancellation": false,
+    "step8_entropy_range": [
+      0.8814708176225753,
+      0.9206295852105203
+    ],
+    "step8_entropy_mean": 0.9026441954987676,
+    "step8_entropy_cv": 1.0217846274992284,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.9026441954987676,
+        "H_mean_decimated": 0.9027884988268147,
+        "variation_pct": 0.015986734171298762,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.9031025820699142,
+        "H_mean_decimated": 0.9033141402509323,
+        "variation_pct": 0.023425708797459355,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.9031025820699142,
+        "H_mean_decimated": 0.903377006306077,
+        "variation_pct": 0.03038682887316855,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 38,
+      "stalls": 1,
+      "spikes": 0,
+      "reversals": 37
+    },
+    "step10_ternary_type": "projected_ternary",
+    "step11_complex_range_re": [
+      -0.05819330499470937,
+      0.05960471764692621
+    ],
+    "step11_complex_range_im": [
+      -0.025945816461842908,
+      0.024008737558514126
+    ],
+    "step12_radius_range": [
+      0.004946667033301462,
+      0.060264541522122995
+    ],
+    "step12_theta_range": [
+      -3.066873118925327,
+      2.9833646760799692
+    ],
+    "step9_angular_velocity_std": 0.8674096737593128
+  }
+}

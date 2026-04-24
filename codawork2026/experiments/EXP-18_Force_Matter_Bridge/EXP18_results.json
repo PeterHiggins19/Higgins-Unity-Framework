@@ -1,0 +1,46 @@
+{
+  "experiment": "EXP-18",
+  "title": "Force-Matter Bridge: Stress-Strain Dual Composition",
+  "chain": "ENERGY \u2192 MATTER \u2192 FORCE \u2192 GRAVITY",
+  "material": "Mild Steel AISI 1020",
+  "force_composition": {
+    "carriers": [
+      "Elastic",
+      "Plastic",
+      "Thermal",
+      "Damage"
+    ],
+    "aitchison_var": 122.80526212308027,
+    "n_deviations": 41,
+    "chaos_floor_pct": 3.4166666666666665
+  },
+  "matter_composition": {
+    "carriers": [
+      "Elastic Energy",
+      "Plastic Work",
+      "Heat",
+      "Damage"
+    ],
+    "aitchison_var": 46.43698417354732,
+    "n_deviations": 5,
+    "chaos_floor_pct": 0.4166666666666667
+  },
+  "cross_domain": {
+    "cross_correlated": 1,
+    "cross_rate_pct": 2.4390243902439024,
+    "mean_distance_ms": 0.0,
+    "yield_transitions": 9,
+    "force_at_yield": 7,
+    "matter_at_yield": 0
+  },
+  "physics": {
+    "E_GPa": 200.0,
+    "sigma_y_MPa": 250.0,
+    "K_hard_MPa": 600.0,
+    "n_hard": 0.22,
+    "max_strain_pct": 4.867158096508038,
+    "max_stress_MPa": 491.59218775123213,
+    "max_temp_K": 310.39101225480283,
+    "max_damage": 0.1653544288705553
+  }
+}

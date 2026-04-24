@@ -422,7 +422,7 @@ These scenarios represent a comprehensive space of possible energy system transi
 
 [5] Higgins, P. (2026). The Higgins Unity Framework: Theory and Application. Rogue Wave Audio Working Paper.
 
-[6] Higgins, P. (2026). Entropy-Invariant Time Transformation (EITT) for Compositional Timeseries. Rogue Wave Audio Working Paper.
+[6] Higgins, P. (2026). The Entropy-Invariant Time Transformer (EITT) for Compositional Time Series. Rogue Wave Audio Working Paper.
 
 [7] Wigner, E. P. (1961). Remarks on the mind-body question. In I. J. Good (Ed.), The Scientist Speculates (pp. 284--302). Heinemann.
 
