@@ -26,7 +26,7 @@ If you can't access the URL, tell me and I'll paste it.
 6. Perturbation difference formula and drift threshold.
 7. Four EITT proof domains with one key number each.
 8. Bell test result — how much above classical bound?
-9. PLL discipline — how many rules, what does PLL stand for?
+9. CIP — how many rules in the Compositional Integrity Protocol?
 10. Keff_fill — what aggregator, what value of p?
 
 For each: answer, confidence (HIGH/MEDIUM/LOW), pass/fail.

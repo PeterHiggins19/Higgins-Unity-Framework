@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-14",
+  "name": "Fixed-Point Selection (AME2020)",
+  "domain": "NUCLEAR",
+  "carriers": [
+    "Volume",
+    "Surf+Coulomb",
+    "Symmetry"
+  ],
+  "D": 3,
+  "N": 500,
+  "data_source": {
+    "type": "OPEN DATA",
+    "url": "https://www-nds.iaea.org/amdc/ame2020/mass_1.mas20.txt",
+    "description": "AME2020 Atomic Mass Evaluation \u2014 3,554 nuclides with experimental masses. SEMF decomposition into [Volume, Surface+Coulomb, Symmetry]. File: DATA/Nuclear/ame2020_parsed.csv or DATA/ATOMIC/mass.mas20.txt"
+  },
+  "data_hash_sha256_16": "5acf3134d9cb7bfa",
+  "run_timestamp": "2026-04-22T17:41:35.358690Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-14: Fixed-Point Selection (AME2020): 3-part simplex, carriers=['Volume', 'Surf+Coulomb', 'Symmetry']",
+    "step2_n_samples": 500,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Volume",
+      "Surf+Coulomb",
+      "Symmetry"
+    ],
+    "data_hash_sha256_16": "5acf3134d9cb7bfa",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": true,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      1.5575917999198678,
+      0.7585727215236423,
+      -2.31616452144351
+    ],
+    "step4_clr_std_per_part": [
+      0.9138069619296753,
+      0.9438050423322453,
+      1.8526110366517607
+    ],
+    "step5_sigma2_range": [
+      5.135944615431825,
+      22.09980034043464
+    ],
+    "step5_sigma2_final": 5.157978774726826,
+    "step6_pll_coeffs": [
+      6.162890388291994e-05,
+      -0.04379448581411061,
+      12.757538202961264
+    ],
+    "step6_pll_R2": 0.7934051947416473,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      355.3080052933407,
+      4.977272504231689
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 2,
+    "step7_squeeze_closest": {
+      "time_index": 221,
+      "sigma2_A": 6.281344932659948,
+      "constant": "2pi",
+      "constant_value": 6.283185307179586,
+      "test_type": "direct",
+      "test_value": 6.281344932659948,
+      "delta": 0.0018403745196380328
+    },
+    "step7_squeeze_mean": 6.927928053212073,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.5627665656759605,
+      0.9777957174808235
+    ],
+    "step8_entropy_mean": 0.6873501839828129,
+    "step8_entropy_cv": 14.628455181624131,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.6873501839828129,
+        "H_mean_decimated": 0.6805946256912809,
+        "variation_pct": 0.9828408355675775,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.6873501839828129,
+        "H_mean_decimated": 0.6624606845308175,
+        "variation_pct": 3.6210799141384573,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.6877752973361606,
+        "H_mean_decimated": 0.6349914057091165,
+        "variation_pct": 7.674583811236417,
+        "pass": false
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 57,
+      "stalls": 20,
+      "spikes": 3,
+      "reversals": 34
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.031840120683396256,
+      0.1471838285646046
+    ],
+    "step11_complex_range_im": [
+      -0.04336956161089439,
+      0.23891364495728257
+    ],
+    "step12_radius_range": [
+      0.004841224399520314,
+      0.25513394148446444
+    ],
+    "step12_theta_range": [
+      -3.138271191113434,
+      3.1261144129293057
+    ],
+    "step9_angular_velocity_std": 0.8266178378395007
+  }
+}

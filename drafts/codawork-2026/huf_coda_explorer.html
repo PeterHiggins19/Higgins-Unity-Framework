@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>HUF CoDa Explorer — Multi-View EMBER Analysis</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #0f1218; color: #c8d0dc; font-family: 'Segoe UI', Arial, sans-serif; padding: 16px; }
+  h1 { font-size: 1.2em; color: #8ab4e8; margin-bottom: 2px; text-align: center; }
+  .subtitle { font-size: 0.78em; color: #5a6a7a; text-align: center; margin-bottom: 12px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; max-width: 1300px; margin: 0 auto; }
+  .panel { background: #161c26; border: 1px solid #2a3444; border-radius: 6px; padding: 12px; }
+  .panel-title { font-size: 0.85em; color: #6a9acc; margin-bottom: 6px; font-weight: 600; }
+  .panel-desc { font-size: 0.7em; color: #4a5a6a; margin-bottom: 8px; line-height: 1.4; }
+  canvas { width: 100%; background: #0d1118; border-radius: 4px; }
+  .controls { display: flex; gap: 10px; align-items: center; justify-content: center; margin-bottom: 12px; flex-wrap: wrap; }
+  .controls label { font-size: 0.78em; color: #6a7a8a; }
+  .controls select, .controls input { background: #1a2230; color: #b0c0d0; border: 1px solid #2a3a4a; border-radius: 3px; padding: 3px 6px; font-size: 0.78em; }
+  .legend-row { display: flex; gap: 14px; justify-content: center; margin: 8px 0; font-size: 0.72em; }
+  .legend-row span { display: flex; align-items: center; gap: 4px; }
+  .legend-row .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .method-note { font-size: 0.68em; color: #3a5a4a; background: #0d1a14; border: 1px solid #1a3a2a; border-radius: 4px; padding: 8px; margin-top: 8px; line-height: 1.5; }
+  .full-width { grid-column: 1 / -1; }
+</style>
+</head>
+<body>
+
+<h1>HUF CoDa Explorer — EMBER Energy Compositions</h1>
+<div class="subtitle">Six visualization methods for compositional drift detection · Germany / Japan / UK · 2000–2025</div>
+
+<div class="controls">
+  <label>Country: <select id="selCountry">
+    <option value="all">All Three</option>
+    <option value="Germany">Germany</option>
+    <option value="Japan">Japan</option>
+    <option value="UK">United Kingdom</option>
+  </select></label>
+  <label>Year range: <input id="yrStart" type="number" min="2000" max="2025" value="2000" style="width:55px"> –
+  <input id="yrEnd" type="number" min="2000" max="2025" value="2025" style="width:55px"></label>
+</div>
+
+<div class="legend-row">
+  <span><span class="dot" style="background:#e8524a"></span> Germany</span>
+  <span><span class="dot" style="background:#4a9de8"></span> Japan</span>
+  <span><span class="dot" style="background:#5ae84a"></span> United Kingdom</span>
+</div>
+
+<div class="grid">
+
+  <!-- Panel 1: Ternary (Fossil/Nuclear/Renewable) -->
+  <div class="panel">
+    <div class="panel-title">1. Ternary Simplex (S²)</div>
+    <div class="panel-desc">Sub-composition: Fossil / Nuclear / Renewable. Each point = one year. The 2-simplex — geology's ternary diagram applied to energy.</div>
+    <canvas id="c1" width="580" height="480"></canvas>
+    <div class="method-note">CoDa method: Sub-compositional projection onto S². Closure C(fossil, nuclear, renewable) = 1. This is the view geologists use for sand/silt/clay.</div>
+  </div>
+
+  <!-- Panel 2: Toblerone (Ternary × Time prism) -->
+  <div class="panel">
+    <div class="panel-title">2. Simplex Time Prism ("Toblerone")</div>
+    <div class="panel-desc">The ternary triangle extruded through time. Each horizontal slice is one year's composition. The trajectory becomes a ribbon in 3D space.</div>
+    <canvas id="c2" width="580" height="480"></canvas>
+    <div class="method-note">CoDa method: Compositional time series as a path on the simplex. The 3rd axis (depth) = time. Structural shocks appear as sharp bends in the ribbon.</div>
+  </div>
+
+  <!-- Panel 3: CLR-transformed time series -->
+  <div class="panel">
+    <div class="panel-title">3. CLR-Transformed Carriers</div>
+    <div class="panel-desc">Centered log-ratio: ln(xᵢ / geometric mean). Transforms the simplex to real space. Values above 0 = above-average share. Below 0 = below average.</div>
+    <canvas id="c3" width="580" height="480"></canvas>
+    <div class="method-note">CoDa method: CLR transform — the standard CoDa visualization. Removes closure constraint so standard statistics apply. Crossing zero = carrier share crosses the geometric mean.</div>
+  </div>
+
+  <!-- Panel 4: Perturbation (compositional velocity) -->
+  <div class="panel">
+    <div class="panel-title">4. Perturbation Velocity</div>
+    <div class="panel-desc">Year-over-year compositional "difference": p(t) ⊖ p(t−1) = C(xᵢ(t)/xᵢ(t−1)). The simplex equivalent of a first derivative. Spikes = structural shocks.</div>
+    <canvas id="c4" width="580" height="480"></canvas>
+    <div class="method-note">CoDa method: Perturbation difference — the "subtraction" on the simplex. Aitchison distance between consecutive years measures total compositional velocity. Fukushima and UK coal exit appear as spikes.</div>
+  </div>
+
+  <!-- Panel 5: Balance dendrogram (Fossil vs Renewable, then splits) -->
+  <div class="panel">
+    <div class="panel-title">5. Balance Time Series</div>
+    <div class="panel-desc">Hierarchical log-ratio balances. B1 = ln(Fossil/Renewable) — the energy transition balance. B2 = ln(Coal/Gas) within fossil. B3 = ln(Wind/Solar) within renewable.</div>
+    <canvas id="c5" width="580" height="480"></canvas>
+    <div class="method-note">CoDa method: ILR balances via sequential binary partition. Each balance is a single interpretable log-ratio between groups. B1 crossing zero = renewables overtake fossil.</div>
+  </div>
+
+  <!-- Panel 6: Aitchison distance heatmap (year × year) -->
+  <div class="panel">
+    <div class="panel-title">6. Aitchison Distance Matrix</div>
+    <div class="panel-desc">Pairwise Aitchison distance between every pair of years. Bright = large compositional change. Diagonal = zero. Off-diagonal blocks reveal regime boundaries.</div>
+    <canvas id="c6" width="580" height="480"></canvas>
+    <div class="method-note">CoDa method: Aitchison distance d_A(x,y) — the natural metric on the simplex. Computed on full 9-carrier compositions (no sub-composition). Block structure reveals regime transitions.</div>
+  </div>
+
+</div>
+
+<script>
+// ============================================
+// DATA
+// ============================================
+const rawData = [
+{s:"Germany",y:2000,c:[0.5215,0.0865,0.2981,0.0382,0.0,0.0164,0.0076,0.0317,0.0]},
+{s:"Germany",y:2001,c:[0.5073,0.0959,0.2959,0.0393,0.0002,0.0181,0.0079,0.0354,0.0]},
+{s:"Germany",y:2002,c:[0.5133,0.0964,0.2824,0.0396,0.0003,0.0272,0.0091,0.0317,0.0]},
+{s:"Germany",y:2003,c:[0.506,0.104,0.2742,0.0304,0.0005,0.0317,0.0149,0.0383,0.0]},
+{s:"Germany",y:2004,c:[0.4901,0.1028,0.2741,0.034,0.0009,0.0427,0.0175,0.0379,0.0]},
+{s:"Germany",y:2005,c:[0.4698,0.1177,0.2658,0.032,0.0021,0.0453,0.024,0.0433,0.0]},
+{s:"Germany",y:2006,c:[0.4585,0.1186,0.2654,0.0318,0.0036,0.0497,0.0301,0.0424,0.0]},
+{s:"Germany",y:2007,c:[0.4708,0.1227,0.2227,0.0335,0.005,0.0642,0.039,0.0421,0.0]},
+{s:"Germany",y:2008,c:[0.4354,0.1399,0.2348,0.0323,0.0071,0.0654,0.0443,0.0407,0.0]},
+{s:"Germany",y:2009,c:[0.4311,0.1365,0.2295,0.0324,0.0114,0.067,0.0525,0.0395,0.0]},
+{s:"Germany",y:2010,c:[0.4212,0.1422,0.2252,0.0336,0.0192,0.0618,0.0543,0.0426,0.0]},
+{s:"Germany",y:2011,c:[0.4338,0.1416,0.1785,0.0292,0.033,0.0824,0.061,0.0404,0.0]},
+{s:"Germany",y:2012,c:[0.4457,0.1225,0.1605,0.0351,0.0431,0.0834,0.0697,0.04,0.0]},
+{s:"Germany",y:2013,c:[0.4577,0.1064,0.1545,0.0365,0.0486,0.0838,0.0723,0.0401,0.0001]},
+{s:"Germany",y:2014,c:[0.4435,0.098,0.157,0.0317,0.0573,0.0945,0.078,0.0399,0.0002]},
+{s:"Germany",y:2015,c:[0.4259,0.0962,0.1436,0.0297,0.0596,0.1261,0.0787,0.04,0.0002]},
+{s:"Germany",y:2016,c:[0.408,0.1257,0.1319,0.032,0.0585,0.1246,0.0794,0.0396,0.0003]},
+{s:"Germany",y:2017,c:[0.3744,0.1335,0.1184,0.0313,0.0601,0.164,0.079,0.039,0.0002]},
+{s:"Germany",y:2018,c:[0.3609,0.129,0.1202,0.028,0.0701,0.1739,0.0803,0.0374,0.0003]},
+{s:"Germany",y:2019,c:[0.2857,0.15,0.1251,0.0329,0.0754,0.2098,0.0835,0.0373,0.0003]},
+{s:"Germany",y:2020,c:[0.2375,0.1676,0.1136,0.033,0.0873,0.2331,0.0899,0.0375,0.0004]},
+{s:"Germany",y:2021,c:[0.2845,0.156,0.1194,0.034,0.0852,0.1972,0.0848,0.0384,0.0004]},
+{s:"Germany",y:2022,c:[0.3174,0.1394,0.0612,0.0311,0.1064,0.2202,0.0857,0.0382,0.0004]},
+{s:"Germany",y:2023,c:[0.2463,0.1513,0.0142,0.0419,0.126,0.2774,0.1012,0.0414,0.0004]},
+{s:"Germany",y:2024,c:[0.2144,0.1581,0.0,0.048,0.1495,0.2855,0.103,0.0411,0.0004]},
+{s:"Germany",y:2025,c:[0.2061,0.1652,0.0,0.0391,0.1791,0.2718,0.101,0.0378,0.0]},
+{s:"Japan",y:2000,c:[0.2166,0.2351,0.2902,0.0768,0.0003,0.0001,0.0146,0.1662,0.0]},
+{s:"Japan",y:2001,c:[0.2344,0.2368,0.2959,0.0753,0.0005,0.0002,0.0148,0.142,0.0]},
+{s:"Japan",y:2002,c:[0.2397,0.2291,0.2849,0.0731,0.0006,0.0004,0.0154,0.1568,0.0]},
+{s:"Japan",y:2003,c:[0.2673,0.25,0.2106,0.0846,0.0009,0.0008,0.0164,0.1695,0.0]},
+{s:"Japan",y:2004,c:[0.2635,0.23,0.255,0.0818,0.0011,0.0013,0.0161,0.1513,0.0]},
+{s:"Japan",y:2005,c:[0.2768,0.2195,0.2541,0.0673,0.0014,0.0017,0.0188,0.1604,0.0]},
+{s:"Japan",y:2006,c:[0.2674,0.2405,0.2613,0.0763,0.0017,0.0018,0.0185,0.1324,0.0]},
+{s:"Japan",y:2007,c:[0.2689,0.2515,0.2364,0.0631,0.002,0.0023,0.0188,0.1569,0.0]},
+{s:"Japan",y:2008,c:[0.2819,0.2744,0.2127,0.0635,0.0022,0.0025,0.018,0.1448,0.0]},
+{s:"Japan",y:2009,c:[0.2801,0.2915,0.2465,0.0633,0.0027,0.0031,0.0182,0.0945,0.0]},
+{s:"Japan",y:2010,c:[0.2741,0.2821,0.2529,0.0766,0.0034,0.0034,0.0189,0.0887,0.0]},
+{s:"Japan",y:2011,c:[0.2582,0.344,0.1476,0.0747,0.0049,0.004,0.0191,0.1475,0.0]},
+{s:"Japan",y:2012,c:[0.302,0.3934,0.0163,0.0697,0.0067,0.0043,0.02,0.1877,0.0]},
+{s:"Japan",y:2013,c:[0.3333,0.3894,0.0134,0.0729,0.0119,0.0047,0.0213,0.153,0.0]},
+{s:"Japan",y:2014,c:[0.3346,0.4243,0.0,0.0769,0.0222,0.0047,0.0222,0.1151,0.0]},
+{s:"Japan",y:2015,c:[0.3394,0.4053,0.0044,0.0833,0.0335,0.0051,0.0277,0.1014,0.0]},
+{s:"Japan",y:2016,c:[0.3183,0.431,0.0166,0.0747,0.0407,0.005,0.0223,0.0914,0.0]},
+{s:"Japan",y:2017,c:[0.3375,0.431,0.027,0.0736,0.0502,0.0058,0.0221,0.0528,0.0]},
+{s:"Japan",y:2018,c:[0.333,0.4115,0.0453,0.0748,0.0565,0.0068,0.0238,0.0482,0.0]},
+{s:"Japan",y:2019,c:[0.3349,0.3981,0.0627,0.0706,0.0644,0.0071,0.0264,0.0359,0.0]},
+{s:"Japan",y:2020,c:[0.3365,0.405,0.0425,0.0775,0.0751,0.0083,0.03,0.025,0.0]},
+{s:"Japan",y:2021,c:[0.3366,0.3729,0.0592,0.077,0.0814,0.0092,0.0336,0.0302,0.0]},
+{s:"Japan",y:2022,c:[0.3372,0.364,0.0498,0.072,0.0875,0.0091,0.0364,0.044,0.0]},
+{s:"Japan",y:2023,c:[0.3247,0.3447,0.0769,0.074,0.0957,0.0099,0.0417,0.0323,0.0]},
+{s:"Japan",y:2024,c:[0.3219,0.3407,0.0835,0.0782,0.0951,0.0114,0.0447,0.0246,0.0]},
+{s:"UK",y:2000,c:[0.3181,0.3927,0.2256,0.0135,0.0,0.0025,0.0103,0.0373,0.0]},
+{s:"UK",y:2001,c:[0.3417,0.3688,0.2341,0.0105,0.0,0.0025,0.0118,0.0306,0.0]},
+{s:"UK",y:2002,c:[0.3209,0.3932,0.2269,0.0124,0.0,0.0032,0.0131,0.0302,0.0]},
+{s:"UK",y:2003,c:[0.3477,0.3739,0.2227,0.0081,0.0,0.0032,0.0155,0.0289,0.0]},
+{s:"UK",y:2004,c:[0.3346,0.3987,0.2031,0.0123,0.0,0.0049,0.0187,0.0277,0.0]},
+{s:"UK",y:2005,c:[0.338,0.3832,0.2049,0.0124,0.0,0.0073,0.0228,0.0314,0.0]},
+{s:"UK",y:2006,c:[0.3747,0.3545,0.1899,0.0116,0.0,0.0106,0.0234,0.0353,0.0]},
+{s:"UK",y:2007,c:[0.3426,0.4178,0.1588,0.0128,0.0,0.0133,0.0235,0.0312,0.0]},
+{s:"UK",y:2008,c:[0.3198,0.4531,0.1349,0.0132,0.0001,0.0183,0.0248,0.0358,0.0]},
+{s:"UK",y:2009,c:[0.2735,0.4419,0.1834,0.0139,0.0001,0.0246,0.0284,0.0342,0.0]},
+{s:"UK",y:2010,c:[0.2816,0.4597,0.1626,0.0094,0.0001,0.0269,0.0321,0.0275,0.0]},
+{s:"UK",y:2011,c:[0.2946,0.398,0.1875,0.0155,0.0007,0.0434,0.0362,0.0241,0.0]},
+{s:"UK",y:2012,c:[0.3924,0.2753,0.1935,0.0146,0.0037,0.0545,0.0405,0.0254,0.0]},
+{s:"UK",y:2013,c:[0.3636,0.2675,0.1971,0.0131,0.0056,0.0793,0.0505,0.0233,0.0]},
+{s:"UK",y:2014,c:[0.2965,0.2984,0.1886,0.0174,0.012,0.0945,0.0669,0.0257,0.0]},
+{s:"UK",y:2015,c:[0.2239,0.2947,0.2076,0.0186,0.0222,0.1188,0.0863,0.0278,0.0]},
+{s:"UK",y:2016,c:[0.0904,0.422,0.2115,0.0158,0.0307,0.1096,0.0887,0.0314,0.0]},
+{s:"UK",y:2017,c:[0.0666,0.4043,0.208,0.0174,0.0339,0.1468,0.0943,0.0287,0.0]},
+{s:"UK",y:2018,c:[0.0504,0.394,0.1949,0.0163,0.038,0.1705,0.1052,0.0307,0.0]},
+{s:"UK",y:2019,c:[0.0211,0.4068,0.1717,0.0181,0.038,0.1951,0.1147,0.0344,0.0]},
+{s:"UK",y:2020,c:[0.0184,0.3606,0.1619,0.0222,0.0404,0.2437,0.1243,0.0285,0.0]},
+{s:"UK",y:2021,c:[0.0221,0.3989,0.1497,0.0176,0.0394,0.2109,0.1299,0.0314,0.0]},
+{s:"UK",y:2022,c:[0.0183,0.3855,0.146,0.0174,0.0411,0.2471,0.1104,0.0341,0.0]},
+{s:"UK",y:2023,c:[0.0129,0.3475,0.1388,0.0189,0.0474,0.2808,0.1166,0.037,0.0]},
+{s:"UK",y:2024,c:[0.0067,0.3037,0.1428,0.0203,0.052,0.2931,0.1411,0.0403,0.0]},
+{s:"UK",y:2025,c:[0.0011,0.3105,0.1243,0.019,0.066,0.2948,0.1407,0.0436,0.0]},
+];
+
+const carrierNames = ['Coal','Gas','Nuclear','Hydro','Solar','Wind','Bioenergy','Other_Fossil','Other_Renew'];
+const carrierColors = ['#8b4513','#e88a4a','#e84ae8','#4aa8e8','#ffd700','#4ae8a8','#7acc44','#996633','#66aa66'];
+const countryColors = { Germany: '#e8524a', Japan: '#4a9de8', UK: '#5ae84a' };
+const EPSILON = 1e-6; // zero replacement for log-ratios
+
+function getFiltered() {
+  const country = document.getElementById('selCountry').value;
+  const y0 = +document.getElementById('yrStart').value;
+  const y1 = +document.getElementById('yrEnd').value;
+  return rawData.filter(d => (country === 'all' || d.s === country) && d.y >= y0 && d.y <= y1);
+}
+
+function getCountryData(site) {
+  const y0 = +document.getElementById('yrStart').value;
+  const y1 = +document.getElementById('yrEnd').value;
+  return rawData.filter(d => d.s === site && d.y >= y0 && d.y <= y1).sort((a,b) => a.y - b.y);
+}
+
+function ternSub(c) {
+  const fossil = c[0] + c[1] + c[7]; // Coal+Gas+Other_Fossil
+  const nuclear = c[2];
+  const renew = c[3] + c[4] + c[5] + c[6] + c[8]; // Hydro+Solar+Wind+Bio+Other_Renew
+  const t = fossil + nuclear + renew;
+  return [fossil/t, nuclear/t, renew/t];
+}
+
+function clr(comp) {
+  const c = comp.map(v => Math.max(v, EPSILON));
+  const gm = Math.exp(c.reduce((s,v) => s + Math.log(v), 0) / c.length);
+  return c.map(v => Math.log(v / gm));
+}
+
+function aitchisonDist(a, b) {
+  const ca = a.map(v => Math.max(v, EPSILON));
+  const cb = b.map(v => Math.max(v, EPSILON));
+  const D = ca.length;
+  let sum = 0;
+  for (let i = 0; i < D; i++) {
+    for (let j = i+1; j < D; j++) {
+      const diff = Math.log(ca[i]/ca[j]) - Math.log(cb[i]/cb[j]);
+      sum += diff * diff;
+    }
+  }
+  return Math.sqrt(sum / D);
+}
+
+// ============================================
+// DRAWING UTILITIES
+// ============================================
+function clearCanvas(id) {
+  const canvas = document.getElementById(id);
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#0d1118';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  return { canvas, ctx };
+}
+
+// ============================================
+// PANEL 1: TERNARY
+// ============================================
+function drawTernary() {
+  const { canvas, ctx } = clearCanvas('c1');
+  const w = canvas.width, h = canvas.height;
+  const mx = 60, my = 40;
+  const side = Math.min(w - mx*2, (h - my*2) / (Math.sqrt(3)/2));
+  const th = side * Math.sqrt(3) / 2;
+  const cx = w/2, baseY = my + th;
+
+  const vF = [cx - side/2, baseY];
+  const vN = [cx + side/2, baseY];
+  const vR = [cx, my];
+
+  function toXY(f, n, r) {
+    return [vF[0]*f + vN[0]*n + vR[0]*r, vF[1]*f + vN[1]*n + vR[1]*r];
+  }
+
+  // Grid
+  ctx.strokeStyle = '#1a2833';
+  ctx.lineWidth = 0.5;
+  for (let i = 1; i <= 9; i++) {
+    const t = i/10;
+    let [x1,y1] = toXY(1-t, 0, t); let [x2,y2] = toXY(0, 1-t, t);
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    [x1,y1] = toXY(1-t, t, 0); [x2,y2] = toXY(0, t, 1-t);
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+    [x1,y1] = toXY(t, 1-t, 0); [x2,y2] = toXY(t, 0, 1-t);
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  }
+
+  // Triangle
+  ctx.strokeStyle = '#3a5a7a';
+  ctx.lineWidth = 1.5;
+  ctx.beginPath(); ctx.moveTo(...vF); ctx.lineTo(...vN); ctx.lineTo(...vR); ctx.closePath(); ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#7a9abc'; ctx.font = '12px Segoe UI';
+  ctx.textAlign = 'center';
+  ctx.fillText('FOSSIL', vF[0]-10, vF[1]+18);
+  ctx.fillText('NUCLEAR', vN[0]+10, vN[1]+18);
+  ctx.fillText('RENEWABLE', vR[0], vR[1]-8);
+
+  // Data
+  ['Germany','Japan','UK'].forEach(site => {
+    const pts = getCountryData(site);
+    if (pts.length === 0) return;
+    const color = countryColors[site];
+    const xyPts = pts.map(d => {const [f,n,r] = ternSub(d.c); return toXY(f,n,r);});
+
+    // Path
+    ctx.strokeStyle = color; ctx.lineWidth = 1.5; ctx.globalAlpha = 0.5;
+    ctx.beginPath();
+    xyPts.forEach(([x,y], i) => i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y));
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    // Dots
+    xyPts.forEach(([x,y], i) => {
+      const r = 2 + (i/xyPts.length)*4;
+      ctx.fillStyle = color;
+      ctx.beginPath(); ctx.arc(x,y,r,0,Math.PI*2); ctx.fill();
+    });
+
+    // Year labels
+    ctx.fillStyle = color; ctx.font = '9px Segoe UI';
+    ctx.fillText(pts[0].y, xyPts[0][0], xyPts[0][1]-8);
+    ctx.font = 'bold 9px Segoe UI';
+    ctx.fillText(pts[pts.length-1].y, xyPts[xyPts.length-1][0], xyPts[xyPts.length-1][1]-8);
+  });
+}
+
+// ============================================
+// PANEL 2: TOBLERONE (isometric 3D prism)
+// ============================================
+function drawToblerone() {
+  const { canvas, ctx } = clearCanvas('c2');
+  const w = canvas.width, h = canvas.height;
+
+  // Isometric projection parameters
+  const scale = 0.55;
+  const triSide = 200 * scale;
+  const triH = triSide * Math.sqrt(3)/2;
+  const depthScale = 12 * scale;
+  const ox = w * 0.55, oy = h * 0.35;
+
+  // Isometric axes: x goes right-down, y goes left-down, z goes up
+  const iso = (fx, fy, fz) => [
+    ox + (fx - fy) * 0.86 * scale,
+    oy + (fx + fy) * 0.4 * scale - fz * 0.9 * scale
+  ];
+
+  // Triangle vertices in local space
+  function ternTo3D(f, n, r, timeIdx) {
+    const lx = (-f + n) * triSide * 0.5;
+    const lz = r * triH;
+    const ly = timeIdx * depthScale;
+    return iso(lx, ly, lz);
+  }
+
+  const countries = document.getElementById('selCountry').value === 'all'
+    ? ['Germany','Japan','UK'] : [document.getElementById('selCountry').value];
+
+  // Draw back edges of prism (time axis guides)
+  const maxT = 25;
+  ctx.strokeStyle = '#1a2833'; ctx.lineWidth = 0.5;
+  [[1,0,0],[0,1,0],[0,0,1]].forEach(([f,n,r]) => {
+    const [x1,y1] = ternTo3D(f,n,r,0);
+    const [x2,y2] = ternTo3D(f,n,r,maxT);
+    ctx.beginPath(); ctx.moveTo(x1,y1); ctx.lineTo(x2,y2); ctx.stroke();
+  });
+
+  // Draw triangle at front (t=0) and back (t=maxT)
+  [0, maxT].forEach(t => {
+    ctx.strokeStyle = t === 0 ? '#3a5a7a' : '#1a2a3a';
+    ctx.lineWidth = t === 0 ? 1.2 : 0.7;
+    const pts = [[1,0,0],[0,1,0],[0,0,1],[1,0,0]];
+    ctx.beginPath();
+    pts.forEach(([f,n,r], i) => {
+      const [x,y] = ternTo3D(f,n,r,t);
+      i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+  });
+
+  // Time tick marks along one edge
+  ctx.fillStyle = '#4a5a6a'; ctx.font = '8px Segoe UI'; ctx.textAlign = 'right';
+  for (let i = 0; i <= maxT; i += 5) {
+    const [x,y] = ternTo3D(1,0,0,i);
+    ctx.fillText(2000 + i, x - 6, y + 3);
+    ctx.fillStyle = '#1a2833';
+    ctx.fillRect(x-2, y-1, 4, 2);
+    ctx.fillStyle = '#4a5a6a';
+  }
+
+  // Vertex labels at front
+  ctx.fillStyle = '#7a9abc'; ctx.font = '11px Segoe UI'; ctx.textAlign = 'center';
+  let [lx,ly] = ternTo3D(1,0,0,0); ctx.fillText('Fossil', lx, ly+16);
+  [lx,ly] = ternTo3D(0,1,0,0); ctx.fillText('Nuclear', lx+10, ly+16);
+  [lx,ly] = ternTo3D(0,0,1,0); ctx.fillText('Renewable', lx, ly-8);
+
+  // Draw trajectories
+  countries.forEach(site => {
+    const pts = getCountryData(site);
+    if (pts.length === 0) return;
+    const color = countryColors[site];
+
+    const xyPts = pts.map((d, i) => {
+      const [f,n,r] = ternSub(d.c);
+      return ternTo3D(f, n, r, i);
+    });
+
+    // Ribbon effect: slight filled path
+    ctx.strokeStyle = color; ctx.lineWidth = 2; ctx.globalAlpha = 0.7;
+    ctx.beginPath();
+    xyPts.forEach(([x,y], i) => i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y));
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    // Dots
+    xyPts.forEach(([x,y], i) => {
+      ctx.fillStyle = color;
+      ctx.beginPath(); ctx.arc(x,y, 2 + (i/xyPts.length)*2.5, 0, Math.PI*2); ctx.fill();
+    });
+
+    // Label endpoints
+    ctx.fillStyle = color; ctx.font = '9px Segoe UI'; ctx.textAlign = 'left';
+    ctx.fillText(site + ' ' + pts[0].y, xyPts[0][0]+6, xyPts[0][1]-4);
+    ctx.font = 'bold 9px Segoe UI';
+    ctx.fillText(pts[pts.length-1].y, xyPts[xyPts.length-1][0]+6, xyPts[xyPts.length-1][1]-4);
+  });
+}
+
+// ============================================
+// PANEL 3: CLR TIME SERIES
+// ============================================
+function drawCLR() {
+  const { canvas, ctx } = clearCanvas('c3');
+  const w = canvas.width, h = canvas.height;
+  const mx = 50, my = 30, mxr = 20, myb = 30;
+  const pw = w - mx - mxr, ph = h - my - myb;
+
+  const country = document.getElementById('selCountry').value;
+  const site = country === 'all' ? 'Germany' : country;
+  const pts = getCountryData(site);
+  if (pts.length === 0) return;
+
+  // Compute CLR for all years
+  const clrData = pts.map(d => ({ y: d.y, clr: clr(d.c) }));
+
+  // Find range
+  let minV = Infinity, maxV = -Infinity;
+  clrData.forEach(d => d.clr.forEach(v => { minV = Math.min(minV, v); maxV = Math.max(maxV, v); }));
+  const pad = (maxV - minV) * 0.1;
+  minV -= pad; maxV += pad;
+
+  const xScale = (yr) => mx + ((yr - pts[0].y) / (pts[pts.length-1].y - pts[0].y)) * pw;
+  const yScale = (v) => my + (1 - (v - minV) / (maxV - minV)) * ph;
+
+  // Zero line
+  ctx.strokeStyle = '#3a5a3a'; ctx.lineWidth = 1; ctx.setLineDash([4,4]);
+  const zy = yScale(0);
+  ctx.beginPath(); ctx.moveTo(mx, zy); ctx.lineTo(mx+pw, zy); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#4a6a4a'; ctx.font = '9px Segoe UI'; ctx.textAlign = 'right';
+  ctx.fillText('CLR = 0', mx - 4, zy + 3);
+
+  // Axes
+  ctx.strokeStyle = '#2a3a4a'; ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(mx, my); ctx.lineTo(mx, my+ph); ctx.lineTo(mx+pw, my+ph); ctx.stroke();
+
+  // Year labels
+  ctx.fillStyle = '#4a5a6a'; ctx.font = '9px Segoe UI'; ctx.textAlign = 'center';
+  for (let yr = pts[0].y; yr <= pts[pts.length-1].y; yr += 5) {
+    ctx.fillText(yr, xScale(yr), my + ph + 14);
+  }
+
+  // Draw each carrier
+  const showCarriers = [0,1,2,3,4,5]; // Coal, Gas, Nuclear, Hydro, Solar, Wind
+  const cNames = ['Coal','Gas','Nuclear','Hydro','Solar','Wind'];
+  showCarriers.forEach((ci, idx) => {
+    ctx.strokeStyle = carrierColors[ci]; ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    clrData.forEach((d, i) => {
+      const x = xScale(d.y), y = yScale(d.clr[ci]);
+      i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+
+    // Label at end
+    const last = clrData[clrData.length-1];
+    ctx.fillStyle = carrierColors[ci]; ctx.font = '8px Segoe UI'; ctx.textAlign = 'left';
+    ctx.fillText(cNames[idx], xScale(last.y)+4, yScale(last.clr[ci])+3);
+  });
+
+  // Title with country name
+  ctx.fillStyle = countryColors[site] || '#aaa'; ctx.font = 'bold 10px Segoe UI'; ctx.textAlign = 'left';
+  ctx.fillText(site + ' — CLR transform', mx, my - 8);
+}
+
+// ============================================
+// PANEL 4: PERTURBATION VELOCITY
+// ============================================
+function drawPerturbation() {
+  const { canvas, ctx } = clearCanvas('c4');
+  const w = canvas.width, h = canvas.height;
+  const mx = 50, my = 30, mxr = 20, myb = 30;
+  const pw = w - mx - mxr, ph = h - my - myb;
+
+  const countries = document.getElementById('selCountry').value === 'all'
+    ? ['Germany','Japan','UK'] : [document.getElementById('selCountry').value];
+
+  // Compute Aitchison distance between consecutive years
+  let allDists = [];
+  let seriesData = {};
+
+  countries.forEach(site => {
+    const pts = getCountryData(site);
+    seriesData[site] = [];
+    for (let i = 1; i < pts.length; i++) {
+      const d = aitchisonDist(pts[i].c, pts[i-1].c);
+      seriesData[site].push({ y: pts[i].y, d });
+      allDists.push(d);
+    }
+  });
+
+  if (allDists.length === 0) return;
+  const maxD = Math.max(...allDists) * 1.15;
+  const years = rawData.map(d => d.y);
+  const y0 = +document.getElementById('yrStart').value + 1;
+  const y1 = +document.getElementById('yrEnd').value;
+
+  const xScale = (yr) => mx + ((yr - y0) / (y1 - y0)) * pw;
+  const yScale = (v) => my + (1 - v / maxD) * ph;
+
+  // Axes
+  ctx.strokeStyle = '#2a3a4a'; ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(mx, my); ctx.lineTo(mx, my+ph); ctx.lineTo(mx+pw, my+ph); ctx.stroke();
+
+  ctx.fillStyle = '#4a5a6a'; ctx.font = '9px Segoe UI'; ctx.textAlign = 'center';
+  for (let yr = y0; yr <= y1; yr += 5) ctx.fillText(yr, xScale(yr), my+ph+14);
+
+  ctx.textAlign = 'right';
+  ctx.fillText('d_A', mx - 4, my + 10);
+
+  // Draw bars for each country
+  const barW = pw / (y1 - y0 + 1) * 0.7;
+  const offsets = { Germany: -barW*0.35, Japan: 0, UK: barW*0.35 };
+  if (countries.length === 1) { offsets[countries[0]] = 0; }
+
+  countries.forEach(site => {
+    const color = countryColors[site];
+    (seriesData[site] || []).forEach(({ y, d }) => {
+      const x = xScale(y) + (offsets[site] || 0);
+      const top = yScale(d);
+      const base = yScale(0);
+      ctx.fillStyle = color;
+      ctx.globalAlpha = 0.8;
+      ctx.fillRect(x - barW/(countries.length*2), top, barW/countries.length, base - top);
+      ctx.globalAlpha = 1;
+    });
+  });
+
+  // Annotate Fukushima
+  if (seriesData['Japan']) {
+    const fuk = seriesData['Japan'].find(d => d.y === 2012);
+    if (fuk) {
+      ctx.fillStyle = '#4a9de8'; ctx.font = 'italic 9px Segoe UI'; ctx.textAlign = 'center';
+      ctx.fillText('Fukushima', xScale(2012), yScale(fuk.d) - 8);
+    }
+  }
+  // UK coal
+  if (seriesData['UK']) {
+    const coal = seriesData['UK'].find(d => d.y === 2016);
+    if (coal) {
+      ctx.fillStyle = '#5ae84a'; ctx.font = 'italic 9px Segoe UI';
+      ctx.fillText('Coal exit', xScale(2016), yScale(coal.d) - 8);
+    }
+  }
+
+  ctx.fillStyle = '#8899aa'; ctx.font = 'bold 10px Segoe UI'; ctx.textAlign = 'left';
+  ctx.fillText('Aitchison Distance (year-over-year)', mx, my - 8);
+}
+
+// ============================================
+// PANEL 5: BALANCE TIME SERIES
+// ============================================
+function drawBalances() {
+  const { canvas, ctx } = clearCanvas('c5');
+  const w = canvas.width, h = canvas.height;
+  const mx = 50, my = 30, mxr = 20, myb = 30;
+  const pw = w - mx - mxr, ph = h - my - myb;
+
+  const country = document.getElementById('selCountry').value;
+  const site = country === 'all' ? 'Germany' : country;
+  const pts = getCountryData(site);
+  if (pts.length === 0) return;
+
+  // ILR balances (proper normalisation: sqrt(r*s/(r+s)) * ln(geomean(group1)/geomean(group2)))
+  // SBP: B1 = Fossil(3) vs Renewable(5)  |  B2 = Coal vs Gas  |  B3 = Wind vs Solar
+  // Indices: 0=Coal 1=Gas 2=Nuclear 3=Hydro 4=Solar 5=Wind 6=Bio 7=Other_Fossil 8=Other_Renew
+  const balances = pts.map(d => {
+    const c = d.c.map(v => Math.max(v, EPSILON));
+    // Geometric means for each group
+    const fossilParts = [c[0], c[1], c[7]]; // Coal, Gas, Other_Fossil
+    const renewParts  = [c[3], c[4], c[5], c[6], c[8]]; // Hydro, Solar, Wind, Bio, Other_Renew
+    const geoMean = arr => Math.exp(arr.reduce((s, v) => s + Math.log(v), 0) / arr.length);
+    const r1 = fossilParts.length, s1 = renewParts.length;
+    const r2 = 1, s2 = 1; // Coal vs Gas (single parts)
+    const r3 = 1, s3 = 1; // Wind vs Solar (single parts)
+    return {
+      y: d.y,
+      b1: Math.sqrt(r1*s1/(r1+s1)) * Math.log(geoMean(fossilParts) / geoMean(renewParts)),
+      b2: Math.sqrt(r2*s2/(r2+s2)) * Math.log(c[0] / c[1]),
+      b3: Math.sqrt(r3*s3/(r3+s3)) * Math.log(c[5] / c[4])
+    };
+  });
+
+  let minV = Infinity, maxV = -Infinity;
+  balances.forEach(b => {
+    [b.b1, b.b2, b.b3].forEach(v => { minV = Math.min(minV, v); maxV = Math.max(maxV, v); });
+  });
+  const pad = (maxV - minV) * 0.1;
+  minV -= pad; maxV += pad;
+
+  const xScale = (yr) => mx + ((yr - pts[0].y) / (pts[pts.length-1].y - pts[0].y)) * pw;
+  const yScale = (v) => my + (1 - (v - minV) / (maxV - minV)) * ph;
+
+  // Zero line
+  ctx.strokeStyle = '#3a5a3a'; ctx.lineWidth = 1; ctx.setLineDash([4,4]);
+  ctx.beginPath(); ctx.moveTo(mx, yScale(0)); ctx.lineTo(mx+pw, yScale(0)); ctx.stroke();
+  ctx.setLineDash([]);
+  ctx.fillStyle = '#4a6a4a'; ctx.font = '8px Segoe UI'; ctx.textAlign = 'right';
+  ctx.fillText('equal', mx - 4, yScale(0) + 3);
+
+  // Axes
+  ctx.strokeStyle = '#2a3a4a'; ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(mx, my); ctx.lineTo(mx, my+ph); ctx.lineTo(mx+pw, my+ph); ctx.stroke();
+  ctx.fillStyle = '#4a5a6a'; ctx.font = '9px Segoe UI'; ctx.textAlign = 'center';
+  for (let yr = pts[0].y; yr <= pts[pts.length-1].y; yr += 5) ctx.fillText(yr, xScale(yr), my+ph+14);
+
+  // Draw balances
+  const bDefs = [
+    { key: 'b1', color: '#e8d44a', label: 'B1: ILR Fossil|Renew' },
+    { key: 'b2', color: '#e8824a', label: 'B2: ILR Coal|Gas' },
+    { key: 'b3', color: '#4ae8cc', label: 'B3: ILR Wind|Solar' },
+  ];
+
+  bDefs.forEach(({ key, color, label }) => {
+    ctx.strokeStyle = color; ctx.lineWidth = 2;
+    ctx.beginPath();
+    balances.forEach((b, i) => {
+      const x = xScale(b.y), y = yScale(b[key]);
+      i === 0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+    });
+    ctx.stroke();
+
+    // End label
+    const last = balances[balances.length - 1];
+    ctx.fillStyle = color; ctx.font = '8px Segoe UI'; ctx.textAlign = 'left';
+    ctx.fillText(label, xScale(last.y) + 4, yScale(last[key]) + 3);
+  });
+
+  ctx.fillStyle = countryColors[site] || '#aaa'; ctx.font = 'bold 10px Segoe UI'; ctx.textAlign = 'left';
+  ctx.fillText(site + ' — ILR Balances', mx, my - 8);
+}
+
+// ============================================
+// PANEL 6: AITCHISON DISTANCE HEATMAP
+// ============================================
+function drawHeatmap() {
+  const { canvas, ctx } = clearCanvas('c6');
+  const w = canvas.width, h = canvas.height;
+  const mx = 45, my = 30, mxr = 60, myb = 45;
+
+  const country = document.getElementById('selCountry').value;
+  const site = country === 'all' ? 'Japan' : country;
+  const pts = getCountryData(site);
+  if (pts.length < 2) return;
+
+  const n = pts.length;
+  const cellW = (w - mx - mxr) / n;
+  const cellH = (h - my - myb) / n;
+
+  // Compute distance matrix
+  let maxD = 0;
+  const dist = [];
+  for (let i = 0; i < n; i++) {
+    dist[i] = [];
+    for (let j = 0; j < n; j++) {
+      dist[i][j] = aitchisonDist(pts[i].c, pts[j].c);
+      if (dist[i][j] > maxD) maxD = dist[i][j];
+    }
+  }
+
+  // Draw cells
+  for (let i = 0; i < n; i++) {
+    for (let j = 0; j < n; j++) {
+      const intensity = dist[i][j] / maxD;
+      const r = Math.floor(10 + intensity * 220);
+      const g = Math.floor(15 + intensity * 40);
+      const b = Math.floor(30 + (1-intensity) * 60);
+      ctx.fillStyle = `rgb(${r},${g},${b})`;
+      ctx.fillRect(mx + j * cellW, my + i * cellH, cellW + 0.5, cellH + 0.5);
+    }
+  }
+
+  // Year labels
+  ctx.fillStyle = '#5a6a7a'; ctx.font = '7px Segoe UI';
+  ctx.textAlign = 'right';
+  for (let i = 0; i < n; i += Math.max(1, Math.floor(n/10))) {
+    ctx.fillText(pts[i].y, mx - 3, my + i * cellH + cellH/2 + 3);
+  }
+  ctx.textAlign = 'center';
+  for (let j = 0; j < n; j += Math.max(1, Math.floor(n/10))) {
+    ctx.save();
+    ctx.translate(mx + j * cellW + cellW/2, my + n * cellH + 8);
+    ctx.rotate(-Math.PI/4);
+    ctx.fillText(pts[j].y, 0, 0);
+    ctx.restore();
+  }
+
+  // Color scale
+  const scaleX = mx + n * cellW + 10;
+  const scaleH = n * cellH;
+  for (let i = 0; i < scaleH; i++) {
+    const intensity = i / scaleH;
+    const r = Math.floor(10 + intensity * 220);
+    const g = Math.floor(15 + intensity * 40);
+    const b = Math.floor(30 + (1-intensity) * 60);
+    ctx.fillStyle = `rgb(${r},${g},${b})`;
+    ctx.fillRect(scaleX, my + scaleH - i, 12, 1);
+  }
+  ctx.fillStyle = '#5a6a7a'; ctx.font = '8px Segoe UI'; ctx.textAlign = 'left';
+  ctx.fillText('0', scaleX + 16, my + scaleH + 3);
+  ctx.fillText(maxD.toFixed(1), scaleX + 16, my + 6);
+  ctx.fillText('d_A', scaleX + 4, my - 6);
+
+  ctx.fillStyle = countryColors[site] || '#aaa'; ctx.font = 'bold 10px Segoe UI'; ctx.textAlign = 'left';
+  ctx.fillText(site + ' — Aitchison Distance Matrix', mx, my - 10);
+}
+
+// ============================================
+// RENDER ALL
+// ============================================
+function renderAll() {
+  drawTernary();
+  drawToblerone();
+  drawCLR();
+  drawPerturbation();
+  drawBalances();
+  drawHeatmap();
+}
+
+document.getElementById('selCountry').addEventListener('change', renderAll);
+document.getElementById('yrStart').addEventListener('change', renderAll);
+document.getElementById('yrEnd').addEventListener('change', renderAll);
+
+renderAll();
+</script>
+</body>
+</html>

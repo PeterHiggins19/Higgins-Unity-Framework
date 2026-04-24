@@ -1,0 +1,129 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-15",
+  "name": "X-Ray Crystallography (Cromer-Mann)",
+  "domain": "MATTER",
+  "carriers": [
+    "a1_gauss",
+    "a2_gauss",
+    "a3_gauss",
+    "a4_gauss"
+  ],
+  "D": 4,
+  "N": 200,
+  "data_source": {
+    "type": "OPEN DATA",
+    "url": "https://www.iucr.org/resources/other-directories/software/cromer-mann-coefficients",
+    "description": "Cromer-Mann X-ray scattering factor coefficients for 10 crystal compositions (Olivine, Almandine, Perovskite, Calcite, Quartz \u2014 Fe, Mg, Al, Ca, Ti, C, Si, O atoms). 4-Gaussian decomposition at 20 scattering angles each. International Tables for Crystallography Vol C."
+  },
+  "data_hash_sha256_16": "c3bd0e2f302d61b5",
+  "run_timestamp": "2026-04-22T17:41:36.013273Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-15: X-Ray Crystallography (Cromer-Mann): 4-part simplex, carriers=['a1_gauss', 'a2_gauss', 'a3_gauss', 'a4_gauss']",
+    "step2_n_samples": 200,
+    "step2_D": 4,
+    "step2_carriers": [
+      "a1_gauss",
+      "a2_gauss",
+      "a3_gauss",
+      "a4_gauss"
+    ],
+    "data_hash_sha256_16": "c3bd0e2f302d61b5",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      1.963278863593877,
+      1.1904545816845513,
+      -0.3421761148169606,
+      -2.8115573304614667
+    ],
+    "step4_clr_std_per_part": [
+      0.9713560580209142,
+      0.8520397225783404,
+      0.33071900288478434,
+      1.7711464991173949
+    ],
+    "step5_sigma2_range": [
+      0.0017091950696101628,
+      5.817110179856325
+    ],
+    "step5_sigma2_final": 4.915839260510215,
+    "step6_pll_coeffs": [
+      -0.0001861550880246499,
+      0.04553139210261097,
+      2.6278330837410246
+    ],
+    "step6_pll_R2": 0.395576224597164,
+    "step6_pll_shape": "hill",
+    "step6_vertex": [
+      122.29424558243042,
+      5.411946707494344
+    ],
+    "step6_curvature": "concave_down",
+    "step7_squeeze_count": 7,
+    "step7_squeeze_closest": {
+      "time_index": 11,
+      "sigma2_A": 0.9189059992991659,
+      "constant": "catalan",
+      "constant_value": 0.915965594177219,
+      "test_type": "direct",
+      "test_value": 0.9189059992991659,
+      "delta": 0.002940405121946932
+    },
+    "step7_squeeze_mean": 4.715371902579928,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.3227405389649802,
+      0.9461841211333512
+    ],
+    "step8_entropy_mean": 0.6586321190845967,
+    "step8_entropy_cv": 23.731773542934803,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.6586321190845967,
+        "H_mean_decimated": 0.6583428096594899,
+        "variation_pct": 0.043925799657167065,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.6586321190845967,
+        "H_mean_decimated": 0.6571811145946795,
+        "variation_pct": 0.22030575914425218,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.6586321190845967,
+        "H_mean_decimated": 0.6336767949476413,
+        "variation_pct": 3.788962520024036,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 59,
+      "stalls": 23,
+      "spikes": 9,
+      "reversals": 27
+    },
+    "step10_ternary_type": "projected_ternary",
+    "step11_complex_range_re": [
+      -0.19948311499037882,
+      0.12801498318979537
+    ],
+    "step11_complex_range_im": [
+      -0.07105314222813433,
+      0.2035470174289229
+    ],
+    "step12_radius_range": [
+      0.020181478227828457,
+      0.21056550815169373
+    ],
+    "step12_theta_range": [
+      -3.0728859335193563,
+      3.131602424625964
+    ],
+    "step9_angular_velocity_std": 0.5293177208101122
+  }
+}

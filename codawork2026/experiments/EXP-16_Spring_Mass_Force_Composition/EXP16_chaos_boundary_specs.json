@@ -1,0 +1,34 @@
+{
+  "Default baseline": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  },
+  "Light mass": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  },
+  "Heavy mass": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  },
+  "Stiff spring": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  },
+  "Soft spring": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  },
+  "Light + stiff": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  },
+  "Default + impulse": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  },
+  "Default + cascade": {
+    "c_crit": null,
+    "note": "chaos persists at extreme damping"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "experiment": "EXP-06I",
+  "title": "Deep Dive \u2014 ST, HF Tokamak, IFR vs Sun",
+  "series": 2,
+  "date_sealed": "2026-04-18",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "section_1_st": {
+    "step_alpha": 72.87332337150944,
+    "ifr_alpha": 50.19208970184286,
+    "step_ignited": true,
+    "step_gw_compliant": true,
+    "who_runs_it": [
+      "UKAEA (MAST-U, STEP)",
+      "Tokamak Energy (ST80-HTS)",
+      "PPPL (NSTX-U)"
+    ],
+    "path_to_ifr": "HTS magnets (B=6T+) and/or bigger R"
+  },
+  "section_2_hf": {
+    "iter_alpha": 48.03419657636321,
+    "iter_hts_alpha": 50.19208970184286,
+    "ifr_alpha": 50.19208970184286,
+    "iter_ignited": false,
+    "iter_hts_ignited": true,
+    "key_insight": "CFS has the magnets, ITER has the geometry. Combine them."
+  },
+  "section_3_sun": {
+    "sun_power_density_Wm3": 276.0,
+    "ifr_power_density_Wm3": 18788324.988124005,
+    "density_ratio": 68073.64126131886,
+    "sun_alpha_frac": 0.98,
+    "ifr_alpha_frac": 0.5019208970184286,
+    "n_ifr_for_K1": 33811867.02450959,
+    "key_insight": "IFR power density >> Sun core. D-T compensates for imperfect confinement."
+  }
+}

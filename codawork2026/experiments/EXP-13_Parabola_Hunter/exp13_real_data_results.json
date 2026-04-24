@@ -1,0 +1,284 @@
+{
+  "title": "EXP-13 Calibration Proof \u2014 Real Data Runs",
+  "systems": {
+    "stellar": {
+      "key": "stellar",
+      "n": 300,
+      "labels": [
+        "pp-chain",
+        "CNO",
+        "Triple-\u03b1"
+      ],
+      "apex": "CNO",
+      "theta": 120,
+      "rot_labels": [
+        "pp-chain",
+        "Triple-\u03b1",
+        "CNO"
+      ],
+      "sigma": 4.548772284621237,
+      "lambda": 0.34407459402714785,
+      "t_star": 0.4983277591973244,
+      "symmetry": 0.9966555183946488,
+      "alpha": 110.93245110463663,
+      "K": 1.1538537320706612,
+      "F": 0.3246989722072021,
+      "quad_coeff": 0.004913922053332097,
+      "is_parabola": false,
+      "phi": 60.000000000000036,
+      "eig_ratio": 2.674954933230269,
+      "display_name": "Stellar Burning",
+      "data_type": "PHYSICS_MODEL"
+    },
+    "qcd": {
+      "key": "qcd",
+      "n": 300,
+      "labels": [
+        "Strong (\u03b1s)",
+        "EM (\u03b1em)",
+        "Weak (\u03b1w)"
+      ],
+      "apex": "Strong (\u03b1s)",
+      "theta": 0,
+      "rot_labels": [
+        "EM (\u03b1em)",
+        "Weak (\u03b1w)",
+        "Strong (\u03b1s)"
+      ],
+      "sigma": 0.13088053459811277,
+      "lambda": 0.011894568728170525,
+      "t_star": 0.0,
+      "symmetry": 0.0,
+      "alpha": 0.0,
+      "K": 0.06822163569336663,
+      "F": 3381.3426132974128,
+      "quad_coeff": 0.05138790820727775,
+      "is_parabola": true,
+      "phi": 26.72201483767921,
+      "eig_ratio": 5485.625119255505,
+      "display_name": "QCD Running",
+      "data_type": "PHYSICS_MODEL"
+    },
+    "kerr": {
+      "key": "kerr",
+      "n": 300,
+      "labels": [
+        "M_irr",
+        "E_rot",
+        "L_GW"
+      ],
+      "apex": "E_rot",
+      "theta": 120,
+      "rot_labels": [
+        "M_irr",
+        "L_GW",
+        "E_rot"
+      ],
+      "sigma": 8.875326832409401,
+      "lambda": 0.3208322486395173,
+      "t_star": 0.27759197324414714,
+      "symmetry": 0.5551839464882943,
+      "alpha": 149.12191907473678,
+      "K": 0.6613796417689763,
+      "F": 1139.8268757819023,
+      "quad_coeff": -0.123035228281814,
+      "is_parabola": true,
+      "phi": 59.20544481297728,
+      "eig_ratio": 88.2688653233999,
+      "display_name": "Kerr BH",
+      "data_type": "PHYSICS_MODEL"
+    },
+    "fusion": {
+      "key": "fusion",
+      "n": 300,
+      "labels": [
+        "DT",
+        "DD",
+        "DHe3"
+      ],
+      "apex": "DT",
+      "theta": 0,
+      "rot_labels": [
+        "DD",
+        "DHe3",
+        "DT"
+      ],
+      "sigma": 0.0,
+      "lambda": 0.0,
+      "t_star": 0.0,
+      "symmetry": 0.0,
+      "alpha": 0.0,
+      "K": 0.0,
+      "F": 0,
+      "quad_coeff": 0.0,
+      "is_parabola": false,
+      "phi": 90.0,
+      "eig_ratio": 0.0,
+      "display_name": "Fusion React.",
+      "data_type": "PHYSICS_MODEL"
+    },
+    "gw": {
+      "key": "gw",
+      "n": 300,
+      "labels": [
+        "Inspiral",
+        "Merger",
+        "Ringdown"
+      ],
+      "apex": "Merger",
+      "theta": 120,
+      "rot_labels": [
+        "Inspiral",
+        "Ringdown",
+        "Merger"
+      ],
+      "sigma": 73.54872907211562,
+      "lambda": 0.20896343433709555,
+      "t_star": 0.6488294314381271,
+      "symmetry": 0.7023411371237458,
+      "alpha": 70.06240766668488,
+      "K": 0.3239244286638625,
+      "F": 75.06066495353694,
+      "quad_coeff": 1.067596910474827,
+      "is_parabola": true,
+      "phi": 81.54165167134968,
+      "eig_ratio": 25.87941461933149,
+      "display_name": "GW150914",
+      "data_type": "PHYSICS_MODEL"
+    },
+    "world": {
+      "key": "world",
+      "n": 25,
+      "labels": [
+        "Coal",
+        "Gas",
+        "Nuclear"
+      ],
+      "apex": "Coal",
+      "theta": 0,
+      "rot_labels": [
+        "Gas",
+        "Nuclear",
+        "Coal"
+      ],
+      "sigma": 0.04086923568326184,
+      "lambda": 0.17142835211512797,
+      "t_star": 0.5416666666666666,
+      "symmetry": 0.9166666666666667,
+      "alpha": 126.98190363276142,
+      "K": -0.4987024665694686,
+      "F": 13.83972534854068,
+      "quad_coeff": -11.832249918709444,
+      "is_parabola": true,
+      "phi": 109.96322765788788,
+      "eig_ratio": 39.63101355464618,
+      "display_name": "World Elec.",
+      "data_type": "REAL_MEASUREMENT"
+    },
+    "germany": {
+      "key": "germany",
+      "n": 26,
+      "labels": [
+        "Coal",
+        "Gas",
+        "Nuclear"
+      ],
+      "apex": "Coal",
+      "theta": 0,
+      "rot_labels": [
+        "Gas",
+        "Nuclear",
+        "Coal"
+      ],
+      "sigma": 6.163321177597314,
+      "lambda": 0.0963649428507696,
+      "t_star": 1.0,
+      "symmetry": 0.0,
+      "alpha": 0.0,
+      "K": -1.095905379851591,
+      "F": 12.162332944032338,
+      "quad_coeff": 11.330927242409228,
+      "is_parabola": true,
+      "phi": 94.88716059599223,
+      "eig_ratio": 110.85939877463467,
+      "display_name": "Germany Elec.",
+      "data_type": "REAL_MEASUREMENT"
+    },
+    "france": {
+      "key": "france",
+      "n": 26,
+      "labels": [
+        "Coal",
+        "Gas",
+        "Nuclear"
+      ],
+      "apex": "Gas",
+      "theta": 120,
+      "rot_labels": [
+        "Coal",
+        "Nuclear",
+        "Gas"
+      ],
+      "sigma": 0.7723328608860752,
+      "lambda": 0.3918248709981132,
+      "t_star": 0.88,
+      "symmetry": 0.24,
+      "alpha": 83.77755292456028,
+      "K": 1.7076090565173512,
+      "F": 6.7775815552448195,
+      "quad_coeff": -0.23900998830958142,
+      "is_parabola": false,
+      "phi": 17.774495299398723,
+      "eig_ratio": 14.05118385051735,
+      "display_name": "France Elec.",
+      "data_type": "REAL_MEASUREMENT"
+    },
+    "china": {
+      "key": "china",
+      "n": 25,
+      "labels": [
+        "Coal",
+        "Gas",
+        "Nuclear"
+      ],
+      "apex": "Nuclear",
+      "theta": 240,
+      "rot_labels": [
+        "Coal",
+        "Gas",
+        "Nuclear"
+      ],
+      "sigma": 0.5508884766205147,
+      "lambda": 0.4364285991552303,
+      "t_star": 0.125,
+      "symmetry": 0.25,
+      "alpha": 54.411832462662794,
+      "K": -2.1998896509922314,
+      "F": 36.29165038035971,
+      "quad_coeff": -0.6520780529069077,
+      "is_parabola": true,
+      "phi": 174.25155120292706,
+      "eig_ratio": 6.495345033760975,
+      "display_name": "China Elec.",
+      "data_type": "REAL_MEASUREMENT"
+    }
+  },
+  "summary": {
+    "total_systems": 9,
+    "physics_models": 5,
+    "real_measurements": 4,
+    "parabolas": [
+      "qcd",
+      "kerr",
+      "gw",
+      "world",
+      "germany",
+      "china"
+    ],
+    "geodesics": [
+      "stellar",
+      "fusion",
+      "france"
+    ]
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-02",
+  "name": "US Electricity Generation (Yearly)",
+  "domain": "ENERGY",
+  "carriers": [
+    "Fossil",
+    "Nuclear",
+    "Renewable"
+  ],
+  "D": 3,
+  "N": 25,
+  "data_source": {
+    "type": "OPEN DATA",
+    "url": "https://ember-climate.org/data-catalogue/yearly-electricity-data/",
+    "description": "EMBER Global Electricity Review, yearly data for United States. Carriers aggregated: Fossil={Coal,Gas,Other Fossil}, Nuclear, Renewable={Hydro,Solar,Wind,Bioenergy,Other Renewables}. CC BY 4.0 license."
+  },
+  "data_hash_sha256_16": "69da4903af852a0d",
+  "run_timestamp": "2026-04-22T17:41:28.497855Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-02: US Electricity Generation (Yearly): 3-part simplex, carriers=['Fossil', 'Nuclear', 'Renewable']",
+    "step2_n_samples": 25,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Fossil",
+      "Nuclear",
+      "Renewable"
+    ],
+    "data_hash_sha256_16": "69da4903af852a0d",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.9606373136292412,
+      -0.2734267295931974,
+      -0.6872105840360438
+    ],
+    "step4_clr_std_per_part": [
+      0.15907174021163864,
+      0.11477830667753404,
+      0.2724223024353605
+    ],
+    "step5_sigma2_range": [
+      0.0036934715910406576,
+      0.11269178908190412
+    ],
+    "step5_sigma2_final": 0.11269178908190412,
+    "step6_pll_coeffs": [
+      0.00034925962437197576,
+      -0.004340181880376669,
+      0.016035403469993336
+    ],
+    "step6_pll_R2": 0.9984595187101861,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      6.213403407538168,
+      0.0025517530275594325
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 0,
+    "step7_squeeze_closest": null,
+    "step7_squeeze_mean": 0.03400533901632747,
+    "step7_cancellation": false,
+    "step8_entropy_range": [
+      0.6895387509089498,
+      0.87873494525913
+    ],
+    "step8_entropy_mean": 0.7728621857944471,
+    "step8_entropy_cv": 8.330489743468197,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.768450820816752,
+        "H_mean_decimated": 0.7684386184270547,
+        "variation_pct": 0.0015879207057474757,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.768450820816752,
+        "H_mean_decimated": 0.7684553477227759,
+        "variation_pct": 0.0005890950860220047,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.768450820816752,
+        "H_mean_decimated": 0.768652303782928,
+        "variation_pct": 0.026219370286040093,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 17,
+      "stalls": 0,
+      "spikes": 0,
+      "reversals": 17
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.02618609778604622,
+      0.0355312616955169
+    ],
+    "step11_complex_range_im": [
+      -0.05373780084695222,
+      0.08959134164130889
+    ],
+    "step12_radius_range": [
+      0.0009326624629426891,
+      0.09637986851394349
+    ],
+    "step12_theta_range": [
+      -2.2854253947816248,
+      1.2020891329018977
+    ],
+    "step9_angular_velocity_std": 0.4334366827173481
+  }
+}
