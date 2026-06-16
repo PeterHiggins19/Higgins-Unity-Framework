@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hˢ Higgins Simplex Scope — Fourier Conjugate Pair Decomposition</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: #0D1117; color: #E6EDF3; font-family: 'Segoe UI', Arial, sans-serif; overflow: hidden; height: 100vh; }
+
+.header { background: #161B22; padding: 6px 16px; border-bottom: 1px solid #30363D; display: flex; align-items: center; justify-content: space-between; height: 44px; }
+.header h1 { font-size: 13px; color: #FFD700; font-weight: 700; letter-spacing: 0.5px; }
+.header .subtitle { font-size: 10px; color: #8B949E; }
+
+.main { display: grid; grid-template-columns: 210px 1fr 1fr; grid-template-rows: 1fr 1fr 1fr; height: calc(100vh - 44px); gap: 2px; background: #30363D; }
+
+.panel { background: #161B22; position: relative; overflow: hidden; }
+.panel-title { position: absolute; top: 5px; left: 8px; font-size: 9px; color: #FFD700; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; z-index: 10; }
+.panel-label { position: absolute; top: 5px; right: 8px; font-size: 9px; font-weight: 700; z-index: 10; }
+.time-label { color: #58A6FF; }
+.freq-label { color: #F85149; }
+
+.controls { grid-row: 1 / 4; padding: 8px; overflow-y: auto; }
+.ctrl-section { margin-bottom: 10px; }
+.ctrl-section h3 { font-size: 9px; color: #FFD700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 5px; border-bottom: 1px solid #30363D; padding-bottom: 3px; }
+
+select { width: 100%; padding: 5px; background: #0D1117; color: #E6EDF3; border: 1px solid #30363D; border-radius: 4px; font-size: 11px; margin-bottom: 6px; }
+
+.btn-row { display: flex; gap: 4px; margin-top: 5px; }
+.btn { flex: 1; padding: 6px 3px; border: none; border-radius: 4px; font-size: 10px; font-weight: 700; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; }
+.btn-play { background: #27AE60; color: white; }
+.btn-pause { background: #F0B429; color: #0D1117; }
+.btn-reset { background: #F85149; color: white; }
+.btn:hover { opacity: 0.85; }
+
+.speed-row { margin-top: 6px; }
+.speed-row label { font-size: 10px; color: #CADCFC; display: flex; justify-content: space-between; }
+.speed-row label span { color: #FFD700; font-weight: 600; font-family: Consolas, monospace; }
+.speed-row input[type="range"] { width: 100%; height: 4px; -webkit-appearance: none; background: #30363D; border-radius: 2px; }
+.speed-row input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 12px; height: 12px; border-radius: 50%; background: #FFD700; cursor: pointer; }
+
+.stats { margin-top: 8px; background: #0D1117; border-radius: 4px; padding: 5px; font-family: Consolas, monospace; font-size: 9px; line-height: 1.6; }
+.stats .lbl { color: #8B949E; }
+.stats .time-val { color: #58A6FF; }
+.stats .freq-val { color: #F85149; }
+.stats .gold { color: #FFD700; font-weight: bold; }
+.stats .match { color: #27AE60; font-weight: bold; }
+
+.step-tracker { margin-top: 6px; font-size: 8px; line-height: 1.5; }
+.step-tracker .step { color: #555; }
+.step-tracker .step.done { color: #27AE60; }
+.step-tracker .step.active { color: #FFD700; font-weight: bold; }
+
+.pair-info { margin-top: 6px; background: #0D1117; border-radius: 4px; padding: 5px; font-size: 9px; }
+.pair-info .formula { color: #FFD700; font-family: 'Georgia', serif; font-size: 11px; font-style: italic; text-align: center; margin: 3px 0; }
+
+canvas { display: block; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div>
+    <h1>HIGGINS SIMPLEX SCOPE — FOURIER CONJUGATE PAIRS</h1>
+    <div class="subtitle">Real-Time Decomposition of Conjugate Pair Structure on the Simplex — EXP-19</div>
+  </div>
+  <div style="font-size:9px;color:#8B949E;text-align:right;">Peter Higgins<br>CoDaWork 2026</div>
+</div>
+
+<div class="main">
+  <!-- Controls -->
+  <div class="panel controls" id="controlPanel">
+    <div class="ctrl-section">
+      <h3>Fourier Pair</h3>
+      <select id="pairSelect">
+        <option value="0">01. rect(t) ↔ sinc(f) — CLASSIC</option>
+        <option value="1">02. tri(t) ↔ sinc²(f) — CLASSIC</option>
+        <option value="2" selected>03. Gauss ↔ Gauss — SELF-CONJUGATE</option>
+        <option value="3">04. exp(-|t|) ↔ Lorentz(f) — CLASSIC</option>
+        <option value="4">05. δ(t) ↔ const(f) — LIMIT</option>
+        <option value="5">06. cos(2πf₀t) ↔ δ-pair — CLASSIC</option>
+        <option value="6">07. shah(t) ↔ shah(f) — SELF-CONJUGATE</option>
+        <option value="7">08. sech(πt) ↔ sech(πf) — SELF-CONJUGATE</option>
+        <option value="8">09. exp(-t)·u(t) ↔ |1/(a+jω)| — CAUSAL</option>
+        <option value="9">10. sinc²(t) ↔ tri(f) — REVERSE</option>
+        <option value="10">11. J₀(2πt) ↔ 1/√(1−f²) — BESSEL</option>
+        <option value="11">12. chirp(t) ↔ chirp(f) — SELF-CONJUGATE</option>
+      </select>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Animation</h3>
+      <div class="btn-row">
+        <button class="btn btn-play" id="btnPlay" onclick="startAnimation()">▶ Play</button>
+        <button class="btn btn-pause" id="btnPause" onclick="pauseAnimation()">❚❚ Pause</button>
+        <button class="btn btn-reset" id="btnReset" onclick="resetAnimation()">↺ Reset</button>
+      </div>
+      <div class="speed-row">
+        <label>Speed <span id="speedVal">1.0x</span></label>
+        <input type="range" id="speedSlider" min="0.1" max="5" step="0.1" value="1">
+      </div>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Pair Info</h3>
+      <div class="pair-info" id="pairInfo">
+        <div>Type: <span style="color:#E63946" id="pairType">SELF-CONJUGATE</span></div>
+        <div class="formula" id="pairFormulaT">f(t) = exp(−πt²)</div>
+        <div class="formula" id="pairFormulaF">F(ω) = exp(−πω²)</div>
+        <div style="margin-top:4px;color:#27AE60" id="pairPrediction">Prediction: all ratios = 1.000</div>
+      </div>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Live Metrics</h3>
+      <div class="stats" id="liveStats">
+        <div><span class="lbl">Sample:</span> <span class="gold" id="sampleNum">0 / 200</span></div>
+        <div><span class="lbl">─── Time Domain ───</span></div>
+        <div><span class="lbl">σ²_A:</span> <span class="time-val" id="sqT">—</span></div>
+        <div><span class="lbl">H/H_max:</span> <span class="time-val" id="hT">—</span></div>
+        <div><span class="lbl">HVLD:</span> <span class="time-val" id="hvldT">—</span></div>
+        <div><span class="lbl">─── Freq Domain ───</span></div>
+        <div><span class="lbl">σ²_A:</span> <span class="freq-val" id="sqF">—</span></div>
+        <div><span class="lbl">H/H_max:</span> <span class="freq-val" id="hF">—</span></div>
+        <div><span class="lbl">HVLD:</span> <span class="freq-val" id="hvldF">—</span></div>
+        <div><span class="lbl">─── Ratios ───</span></div>
+        <div><span class="lbl">σ² ratio:</span> <span class="gold" id="sqRatio">—</span></div>
+        <div><span class="lbl">H ratio:</span> <span class="gold" id="hRatio">—</span></div>
+        <div><span class="lbl">Verdict:</span> <span class="match" id="verdict">—</span></div>
+      </div>
+    </div>
+
+    <div class="ctrl-section">
+      <h3>Pipeline Steps</h3>
+      <div class="step-tracker" id="stepTracker">
+        <div class="step" data-step="1">1. Define system</div>
+        <div class="step" data-step="2">2. Identify carriers</div>
+        <div class="step" data-step="3">3. Load data</div>
+        <div class="step" data-step="4">4. Close to simplex</div>
+        <div class="step" data-step="5">5. CLR transform</div>
+        <div class="step" data-step="6">6. Aitchison variance</div>
+        <div class="step" data-step="7">7. HVLD vertex lock</div>
+        <div class="step" data-step="8">8. Super squeeze</div>
+        <div class="step" data-step="9">9. EITT entropy</div>
+        <div class="step" data-step="10">10. Ternary projection</div>
+        <div class="step" data-step="11">11. Complex plane</div>
+        <div class="step" data-step="12">12. Polar / Helix</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Row 1: Generating functions -->
+  <div class="panel" id="panelFuncT">
+    <div class="panel-title">Generating Function</div>
+    <div class="panel-label time-label">f(t) — TIME</div>
+    <canvas id="cvFuncT"></canvas>
+  </div>
+  <div class="panel" id="panelFuncF">
+    <div class="panel-title">Generating Function</div>
+    <div class="panel-label freq-label">F(ω) — FREQ</div>
+    <canvas id="cvFuncF"></canvas>
+  </div>
+
+  <!-- Row 2: Ternary simplex trajectories -->
+  <div class="panel" id="panelTernT">
+    <div class="panel-title">Simplex Trajectory</div>
+    <div class="panel-label time-label">TIME</div>
+    <canvas id="cvTernT"></canvas>
+  </div>
+  <div class="panel" id="panelTernF">
+    <div class="panel-title">Simplex Trajectory</div>
+    <div class="panel-label freq-label">FREQ</div>
+    <canvas id="cvTernF"></canvas>
+  </div>
+
+  <!-- Row 3: Aitchison variance + HVLD -->
+  <div class="panel" id="panelVarT">
+    <div class="panel-title">σ²_A Trajectory + HVLD</div>
+    <div class="panel-label time-label">TIME</div>
+    <canvas id="cvVarT"></canvas>
+  </div>
+  <div class="panel" id="panelVarF">
+    <div class="panel-title">σ²_A Trajectory + HVLD</div>
+    <div class="panel-label freq-label">FREQ</div>
+    <canvas id="cvVarF"></canvas>
+  </div>
+</div>
+
+<script>
+// ============================================================
+// FOURIER PAIR GENERATING FUNCTIONS
+// ============================================================
+const N = 200;
+const EPS = 0.001;
+
+function sinc(x) { return Math.abs(x) < 1e-10 ? 1.0 : Math.sin(Math.PI * x) / (Math.PI * x); }
+
+function numDeriv(vals) {
+  const d = new Float64Array(vals.length);
+  const dx = 1.0 / (vals.length - 1);
+  d[0] = (vals[1] - vals[0]) / dx;
+  d[vals.length-1] = (vals[vals.length-1] - vals[vals.length-2]) / dx;
+  for (let i = 1; i < vals.length-1; i++) d[i] = (vals[i+1] - vals[i-1]) / (2*dx);
+  return d;
+}
+
+function makeComposition(gVals, dgVals) {
+  const data = [];
+  let gMax = 0, dgMax = 0;
+  for (let i = 0; i < gVals.length; i++) { gMax = Math.max(gMax, Math.abs(gVals[i])); dgMax = Math.max(dgMax, Math.abs(dgVals[i])); }
+  if (gMax < 1e-15) gMax = 1; if (dgMax < 1e-15) dgMax = 1;
+  for (let i = 0; i < gVals.length; i++) {
+    let p1 = Math.abs(gVals[i]) / gMax * 0.6 + 0.05;
+    let p2 = Math.abs(dgVals[i]) / dgMax * 0.3 + 0.05;
+    if (p1 + p2 > 0.9) { const s = 0.9 / (p1 + p2); p1 *= s; p2 *= s; }
+    let p3 = 1 - p1 - p2;
+    p1 = Math.max(p1, EPS); p2 = Math.max(p2, EPS); p3 = Math.max(p3, EPS);
+    const sum = p1 + p2 + p3;
+    data.push([p1/sum, p2/sum, p3/sum]);
+  }
+  return data;
+}
+
+function linspace(a, b, n) { const arr = []; for (let i = 0; i < n; i++) arr.push(a + (b-a)*i/(n-1)); return arr; }
+
+// Pair generators: each returns { gT, gF, labelT, labelF, type, prediction }
+const PAIRS = [
+  { // 01: rect ↔ sinc
+    name: "rect ↔ sinc", type: "CLASSIC",
+    labelT: "rect(t)", labelF: "sinc(f)",
+    formulaT: "rect(t) = 1 for |t|<½", formulaF: "sinc(f) = sin(πf)/(πf)",
+    prediction: "HVLD: same shape, σ² ratio ≈ 1.9",
+    genT() { const t = linspace(-3,3,N); return t.map(v => 1/(1+Math.exp(-50*(v+0.5))) - 1/(1+Math.exp(-50*(v-0.5)))); },
+    genF() { return linspace(-10,10,N).map(v => sinc(v)); }
+  },
+  { // 02: tri ↔ sinc²
+    name: "tri ↔ sinc²", type: "CLASSIC",
+    labelT: "tri(t)", labelF: "sinc²(f)",
+    formulaT: "tri(t) = max(1−|t|, 0)", formulaF: "sinc²(f) = [sin(πf)/(πf)]²",
+    prediction: "HVLD: same shape, σ² ratio ≈ 3.5",
+    genT() { return linspace(-3,3,N).map(v => Math.max(1-Math.abs(v), 0)); },
+    genF() { return linspace(-10,10,N).map(v => { const s=sinc(v); return s*s; }); }
+  },
+  { // 03: Gauss ↔ Gauss
+    name: "Gauss ↔ Gauss", type: "SELF-CONJUGATE",
+    labelT: "Gauss(t)", labelF: "Gauss(f)",
+    formulaT: "f(t) = exp(−πt²)", formulaF: "F(ω) = exp(−πω²)",
+    prediction: "Prediction: all ratios = 1.000",
+    genT() { return linspace(-4,4,N).map(v => Math.exp(-Math.PI*v*v)); },
+    genF() { return linspace(-4,4,N).map(v => Math.exp(-Math.PI*v*v)); }
+  },
+  { // 04: exp(-|t|) ↔ Lorentz
+    name: "exp(−|t|) ↔ Lorentz", type: "CLASSIC",
+    labelT: "exp(−|t|)", labelF: "Lorentz(f)",
+    formulaT: "f(t) = exp(−|t|)", formulaF: "F(ω) = 2/(1+4π²ω²)",
+    prediction: "HVLD: same shape, σ² ratio ≈ 2.1",
+    genT() { return linspace(-5,5,N).map(v => Math.exp(-Math.abs(v))); },
+    genF() { return linspace(-5,5,N).map(v => 2/(1+4*Math.PI*Math.PI*v*v)); }
+  },
+  { // 05: δ ↔ const
+    name: "δ(t) ↔ const(f)", type: "LIMIT",
+    labelT: "δ(t)≈narrow", labelF: "const(f)",
+    formulaT: "δ(t) ≈ (1/σ√2π)·exp(−t²/2σ²)", formulaF: "F(ω) = 1",
+    prediction: "HVLD: same, extreme ω ratio",
+    genT() { const s=0.05; return linspace(-5,5,N).map(v => Math.exp(-(v*v)/(2*s*s))/(s*Math.sqrt(2*Math.PI))); },
+    genF() { const rng = new Array(N); for(let i=0;i<N;i++) rng[i] = 1 + 0.001*Math.sin(i*0.3); return rng; }
+  },
+  { // 06: cos ↔ δ-pair
+    name: "cos ↔ δ-pair", type: "CLASSIC",
+    labelT: "cos(2πf₀t)", labelF: "δ-pair(f)",
+    formulaT: "f(t) = cos(4πt)", formulaF: "½[δ(f−2) + δ(f+2)]",
+    prediction: "HVLD: same shape, high ω ratio",
+    genT() { return linspace(-5,5,N).map(v => Math.cos(4*Math.PI*v)); },
+    genF() { const s=0.1; return linspace(-5,5,N).map(v => (Math.exp(-((v-2)*(v-2))/(2*s*s))+Math.exp(-((v+2)*(v+2))/(2*s*s)))/(2*s*Math.sqrt(2*Math.PI))); }
+  },
+  { // 07: shah ↔ shah
+    name: "shah ↔ shah", type: "SELF-CONJUGATE",
+    labelT: "shah(t)", labelF: "shah(f)",
+    formulaT: "Ш(t) = Σ δ(t−k)", formulaF: "Ш(f) = Σ δ(f−k)",
+    prediction: "Prediction: all ratios = 1.000",
+    genT() { const s=0.05; return linspace(-5,5,N).map(v => { let g=0; for(let k=-5;k<=5;k++) g+=Math.exp(-((v-k)*(v-k))/(2*s*s)); return g; }); },
+    genF() { const s=0.05; return linspace(-5,5,N).map(v => { let g=0; for(let k=-5;k<=5;k++) g+=Math.exp(-((v-k)*(v-k))/(2*s*s)); return g; }); }
+  },
+  { // 08: sech ↔ sech
+    name: "sech ↔ sech", type: "SELF-CONJUGATE",
+    labelT: "sech(πt)", labelF: "sech(πf)",
+    formulaT: "f(t) = sech(πt) = 1/cosh(πt)", formulaF: "F(ω) = sech(πω)",
+    prediction: "Prediction: all ratios = 1.000",
+    genT() { return linspace(-4,4,N).map(v => 1/Math.cosh(Math.PI*v)); },
+    genF() { return linspace(-4,4,N).map(v => 1/Math.cosh(Math.PI*v)); }
+  },
+  { // 09: exp·u(t) ↔ complex Lorentz
+    name: "exp·u(t) ↔ |1/(a+jω)|", type: "CAUSAL",
+    labelT: "exp(−t)·u(t)", labelF: "|1/(1+j2πf)|",
+    formulaT: "f(t) = exp(−t)·u(t)", formulaF: "|F(ω)| = 1/√(1+4π²ω²)",
+    prediction: "HVLD: same shape, σ² ratio ≈ 2.2",
+    genT() { return linspace(-1,8,N).map(v => v >= 0 ? Math.exp(-v)/(1+Math.exp(-50*v)) + Math.exp(-Math.abs(v))*(1/(1+Math.exp(-50*v))) : 0); },
+    genF() { return linspace(-5,5,N).map(v => 1/Math.sqrt(1+4*Math.PI*Math.PI*v*v)); }
+  },
+  { // 10: sinc² ↔ tri (reverse)
+    name: "sinc² ↔ tri", type: "CLASSIC (REVERSE)",
+    labelT: "sinc²(t)", labelF: "tri(f)",
+    formulaT: "f(t) = [sin(πt)/(πt)]²", formulaF: "F(ω) = max(1−|ω|, 0)",
+    prediction: "Exact swap of Pair 02 metrics",
+    genT() { return linspace(-10,10,N).map(v => { const s=sinc(v); return s*s; }); },
+    genF() { return linspace(-3,3,N).map(v => Math.max(1-Math.abs(v), 0)); }
+  },
+  { // 11: J₀ ↔ semicircle
+    name: "J₀ ↔ 1/√(1−f²)", type: "BESSEL",
+    labelT: "J₀(2πt)", labelF: "1/√(1−f²)",
+    formulaT: "f(t) = J₀(2πt)", formulaF: "F(ω) = rect(ω)/√(1−ω²)",
+    prediction: "HVLD: bowl/hill — different classes",
+    genT() {
+      // J0 via series for moderate x
+      return linspace(0.1,15,N).map(t => {
+        const x = 2*Math.PI*t; let sum=1, term=1;
+        for(let m=1;m<40;m++) { term *= -((x/2)*(x/2))/(m*m); sum += term; if(Math.abs(term)<1e-15) break; }
+        return sum;
+      });
+    },
+    genF() {
+      return linspace(-1.5,1.5,N).map(f => {
+        const af = Math.abs(f);
+        if (af >= 0.999) return 0.01;
+        const edge = 1/(1+Math.exp(50*(af-0.98)));
+        const afc = Math.min(af,0.998); return (1/Math.sqrt(1-afc*afc))*edge + 0.01*(1-edge);
+      });
+    }
+  },
+  { // 12: chirp ↔ chirp
+    name: "chirp ↔ chirp", type: "SELF-CONJUGATE",
+    labelT: "chirp(t)", labelF: "chirp(f)",
+    formulaT: "f(t) = exp(−0.1(t−5)²)·cos(2πt²)", formulaF: "F(ω) ≈ exp(−0.1ω²)·cos(πω²/2)",
+    prediction: "Near-unity ratios (magnitude self-conj)",
+    genT() { return linspace(0,10,N).map(t => { const d=t-5; return Math.exp(-0.1*d*d)*Math.cos(Math.PI*2*t*t); }); },
+    genF() { return linspace(-10,10,N).map(f => Math.exp(-0.1*f*f)*Math.cos(Math.PI*f*f/2 - Math.PI/4)); }
+  }
+];
+
+// ============================================================
+// PIPELINE COMPUTATIONS (in-browser simplified)
+// ============================================================
+function clrTransform(comp) {
+  // comp is array of [p1,p2,p3]
+  return comp.map(row => {
+    const gm = Math.pow(row[0]*row[1]*row[2], 1/3);
+    return [Math.log(row[0]/gm), Math.log(row[1]/gm), Math.log(row[2]/gm)];
+  });
+}
+
+function aitchisonVariance(clr, upTo) {
+  // Running total variance up to index upTo
+  const n = Math.min(upTo, clr.length);
+  if (n < 2) return 0;
+  const D = clr[0].length;
+  let totalVar = 0;
+  for (let i = 0; i < D; i++) {
+    for (let j = i+1; j < D; j++) {
+      let sumSq = 0, sumV = 0;
+      for (let k = 0; k < n; k++) {
+        const v = clr[k][i] - clr[k][j];
+        sumV += v; sumSq += v*v;
+      }
+      const mean = sumV / n;
+      totalVar += (sumSq/n - mean*mean);
+    }
+  }
+  return totalVar / D;
+}
+
+function shannonEntropy(comp) {
+  const D = comp.length > 0 ? comp[0].length : 3;
+  const Hmax = Math.log(D);
+  return comp.map(row => {
+    let H = 0;
+    for (let i = 0; i < D; i++) if (row[i] > 0) H -= row[i] * Math.log(row[i]);
+    return H / Hmax;
+  });
+}
+
+function fitHVLD(varTrajectory) {
+  // Quadratic fit: y = ax² + bx + c
+  const n = varTrajectory.length;
+  if (n < 3) return { a: 0, b: 0, c: 0, R2: 0, shape: '—' };
+  let sx=0,sx2=0,sx3=0,sx4=0,sy=0,sxy=0,sx2y=0;
+  for (let i = 0; i < n; i++) {
+    const x = i, y = varTrajectory[i];
+    sx+=x; sx2+=x*x; sx3+=x*x*x; sx4+=x*x*x*x;
+    sy+=y; sxy+=x*y; sx2y+=x*x*y;
+  }
+  // Solve normal equations
+  const M = [[n,sx,sx2],[sx,sx2,sx3],[sx2,sx3,sx4]];
+  const V = [sy, sxy, sx2y];
+  // Cramer's rule for 3x3
+  function det3(m) { return m[0][0]*(m[1][1]*m[2][2]-m[1][2]*m[2][1]) - m[0][1]*(m[1][0]*m[2][2]-m[1][2]*m[2][0]) + m[0][2]*(m[1][0]*m[2][1]-m[1][1]*m[2][0]); }
+  const D = det3(M);
+  if (Math.abs(D) < 1e-20) return { a: 0, b: 0, c: 0, R2: 0, shape: '—' };
+  const c = det3([[V[0],M[0][1],M[0][2]],[V[1],M[1][1],M[1][2]],[V[2],M[2][1],M[2][2]]])/D;
+  const b = det3([[M[0][0],V[0],M[0][2]],[M[1][0],V[1],M[1][2]],[M[2][0],V[2],M[2][2]]])/D;
+  const a = det3([[M[0][0],M[0][1],V[0]],[M[1][0],M[1][1],V[1]],[M[2][0],M[2][1],V[2]]])/D;
+
+  // R²
+  const yMean = sy / n;
+  let ssTot = 0, ssRes = 0;
+  for (let i = 0; i < n; i++) {
+    const yPred = a*i*i + b*i + c;
+    const diffTot = varTrajectory[i] - yMean; ssTot += diffTot * diffTot;
+    const diffRes = varTrajectory[i] - yPred; ssRes += diffRes * diffRes;
+  }
+  const R2 = ssTot > 0 ? 1 - ssRes/ssTot : 0;
+  return { a, b, c, R2, shape: a > 0 ? 'bowl' : 'hill' };
+}
+
+// ============================================================
+// RENDERING
+// ============================================================
+let currentPair = 2; // Start with Gaussian
+let animFrame = 0;
+let running = false;
+let animId = null;
+let speed = 1.0;
+
+// Precomputed data for current pair
+let dataT = [], dataF = [];
+let compT = [], compF = [];
+let clrT = [], clrF = [];
+let entropyT = [], entropyF = [];
+let varTrajT = [], varTrajF = [];
+
+function setupPair(idx) {
+  const pair = PAIRS[idx];
+  currentPair = idx;
+  animFrame = 0;
+
+  // Generate raw function values
+  const rawT = pair.genT();
+  const rawF = pair.genF();
+  dataT = rawT; dataF = rawF;
+
+  // Derivatives
+  const dT = numDeriv(rawT);
+  const dF = numDeriv(rawF);
+
+  // Compositions
+  compT = makeComposition(rawT, dT);
+  compF = makeComposition(rawF, dF);
+
+  // CLR
+  clrT = clrTransform(compT);
+  clrF = clrTransform(compF);
+
+  // Entropy
+  entropyT = shannonEntropy(compT);
+  entropyF = shannonEntropy(compF);
+
+  // Variance trajectory (cumulative)
+  varTrajT = []; varTrajF = [];
+  for (let i = 1; i <= N; i++) {
+    varTrajT.push(aitchisonVariance(clrT, i));
+    varTrajF.push(aitchisonVariance(clrF, i));
+  }
+
+  // Update UI
+  document.getElementById('pairType').textContent = pair.type;
+  document.getElementById('pairType').style.color = pair.type.includes('SELF') ? '#27AE60' : pair.type === 'CLASSIC' ? '#58A6FF' : '#F0B429';
+  document.getElementById('pairFormulaT').textContent = pair.formulaT;
+  document.getElementById('pairFormulaF').textContent = pair.formulaF;
+  document.getElementById('pairPrediction').textContent = pair.prediction;
+
+  updateStepTracker(0);
+  drawAll();
+}
+
+function getCanvas(id) {
+  const cv = document.getElementById(id);
+  const panel = cv.parentElement;
+  cv.width = panel.clientWidth;
+  cv.height = panel.clientHeight;
+  return { cv, ctx: cv.getContext('2d'), w: cv.width, h: cv.height };
+}
+
+function drawFunc(canvasId, rawData, upTo, color, label) {
+  const { cv, ctx, w, h } = getCanvas(canvasId);
+  ctx.clearRect(0, 0, w, h);
+
+  const padT = 28, padB = 20, padL = 30, padR = 10;
+  const pw = w - padL - padR, ph = h - padT - padB;
+
+  let yMin = Infinity, yMax = -Infinity;
+  for (const v of rawData) { yMin = Math.min(yMin, v); yMax = Math.max(yMax, v); }
+  const yRange = yMax - yMin || 1;
+  yMin -= yRange * 0.1; yMax += yRange * 0.1;
+
+  // Grid
+  ctx.strokeStyle = '#30363D'; ctx.lineWidth = 0.5;
+  ctx.beginPath();
+  ctx.moveTo(padL, padT); ctx.lineTo(padL, h-padB);
+  ctx.moveTo(padL, h-padB); ctx.lineTo(w-padR, h-padB);
+  ctx.stroke();
+
+  // Zero line
+  const y0 = padT + ph * (1 - (0 - yMin) / (yMax - yMin));
+  if (y0 > padT && y0 < h - padB) {
+    ctx.strokeStyle = '#444'; ctx.lineWidth = 0.5; ctx.setLineDash([4,4]);
+    ctx.beginPath(); ctx.moveTo(padL, y0); ctx.lineTo(w-padR, y0); ctx.stroke();
+    ctx.setLineDash([]);
+  }
+
+  // Function curve (full, dim)
+  ctx.strokeStyle = color + '40'; ctx.lineWidth = 1.5;
+  ctx.beginPath();
+  for (let i = 0; i < rawData.length; i++) {
+    const x = padL + (i / (rawData.length-1)) * pw;
+    const y = padT + ph * (1 - (rawData[i] - yMin) / (yMax - yMin));
+    i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  // Animated portion (bright)
+  const n = Math.min(upTo, rawData.length);
+  if (n > 0) {
+    ctx.strokeStyle = color; ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const x = padL + (i / (rawData.length-1)) * pw;
+      const y = padT + ph * (1 - (rawData[i] - yMin) / (yMax - yMin));
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // Current point
+    if (n > 0 && n <= rawData.length) {
+      const i = n - 1;
+      const x = padL + (i / (rawData.length-1)) * pw;
+      const y = padT + ph * (1 - (rawData[i] - yMin) / (yMax - yMin));
+      ctx.beginPath(); ctx.arc(x, y, 4, 0, 2*Math.PI);
+      ctx.fillStyle = color; ctx.fill();
+      ctx.strokeStyle = '#fff'; ctx.lineWidth = 1; ctx.stroke();
+    }
+  }
+}
+
+function drawTernary(canvasId, comp, upTo, color) {
+  const { cv, ctx, w, h } = getCanvas(canvasId);
+  ctx.clearRect(0, 0, w, h);
+
+  const padT = 25, padB = 15, padLR = 15;
+  const size = Math.min(w - 2*padLR, h - padT - padB);
+  const cx = w/2, cy = padT + size * 0.55;
+  const s = size * 0.45;
+
+  // Triangle vertices: Signal(top), Derivative(bottom-right), Residual(bottom-left)
+  const vA = { x: cx, y: cy - s };
+  const vB = { x: cx + s * Math.cos(-Math.PI/6), y: cy + s * Math.sin(-Math.PI/6) };
+  const vC = { x: cx - s * Math.cos(-Math.PI/6), y: cy + s * Math.sin(-Math.PI/6) };
+
+  // Draw triangle
+  ctx.strokeStyle = '#30363D'; ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(vA.x, vA.y); ctx.lineTo(vB.x, vB.y); ctx.lineTo(vC.x, vC.y); ctx.closePath(); ctx.stroke();
+
+  // Labels
+  ctx.fillStyle = '#8B949E'; ctx.font = '8px Segoe UI';
+  ctx.textAlign = 'center';
+  ctx.fillText('Signal', vA.x, vA.y - 6);
+  ctx.fillText('Deriv', vB.x + 8, vB.y + 12);
+  ctx.fillText('Resid', vC.x - 8, vC.y + 12);
+
+  // Project to barycentric
+  function bary(p) {
+    return {
+      x: p[0]*vA.x + p[1]*vB.x + p[2]*vC.x,
+      y: p[0]*vA.y + p[1]*vB.y + p[2]*vC.y
+    };
+  }
+
+  const n = Math.min(upTo, comp.length);
+  if (n < 2) return;
+
+  // Trail
+  ctx.strokeStyle = color + '60'; ctx.lineWidth = 1;
+  ctx.beginPath();
+  for (let i = 0; i < n; i++) {
+    const pt = bary(comp[i]);
+    i === 0 ? ctx.moveTo(pt.x, pt.y) : ctx.lineTo(pt.x, pt.y);
+  }
+  ctx.stroke();
+
+  // Points
+  for (let i = 0; i < n; i++) {
+    const pt = bary(comp[i]);
+    const alpha = 0.2 + 0.8 * (i / n);
+    ctx.beginPath(); ctx.arc(pt.x, pt.y, 2, 0, 2*Math.PI);
+    ctx.fillStyle = color + Math.floor(alpha * 255).toString(16).padStart(2,'0');
+    ctx.fill();
+  }
+
+  // Current point highlight
+  if (n > 0) {
+    const pt = bary(comp[n-1]);
+    ctx.beginPath(); ctx.arc(pt.x, pt.y, 5, 0, 2*Math.PI);
+    ctx.fillStyle = color; ctx.fill();
+    ctx.strokeStyle = '#fff'; ctx.lineWidth = 1.5; ctx.stroke();
+  }
+}
+
+function drawVariance(canvasId, varTraj, upTo, color) {
+  const { cv, ctx, w, h } = getCanvas(canvasId);
+  ctx.clearRect(0, 0, w, h);
+
+  const padT = 25, padB = 18, padL = 35, padR = 10;
+  const pw = w - padL - padR, ph = h - padT - padB;
+  const n = Math.min(upTo, varTraj.length);
+
+  let yMax = 0;
+  for (const v of varTraj) yMax = Math.max(yMax, v);
+  yMax = yMax * 1.2 || 1;
+
+  // Axes
+  ctx.strokeStyle = '#30363D'; ctx.lineWidth = 0.5;
+  ctx.beginPath();
+  ctx.moveTo(padL, padT); ctx.lineTo(padL, h-padB);
+  ctx.moveTo(padL, h-padB); ctx.lineTo(w-padR, h-padB);
+  ctx.stroke();
+
+  // Y-axis label
+  ctx.fillStyle = '#8B949E'; ctx.font = '8px Segoe UI'; ctx.textAlign = 'right';
+  ctx.fillText(yMax.toFixed(2), padL-3, padT+5);
+  ctx.fillText('0', padL-3, h-padB+3);
+
+  // Full trajectory (dim)
+  if (varTraj.length > 1) {
+    ctx.strokeStyle = color + '30'; ctx.lineWidth = 1;
+    ctx.beginPath();
+    for (let i = 0; i < varTraj.length; i++) {
+      const x = padL + (i/(varTraj.length-1))*pw;
+      const y = padT + ph*(1 - varTraj[i]/yMax);
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+  }
+
+  // Animated portion
+  if (n > 1) {
+    ctx.strokeStyle = color; ctx.lineWidth = 2;
+    ctx.beginPath();
+    for (let i = 0; i < n; i++) {
+      const x = padL + (i/(varTraj.length-1))*pw;
+      const y = padT + ph*(1 - varTraj[i]/yMax);
+      i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+    }
+    ctx.stroke();
+
+    // HVLD vertex lock fit
+    if (n > 10) {
+      const subTraj = varTraj.slice(0, n);
+      const hvld = fitHVLD(subTraj);
+      if (hvld.R2 > 0.1) {
+        ctx.strokeStyle = '#FFD700'; ctx.lineWidth = 1.5; ctx.setLineDash([4,3]);
+        ctx.beginPath();
+        for (let i = 0; i < n; i++) {
+          const yPred = hvld.a*i*i + hvld.b*i + hvld.c;
+          const x = padL + (i/(varTraj.length-1))*pw;
+          const y = padT + ph*(1 - Math.max(0,yPred)/yMax);
+          i === 0 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        // Shape label
+        ctx.fillStyle = '#FFD700'; ctx.font = 'bold 10px Consolas'; ctx.textAlign = 'right';
+        ctx.fillText(`${hvld.shape} R²=${hvld.R2.toFixed(3)}`, w-padR-5, padT+12);
+      }
+    }
+  }
+}
+
+function drawAll() {
+  const n = animFrame;
+  const pair = PAIRS[currentPair];
+
+  drawFunc('cvFuncT', dataT, n, '#58A6FF', pair.labelT);
+  drawFunc('cvFuncF', dataF, n, '#F85149', pair.labelF);
+  drawTernary('cvTernT', compT, n, '#58A6FF');
+  drawTernary('cvTernF', compF, n, '#F85149');
+  drawVariance('cvVarT', varTrajT, n, '#58A6FF');
+  drawVariance('cvVarF', varTrajF, n, '#F85149');
+
+  updateStats(n);
+  updateStepTracker(n);
+}
+
+function updateStats(n) {
+  document.getElementById('sampleNum').textContent = `${n} / ${N}`;
+
+  if (n > 5) {
+    const sqMeanT = varTrajT[n-1] || 0;
+    const sqMeanF = varTrajF[n-1] || 0;
+    const hMeanT = entropyT.slice(0, n).reduce((a,b)=>a+b,0) / n;
+    const hMeanF = entropyF.slice(0, n).reduce((a,b)=>a+b,0) / n;
+    const hvldT = fitHVLD(varTrajT.slice(0, n));
+    const hvldF = fitHVLD(varTrajF.slice(0, n));
+
+    document.getElementById('sqT').textContent = sqMeanT.toFixed(4);
+    document.getElementById('sqF').textContent = sqMeanF.toFixed(4);
+    document.getElementById('hT').textContent = hMeanT.toFixed(4);
+    document.getElementById('hF').textContent = hMeanF.toFixed(4);
+    document.getElementById('hvldT').textContent = `${hvldT.shape} (R²=${hvldT.R2.toFixed(3)})`;
+    document.getElementById('hvldF').textContent = `${hvldF.shape} (R²=${hvldF.R2.toFixed(3)})`;
+
+    const sqR = sqMeanF > 0.0001 ? sqMeanT / sqMeanF : Infinity;
+    const hR = hMeanF > 0.0001 ? hMeanT / hMeanF : Infinity;
+    document.getElementById('sqRatio').textContent = sqR < 100 ? sqR.toFixed(3) : '∞';
+    document.getElementById('hRatio').textContent = hR < 100 ? hR.toFixed(3) : '∞';
+
+    // Verdict
+    const isSelfConj = PAIRS[currentPair].type.includes('SELF');
+    if (n >= N) {
+      if (isSelfConj && Math.abs(sqR - 1) < 0.05 && Math.abs(hR - 1) < 0.05) {
+        document.getElementById('verdict').textContent = '✓ PRESERVED';
+        document.getElementById('verdict').style.color = '#27AE60';
+      } else if (!isSelfConj && hvldT.shape === hvldF.shape) {
+        document.getElementById('verdict').textContent = '✓ SHAPE MATCH';
+        document.getElementById('verdict').style.color = '#27AE60';
+      } else if (!isSelfConj && hvldT.shape !== hvldF.shape) {
+        document.getElementById('verdict').textContent = '△ DIFFERENT CLASS';
+        document.getElementById('verdict').style.color = '#F0B429';
+      } else {
+        document.getElementById('verdict').textContent = '● ANALYZING...';
+        document.getElementById('verdict').style.color = '#FFD700';
+      }
+    } else {
+      document.getElementById('verdict').textContent = '● RUNNING...';
+      document.getElementById('verdict').style.color = '#8B949E';
+    }
+  }
+}
+
+function updateStepTracker(n) {
+  const steps = document.querySelectorAll('.step-tracker .step');
+  const pct = n / N;
+  const activeStep = pct < 0.01 ? 1 : pct < 0.02 ? 2 : pct < 0.05 ? 3 :
+    pct < 0.1 ? 4 : pct < 0.2 ? 5 : pct < 0.4 ? 6 :
+    pct < 0.55 ? 7 : pct < 0.65 ? 8 : pct < 0.8 ? 9 :
+    pct < 0.9 ? 10 : pct < 0.95 ? 11 : 12;
+
+  steps.forEach((el, i) => {
+    const s = i + 1;
+    el.className = 'step' + (s < activeStep ? ' done' : s === activeStep ? ' active' : '');
+  });
+}
+
+// ============================================================
+// ANIMATION LOOP
+// ============================================================
+function animate() {
+  if (!running) return;
+  animFrame = Math.min(animFrame + Math.ceil(speed), N);
+  drawAll();
+  if (animFrame >= N) {
+    running = false;
+    return;
+  }
+  animId = requestAnimationFrame(animate);
+}
+
+function startAnimation() { running = true; if (animFrame >= N) animFrame = 0; animate(); }
+function pauseAnimation() { running = false; if (animId) cancelAnimationFrame(animId); }
+function resetAnimation() { running = false; animFrame = 0; drawAll(); }
+
+// ============================================================
+// EVENT HANDLERS
+// ============================================================
+document.getElementById('pairSelect').addEventListener('change', function() {
+  pauseAnimation();
+  setupPair(parseInt(this.value));
+});
+
+document.getElementById('speedSlider').addEventListener('input', function() {
+  speed = parseFloat(this.value);
+  document.getElementById('speedVal').textContent = speed.toFixed(1) + 'x';
+});
+
+// Handle resize
+window.addEventListener('resize', () => drawAll());
+
+// Initialize
+setupPair(2); // Start with Gaussian self-conjugate
+</script>
+</body>
+</html>

@@ -1,0 +1,896 @@
+{
+  "_meta": {
+    "analysis": "HFSP Super Squeeze \u2014 Verified Edition",
+    "date": "2026-04-21",
+    "author": "Peter Higgins / Claude",
+    "methodology": "Three-tier analysis separating verified findings from predictions",
+    "n_constants": 28,
+    "constants": {
+      "1/\u221a2": 0.7071067811865475,
+      "1/\u221a3": 0.5773502691896258,
+      "1/\u221a5": 0.4472135954999579,
+      "ln(2)": 0.6931471805599453,
+      "1/e": 0.36787944117144233,
+      "1/\u03c0": 0.3183098861837907,
+      "2/\u03c0": 0.6366197723675814,
+      "\u03c0/4": 0.7853981633974483,
+      "e/\u03c0": 0.8652559794322651,
+      "\u03c6": 0.6180339887498949,
+      "\u03c6\u00b2": 0.3819660112501052,
+      "\u221a2-1": 0.41421356237309515,
+      "2-\u221a3": 0.2679491924311228,
+      "\u03b3_EM": 0.5772156649,
+      "G_Cat": 0.9159655941,
+      "log\u2081\u2080(2)": 0.3010299956639812,
+      "log\u2081\u2080(e)": 0.4342944819032518,
+      "ln(\u221a2)": 0.3465735902799727,
+      "sin(1)": 0.8414709848078965,
+      "cos(1)": 0.5403023058681398,
+      "\u221a3/2": 0.8660254037844386,
+      "\u03c6/\u221a2": 0.4370160244488211,
+      "e^(-\u03c0/4)": 0.45593812776599624,
+      "1/4": 0.25,
+      "1/3": 0.3333333333333333,
+      "1/2": 0.5,
+      "2/3": 0.6666666666666666,
+      "3/4": 0.75
+    }
+  },
+  "tier_1_verified": {
+    "description": "Systems with full blend landscape data \u2014 real interpolated S(\u03b1)",
+    "n_systems": 5,
+    "n_blend_funcs": 9,
+    "results": [
+      {
+        "exp_id": "EXP-01",
+        "name": "Gold/Silver Price Ratio",
+        "sys_id": 19,
+        "domain": "MATTER",
+        "fp_category": "EQUILIBRIUM",
+        "consensus_reciprocal": {
+          "pair": "log\u2081\u2080(2)\u21921/\u221a3",
+          "n_blend_funcs": 2,
+          "mean_delta": 9.896632181888299e-05,
+          "std_delta": 2.7755575615628914e-16,
+          "min_delta": 9.896632181860543e-05,
+          "max_delta": 9.896632181916054e-05,
+          "blend_funcs": [
+            "geometric",
+            "log_ratio"
+          ]
+        },
+        "per_blend_function": {
+          "arithmetic": {
+            "best_match": {
+              "input": "\u03c6/\u221a2",
+              "target": "3/4",
+              "output": 0.7502956958821632,
+              "delta": 0.00029569588216316056
+            },
+            "n_matches": 55,
+            "n_identities": 0,
+            "n_ratio_cancellations": 88
+          },
+          "geometric": {
+            "best_match": {
+              "input": "log\u2081\u2080(2)",
+              "target": "1/\u221a3",
+              "output": 0.577449235511445,
+              "delta": 9.896632181916054e-05
+            },
+            "n_matches": 49,
+            "n_identities": 1,
+            "n_ratio_cancellations": 179
+          },
+          "log_ratio": {
+            "best_match": {
+              "input": "log\u2081\u2080(2)",
+              "target": "1/\u221a3",
+              "output": 0.5774492355114444,
+              "delta": 9.896632181860543e-05
+            },
+            "n_matches": 49,
+            "n_identities": 1,
+            "n_ratio_cancellations": 179
+          },
+          "quadratic": {
+            "best_match": {
+              "input": "2/\u03c0",
+              "target": "sin(1)",
+              "output": 0.8406493975298366,
+              "delta": 0.0008215872780599209
+            },
+            "n_matches": 53,
+            "n_identities": 1,
+            "n_ratio_cancellations": 205
+          },
+          "power_p2": {
+            "best_match": {
+              "input": "G_Cat",
+              "target": "sin(1)",
+              "output": 0.8429122546503581,
+              "delta": 0.0014412698424616233
+            },
+            "n_matches": 52,
+            "n_identities": 1,
+            "n_ratio_cancellations": 216
+          },
+          "power_p3": {
+            "best_match": {
+              "input": "1/\u221a2",
+              "target": "\u03c0/4",
+              "output": 0.7863324274921927,
+              "delta": 0.000934264094744397
+            },
+            "n_matches": 42,
+            "n_identities": 0,
+            "n_ratio_cancellations": 90
+          },
+          "sigmoid_k5": {
+            "best_match": {
+              "input": "\u221a2-1",
+              "target": "\u221a3/2",
+              "output": 0.8686701342243842,
+              "delta": 0.0026447304399456195
+            },
+            "n_matches": 46,
+            "n_identities": 1,
+            "n_ratio_cancellations": 135
+          },
+          "sigmoid_k10": {
+            "best_match": {
+              "input": "1/2",
+              "target": "\u221a2-1",
+              "output": 0.41224223128219006,
+              "delta": 0.001971331090905082
+            },
+            "n_matches": 40,
+            "n_identities": 0,
+            "n_ratio_cancellations": 83
+          },
+          "sigmoid_k20": {
+            "best_match": {
+              "input": "1/2",
+              "target": "log\u2081\u2080(e)",
+              "output": 0.4318857846345803,
+              "delta": 0.002408697268671489
+            },
+            "n_matches": 25,
+            "n_identities": 0,
+            "n_ratio_cancellations": 101
+          }
+        }
+      },
+      {
+        "exp_id": "EXP-03",
+        "name": "SEMF Binding Energy Valley",
+        "sys_id": 8,
+        "domain": "MATTER",
+        "fp_category": "ENERGETIC",
+        "consensus_reciprocal": {
+          "pair": "log\u2081\u2080(2)\u2192sin(1)",
+          "n_blend_funcs": 2,
+          "mean_delta": 0.00040756647670958657,
+          "std_delta": 0.0,
+          "min_delta": 0.00040756647670958657,
+          "max_delta": 0.00040756647670958657,
+          "blend_funcs": [
+            "geometric",
+            "log_ratio"
+          ]
+        },
+        "per_blend_function": {
+          "arithmetic": {
+            "best_match": null,
+            "n_matches": 0,
+            "n_identities": 0,
+            "n_ratio_cancellations": 211
+          },
+          "geometric": {
+            "best_match": {
+              "input": "log\u2081\u2080(2)",
+              "target": "sin(1)",
+              "output": 0.8410634183311869,
+              "delta": 0.00040756647670958657
+            },
+            "n_matches": 63,
+            "n_identities": 0,
+            "n_ratio_cancellations": 214
+          },
+          "log_ratio": {
+            "best_match": {
+              "input": "log\u2081\u2080(2)",
+              "target": "sin(1)",
+              "output": 0.8410634183311869,
+              "delta": 0.00040756647670958657
+            },
+            "n_matches": 63,
+            "n_identities": 0,
+            "n_ratio_cancellations": 214
+          },
+          "quadratic": {
+            "best_match": {
+              "input": "log\u2081\u2080(2)",
+              "target": "2-\u221a3",
+              "output": 0.26646510919787486,
+              "delta": 0.0014840832332479459
+            },
+            "n_matches": 6,
+            "n_identities": 2,
+            "n_ratio_cancellations": 75
+          },
+          "power_p2": {
+            "best_match": null,
+            "n_matches": 0,
+            "n_identities": 0,
+            "n_ratio_cancellations": 148
+          },
+          "power_p3": {
+            "best_match": {
+              "input": "2/3",
+              "target": "G_Cat",
+              "output": 0.9159709465465143,
+              "delta": 5.352446514339526e-06
+            },
+            "n_matches": 68,
+            "n_identities": 0,
+            "n_ratio_cancellations": 139
+          },
+          "sigmoid_k5": {
+            "best_match": null,
+            "n_matches": 0,
+            "n_identities": 0,
+            "n_ratio_cancellations": 237
+          },
+          "sigmoid_k10": {
+            "best_match": {
+              "input": "1/4",
+              "target": "1/\u221a2",
+              "output": 0.7114973055270699,
+              "delta": 0.00439052434052245
+            },
+            "n_matches": 8,
+            "n_identities": 0,
+            "n_ratio_cancellations": 138
+          },
+          "sigmoid_k20": {
+            "best_match": {
+              "input": "2-\u221a3",
+              "target": "1/\u03c0",
+              "output": 0.31815406355713793,
+              "delta": 0.00015582262665275737
+            },
+            "n_matches": 25,
+            "n_identities": 0,
+            "n_ratio_cancellations": 29
+          }
+        }
+      },
+      {
+        "exp_id": "EXP-04",
+        "name": "RC Bandpass Filter Response",
+        "sys_id": 43,
+        "domain": "ENERGY",
+        "fp_category": "DIFFRACTION",
+        "consensus_reciprocal": {
+          "pair": "e/\u03c0\u2192G_Cat",
+          "n_blend_funcs": 2,
+          "mean_delta": 1.4296362808474683e-05,
+          "std_delta": 0.0,
+          "min_delta": 1.4296362808474683e-05,
+          "max_delta": 1.4296362808474683e-05,
+          "blend_funcs": [
+            "geometric",
+            "log_ratio"
+          ]
+        },
+        "per_blend_function": {
+          "arithmetic": {
+            "best_match": {
+              "input": "1/2",
+              "target": "1/4",
+              "output": 0.24379385320674807,
+              "delta": 0.006206146793251932
+            },
+            "n_matches": 39,
+            "n_identities": 0,
+            "n_ratio_cancellations": 158
+          },
+          "geometric": {
+            "best_match": {
+              "input": "e/\u03c0",
+              "target": "G_Cat",
+              "output": 0.9159512977371915,
+              "delta": 1.4296362808474683e-05
+            },
+            "n_matches": 59,
+            "n_identities": 3,
+            "n_ratio_cancellations": 165
+          },
+          "log_ratio": {
+            "best_match": {
+              "input": "e/\u03c0",
+              "target": "G_Cat",
+              "output": 0.9159512977371915,
+              "delta": 1.4296362808474683e-05
+            },
+            "n_matches": 59,
+            "n_identities": 3,
+            "n_ratio_cancellations": 165
+          },
+          "quadratic": {
+            "best_match": {
+              "input": "2-\u221a3",
+              "target": "1/2",
+              "output": 0.5000743799169195,
+              "delta": 7.437991691949808e-05
+            },
+            "n_matches": 30,
+            "n_identities": 0,
+            "n_ratio_cancellations": 194
+          },
+          "power_p2": {
+            "best_match": {
+              "input": "\u03c6\u00b2",
+              "target": "\u03b3_EM",
+              "output": 0.5750106940338667,
+              "delta": 0.002204970866133249
+            },
+            "n_matches": 110,
+            "n_identities": 2,
+            "n_ratio_cancellations": 111
+          },
+          "power_p3": {
+            "best_match": {
+              "input": "G_Cat",
+              "target": "ln(2)",
+              "output": 0.6991783921486208,
+              "delta": 0.006031211588675478
+            },
+            "n_matches": 18,
+            "n_identities": 1,
+            "n_ratio_cancellations": 68
+          },
+          "sigmoid_k5": {
+            "best_match": {
+              "input": "2/\u03c0",
+              "target": "1/2",
+              "output": 0.49991919981234817,
+              "delta": 8.08001876518305e-05
+            },
+            "n_matches": 95,
+            "n_identities": 1,
+            "n_ratio_cancellations": 152
+          },
+          "sigmoid_k10": {
+            "best_match": {
+              "input": "2-\u221a3",
+              "target": "\u03c6\u00b2",
+              "output": 0.3814696133327055,
+              "delta": 0.0004963979173996935
+            },
+            "n_matches": 36,
+            "n_identities": 0,
+            "n_ratio_cancellations": 185
+          },
+          "sigmoid_k20": {
+            "best_match": {
+              "input": "1/e",
+              "target": "cos(1)",
+              "output": 0.5349061118580021,
+              "delta": 0.005396194010137689
+            },
+            "n_matches": 30,
+            "n_identities": 1,
+            "n_ratio_cancellations": 113
+          }
+        }
+      },
+      {
+        "exp_id": "EXP-06",
+        "name": "D-T Reaction Rate Composition",
+        "sys_id": 38,
+        "domain": "ENERGY",
+        "fp_category": "ENERGETIC",
+        "consensus_reciprocal": {
+          "pair": "cos(1)\u2192e^(-\u03c0/4)",
+          "n_blend_funcs": 2,
+          "mean_delta": 0.00031162100691964345,
+          "std_delta": 2.7755575615628914e-17,
+          "min_delta": 0.0003116210069196157,
+          "max_delta": 0.0003116210069196712,
+          "blend_funcs": [
+            "geometric",
+            "log_ratio"
+          ]
+        },
+        "per_blend_function": {
+          "arithmetic": {
+            "best_match": {
+              "input": "e^(-\u03c0/4)",
+              "target": "G_Cat",
+              "output": 0.914802890077035,
+              "delta": 0.0011627040229650332
+            },
+            "n_matches": 43,
+            "n_identities": 0,
+            "n_ratio_cancellations": 122
+          },
+          "geometric": {
+            "best_match": {
+              "input": "cos(1)",
+              "target": "e^(-\u03c0/4)",
+              "output": 0.4562497487729159,
+              "delta": 0.0003116210069196712
+            },
+            "n_matches": 83,
+            "n_identities": 1,
+            "n_ratio_cancellations": 128
+          },
+          "log_ratio": {
+            "best_match": {
+              "input": "cos(1)",
+              "target": "e^(-\u03c0/4)",
+              "output": 0.45624974877291585,
+              "delta": 0.0003116210069196157
+            },
+            "n_matches": 83,
+            "n_identities": 1,
+            "n_ratio_cancellations": 128
+          },
+          "quadratic": {
+            "best_match": null,
+            "n_matches": 0,
+            "n_identities": 0,
+            "n_ratio_cancellations": 216
+          },
+          "power_p2": {
+            "best_match": {
+              "input": "\u03c6\u00b2",
+              "target": "G_Cat",
+              "output": 0.9155029067924306,
+              "delta": 0.00046268730756937604
+            },
+            "n_matches": 33,
+            "n_identities": 0,
+            "n_ratio_cancellations": 74
+          },
+          "power_p3": {
+            "best_match": {
+              "input": "log\u2081\u2080(2)",
+              "target": "e/\u03c0",
+              "output": 0.8649009279528783,
+              "delta": 0.00035505147938674764
+            },
+            "n_matches": 33,
+            "n_identities": 0,
+            "n_ratio_cancellations": 76
+          },
+          "sigmoid_k5": {
+            "best_match": {
+              "input": "e^(-\u03c0/4)",
+              "target": "sin(1)",
+              "output": 0.8421240401514244,
+              "delta": 0.0006530553435278863
+            },
+            "n_matches": 50,
+            "n_identities": 0,
+            "n_ratio_cancellations": 139
+          },
+          "sigmoid_k10": {
+            "best_match": null,
+            "n_matches": 0,
+            "n_identities": 0,
+            "n_ratio_cancellations": 160
+          },
+          "sigmoid_k20": {
+            "best_match": {
+              "input": "1/4",
+              "target": "\u03b3_EM",
+              "output": 0.567677847518248,
+              "delta": 0.009537817381751967
+            },
+            "n_matches": 3,
+            "n_identities": 0,
+            "n_ratio_cancellations": 115
+          }
+        }
+      },
+      {
+        "exp_id": "EXP-07",
+        "name": "Parton Momentum (DGLAP evolution)",
+        "sys_id": 13,
+        "domain": "MATTER",
+        "fp_category": "SCALING",
+        "consensus_reciprocal": {
+          "pair": "ln(2)\u21921/\u221a2",
+          "n_blend_funcs": 2,
+          "mean_delta": 0.00022731267314196613,
+          "std_delta": 1.1657341758564144e-15,
+          "min_delta": 0.0002273126731408004,
+          "max_delta": 0.00022731267314313186,
+          "blend_funcs": [
+            "geometric",
+            "log_ratio"
+          ]
+        },
+        "per_blend_function": {
+          "arithmetic": {
+            "best_match": {
+              "input": "2/\u03c0",
+              "target": "ln(2)",
+              "output": 0.6930455135410862,
+              "delta": 0.00010166701885905294
+            },
+            "n_matches": 77,
+            "n_identities": 2,
+            "n_ratio_cancellations": 159
+          },
+          "geometric": {
+            "best_match": {
+              "input": "ln(2)",
+              "target": "1/\u221a2",
+              "output": 0.7073340938596906,
+              "delta": 0.00022731267314313186
+            },
+            "n_matches": 78,
+            "n_identities": 5,
+            "n_ratio_cancellations": 208
+          },
+          "log_ratio": {
+            "best_match": {
+              "input": "ln(2)",
+              "target": "1/\u221a2",
+              "output": 0.7073340938596883,
+              "delta": 0.0002273126731408004
+            },
+            "n_matches": 78,
+            "n_identities": 5,
+            "n_ratio_cancellations": 208
+          },
+          "quadratic": {
+            "best_match": {
+              "input": "sin(1)",
+              "target": "1/\u221a3",
+              "output": 0.5774177078798385,
+              "delta": 6.743869021264004e-05
+            },
+            "n_matches": 87,
+            "n_identities": 1,
+            "n_ratio_cancellations": 265
+          },
+          "power_p2": {
+            "best_match": {
+              "input": "\u221a3/2",
+              "target": "\u03c6\u00b2",
+              "output": 0.38175362062993934,
+              "delta": 0.00021239062016586985
+            },
+            "n_matches": 102,
+            "n_identities": 1,
+            "n_ratio_cancellations": 208
+          },
+          "power_p3": {
+            "best_match": {
+              "input": "G_Cat",
+              "target": "ln(\u221a2)",
+              "output": 0.34696789542449014,
+              "delta": 0.00039430514451743726
+            },
+            "n_matches": 97,
+            "n_identities": 2,
+            "n_ratio_cancellations": 189
+          },
+          "sigmoid_k5": {
+            "best_match": {
+              "input": "\u03b3_EM",
+              "target": "3/4",
+              "output": 0.7490137403431492,
+              "delta": 0.0009862596568508408
+            },
+            "n_matches": 80,
+            "n_identities": 2,
+            "n_ratio_cancellations": 172
+          },
+          "sigmoid_k10": {
+            "best_match": {
+              "input": "\u221a3/2",
+              "target": "2-\u221a3",
+              "output": 0.2678919628652392,
+              "delta": 5.722956588360972e-05
+            },
+            "n_matches": 103,
+            "n_identities": 0,
+            "n_ratio_cancellations": 275
+          },
+          "sigmoid_k20": {
+            "best_match": {
+              "input": "\u03c6/\u221a2",
+              "target": "G_Cat",
+              "output": 0.9160274924390468,
+              "delta": 6.189833904679531e-05
+            },
+            "n_matches": 93,
+            "n_identities": 0,
+            "n_ratio_cancellations": 284
+          }
+        }
+      }
+    ]
+  },
+  "tier_2_partial": {
+    "description": "Systems with measured PLL_R\u00b2 but no full landscape",
+    "n_systems": 16,
+    "results": [
+      {
+        "name": "EMC Effect (nuclear PDFs)",
+        "PLL_R2": 0.999,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.0830344059,
+        "R2_matches_2pct": [],
+        "notes": "Free \u03c3\u00b2_A=0.29, SRC-correlated \u03c3\u00b2_A=-0.98. PLL R\u00b2=0.999. Testable at EIC (~2030s). 9 nuclei scanned."
+      },
+      {
+        "name": "Room Acoustics Spectrum",
+        "PLL_R2": 0.998,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.0820344059,
+        "R2_matches_2pct": [],
+        "notes": "Highest R\u00b2 observed in entire programme. Peter's founding domain."
+      },
+      {
+        "name": "QCD Running Coupling \u03b1_s(Q)",
+        "PLL_R2": 0.998,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.0820344059,
+        "R2_matches_2pct": [],
+        "notes": "PLL R\u00b2=0.998, vertex at logQ=9.23, crossover at 0.53 GeV. Near-perfect parabola in log space."
+      },
+      {
+        "name": "Dark Matter / Baryon Ratio",
+        "PLL_R2": 0.998,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.0820344059,
+        "R2_matches_2pct": [],
+        "notes": "10 scales from NS (10\u2074 m) to universe (4.4\u00d710\u00b2\u2076 m). DM confinement scale ~10\u00b2\u2070 m analogous to QCD at 10\u207b\u00b9\u2075 m."
+      },
+      {
+        "name": "IFR Burning Plasma (reference)",
+        "PLL_R2": 0.996,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.0800344059,
+        "R2_matches_2pct": [],
+        "notes": "T=17.8 keV, n=2.70, B=12T. Alpha=50.2%. SPPI=1.000. Self-ignited."
+      },
+      {
+        "name": "Cosmic Ray Flux",
+        "PLL_R2": 0.991,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.07503440589999999,
+        "R2_matches_2pct": [],
+        "notes": "R\u00b2=0.991 but monotonic. Diagnostic, not lock."
+      },
+      {
+        "name": "Demographics (HDI index)",
+        "PLL_R2": 0.966,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.05003440589999997,
+        "R2_matches_2pct": [],
+        "notes": "R\u00b2=0.966 but no physical vertex. Diagnostic."
+      },
+      {
+        "name": "Neutron Star EOS",
+        "PLL_R2": 0.94,
+        "R2_closest_constant": "G_Cat",
+        "R2_delta": 0.024034405899999944,
+        "R2_matches_2pct": [],
+        "notes": "APR, SLy, BSk all give same \u03c3\u00b2_A trajectory (R\u00b2>0.94). EOS-universality confirmed. Muon onset = regime boundary."
+      },
+      {
+        "name": "Plutonic Rocks (subset)",
+        "PLL_R2": 0.825,
+        "R2_closest_constant": "sin(1)",
+        "R2_delta": 0.01647098480789655,
+        "R2_matches_2pct": [
+          {
+            "constant": "sin(1)",
+            "value": 0.8414709848078965,
+            "delta": 0.01647098480789655
+          }
+        ],
+        "notes": "14 plutonic only. Strongest parabola R\u00b2=0.825. Slow cooling = tighter lock."
+      },
+      {
+        "name": "Igneous Rocks (full series)",
+        "PLL_R2": 0.629,
+        "R2_closest_constant": "2/\u03c0",
+        "R2_delta": 0.007619772367581379,
+        "R2_matches_2pct": [
+          {
+            "constant": "2/\u03c0",
+            "value": 0.6366197723675814,
+            "delta": 0.007619772367581379
+          },
+          {
+            "constant": "\u03c6",
+            "value": 0.6180339887498949,
+            "delta": 0.010966011250105101
+          }
+        ],
+        "notes": "28 rocks, vertex at andesite-dacite boundary (SiO\u2082\u224859)"
+      },
+      {
+        "name": "U-238 Decay Chain",
+        "PLL_R2": 0.618,
+        "R2_closest_constant": "\u03c6",
+        "R2_delta": 3.398874989490874e-05,
+        "R2_matches_2pct": [
+          {
+            "constant": "2/\u03c0",
+            "value": 0.6366197723675814,
+            "delta": 0.01861977236758139
+          },
+          {
+            "constant": "\u03c6",
+            "value": 0.6180339887498949,
+            "delta": 3.398874989490874e-05
+          }
+        ],
+        "notes": "\u2229-shaped anti-lock. Relaxation toward stable Pb-206."
+      },
+      {
+        "name": "Energy Partition (5-channel)",
+        "PLL_R2": 0.579,
+        "R2_closest_constant": "1/\u221a3",
+        "R2_delta": 0.001649730810374117,
+        "R2_matches_2pct": [
+          {
+            "constant": "1/\u221a3",
+            "value": 0.5773502691896258,
+            "delta": 0.001649730810374117
+          },
+          {
+            "constant": "\u03b3_EM",
+            "value": 0.5772156649,
+            "delta": 0.0017843350999999785
+          }
+        ],
+        "notes": "Bremsstrahlung = boundary species (34.9% CLR variance). Vertex at 43.3 keV."
+      },
+      {
+        "name": "Color Confinement (qq\u0304 pair)",
+        "PLL_R2": 0.497,
+        "R2_closest_constant": "1/2",
+        "R2_delta": 0.0030000000000000027,
+        "R2_matches_2pct": [
+          {
+            "constant": "1/2",
+            "value": 0.5,
+            "delta": 0.0030000000000000027
+          }
+        ],
+        "notes": "PLL R\u00b2=0.497, vertex at 1.38 fm, crossover at 0.70 fm. Bowl shape confirmed. String = QCD flux tube."
+      },
+      {
+        "name": "Volcanic Rocks (subset)",
+        "PLL_R2": 0.441,
+        "R2_closest_constant": "\u03c6/\u221a2",
+        "R2_delta": 0.003983975551178909,
+        "R2_matches_2pct": [
+          {
+            "constant": "1/\u221a5",
+            "value": 0.4472135954999579,
+            "delta": 0.006213595499957925
+          },
+          {
+            "constant": "log\u2081\u2080(e)",
+            "value": 0.4342944819032518,
+            "delta": 0.0067055180967481864
+          },
+          {
+            "constant": "\u03c6/\u221a2",
+            "value": 0.4370160244488211,
+            "delta": 0.003983975551178909
+          },
+          {
+            "constant": "e^(-\u03c0/4)",
+            "value": 0.45593812776599624,
+            "delta": 0.014938127765996234
+          }
+        ],
+        "notes": "14 volcanic only. R\u00b2=0.44. Fast cooling = weaker lock."
+      },
+      {
+        "name": "Strong CP Problem (QCD vacuum)",
+        "PLL_R2": 0.39,
+        "R2_closest_constant": "\u03c6\u00b2",
+        "R2_delta": 0.008033988749894805,
+        "R2_matches_2pct": [
+          {
+            "constant": "\u03c6\u00b2",
+            "value": 0.3819660112501052,
+            "delta": 0.008033988749894805
+          }
+        ],
+        "notes": "PLL R\u00b2=0.390, vertex at \u03b8=1.69, bowl shape. \u03b8=0 minimum entropy confirmed. EITT axion prediction stands."
+      },
+      {
+        "name": "Intermediate Rocks (subset)",
+        "PLL_R2": 0.014,
+        "R2_closest_constant": "1/4",
+        "R2_delta": 0.236,
+        "R2_matches_2pct": [],
+        "notes": "Correctly identified as regime boundary, not failure."
+      }
+    ]
+  },
+  "tier_3_predicted": {
+    "description": "Systems without measured data \u2014 predictions only",
+    "n_systems": 55,
+    "n_unique_predictions": 6,
+    "predictions_by_category": {
+      "CONSERVED": {
+        "category": "CONSERVED",
+        "n_systems": 10,
+        "predicted_pair": "log\u2081\u2080(2)\u2192\u03c6/\u221a2",
+        "predicted_delta": 0.00030155181362462313,
+        "model_peak": 0.58,
+        "model_width": 0.35,
+        "status": "UNTESTED_PREDICTION"
+      },
+      "ENERGETIC": {
+        "category": "ENERGETIC",
+        "n_systems": 21,
+        "predicted_pair": "1/3\u2192ln(\u221a2)",
+        "predicted_delta": 1.120741683596771e-05,
+        "model_peak": 0.62,
+        "model_width": 0.25,
+        "status": "UNTESTED_PREDICTION"
+      },
+      "EQUILIBRIUM": {
+        "category": "EQUILIBRIUM",
+        "n_systems": 10,
+        "predicted_pair": "\u03c0/4\u2192\u03c6\u00b2",
+        "predicted_delta": 0.00034884491675846174,
+        "model_peak": 0.5,
+        "model_width": 0.3,
+        "status": "UNTESTED_PREDICTION"
+      },
+      "SCALING": {
+        "category": "SCALING",
+        "n_systems": 3,
+        "predicted_pair": "1/2\u2192ln(\u221a2)",
+        "predicted_delta": 0.0007740236761160646,
+        "model_peak": 0.69,
+        "model_width": 0.2,
+        "status": "UNTESTED_PREDICTION"
+      },
+      "STRUCTURAL": {
+        "category": "STRUCTURAL",
+        "n_systems": 4,
+        "predicted_pair": "\u03c0/4\u2192\u03c6\u00b2",
+        "predicted_delta": 0.00034884491675846174,
+        "model_peak": 0.5,
+        "model_width": 0.3,
+        "status": "UNTESTED_PREDICTION"
+      },
+      "TRANSITION": {
+        "category": "TRANSITION",
+        "n_systems": 7,
+        "predicted_pair": "\u03b3_EM\u21921/3",
+        "predicted_delta": 0.0003724932521423918,
+        "model_peak": 0.71,
+        "model_width": 0.15,
+        "status": "UNTESTED_PREDICTION"
+      }
+    },
+    "artifact_note": "1/3\u2192\u03c6\u00b2 appeared 16 times because all ENERGETIC Tier 3 systems share identical model landscapes. This is ONE prediction, not 16 independent findings."
+  },
+  "holdout": {
+    "system": "Intermediate Rocks (subset)",
+    "sys_id": 4,
+    "PLL_R2": 0.014,
+    "reason": "Grab-bag petrogenetic classification lacks single organizing principle",
+    "recommendation": "Split by petrogenetic series and retest subgroups"
+  }
+}

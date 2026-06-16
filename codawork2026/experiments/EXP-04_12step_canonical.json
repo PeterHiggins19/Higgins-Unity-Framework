@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-04",
+  "name": "Microphone Valley Response (Bessel J\u2081)",
+  "domain": "ACOUSTICS",
+  "carriers": [
+    "Low",
+    "Mid",
+    "High"
+  ],
+  "D": 3,
+  "N": 200,
+  "data_source": {
+    "type": "LOCAL FILE",
+    "url": null,
+    "description": null
+  },
+  "data_hash_sha256_16": "c6fdc076a68d5821",
+  "run_timestamp": "2026-04-22T19:42:24.944409Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-04: Microphone Valley Response (Bessel J\u2081): 3-part simplex, carriers=['Low', 'Mid', 'High']",
+    "step2_n_samples": 200,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Low",
+      "Mid",
+      "High"
+    ],
+    "data_hash_sha256_16": "c6fdc076a68d5821",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      -1.1343037876863564,
+      1.5529004108080473,
+      -0.41859662312169227
+    ],
+    "step4_clr_std_per_part": [
+      1.0255682154649823,
+      1.061840317791198,
+      0.5720545230358723
+    ],
+    "step5_sigma2_range": [
+      0.9064071613320435,
+      3.4653849142150124
+    ],
+    "step5_sigma2_final": 2.5065414023847397,
+    "step6_pll_coeffs": [
+      -0.00015933425139195978,
+      0.036272168351649973,
+      1.122808212267946
+    ],
+    "step6_pll_R2": 0.6533007415429721,
+    "step6_pll_shape": "hill",
+    "step6_vertex": [
+      113.8241402422038,
+      3.1871324009414623
+    ],
+    "step6_curvature": "concave_down",
+    "step7_squeeze_count": 80,
+    "step7_squeeze_closest": {
+      "time_index": 41,
+      "sigma2_A": 3.1413952005234607,
+      "constant": "1/pi",
+      "constant_value": 0.3183098861837907,
+      "test_type": "reciprocal",
+      "test_value": 0.3183298936196779,
+      "delta": 2.0007435887203773e-05
+    },
+    "step7_squeeze_mean": 2.6383136375438743,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.10082893634335925,
+      0.9631846935237214
+    ],
+    "step8_entropy_mean": 0.46727950221905423,
+    "step8_entropy_cv": 43.35137934439109,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.46727950221905423,
+        "H_mean_decimated": 0.4658529983332867,
+        "variation_pct": 0.30527850654549205,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.46727950221905423,
+        "H_mean_decimated": 0.4631301830229067,
+        "variation_pct": 0.8879737237441208,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.46727950221905423,
+        "H_mean_decimated": 0.45814672410837837,
+        "variation_pct": 1.9544572503834214,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 7,
+      "stalls": 7,
+      "spikes": 0,
+      "reversals": 0
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.765547263256593,
+      0.16182924682537847
+    ],
+    "step11_complex_range_im": [
+      -0.09113052447752056,
+      0.17519454165796472
+    ],
+    "step12_radius_range": [
+      0.009451066858128628,
+      0.7656960908077646
+    ],
+    "step12_theta_range": [
+      -3.1242812481309943,
+      3.1377206863406757
+    ],
+    "step9_angular_velocity_std": 0.22075384339600285
+  }
+}

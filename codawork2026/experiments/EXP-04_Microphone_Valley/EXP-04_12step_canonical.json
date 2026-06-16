@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-04",
+  "name": "Acoustic Diffraction (Bessel Decomposition)",
+  "domain": "ACOUSTICS",
+  "carriers": [
+    "Low",
+    "Mid",
+    "High"
+  ],
+  "D": 3,
+  "N": 200,
+  "data_source": {
+    "type": "DERIVED",
+    "url": null,
+    "description": "Circular piston directivity decomposition into [Low, Mid, High] frequency energy bands. Sinc approximation to Bessel J\u2081. Based on Bouwkamp (1941) diffraction theory. a=5cm piston, f=100-20000Hz, 200 frequency points. The founding case: DADC baffle step (6.02 dB)."
+  },
+  "data_hash_sha256_16": "9525075c8b768c02",
+  "run_timestamp": "2026-04-22T17:41:29.594994Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-04: Acoustic Diffraction (Bessel Decomposition): 3-part simplex, carriers=['Low', 'Mid', 'High']",
+    "step2_n_samples": 200,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Low",
+      "Mid",
+      "High"
+    ],
+    "data_hash_sha256_16": "9525075c8b768c02",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      -1.1351909892378977,
+      1.0945601209116402,
+      0.04063086832625748
+    ],
+    "step4_clr_std_per_part": [
+      0.9789345866818568,
+      0.8344470848206381,
+      0.6282773913075247
+    ],
+    "step5_sigma2_range": [
+      0.969406565968999,
+      3.380751600659972
+    ],
+    "step5_sigma2_final": 2.0493473427958278,
+    "step6_pll_coeffs": [
+      -0.00010210315463831671,
+      0.02061157136060576,
+      1.61254065633467
+    ],
+    "step6_pll_R2": 0.34481366195297813,
+    "step6_pll_shape": "hill",
+    "step6_vertex": [
+      100.93503689292848,
+      2.652755514186655
+    ],
+    "step6_curvature": "concave_down",
+    "step7_squeeze_count": 114,
+    "step7_squeeze_closest": {
+      "time_index": 29,
+      "sigma2_A": 2.2369846868225385,
+      "constant": "1/sqrt5",
+      "constant_value": 0.4472135954999579,
+      "test_type": "reciprocal",
+      "test_value": 0.4470303287683304,
+      "delta": 0.00018326673162755158
+    },
+    "step7_squeeze_mean": 2.319173692832728,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.11558919182238206,
+      0.9643221360003852
+    ],
+    "step8_entropy_mean": 0.6608829601496089,
+    "step8_entropy_cv": 23.73968691565354,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.6608829601496089,
+        "H_mean_decimated": 0.6586382057326037,
+        "variation_pct": 0.33965990233687704,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.6608829601496089,
+        "H_mean_decimated": 0.6560888812122063,
+        "variation_pct": 0.7254051362312789,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.6608829601496089,
+        "H_mean_decimated": 0.6542120081326926,
+        "variation_pct": 1.009399911809816,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 21,
+      "stalls": 14,
+      "spikes": 0,
+      "reversals": 7
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.692408807066277,
+      0.22268198920184545
+    ],
+    "step11_complex_range_im": [
+      -0.19312746364173633,
+      0.0869711439153438
+    ],
+    "step12_radius_range": [
+      0.005440569938588439,
+      0.6994007955291685
+    ],
+    "step12_theta_range": [
+      -3.1066265820876424,
+      3.1321665494395883
+    ],
+    "step9_angular_velocity_std": 0.2635894938189421
+  }
+}

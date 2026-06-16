@@ -1,0 +1,41 @@
+{
+ "schema": "hs_ai_assist/1.1",
+ "folder": "HUF/huf-gov/doctrine/",
+ "topic": "The modernized HUF-GOV operating doctrine (current).",
+ "purpose": "Local bring-your-own-AI onboarding node. Orient any AI/agent on THIS folder, then hand back to the central chain.",
+ "paths_note": "key_files relative to THIS folder; join_the_chain relative to the Hs repo root.",
+ "byo_ai_onboarding": {
+  "mission": "Learn compositional analysis with Hs \u2014 a deterministic EXTENSION to standard CoDa \u2014 well enough to run it and read its outputs. Bring your own AI; this node + the chain teach it.",
+  "the_one_idea": "A composition carries only relative information; Hs reads its DYNAMICS in Aitchison log-ratio geometry, deterministically, with a hash receipt. 4 parts = an exact quaternion rotation; higher-D is tiled from overlapping exact 4-part charts and reconstructed losslessly.",
+  "standard_coda_relation": "Hs uses STANDARD CoDa tools (closure, CLR, ILR/Helmert, the Aitchison metric) \u2014 the same geometry the CoDa community uses \u2014 and extends them into a deterministic monitoring instrument for machine and embedded applications. The mathematics is standard CoDa-compatible; the deterministic instrument is the new part.",
+  "determinism_doctrine": "Determinism is binding by doctrine AND practice: same input -> same output -> same content hash, on any machine, no statistics in the science path. See ../HUF/huf-gov/doctrine/.",
+  "learning_path": [
+   "HS_GUIDE.md (what/why/how)",
+   "HS_FAST_REFRESH.json (live state \u2014 source of truth)",
+   "ai-refresh/AI_RAPID_LEARN.md (deep onboarding)",
+   "run: python HCI-CNTT/run_cntt.py <composition.csv> -o out.json",
+   "then this folder's specific_knowledge"
+  ],
+  "expert_decides": "The instrument reads and hands you diagnostics (helmsman, K_eff, regime, internal/external fault); the domain expert assigns meaning. Open-loop (Skydiver Doctrine)."
+ },
+ "specific_knowledge": {
+  "what": "The four foundational doctrines carried to the CN-TT v4 era + NASA cross-walk: Open-Loop (Skydiver), Safe Operations, Kill-Test, Composition Monitoring (MC-4). Supersedes the March-2026 originals in ../_legacy_2026-03/.",
+  "key_files": [
+   "HUF_GOV_OPERATING_DOCTRINE_2026-06.md",
+   "DOCTRINE_INDEX.json"
+  ],
+  "key_results": [
+   "Tier 2: governance doctrine; determinism binding by doctrine and practice."
+  ],
+  "related_topics": [
+   "../NASA_STYLE_GOVERNANCE.md"
+  ],
+  "claim_tiers": "Tier 1 = verified/computed; Tier 2 = standard math soundly applied / practiced doctrine; Tier 3 = to earn."
+ },
+ "join_the_chain": [
+  "AI_ASSIST.json (repo root master node)",
+  "ai-refresh/AI_ASSIST.json (control hub)",
+  "ai-refresh/AI_ASSIST_PATH_PROTOCOL.md (the protocol)"
+ ],
+ "governance": "Honest-broker; nulls reported straight; Peter is the sole commit/contact gate; AI-assisted per HUF-STD-001."
+}

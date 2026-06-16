@@ -1,0 +1,88 @@
+{
+  "_type": "HUF_INTEGRITY_CERTIFICATE",
+  "_version": "1.0",
+  "_framework": "Higgins Unity Framework (HUF)",
+  "_method": "Entropy-Invariant Time Transformer (EITT)",
+  "_reference": "ai-refresh/HUF_COMPLETE_REFERENCE.json",
+  "experiment_id": "EXP-10",
+  "experiment_name": "Full Sweep \u2014 All Mapped Systems",
+  "description": "Integrity certificate for EXP-10",
+  "created": "2026-04-19T18:02:20.302587Z",
+  "sealed": "2026-04-19T18:02:20.304848Z",
+  "step_count": 6,
+  "master_hash": "45070be70a04532880d977ff14ce70b1e7e531ce1fcb8af235b570da1303a73f",
+  "chain": [
+    {
+      "step_number": 1,
+      "step_name": "script_integrity",
+      "input_hash": "e5bbc7b7f8d368c426de078cad29c3aa2a3c6af08852684b1f30f5f5d4fc8e9c",
+      "output_hash": "423dda6c17cd96a73db673418a14e419e1ea055b8726f72ec19974465ea2ee84",
+      "prev_hash": "GENESIS",
+      "step_hash": "579e0f2ffb742c67839118daf161cf47065f7a971c513b0c1c1f42213fc54e02",
+      "timestamp": "2026-04-19T18:02:20.303264Z",
+      "metadata": {
+        "file": "exp10_full_sweep.py",
+        "sha256": "7a460171800776fd5800bf2b9d44c6e5236a8363ab82468427f220b1cc05c1a3"
+      }
+    },
+    {
+      "step_number": 2,
+      "step_name": "output_integrity",
+      "input_hash": "853a1aab575f9b7d5bcd191c8594dee7c7a8e0de5e772bb3f86b5c7e218e1598",
+      "output_hash": "2d6101f1b0265d3f742935e630e2233c920a4775f11e0287c092b06f5086688e",
+      "prev_hash": "579e0f2ffb742c67839118daf161cf47065f7a971c513b0c1c1f42213fc54e02",
+      "step_hash": "e0c441190226502fcbe63e03a1b78d4a33a51c45031cc45affeccc377f8ff066",
+      "timestamp": "2026-04-19T18:02:20.303781Z",
+      "metadata": {
+        "file": "exp10_full_sweep.json",
+        "sha256": "baf46956a8ba5c7d05c42f549cb9ec1ab2d9ea46c56ddaba439b311ae9f675d4"
+      }
+    },
+    {
+      "step_number": 3,
+      "step_name": "json_valid",
+      "input_hash": "d6e01814b03bd204bcd4f6024f8ef34a1e35ebbc8b6ed7a45ee550cc5c917ce8",
+      "output_hash": "0f1608d914a88aadd867168c5ab33ae2396332c6725deb62b36d3aa0312f6f9b",
+      "prev_hash": "e0c441190226502fcbe63e03a1b78d4a33a51c45031cc45affeccc377f8ff066",
+      "step_hash": "c63adf848267692ad687a8fc06eca95221e52efa7a705845c3588264d10b2886",
+      "timestamp": "2026-04-19T18:02:20.304231Z"
+    },
+    {
+      "step_number": 4,
+      "step_name": "data_extraction",
+      "input_hash": "eef083126d94b26a60fc363943ff069da938a747c26e9f64ef943b920bfde865",
+      "output_hash": "470872b2e0ef3eba68603c7a89652586c84372a5269e459aa631d38ad55e4640",
+      "prev_hash": "c63adf848267692ad687a8fc06eca95221e52efa7a705845c3588264d10b2886",
+      "step_hash": "1a42d30a1ba82d096ba05f7aa4186386849f087adf3ff9eaa3e94e3fbd887cc7",
+      "timestamp": "2026-04-19T18:02:20.304282Z",
+      "metadata": {
+        "total_numeric_values": 34
+      }
+    },
+    {
+      "step_number": 5,
+      "step_name": "physics_validation",
+      "input_hash": "9c451f54287f379f2c6d456617074e256df8006d2298d2b842145fa1ab31681d",
+      "output_hash": "86e7187c7102deb66cb595652bd4748b5e42ebaabb5d4a8bedf44d34ed55c841",
+      "prev_hash": "1a42d30a1ba82d096ba05f7aa4186386849f087adf3ff9eaa3e94e3fbd887cc7",
+      "step_hash": "3c7067f884e29861f2e8a88dfce60905aaffeeccecbe14d8d20ef53c55817353",
+      "timestamp": "2026-04-19T18:02:20.304294Z",
+      "metadata": {
+        "physics_issues": 0
+      }
+    },
+    {
+      "step_number": 6,
+      "step_name": "sealed_conclusion",
+      "input_hash": "bec26c315d99aa35d83acc16aff2e7e0b769f87b5a3a6585131f4b31e60e8848",
+      "output_hash": "3ef09184e7e8f405059b3ae2c847874c7152c2d570e24937240d6b87051a61bc",
+      "prev_hash": "3c7067f884e29861f2e8a88dfce60905aaffeeccecbe14d8d20ef53c55817353",
+      "step_hash": "883137bd910579bd4db17dac939db8fbb140f8bed47cf1222dcb9362ffeb0fee",
+      "timestamp": "2026-04-19T18:02:20.304837Z",
+      "metadata": {
+        "sha256": "9dff245fcda111db0663daa284127266ea7a3080518e392ed8d53dd8ea590342"
+      }
+    }
+  ],
+  "verification_instructions": "To verify this certificate: load the chain, recompute each step_hash from (step_name + input_hash + output_hash + prev_hash), then verify master_hash = SHA-256(concat(all step_hashes)). Any mismatch indicates data alteration."
+}

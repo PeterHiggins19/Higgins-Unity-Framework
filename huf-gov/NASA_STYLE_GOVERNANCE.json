@@ -1,0 +1,29 @@
+{
+ "schema": "nasa_style_governance/1.0",
+ "title": "NASA-style governance methods & principles, mapped to Hs practice",
+ "date": "2026-06-11",
+ "author": "Peter Higgins (human authorship for claims); AI-assisted per HUF-STD-001 (Claude Fable 5)",
+ "honest_scope": "Hs is NOT NASA-certified and claims no flight heritage. This adopts NASA-STYLE governance as a self-imposed discipline. Flight/space-readiness framing is Tier 3 (aspiration).",
+ "claim_tiers": {"T1": "implemented + verified", "T2": "practiced as discipline/doctrine", "T3": "aspiration, to earn"},
+ "crosswalk": [
+  {"nasa": "Project lifecycle + Key Decision Points (NPR 7120.5)", "hs": "HGS-000..008 Pre-Phase-A suite; CCTT 7-phase with 2 operator gates; push protocol green-CI gate", "tier": "T2"},
+  {"nasa": "Technical Authority (programmatic / engineering / safety-mission-assurance)", "hs": "Peter = sole commit/contact (programmatic); frozen oracle = engineering authority; honest-broker + claim tiers = mission assurance", "tier": "T2"},
+  {"nasa": "Independent Verification & Validation (IV&V)", "hs": "frozen-oracle parity; engine self-test (BIST); HUF AI Collective cross-checks; open cross-platform reproduction challenge", "tier": "T1/T2"},
+  {"nasa": "FDIR (Fault Detection, Isolation, Recovery)", "hs": "internal-vs-external shock classifier + channel isolation; SELF_DIAGNOSTICS_AND_LIFECYCLE; E-21 carrier guard", "tier": "T1"},
+  {"nasa": "Configuration Management", "hs": "hash-chained provenance (cntt_content_sha256); version triple; frozen oracle; push/CHANGELOG/PUSHES_INDEX chain", "tier": "T1"},
+  {"nasa": "Fail-safe / safe-state (no-op is valid)", "hs": "Safe Operations Doctrine (hold-and-report); DX-NUL-DIS null flag; L3-DSJ-ERR refuse-to-guess", "tier": "T1/T2"},
+  {"nasa": "Human command authority (no autonomous actuation)", "hs": "Open-Loop / Skydiver Doctrine: engine emits diagnostics + codes, never an action", "tier": "T2"},
+  {"nasa": "V&V + documented operating limits (off-nominal testing)", "hs": "Kill-Test Doctrine: non-proportional data, degenerate carriers/E-21, broken closure documented as confirmed kills", "tier": "T1/T2"},
+  {"nasa": "Observability before control", "hs": "Composition Monitoring (MC-4): the 4th monitoring category; ratio blindness closed", "tier": "T2"},
+  {"nasa": "Risk-informed decision making", "hs": "claim tiers; nulls reported straight; Investigation Catalog keeps falsified branches on record", "tier": "T1/T2"},
+  {"nasa": "Flight readiness / Earth-space twin", "hs": "SPACE_READINESS_AND_CHALLENGE.md deterministic twin study (engine adds zero variance)", "tier": "T3"}
+ ],
+ "lifecycle_in_hs_terms": {
+  "PrePhaseA_concept": "flight spec suite (HGS-000..008), feasibility studies, candidate/frontier roadmap. Gate: survive the kill-test.",
+  "PhaseAB_definition": "domain study on real data with a named expert (geology-wehner, microbiome). Gate: CCTT-2 adapter-select.",
+  "PhaseCD_build_verify": "engine run + self-test + frozen-oracle parity + figures + writeup. Gate: CCTT-6 self-verify + green CI.",
+  "PhaseE_operate": "deterministic instrument in use; FDIR running; operator decides. Gate: the open loop.",
+  "PhaseF_closeout": "journal, hash-chain the record, archive."
+ },
+ "references": ["doctrine/HUF_GOV_OPERATING_DOCTRINE_2026-06.md", "doctrine/DOCTRINE_INDEX.json", "../../Hs/SPACE_READINESS_AND_CHALLENGE.md", "../../Hs/HCI-CNTT/SELF_DIAGNOSTICS_AND_LIFECYCLE.md"]
+}

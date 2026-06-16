@@ -168,7 +168,7 @@ Peter Higgins | Rogue Wave Audio | CoDaWork 2026, Coimbra | April 2026
 
 ## 6. Honest Disclosures
 
-1. EITT is an empirical observation, NOT a theorem. Formal proof is Open Problem O-1.
+1. EITT residual is analytically bounded (Open Problem O-1 resolved April 28, 2026). The closed-form bound separates three failure modes: persistence (ρ), curvature (λ_max), and variance (Tr(Σ)). See EITT_HESSIAN_BOUND.md §8.
 2. Geometric-mean superiority over arithmetic mean NOT empirically demonstrated at low compression.
 3. Spatial EITT has been RETRACTED (HEALPix NESTED ordering error).
 4. Financial = mean closing prices (price-level, K=9), NOT market-cap.

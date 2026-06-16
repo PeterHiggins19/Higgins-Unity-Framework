@@ -105,7 +105,7 @@ The dual-lens diagnostic that emerges naturally: Shannon for the interior, Aitch
 3. CheMixHub data is curated for machine-learning benchmarking. Some preprocessing decisions may affect compositional structure.
 4. The Jensen correction requires a damping coefficient proportional to composition range before it is practically useful.
 5. The boundary threshold of min(x_i) = 0.05 was chosen empirically. Formal derivation is an open problem.
-6. EITT is an empirical observation, not a theorem. Formal proof is Open Problem O-1.
+6. EITT residual is analytically bounded (Open Problem O-1 resolved April 28, 2026 — see EITT_HESSIAN_BOUND.md §8).
 7. The 53% overall pass rate includes both interior and boundary compositions. Interior-only pass rates (54–82%) are more comparable to temporal EITT results.
 8. The olfactory-similarity dataset could not be tested. Medicine formulations had only 1 testable group.
 

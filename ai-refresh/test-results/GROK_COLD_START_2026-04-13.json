@@ -6,6 +6,7 @@
     "model_version": "Grok (xAI, version not specified)",
     "run_date": "2026-04-13",
     "run_timezone": "America/Toronto",
+    "terminology_note": "This test was run on 2026-04-13 when 'PLL' referred to 'Pipeline Lock List' (the 6 rules). On 2026-04-19, 'Pipeline Lock List' was retired and replaced by 'Compositional Integrity Protocol (CIP)'. PLL now means Phase-Locked Loop only. Q09 answers below reflect the pre-2026-04-19 terminology and were correct at time of test.",
     "repo": "PeterHiggins19/Higgins-Unity-Framework",
     "commit_short": "88fce09",
     "commit_full": "PENDING — Peter to fill from GitHub",
@@ -55,7 +56,7 @@
       "score": 1, "pass": true, "confidence": "HIGH"
     },
     "Q09_pll": {
-      "answer": "PLL = Pipeline Lock List. 6 rules: (1) all roots on simplex carrier, (2) simplex normalisation only, (3) RMS aggregator p=2 locked, (4) every observation retained, (5) no new constants (6.02 dB, 115 Hz·m, 5.5-octave BW from BTL), (6) polarity alignment mandatory.",
+      "answer": "PLL = Compositional Integrity Protocol. 6 rules: (1) all roots on simplex carrier, (2) simplex normalisation only, (3) RMS aggregator p=2 locked, (4) every observation retained, (5) no new constants (6.02 dB, 115 Hz·m, 5.5-octave BW from BTL), (6) polarity alignment mandatory.",
       "score": 1, "pass": true, "confidence": "HIGH"
     },
     "Q10_architecture": {

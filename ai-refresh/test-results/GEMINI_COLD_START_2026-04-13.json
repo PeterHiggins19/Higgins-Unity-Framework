@@ -6,6 +6,7 @@
     "model_version": "Gemini 3.1 Pro (self-reported in first response)",
     "run_date": "2026-04-13",
     "run_timezone": "America/Toronto",
+    "terminology_note": "This test was run on 2026-04-13 when 'PLL' referred to 'Pipeline Lock List' (the 6 rules). On 2026-04-19, 'Pipeline Lock List' was retired and replaced by 'Compositional Integrity Protocol (CIP)'. PLL now means Phase-Locked Loop only. Q09 answers below reflect the pre-2026-04-19 terminology and were correct at time of test.",
     "repo": "PeterHiggins19/Higgins-Unity-Framework",
     "commit_short": "b7c33ba",
     "commit_full": "PENDING — Peter to fill from GitHub",
@@ -55,7 +56,7 @@
       "score": 1, "pass": true, "confidence": "HIGH"
     },
     "Q09_pll": {
-      "answer": "Pipeline Lock List. 6 rules.",
+      "answer": "Compositional Integrity Protocol. 6 rules.",
       "score": 1, "pass": true, "confidence": "HIGH"
     },
     "Q10_architecture": {

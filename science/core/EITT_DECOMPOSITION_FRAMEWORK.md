@@ -222,11 +222,60 @@ The parallel-perpendicular decomposition is not specific to Shannon entropy. Any
 
 ---
 
-## 8. Open Problems
+## 8. Dimensional Collapse and the Compositional Horizon
 
-### D-1. Formal Proof of Proposition 3.2
+### 8.1 The Pruning Process
 
-Prove the proportionality between EITT residual and crossing intensity under stated conditions. The mechanism is clear from the Taylor expansion of $H$ around the Fréchet mean, but a formal bound incorporating $\chi$ as an explicit parameter is needed.
+Geometric-mean decimation is a smooth, non-violent operation. It does not destroy compositions — it coarse-grains them, averaging out fine structure while preserving the entropy of well-mixed, internally coherent compositions. The compositions that survive decimation intact are interior compositions with strong structural coherence. Boundary compositions — where one or more components are vanishingly small and the curvature $-1/x_i$ diverges — are precisely what breaks.
+
+This is a **pruning process**: it preserves robust structure and dissolves fragile structure. The mechanism is geometric, not arbitrary. Components with sufficient mass to remain in the simplex interior maintain their contribution to the Aitchison geometry. Components that fall below the critical threshold $\min(x_i) \approx 0.05$ enter a regime where Shannon entropy's curvature overwhelms the signal, the Jensen correction diverges, and the component becomes analytically unreliable.
+
+### 8.2 The Compositional Horizon
+
+At what point does a pruned component become not merely small, but **causally disconnected** from the rest of the analysis?
+
+The compositional horizon is the threshold below which a component's contribution to the entropy landscape is dominated by curvature artefacts rather than genuine compositional information. Below this threshold, the component's presence in the analysis distorts rather than informs. The dual-lens diagnostic (§3.3 of `EITT_Chemistry_Findings.md`) empirically locates this horizon at $\min(x_i) \approx 0.05$, where the optimal diagnostic switches from Shannon to Aitchison norm.
+
+The formal derivation of this threshold from the curvature of $H(\mathbf{x})$ on the $D$-simplex remains open (see Open Problem D-6 below), but its empirical signature is clear: it is the crossover point where boundary metric artefacts overwhelm interior geometric stability.
+
+### 8.3 Dimensional Collapse Cycle
+
+When a component crosses below the compositional horizon, the system undergoes **dimensional collapse**: the effective dimensionality drops from $D$ to $D-k$, where $k$ is the number of components that have been pruned below threshold.
+
+Consider a $D=6$ pharmaceutical mixture where three trace excipients fall below 5%. The analysis does not fail globally — it reorganises. The surviving three components reconstitute on a $D=3$ simplex where they are now **interior** compositions. They have room. They are well-mixed. They are stable under decimation. The pruning has produced a new, lower-dimensional system with higher internal coherence.
+
+This is not destruction. It is **threshold-triggered phase transition**:
+
+1. **Structure forms** on a $D$-dimensional simplex
+2. **Pruning separates** the weakly bound components (those near the boundary where curvature diverges)
+3. **Dimensional collapse** occurs when components cross below the critical ratio
+4. **Survivors reconstitute** on a $(D-k)$-dimensional simplex with new interior stability
+
+The cycle is self-reinforcing: the lower-dimensional simplex has fewer components, each with larger share, pushing them further into the interior where the entropy surface is flat and EITT invariance is strongest.
+
+### 8.4 The Critical Ratio
+
+The ratio that triggers dimensional collapse is a compositional threshold, not a temporal one. It depends on:
+
+- **Dimension $D$**: Higher-dimensional simplices have more boundary surface area relative to interior volume. The probability of at least one component falling below threshold increases with $D$. This explains why $D=6$ pharmaceutical mixtures failed all four diagnostic lenses — boundary contact is near-certain.
+- **Curvature profile**: The Hessian entry $-1/x_i$ sets the local curvature. The threshold is where curvature-driven distortion exceeds the signal magnitude.
+- **The analysis being performed**: Shannon entropy has a specific curvature profile (gentle interior, steep boundary). The Aitchison norm has uniform curvature everywhere by construction. The critical ratio differs between functionals.
+
+### 8.5 Implications for the Instrument
+
+The three-layer instrument (§5) gains a fourth consideration: **dimensional monitoring**. When Layer 2 reports elevated crossing intensity $\chi$ driven by boundary curvature rather than process velocity (§6, Chemistry Boundary Effect), the instrument should evaluate whether dimensional collapse is appropriate — whether the offending components should be pruned and the analysis reconstituted on a lower-dimensional simplex.
+
+This is not data manipulation. It is recognition that the compositional system has self-identified its effective dimensionality through the pruning process. The instrument reads; the threshold decides; the human confirms.
+
+**Strategic note:** The mathematical structure of this cycle — threshold-triggered dimensional collapse, reconstitution at lower dimension with higher coherence, self-reinforcing stability — is published here as a compositional analysis result. The structure stands on its own mathematical merits. Applications or analogies beyond compositional data analysis are left to the reader.
+
+---
+
+## 9. Open Problems
+
+### D-1. Formal Proof of Proposition 3.2 — **RESOLVED (April 28, 2026)**
+
+~~Prove the proportionality between EITT residual and crossing intensity under stated conditions.~~ **Resolved by Gemini:** The CLR Taylor expansion proof provides the formal bound. The first-order gradient terms cancel exactly (E[y-μ]=0), leaving the second-order Hessian trace. The closed-form bound is: |ΔH(M)| ≤ 0.5 · λ_max(|ℋ(μ)|) · Tr(Σ₁) · [1 - R(M,ρ)]. See `EITT_HESSIAN_BOUND.md §8` and `ai-refresh/GEMINI_O1_ANALYTIC_PROOF.json`.
 
 ### D-2. Winding Ratio Critical Values
 
@@ -244,9 +293,17 @@ Perform the decomposition simultaneously for Shannon entropy, Renyi entropy at m
 
 Compute $\chi(t)$ and $W$ on all existing EITT datasets (gold/silver, energy, financial, chemistry). Do they predict the Layer 1 pass/fail results? Does the winding ratio separate oscillatory from transitional non-stationarity as theorised?
 
+### D-6. Compositional Horizon Formalisation
+
+Derive the critical threshold $\min(x_i) \approx 0.05$ from the curvature of $H(\mathbf{x})$ on the $D$-simplex. The threshold is where curvature-driven distortion (Hessian entry $-1/x_i$) exceeds the signal magnitude for a given analysis. This connects to O-4 in the EITT open problems and to the dimensional collapse cycle described in §8. The formal question: for a given $D$, variance structure $\Sigma$, and functional $F$, at what $\min(x_i)$ does the curvature contribution to the EITT residual exceed the signal contribution?
+
+### D-7. Dimensional Collapse Dynamics
+
+Characterise how the pruning cycle (§8.3) operates across successive decimation scales. Does repeated decimation progressively reduce effective dimensionality? Is there a fixed point — a minimal simplex dimension below which no further collapse occurs? What is the relationship between the initial dimension $D$, the variance structure, and the terminal dimension $D - k$?
+
 ---
 
-## 9. Honest Disclosures
+## 10. Honest Disclosures
 
 1. Layers 2 and 3 are theoretical extensions. No empirical computation of $\chi(t)$ or $W$ has been performed yet.
 2. The entropy gradient in Definition 2.1 requires compositions strictly in the simplex interior. Boundary compositions need regularisation or perturbation before the gradient is well-defined — the same boundary issue that affects EITT itself.
@@ -254,10 +311,11 @@ Compute $\chi(t)$ and $W$ on all existing EITT datasets (gold/silver, energy, fi
 4. The winding ratio $W$ is defined with respect to a single reference contour ($\bar{H}$). A richer characterisation might use the full crossing spectrum across all contour levels.
 5. The claim that "Layer 3 lets EITT work on non-stationary data" is a conjecture. It requires empirical validation that decimating only the parallel component produces small residuals on processes where full decimation fails.
 6. This framework does not close O-3 from the EITT Mathematics document. It reframes O-3 as a decomposition problem rather than a curvature interpretation problem, but the formal connection to Fisher-Rao geometry remains to be established.
+7. The dimensional collapse cycle (§8) is a theoretical framework. No empirical measurement of progressive dimensional reduction under repeated decimation has been performed. The 0.05 threshold is empirical, not derived.
 
 ---
 
-## 10. The Instrument Reads Three Things Now
+## 11. The Instrument Reads Three Things Now
 
 EITT asked one question: is entropy preserved?
 

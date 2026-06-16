@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-12",
+  "name": "GW150914 Phase Composition",
+  "domain": "GRAVITY",
+  "carriers": [
+    "Inspiral",
+    "Merger",
+    "Ringdown"
+  ],
+  "D": 3,
+  "N": 60,
+  "data_source": {
+    "type": "DERIVED",
+    "url": "https://gwosc.org/eventapi/html/GWTC-1-confident/GW150914/v3/",
+    "description": "GW150914 gravitational wave energy partition modeled as 3-phase composition [Inspiral, Merger, Ringdown]. 60 time steps. Based on LIGO/Virgo GW150914 waveform decomposition. GWOSC Open Science Center data."
+  },
+  "data_hash_sha256_16": "bcdc5e52a14cd8b6",
+  "run_timestamp": "2026-04-22T17:41:34.234671Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-12: GW150914 Phase Composition: 3-part simplex, carriers=['Inspiral', 'Merger', 'Ringdown']",
+    "step2_n_samples": 60,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Inspiral",
+      "Merger",
+      "Ringdown"
+    ],
+    "data_hash_sha256_16": "bcdc5e52a14cd8b6",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.5562282783476625,
+      0.8739181149437627,
+      -1.430146393291426
+    ],
+    "step4_clr_std_per_part": [
+      2.4334711910741587,
+      1.5653516512605405,
+      1.7315358754783117
+    ],
+    "step5_sigma2_range": [
+      0.003191930798940262,
+      11.370324317960428
+    ],
+    "step5_sigma2_final": 11.370324317960428,
+    "step6_pll_coeffs": [
+      0.0013271930315805792,
+      0.14646317050557164,
+      -1.128614678344628
+    ],
+    "step6_pll_R2": 0.9928403603521267,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      -55.17779517390394,
+      -5.169372089683129
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 3,
+    "step7_squeeze_closest": {
+      "time_index": 20,
+      "sigma2_A": 2.0724724935932506,
+      "constant": "ln_phi",
+      "constant_value": 0.48121182505960347,
+      "test_type": "reciprocal",
+      "test_value": 0.48251545103317683,
+      "delta": 0.0013036259735733635
+    },
+    "step7_squeeze_mean": 4.945079186803599,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.01958572259106771,
+      0.6804889481341773
+    ],
+    "step8_entropy_mean": 0.388274660100543,
+    "step8_entropy_cv": 58.57223840255457,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.388274660100543,
+        "H_mean_decimated": 0.3882565449335479,
+        "variation_pct": 0.004665554788055001,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.388274660100543,
+        "H_mean_decimated": 0.38849870822706173,
+        "variation_pct": 0.0577035149449876,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.3712332265559913,
+        "H_mean_decimated": 0.3668215954023472,
+        "variation_pct": 1.188371847684998,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 1,
+      "stalls": 1,
+      "spikes": 0,
+      "reversals": 0
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.5386655762662186,
+      0.4049595392473502
+    ],
+    "step11_complex_range_im": [
+      -0.10704049559875521,
+      0.5138836623536835
+    ],
+    "step12_radius_range": [
+      0.10430177884269112,
+      0.549197842996715
+    ],
+    "step12_theta_range": [
+      -2.94660182478898,
+      1.3968571487201642
+    ],
+    "step9_angular_velocity_std": 0.11946549922154104
+  }
+}

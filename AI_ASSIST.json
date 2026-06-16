@@ -1,0 +1,39 @@
+{
+ "schema": "huf_ai_assist/1.1",
+ "folder": "Higgins-Unity-Framework/ (repo root)",
+ "topic": "HUF — the experimental origin, governance layer, and development history of Hs (Higgins Decomposition). This is the lineage/support repo; the current instrument is Hs.",
+ "purpose": "Master bring-your-own-AI node for the HUF repo. Orient any AI/agent on what HUF is, where it sits in the arc of discovery, and how to climb forward to the current Hs work.",
+ "read_first": "HUF is HISTORY + GOVERNANCE + SUPPORT, not the current engine. The live deterministic instrument (CNT -> CNQ -> CN-TT v4) lives in the Hs repo: https://github.com/PeterHiggins19/higgins-decomposition . If you want to RUN or BUILD, go to Hs. If you want to understand WHERE THE IDEAS CAME FROM and the governance that holds them, stay here.",
+ "byo_ai_onboarding": {
+  "mission": "Understand HUF as the arc of discovery that produced Hs. Compositional analysis as a deterministic EXTENSION to standard CoDa was discovered and stress-tested here (EITT, MC-4), then formalized into the Hs instrument.",
+  "the_arc": "DADC (loudspeaker diffraction, Rogue Wave Audio) -> Higgins Operator H1 -> HUF (EITT + MC-4 + the cross-AI collective) -> Hs (Higgins Decomposition) -> CNT -> CNQ -> CN-TT v4. HUF is the middle: where the physical-first-principles discovery became compositional monitoring.",
+  "standard_coda_relation": "HUF framed composition monitoring (MC-4) as a fourth monitoring category on top of standard CoDa (Aitchison geometry, CLR/ILR). Hs made it a deterministic, hash-chained instrument. The math is standard CoDa-compatible; the instrument is the new part.",
+  "governance_and_discipline": "Shared with Hs: honest-broker, claim tiers, the open-loop/Skydiver + safe-ops + kill-test + MC-4 doctrines (huf-gov/doctrine/), the carrier filter, and the Double-Verify & Staged-Recovery discipline (DVR-1.0, defined in the Hs repo ai-refresh/). Peter is the sole commit/contact gate.",
+  "lose_nothing": "HUF was the messy, wide-ranging experiment 'that went everywhere it could.' It is kept WHOLE on purpose (archive/, dormant/, drafts/, discoveries/) -- the past is the strength and the future. An older HUF repo also exists (private, unused, preserved)."
+ },
+ "specific_knowledge": {
+  "what": "HUF = Higgins Unity Framework. Core historical discovery: EITT (Entropy-Invariant Time Transformer) -- Shannon entropy of compositional time series near-invariant under geometric-mean decimation (0.18% over 341:1). Validated on energy, chemistry (500k pts), hardware reliability, climate, geochemistry (40,666 igneous rocks). MC-4 (Composition Monitoring) named here as the 4th monitoring category. The cross-AI collective (Claude/ChatGPT/Grok/Gemini/Copilot) did its verification here.",
+  "key_folders": {
+   "huf-gov/": "governance: doctrine/ (modernized operating doctrine: open-loop/safe-ops/kill-test/MC-4), NASA_STYLE_GOVERNANCE, charter, carrier filter, ratio blindness, standards (HUF-STD-001/002/003), _legacy_2026-03/ (March originals preserved)",
+   "science/": "the scientific record (coda-monitoring, geochemistry, quantum, wetlands, spectral)",
+   "codawork2026/": "the CoDaWork 2026 conference package (experiments, deliverables) -- note the live conference face is in the Hs repo CODA-Association/",
+   "ai-refresh/": "admin chain: HUF_FAST_REFRESH.json (source of truth for HUF), HUF_ADMIN.json, MASTER_LINEAGE.json, PHASE_MARKERS.json, the cross-AI cold-start briefings + reviews, Higgins_Decomposition_Migration_Manifest.json (the HUF->Hs migration)",
+   "briefings/": "narrative briefings incl. THE_LINEAGE.md (founding narrative)",
+   "archive/ · dormant/ · drafts/ · discoveries/": "preserved historical + experimental material (lose nothing)",
+   "tools/ · data/": "supporting tooling and datasets"
+  },
+  "key_files": ["README.md", "CROSS_BRAIN.md", "RELATIONSHIP_TO_Hs.md", "HUF_REPO_MAP.md", "DEVELOPMENT_CYCLE.md", "ai-refresh/MASTER_LINEAGE.json", "ai-refresh/HUF_FAST_REFRESH.json", "huf-gov/doctrine/HUF_GOV_OPERATING_DOCTRINE_2026-06.md", "briefings/THE_LINEAGE.md"],
+  "cross_brain": "CROSS_BRAIN.md — the governance(HUF)+math(Hs) cross-brain, the canonical cross-repo reference resolver (so ../HUF and ../Hs paths stay valid standalone), and the network cross-verification vision (any node checks any node via determinism+hash).",
+  "claim_tiers": "Tier 1 = verified/computed; Tier 2 = standard math soundly applied / practiced doctrine; Tier 3 = to earn. HUF carries historical claims at their original tiers; the current canon is in Hs."
+ },
+ "climb_to_the_current_work": {
+  "graduate_school": "GRADUATE_SCHOOL.md (repo root) — the deep onboarding curriculum (the graduate-level ai-refresh), weaving HISTORY_THREAD.md (the development+necessity thread); shared identically across RWA/HUF/Hs with DOCUMENT_DISTRIBUTION.md + TRIPLE_JOURNAL.md (the map of the whole)",
+  "current_instrument_repo": "https://github.com/PeterHiggins19/higgins-decomposition (Hs)",
+  "hs_source_of_truth": "Hs/HS_FAST_REFRESH.json",
+  "hs_guide": "Hs/HS_GUIDE.md",
+  "hs_control_hub": "Hs/ai-refresh/AI_ASSIST.json",
+  "operating_discipline": "Hs/ai-refresh/VERIFICATION_PROTOCOL.json (DVR-1.0)"
+ },
+ "governance": "Honest-broker; nulls reported straight; interest expressed never acquired; Peter is the sole commit/contact gate; AI-assisted per HUF-STD-001; human authorship for all claims. HUF is the history -- the current canon wins (Hs/HS_FAST_REFRESH.json).",
+ "updated": "2026-06-11 (HUF clean-start rebuild: coherence with Hs as the lineage/support repo)"
+}

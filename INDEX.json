@@ -1,15 +1,14 @@
 {
   "_meta": {
     "type": "HUF-REPO-INDEX",
-    "version": "2.1",
+    "version": "2.2",
     "created": "2026-04-13",
-    "updated": "2026-04-17",
+    "updated": "2026-04-28",
     "author": "Peter Higgins / Claude",
     "purpose": "Master index of the Higgins Unity Framework repository. Maps every folder with status, purpose, and AI training notes.",
-    "project_status": "ACTIVE — codawork2026/ package consolidated, 78 aged drafts archived, geochemistry + Working Example added 2026-04-17",
+    "project_status": "ACTIVE — O-1 resolved (analytic EITT bound), dimensional collapse framework added, CoDaWork posture: Calibration Proof. Updated 2026-04-28.",
     "refresh_entry": "ai-refresh/HUF_FAST_REFRESH.json → ai-refresh/HUF_INTEGRITY_MANIFEST.json → ai-refresh/HUF_ADMIN.json → this file"
   },
-
   "repository_structure": {
     "codawork2026": {
       "purpose": "Complete CoDaWork 2026 deliverables package — self-contained. Everything needed for Coimbra.",
@@ -29,7 +28,12 @@
     "ai-refresh": {
       "purpose": "AI speed-loading context. Any AI starts here.",
       "status": "STABLE — validated across Claude, ChatGPT, Grok, Copilot, Gemini on 2026-04-13",
-      "load_order": ["HUF_FAST_REFRESH.json", "HUF_INTEGRITY_MANIFEST.json", "HUF_ADMIN.json", "huf_spec_v2.0.json"],
+      "load_order": [
+        "HUF_FAST_REFRESH.json",
+        "HUF_INTEGRITY_MANIFEST.json",
+        "HUF_ADMIN.json",
+        "huf_spec_v2.0.json"
+      ],
       "test_results": "ai-refresh/test-results/ — 5 platform results + template"
     },
     "science": {
@@ -40,7 +44,8 @@
         "methodology": "Compositional governance scale, confidence index",
         "chemistry": "EITT chemistry results (CheMixHub), HUF-IDX, PRISM",
         "quantum": "HUF-QIT correspondence — 9 isomorphisms, Bell test, 3 books [NEW]",
-        "eitt": "EITT evidence chain — 4 proofs, adversarial tests, Grok/ChatGPT briefs [NEW]",
+        "eitt": "EITT evidence chain — 4 proofs, adversarial tests, Hessian bound (O-1 RESOLVED), Grok/ChatGPT/Gemini briefs",
+        "core": "EITT mathematics, decomposition framework (incl. §8 dimensional collapse + compositional horizon), formulas, user handbook",
         "coda-monitoring": "Perturbation-based drift detection protocol, EMBER/NGFS results [NEW]",
         "spectral": "Frequency-domain analysis of compositions [NEW]",
         "loudspeaker-analogy": "Origin story — crossover networks as compositions [NEW]",
@@ -90,14 +95,20 @@
     },
     "dormant": {
       "purpose": "Paused branches — sleeping, not dead. Nothing dies here. [NEW]",
-      "branches": ["pre-coda-metrics", "early-governance", "planck-case", "peterson-outreach", "hagf", "deceptive-drift"]
+      "branches": [
+        "pre-coda-metrics",
+        "early-governance",
+        "planck-case",
+        "peterson-outreach",
+        "hagf",
+        "deceptive-drift"
+      ]
     },
     "archive": {
       "purpose": "Superseded, rejected, or completed work. What failed always speaks louder.",
       "status": "archived"
     }
   },
-
   "ai_training_notes": {
     "start_here": "ai-refresh/HUF_FAST_REFRESH.json",
     "verify_with": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
@@ -107,7 +118,13 @@
       "Germany drift: 2023-2024 d_A=9.07, 2024-2025 d_A=5.73. NOT 2011.",
       "UK: three values (2.98, 3.23, 3.26). NEVER 'approximately 3'.",
       "HUF-GOV: open loop ONLY. Instrument reads, never actuates.",
-      "Dormant branches are valuable. Do not discard."
+      "Dormant branches are valuable. Do not discard.",
+      "O-1 is RESOLVED (April 28, 2026). EITT is analytically bounded, NOT an open conjecture.",
+      "Compositional horizon at min(x_i) ≈ 0.05 is EMPIRICAL. Formal derivation is Open Problem D-6/O-4.",
+      "Dimensional collapse is a THEORETICAL framework. No empirical measurement of progressive reduction yet."
     ]
-  }
+  },
+  "last_updated": "2026-04-28",
+  "refresh_chain_version": "5.8",
+  "status": "Hˢ RELEASE STATE — O-1 resolved, analytic bound proven. Dimensional collapse framework added. Full 25-experiment chain re-run COMPLETE (2026-04-28). Stress test: 15/15 PASS. Engine: OPERATIONAL. CoDaWork posture: Calibration Proof."
 }

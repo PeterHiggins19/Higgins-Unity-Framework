@@ -9,7 +9,7 @@
 
 ```
 +--------------------------------------------------------------------------------+
-|                           THE CODA-HUF UNION                                   |
+|                           THE CoDa-HUF UNION                                   |
 |              A Calibration Study of a Combined Monitoring Instrument            |
 |                           Peter Higgins - 2026                                 |
 +--------------------------------------------------------------------------------+

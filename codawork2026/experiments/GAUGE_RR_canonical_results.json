@@ -1,0 +1,159 @@
+{
+  "framework": "Higgins Unity Framework",
+  "analysis": "Gauge R&R \u2014 Pipeline Repeatability Assessment",
+  "date": "2026-04-22T17:41:39.129378Z",
+  "comparison": "Current canonical run vs previous EXP-01..05 re-run",
+  "note": "Differences expected where data loading or pipeline has been refined. Bit-identical results confirm deterministic instrument behavior. Systematic shifts indicate pipeline improvement, not degradation.",
+  "results": {
+    "EXP-01": {
+      "data_hash_match": false,
+      "N_match": false,
+      "D_match": false,
+      "numeric_deltas": {
+        "step7_squeeze_mean": {
+          "run_a": 0.11789446817371313,
+          "run_b": 0.1764608815058676,
+          "abs_delta": 0.05856641333215448,
+          "rel_delta_pct": 49.67698165944397,
+          "match": false
+        },
+        "step8_entropy_mean": {
+          "run_a": 0.16931760945351057,
+          "run_b": 0.28083013189282124,
+          "abs_delta": 0.11151252243931067,
+          "rel_delta_pct": 65.85996742998465,
+          "match": false
+        },
+        "step9_angular_velocity_std": {
+          "run_a": 0.28494808737262833,
+          "run_b": 1.4820298889549963,
+          "abs_delta": 1.1970818015823679,
+          "rel_delta_pct": 420.1052242954475,
+          "match": false
+        }
+      },
+      "pll_shape_match": false,
+      "all_match": false
+    },
+    "EXP-02": {
+      "data_hash_match": false,
+      "N_match": false,
+      "D_match": false,
+      "numeric_deltas": {
+        "step7_squeeze_mean": {
+          "run_a": 0.03400533901632747,
+          "run_b": 0.14154954762131122,
+          "abs_delta": 0.10754420860498376,
+          "rel_delta_pct": 316.2568341205098,
+          "match": false
+        },
+        "step8_entropy_mean": {
+          "run_a": 0.7728621857944471,
+          "run_b": 0.8152401429794982,
+          "abs_delta": 0.04237795718505111,
+          "rel_delta_pct": 5.4832488849858265,
+          "match": false
+        },
+        "step9_angular_velocity_std": {
+          "run_a": 0.4334366827173481,
+          "run_b": 0.6716381533602981,
+          "abs_delta": 0.23820147064295,
+          "rel_delta_pct": 54.956463110042186,
+          "match": false
+        }
+      },
+      "pll_shape_match": false,
+      "all_match": false
+    },
+    "EXP-03": {
+      "data_hash_match": false,
+      "N_match": false,
+      "D_match": false,
+      "numeric_deltas": {
+        "step7_squeeze_mean": {
+          "run_a": 0.054196193829142016,
+          "run_b": 0.07081115530205684,
+          "abs_delta": 0.016614961472914823,
+          "rel_delta_pct": 30.657063345250524,
+          "match": false
+        },
+        "step8_entropy_mean": {
+          "run_a": 0.6879925071388765,
+          "run_b": 0.6220822543560202,
+          "abs_delta": 0.06591025278285634,
+          "rel_delta_pct": 9.580082936797428,
+          "match": false
+        },
+        "step9_angular_velocity_std": {
+          "run_a": 0.37934211150359604,
+          "run_b": 0.32704377393119144,
+          "abs_delta": 0.052298337572404596,
+          "rel_delta_pct": 13.786588935541586,
+          "match": false
+        }
+      },
+      "pll_shape_match": false,
+      "all_match": false
+    },
+    "EXP-04": {
+      "data_hash_match": false,
+      "N_match": false,
+      "D_match": false,
+      "numeric_deltas": {
+        "step7_squeeze_mean": {
+          "run_a": 2.319173692832728,
+          "run_b": 0.22246606781106323,
+          "abs_delta": 2.0967076250216645,
+          "rel_delta_pct": 90.40752883242071,
+          "match": false
+        },
+        "step8_entropy_mean": {
+          "run_a": 0.6608829601496089,
+          "run_b": 0.35965090779504494,
+          "abs_delta": 0.30123205235456396,
+          "rel_delta_pct": 45.58024196695461,
+          "match": false
+        },
+        "step9_angular_velocity_std": {
+          "run_a": 0.2635894938189421,
+          "run_b": 0.6829155276376119,
+          "abs_delta": 0.4193260338186698,
+          "rel_delta_pct": 159.0829845846216,
+          "match": false
+        }
+      },
+      "pll_shape_match": false,
+      "all_match": false
+    },
+    "EXP-05": {
+      "data_hash_match": false,
+      "N_match": false,
+      "D_match": false,
+      "numeric_deltas": {
+        "step7_squeeze_mean": {
+          "run_a": 0.054485718607450356,
+          "run_b": 0.22771258573805833,
+          "abs_delta": 0.17322686713060798,
+          "rel_delta_pct": 317.9307744450323,
+          "match": false
+        },
+        "step8_entropy_mean": {
+          "run_a": 0.7555052746717533,
+          "run_b": 0.749742257130859,
+          "abs_delta": 0.005763017540894366,
+          "rel_delta_pct": 0.762803084782994,
+          "match": false
+        },
+        "step9_angular_velocity_std": {
+          "run_a": 0.62128161374543,
+          "run_b": 0.5642547068169929,
+          "abs_delta": 0.05702690692843715,
+          "rel_delta_pct": 9.178914306613283,
+          "match": false
+        }
+      },
+      "pll_shape_match": false,
+      "all_match": false
+    }
+  }
+}

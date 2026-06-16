@@ -1,0 +1,3638 @@
+{
+  "experiment": "EXP-19",
+  "name": "Fourier Conjugate Pair Study",
+  "domain": "INFORMATION THEORY / FOURIER ANALYSIS",
+  "date": "2026-04-22",
+  "hypothesis": "Higgins Decomposition preserves Fourier conjugate structure \u2014 predictable relationships between f(t) and F(\u03c9) on the simplex.",
+  "method": "12 known Fourier pairs, each side embedded as 3-part composition [|g|, |g'|, residual], run through canonical 12-step pipeline.",
+  "pairs_tested": 12,
+  "pair_catalog": {
+    "01": {
+      "name": "rect \u2194 sinc",
+      "type": "CLASSIC"
+    },
+    "02": {
+      "name": "tri \u2194 sinc\u00b2",
+      "type": "CLASSIC"
+    },
+    "03": {
+      "name": "Gauss \u2194 Gauss",
+      "type": "SELF-CONJUGATE"
+    },
+    "04": {
+      "name": "exp(-|t|) \u2194 Lorentz",
+      "type": "CLASSIC"
+    },
+    "05": {
+      "name": "\u03b4(t) \u2194 const",
+      "type": "LIMIT"
+    },
+    "06": {
+      "name": "cos \u2194 \u03b4-pair",
+      "type": "CLASSIC"
+    },
+    "07": {
+      "name": "shah \u2194 shah",
+      "type": "SELF-CONJUGATE"
+    },
+    "08": {
+      "name": "sech \u2194 sech",
+      "type": "SELF-CONJUGATE"
+    },
+    "09": {
+      "name": "exp\u00b7u(t) \u2194 |1/(a+j\u03c9)|",
+      "type": "CAUSAL"
+    },
+    "10": {
+      "name": "sinc\u00b2 \u2194 tri",
+      "type": "CLASSIC (REVERSE)"
+    },
+    "11": {
+      "name": "J\u2080 \u2194 1/\u221a(1-f\u00b2)",
+      "type": "BESSEL"
+    },
+    "12": {
+      "name": "chirp \u2194 chirp",
+      "type": "SELF-CONJUGATE"
+    }
+  },
+  "metrics": {
+    "01": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.739779221000813,
+        "squeeze_mean": 0.6894315767217619,
+        "squeeze_count": 42,
+        "entropy_mean": 0.43524891519772146,
+        "entropy_cv": 36.65092581378741,
+        "angular_vel_std": 0.154127929273727,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.07438604825720914,
+          0.5255338327461088
+        ],
+        "data_hash": "9c232d4b1df432c0"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.712694481202127,
+        "squeeze_mean": 0.36407045337926386,
+        "squeeze_count": 70,
+        "entropy_mean": 0.5427183634643157,
+        "entropy_cv": 26.90320979544628,
+        "angular_vel_std": 0.4133595021115324,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.002325663560240542,
+          0.5462934156705425
+        ],
+        "data_hash": "649e7a3162c29c64"
+      }
+    },
+    "02": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.8029181730640048,
+        "squeeze_mean": 1.0744462212918708,
+        "squeeze_count": 59,
+        "entropy_mean": 0.544787510500934,
+        "entropy_cv": 48.53203366938029,
+        "angular_vel_std": 0.16184761897516867,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.09821531545045648,
+          0.5378364838550218
+        ],
+        "data_hash": "34bf049d57ecd249"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.6431085199019041,
+        "squeeze_mean": 0.30312195020828525,
+        "squeeze_count": 58,
+        "entropy_mean": 0.41763561957257067,
+        "entropy_cv": 34.299911208495644,
+        "angular_vel_std": 0.2533828763923259,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.008296647026129846,
+          0.6166165047917497
+        ],
+        "data_hash": "6dceddbfcac2d5b9"
+      }
+    },
+    "03": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.7342042841486275,
+        "squeeze_mean": 0.6777436162167706,
+        "squeeze_count": 39,
+        "entropy_mean": 0.4884152526404517,
+        "entropy_cv": 44.724667990799,
+        "angular_vel_std": 0.10478821698055249,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.03334730882181687,
+          0.5599055803658032
+        ],
+        "data_hash": "f22a40b13c36916a"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.7342042841486275,
+        "squeeze_mean": 0.6777436162167706,
+        "squeeze_count": 39,
+        "entropy_mean": 0.4884152526404517,
+        "entropy_cv": 44.724667990799,
+        "angular_vel_std": 0.10478821698055249,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.03334730882181687,
+          0.5599055803658032
+        ],
+        "data_hash": "f22a40b13c36916a"
+      }
+    },
+    "04": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.7634427907686879,
+        "squeeze_mean": 0.5499339935295015,
+        "squeeze_count": 17,
+        "entropy_mean": 0.6064745534661917,
+        "entropy_cv": 34.40122056312938,
+        "angular_vel_std": 0.20632180972387762,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.0010688525264456285,
+          0.5429148750458554
+        ],
+        "data_hash": "f3330b697e9d8dfb"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.6373338581952067,
+        "squeeze_mean": 0.25719439284953577,
+        "squeeze_count": 51,
+        "entropy_mean": 0.41951726891575747,
+        "entropy_cv": 32.45483121850306,
+        "angular_vel_std": 0.16803635570396896,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.0033395144556357757,
+          0.657248130460378
+        ],
+        "data_hash": "726e16b2c75b6538"
+      }
+    },
+    "05": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.5942683615862876,
+        "squeeze_mean": 0.12535029704754894,
+        "squeeze_count": 8,
+        "entropy_mean": 0.37281239241156716,
+        "entropy_cv": 21.461712631944142,
+        "angular_vel_std": 0.19898024116288593,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.008152972544496507,
+          0.7084204871801473
+        ],
+        "data_hash": "eb7685c969d6e44a"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.07943180451928622,
+        "squeeze_mean": 0.17038547619228436,
+        "squeeze_count": 0,
+        "entropy_mean": 0.7774865854922233,
+        "entropy_cv": 3.6364775265626847,
+        "angular_vel_std": 2.1399063227598187,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.00021143646479598364,
+          0.18053362269050308
+        ],
+        "data_hash": "e5e5d1a9b61cf973"
+      }
+    },
+    "06": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.7287114530829182,
+        "squeeze_mean": 0.6327648801640312,
+        "squeeze_count": 221,
+        "entropy_mean": 0.8999176396265295,
+        "entropy_cv": 8.978917407485776,
+        "angular_vel_std": 1.7260830176564055,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.039728587523322575,
+          0.33731092347123187
+        ],
+        "data_hash": "cc0a1c346e2d80a0"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.6830636495639716,
+        "squeeze_mean": 0.3893321115908596,
+        "squeeze_count": 69,
+        "entropy_mean": 0.4122598939734196,
+        "entropy_cv": 37.3007425628934,
+        "angular_vel_std": 0.27362576734908195,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.017529100902635528,
+          0.6209879392770823
+        ],
+        "data_hash": "ffbf1787e12f57ed"
+      }
+    },
+    "07": {
+      "time": {
+        "pll_shape": "bowl",
+        "pll_R2": 0.4674971884646001,
+        "squeeze_mean": 1.1416454239925322,
+        "squeeze_count": 61,
+        "entropy_mean": 0.5052811578598544,
+        "entropy_cv": 44.9360319929814,
+        "angular_vel_std": 0.71564724843076,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.04972798185478681,
+          0.59244014430864
+        ],
+        "data_hash": "92563c4d0dc41e9e"
+      },
+      "freq": {
+        "pll_shape": "bowl",
+        "pll_R2": 0.4674971884646001,
+        "squeeze_mean": 1.1416454239925322,
+        "squeeze_count": 61,
+        "entropy_mean": 0.5052811578598544,
+        "entropy_cv": 44.9360319929814,
+        "angular_vel_std": 0.71564724843076,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.04972798185478681,
+          0.59244014430864
+        ],
+        "data_hash": "92563c4d0dc41e9e"
+      }
+    },
+    "08": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.724482867185642,
+        "squeeze_mean": 0.6178629560836656,
+        "squeeze_count": 17,
+        "entropy_mean": 0.49946239899686146,
+        "entropy_cv": 42.23741014406887,
+        "angular_vel_std": 0.12319009222902076,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.01361883587153115,
+          0.5822316762362549
+        ],
+        "data_hash": "eb475648bc030217"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.724482867185642,
+        "squeeze_mean": 0.6178629560836656,
+        "squeeze_count": 17,
+        "entropy_mean": 0.49946239899686146,
+        "entropy_cv": 42.23741014406887,
+        "angular_vel_std": 0.12319009222902076,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.01361883587153115,
+          0.5822316762362549
+        ],
+        "data_hash": "eb475648bc030217"
+      }
+    },
+    "09": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.17789441958100127,
+        "squeeze_mean": 0.6700706093953985,
+        "squeeze_count": 85,
+        "entropy_mean": 0.4676517884247167,
+        "entropy_cv": 32.85724894907116,
+        "angular_vel_std": 0.1614317306615389,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.0028108190720729665,
+          0.5951457254033585
+        ],
+        "data_hash": "4c0d2f4ced0fa8fb"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.6753266824132191,
+        "squeeze_mean": 0.3027514388721781,
+        "squeeze_count": 49,
+        "entropy_mean": 0.52278529670542,
+        "entropy_cv": 28.448435914155763,
+        "angular_vel_std": 0.10185154584090772,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.00774374105954937,
+          0.6133009177991089
+        ],
+        "data_hash": "f8b5028464893531"
+      }
+    },
+    "10": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.6431085199019041,
+        "squeeze_mean": 0.30312195020828525,
+        "squeeze_count": 58,
+        "entropy_mean": 0.41763561957257067,
+        "entropy_cv": 34.299911208495644,
+        "angular_vel_std": 0.2533828763923259,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.008296647026129846,
+          0.6166165047917497
+        ],
+        "data_hash": "6dceddbfcac2d5b9"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.8029181730640048,
+        "squeeze_mean": 1.0744462212918708,
+        "squeeze_count": 59,
+        "entropy_mean": 0.544787510500934,
+        "entropy_cv": 48.53203366938029,
+        "angular_vel_std": 0.16184761897516867,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.09821531545045648,
+          0.5378364838550218
+        ],
+        "data_hash": "34bf049d57ecd249"
+      }
+    },
+    "11": {
+      "time": {
+        "pll_shape": "bowl",
+        "pll_R2": 0.882550356799595,
+        "squeeze_mean": 0.4590325849132893,
+        "squeeze_count": 102,
+        "entropy_mean": 0.585943954627805,
+        "entropy_cv": 16.534967663893394,
+        "angular_vel_std": 0.7274529663620798,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.005907854640002703,
+          0.6198195137510842
+        ],
+        "data_hash": "97c0a6deae89a7a6"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.35514540100519587,
+        "squeeze_mean": 0.7267423916102129,
+        "squeeze_count": 73,
+        "entropy_mean": 0.6198083539913682,
+        "entropy_cv": 29.267868751589425,
+        "angular_vel_std": 0.19920062889211862,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.019526786184563553,
+          0.507078943865028
+        ],
+        "data_hash": "951887985306f95f"
+      }
+    },
+    "12": {
+      "time": {
+        "pll_shape": "hill",
+        "pll_R2": 0.9793880197543834,
+        "squeeze_mean": 0.598053446709443,
+        "squeeze_count": 64,
+        "entropy_mean": 0.7643972458820663,
+        "entropy_cv": 23.053626808533732,
+        "angular_vel_std": 1.0320644187366375,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.033182520584408,
+          0.3579979173361029
+        ],
+        "data_hash": "91574fc814c9642c"
+      },
+      "freq": {
+        "pll_shape": "hill",
+        "pll_R2": 0.8533874674952912,
+        "squeeze_mean": 0.6374421834729085,
+        "squeeze_count": 17,
+        "entropy_mean": 0.5972049253439377,
+        "entropy_cv": 38.223445216514534,
+        "angular_vel_std": 0.5587526684237836,
+        "chaos_total": 0,
+        "chaos_reversals": 0,
+        "radius_range": [
+          0.01763613042823479,
+          0.4546106977645642
+        ],
+        "data_hash": "104fdea6786a1f69"
+      }
+    }
+  },
+  "relationships": {
+    "01": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 1.8936762660153554,
+      "entropy_delta": -0.10746944826659421,
+      "entropy_ratio": 0.801979340480414,
+      "angular_vel_ratio": 0.37286654470601793,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.027084739798685975
+    },
+    "02": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 3.5446005165695946,
+      "entropy_delta": 0.12715189092836332,
+      "entropy_ratio": 1.3044565285367589,
+      "angular_vel_ratio": 0.6387472637439461,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.15980965316210072
+    },
+    "03": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 1.0,
+      "entropy_delta": 0.0,
+      "entropy_ratio": 1.0,
+      "angular_vel_ratio": 1.0,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.0
+    },
+    "04": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 2.138203665471139,
+      "entropy_delta": 0.18695728455043426,
+      "entropy_ratio": 1.445648602341509,
+      "angular_vel_ratio": 1.2278403019365431,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.12610893257348121
+    },
+    "05": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 0.7356865141843894,
+      "entropy_delta": -0.4046741930806561,
+      "entropy_ratio": 0.4795097425064142,
+      "angular_vel_ratio": 0.09298549148930166,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.5148365570670014
+    },
+    "06": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 1.6252573608133039,
+      "entropy_delta": 0.4876577456531099,
+      "entropy_ratio": 2.182889125966135,
+      "angular_vel_ratio": 6.308188860935493,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.045647803518946595
+    },
+    "07": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "bowl / bowl",
+      "squeeze_ratio_t_over_f": 1.0,
+      "entropy_delta": 0.0,
+      "entropy_ratio": 1.0,
+      "angular_vel_ratio": 1.0,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.0
+    },
+    "08": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 1.0,
+      "entropy_delta": 0.0,
+      "entropy_ratio": 1.0,
+      "angular_vel_ratio": 1.0,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.0
+    },
+    "09": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 2.2132697763273157,
+      "entropy_delta": -0.055133508280703236,
+      "entropy_ratio": 0.8945389079835389,
+      "angular_vel_ratio": 1.5849708448578241,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.49743226283221786
+    },
+    "10": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 0.2821192389171639,
+      "entropy_delta": -0.12715189092836332,
+      "entropy_ratio": 0.7666027791065791,
+      "angular_vel_ratio": 1.5655644364542733,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.15980965316210072
+    },
+    "11": {
+      "pll_shape_match": false,
+      "pll_shape_pair": "bowl / hill",
+      "squeeze_ratio_t_over_f": 0.6316303964273088,
+      "entropy_delta": -0.033864399363563225,
+      "entropy_ratio": 0.9453631124113006,
+      "angular_vel_ratio": 3.6518607918454293,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.5274049557943992
+    },
+    "12": {
+      "pll_shape_match": true,
+      "pll_shape_pair": "hill / hill",
+      "squeeze_ratio_t_over_f": 0.9382081421896681,
+      "entropy_delta": 0.1671923205381286,
+      "entropy_ratio": 1.2799580402687412,
+      "angular_vel_ratio": 1.847086335440769,
+      "chaos_symmetry": 1.0,
+      "R2_delta": 0.12600055225909224
+    }
+  },
+  "findings": {
+    "pll_shape_matches": 11,
+    "pll_shape_total": 12,
+    "mean_chaos_symmetry": 1.0
+  },
+  "full_pipeline_results": {
+    "01": {
+      "pair_name": "rect \u2194 sinc",
+      "pair_type": "CLASSIC",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-01T",
+        "name": "Fourier Pair 01: rect(t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "9c232d4b1df432c0",
+        "run_timestamp": "2026-04-22T19:54:35.923371Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-01T: Fourier Pair 01: rect(t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "9c232d4b1df432c0",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.6255469742738201,
+            -0.9914151050185223,
+            1.6169620792923425
+          ],
+          "step4_clr_std_per_part": [
+            0.7446890569056019,
+            0.24247865405425778,
+            0.6496393679742933
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            1.506557694893391
+          ],
+          "step5_sigma2_final": 1.0353889975689587,
+          "step6_pll_coeffs": [
+            -4.291442236037314e-05,
+            0.017552752760509882,
+            -0.5009758396146453
+          ],
+          "step6_pll_R2": 0.739779221000813,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            204.50878510155556,
+            1.2938702315052806
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 42,
+          "step7_squeeze_closest": {
+            "time_index": 186,
+            "sigma2_A": 1.091677091092956,
+            "constant": "catalan",
+            "constant_value": 0.915965594177219,
+            "test_type": "reciprocal",
+            "test_value": 0.916021787174107,
+            "delta": 5.6192996887971525e-05
+          },
+          "step7_squeeze_mean": 0.6894315767217619,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.994041430778439
+          ],
+          "step8_entropy_mean": 0.43524891519772146,
+          "step8_entropy_cv": 36.65092581378741,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.43524891519772146,
+              "H_mean_decimated": 0.43606975825700417,
+              "variation_pct": 0.18859163816866018,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.43524891519772146,
+              "H_mean_decimated": 0.43815582888756005,
+              "variation_pct": 0.6678738506488997,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.43524891519772146,
+              "H_mean_decimated": 0.44823904445817275,
+              "variation_pct": 2.984528807969627,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 77,
+            "stalls": 39,
+            "spikes": 35,
+            "reversals": 3
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.25496769439903566,
+            0.0977373820454252
+          ],
+          "step11_complex_range_im": [
+            -0.5149001350511754,
+            0.09434090326532862
+          ],
+          "step12_radius_range": [
+            0.07438604825720914,
+            0.5255338327461088
+          ],
+          "step12_theta_range": [
+            -2.1108753042237747,
+            1.1254437833151252
+          ],
+          "step9_angular_velocity_std": 0.154127929273727
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-01F",
+        "name": "Fourier Pair 01: sinc(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "649e7a3162c29c64",
+        "run_timestamp": "2026-04-22T19:54:35.928424Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-01F: Fourier Pair 01: sinc(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "649e7a3162c29c64",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.7111629600526935,
+            -0.7064160103183866,
+            1.41757897037108
+          ],
+          "step4_clr_std_per_part": [
+            0.40638108240467863,
+            0.3059284816928239,
+            0.522018694388823
+          ],
+          "step5_sigma2_range": [
+            0.006493006814917153,
+            0.7992332895154584
+          ],
+          "step5_sigma2_final": 0.531241337338686,
+          "step6_pll_coeffs": [
+            -2.2089447612088326e-05,
+            0.008719002499864667,
+            -0.21691597005174823
+          ],
+          "step6_pll_R2": 0.712694481202127,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            197.35673460420173,
+            0.643460961137833
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 70,
+          "step7_squeeze_closest": {
+            "time_index": 157,
+            "sigma2_A": 0.6177981215408139,
+            "constant": "1/phi",
+            "constant_value": 0.6180339887498948,
+            "test_type": "direct",
+            "test_value": 0.6177981215408139,
+            "delta": 0.00023586720908086445
+          },
+          "step7_squeeze_mean": 0.36407045337926386,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.4100799906841454,
+            0.99882151249205
+          ],
+          "step8_entropy_mean": 0.5427183634643157,
+          "step8_entropy_cv": 26.90320979544628,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.5427183634643157,
+              "H_mean_decimated": 0.5425852303697548,
+              "variation_pct": 0.024530788623226732,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.5427183634643157,
+              "H_mean_decimated": 0.5428832698622953,
+              "variation_pct": 0.03038526224301174,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.5427183634643157,
+              "H_mean_decimated": 0.5459171457835287,
+              "variation_pct": 0.5894000525050087,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 124,
+            "stalls": 18,
+            "spikes": 0,
+            "reversals": 106
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.27705078226934576,
+            0.1098548454768915
+          ],
+          "step11_complex_range_im": [
+            -0.5154020001834599,
+            0.08296278451806605
+          ],
+          "step12_radius_range": [
+            0.002325663560240542,
+            0.5462934156705425
+          ],
+          "step12_theta_range": [
+            -2.762033210672251,
+            2.515918867395984
+          ],
+          "step9_angular_velocity_std": 0.4133595021115324
+        }
+      }
+    },
+    "02": {
+      "pair_name": "tri \u2194 sinc\u00b2",
+      "pair_type": "CLASSIC",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-02T",
+        "name": "Fourier Pair 02: tri(t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "34bf049d57ecd249",
+        "run_timestamp": "2026-04-22T19:54:35.933192Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-02T: Fourier Pair 02: tri(t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "34bf049d57ecd249",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.6465316150537492,
+            -0.5945147610954142,
+            1.2410463761491628
+          ],
+          "step4_clr_std_per_part": [
+            0.5773866094061809,
+            0.5188825089618542,
+            1.0265572709288746
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            2.1075912678375874
+          ],
+          "step5_sigma2_final": 1.6564341853250535,
+          "step6_pll_coeffs": [
+            -6.908849683318536e-05,
+            0.02717076523204905,
+            -0.7326982326103969
+          ],
+          "step6_pll_R2": 0.8029181730640048,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            196.63740331225503,
+            1.9386961280081159
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 59,
+          "step7_squeeze_closest": {
+            "time_index": 120,
+            "sigma2_A": 2.0785817744394213,
+            "constant": "ln_phi",
+            "constant_value": 0.48121182505960347,
+            "test_type": "reciprocal",
+            "test_value": 0.4810972617469875,
+            "delta": 0.0001145633126159451
+          },
+          "step7_squeeze_mean": 1.0744462212918708,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9993474478292361
+          ],
+          "step8_entropy_mean": 0.544787510500934,
+          "step8_entropy_cv": 48.53203366938029,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.544787510500934,
+              "H_mean_decimated": 0.5450743754719355,
+              "variation_pct": 0.05265630460906232,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.544787510500934,
+              "H_mean_decimated": 0.5448915156068989,
+              "variation_pct": 0.019090949032446257,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.544787510500934,
+              "H_mean_decimated": 0.5475157747524064,
+              "variation_pct": 0.5007941993684447,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 8,
+            "stalls": 7,
+            "spikes": 1,
+            "reversals": 0
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.22379332409160435,
+            0.13590055345941665
+          ],
+          "step11_complex_range_im": [
+            -0.5224077323481726,
+            0.1704125906793783
+          ],
+          "step12_radius_range": [
+            0.09821531545045648,
+            0.5378364838550218
+          ],
+          "step12_theta_range": [
+            -2.0077838855565178,
+            1.5637155369488354
+          ],
+          "step9_angular_velocity_std": 0.16184761897516867
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-02F",
+        "name": "Fourier Pair 02: sinc\u00b2(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "6dceddbfcac2d5b9",
+        "run_timestamp": "2026-04-22T19:54:35.937634Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-02F: Fourier Pair 02: sinc\u00b2(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "6dceddbfcac2d5b9",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.8630848974446461,
+            -0.869961701171616,
+            1.7330465986162622
+          ],
+          "step4_clr_std_per_part": [
+            0.3399804099585417,
+            0.23468861480778255,
+            0.5261747937100002
+          ],
+          "step5_sigma2_range": [
+            5.671227217871151e-06,
+            0.7660101609651231
+          ],
+          "step5_sigma2_final": 0.447525338611735,
+          "step6_pll_coeffs": [
+            -1.91136257326586e-05,
+            0.007852797902772154,
+            -0.23058921824757975
+          ],
+          "step6_pll_R2": 0.6431085199019041,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            205.42407841947087,
+            0.5759876678480819
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 58,
+          "step7_squeeze_closest": {
+            "time_index": 101,
+            "sigma2_A": 0.5771882738361168,
+            "constant": "euler_gamma",
+            "constant_value": 0.5772156649015329,
+            "test_type": "direct",
+            "test_value": 0.5771882738361168,
+            "delta": 2.7391065416049187e-05
+          },
+          "step7_squeeze_mean": 0.30312195020828525,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.35906527531747345,
+            0.9985270388158073
+          ],
+          "step8_entropy_mean": 0.41763561957257067,
+          "step8_entropy_cv": 34.299911208495644,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.41763561957257067,
+              "H_mean_decimated": 0.41793145017730265,
+              "variation_pct": 0.07083462014919886,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.41763561957257067,
+              "H_mean_decimated": 0.4197010413349295,
+              "variation_pct": 0.4945511507070951,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.41763561957257067,
+              "H_mean_decimated": 0.421578294087792,
+              "variation_pct": 0.9440465157776715,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 114,
+            "stalls": 8,
+            "spikes": 0,
+            "reversals": 106
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.2664158131746046,
+            0.05472906160289731
+          ],
+          "step11_complex_range_im": [
+            -0.5946404638441187,
+            0.043849422149241146
+          ],
+          "step12_radius_range": [
+            0.008296647026129846,
+            0.6166165047917497
+          ],
+          "step12_theta_range": [
+            -2.0394881910733127,
+            2.023954209487004
+          ],
+          "step9_angular_velocity_std": 0.2533828763923259
+        }
+      }
+    },
+    "03": {
+      "pair_name": "Gauss \u2194 Gauss",
+      "pair_type": "SELF-CONJUGATE",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-03T",
+        "name": "Fourier Pair 03: Gauss(t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "f22a40b13c36916a",
+        "run_timestamp": "2026-04-22T19:54:35.943263Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-03T: Fourier Pair 03: Gauss(t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "f22a40b13c36916a",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.7214756066692469,
+            -0.7629149868371685,
+            1.4843905935064146
+          ],
+          "step4_clr_std_per_part": [
+            0.5200384478661924,
+            0.3448406239452775,
+            0.8040874729930723
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            1.4908188962784474
+          ],
+          "step5_sigma2_final": 1.0359117074064312,
+          "step6_pll_coeffs": [
+            -4.123629089267005e-05,
+            0.017082152561971327,
+            -0.4878003431838783
+          ],
+          "step6_pll_R2": 0.7342042841486275,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            207.12523110326302,
+            1.2812720553858754
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 39,
+          "step7_squeeze_closest": {
+            "time_index": 159,
+            "sigma2_A": 1.2028272237815645,
+            "constant": "apery",
+            "constant_value": 1.2020569031595942,
+            "test_type": "direct",
+            "test_value": 1.2028272237815645,
+            "delta": 0.0007703206219702441
+          },
+          "step7_squeeze_mean": 0.6777436162167706,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9996115985871125
+          ],
+          "step8_entropy_mean": 0.4884152526404517,
+          "step8_entropy_cv": 44.724667990799,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.4884152526404517,
+              "H_mean_decimated": 0.4885313354354392,
+              "variation_pct": 0.023767233795406625,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.4884152526404517,
+              "H_mean_decimated": 0.48904976002811834,
+              "variation_pct": 0.1299114604297016,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.4884152526404517,
+              "H_mean_decimated": 0.4909031507132554,
+              "variation_pct": 0.5093817319081902,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 24,
+            "stalls": 20,
+            "spikes": 1,
+            "reversals": 3
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.27483474093778304,
+            0.041899271452310205
+          ],
+          "step11_complex_range_im": [
+            -0.5425815147271567,
+            0.10739232866002013
+          ],
+          "step12_radius_range": [
+            0.03334730882181687,
+            0.5599055803658032
+          ],
+          "step12_theta_range": [
+            -2.135537950811728,
+            1.4529308438905897
+          ],
+          "step9_angular_velocity_std": 0.10478821698055249
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-03F",
+        "name": "Fourier Pair 03: Gauss(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "f22a40b13c36916a",
+        "run_timestamp": "2026-04-22T19:54:35.947880Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-03F: Fourier Pair 03: Gauss(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "f22a40b13c36916a",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.7214756066692469,
+            -0.7629149868371685,
+            1.4843905935064146
+          ],
+          "step4_clr_std_per_part": [
+            0.5200384478661924,
+            0.3448406239452775,
+            0.8040874729930723
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            1.4908188962784474
+          ],
+          "step5_sigma2_final": 1.0359117074064312,
+          "step6_pll_coeffs": [
+            -4.123629089267005e-05,
+            0.017082152561971327,
+            -0.4878003431838783
+          ],
+          "step6_pll_R2": 0.7342042841486275,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            207.12523110326302,
+            1.2812720553858754
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 39,
+          "step7_squeeze_closest": {
+            "time_index": 159,
+            "sigma2_A": 1.2028272237815645,
+            "constant": "apery",
+            "constant_value": 1.2020569031595942,
+            "test_type": "direct",
+            "test_value": 1.2028272237815645,
+            "delta": 0.0007703206219702441
+          },
+          "step7_squeeze_mean": 0.6777436162167706,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9996115985871125
+          ],
+          "step8_entropy_mean": 0.4884152526404517,
+          "step8_entropy_cv": 44.724667990799,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.4884152526404517,
+              "H_mean_decimated": 0.4885313354354392,
+              "variation_pct": 0.023767233795406625,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.4884152526404517,
+              "H_mean_decimated": 0.48904976002811834,
+              "variation_pct": 0.1299114604297016,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.4884152526404517,
+              "H_mean_decimated": 0.4909031507132554,
+              "variation_pct": 0.5093817319081902,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 24,
+            "stalls": 20,
+            "spikes": 1,
+            "reversals": 3
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.27483474093778304,
+            0.041899271452310205
+          ],
+          "step11_complex_range_im": [
+            -0.5425815147271567,
+            0.10739232866002013
+          ],
+          "step12_radius_range": [
+            0.03334730882181687,
+            0.5599055803658032
+          ],
+          "step12_theta_range": [
+            -2.135537950811728,
+            1.4529308438905897
+          ],
+          "step9_angular_velocity_std": 0.10478821698055249
+        }
+      }
+    },
+    "04": {
+      "pair_name": "exp(-|t|) \u2194 Lorentz",
+      "pair_type": "CLASSIC",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-04T",
+        "name": "Fourier Pair 04: exp(-|t|)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "f3330b697e9d8dfb",
+        "run_timestamp": "2026-04-22T19:54:35.954188Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-04T: Fourier Pair 04: exp(-|t|): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "f3330b697e9d8dfb",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.45296875446761414,
+            -0.7451847178208709,
+            1.1981534722884846
+          ],
+          "step4_clr_std_per_part": [
+            0.46543778378323064,
+            0.28957865582638176,
+            0.7495348274311875
+          ],
+          "step5_sigma2_range": [
+            6.438647162959696e-06,
+            1.1781085441263053
+          ],
+          "step5_sigma2_final": 0.8622905860155594,
+          "step6_pll_coeffs": [
+            -3.707418806760465e-05,
+            0.014143639902154597,
+            -0.37592496570601885
+          ],
+          "step6_pll_R2": 0.7634427907686879,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            190.74780378687888,
+            0.973009158738209
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 17,
+          "step7_squeeze_closest": {
+            "time_index": 154,
+            "sigma2_A": 0.9160338405488643,
+            "constant": "catalan",
+            "constant_value": 0.915965594177219,
+            "test_type": "direct",
+            "test_value": 0.9160338405488643,
+            "delta": 6.824637164526415e-05
+          },
+          "step7_squeeze_mean": 0.5499339935295015,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.37556394854574854,
+            0.9787935458175824
+          ],
+          "step8_entropy_mean": 0.6064745534661917,
+          "step8_entropy_cv": 34.40122056312938,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.6064745534661917,
+              "H_mean_decimated": 0.6066258434171745,
+              "variation_pct": 0.024945803598538804,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.6064745534661917,
+              "H_mean_decimated": 0.6069322614958294,
+              "variation_pct": 0.07547027769288625,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.6064745534661917,
+              "H_mean_decimated": 0.6079492482505144,
+              "variation_pct": 0.24315855890315174,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 4,
+            "stalls": 4,
+            "spikes": 0,
+            "reversals": 0
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.19360667874976334,
+            0.02855367575547596
+          ],
+          "step11_complex_range_im": [
+            -0.5343694258426022,
+            0.15292563378473534
+          ],
+          "step12_radius_range": [
+            0.0010688525264456285,
+            0.5429148750458554
+          ],
+          "step12_theta_range": [
+            -1.9440869109974843,
+            1.3864220867212234
+          ],
+          "step9_angular_velocity_std": 0.20632180972387762
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-04F",
+        "name": "Fourier Pair 04: Lorentz(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "726e16b2c75b6538",
+        "run_timestamp": "2026-04-22T19:54:35.959667Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-04F: Fourier Pair 04: Lorentz(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "726e16b2c75b6538",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.818247194759872,
+            -0.918815362802738,
+            1.7370625575626102
+          ],
+          "step4_clr_std_per_part": [
+            0.3069129694124974,
+            0.20205582212193487,
+            0.49672437459935737
+          ],
+          "step5_sigma2_range": [
+            2.9034777302448258e-08,
+            0.6533830439191054
+          ],
+          "step5_sigma2_final": 0.3817572303680903,
+          "step6_pll_coeffs": [
+            -1.6082024267934704e-05,
+            0.006639140440552459,
+            -0.19506812269912488
+          ],
+          "step6_pll_R2": 0.6373338581952067,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            206.4149490742273,
+            0.49014079526751453
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 51,
+          "step7_squeeze_closest": {
+            "time_index": 165,
+            "sigma2_A": 0.4467553209170514,
+            "constant": "1/sqrt5",
+            "constant_value": 0.4472135954999579,
+            "test_type": "direct",
+            "test_value": 0.4467553209170514,
+            "delta": 0.0004582745829065371
+          },
+          "step7_squeeze_mean": 0.25719439284953577,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.36071898176197,
+            0.9921520410453878
+          ],
+          "step8_entropy_mean": 0.41951726891575747,
+          "step8_entropy_cv": 32.45483121850306,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.41951726891575747,
+              "H_mean_decimated": 0.4200701457665318,
+              "variation_pct": 0.13178881818220026,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.41951726891575747,
+              "H_mean_decimated": 0.4212692610339879,
+              "variation_pct": 0.4176209772623734,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.41951726891575747,
+              "H_mean_decimated": 0.4214095755843211,
+              "variation_pct": 0.4510676457859116,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 2,
+            "stalls": 1,
+            "spikes": 0,
+            "reversals": 1
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.22797191261760458,
+            0.00671787343805702
+          ],
+          "step11_complex_range_im": [
+            -0.6500501672891019,
+            0.03920837719165304
+          ],
+          "step12_radius_range": [
+            0.0033395144556357757,
+            0.657248130460378
+          ],
+          "step12_theta_range": [
+            -2.217551313117508,
+            2.6715384759591108
+          ],
+          "step9_angular_velocity_std": 0.16803635570396896
+        }
+      }
+    },
+    "05": {
+      "pair_name": "\u03b4(t) \u2194 const",
+      "pair_type": "LIMIT",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-05T",
+        "name": "Fourier Pair 05: \u03b4(t)\u2248narrow",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "eb7685c969d6e44a",
+        "run_timestamp": "2026-04-22T19:54:35.968026Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-05T: Fourier Pair 05: \u03b4(t)\u2248narrow: 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "eb7685c969d6e44a",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.9378433930763012,
+            -0.9348967973294638,
+            1.8727401904057652
+          ],
+          "step4_clr_std_per_part": [
+            0.20356733161613896,
+            0.15450193879457355,
+            0.3389937091521253
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            0.34180856643664487
+          ],
+          "step5_sigma2_final": 0.18022724243731297,
+          "step6_pll_coeffs": [
+            -8.357884215202325e-06,
+            0.003335159509533973,
+            -0.09811200237530332
+          ],
+          "step6_pll_R2": 0.5942683615862876,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            199.52175835767048,
+            0.23460644249745877
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 8,
+          "step7_squeeze_closest": {
+            "time_index": 110,
+            "sigma2_A": 0.3183675710485851,
+            "constant": "1/pi",
+            "constant_value": 0.3183098861837907,
+            "test_type": "direct",
+            "test_value": 0.3183675710485851,
+            "delta": 5.7684864794405044e-05
+          },
+          "step7_squeeze_mean": 0.12535029704754894,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9904541895634482
+          ],
+          "step8_entropy_mean": 0.37281239241156716,
+          "step8_entropy_cv": 21.461712631944142,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.37281239241156716,
+              "H_mean_decimated": 0.37417255440060887,
+              "variation_pct": 0.36483819119943683,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.37281239241156716,
+              "H_mean_decimated": 0.38132286531442033,
+              "variation_pct": 2.282776290724267,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.37281239241156716,
+              "H_mean_decimated": 0.3813228557134931,
+              "variation_pct": 2.282773715453859,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 23,
+            "stalls": 11,
+            "spikes": 8,
+            "reversals": 4
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.19860253781632986,
+            0.04363371065713667
+          ],
+          "step11_complex_range_im": [
+            -0.6800122194707022,
+            0.012808103556848693
+          ],
+          "step12_radius_range": [
+            0.008152972544496507,
+            0.7084204871801473
+          ],
+          "step12_theta_range": [
+            -1.854950412686568,
+            1.4857898133500207
+          ],
+          "step9_angular_velocity_std": 0.19898024116288593
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-05F",
+        "name": "Fourier Pair 05: const(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "e5e5d1a9b61cf973",
+        "run_timestamp": "2026-04-22T19:54:35.972347Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-05F: Fourier Pair 05: const(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "e5e5d1a9b61cf973",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            0.9528132158332037,
+            -0.8914280429909587,
+            -0.061385172842245546
+          ],
+          "step4_clr_std_per_part": [
+            0.0723172104734232,
+            0.34284121598142836,
+            0.2763831605452251
+          ],
+          "step5_sigma2_range": [
+            0.0922241166600603,
+            0.20576266163767104
+          ],
+          "step5_sigma2_final": 0.19915752973924944,
+          "step6_pll_coeffs": [
+            -7.226174949265712e-07,
+            0.00020876792319276673,
+            0.15906364840234402
+          ],
+          "step6_pll_R2": 0.07943180451928622,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            144.45258013991256,
+            0.17414218098016715
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 0,
+          "step7_squeeze_closest": null,
+          "step7_squeeze_mean": 0.17038547619228436,
+          "step7_cancellation": false,
+          "step8_entropy_range": [
+            0.721311454153611,
+            0.8264566125991641
+          ],
+          "step8_entropy_mean": 0.7774865854922233,
+          "step8_entropy_cv": 3.6364775265626847,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.7774865854922233,
+              "H_mean_decimated": 0.7769405070739439,
+              "variation_pct": 0.07023637815353961,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.7774865854922233,
+              "H_mean_decimated": 0.7766832655134602,
+              "variation_pct": 0.10332268025620807,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.7774865854922233,
+              "H_mean_decimated": 0.7765993896165306,
+              "variation_pct": 0.11411076309836998,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 198,
+            "stalls": 21,
+            "spikes": 2,
+            "reversals": 175
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.030969583181883087,
+            0.1336179697504923
+          ],
+          "step11_complex_range_im": [
+            -0.12140274742160265,
+            0.053241395875382486
+          ],
+          "step12_radius_range": [
+            0.00021143646479598364,
+            0.18053362269050308
+          ],
+          "step12_theta_range": [
+            -1.4122106160608958,
+            2.7824111887356504
+          ],
+          "step9_angular_velocity_std": 2.1399063227598187
+        }
+      }
+    },
+    "06": {
+      "pair_name": "cos \u2194 \u03b4-pair",
+      "pair_type": "CLASSIC",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-06T",
+        "name": "Fourier Pair 06: cos(2\u03c0f\u2080t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "cc0a1c346e2d80a0",
+        "run_timestamp": "2026-04-22T19:54:35.977299Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-06T: Fourier Pair 06: cos(2\u03c0f\u2080t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "cc0a1c346e2d80a0",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            0.24410146266817737,
+            -0.29935909574148256,
+            0.055257633073305217
+          ],
+          "step4_clr_std_per_part": [
+            0.6243580777387748,
+            0.41530704237155014,
+            0.31282255149623034
+          ],
+          "step5_sigma2_range": [
+            0.37485028761625516,
+            0.7082019867761126
+          ],
+          "step5_sigma2_final": 0.6601608974056743,
+          "step6_pll_coeffs": [
+            -6.167222530225527e-06,
+            0.0020631605504082993,
+            0.5078555362799438
+          ],
+          "step6_pll_R2": 0.7287114530829182,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            167.26821030834867,
+            0.6804061227027358
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 221,
+          "step7_squeeze_closest": {
+            "time_index": 127,
+            "sigma2_A": 0.7069774961430901,
+            "constant": "1/sqrt2",
+            "constant_value": 0.7071067811865475,
+            "test_type": "direct",
+            "test_value": 0.7069774961430901,
+            "delta": 0.00012928504345732783
+          },
+          "step7_squeeze_mean": 0.6327648801640312,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.7275333038368419,
+            0.999072480951799
+          ],
+          "step8_entropy_mean": 0.8999176396265295,
+          "step8_entropy_cv": 8.978917407485776,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.8999176396265295,
+              "H_mean_decimated": 0.9241259893014816,
+              "variation_pct": 2.6900628023025197,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.8999176396265295,
+              "H_mean_decimated": 0.971307098562482,
+              "variation_pct": 7.932888054686815,
+              "pass": false
+            },
+            "compression_8x": {
+              "H_mean_original": 0.8999176396265295,
+              "H_mean_decimated": 0.9742383418976437,
+              "variation_pct": 8.258611566049275,
+              "pass": false
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 191,
+            "stalls": 14,
+            "spikes": 0,
+            "reversals": 177
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.20156813325856762,
+            0.24365846345090292
+          ],
+          "step11_complex_range_im": [
+            -0.1073212311601831,
+            0.2332578236239039
+          ],
+          "step12_radius_range": [
+            0.039728587523322575,
+            0.33731092347123187
+          ],
+          "step12_theta_range": [
+            -3.0109460634043153,
+            0.7635935160117282
+          ],
+          "step9_angular_velocity_std": 1.7260830176564055
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-06F",
+        "name": "Fourier Pair 06: \u03b4-pair(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "ffbf1787e12f57ed",
+        "run_timestamp": "2026-04-22T19:54:35.983205Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-06F: Fourier Pair 06: \u03b4-pair(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "ffbf1787e12f57ed",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.8677860141225782,
+            -0.8765884091774455,
+            1.7443744233000238
+          ],
+          "step4_clr_std_per_part": [
+            0.3512796960496102,
+            0.24676005360913986,
+            0.5612162917815844
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            0.7307999058863057
+          ],
+          "step5_sigma2_final": 0.4992516750749646,
+          "step6_pll_coeffs": [
+            -3.458539172938956e-05,
+            0.010182437177084233,
+            -0.17169412922740035
+          ],
+          "step6_pll_R2": 0.6830636495639716,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            147.20719743115592,
+            0.57776989070129
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 69,
+          "step7_squeeze_closest": {
+            "time_index": 137,
+            "sigma2_A": 0.43446118315835525,
+            "constant": "1/ln10",
+            "constant_value": 0.43429448190325176,
+            "test_type": "direct",
+            "test_value": 0.43446118315835525,
+            "delta": 0.0001667012551034852
+          },
+          "step7_squeeze_mean": 0.3893321115908596,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9957613420077791
+          ],
+          "step8_entropy_mean": 0.4122598939734196,
+          "step8_entropy_cv": 37.3007425628934,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.4122598939734196,
+              "H_mean_decimated": 0.41370987863836844,
+              "variation_pct": 0.3517161591863023,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.4122598939734196,
+              "H_mean_decimated": 0.4183785864151719,
+              "variation_pct": 1.4841832861255198,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.4122598939734196,
+              "H_mean_decimated": 0.41811162282598746,
+              "variation_pct": 1.419427147319147,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 63,
+            "stalls": 31,
+            "spikes": 26,
+            "reversals": 6
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.2595717289528208,
+            0.041881165588250724
+          ],
+          "step11_complex_range_im": [
+            -0.6030847902507065,
+            0.04427295747254767
+          ],
+          "step12_radius_range": [
+            0.017529100902635528,
+            0.6209879392770823
+          ],
+          "step12_theta_range": [
+            -2.0209031154348014,
+            1.4648056362058768
+          ],
+          "step9_angular_velocity_std": 0.27362576734908195
+        }
+      }
+    },
+    "07": {
+      "pair_name": "shah \u2194 shah",
+      "pair_type": "SELF-CONJUGATE",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-07T",
+        "name": "Fourier Pair 07: shah(t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "92563c4d0dc41e9e",
+        "run_timestamp": "2026-04-22T19:54:35.989629Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-07T: Fourier Pair 07: shah(t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "92563c4d0dc41e9e",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.733190779510674,
+            -0.706139992317715,
+            1.439330771828389
+          ],
+          "step4_clr_std_per_part": [
+            0.5333842636934567,
+            0.3785259291815479,
+            0.8186652293282944
+          ],
+          "step5_sigma2_range": [
+            0.9738633995771927,
+            1.9608355963458708
+          ],
+          "step5_sigma2_final": 1.097993409529714,
+          "step6_pll_coeffs": [
+            2.139508613788191e-05,
+            -0.005764911540371286,
+            1.4350273515470893
+          ],
+          "step6_pll_R2": 0.4674971884646001,
+          "step6_pll_shape": "bowl",
+          "step6_vertex": [
+            134.72513041590415,
+            1.0466881219907531
+          ],
+          "step6_curvature": "concave_up",
+          "step7_squeeze_count": 61,
+          "step7_squeeze_closest": {
+            "time_index": 13,
+            "sigma2_A": 1.2734412670782311,
+            "constant": "pi/4",
+            "constant_value": 0.7853981633974483,
+            "test_type": "reciprocal",
+            "test_value": 0.785273750625648,
+            "delta": 0.00012441277180030852
+          },
+          "step7_squeeze_mean": 1.1416454239925322,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9988102818141327
+          ],
+          "step8_entropy_mean": 0.5052811578598544,
+          "step8_entropy_cv": 44.9360319929814,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.5052811578598544,
+              "H_mean_decimated": 0.5158732177259253,
+              "variation_pct": 2.0962705023346144,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.5052811578598544,
+              "H_mean_decimated": 0.5623025004932899,
+              "variation_pct": 11.28507203295537,
+              "pass": false
+            },
+            "compression_8x": {
+              "H_mean_original": 0.5052811578598544,
+              "H_mean_decimated": 0.5645665052343221,
+              "variation_pct": 11.733140342215401,
+              "pass": false
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 168,
+            "stalls": 77,
+            "spikes": 55,
+            "reversals": 36
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.2692971891393701,
+            0.06948248571933968
+          ],
+          "step11_complex_range_im": [
+            -0.574019777823464,
+            0.1188005452040869
+          ],
+          "step12_radius_range": [
+            0.04972798185478681,
+            0.59244014430864
+          ],
+          "step12_theta_range": [
+            -2.1266300414788226,
+            1.4969662151755698
+          ],
+          "step9_angular_velocity_std": 0.71564724843076
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-07F",
+        "name": "Fourier Pair 07: shah(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "92563c4d0dc41e9e",
+        "run_timestamp": "2026-04-22T19:54:35.994669Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-07F: Fourier Pair 07: shah(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "92563c4d0dc41e9e",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.733190779510674,
+            -0.706139992317715,
+            1.439330771828389
+          ],
+          "step4_clr_std_per_part": [
+            0.5333842636934567,
+            0.3785259291815479,
+            0.8186652293282944
+          ],
+          "step5_sigma2_range": [
+            0.9738633995771927,
+            1.9608355963458708
+          ],
+          "step5_sigma2_final": 1.097993409529714,
+          "step6_pll_coeffs": [
+            2.139508613788191e-05,
+            -0.005764911540371286,
+            1.4350273515470893
+          ],
+          "step6_pll_R2": 0.4674971884646001,
+          "step6_pll_shape": "bowl",
+          "step6_vertex": [
+            134.72513041590415,
+            1.0466881219907531
+          ],
+          "step6_curvature": "concave_up",
+          "step7_squeeze_count": 61,
+          "step7_squeeze_closest": {
+            "time_index": 13,
+            "sigma2_A": 1.2734412670782311,
+            "constant": "pi/4",
+            "constant_value": 0.7853981633974483,
+            "test_type": "reciprocal",
+            "test_value": 0.785273750625648,
+            "delta": 0.00012441277180030852
+          },
+          "step7_squeeze_mean": 1.1416454239925322,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9988102818141327
+          ],
+          "step8_entropy_mean": 0.5052811578598544,
+          "step8_entropy_cv": 44.9360319929814,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.5052811578598544,
+              "H_mean_decimated": 0.5158732177259253,
+              "variation_pct": 2.0962705023346144,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.5052811578598544,
+              "H_mean_decimated": 0.5623025004932899,
+              "variation_pct": 11.28507203295537,
+              "pass": false
+            },
+            "compression_8x": {
+              "H_mean_original": 0.5052811578598544,
+              "H_mean_decimated": 0.5645665052343221,
+              "variation_pct": 11.733140342215401,
+              "pass": false
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 168,
+            "stalls": 77,
+            "spikes": 55,
+            "reversals": 36
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.2692971891393701,
+            0.06948248571933968
+          ],
+          "step11_complex_range_im": [
+            -0.574019777823464,
+            0.1188005452040869
+          ],
+          "step12_radius_range": [
+            0.04972798185478681,
+            0.59244014430864
+          ],
+          "step12_theta_range": [
+            -2.1266300414788226,
+            1.4969662151755698
+          ],
+          "step9_angular_velocity_std": 0.71564724843076
+        }
+      }
+    },
+    "08": {
+      "pair_name": "sech \u2194 sech",
+      "pair_type": "SELF-CONJUGATE",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-08T",
+        "name": "Fourier Pair 08: sech(\u03c0t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "eb475648bc030217",
+        "run_timestamp": "2026-04-22T19:54:36.001395Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-08T: Fourier Pair 08: sech(\u03c0t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "eb475648bc030217",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.6947594572298431,
+            -0.7701409393122469,
+            1.4649003965420904
+          ],
+          "step4_clr_std_per_part": [
+            0.49043433980491496,
+            0.32033917895122055,
+            0.7796798231445999
+          ],
+          "step5_sigma2_range": [
+            6.742965569610517e-11,
+            1.3895104177793391
+          ],
+          "step5_sigma2_final": 0.9510436578498195,
+          "step6_pll_coeffs": [
+            -3.7640320045768715e-05,
+            0.01558042517375697,
+            -0.4448253424404451
+          ],
+          "step6_pll_R2": 0.724482867185642,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            206.96456824506228,
+            1.1674726421401105
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 17,
+          "step7_squeeze_closest": {
+            "time_index": 158,
+            "sigma2_A": 1.0923949918797367,
+            "constant": "catalan",
+            "constant_value": 0.915965594177219,
+            "test_type": "reciprocal",
+            "test_value": 0.9154197954342979,
+            "delta": 0.0005457987429211553
+          },
+          "step7_squeeze_mean": 0.6178629560836656,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.359019119683046,
+            0.998876093653273
+          ],
+          "step8_entropy_mean": 0.49946239899686146,
+          "step8_entropy_cv": 42.23741014406887,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.49946239899686146,
+              "H_mean_decimated": 0.4995908032311152,
+              "variation_pct": 0.025708488669346413,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.49946239899686146,
+              "H_mean_decimated": 0.5001908887459814,
+              "variation_pct": 0.14585477316872242,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.49946239899686146,
+              "H_mean_decimated": 0.5019745601012813,
+              "variation_pct": 0.5029730184825394,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 1,
+            "stalls": 1,
+            "spikes": 0,
+            "reversals": 0
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.26773014537803064,
+            0.01361920323415372
+          ],
+          "step11_complex_range_im": [
+            -0.5694555468283979,
+            0.10616975275967788
+          ],
+          "step12_radius_range": [
+            0.01361883587153115,
+            0.5822316762362549
+          ],
+          "step12_theta_range": [
+            -2.1114336038531456,
+            1.4445782294949512
+          ],
+          "step9_angular_velocity_std": 0.12319009222902076
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-08F",
+        "name": "Fourier Pair 08: sech(\u03c0f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "eb475648bc030217",
+        "run_timestamp": "2026-04-22T19:54:36.006087Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-08F: Fourier Pair 08: sech(\u03c0f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "eb475648bc030217",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.6947594572298431,
+            -0.7701409393122469,
+            1.4649003965420904
+          ],
+          "step4_clr_std_per_part": [
+            0.49043433980491496,
+            0.32033917895122055,
+            0.7796798231445999
+          ],
+          "step5_sigma2_range": [
+            6.742965569610517e-11,
+            1.3895104177793391
+          ],
+          "step5_sigma2_final": 0.9510436578498195,
+          "step6_pll_coeffs": [
+            -3.7640320045768715e-05,
+            0.01558042517375697,
+            -0.4448253424404451
+          ],
+          "step6_pll_R2": 0.724482867185642,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            206.96456824506228,
+            1.1674726421401105
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 17,
+          "step7_squeeze_closest": {
+            "time_index": 158,
+            "sigma2_A": 1.0923949918797367,
+            "constant": "catalan",
+            "constant_value": 0.915965594177219,
+            "test_type": "reciprocal",
+            "test_value": 0.9154197954342979,
+            "delta": 0.0005457987429211553
+          },
+          "step7_squeeze_mean": 0.6178629560836656,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.359019119683046,
+            0.998876093653273
+          ],
+          "step8_entropy_mean": 0.49946239899686146,
+          "step8_entropy_cv": 42.23741014406887,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.49946239899686146,
+              "H_mean_decimated": 0.4995908032311152,
+              "variation_pct": 0.025708488669346413,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.49946239899686146,
+              "H_mean_decimated": 0.5001908887459814,
+              "variation_pct": 0.14585477316872242,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.49946239899686146,
+              "H_mean_decimated": 0.5019745601012813,
+              "variation_pct": 0.5029730184825394,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 1,
+            "stalls": 1,
+            "spikes": 0,
+            "reversals": 0
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.26773014537803064,
+            0.01361920323415372
+          ],
+          "step11_complex_range_im": [
+            -0.5694555468283979,
+            0.10616975275967788
+          ],
+          "step12_radius_range": [
+            0.01361883587153115,
+            0.5822316762362549
+          ],
+          "step12_theta_range": [
+            -2.1114336038531456,
+            1.4445782294949512
+          ],
+          "step9_angular_velocity_std": 0.12319009222902076
+        }
+      }
+    },
+    "09": {
+      "pair_name": "exp\u00b7u(t) \u2194 |1/(a+j\u03c9)|",
+      "pair_type": "CAUSAL",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-09T",
+        "name": "Fourier Pair 09: exp(-t)\u00b7u(t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "4c0d2f4ced0fa8fb",
+        "run_timestamp": "2026-04-22T19:54:36.010868Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-09T: Fourier Pair 09: exp(-t)\u00b7u(t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "4c0d2f4ced0fa8fb",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.5868262723931382,
+            -1.0481291699373294,
+            1.6349554423304664
+          ],
+          "step4_clr_std_per_part": [
+            0.5219497948613274,
+            0.16759163674536617,
+            0.45744918845589927
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            1.4025174516825705
+          ],
+          "step5_sigma2_final": 0.5097783050817334,
+          "step6_pll_coeffs": [
+            -4.388175086169064e-05,
+            0.007886305246781638,
+            0.4640716094872066
+          ],
+          "step6_pll_R2": 0.17789441958100127,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            89.85859830021606,
+            0.8183977771089253
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 85,
+          "step7_squeeze_closest": {
+            "time_index": 86,
+            "sigma2_A": 0.7072724992492401,
+            "constant": "1/sqrt2",
+            "constant_value": 0.7071067811865475,
+            "test_type": "direct",
+            "test_value": 0.7072724992492401,
+            "delta": 0.00016571806269261025
+          },
+          "step7_squeeze_mean": 0.6700706093953985,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9989282042518878
+          ],
+          "step8_entropy_mean": 0.4676517884247167,
+          "step8_entropy_cv": 32.85724894907116,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.4676517884247167,
+              "H_mean_decimated": 0.4680065712737334,
+              "variation_pct": 0.07586474761740417,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.4676517884247167,
+              "H_mean_decimated": 0.47120688598610405,
+              "variation_pct": 0.760201853041697,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.4676517884247167,
+              "H_mean_decimated": 0.4719534993459675,
+              "variation_pct": 0.9198534096792517,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 20,
+            "stalls": 1,
+            "spikes": 17,
+            "reversals": 2
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.26119154655474064,
+            0.09224501640604144
+          ],
+          "step11_complex_range_im": [
+            -0.574178401540581,
+            0.06938871870242913
+          ],
+          "step12_radius_range": [
+            0.0028108190720729665,
+            0.5951457254033585
+          ],
+          "step12_theta_range": [
+            -2.537677234715915,
+            3.099301472031953
+          ],
+          "step9_angular_velocity_std": 0.1614317306615389
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-09F",
+        "name": "Fourier Pair 09: |1/(a+2\u03c0if)|",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "f8b5028464893531",
+        "run_timestamp": "2026-04-22T19:54:36.016809Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-09F: Fourier Pair 09: |1/(a+2\u03c0if)|: 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "f8b5028464893531",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.4786664076428712,
+            -0.992247983343768,
+            1.470914390986639
+          ],
+          "step4_clr_std_per_part": [
+            0.31457508420821056,
+            0.2517458715764869,
+            0.5455367968616304
+          ],
+          "step5_sigma2_range": [
+            3.6693598138273845e-06,
+            0.7316670692510026
+          ],
+          "step5_sigma2_final": 0.4599438641904556,
+          "step6_pll_coeffs": [
+            -1.902624083864488e-05,
+            0.007756358646831445,
+            -0.22243567280407617
+          ],
+          "step6_pll_R2": 0.6753266824132191,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            203.83318787485405,
+            0.5680659818380952
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 49,
+          "step7_squeeze_closest": {
+            "time_index": 133,
+            "sigma2_A": 0.6080221829902671,
+            "constant": "pi^2/6",
+            "constant_value": 1.6449340668482264,
+            "test_type": "reciprocal",
+            "test_value": 1.6446768357726307,
+            "delta": 0.0002572310755957208
+          },
+          "step7_squeeze_mean": 0.3027514388721781,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.4087840697207335,
+            0.988776497473825
+          ],
+          "step8_entropy_mean": 0.52278529670542,
+          "step8_entropy_cv": 28.448435914155763,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.52278529670542,
+              "H_mean_decimated": 0.5230778952270148,
+              "variation_pct": 0.055969156638250694,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.52278529670542,
+              "H_mean_decimated": 0.5238902134337284,
+              "variation_pct": 0.21135191354302393,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.52278529670542,
+              "H_mean_decimated": 0.525138640395711,
+              "variation_pct": 0.45015491160936777,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 1,
+            "stalls": 1,
+            "spikes": 0,
+            "reversals": 0
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.21833215653639837,
+            0.018293962561878596
+          ],
+          "step11_complex_range_im": [
+            -0.6024967204616721,
+            0.07286715670829469
+          ],
+          "step12_radius_range": [
+            0.00774374105954937,
+            0.6133009177991089
+          ],
+          "step12_theta_range": [
+            -2.9978052286659933,
+            2.6851353269229303
+          ],
+          "step9_angular_velocity_std": 0.10185154584090772
+        }
+      }
+    },
+    "10": {
+      "pair_name": "sinc\u00b2 \u2194 tri",
+      "pair_type": "CLASSIC (REVERSE)",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-10T",
+        "name": "Fourier Pair 10: sinc\u00b2(t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "6dceddbfcac2d5b9",
+        "run_timestamp": "2026-04-22T19:54:36.021776Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-10T: Fourier Pair 10: sinc\u00b2(t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "6dceddbfcac2d5b9",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.8630848974446461,
+            -0.869961701171616,
+            1.7330465986162622
+          ],
+          "step4_clr_std_per_part": [
+            0.3399804099585417,
+            0.23468861480778255,
+            0.5261747937100002
+          ],
+          "step5_sigma2_range": [
+            5.671227217871151e-06,
+            0.7660101609651231
+          ],
+          "step5_sigma2_final": 0.447525338611735,
+          "step6_pll_coeffs": [
+            -1.91136257326586e-05,
+            0.007852797902772154,
+            -0.23058921824757975
+          ],
+          "step6_pll_R2": 0.6431085199019041,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            205.42407841947087,
+            0.5759876678480819
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 58,
+          "step7_squeeze_closest": {
+            "time_index": 101,
+            "sigma2_A": 0.5771882738361168,
+            "constant": "euler_gamma",
+            "constant_value": 0.5772156649015329,
+            "test_type": "direct",
+            "test_value": 0.5771882738361168,
+            "delta": 2.7391065416049187e-05
+          },
+          "step7_squeeze_mean": 0.30312195020828525,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.35906527531747345,
+            0.9985270388158073
+          ],
+          "step8_entropy_mean": 0.41763561957257067,
+          "step8_entropy_cv": 34.299911208495644,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.41763561957257067,
+              "H_mean_decimated": 0.41793145017730265,
+              "variation_pct": 0.07083462014919886,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.41763561957257067,
+              "H_mean_decimated": 0.4197010413349295,
+              "variation_pct": 0.4945511507070951,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.41763561957257067,
+              "H_mean_decimated": 0.421578294087792,
+              "variation_pct": 0.9440465157776715,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 114,
+            "stalls": 8,
+            "spikes": 0,
+            "reversals": 106
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.2664158131746046,
+            0.05472906160289731
+          ],
+          "step11_complex_range_im": [
+            -0.5946404638441187,
+            0.043849422149241146
+          ],
+          "step12_radius_range": [
+            0.008296647026129846,
+            0.6166165047917497
+          ],
+          "step12_theta_range": [
+            -2.0394881910733127,
+            2.023954209487004
+          ],
+          "step9_angular_velocity_std": 0.2533828763923259
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-10F",
+        "name": "Fourier Pair 10: tri(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "34bf049d57ecd249",
+        "run_timestamp": "2026-04-22T19:54:36.026618Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-10F: Fourier Pair 10: tri(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "34bf049d57ecd249",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.6465316150537492,
+            -0.5945147610954142,
+            1.2410463761491628
+          ],
+          "step4_clr_std_per_part": [
+            0.5773866094061809,
+            0.5188825089618542,
+            1.0265572709288746
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            2.1075912678375874
+          ],
+          "step5_sigma2_final": 1.6564341853250535,
+          "step6_pll_coeffs": [
+            -6.908849683318536e-05,
+            0.02717076523204905,
+            -0.7326982326103969
+          ],
+          "step6_pll_R2": 0.8029181730640048,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            196.63740331225503,
+            1.9386961280081159
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 59,
+          "step7_squeeze_closest": {
+            "time_index": 120,
+            "sigma2_A": 2.0785817744394213,
+            "constant": "ln_phi",
+            "constant_value": 0.48121182505960347,
+            "test_type": "reciprocal",
+            "test_value": 0.4810972617469875,
+            "delta": 0.0001145633126159451
+          },
+          "step7_squeeze_mean": 1.0744462212918708,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3589962496465303,
+            0.9993474478292361
+          ],
+          "step8_entropy_mean": 0.544787510500934,
+          "step8_entropy_cv": 48.53203366938029,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.544787510500934,
+              "H_mean_decimated": 0.5450743754719355,
+              "variation_pct": 0.05265630460906232,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.544787510500934,
+              "H_mean_decimated": 0.5448915156068989,
+              "variation_pct": 0.019090949032446257,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.544787510500934,
+              "H_mean_decimated": 0.5475157747524064,
+              "variation_pct": 0.5007941993684447,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 8,
+            "stalls": 7,
+            "spikes": 1,
+            "reversals": 0
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.22379332409160435,
+            0.13590055345941665
+          ],
+          "step11_complex_range_im": [
+            -0.5224077323481726,
+            0.1704125906793783
+          ],
+          "step12_radius_range": [
+            0.09821531545045648,
+            0.5378364838550218
+          ],
+          "step12_theta_range": [
+            -2.0077838855565178,
+            1.5637155369488354
+          ],
+          "step9_angular_velocity_std": 0.16184761897516867
+        }
+      }
+    },
+    "11": {
+      "pair_name": "J\u2080 \u2194 1/\u221a(1-f\u00b2)",
+      "pair_type": "BESSEL",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-11T",
+        "name": "Fourier Pair 11: J\u2080(2\u03c0t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "97c0a6deae89a7a6",
+        "run_timestamp": "2026-04-22T19:54:36.034281Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-11T: Fourier Pair 11: J\u2080(2\u03c0t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "97c0a6deae89a7a6",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.627479772182234,
+            -0.7383507246309488,
+            1.365830496813183
+          ],
+          "step4_clr_std_per_part": [
+            0.32474415245727234,
+            0.28832934636069846,
+            0.3152582689490817
+          ],
+          "step5_sigma2_range": [
+            0.22402651536730944,
+            1.007694176855392
+          ],
+          "step5_sigma2_final": 0.2879803526687513,
+          "step6_pll_coeffs": [
+            1.785519419528149e-05,
+            -0.006175775326896968,
+            0.8410246485924078
+          ],
+          "step6_pll_R2": 0.882550356799595,
+          "step6_pll_shape": "bowl",
+          "step6_vertex": [
+            172.94058130515916,
+            0.30700356107059734
+          ],
+          "step6_curvature": "concave_up",
+          "step7_squeeze_count": 102,
+          "step7_squeeze_closest": {
+            "time_index": 13,
+            "sigma2_A": 0.8319014205721496,
+            "constant": "apery",
+            "constant_value": 1.2020569031595942,
+            "test_type": "reciprocal",
+            "test_value": 1.202065503521125,
+            "delta": 8.600361530719525e-06
+          },
+          "step7_squeeze_mean": 0.4590325849132893,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.4616292289343096,
+            0.9958742430393297
+          ],
+          "step8_entropy_mean": 0.585943954627805,
+          "step8_entropy_cv": 16.534967663893394,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.585943954627805,
+              "H_mean_decimated": 0.5852498969510005,
+              "variation_pct": 0.11845120532822913,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.585943954627805,
+              "H_mean_decimated": 0.5848777490368049,
+              "variation_pct": 0.1819637497032262,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.585943954627805,
+              "H_mean_decimated": 0.5869825694645907,
+              "variation_pct": 0.1772549795219619,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 210,
+            "stalls": 15,
+            "spikes": 0,
+            "reversals": 195
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.18608542783768145,
+            0.11912962316589137
+          ],
+          "step11_complex_range_im": [
+            -0.59122621996415,
+            0.06284531960220274
+          ],
+          "step12_radius_range": [
+            0.005907854640002703,
+            0.6198195137510842
+          ],
+          "step12_theta_range": [
+            -2.8950049870248593,
+            3.1395589859715556
+          ],
+          "step9_angular_velocity_std": 0.7274529663620798
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-11F",
+        "name": "Fourier Pair 11: 1/\u221a(1-f\u00b2)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "951887985306f95f",
+        "run_timestamp": "2026-04-22T19:54:36.039380Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-11F: Fourier Pair 11: 1/\u221a(1-f\u00b2): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "951887985306f95f",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.02601278968403842,
+            -1.2194470502164017,
+            1.2454598399004424
+          ],
+          "step4_clr_std_per_part": [
+            0.6847193469359037,
+            0.29884145482283014,
+            0.5481147518581733
+          ],
+          "step5_sigma2_range": [
+            0.0,
+            1.284798563074026
+          ],
+          "step5_sigma2_final": 0.858576580393503,
+          "step6_pll_coeffs": [
+            -6.709547812224332e-05,
+            0.015266020001885537,
+            0.08938382006043041
+          ],
+          "step6_pll_R2": 0.35514540100519587,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            113.76340424962697,
+            0.9577410224391282
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 73,
+          "step7_squeeze_closest": {
+            "time_index": 152,
+            "sigma2_A": 0.6179982295089087,
+            "constant": "1/phi",
+            "constant_value": 0.6180339887498948,
+            "test_type": "direct",
+            "test_value": 0.6179982295089087,
+            "delta": 3.5759240986088514e-05
+          },
+          "step7_squeeze_mean": 0.7267423916102129,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.36497130307966236,
+            0.8260863740514693
+          ],
+          "step8_entropy_mean": 0.6198083539913682,
+          "step8_entropy_cv": 29.267868751589425,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.6198083539913682,
+              "H_mean_decimated": 0.6200966656433043,
+              "variation_pct": 0.046516257820577375,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.6198083539913682,
+              "H_mean_decimated": 0.6297137802957937,
+              "variation_pct": 1.5981434003975088,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.6198083539913682,
+              "H_mean_decimated": 0.6344996980675339,
+              "variation_pct": 2.3703043015729146,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 19,
+            "stalls": 7,
+            "spikes": 1,
+            "reversals": 11
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.19886485190166076,
+            0.2473921572615559
+          ],
+          "step11_complex_range_im": [
+            -0.5057386414999906,
+            0.18509851688763068
+          ],
+          "step12_radius_range": [
+            0.019526786184563553,
+            0.507078943865028
+          ],
+          "step12_theta_range": [
+            -2.52676951128521,
+            1.0864373479872476
+          ],
+          "step9_angular_velocity_std": 0.19920062889211862
+        }
+      }
+    },
+    "12": {
+      "pair_name": "chirp \u2194 chirp",
+      "pair_type": "SELF-CONJUGATE",
+      "time_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-12T",
+        "name": "Fourier Pair 12: chirp(t)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "91574fc814c9642c",
+        "run_timestamp": "2026-04-22T19:54:36.044709Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-12T: Fourier Pair 12: chirp(t): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "91574fc814c9642c",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.18627092491727956,
+            -0.6404599744675754,
+            0.8267308993848546
+          ],
+          "step4_clr_std_per_part": [
+            0.5391228673178126,
+            0.42989693052277606,
+            0.5500595281811186
+          ],
+          "step5_sigma2_range": [
+            0.0003262974062099382,
+            0.8360365809932946
+          ],
+          "step5_sigma2_final": 0.778030321480719,
+          "step6_pll_coeffs": [
+            -4.748877883325613e-05,
+            0.013539264313652424,
+            -0.12785219535201817
+          ],
+          "step6_pll_R2": 0.9793880197543834,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            142.55224756559704,
+            0.8371740837958986
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 64,
+          "step7_squeeze_closest": {
+            "time_index": 140,
+            "sigma2_A": 0.8318073764758036,
+            "constant": "apery",
+            "constant_value": 1.2020569031595942,
+            "test_type": "reciprocal",
+            "test_value": 1.2022014089809998,
+            "delta": 0.00014450582140557167
+          },
+          "step7_squeeze_mean": 0.598053446709443,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3653772593572224,
+            0.9925684101978616
+          ],
+          "step8_entropy_mean": 0.7643972458820663,
+          "step8_entropy_cv": 23.053626808533732,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.7643972458820663,
+              "H_mean_decimated": 0.7721245077863421,
+              "variation_pct": 1.0108960943938368,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.7643972458820663,
+              "H_mean_decimated": 0.7794971466830947,
+              "variation_pct": 1.9753996867955843,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.7643972458820663,
+              "H_mean_decimated": 0.7844367140145824,
+              "variation_pct": 2.621603916088399,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 142,
+            "stalls": 23,
+            "spikes": 0,
+            "reversals": 119
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.24742147935114545,
+            0.16581566804903014
+          ],
+          "step11_complex_range_im": [
+            -0.2717836909126399,
+            0.26392263800104254
+          ],
+          "step12_radius_range": [
+            0.033182520584408,
+            0.3579979173361029
+          ],
+          "step12_theta_range": [
+            -3.0960866154560933,
+            2.9904197109908885
+          ],
+          "step9_angular_velocity_std": 1.0320644187366375
+        }
+      },
+      "freq_domain": {
+        "framework": "Higgins Unity Framework",
+        "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+        "experiment": "EXP-19-12F",
+        "name": "Fourier Pair 12: chirp(f)",
+        "domain": "FOURIER_CONJUGATE",
+        "carriers": [
+          "Signal",
+          "Derivative",
+          "Residual"
+        ],
+        "D": 3,
+        "N": 200,
+        "data_source": {
+          "type": "LOCAL FILE",
+          "url": null,
+          "description": null
+        },
+        "data_hash_sha256_16": "104fdea6786a1f69",
+        "run_timestamp": "2026-04-22T19:54:36.049921Z",
+        "pipeline_version": "1.0",
+        "steps": {
+          "step1_system": "EXP-19-12F: Fourier Pair 12: chirp(f): 3-part simplex, carriers=['Signal', 'Derivative', 'Residual']",
+          "step2_n_samples": 200,
+          "step2_D": 3,
+          "step2_carriers": [
+            "Signal",
+            "Derivative",
+            "Residual"
+          ],
+          "data_hash_sha256_16": "104fdea6786a1f69",
+          "step3_closure_check": true,
+          "step3_zero_replacement_applied": false,
+          "step3_zero_delta": 1e-06,
+          "step4_clr_mean_per_part": [
+            -0.5341639445881804,
+            -0.7301251557396113,
+            1.2642891003277925
+          ],
+          "step4_clr_std_per_part": [
+            0.6157713156406823,
+            0.3740400935869334,
+            0.6679015295433952
+          ],
+          "step5_sigma2_range": [
+            1.4335576002236422e-07,
+            1.1658998488431984
+          ],
+          "step5_sigma2_final": 0.9651727579427856,
+          "step6_pll_coeffs": [
+            -4.7451186505409813e-05,
+            0.016737765109330675,
+            -0.41041529146592676
+          ],
+          "step6_pll_R2": 0.8533874674952912,
+          "step6_pll_shape": "hill",
+          "step6_vertex": [
+            176.36824642332638,
+            1.0655898492231668
+          ],
+          "step6_curvature": "concave_down",
+          "step7_squeeze_count": 17,
+          "step7_squeeze_closest": {
+            "time_index": 96,
+            "sigma2_A": 0.9166063880884647,
+            "constant": "catalan",
+            "constant_value": 0.915965594177219,
+            "test_type": "direct",
+            "test_value": 0.9166063880884647,
+            "delta": 0.0006407939112457184
+          },
+          "step7_squeeze_mean": 0.6374421834729085,
+          "step7_cancellation": true,
+          "step8_entropy_range": [
+            0.3590785568900562,
+            0.9961473817991776
+          ],
+          "step8_entropy_mean": 0.5972049253439377,
+          "step8_entropy_cv": 38.223445216514534,
+          "step8_eitt_invariance": {
+            "compression_2x": {
+              "H_mean_original": 0.5972049253439377,
+              "H_mean_decimated": 0.5984536764263243,
+              "variation_pct": 0.2090992604703443,
+              "pass": true
+            },
+            "compression_4x": {
+              "H_mean_original": 0.5972049253439377,
+              "H_mean_decimated": 0.605567112598808,
+              "variation_pct": 1.400220745007165,
+              "pass": true
+            },
+            "compression_8x": {
+              "H_mean_original": 0.5972049253439377,
+              "H_mean_decimated": 0.6075053687880261,
+              "variation_pct": 1.7247753672085462,
+              "pass": true
+            }
+          },
+          "step9_chaos_detection": {
+            "total_deviations": 127,
+            "stalls": 13,
+            "spikes": 1,
+            "reversals": 113
+          },
+          "step10_ternary_type": "ternary",
+          "step11_complex_range_re": [
+            -0.2684677989344023,
+            0.16373155249125448
+          ],
+          "step11_complex_range_im": [
+            -0.3832023881950464,
+            0.16127362931897127
+          ],
+          "step12_radius_range": [
+            0.01763613042823479,
+            0.4546106977645642
+          ],
+          "step12_theta_range": [
+            -2.257570976935643,
+            2.0490348747161886
+          ],
+          "step9_angular_velocity_std": 0.5587526684237836
+        }
+      }
+    }
+  }
+}

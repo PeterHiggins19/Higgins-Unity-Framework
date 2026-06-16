@@ -84,7 +84,26 @@ Any governed application of HUF shall preserve:
 - the right to refuse false certainty
 - the right to keep the loop open where judgment requires it
 
-## Article IX — Declaration
+## Article IX — The Carrier Filter (Accountable Dissemination)
+
+Deterministic measurement is the province of Hs; its **dissemination** is the province of HUF. Every analysis begins with the exact deterministic Hs response as its first stage — for the data and for the channels alike. At the moment a deterministic result must be **distributed**, a governed breakpoint occurs: HUF intervenes to **filter the carrier** on a need-to-know basis before the result travels.
+
+The first filter is **personal/private versus public.**
+
+- **Personal / private** content — a relationship held as a union, contact details, the close-emotional register, and any not-yet-consented relationship — travels only on the personal channel, off the public record, on a need-to-know basis.
+- **Public** content — deterministic science, public-professional citation, business, and government matters — travels on public channels in the appropriate collaborator, commercial, or governmental register.
+
+No content shall be carried in the wrong space. A result that is *true* is not thereby fit for every channel; fitness is decided at the carrier filter. In this role HUF is a **carrier-loss tool by design**: it withholds what a given channel has no need to know, exactly as sound classification withholds by clearance. This protects privacy and public exposure at once, and prevents plans, relationships, and registers from mixing where they do not belong.
+
+In practice: **repositories are public and hold no personal material; personal material is kept off-repository and tracked.** Hs and HUF are both stages of the same tensor train — Hs measures, HUF carries — and the carrier filter is the governed breakpoint between them.
+
+## Article X — The Data Is the Star (the 49/51 Principle)
+
+The insight in any engagement belongs to the **data** and to the human work of gathering and preparing it — not to the instrument. Hˢ is the **49%**; the data and its makers are the **51%**. This is structural, not modest: with no data there is no reading, and the engine is dependent on what it runs.
+
+Accordingly: **all public contact shall present Hˢ as a tool that reveals the inner power of carefully prepared real‑world data — never as the source of the insight.** The data owner keeps the meaning and the image; raw data is read, never absorbed or claimed; and every output must **earn its hash stamp** — the determinism receipt and traceability chain that certify the data was treated with care and the result can be re‑derived to its origin. The principle is **invariant under scale**: across an Hˢ‑to‑Hˢ chain (any node to any node, data and commands streaming through the mesh), the data remains the star and each node the 49% at every hop, receipts carried forward intact. Hˢ succeeds only when the data is shown truly. Full doctrine: [`THE_DATA_IS_THE_STAR.md`](THE_DATA_IS_THE_STAR.md).
+
+## Article XI — Declaration
 
 HUF declares that structural visibility without accountable judgment is incomplete.
 

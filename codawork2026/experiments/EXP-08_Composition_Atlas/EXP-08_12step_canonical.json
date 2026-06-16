@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-08",
+  "name": "QGP Freeze-out Composition",
+  "domain": "PARTICLE PHYSICS",
+  "carriers": [
+    "Quarks",
+    "Gluons",
+    "Hadrons"
+  ],
+  "D": 3,
+  "N": 40,
+  "data_source": {
+    "type": "DERIVED",
+    "url": "https://home.cern/science/physics/heavy-ions-and-quark-gluon-plasma",
+    "description": "Quark-gluon plasma freeze-out modeled as 3-part composition [Quarks, Gluons, Hadrons] across temperature range 400\u2192100 MeV. Crossover at Tc=155 MeV (STAR/ALICE measurements). Sigmoid transition."
+  },
+  "data_hash_sha256_16": "3ad284b020e21fac",
+  "run_timestamp": "2026-04-22T17:41:31.901951Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-08: QGP Freeze-out Composition: 3-part simplex, carriers=['Quarks', 'Gluons', 'Hadrons']",
+    "step2_n_samples": 40,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Quarks",
+      "Gluons",
+      "Hadrons"
+    ],
+    "data_hash_sha256_16": "3ad284b020e21fac",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.5456614651688014,
+      -0.00410124688830828,
+      -0.5415602182804937
+    ],
+    "step4_clr_std_per_part": [
+      0.49849154136692386,
+      0.5138955905545368,
+      1.0078618615840007
+    ],
+    "step5_sigma2_range": [
+      0.037575991190657285,
+      1.5283680268413349
+    ],
+    "step5_sigma2_final": 1.5283680268413349,
+    "step6_pll_coeffs": [
+      0.0019782191186211405,
+      -0.05246818343692454,
+      0.3245723969844509
+    ],
+    "step6_pll_R2": 0.9326628354394535,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      13.261469101940524,
+      -0.023330199757410297
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 5,
+    "step7_squeeze_closest": {
+      "time_index": 37,
+      "sigma2_A": 1.2044421066592033,
+      "constant": "apery",
+      "constant_value": 1.2020569031595942,
+      "test_type": "direct",
+      "test_value": 1.2044421066592033,
+      "delta": 0.0023852034996090232
+    },
+    "step7_squeeze_mean": 0.31820207014222446,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.3974444995495369,
+      0.9808095989091485
+    ],
+    "step8_entropy_mean": 0.7999357444305779,
+    "step8_entropy_cv": 15.332421804810412,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.7999357444305779,
+        "H_mean_decimated": 0.7998446360359593,
+        "variation_pct": 0.011389464122949097,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.7999357444305779,
+        "H_mean_decimated": 0.8002031394188419,
+        "variation_pct": 0.033427058376337915,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.7999357444305779,
+        "H_mean_decimated": 0.8053107811037858,
+        "variation_pct": 0.6719335534923585,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 28,
+      "stalls": 2,
+      "spikes": 0,
+      "reversals": 26
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.05539696682107487,
+      0.09020830534773344
+    ],
+    "step11_complex_range_im": [
+      -0.18487389199814458,
+      0.551637425766774
+    ],
+    "step12_radius_range": [
+      0.04835277492214902,
+      0.55785939099518
+    ],
+    "step12_theta_range": [
+      -1.9169054394170686,
+      1.56395437220127
+    ],
+    "step9_angular_velocity_std": 0.48038961082750636
+  }
+}
