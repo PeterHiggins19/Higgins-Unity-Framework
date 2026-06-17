@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-11",
+  "name": "Cosmology + Stellar Nucleosynthesis",
+  "domain": "PHYSICS",
+  "carriers": [
+    "Channel_A",
+    "Channel_B",
+    "Channel_C"
+  ],
+  "D": 3,
+  "N": 60,
+  "data_source": {
+    "type": "DERIVED",
+    "url": "https://lambda.gsfc.nasa.gov/product/map/current/params/lcdm_sz_lens_wmap9.cfm",
+    "description": "Cosmological composition [\u03a9_m, \u03a9_r, \u03a9_\u039b] at redshifts z=0\u21922 (30 points, Planck 2018 parameters) + stellar nucleosynthesis channels [pp-chain, CNO, triple-\u03b1] across stellar mass 0.5\u219225 M\u2609 (30 points)."
+  },
+  "data_hash_sha256_16": "91087b77d0f1c321",
+  "run_timestamp": "2026-04-22T17:41:33.653547Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-11: Cosmology + Stellar Nucleosynthesis: 3-part simplex, carriers=['Channel_A', 'Channel_B', 'Channel_C']",
+    "step2_n_samples": 60,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Channel_A",
+      "Channel_B",
+      "Channel_C"
+    ],
+    "data_hash_sha256_16": "91087b77d0f1c321",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      -0.3432946474555156,
+      -1.0630046854624549,
+      1.4062993329179707
+    ],
+    "step4_clr_std_per_part": [
+      3.385803608627452,
+      3.5415601739504097,
+      0.9369978402017101
+    ],
+    "step5_sigma2_range": [
+      0.024124346539373148,
+      24.884279494449004
+    ],
+    "step5_sigma2_final": 24.884279494449004,
+    "step6_pll_coeffs": [
+      0.009667139765731443,
+      -0.021138662548763933,
+      -1.3992728186741101
+    ],
+    "step6_pll_R2": 0.9170576871310875,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      1.0933255885932938,
+      -1.4108285390107114
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 13,
+    "step7_squeeze_closest": {
+      "time_index": 26,
+      "sigma2_A": 0.7863514277869396,
+      "constant": "pi/4",
+      "constant_value": 0.7853981633974483,
+      "test_type": "direct",
+      "test_value": 0.7863514277869396,
+      "delta": 0.0009532643894912818
+    },
+    "step7_squeeze_mean": 9.658070660006505,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.23697490209015154,
+      0.7321491280418347
+    ],
+    "step8_entropy_mean": 0.47685175156291554,
+    "step8_entropy_cv": 26.546173223588905,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.47685175156291554,
+        "H_mean_decimated": 0.47670665237163046,
+        "variation_pct": 0.030428574669068075,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.47685175156291554,
+        "H_mean_decimated": 0.46563721819797643,
+        "variation_pct": 2.3517861323110747,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.46762254016158933,
+        "H_mean_decimated": 0.4540252545572443,
+        "variation_pct": 2.907748116599859,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 7,
+      "stalls": 2,
+      "spikes": 1,
+      "reversals": 4
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.4487365983068612,
+      0.47434627519264727
+    ],
+    "step11_complex_range_im": [
+      -0.20807455134223649,
+      0.37640727418700565
+    ],
+    "step12_radius_range": [
+      0.19148534742485157,
+      0.4992583220274776
+    ],
+    "step12_theta_range": [
+      -3.1210272431570134,
+      3.11169854067824
+    ],
+    "step9_angular_velocity_std": 0.20449370415538037
+  }
+}

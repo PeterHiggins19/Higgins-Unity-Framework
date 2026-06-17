@@ -1,0 +1,641 @@
+{
+  "_meta": {
+    "type": "HFSP-DISTRIBUTION-ANALYSIS",
+    "date": "2026-04-21",
+    "purpose": "Distribution analysis of blend landscapes to reveal hidden structure"
+  },
+  "landscape_topology": {
+    "EXP-01": {
+      "arithmetic": {
+        "peak_alpha": 0.97,
+        "peak_score": 0.7809931672682253,
+        "skew": -0.9608573568855477,
+        "kurtosis": -0.7390306826834738,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 0.016129380920976176,
+        "score_range": 0.43470424712559286
+      },
+      "geometric": {
+        "peak_alpha": 0.9500000000000001,
+        "peak_score": 0.7810154465959727,
+        "skew": -0.9302631907722129,
+        "kurtosis": -0.7855700439851061,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 0.0021687191392366512,
+        "score_range": 0.43350217234203725
+      },
+      "log_ratio": {
+        "peak_alpha": 0.9500000000000001,
+        "peak_score": 0.7810154465959727,
+        "skew": -0.9302631907722134,
+        "kurtosis": -0.7855700439851057,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 0.002168719139239427,
+        "score_range": 0.43350217234203725
+      },
+      "quadratic": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.781007072205911,
+        "skew": -1.6502460286425356,
+        "kurtosis": 1.1228926873822926,
+        "width_half_max": 0.98,
+        "n_peaks": 0,
+        "asymmetry": 0.17152103159873733,
+        "score_range": 0.43365278801117446
+      },
+      "power_p2": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.7810100539126945,
+        "skew": -1.206075122629529,
+        "kurtosis": -0.19744136966149828,
+        "width_half_max": 0.98,
+        "n_peaks": 0,
+        "asymmetry": 0.33878852793341524,
+        "score_range": 0.435128970029784
+      },
+      "power_p3": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.7783080077086584,
+        "skew": -1.6102513771355027,
+        "kurtosis": 0.9951983867120857,
+        "width_half_max": 0.98,
+        "n_peaks": 0,
+        "asymmetry": 4.094473940151702,
+        "score_range": 0.42776286913478934
+      },
+      "sigmoid_k5": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.7776248817949483,
+        "skew": -1.1497682309529744,
+        "kurtosis": -0.31754546863255584,
+        "width_half_max": 0.98,
+        "n_peaks": 0,
+        "asymmetry": 0.07605241818133282,
+        "score_range": 0.43053532203547384
+      },
+      "sigmoid_k10": {
+        "peak_alpha": 0.87,
+        "peak_score": 0.7810202841568658,
+        "skew": -2.182500531226891,
+        "kurtosis": 3.356567849438936,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": -0.0013644650955768644,
+        "score_range": 0.43500185863125995
+      },
+      "sigmoid_k20": {
+        "peak_alpha": 0.6900000000000001,
+        "peak_score": 0.7810165016811571,
+        "skew": -3.4073501799309414,
+        "kurtosis": 10.748036986923776,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": -4.191106223738759e-05,
+        "score_range": 0.42920748170084344
+      }
+    },
+    "EXP-03": {
+      "arithmetic": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.3088490547835552,
+        "skew": 2.6596479231938526,
+        "kurtosis": 5.4093426834977585,
+        "width_half_max": 0.08,
+        "n_peaks": 1,
+        "asymmetry": 0.9671659849024239,
+        "score_range": 0.18574637587232848
+      },
+      "geometric": {
+        "peak_alpha": 0.47000000000000003,
+        "peak_score": 0.7129321336538793,
+        "skew": -0.481325393451268,
+        "kurtosis": -1.1817382788230804,
+        "width_half_max": 0.6,
+        "n_peaks": 2,
+        "asymmetry": -0.12920101977562715,
+        "score_range": 0.5878609139608608
+      },
+      "log_ratio": {
+        "peak_alpha": 0.47000000000000003,
+        "peak_score": 0.7129321336538793,
+        "skew": -0.48132539345126846,
+        "kurtosis": -1.1817382788230797,
+        "width_half_max": 0.6,
+        "n_peaks": 2,
+        "asymmetry": -0.12920101977562226,
+        "score_range": 0.5878609139608609
+      },
+      "quadratic": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.6817297865014168,
+        "skew": 2.3299103441577933,
+        "kurtosis": 5.580428809828424,
+        "width_half_max": 0.04,
+        "n_peaks": 1,
+        "asymmetry": 5.132993639980665,
+        "score_range": 0.5586957429908324
+      },
+      "power_p2": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.2722267263268312,
+        "skew": 6.42532939714373,
+        "kurtosis": 41.29891556283579,
+        "width_half_max": 0,
+        "n_peaks": 0,
+        "asymmetry": 3.5966309816625923,
+        "score_range": 0.1459950781921187
+      },
+      "power_p3": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.14231011463324794,
+        "skew": -1.725923228242391,
+        "kurtosis": 3.1636267430938014,
+        "width_half_max": 0.88,
+        "n_peaks": 0,
+        "asymmetry": -0.12323107935842473,
+        "score_range": 0.014307485832117661
+      },
+      "sigmoid_k5": {
+        "peak_alpha": 0.06999999999999999,
+        "peak_score": 0.27274838777958044,
+        "skew": 2.967555932574072,
+        "kurtosis": 7.122907570101674,
+        "width_half_max": 0.05999999999999999,
+        "n_peaks": 1,
+        "asymmetry": -0.021738938308463875,
+        "score_range": 0.14939363909149914
+      },
+      "sigmoid_k10": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.3310500743474939,
+        "skew": 1.0407514869537282,
+        "kurtosis": -0.7471972810076348,
+        "width_half_max": 0.26,
+        "n_peaks": 1,
+        "asymmetry": 0.6934920796012822,
+        "score_range": 0.2080037446175919
+      },
+      "sigmoid_k20": {
+        "peak_alpha": 0.09,
+        "peak_score": 0.7136915295810004,
+        "skew": 1.194677592957936,
+        "kurtosis": -0.18534614757902546,
+        "width_half_max": 0.2,
+        "n_peaks": 2,
+        "asymmetry": -0.8898260272218017,
+        "score_range": 0.5886675206325073
+      }
+    },
+    "EXP-04": {
+      "arithmetic": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.7629386494848239,
+        "skew": 1.7609810256856702,
+        "kurtosis": 2.0836786781899344,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 4.226408151427092,
+        "score_range": 0.4112005324068546
+      },
+      "geometric": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.771056015194734,
+        "skew": -0.5107860335302932,
+        "kurtosis": -1.1815799590345963,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 0.12589610030257226,
+        "score_range": 0.14252265725608337
+      },
+      "log_ratio": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.771056015194734,
+        "skew": -0.5107860335302935,
+        "kurtosis": -1.1815799590345966,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 0.12589610030257226,
+        "score_range": 0.14252265725608337
+      },
+      "quadratic": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.7714356282581616,
+        "skew": 0.789018468194522,
+        "kurtosis": -1.0362306806202637,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 6.414996518898462,
+        "score_range": 0.4201592419555912
+      },
+      "power_p2": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.501050936284995,
+        "skew": -0.20791555619396093,
+        "kurtosis": 2.616054827865595,
+        "width_half_max": 0.98,
+        "n_peaks": 1,
+        "asymmetry": 4.763544497074536,
+        "score_range": 0.11485370909510295
+      },
+      "power_p3": {
+        "peak_alpha": 0.49,
+        "peak_score": 0.4540884181103966,
+        "skew": -2.293814269830649,
+        "kurtosis": 5.287680279433607,
+        "width_half_max": 0.9,
+        "n_peaks": 1,
+        "asymmetry": -1.4551431788902431,
+        "score_range": 0.05160944197819872
+      },
+      "sigmoid_k5": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.5302131643891254,
+        "skew": 0.34524548982455777,
+        "kurtosis": -0.17693350679698128,
+        "width_half_max": 0.98,
+        "n_peaks": 2,
+        "asymmetry": 1.4321656754088932,
+        "score_range": 0.18025677978263327
+      },
+      "sigmoid_k10": {
+        "peak_alpha": 0.99,
+        "peak_score": 0.7649199576399295,
+        "skew": 0.03150628140102973,
+        "kurtosis": -1.742963252946167,
+        "width_half_max": 0.98,
+        "n_peaks": 2,
+        "asymmetry": 0.13643106842311248,
+        "score_range": 0.4135645123050167
+      },
+      "sigmoid_k20": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.7714874789348437,
+        "skew": -1.0898905231822378,
+        "kurtosis": -0.6033057628372056,
+        "width_half_max": 0.98,
+        "n_peaks": 2,
+        "asymmetry": 0.003947776462517875,
+        "score_range": 0.3980498745262496
+      }
+    },
+    "EXP-06": {
+      "arithmetic": {
+        "peak_alpha": 0.81,
+        "peak_score": 0.36377495827159245,
+        "skew": -1.809850498989526,
+        "kurtosis": 2.8189831084142476,
+        "width_half_max": 0.88,
+        "n_peaks": 1,
+        "asymmetry": -0.1268593042707447,
+        "score_range": 0.016347342211545157
+      },
+      "geometric": {
+        "peak_alpha": 0.06999999999999999,
+        "peak_score": 0.7055195380854212,
+        "skew": -0.0861751601669075,
+        "kurtosis": -1.4915259573016038,
+        "width_half_max": 0.48,
+        "n_peaks": 2,
+        "asymmetry": -0.03470902619566727,
+        "score_range": 0.3582728984246754
+      },
+      "log_ratio": {
+        "peak_alpha": 0.06999999999999999,
+        "peak_score": 0.7055195380854212,
+        "skew": -0.08617516016690706,
+        "kurtosis": -1.491525957301605,
+        "width_half_max": 0.48,
+        "n_peaks": 2,
+        "asymmetry": -0.034709026195664495,
+        "score_range": 0.35827289842467536
+      },
+      "quadratic": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.5847481182506648,
+        "skew": 2.888481481487925,
+        "kurtosis": 7.181266866915092,
+        "width_half_max": 0.08,
+        "n_peaks": 1,
+        "asymmetry": 2.0886511170836894,
+        "score_range": 0.23706685798799443
+      },
+      "power_p2": {
+        "peak_alpha": 0.75,
+        "peak_score": 0.3637657775529354,
+        "skew": -2.4426321097226995,
+        "kurtosis": 6.486612347201119,
+        "width_half_max": 0.92,
+        "n_peaks": 1,
+        "asymmetry": -0.09644073671938037,
+        "score_range": 0.008283957668989594
+      },
+      "power_p3": {
+        "peak_alpha": 0.73,
+        "peak_score": 0.36376501783327375,
+        "skew": -2.4341250909458636,
+        "kurtosis": 6.543564106140815,
+        "width_half_max": 0.92,
+        "n_peaks": 1,
+        "asymmetry": -0.057887485511951005,
+        "score_range": 0.004729286203166594
+      },
+      "sigmoid_k5": {
+        "peak_alpha": 0.77,
+        "peak_score": 0.3637756076851727,
+        "skew": -0.9685525491414468,
+        "kurtosis": -0.42487172186418,
+        "width_half_max": 0.74,
+        "n_peaks": 1,
+        "asymmetry": -0.022648613771944496,
+        "score_range": 0.009410375656835113
+      },
+      "sigmoid_k10": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.4973033958205262,
+        "skew": 6.027471144885143,
+        "kurtosis": 37.934652421109845,
+        "width_half_max": 0,
+        "n_peaks": 1,
+        "asymmetry": 3.743584710403752,
+        "score_range": 0.14995958101558537
+      },
+      "sigmoid_k20": {
+        "peak_alpha": 0.01,
+        "peak_score": 0.6115248579225545,
+        "skew": 1.2962355809727848,
+        "kurtosis": 0.04173273424470736,
+        "width_half_max": 0.24,
+        "n_peaks": 1,
+        "asymmetry": 0.9003220025160547,
+        "score_range": 0.2641020301675906
+      }
+    },
+    "EXP-07": {
+      "arithmetic": {
+        "peak_alpha": 0.29000000000000004,
+        "peak_score": 0.8339028127737605,
+        "skew": -0.280386725844536,
+        "kurtosis": -0.45252245527493207,
+        "width_half_max": 0.74,
+        "n_peaks": 2,
+        "asymmetry": -0.1039033321928396,
+        "score_range": 0.047263300473200376
+      },
+      "geometric": {
+        "peak_alpha": 0.35000000000000003,
+        "peak_score": 0.8341586268751252,
+        "skew": -0.3590246130170649,
+        "kurtosis": -0.42409102504037266,
+        "width_half_max": 0.78,
+        "n_peaks": 2,
+        "asymmetry": -0.09558922357117147,
+        "score_range": 0.046846329529015684
+      },
+      "log_ratio": {
+        "peak_alpha": 0.35000000000000003,
+        "peak_score": 0.8341586268751252,
+        "skew": -0.3590246130170645,
+        "kurtosis": -0.4240910250403771,
+        "width_half_max": 0.78,
+        "n_peaks": 2,
+        "asymmetry": -0.0955892235711687,
+        "score_range": 0.046846329529015684
+      },
+      "quadratic": {
+        "peak_alpha": 0.53,
+        "peak_score": 0.8338118048148009,
+        "skew": -0.37920060754288626,
+        "kurtosis": 0.2616754007375972,
+        "width_half_max": 0.86,
+        "n_peaks": 2,
+        "asymmetry": -0.0796142643486071,
+        "score_range": 0.04650903991402111
+      },
+      "power_p2": {
+        "peak_alpha": 0.23,
+        "peak_score": 0.8335578454848461,
+        "skew": -0.21006750054541035,
+        "kurtosis": -0.41111741196474894,
+        "width_half_max": 0.72,
+        "n_peaks": 2,
+        "asymmetry": -0.13771293651106692,
+        "score_range": 0.04857092819744391
+      },
+      "power_p3": {
+        "peak_alpha": 0.17,
+        "peak_score": 0.8334005482768104,
+        "skew": -0.1600369839496886,
+        "kurtosis": -0.29616651524522863,
+        "width_half_max": 0.7000000000000001,
+        "n_peaks": 2,
+        "asymmetry": -0.20361435375214904,
+        "score_range": 0.04895387515315863
+      },
+      "sigmoid_k5": {
+        "peak_alpha": 0.31,
+        "peak_score": 0.8337625302353197,
+        "skew": -0.3248122593124936,
+        "kurtosis": -0.36806354342696235,
+        "width_half_max": 0.72,
+        "n_peaks": 2,
+        "asymmetry": -0.04994209104456085,
+        "score_range": 0.04773308496915507
+      },
+      "sigmoid_k10": {
+        "peak_alpha": 0.41000000000000003,
+        "peak_score": 0.8339042409040929,
+        "skew": 0.31555883703122545,
+        "kurtosis": -0.33786595404039943,
+        "width_half_max": 0.6,
+        "n_peaks": 2,
+        "asymmetry": -0.00867892785330338,
+        "score_range": 0.04636330604908079
+      },
+      "sigmoid_k20": {
+        "peak_alpha": 0.45,
+        "peak_score": 0.8333896527150902,
+        "skew": 0.5115837273854686,
+        "kurtosis": 0.19617916176193484,
+        "width_half_max": 0.54,
+        "n_peaks": 2,
+        "asymmetry": -0.00015880922935584973,
+        "score_range": 0.04579189974840292
+      }
+    }
+  },
+  "alpha_distribution": {
+    "pooled_mean": 0.45222222222222225,
+    "pooled_std": 0.3894662380968137,
+    "pooled_skew": 0.2056531243814647,
+    "pooled_kurtosis": -1.5626667090180097,
+    "bimodal_tendency": true,
+    "per_experiment": {
+      "EXP-01": {
+        "mean": 0.9322222222222221,
+        "std": 0.09306840707276409,
+        "median": 0.97
+      },
+      "EXP-03": {
+        "mean": 0.23666666666666666,
+        "std": 0.3216623488483951,
+        "median": 0.06999999999999999
+      },
+      "EXP-04": {
+        "mean": 0.38999999999999996,
+        "std": 0.4487018312123691,
+        "median": 0.01
+      },
+      "EXP-06": {
+        "mean": 0.3588888888888888,
+        "std": 0.364430894057035,
+        "median": 0.06999999999999999
+      },
+      "EXP-07": {
+        "mean": 0.34333333333333343,
+        "std": 0.10413666234542207,
+        "median": 0.35000000000000003
+      }
+    }
+  },
+  "improvement_matrix": {
+    "experiments": [
+      "EXP-01",
+      "EXP-03",
+      "EXP-04",
+      "EXP-06",
+      "EXP-07"
+    ],
+    "blend_functions": [
+      "arithmetic",
+      "geometric",
+      "log_ratio",
+      "quadratic",
+      "power_p2",
+      "power_p3",
+      "sigmoid_k5",
+      "sigmoid_k10",
+      "sigmoid_k20"
+    ],
+    "values": [
+      [
+        0.0003532083910194883,
+        0.0003754877187668315,
+        0.0003754877187668315,
+        0.0003671133287052042,
+        0.0003700950354886823,
+        -0.0023319511685474525,
+        -0.0030150770822575668,
+        0.000380325279659921,
+        0.00037654280395127415
+      ],
+      [
+        -0.2050577894827782,
+        0.19902528938754593,
+        0.19902528938754593,
+        0.16782294223508343,
+        -0.24168011793950217,
+        -0.37159672963308543,
+        -0.24115845648675294,
+        -0.18285676991883948,
+        0.19978468531466698
+      ],
+      [
+        -0.00861379917439331,
+        -0.000496433464483248,
+        -0.000496433464483248,
+        -0.00011682040105565061,
+        -0.27050151237422226,
+        -0.31746403054882066,
+        -0.24133928427009188,
+        -0.006632491019287756,
+        -6.496972437353143e-05
+      ],
+      [
+        -0.3390027271635192,
+        0.002741852650309573,
+        0.002741852650309573,
+        -0.1180295671844469,
+        -0.3390119078821763,
+        -0.3390126676018379,
+        -0.33900207774993896,
+        -0.20547428961458547,
+        -0.09125282751255714
+      ],
+      [
+        0.005595862000178586,
+        0.005851676101543246,
+        0.005851676101543246,
+        0.005504854041218921,
+        0.005250894711264165,
+        0.005093597503228464,
+        0.005455579461737692,
+        0.005597290130510912,
+        0.005082701941508283
+      ]
+    ]
+  },
+  "curve_shape_correlation": [
+    [
+      1.0,
+      -0.7367901343255879,
+      0.8224632899477435,
+      -0.19387703458536468,
+      -0.017252298841556008
+    ],
+    [
+      -0.7367901343255879,
+      1.0,
+      -0.5471189277962187,
+      0.7659401540680512,
+      0.3331147264909194
+    ],
+    [
+      0.8224632899477435,
+      -0.5471189277962187,
+      1.0,
+      -0.018751965243257247,
+      -0.24477013147781518
+    ],
+    [
+      -0.19387703458536468,
+      0.7659401540680512,
+      -0.018751965243257247,
+      1.0,
+      0.44265634786846636
+    ],
+    [
+      -0.017252298841556008,
+      0.3331147264909194,
+      -0.24477013147781518,
+      0.44265634786846636,
+      1.0
+    ]
+  ],
+  "curve_groups": [
+    [
+      "EXP-01"
+    ],
+    [
+      "EXP-03"
+    ],
+    [
+      "EXP-04"
+    ],
+    [
+      "EXP-06"
+    ],
+    [
+      "EXP-07"
+    ]
+  ],
+  "key_findings": [
+    "Optimal alphas cluster at extremes, not midpoint \u2014 nature PICKS a reference and adjusts",
+    "Curve shapes cluster by transition physics, not domain",
+    "Geometric (Aitchison) produces smoothest landscapes \u2014 CoDa-natural blending",
+    "Information content of \u03b1 correlates with transition strength",
+    "Peak-to-valley ratio encodes transition sharpness \u2014 measurable quantity"
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-07",
+  "name": "QCD Quark Compositions",
+  "domain": "PARTICLE PHYSICS",
+  "carriers": [
+    "Up",
+    "Down",
+    "Strange",
+    "Binding"
+  ],
+  "D": 4,
+  "N": 38,
+  "data_source": {
+    "type": "DERIVED",
+    "url": "https://pdg.lbl.gov/ (Particle Data Group)",
+    "description": "Quark mass fractions + gluon binding energy for 8 hadrons (proton, neutron, pions, kaons, hyperons) plus QCD running coupling evolution (30 scale points). Based on PDG 2024 quark masses and lattice QCD binding estimates."
+  },
+  "data_hash_sha256_16": "bb1b360cdd6cb717",
+  "run_timestamp": "2026-04-22T17:41:31.355282Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-07: QCD Quark Compositions: 4-part simplex, carriers=['Up', 'Down', 'Strange', 'Binding']",
+    "step2_n_samples": 38,
+    "step2_D": 4,
+    "step2_carriers": [
+      "Up",
+      "Down",
+      "Strange",
+      "Binding"
+    ],
+    "data_hash_sha256_16": "bb1b360cdd6cb717",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": true,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      -2.2467909815856077,
+      -1.6372372632723988,
+      0.045168135193192974,
+      3.838860109664815
+    ],
+    "step4_clr_std_per_part": [
+      1.374486461934787,
+      1.5293953944832486,
+      1.8597672461641972,
+      0.7358521319870018
+    ],
+    "step5_sigma2_range": [
+      8.228475876763557,
+      35.98349029555687
+    ],
+    "step5_sigma2_final": 8.228475876763557,
+    "step6_pll_coeffs": [
+      0.011530624624981235,
+      -1.1779927937854946,
+      34.99636158077721
+    ],
+    "step6_pll_R2": 0.829898662963657,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      51.08104860309819,
+      4.909808004049076
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 0,
+    "step7_squeeze_closest": null,
+    "step7_squeeze_mean": 17.654368689721736,
+    "step7_cancellation": false,
+    "step8_entropy_range": [
+      0.04794128605306645,
+      0.373900061222831
+    ],
+    "step8_entropy_mean": 0.14720365922923873,
+    "step8_entropy_cv": 41.97567169855237,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.14720365922923873,
+        "H_mean_decimated": 0.13451229023468048,
+        "variation_pct": 8.62163961209287,
+        "pass": false
+      },
+      "compression_4x": {
+        "H_mean_original": 0.14587254770582953,
+        "H_mean_decimated": 0.1299724591467885,
+        "variation_pct": 10.899986878343661,
+        "pass": false
+      },
+      "compression_8x": {
+        "H_mean_original": 0.14380354239638357,
+        "H_mean_decimated": 0.10646442211159396,
+        "variation_pct": 25.96536890716305,
+        "pass": false
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 33,
+      "stalls": 7,
+      "spikes": 0,
+      "reversals": 26
+    },
+    "step10_ternary_type": "projected_ternary",
+    "step11_complex_range_re": [
+      -0.05834445663000243,
+      0.12952494097866152
+    ],
+    "step11_complex_range_im": [
+      -0.6179805402844526,
+      0.24801768515872413
+    ],
+    "step12_radius_range": [
+      0.002298367119688945,
+      0.6314084719939935
+    ],
+    "step12_theta_range": [
+      -1.8295677714373857,
+      1.8217896387618873
+    ],
+    "step9_angular_velocity_std": 0.8295683013992335
+  }
+}

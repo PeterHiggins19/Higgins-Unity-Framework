@@ -1,0 +1,708 @@
+{
+  "title": "Calibration Proof \u2014 Display Parameters = Aitchison Geometric Quantities",
+  "theorems": {
+    "thm1_rotation": {
+      "statement": "Rotation angle \u03b8 = CLR critical point direction (argmax_k prominence(clr_k) \u00d7 120\u00b0)",
+      "proof_type": "CLR interior critical point identifies the Aitchison perturbation eigenvector",
+      "verification": {
+        "stellar": {
+          "labels": [
+            "pp-chain",
+            "CNO",
+            "Triple-\u03b1"
+          ],
+          "components": [
+            {
+              "label": "pp-chain",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "CNO",
+              "n_interior_crits": 1,
+              "prominence": 7.662520226533306,
+              "has_arch": "True"
+            },
+            {
+              "label": "Triple-\u03b1",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            }
+          ],
+          "predicted": "CNO",
+          "actual": "CNO",
+          "match": true
+        },
+        "qcd": {
+          "labels": [
+            "Strong",
+            "EM",
+            "Weak"
+          ],
+          "components": [
+            {
+              "label": "Strong",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "EM",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "Weak",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            }
+          ],
+          "predicted": "Strong",
+          "actual": "Strong",
+          "match": true
+        },
+        "kerr": {
+          "labels": [
+            "M_irr",
+            "E_rot",
+            "L_GW"
+          ],
+          "components": [
+            {
+              "label": "M_irr",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "E_rot",
+              "n_interior_crits": 2,
+              "prominence": 0.1334371963769988,
+              "has_arch": "True"
+            },
+            {
+              "label": "L_GW",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            }
+          ],
+          "predicted": "E_rot",
+          "actual": "E_rot",
+          "match": true
+        },
+        "fusion": {
+          "labels": [
+            "DT",
+            "DD",
+            "DHe3"
+          ],
+          "components": [
+            {
+              "label": "DT",
+              "n_interior_crits": 1,
+              "prominence": 9.587916959170373,
+              "has_arch": "True"
+            },
+            {
+              "label": "DD",
+              "n_interior_crits": 1,
+              "prominence": 3.2604750289941835,
+              "has_arch": "True"
+            },
+            {
+              "label": "DHe3",
+              "n_interior_crits": 1,
+              "prominence": 6.856897123871287,
+              "has_arch": "True"
+            }
+          ],
+          "predicted": "DT",
+          "actual": "DT",
+          "match": true
+        },
+        "gw": {
+          "labels": [
+            "Inspiral",
+            "Merger",
+            "Ringdown"
+          ],
+          "components": [
+            {
+              "label": "Inspiral",
+              "n_interior_crits": 2,
+              "prominence": 1.1656952279288602,
+              "has_arch": "True"
+            },
+            {
+              "label": "Merger",
+              "n_interior_crits": 2,
+              "prominence": 0.029135619421960524,
+              "has_arch": "False"
+            },
+            {
+              "label": "Ringdown",
+              "n_interior_crits": 1,
+              "prominence": 2.98764204131885e-06,
+              "has_arch": "False"
+            }
+          ],
+          "predicted": "Inspiral",
+          "actual": "Merger",
+          "match": false
+        },
+        "ns": {
+          "labels": [
+            "Neutron",
+            "Proton",
+            "Electron"
+          ],
+          "components": [
+            {
+              "label": "Neutron",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "Proton",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "Electron",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            }
+          ],
+          "predicted": "Neutron",
+          "actual": "Neutron",
+          "match": true
+        },
+        "confine": {
+          "labels": [
+            "Coulomb",
+            "String",
+            "Kinetic"
+          ],
+          "components": [
+            {
+              "label": "Coulomb",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "String",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "Kinetic",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            }
+          ],
+          "predicted": "Coulomb",
+          "actual": "Coulomb",
+          "match": true
+        },
+        "tokamak": {
+          "labels": [
+            "Bremsstrahlung",
+            "Cyclotron",
+            "Conduction"
+          ],
+          "components": [
+            {
+              "label": "Bremsstrahlung",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "Cyclotron",
+              "n_interior_crits": 40,
+              "prominence": 4.440892098500626e-16,
+              "has_arch": "False"
+            },
+            {
+              "label": "Conduction",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            }
+          ],
+          "predicted": "Cyclotron",
+          "actual": "Cyclotron",
+          "match": true
+        },
+        "parton": {
+          "labels": [
+            "Gluon",
+            "Valence",
+            "Sea"
+          ],
+          "components": [
+            {
+              "label": "Gluon",
+              "n_interior_crits": 2,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "Valence",
+              "n_interior_crits": 0,
+              "prominence": 0.0,
+              "has_arch": false
+            },
+            {
+              "label": "Sea",
+              "n_interior_crits": 1,
+              "prominence": 0.08132394574978813,
+              "has_arch": "True"
+            }
+          ],
+          "predicted": "Sea",
+          "actual": "Sea",
+          "match": true
+        }
+      },
+      "match_rate": "8/9"
+    },
+    "thm2_lift": {
+      "statement": "Lift \u03bb = max d_a(x(t), \u03b3(t)) / d_a(x(0), x(1)) = normalized Aitchison geodesic deviation",
+      "proof_type": "ILR isometry reduces to perpendicular distance in Euclidean ILR space",
+      "verification": {
+        "stellar": {
+          "lambda_ilr": 0.3256081075497028,
+          "lambda_cart": 0.7101328877823472,
+          "lambda_aitchison": 0.5060586613580079,
+          "chord_len_ilr": 48.845206005454415,
+          "max_dev_ilr": 15.904395090311391,
+          "max_dev_aitchison": 24.71853956487639
+        },
+        "qcd": {
+          "lambda_ilr": 0.011894568728170525,
+          "lambda_cart": 0.00584122663518724,
+          "lambda_aitchison": 0.2328472828376005,
+          "chord_len_ilr": 1.3584033188627538,
+          "max_dev_ilr": 0.016157621636787967,
+          "max_dev_aitchison": 0.31630052179477086
+        },
+        "kerr": {
+          "lambda_ilr": 0.010927444932675574,
+          "lambda_cart": 0.0035107952110313818,
+          "lambda_aitchison": 0.5258387377814094,
+          "chord_len_ilr": 21.01809152811317,
+          "max_dev_ilr": 0.22967403776339168,
+          "max_dev_aitchison": 11.052126719717165
+        },
+        "fusion": {
+          "lambda_ilr": 1.9736334266893196,
+          "lambda_cart": 0.024056713036577575,
+          "lambda_aitchison": 4.5534790666742655,
+          "chord_len_ilr": 3.325716801115255,
+          "max_dev_ilr": 6.563745846383343,
+          "max_dev_aitchison": 15.143581835565215
+        },
+        "gw": {
+          "lambda_ilr": 0.1376393292204793,
+          "lambda_cart": 0.597181486392338,
+          "lambda_aitchison": 0.2842899556715061,
+          "chord_len_ilr": 29.21657584432054,
+          "max_dev_ilr": 4.021349901331538,
+          "max_dev_aitchison": 8.305979051655083
+        },
+        "ns": {
+          "lambda_ilr": 8.407325397319655e-16,
+          "lambda_cart": 0.0,
+          "lambda_aitchison": 0.21912730298935365,
+          "chord_len_ilr": 0.3961627409993341,
+          "max_dev_ilr": 3.3306690738754696e-16,
+          "max_dev_aitchison": 0.08681007298005392
+        },
+        "confine": {
+          "lambda_ilr": 1.208829334010519e-16,
+          "lambda_cart": 0.1982935808146021,
+          "lambda_aitchison": 0.37058502107522184,
+          "chord_len_ilr": 7.347426098218728,
+          "max_dev_ilr": 8.881784197001252e-16,
+          "max_dev_aitchison": 2.722846055457022
+        },
+        "tokamak": {
+          "lambda_ilr": 7.905883952281424e-17,
+          "lambda_cart": 0.054992788128638566,
+          "lambda_aitchison": 4.1880669376706843e-16,
+          "chord_len_ilr": 11.234397381254515,
+          "max_dev_ilr": 8.881784197001252e-16,
+          "max_dev_aitchison": 4.705040823708615e-15
+        },
+        "parton": {
+          "lambda_ilr": 0.37424215481270207,
+          "lambda_cart": 0.3585057320349884,
+          "lambda_aitchison": 0.3931719261776862,
+          "chord_len_ilr": 0.7610325546055139,
+          "max_dev_ilr": 0.28481046311818287,
+          "max_dev_aitchison": 0.29921663537817506
+        }
+      }
+    },
+    "thm3_coverage": {
+      "statement": "Coverage \u03c3 \u221d Var_a(X) = total Aitchison variance = trace of variation matrix",
+      "proof_type": "ILR isometry: Var_a = \u03a3 var(z_i)",
+      "isometry_verified": true,
+      "verification": {
+        "stellar": {
+          "var_a": 7.547251561156405,
+          "var_ilr": 7.5472515611564095,
+          "coverage": 1.639981655686178,
+          "isometry_check": 5.884118294607612e-16
+        },
+        "qcd": {
+          "var_a": 0.13088053459811277,
+          "var_ilr": 0.13088053459811283,
+          "coverage": 0.03204282435944437,
+          "isometry_check": 4.2413603674307016e-16
+        },
+        "kerr": {
+          "var_a": 10.069470517833254,
+          "var_ilr": 10.069470517833254,
+          "coverage": 0.07568489465170906,
+          "isometry_check": 0.0
+        },
+        "fusion": {
+          "var_a": 18.058139208380528,
+          "var_ilr": 18.05813920838053,
+          "coverage": 0.016113776702298677,
+          "isometry_check": 1.9673752859052811e-16
+        },
+        "gw": {
+          "var_a": 147.7221565372056,
+          "var_ilr": 147.72215653720545,
+          "coverage": 1.1570148135545075,
+          "isometry_check": 9.619988665425982e-16
+        },
+        "ns": {
+          "var_a": 0.011321239930044684,
+          "var_ilr": 0.011321239930044682,
+          "coverage": 0.0,
+          "isometry_check": 1.5322733964617605e-16
+        },
+        "confine": {
+          "var_a": 2.811681848972851,
+          "var_ilr": 2.8116818489728503,
+          "coverage": 0.347769063090653,
+          "isometry_check": 1.5794433143717701e-16
+        },
+        "tokamak": {
+          "var_a": 10.62334530507018,
+          "var_ilr": 10.623345305070183,
+          "coverage": 0.1276205853889613,
+          "isometry_check": 3.344251341528836e-16
+        },
+        "parton": {
+          "var_a": 0.0545932431772883,
+          "var_ilr": 0.054593243177288295,
+          "coverage": 0.02556722408026757,
+          "isometry_check": 1.2710169794041333e-16
+        }
+      }
+    },
+    "thm4_vertex_position": {
+      "statement": "t* = argmax_t clr_k(t) for apex k = CLR Jacobian null = compositional transition point",
+      "proof_type": "CLR critical point coincides with compositional peak",
+      "verification": {
+        "stellar": {
+          "apex": "CNO",
+          "t_star_clr": 0.49999999999999933,
+          "t_star_frac": 0.4983277591973244,
+          "n_crits": 1,
+          "symmetry": 0.9999999999999987
+        },
+        "qcd": {
+          "apex": "Strong",
+          "t_star_clr": 0.0,
+          "t_star_frac": 0.0,
+          "n_crits": 0,
+          "symmetry": 0.0
+        },
+        "kerr": {
+          "apex": "E_rot",
+          "t_star_clr": 0.28247261769765075,
+          "t_star_frac": 1.0,
+          "n_crits": 2,
+          "symmetry": 0.5649452353953015
+        },
+        "fusion": {
+          "apex": "DT",
+          "t_star_clr": 0.250753232908669,
+          "t_star_frac": 0.25418060200668896,
+          "n_crits": 1,
+          "symmetry": 0.501506465817338
+        },
+        "gw": {
+          "apex": "Merger",
+          "t_star_clr": 0.11017093895527533,
+          "t_star_frac": 0.4180602006688963,
+          "n_crits": 2,
+          "symmetry": 0.2203418779105506
+        },
+        "ns": {
+          "apex": "Neutron",
+          "t_star_clr": 1.0,
+          "t_star_frac": 1.0,
+          "n_crits": 0,
+          "symmetry": 0.0
+        },
+        "confine": {
+          "apex": "Coulomb",
+          "t_star_clr": 0.45226130653266333,
+          "t_star_frac": 0.45226130653266333,
+          "n_crits": 0,
+          "symmetry": 0.9045226130653267
+        },
+        "tokamak": {
+          "apex": "Cyclotron",
+          "t_star_clr": 0.16834170854271358,
+          "t_star_frac": 0.4623115577889447,
+          "n_crits": 4,
+          "symmetry": 0.33668341708542715
+        },
+        "parton": {
+          "apex": "Sea",
+          "t_star_clr": 0.5051827394839333,
+          "t_star_frac": 1.0,
+          "n_crits": 1,
+          "symmetry": 0.9896345210321333
+        }
+      }
+    },
+    "thm5_opening_angle": {
+      "statement": "\u03b1 = Aitchison dispersion angle = ILR angle at vertex (isometric to Aitchison angle)",
+      "proof_type": "ILR preserves angles; \u03b1_ILR \u2260 \u03b1_Cart measures metric distortion",
+      "verification": {
+        "stellar": {
+          "alpha_ilr": 113.85434397146615,
+          "alpha_cart": 70.29825336387422,
+          "ratio": 1.6195899403380496
+        },
+        "qcd": {
+          "alpha_ilr": 0.0,
+          "alpha_cart": 0.0,
+          "ratio": Infinity
+        },
+        "kerr": {
+          "alpha_ilr": 0.0,
+          "alpha_cart": 0.0,
+          "ratio": Infinity
+        },
+        "fusion": {
+          "alpha_ilr": 6.106715694502259,
+          "alpha_cart": 17.43375454333982,
+          "ratio": 0.350281155979404
+        },
+        "gw": {
+          "alpha_ilr": 134.3131056781424,
+          "alpha_cart": 78.9429180010469,
+          "ratio": 1.7013952496202533
+        },
+        "ns": {
+          "alpha_ilr": 0.0,
+          "alpha_cart": 0.0,
+          "ratio": Infinity
+        },
+        "confine": {
+          "alpha_ilr": 180.0,
+          "alpha_cart": 138.5738454558552,
+          "ratio": 1.2989464166767437
+        },
+        "tokamak": {
+          "alpha_ilr": 180.0,
+          "alpha_cart": 167.44703030655293,
+          "ratio": 1.0749668099247014
+        },
+        "parton": {
+          "alpha_ilr": 0.0,
+          "alpha_cart": 0.0,
+          "ratio": Infinity
+        }
+      }
+    },
+    "thm6_curvature": {
+      "statement": "K = \u222b\u03ba_g ds_a = total Aitchison geodesic curvature = ILR Euclidean curvature integral",
+      "proof_type": "ILR isometry: geodesic curvature in Aitchison = Euclidean curvature in ILR",
+      "verification": {
+        "stellar": {
+          "K_ilr_signed": 1.1125004504720197,
+          "K_ilr_unsigned": 2.459487127443558,
+          "K_cart_signed": -1.678005118998807,
+          "F_stat": 0.5182621787718997,
+          "quad_coeff": 0.004568399568020335,
+          "is_parabola": "False"
+        },
+        "qcd": {
+          "K_ilr_signed": 0.06822163569336663,
+          "K_ilr_unsigned": 5.762835574719397,
+          "K_cart_signed": 6.037732253127302,
+          "F_stat": 3381.3426132974128,
+          "quad_coeff": 0.05138790820727775,
+          "is_parabola": "True"
+        },
+        "kerr": {
+          "K_ilr_signed": -0.5854041694164691,
+          "K_ilr_unsigned": 0.772646667548494,
+          "K_cart_signed": -0.017003435359899587,
+          "F_stat": 193.17971105374477,
+          "quad_coeff": -0.016338486133692823,
+          "is_parabola": "True"
+        },
+        "fusion": {
+          "K_ilr_signed": 3.133247640555842,
+          "K_ilr_unsigned": 3.8155255384875693,
+          "K_cart_signed": 3.450490273083777,
+          "F_stat": 104.49877923402882,
+          "quad_coeff": 0.030872161515126263,
+          "is_parabola": "True"
+        },
+        "gw": {
+          "K_ilr_signed": -8.881847367040375,
+          "K_ilr_unsigned": 13.38945621719518,
+          "K_cart_signed": 0.9987149407350613,
+          "F_stat": 190.81422654286834,
+          "quad_coeff": 1.9157105907167902,
+          "is_parabola": "True"
+        },
+        "ns": {
+          "K_ilr_signed": 2.546085059287027e-13,
+          "K_ilr_unsigned": 1.829758221859671e-11,
+          "K_cart_signed": 0.0,
+          "F_stat": -102.65793304221252,
+          "quad_coeff": -9.757428128753152e-15,
+          "is_parabola": "False"
+        },
+        "confine": {
+          "K_ilr_signed": -1.62417676065247e-14,
+          "K_ilr_unsigned": 4.886156589272273e-13,
+          "K_cart_signed": 1.406173294527818,
+          "F_stat": -191.80418959239293,
+          "quad_coeff": -6.379363161128917e-16,
+          "is_parabola": "False"
+        },
+        "tokamak": {
+          "K_ilr_signed": 3.408655083113462e-14,
+          "K_ilr_unsigned": 5.895105101588921e-13,
+          "K_cart_signed": -1.612581294715947,
+          "F_stat": -86.62370765988032,
+          "quad_coeff": -2.0536089963637048e-16,
+          "is_parabola": "False"
+        },
+        "parton": {
+          "K_ilr_signed": -1.2688642224406343,
+          "K_ilr_unsigned": 1.6111580469105515,
+          "K_cart_signed": -1.2849296540860975,
+          "F_stat": 2661.0369975763087,
+          "quad_coeff": -2.556306895459306,
+          "is_parabola": "True"
+        }
+      }
+    },
+    "thm7_slice_angle": {
+      "statement": "\u03c6 = angle(PC1(z)) = ILR principal axis = direction of maximum compositional variance",
+      "proof_type": "PCA of ILR trajectory gives the optimal viewing direction",
+      "verification": {
+        "stellar": {
+          "phi_ilr_pc1": 60.00000000000002,
+          "var_explained_pc1": 0.7314079977026354,
+          "eigenvalue_ratio": 2.7231190483954766,
+          "eigenvalues": [
+            5.538582092812874,
+            2.0339111123607796
+          ]
+        },
+        "qcd": {
+          "phi_ilr_pc1": 26.72201483767921,
+          "var_explained_pc1": 0.999817738595544,
+          "eigenvalue_ratio": 5485.625119255505,
+          "eigenvalues": [
+            0.13129432788768658,
+            2.3934250888077435e-05
+          ]
+        },
+        "kerr": {
+          "phi_ilr_pc1": 60.965080479504266,
+          "var_explained_pc1": 0.999694445549141,
+          "eigenvalue_ratio": 3271.7391048907957,
+          "eigenvalues": [
+            10.100060615015462,
+            0.0030870617403184752
+          ]
+        },
+        "fusion": {
+          "phi_ilr_pc1": 40.63073230296317,
+          "var_explained_pc1": 0.9825299015158536,
+          "eigenvalue_ratio": 56.24066186046237,
+          "eigenvalues": [
+            17.802001743782313,
+            0.3165325790075242
+          ]
+        },
+        "gw": {
+          "phi_ilr_pc1": 83.21910474941772,
+          "var_explained_pc1": 0.9850303434159321,
+          "eigenvalue_ratio": 65.80179965279183,
+          "eigenvalues": [
+            145.99746479998572,
+            2.218745772461427
+          ]
+        },
+        "ns": {
+          "phi_ilr_pc1": 29.99999999999997,
+          "var_explained_pc1": 1.0,
+          "eigenvalue_ratio": 11373198244461.584,
+          "eigenvalues": [
+            0.011378130582959486,
+            4.336808689942018e-19
+          ]
+        },
+        "confine": {
+          "phi_ilr_pc1": 130.8933946491309,
+          "var_explained_pc1": 0.9999999999999997,
+          "eigenvalue_ratio": 1590074656965258.0,
+          "eigenvalues": [
+            2.825810903490302,
+            7.771561172376096e-16
+          ]
+        },
+        "tokamak": {
+          "phi_ilr_pc1": 59.99999999999999,
+          "var_explained_pc1": 1.0,
+          "eigenvalue_ratio": 1.9205831473318956e+16,
+          "eigenvalues": [
+            10.676728949819278,
+            -4.440892098500626e-16
+          ]
+        },
+        "parton": {
+          "phi_ilr_pc1": 151.15567127764925,
+          "var_explained_pc1": 0.8766268792134426,
+          "eigenvalue_ratio": 7.105493268099528,
+          "eigenvalues": [
+            0.04801796427355868,
+            0.006757865001312527
+          ]
+        }
+      }
+    }
+  },
+  "master_theorem": "The septuple (\u03b8, \u03c3, \u03bb, t*, \u03b1, K, \u03c6) is a complete geometric descriptor of the compositional trajectory on the Aitchison simplex.",
+  "corollary": "The ratio of ILR to Cartesian values for each parameter measures the local Aitchison metric distortion."
+}

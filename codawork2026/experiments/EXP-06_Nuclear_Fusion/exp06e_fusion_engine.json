@@ -1,0 +1,124 @@
+{
+  "experiment": "EXP-06E",
+  "title": "The Fusion Engine - Definitive HUF Computation",
+  "series": 2,
+  "series_label": "Series 2 - New Domains",
+  "domain": "Nuclear fusion / plasma physics / Kardashev scaling",
+  "date_sealed": "2026-04-19",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "synthesises": [
+    "EXP-06A",
+    "EXP-06B",
+    "EXP-06C",
+    "EXP-06D"
+  ],
+  "optimal_point": {
+    "T_keV": 26.25,
+    "T_MK": 304.0,
+    "n_20": 3.46,
+    "ac_ratio": 1.1796,
+    "sigma2_A": 4.686e-05,
+    "Q": 10000000000.0,
+    "P_fusion_Wm3": 50122653.7191,
+    "composition": {
+      "Alpha": 0.500846,
+      "Brem": 0.024592,
+      "Cyclo": 0.049988,
+      "Cond": 0.424573
+    }
+  },
+  "operating_envelope": {
+    "dT_low": 18.5,
+    "dT_high": 0.0,
+    "dn_low": 0.08,
+    "dn_high": 0.04,
+    "ignition_area_pct": 26.0,
+    "widest_window": {
+      "n": 3.38,
+      "T_min": 7.75,
+      "T_max": 26.25,
+      "width": 18.5
+    }
+  },
+  "kardashev": {
+    "V_plasma_m3": 830.0,
+    "P_fusion_density_Wm3": 50122653.7191,
+    "P_module_MW": 41601.8,
+    "P_electric_MWe": 16640.7,
+    "eta_thermal": 0.4,
+    "n_reactors_K1": 10456278,
+    "fuel_rate_kg_yr": 3864.3649,
+    "D_supply_years": 2725712.0,
+    "Li_supply_years": 0.3,
+    "Li_seawater_years": 4743.0,
+    "K_current": 0.726,
+    "K1_watts": 1.74e+17,
+    "scale_factor": 9667.0
+  },
+  "huf_diagnostics": {
+    "EITT": "PASS",
+    "PLL_shape": "bowl (lock)",
+    "noise_squeeze": ">95% in ignition window",
+    "vertex_theorem": "crossings at physical transitions",
+    "boundary_species": "Conduction",
+    "DOF": 2,
+    "controllable": true
+  },
+  "synthesis": {
+    "physics_vs_fabrication_wins": 4,
+    "claims": [
+      {
+        "claim": "PLL vertex recovers ignition temperature",
+        "level": "L2 (Reproduced Pattern)",
+        "confirmed": true
+      },
+      {
+        "claim": "DOF = 2, system controllable",
+        "level": "L2 (Reproduced Pattern)",
+        "confirmed": true
+      },
+      {
+        "claim": "Alpha/Cond > 1.213 for ignition",
+        "level": "L1 (Verified Observation)",
+        "confirmed": true
+      },
+      {
+        "claim": "Stability minimum at optimal operating point",
+        "level": "L1 (Verified Observation)",
+        "confirmed": true
+      },
+      {
+        "claim": "EITT separates physics from fabrication",
+        "level": "L2 (Reproduced Pattern)",
+        "confirmed": true
+      },
+      {
+        "claim": "Noise squeeze >95% in ignition window",
+        "level": "L2 (Reproduced Pattern)",
+        "confirmed": true
+      },
+      {
+        "claim": "Brem is floor, Cond is barrier",
+        "level": "L2 (Reproduced Pattern)",
+        "confirmed": true
+      },
+      {
+        "claim": "Vertex theorem crossings at physical transitions",
+        "level": "L1 (Verified Observation)",
+        "confirmed": true
+      }
+    ]
+  },
+  "accumulated_corrections": [
+    "06A: Bosch-Hale 5-reaction reactivities; PLL vertex at 20.1 keV",
+    "06B: Brem is floor (0 flips); Cond is true barrier; Line/Ohmic dead",
+    "06C: Diagonal path optimal; P_alpha >= P_loss (alpha alone, no Ohmic)",
+    "06D: DOF=2 exactly; PC1+PC2=99.7%; Alpha/Cond > 1.213; rad CV=0.24"
+  ],
+  "verdict": "THE SUN ON EARTH IS COMPOSITIONALLY NAVIGABLE",
+  "files": [
+    "exp06e_fusion_engine.py",
+    "exp06e_fusion_engine.json"
+  ]
+}

@@ -62,6 +62,14 @@
       "statement": "PRISM converts EITT residuals into ranked resource allocation targets for analytical infrastructure investment.",
       "evidence": "PRISM_Chemistry_Analysis.md — 7 ranked targets from immediate (software update) to foundational (mathematical research).",
       "novelty": "First systematic entropy-invariance diagnostic applied to the global chemical industry ($5.7T annual revenue)."
+    },
+
+    "claim_8_dimensional_collapse": {
+      "statement": "Compositions below the boundary threshold undergo dimensional collapse: the system drops from D to D-k dimensions, and survivors reconstitute on a lower-dimensional simplex with higher interior coherence.",
+      "evidence": "D=6 pharmaceutical mixtures fail all four lenses (boundary contact near-certain). D=2 and D=3 interior compositions pass at 54-82%. The pruning cycle is self-reinforcing: lower D → larger shares → deeper interior → stronger EITT invariance.",
+      "mechanism": "Geometric-mean decimation is a smooth pruning process that preserves robust structure (interior) and dissolves fragile structure (boundary where curvature -1/x_i diverges). The 0.05 threshold is the compositional horizon — below it, components are causally disconnected from the analysis.",
+      "qualification": "Theoretical framework. No empirical measurement of progressive dimensional reduction under repeated decimation. The 0.05 threshold is empirical, not derived (see O-4).",
+      "reference": "EITT_DECOMPOSITION_FRAMEWORK.md §8"
     }
   },
 
@@ -253,7 +261,7 @@
     "O-1": "Formal proof of EITT invariance from Aitchison geometry",
     "O-2": "Non-temporal EITT — test on spatial, cross-sectional, multi-modal compositions",
     "O-3": "Higher-D simplex behaviour — how does EITT scale with dimension?",
-    "O-4": "Boundary threshold formalisation — derive the 0.05 crossover from curvature of H(x) on the D-simplex",
+    "O-4": "Boundary threshold formalisation — derive the 0.05 crossover from curvature of H(x) on the D-simplex. Now identified as the compositional horizon: the point of dimensional collapse where components become causally disconnected. Connected to EITT_DECOMPOSITION_FRAMEWORK.md §8 (pruning cycle) and EITT_HESSIAN_BOUND.md §9.5 (Hessian SNR crossover).",
     "O-5": "Jensen damping coefficient — proportional to composition range, keeps Hessian correction within validity"
   },
 
@@ -262,7 +270,7 @@
     "Binary mixtures (D=2) live on the one-dimensional simplex. Higher-D tests limited by data availability.",
     "CheMixHub data is curated for ML benchmarking. Preprocessing may affect compositional structure.",
     "The 0.05 boundary threshold is empirical, not theoretically derived.",
-    "EITT is an empirical observation, not a theorem. Formal proof is Open Problem O-1.",
+    "EITT residual is bounded by a closed-form analytic proof (Open Problem O-1 resolved April 28, 2026 — see EITT_HESSIAN_BOUND.md §8).",
     "PRISM return-on-investment rankings are qualitative estimates, not formal economic analysis.",
     "The author is the originator of HUF and EITT. This is first-party analysis, not independent audit."
   ]

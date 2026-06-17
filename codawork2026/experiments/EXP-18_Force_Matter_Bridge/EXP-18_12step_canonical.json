@@ -1,0 +1,125 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-18",
+  "name": "Stress-Strain Force Composition (AISI 1020)",
+  "domain": "FORCE",
+  "carriers": [
+    "Elastic",
+    "Plastic",
+    "Thermal"
+  ],
+  "D": 3,
+  "N": 100,
+  "data_source": {
+    "type": "DERIVED",
+    "url": "https://www.matweb.com/search/datasheet.aspx?MatGUID=e9c5392fb06542b4b6e907e76cfd5da7",
+    "description": "AISI 1020 mild steel stress-strain decomposition. E=200GPa, \u03c3_y=350MPa, K=600MPa, n=0.2. Force 3-part: [Elastic, Plastic, Thermal dissipation]. 100 strain points, 0\u219250%. Ramberg-Osgood model."
+  },
+  "data_hash_sha256_16": "e988926db9fc30ef",
+  "run_timestamp": "2026-04-22T17:41:37.943796Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-18: Stress-Strain Force Composition (AISI 1020): 3-part simplex, carriers=['Elastic', 'Plastic', 'Thermal']",
+    "step2_n_samples": 100,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Elastic",
+      "Plastic",
+      "Thermal"
+    ],
+    "data_hash_sha256_16": "e988926db9fc30ef",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      -0.2578861473051125,
+      1.839912489806902,
+      -1.5820263425017904
+    ],
+    "step4_clr_std_per_part": [
+      0.9240261949957775,
+      0.3076353265654689,
+      0.8943335592358927
+    ],
+    "step5_sigma2_range": [
+      1.1371956095536553,
+      4.565418871730772
+    ],
+    "step5_sigma2_final": 1.7482964183649574,
+    "step6_pll_coeffs": [
+      0.00046371294405210534,
+      -0.04913252744894244,
+      2.3966196067754457
+    ],
+    "step6_pll_R2": 0.4730138050051863,
+    "step6_pll_shape": "bowl",
+    "step6_vertex": [
+      52.97730856896421,
+      1.095165073057582
+    ],
+    "step6_curvature": "concave_up",
+    "step7_squeeze_count": 48,
+    "step7_squeeze_closest": {
+      "time_index": 73,
+      "sigma2_A": 1.4419473181216724,
+      "constant": "ln2",
+      "constant_value": 0.6931471805599453,
+      "test_type": "reciprocal",
+      "test_value": 0.6935066125041466,
+      "delta": 0.0003594319442012939
+    },
+    "step7_squeeze_mean": 1.4690971896504315,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.2113264425412527,
+      0.6301505535446952
+    ],
+    "step8_entropy_mean": 0.4446652541728113,
+    "step8_entropy_cv": 19.480679148896446,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.4446652541728113,
+        "H_mean_decimated": 0.44478636085184753,
+        "variation_pct": 0.027235471604711358,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.4446652541728113,
+        "H_mean_decimated": 0.4479926430229459,
+        "variation_pct": 0.748290724069366,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.4486993475367121,
+        "H_mean_decimated": 0.4556364346070285,
+        "variation_pct": 1.5460434940233212,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 1,
+      "stalls": 1,
+      "spikes": 0,
+      "reversals": 0
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.8031593932147575,
+      0.09436977640339617
+    ],
+    "step11_complex_range_im": [
+      -0.03131174276950256,
+      0.03324317661481703
+    ],
+    "step12_radius_range": [
+      0.010575941247430444,
+      0.8032882981596392
+    ],
+    "step12_theta_range": [
+      -3.123677527292361,
+      0.3386912790755541
+    ],
+    "step9_angular_velocity_std": 0.06580842990627608
+  }
+}

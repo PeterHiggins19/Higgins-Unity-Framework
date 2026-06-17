@@ -3,7 +3,7 @@
     "type": "HUF-INTEGRITY-MANIFEST",
     "version": "3.2",
     "created": "2026-04-13",
-    "last_updated": "2026-04-18",
+    "last_updated": "2026-04-20",
     "author": "Peter Higgins / Claude",
     "purpose": "Hash-verified integrity layer for HUF corpus. Load AFTER HUF_FAST_REFRESH.json. Use to detect file corruption, unauthorized edits, or version drift across sessions.",
     "protocol": "Any AI loading the HUF context should: (1) Read HUF_FAST_REFRESH.json for concepts. (2) Read this file. (3) Spot-check 2-3 file hashes. If any hash mismatches, flag it and re-read the source file before proceeding.",

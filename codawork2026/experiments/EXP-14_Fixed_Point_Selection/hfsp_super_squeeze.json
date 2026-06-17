@@ -1,0 +1,36 @@
+{
+  "_meta": {
+    "type": "HFSP-SUPER-SQUEEZE",
+    "date": "2026-04-21",
+    "purpose": "Transcendental cancellation \u2014 remove known functions, find pure physics",
+    "peter_insight": "Swap inputs/outputs, ratio should cancel hidden transcendentals like dimensional analysis"
+  },
+  "universal_cancellations": [],
+  "residual_signatures": {
+    "EXP-01": {
+      "rms": 0.1069890011082068,
+      "mean": -0.03962755443159679,
+      "std": 0.09937959190851366
+    },
+    "EXP-03": {
+      "rms": 0.09021405307027873,
+      "mean": -0.01380060375801008,
+      "std": 0.08915222211073297
+    },
+    "EXP-04": {
+      "rms": 0.11909952992437696,
+      "mean": -0.06546536120898885,
+      "std": 0.09949364055046021
+    },
+    "EXP-06": {
+      "rms": 0.12429942625786884,
+      "mean": -0.06629839079049334,
+      "std": 0.10514214543477036
+    },
+    "EXP-07": {
+      "rms": 0.05159439296185705,
+      "mean": 0.0037824201805208985,
+      "std": 0.051455560269814495
+    }
+  }
+}

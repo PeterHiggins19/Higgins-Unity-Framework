@@ -1,0 +1,31 @@
+{
+  "schema": "hs_ai_assist/1.0",
+  "repo": "HUF (Higgins-Unity-Framework)",
+  "folder": "HUF/huf-gov/",
+  "topic": "HUF governance -- charter, carrier-filter doctrine, Ratio Blindness / MC-4, and the evidence case-studies.",
+  "purpose": "Local node for the governance layer. The AI-assist-path convention originates in the Hs repo; HUF adopts the same node form, linking to HUF's own control chain and cross-referencing Hs.",
+  "paths_note": "key_files relative to THIS folder; join_the_chain relative to the HUF repo root; cross_repo paths name the other repo.",
+  "specific_knowledge": {
+    "what": "HUF-Gov is the governance + scientific-method layer. It holds the carrier-filter doctrine (need-to-know / withhold-on-distribution; reconstructable reduction as a redaction boundary), the governance charter, the Ratio Blindness doctrine, and the MC-4 instrument claim. MC-4 = the FOURTH monitoring category (MC-1 magnitude, MC-2 identity, MC-3 trend, MC-4 composition): ignoring the ratios leaves ~1/4 of the monitoring picture undiagnosed -- 'see or remain blind.'",
+    "key_files": ["HUF_GOVERNANCE_CHARTER.md", "CARRIER_FILTER_DOCTRINE.md", "RATIO_BLINDNESS_DOCTRINE.md", "../discoveries/instruments/MC4_COMPOSITION_MONITORING.md", "evidence/case-studies/"],
+    "key_results": [
+      "Tier 1: MC-4 detections (Germany nuclear shutdown d_A=9.07; Japan Fukushima 9.05; UK coal/COVID ~3.2) all found without being told; 5-AI literature check found no prior art (4 defeat paths remain the falsifiability test)",
+      "Tier 2: Ratio Blindness cost ~1/4 = the 4th of 4 monitoring categories ignored (category-count heuristic, NOT a measured 25%); evidence: COPD trial (magnitude p>0.05, MC-4 unmasked) + the Hs gas study (40/60 alarms-green)"
+    ],
+    "related_topics": [
+      "Hs/industrial-instruments/gas-composition-study/ (MC-4 worked example)",
+      "Hs/SPACE_READINESS_AND_CHALLENGE.md",
+      "Hs/ai-refresh/AI_ASSIST_PATH_PROTOCOL.md (the convention this node adopts)"
+    ],
+    "claim_tiers": "Tier 1 = the EMBER MC-4 detections; Tier 2 = the four-category framing + the 1/4 heuristic; Tier 3 = any claim the cost is exactly 1/4 in a given domain (measured per case)."
+  },
+  "join_the_chain": {
+    "source_of_truth": "ai-refresh/HUF_FAST_REFRESH.json",
+    "admin": "ai-refresh/HUF_ADMIN.json",
+    "charter": "huf-gov/HUF_GOVERNANCE_CHARTER.md",
+    "cross_repo": "Hs/ai-refresh/AI_ASSIST_PATH_PROTOCOL.md (the AI-assist-path convention) + Hs/HS_FAST_REFRESH.json"
+  },
+  "bring_your_own_ai": "Start at HUF_GOVERNANCE_CHARTER.md + CARRIER_FILTER_DOCTRINE.md; for the ratio principle read RATIO_BLINDNESS_DOCTRINE.md + the MC-4 instrument note. Read-only context; governance + claim-tiers apply.",
+  "governance": "HUF-STD-001/002/003; carrier-filter governs disclosure; human authorship for claims; no AI commits.",
+  "updated": "2026-06-11"
+}

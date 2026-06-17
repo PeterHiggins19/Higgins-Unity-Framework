@@ -6,7 +6,7 @@
     "version": "5.0",
     "purpose": "Enable any researcher to reproduce, verify, and challenge every result in the EITT programme",
     "licence": "Open for academic use. Attribution required.",
-    "contact": "peterhiggins2016@gmail.com",
+    "contact": "PeterHiggins@RogueWaveAudio.com (canonical contact via RWA-001 contact_authority, RWA repo RWA-001.json)",
     "how_to_use": "This JSON contains everything needed to reproduce the Higgins Decomposition results. Each section is self-contained with data sources, methods, parameters, and expected outputs. Start with Section 1 (data sources), implement the EITT engine from Section 2, run the Gold Standard test from Section 3, then try to break it with Section 5."
   },
   "1_data_sources": {

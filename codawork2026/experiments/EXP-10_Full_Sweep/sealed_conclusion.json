@@ -1,0 +1,37 @@
+{
+  "experiment": "EXP-10",
+  "title": "Full Sweep — 6 Mapped Systems + Key Extensions",
+  "date": "2026-04-19",
+  "status": "SEALED",
+  "systems_analysed": 12,
+  "part_A": {
+    "systems": ["Exotic Hadrons", "Color Confinement", "QCD Running Coupling", "Strong CP / Axion", "EMC Effect", "Full CKM 3x3"],
+    "key_results": {
+      "A1": "σ²_A separates molecular (9.76) from compact (2.92) exotic hadrons — 3.3× gap",
+      "A2": "Color confinement PLL vertex at r=1.38 fm; Coulomb→String crossover at 0.70 fm",
+      "A3": "QCD coupling PLL R²=0.998; perturbative/non-perturbative crossover at Q≈0.53 GeV",
+      "A4": "θ=0 is minimum-entropy ground state; axion = compositional stability prediction",
+      "A5": "EMC SRC-σ²_A correlation r=-0.984; testable at Electron-Ion Collider",
+      "A6": "Full CKM: 96.6% diagonal, H=0.564 (low entropy = near-identity mixing)"
+    }
+  },
+  "part_B": {
+    "systems": ["PMNS vs CKM", "Higgs Branching", "DGLAP PLL", "Universe Composition", "SEMF Split", "ST κ-scan"],
+    "key_results": {
+      "B1": "PMNS 1.6× more entropic than CKM — flavour puzzle is compositional asymmetry",
+      "B2": "Higgs H/Hmax=0.568, moderate asymmetry dominated by bb̄",
+      "B3": "DGLAP PLL R²=0.980 — parton evolution is phase-locked",
+      "B4": "Universe entropy falling: 0.60→0.29 — dark energy drives compositional collapse",
+      "B5": "SEMF split: light R²=0.797, heavy R²=0.933 — iron peak IS the regime boundary",
+      "B6": "ST κ-scan: PLL vertex at κ=2.82"
+    }
+  },
+  "discoveries": [
+    "Color confinement has a PLL vertex — compositional stability point between Coulomb and String",
+    "PMNS is 1.6× more entropic than CKM — the flavour puzzle is compositional",
+    "The Universe is losing entropy — dark energy driving compositional collapse",
+    "SEMF valley splits cleanly at iron peak — regime boundary",
+    "EMC slope correlates with σ²_A ratio (r=-0.984) — EIC-testable prediction"
+  ],
+  "verdict": "All 6 mapped systems resolved. Programme moved from 85% to 95% complete."
+}

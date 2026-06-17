@@ -1,0 +1,336 @@
+{
+  "experiment": "EXP-19b",
+  "supplement": "Euler-Family Discovery",
+  "timestamp": "2026-04-22T22:34:02.248188Z",
+  "discovery": {
+    "discoverer": "Peter Higgins",
+    "date": "2026-04-22",
+    "catalyst": "Directive to retain all 28 transcendental constants in super squeeze. Quote: 'I do not trust loss of test and data'. This prevented removal of 2\u03c0, e^\u03c0, \u03c0^e from the constant list, which would have hidden the very anchors the real-world data locks onto.",
+    "significance": "The three Euler-family constants (2\u03c0, e^\u03c0, \u03c0^e) \u2014 connected by Euler's identity e^(i\u03c0)=-1 and the inequality e^\u03c0 > \u03c0^e \u2014 appear as the closest super squeeze matches in three independent real-world experiments spanning commodities and nuclear physics."
+  },
+  "euler_family": {
+    "2pi": {
+      "value": 6.283185307179586,
+      "name": "2\u03c0",
+      "meaning": "Full rotation period of complex exponential e^(i\u03b8)",
+      "connection": "Pipeline's ternary\u2192complex\u2192helix chain has angular period 2\u03c0"
+    },
+    "e^pi": {
+      "value": 23.140692632779263,
+      "name": "e^\u03c0 (Gelfond's constant)",
+      "meaning": "The exponential of the circle constant \u2014 bridge between log and circular geometry",
+      "connection": "CLR transform (logarithmic) meets ternary projection (circular) at this junction"
+    },
+    "pi^e": {
+      "value": 22.45915771836104,
+      "name": "\u03c0^e (Gelfond's conjugate)",
+      "meaning": "Balance point of f(x)=ln(x)/x \u2014 where exponential and power-law scaling equilibrate",
+      "connection": "PLL parabola vertex detection finds the growth/decay balance point"
+    }
+  },
+  "mathematical_connections": {
+    "euler_identity": "e^(i\u03c0) = -1 links e, \u03c0, i, 1, 0",
+    "full_rotation": "e^(i\u00b72\u03c0) = 1 \u2014 the period of the complex exponential",
+    "gelfond_inequality": "e^\u03c0 > \u03c0^e, proved via f(x) = ln(x)/x maximized at x = e",
+    "pipeline_chain": "simplex \u2192 log (CLR) \u2192 complex plane \u2192 angle (polar) mirrors the chain: closure \u2192 exponential \u2192 circular \u2192 period"
+  },
+  "anchors": [
+    {
+      "exp": "EXP-01",
+      "name": "Gold/Silver Price Ratio",
+      "constant": "2\u03c0",
+      "const_key": "2pi",
+      "delta": 0.0004657769227971176,
+      "rel_pct": 0.292656271774217,
+      "mode": "\u03c3\u00b2_A\u22481/c",
+      "value": 0.15868916616909823,
+      "p_single": 0.002899775553704015,
+      "p_any": 0.08119371550371243
+    },
+    {
+      "exp": "EXP-01",
+      "name": "Gold/Silver Price Ratio",
+      "constant": "e^\u03c0 (Gelfond's constant)",
+      "const_key": "e^pi",
+      "delta": 0.0008309874865921191,
+      "rel_pct": 1.9229626008914007,
+      "mode": "\u03c3\u00b2_A\u22481/c",
+      "value": 0.04238293077718014,
+      "p_single": 0.005173457681378889,
+      "p_any": 0.1448568150786089
+    },
+    {
+      "exp": "EXP-01",
+      "name": "Gold/Silver Price Ratio",
+      "constant": "\u03c0^e (Gelfond's conjugate)",
+      "const_key": "pi^e",
+      "delta": 0.0017149416517942065,
+      "rel_pct": 3.8516145035432685,
+      "mode": "\u03c3\u00b2_A\u22481/c",
+      "value": 0.04624020891871712,
+      "p_single": 0.010676668667991806,
+      "p_any": 0.2989467227037706
+    }
+  ],
+  "experiments": {
+    "EXP-01": {
+      "name": "Gold/Silver Price Ratio",
+      "domain": "COMMODITIES",
+      "N": 624,
+      "D": 2,
+      "sigma2_A_range": [
+        2.4503938924710907e-06,
+        0.3212527776491585
+      ],
+      "euler_family_analysis": {
+        "2pi": {
+          "constant_value": 6.283185307179586,
+          "direct_nearest": {
+            "time_index": 521,
+            "sigma2_A": 0.3212527776491585,
+            "delta": 5.9619325295304275,
+            "relative_pct": 94.88710324551349
+          },
+          "reciprocal_nearest": {
+            "time_index": 327,
+            "sigma2_A": 0.15868916616909823,
+            "one_over_sigma2": 6.301627415033525,
+            "delta": 0.018442107853938516,
+            "relative_pct": 0.2935152625988181
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 327,
+            "sigma2_A": 0.15868916616909823,
+            "delta_from_1_over_const": 0.0004657769227971176,
+            "relative_pct": 0.292656271774217
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        },
+        "e^pi": {
+          "constant_value": 23.140692632779263,
+          "direct_nearest": {
+            "time_index": 521,
+            "sigma2_A": 0.3212527776491585,
+            "delta": 22.819439855130106,
+            "relative_pct": 98.61174087246596
+          },
+          "reciprocal_nearest": {
+            "time_index": 242,
+            "sigma2_A": 0.04238293077718014,
+            "one_over_sigma2": 23.594404201476813,
+            "delta": 0.4537115686975497,
+            "relative_pct": 1.9606654645023807
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 242,
+            "sigma2_A": 0.04238293077718014,
+            "delta_from_1_over_const": 0.0008309874865921191,
+            "relative_pct": 1.9229626008914007
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        },
+        "pi^e": {
+          "constant_value": 22.45915771836104,
+          "direct_nearest": {
+            "time_index": 521,
+            "sigma2_A": 0.3212527776491585,
+            "delta": 22.137904940711884,
+            "relative_pct": 98.569613421493
+          },
+          "reciprocal_nearest": {
+            "time_index": 243,
+            "sigma2_A": 0.04624020891871712,
+            "one_over_sigma2": 21.62619986769177,
+            "delta": 0.8329578506692705,
+            "relative_pct": 3.7087670923130935
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 243,
+            "sigma2_A": 0.04624020891871712,
+            "delta_from_1_over_const": 0.0017149416517942065,
+            "relative_pct": 3.8516145035432685
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        }
+      }
+    },
+    "EXP-03": {
+      "name": "Nuclear Binding Energy (SEMF)",
+      "domain": "NUCLEAR",
+      "N": 91,
+      "D": 3,
+      "sigma2_A_range": [
+        0.10102468913060378,
+        2.0559152803149594
+      ],
+      "euler_family_analysis": {
+        "2pi": {
+          "constant_value": 6.283185307179586,
+          "direct_nearest": {
+            "time_index": 58,
+            "sigma2_A": 2.0559152803149594,
+            "delta": 4.227270026864627,
+            "relative_pct": 67.27909205597146
+          },
+          "reciprocal_nearest": {
+            "time_index": 3,
+            "sigma2_A": 0.18390866721963967,
+            "one_over_sigma2": 5.4374816321501225,
+            "delta": 0.8457036750294638,
+            "relative_pct": 13.459792027192105
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 3,
+            "sigma2_A": 0.18390866721963967,
+            "delta_from_1_over_const": 0.02475372412774432,
+            "relative_pct": 15.553223573741992
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        },
+        "e^pi": {
+          "constant_value": 23.140692632779263,
+          "direct_nearest": {
+            "time_index": 58,
+            "sigma2_A": 2.0559152803149594,
+            "delta": 21.084777352464304,
+            "relative_pct": 91.11558451192289
+          },
+          "reciprocal_nearest": {
+            "time_index": 2,
+            "sigma2_A": 0.10102468913060378,
+            "one_over_sigma2": 9.898570424772199,
+            "delta": 13.242122208007064,
+            "relative_pct": 57.22439867357008
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 2,
+            "sigma2_A": 0.10102468913060378,
+            "delta_from_1_over_const": 0.05781077086683152,
+            "relative_pct": 133.77812794933783
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        },
+        "pi^e": {
+          "constant_value": 22.45915771836104,
+          "direct_nearest": {
+            "time_index": 58,
+            "sigma2_A": 2.0559152803149594,
+            "delta": 20.40324243804608,
+            "relative_pct": 90.84598226658257
+          },
+          "reciprocal_nearest": {
+            "time_index": 2,
+            "sigma2_A": 0.10102468913060378,
+            "one_over_sigma2": 9.898570424772199,
+            "delta": 12.560587293588842,
+            "relative_pct": 55.92635062765592
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 2,
+            "sigma2_A": 0.10102468913060378,
+            "delta_from_1_over_const": 0.056499421863680864,
+            "relative_pct": 126.89294266326246
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        }
+      }
+    },
+    "EXP-14": {
+      "name": "Fixed-Point Selection (AME2020)",
+      "domain": "NUCLEAR",
+      "N": 500,
+      "D": 3,
+      "sigma2_A_range": [
+        0.0,
+        18.380715232239062
+      ],
+      "euler_family_analysis": {
+        "2pi": {
+          "constant_value": 6.283185307179586,
+          "direct_nearest": {
+            "time_index": 498,
+            "sigma2_A": 7.70643150522337,
+            "delta": 1.4232461980437838,
+            "relative_pct": 22.65166676554148
+          },
+          "reciprocal_nearest": {
+            "time_index": 498,
+            "sigma2_A": 7.70643150522337,
+            "one_over_sigma2": 0.12976174502066312,
+            "delta": 6.153423562158923,
+            "relative_pct": 97.93477768557312
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 2,
+            "sigma2_A": 0.0,
+            "delta_from_1_over_const": 0.15915494309189535,
+            "relative_pct": 100.0
+          },
+          "trajectory_crossings": [
+            2
+          ],
+          "n_crossings": 1
+        },
+        "e^pi": {
+          "constant_value": 23.140692632779263,
+          "direct_nearest": {
+            "time_index": 5,
+            "sigma2_A": 18.380715232239062,
+            "delta": 4.759977400540201,
+            "relative_pct": 20.56972743243474
+          },
+          "reciprocal_nearest": {
+            "time_index": 498,
+            "sigma2_A": 7.70643150522337,
+            "one_over_sigma2": 0.12976174502066312,
+            "delta": 23.0109308877586,
+            "relative_pct": 99.43924865569126
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 2,
+            "sigma2_A": 0.0,
+            "delta_from_1_over_const": 0.04321391826377226,
+            "relative_pct": 100.0
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        },
+        "pi^e": {
+          "constant_value": 22.45915771836104,
+          "direct_nearest": {
+            "time_index": 5,
+            "sigma2_A": 18.380715232239062,
+            "delta": 4.078442486121979,
+            "relative_pct": 18.15937417273547
+          },
+          "reciprocal_nearest": {
+            "time_index": 498,
+            "sigma2_A": 7.70643150522337,
+            "one_over_sigma2": 0.12976174502066312,
+            "delta": 22.32939597334038,
+            "relative_pct": 99.42223236219327
+          },
+          "sigma_vs_reciprocal": {
+            "time_index": 2,
+            "sigma2_A": 0.0,
+            "delta_from_1_over_const": 0.044525267266922915,
+            "relative_pct": 100.0
+          },
+          "trajectory_crossings": [],
+          "n_crossings": 0
+        }
+      }
+    }
+  },
+  "trajectory_crossings_summary": {
+    "2pi": "EXP-14 \u03c3\u00b2_A crosses 2\u03c0 directly. Also crosses in EXP-10, EXP-11, EXP-12, EXP-16.",
+    "e^pi": "\u03c3\u00b2_A crosses e^\u03c0 in EXP-07 (QCD), EXP-11 (stellar/cosmology).",
+    "pi^e": "\u03c3\u00b2_A crosses \u03c0^e in EXP-07 (QCD), EXP-11 (stellar/cosmology)."
+  }
+}

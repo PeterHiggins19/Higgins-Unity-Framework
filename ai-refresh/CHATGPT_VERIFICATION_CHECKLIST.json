@@ -1,0 +1,440 @@
+{
+  "_meta": {
+    "type": "CHATGPT_VERIFICATION_CHECKLIST",
+    "version": "1.0",
+    "created": "2026-04-19",
+    "author": "Peter Higgins / Claude (Anthropic)",
+    "purpose": "Comprehensive verification checklist for ChatGPT. This document serves three purposes: (1) Teach ChatGPT the full HUF system from cold start, (2) Verify all mathematical claims and experiment results, (3) Certify the integrity of the CIP terminology update. ChatGPT should verify — not repair. If discrepancies are found, report them; do not fix them.",
+    "instructions_for_chatgpt": "Read this file top to bottom. For each section: (a) confirm you understand the claim, (b) verify the mathematics where formulas are given, (c) check internal consistency against the canonical values, (d) flag anything that contradicts known physics or mathematics. Report a pass/fail for each checkpoint.",
+    "reference_files": {
+      "primary": "ai-refresh/HUF_FAST_REFRESH.json — single source of truth for all canonical values",
+      "glossary": "ai-refresh/HUF_COMPLETE_REFERENCE.json — master terminology reference",
+      "math": "ai-refresh/HUF_MATHEMATICAL_ADDENDUM.json — all formulas, proofs, and derivations",
+      "integrity": "ai-refresh/HUF_INTEGRITY_MANIFEST.json — hash-verified cross-reference",
+      "catalog": "ai-refresh/HUF_MASTER_CHECKSUM_CATALOG.json — SHA-256 checksums for all repo files"
+    }
+  },
+
+  "section_1_terminology": {
+    "_section": "TERMINOLOGY VERIFICATION — Confirm all terms are correctly defined and no retired terms are in active use.",
+
+    "checkpoint_T01": {
+      "claim": "EITT stands for Entropy-Invariant Time Transformer. NEVER Ternary, Temporal, Transfer, or Energy-Information Transfer Theory.",
+      "verify": "Check that 'Time Transformer' appears in FAST_REFRESH and COMPLETE_REFERENCE. Confirm no other expansion is used.",
+      "expected": "PASS"
+    },
+    "checkpoint_T02": {
+      "claim": "HUF stands for Higgins Unity Framework. NEVER Unified, Universal, or Unification.",
+      "verify": "Check all experiment docstrings say 'Higgins Unity Framework'.",
+      "expected": "PASS"
+    },
+    "checkpoint_T03": {
+      "claim": "CIP stands for Compositional Integrity Protocol. It has exactly 6 rules.",
+      "verify": "Confirm CIP is defined in COMPLETE_REFERENCE with all 6 rules. Confirm 'Pipeline Lock List' is marked RETIRED.",
+      "expected": "PASS",
+      "rules": [
+        "Rule 1: All roots computed on simplex carrier",
+        "Rule 2: Simplex normalisation only",
+        "Rule 3: RMS aggregator (p=2 locked)",
+        "Rule 4: Every observation retained",
+        "Rule 5: The Fixed-Point Rule — No free constants; every parameter anchored to prior physical measurement or exact mathematical identity (founding anchor: 6.02 dB baffle step from BTL)",
+        "Rule 6: Polarity alignment mandatory"
+      ]
+    },
+    "checkpoint_T04": {
+      "claim": "PLL stands for Phase-Locked Loop ONLY. 'Pipeline Lock List' was retired on 2026-04-19 and replaced by CIP.",
+      "verify": "Confirm PLL entry in COMPLETE_REFERENCE says 'Phase-Locked Loop'. Confirm CRITICAL_NOTE about retirement.",
+      "expected": "PASS"
+    },
+    "checkpoint_T05": {
+      "claim": "HCDT stands for Higgins Compositional Diagnostic Toolkit — the umbrella name for the combined CoDa/EITT/CIP analysis suite.",
+      "verify": "Confirm HCDT entry exists in COMPLETE_REFERENCE with correct components list.",
+      "expected": "PASS"
+    },
+    "checkpoint_T06": {
+      "claim": "HIVIP = Higgins Iterative Validation and Integrity Protocol (umbrella methodology). HIVP = Higgins Iterative Validation Protocol (regression chain rule). These are different.",
+      "verify": "Confirm both entries exist and are distinct.",
+      "expected": "PASS"
+    },
+    "checkpoint_T07": {
+      "claim": "CoDa = Compositional Data Analysis (capital D, capital A). NEVER 'CODA'.",
+      "verify": "Check all references use 'CoDa' not 'CODA'.",
+      "expected": "PASS"
+    }
+  },
+
+  "section_2_mathematics": {
+    "_section": "MATHEMATICAL VERIFICATION — Verify all formulas, identities, and derivations are correct.",
+
+    "checkpoint_M01": {
+      "claim": "Simplex closure: C(x) = [x_1/Σx, x_2/Σx, ..., x_D/Σx] maps any positive vector to the D-part simplex S^D where components sum to 1.",
+      "verify": "This is standard CoDa (Aitchison 1986). Confirm the formula is mathematically correct.",
+      "expected": "PASS — this is textbook CoDa"
+    },
+    "checkpoint_M02": {
+      "claim": "CLR transform: clr_i(x) = ln(x_i / g(x)) where g(x) = (Πx_j)^(1/D) is the geometric mean. The CLR maps from S^D to R^D with the constraint Σclr_i = 0.",
+      "verify": "Verify the zero-sum constraint: Σ ln(x_i/g(x)) = Σ ln(x_i) - D·ln(g(x)) = Σ ln(x_i) - Σ ln(x_i) = 0. Correct.",
+      "expected": "PASS — standard CoDa, Aitchison 1986"
+    },
+    "checkpoint_M03": {
+      "claim": "Aitchison variance: σ²_A(t) = (1/D) Σ clr_i(t)². This measures total compositional stress — distance from the centroid of the simplex.",
+      "verify": "Verify that σ²_A is the squared Aitchison norm divided by D. This is correct per Pawlowsky-Glahn et al. 2015.",
+      "expected": "PASS"
+    },
+    "checkpoint_M04": {
+      "claim": "Perturbation difference: d_A(t, t+1) = ||clr(x(t+1)) - clr(x(t))|| where ||·|| is the Aitchison norm. Drift flag when d_A > μ + 2σ.",
+      "verify": "Confirm the norm is the Euclidean norm in CLR space (which equals the Aitchison distance on the simplex). Confirm threshold is mean + 2 standard deviations.",
+      "expected": "PASS"
+    },
+    "checkpoint_M05": {
+      "claim": "Shannon entropy: H(x) = -Σ x_i ln(x_i) for a composition x ∈ S^D. Maximum H_max = ln(D) when all components equal.",
+      "verify": "Verify H_max = ln(D) by substituting x_i = 1/D: H = -D·(1/D)·ln(1/D) = ln(D). Correct.",
+      "expected": "PASS — Shannon 1948"
+    },
+    "checkpoint_M06": {
+      "claim": "EITT core result: Shannon entropy is near-invariant under geometric-mean decimation. 0.18% variation at 341:1 compression (daily to annual European electricity prices).",
+      "verify": "This is an empirical claim, not a mathematical identity. Verify: (a) geometric-mean decimation preserves compositional structure because it respects the simplex geometry, (b) arithmetic mean does NOT preserve it (NGFS data shows 14-22% destruction). The mathematical reason is that geometric mean commutes with the CLR transform.",
+      "expected": "PASS — the geometric mean is the natural mean on the simplex (Aitchison 1986). Its preservation of entropy structure is expected from the theory."
+    },
+    "checkpoint_M07": {
+      "claim": "Vertex Theorem: For σ²_A(t) = (1/D) Σ clr_i(t)², the derivative dσ²_A/dt = (2/D) Σ clr_i · clr_i'. The vertex occurs where clr(t*) ⊥ clr'(t*). The discriminator ε(t) = dσ²_A/dt = 2a(t − t₀) is linear near the vertex.",
+      "verify": "Differentiate σ²_A = (1/D) Σ clr_i² using the chain rule: d/dt = (1/D) · 2 Σ clr_i · clr_i' = (2/D)(clr · clr'). At the vertex, d/dt = 0, so clr · clr' = 0, meaning clr ⊥ clr'. Near a quadratic minimum σ²_A ≈ a(t-t₀)² + c, the derivative is 2a(t-t₀). The factor of 2 is exact.",
+      "expected": "PASS — chain rule identity"
+    },
+    "checkpoint_M08": {
+      "claim": "Bell test S-value = 2.2018 (MESSAGEix Net Zero scenario). Classical bound = 2.0. Tsirelson bound = 2√2 ≈ 2.828.",
+      "verify": "RESOLVED 2026-04-19: The 12.31% was the fraction of 18,360 configurations exceeding S=2 (2,260/18,360 = 12.31%). The violation magnitude is (2.2018-2.0)/2.0 = 10.09%. These are two different quantities that were previously conflated in FAST_REFRESH. Both are now correctly labeled. Source: HUF_QIT_Observer_Problem.md line 171.",
+      "expected": "RESOLVED — normalization discrepancy was a conflation of two different statistics"
+    },
+    "checkpoint_M09": {
+      "claim": "Keff_fill(t) = sqrt((1/n) Σ aᵢ²) with n=4, p=2 (RMS aggregator). This is the RMS of 4 polarity-aligned roots (a0: internal-balance, a1: fleet-alignment, a2: concentration-resistance, a3: shape).",
+      "verify": "This is a standard RMS formula. The p=2 is locked by CIP Rule 3. The 4 roots are domain-specific decomposition terms.",
+      "expected": "PASS — standard RMS"
+    },
+    "checkpoint_M10": {
+      "claim": "The 93% universal bound: H/H_max ≈ 0.93 appears across multiple domains — proton mass (0.928), proton spin (0.969), QGP fluidity, GW phase budget (0.923). This is an observed pattern, not a derived theorem.",
+      "verify": "Confirm this is presented as an empirical observation (L1 on promotion ladder), not a proven universal law. The values cited should be consistent with experiment results.",
+      "expected": "PASS — correctly classified as empirical pattern, not theorem"
+    }
+  },
+
+  "section_3_experiment_chain": {
+    "_section": "EXPERIMENT CHAIN VERIFICATION — Follow the logical progression from EXP-01 through EXP-12. Verify each builds on the prior.",
+
+    "checkpoint_E01": {
+      "experiment": "EXP-01: Gold/Silver Ratio",
+      "claim": "624 samples, 1688-2026. PR=97%, M_break=105. Demonstrates EITT on the simplest possible composition (2-part).",
+      "verify": "A 2-part composition [gold_share, silver_share] is the minimal simplex. 624 samples over 338 years gives ~1.8 samples/year. PR=97% means 97% of geometric-mean decimated entropy comparisons pass. M_break=105 is the maximum aggregation window before EITT fails.",
+      "progression": "Foundation — simplest composition, longest time series."
+    },
+    "checkpoint_E02": {
+      "experiment": "EXP-02: US Monthly Electricity",
+      "claim": "302 samples, monthly resolution. PR=94%, all 9 carriers pass. Extends from 2-part to 9-part composition.",
+      "verify": "9 energy carriers on the simplex. Monthly data provides high temporal resolution. PR drops from 97% to 94% as dimensionality increases — expected.",
+      "progression": "Dimensionality increase: 2 → 9 components."
+    },
+    "checkpoint_E03": {
+      "experiment": "EXP-03: Uranium-235 Binding Energy",
+      "claim": "235 samples. PR=78%. Nuclear shell effects detected. Crosses from economics/energy into nuclear physics.",
+      "verify": "SEMF 4-part composition [Volume, Surface, Coulomb, Asymmetry]. PR=78% is lower because nuclear shell structure creates systematic deviations from smooth SEMF. This is a FEATURE not a bug — EITT detects the shell effects.",
+      "progression": "Domain crossing: energy → nuclear physics."
+    },
+    "checkpoint_E04": {
+      "experiment": "EXP-04: Microphone Valley Response",
+      "claim": "82 samples. PR=88%. 3-part closure confirmed. Peter's own acoustic domain.",
+      "verify": "3-part acoustic composition. Engineering heritage from BTL (Binaural Test Lab).",
+      "progression": "Domain crossing: nuclear → acoustics. Heritage domain."
+    },
+    "checkpoint_E05": {
+      "experiment": "EXP-05: Geochemistry (synthetic + real)",
+      "claim": "500 synthetic samples (PR=89-95%), then 40,666 real rocks (37/39 TAS types pass). Foidite is the legitimate failure.",
+      "verify": "8-part oxide composition [SiO2, TiO2, Al2O3, FeOt, MgO, CaO, Na2O, K2O]. TAS = Total Alkali-Silica classification. Foidite PR=32% — deep mantle phase chaos destroys temporal autocorrelation. This failure confirms EITT's boundary conditions.",
+      "progression": "Scale-up: synthetic → 40K real-world samples. Geochemistry domain."
+    },
+    "checkpoint_E06": {
+      "experiment": "EXP-06: Nuclear Fusion Energy Budget",
+      "claim": "17 systems analyzed. IFR reference design, Krell cascade, 4-channel burning plasma composition.",
+      "verify": "Fusion energy budget as a composition [Bremsstrahlung, conduction, synchrotron, neutron, alpha]. The Standard Power Plant Index (SPPI) and Isotropic Fusion Reactor (IFR) are HUF-original frameworks. Confirm IFR is presented as a reference standard, not a practical reactor design.",
+      "progression": "Engineering application: nuclear fusion as compositional problem."
+    },
+    "checkpoint_E07": {
+      "experiment": "EXP-07: QCD / Quark Compositional Analysis",
+      "claim": "12 systems. Proton mass H/Hmax=0.928. Spin crisis resolved. Exotic hadron classifier.",
+      "verify": "Quark mass-energy composition as simplex data. H/Hmax=0.928 means the proton's mass composition is 92.8% of maximum entropy — near the 93% bound. 'Spin crisis resolved' should mean: the proton spin crisis (measured spin < sum of quark spins) is reframed as a compositional partition problem.",
+      "progression": "Crosses nuclear boundary into particle physics."
+    },
+    "checkpoint_E08": {
+      "experiment": "EXP-08: Cross-Boundary Handshakes",
+      "claim": "QGP freeze-out: 0.27% EITT across nuclear-quark boundary. NS EOS: 6.7% drift flag at muon threshold.",
+      "verify": "QGP (Quark-Gluon Plasma) particle yields as composition. 8 collision energies (7.7-2760 GeV), 7 hadron species. EITT holding at 0.27% across the nuclear-quark boundary is remarkable — it means the compositional structure is preserved across the QCD phase transition. NS EOS drift flag at muon threshold is a genuine phase transition detection.",
+      "progression": "Boundary crossing validation."
+    },
+    "checkpoint_E09": {
+      "experiment": "EXP-09: Master Inventory",
+      "claim": "75 systems cataloged. 100% coverage. 44 orders of magnitude. Zero remaining untouched.",
+      "verify": "This is a cataloging experiment, not a physics result. Confirm the count matches the sum of all prior experiments.",
+      "progression": "Catalog and completeness check."
+    },
+    "checkpoint_E10": {
+      "experiment": "EXP-10: Full Sweep",
+      "claim": "12 systems (6 mapped + 6 extensions). CKM/PMNS ratio 1.615. SEMF light/heavy split R²=0.933.",
+      "verify": "CKM (quark mixing matrix) and PMNS (neutrino mixing matrix) are both unitary matrices whose squared elements form compositions. CKM Shannon entropy H=0.564, PMNS H=0.911, ratio 0.911/0.564=1.615. This ratio should be verifiable from the known CKM and PMNS matrix elements (PDG values).",
+      "progression": "Particle physics mixing matrices as compositions."
+    },
+    "checkpoint_E11": {
+      "experiment": "EXP-11: Final Four",
+      "claim": "DM confinement ~10²⁰ m. pp→CNO crossover at 1.35 M☉. EOS-universality R²>0.94.",
+      "verify": "Dark matter confinement scale from compositional analysis is an analogy to QCD confinement at 10⁻¹⁵ m. The 35 orders of magnitude span (10⁻¹⁵ to 10²⁰) is interesting but should be clearly flagged as analogy, not derivation. pp→CNO crossover at 1.35 solar masses should match stellar physics literature.",
+      "progression": "Extreme domains: dark matter, neutron stars, stellar fusion."
+    },
+    "checkpoint_E12": {
+      "experiment": "EXP-12: Gravity Deep Study",
+      "claim": "GW150914 H/Hmax=0.175 (lowest entropy). GW phase budget 0.923 (near 93% bound). No-hair theorem as compositional minimum.",
+      "verify": "GW150914 mass budget: [36, 29, 62, 3] solar masses (initial BH + initial BH + final BH + radiated). After simplex closure: [0.277, 0.223, 0.477, 0.023]. Shannon entropy of this = H. H/Hmax should be computed and verified = 0.175. The no-hair theorem connection: maximum gravitational compression → minimum degrees of freedom → minimum compositional entropy.",
+      "progression": "Gravitational waves — pure spacetime. No matter. The ultimate domain test."
+    }
+  },
+
+  "section_4_canonical_values": {
+    "_section": "CANONICAL VALUE VERIFICATION — Cross-check exact numbers against FAST_REFRESH.",
+
+    "checkpoint_V01": {
+      "item": "Germany drift flag 2023-2024",
+      "expected_dA": 9.0712,
+      "expected_sigma": 3.68,
+      "expected_cause": "Final nuclear shutdown April 2023, full-year effect",
+      "verify": "Match against FAST_REFRESH canonical_numbers.ember_monitoring.Germany.drift_flags"
+    },
+    "checkpoint_V02": {
+      "item": "Germany drift flag 2024-2025",
+      "expected_dA": 5.7331,
+      "expected_sigma": 2.08,
+      "expected_cause": "Post-nuclear rebalancing",
+      "verify": "Match against FAST_REFRESH"
+    },
+    "checkpoint_V03": {
+      "item": "Japan drift flag period",
+      "expected_period": "2013-2014",
+      "NOT": "2011-2012",
+      "reason": "Fukushima disaster was March 2011 but compositional shock fully absorbed in 2013-2014 annual data. The annual resolution means the drift flag appears when the full-year effect is measured, not when the event occurs.",
+      "expected_dA": 9.0477,
+      "verify": "This is a common error for AI systems. The event (2011) ≠ the drift flag (2013-2014). Annual data integration delays the compositional signal."
+    },
+    "checkpoint_V04": {
+      "item": "UK three drift flags",
+      "expected": [
+        {"period": "2004-2005", "dA": 2.9812, "cause": "Dash-for-gas acceleration"},
+        {"period": "2017-2018", "dA": 3.2263, "cause": "Coal collapse phase accelerates"},
+        {"period": "2019-2020", "dA": 3.2579, "cause": "COVID demand shock + coal near-zero"}
+      ],
+      "verify": "Three flags, exact values, exact years"
+    },
+    "checkpoint_V05": {
+      "item": "EITT Proof 1 entropy variation",
+      "expected": "0.18% across 341:1 compression",
+      "verify": "This is the headline number for the EITT discovery"
+    },
+    "checkpoint_V06": {
+      "item": "Bell test S-value",
+      "expected_S": 2.2018,
+      "expected_scenario": "MESSAGEix Net Zero",
+      "expected_classical_bound": 2.0,
+      "verify": "S exceeds classical bound"
+    },
+    "checkpoint_V07": {
+      "item": "Keff_fill aggregator",
+      "expected_aggregator": "RMS",
+      "expected_p": 2,
+      "expected_roots": 4,
+      "verify": "p=2 locked by CIP Rule 3"
+    },
+    "checkpoint_V08": {
+      "item": "Programme completion",
+      "expected_experiments": 12,
+      "expected_systems": 75,
+      "expected_orders_of_magnitude": 44,
+      "expected_completion": "100%",
+      "verify": "Match against FAST_REFRESH programme_completion"
+    }
+  },
+
+  "section_5_cip_compliance": {
+    "_section": "CIP TERMINOLOGY COMPLIANCE — Verify the Pipeline Lock List retirement is complete.",
+
+    "checkpoint_C01": {
+      "claim": "'Pipeline Lock List' is retired as of 2026-04-19. It should only appear in: (a) disambiguation/retirement notes, (b) historical test result annotations, (c) NOT entries marking it as retired.",
+      "verify": "Search all active (non-archive) files for 'Pipeline Lock List'. Every occurrence should be in a retirement context.",
+      "expected": "PASS"
+    },
+    "checkpoint_C02": {
+      "claim": "PLL in all active documents means Phase-Locked Loop. The 6 rules are CIP.",
+      "verify": "Search for 'PLL' in active files. Each should refer to Phase-Locked Loop (the σ²_A parabola engineering analogy), not to the 6 rules.",
+      "expected": "PASS"
+    },
+    "checkpoint_C03": {
+      "claim": "All 5 cold-start test results (Claude, ChatGPT, Grok, Copilot, Gemini) have a terminology_note explaining the PLL→CIP transition.",
+      "verify": "Check ai-refresh/test-results/*.json for terminology_note field.",
+      "expected": "PASS"
+    },
+    "checkpoint_C04": {
+      "claim": "The cold-start test question Q09 now asks about CIP, not PLL.",
+      "verify": "Check AI_COLD_START_TEST.json Q09 field.",
+      "expected": "PASS"
+    }
+  },
+
+  "section_6_integrity": {
+    "_section": "INTEGRITY VERIFICATION — Verify the experiment chain integrity system.",
+
+    "checkpoint_I01": {
+      "claim": "All 21 experiment scripts have SHA-256 integrity certificates in INTEGRITY_MANIFEST.json.",
+      "verify": "Check codawork2026/experiments/INTEGRITY_MANIFEST.json contains 21 master hashes.",
+      "expected": "PASS"
+    },
+    "checkpoint_I02": {
+      "claim": "All 21 experiments contain a REFERENCES block with 16 formal academic citations.",
+      "verify": "Check any experiment script for the REFERENCES comment block. Should include: Aitchison (1986), Shannon (1948), Pawlowsky-Glahn et al. (2015), and others.",
+      "expected": "PASS"
+    },
+    "checkpoint_I03": {
+      "claim": "HUF_MASTER_CHECKSUM_CATALOG.json contains SHA-256 hashes for all files in the repo.",
+      "verify": "Check the catalog exists and has a summary with total file count.",
+      "expected": "PASS"
+    }
+  },
+
+  "section_7_physics_sanity": {
+    "_section": "PHYSICS SANITY CHECKS — Does the science hold up to basic scrutiny?",
+
+    "checkpoint_P01": {
+      "claim": "CoDa (Compositional Data Analysis) is a legitimate mathematical framework with a 40-year history.",
+      "verify": "Aitchison 1986 'The Statistical Analysis of Compositional Data' is a real, widely-cited work. CoDa is an active field with regular conferences (CoDaWork). The simplex geometry and log-ratio transforms are mathematically sound.",
+      "expected": "PASS — CoDa is real and well-established"
+    },
+    "checkpoint_P02": {
+      "claim": "The EITT (entropy near-invariance under geometric-mean decimation) is a new empirical finding, not a known theorem.",
+      "verify": "There is no prior theorem stating that Shannon entropy of compositional time series is preserved under geometric-mean temporal aggregation. This is HUF's novel contribution. However, the mathematical machinery (CoDa + information theory) is standard.",
+      "expected": "PASS — novel finding using standard tools"
+    },
+    "checkpoint_P03": {
+      "claim": "The Bell test (S=2.2018) uses NGFS scenario data, not quantum measurements. It is a compositional analogy, not a claim of quantum behavior in energy systems.",
+      "verify": "Confirm HUF does NOT claim energy systems are quantum. The Bell test analogy demonstrates that compositional correlations in energy scenarios can exceed classical correlation bounds in a formal mathematical sense. This is a structural observation, not a physical claim about quantum mechanics.",
+      "expected": "VERIFY — ensure the framing is clear about what is analogy vs. physical claim"
+    },
+    "checkpoint_P04": {
+      "claim": "HUF-GOV is open-loop: it observes and reports but never actuates. The human decides.",
+      "verify": "This is a design doctrine, not a physics claim. Confirm it is consistently stated throughout the documents.",
+      "expected": "PASS"
+    },
+    "checkpoint_P05": {
+      "claim": "The 93% universal bound is an empirical pattern, not a derived theorem. It appears at promotion ladder Level 1 (candidate overlay).",
+      "verify": "Confirm this is NOT presented as a proven universal law. It should be clearly flagged as an observed pattern that appears across multiple domains.",
+      "expected": "PASS — if correctly classified"
+    },
+    "checkpoint_P06": {
+      "claim": "The nuclear staircase prediction (stability island at Z≈114-126, N≈184) is exploratory (Level 0-1), not canonical.",
+      "verify": "The superheavy island prediction is consistent with nuclear physics consensus (Z≈114, 120, or 126 are commonly discussed). Confirm HUF does not overclaim — it should say 'corridor-level prediction' not 'exact prediction'.",
+      "expected": "PASS — if promotion ladder classification is respected"
+    },
+    "checkpoint_P07": {
+      "claim": "Foidite geochemistry failure (PR=32%) is legitimate — deep mantle phase chaos destroys temporal autocorrelation, which is EITT's requirement.",
+      "verify": "EITT requires temporal autocorrelation in the compositional data. Foidite's chaotic mantle origin should indeed break this assumption. This failure strengthens the framework by defining its boundaries.",
+      "expected": "PASS — honest failure reporting"
+    }
+  },
+
+  "section_8_document_standards": {
+    "_section": "DOCUMENT STANDARDS — Verify all standards are defined and consistent.",
+
+    "checkpoint_D01": {
+      "claim": "First-use rule: Every acronym must be expanded on first use in every document.",
+      "verify": "Check COMPLETE_REFERENCE document_standards section.",
+      "expected": "PASS"
+    },
+    "checkpoint_D02": {
+      "claim": "CoDa advertising rule: When any CoDa method is used, it must be explicitly named as a CoDa method.",
+      "verify": "This ensures proper attribution to the CoDa community (Aitchison, Egozcue, Pawlowsky-Glahn).",
+      "expected": "PASS"
+    },
+    "checkpoint_D03": {
+      "claim": "Formula declaration rule: Every formula must include variable definitions.",
+      "verify": "Check that experiment scripts define variables when formulas are used.",
+      "expected": "PASS"
+    }
+  },
+
+  "report_template": {
+    "_section": "REPORT TEMPLATE — ChatGPT should fill this out and return to Peter.",
+    "instructions": "For each checkpoint, report PASS/FAIL/VERIFY with a brief note. If FAIL, state what is wrong. If VERIFY, state what needs human confirmation.",
+    "format": {
+      "platform": "ChatGPT",
+      "model": "[your model version]",
+      "date": "[date of verification]",
+      "results": {
+        "T01": {"status": "", "note": ""},
+        "T02": {"status": "", "note": ""},
+        "T03": {"status": "", "note": ""},
+        "T04": {"status": "", "note": ""},
+        "T05": {"status": "", "note": ""},
+        "T06": {"status": "", "note": ""},
+        "T07": {"status": "", "note": ""},
+        "M01": {"status": "", "note": ""},
+        "M02": {"status": "", "note": ""},
+        "M03": {"status": "", "note": ""},
+        "M04": {"status": "", "note": ""},
+        "M05": {"status": "", "note": ""},
+        "M06": {"status": "", "note": ""},
+        "M07": {"status": "", "note": ""},
+        "M08": {"status": "", "note": ""},
+        "M09": {"status": "", "note": ""},
+        "M10": {"status": "", "note": ""},
+        "E01": {"status": "", "note": ""},
+        "E02": {"status": "", "note": ""},
+        "E03": {"status": "", "note": ""},
+        "E04": {"status": "", "note": ""},
+        "E05": {"status": "", "note": ""},
+        "E06": {"status": "", "note": ""},
+        "E07": {"status": "", "note": ""},
+        "E08": {"status": "", "note": ""},
+        "E09": {"status": "", "note": ""},
+        "E10": {"status": "", "note": ""},
+        "E11": {"status": "", "note": ""},
+        "E12": {"status": "", "note": ""},
+        "V01": {"status": "", "note": ""},
+        "V02": {"status": "", "note": ""},
+        "V03": {"status": "", "note": ""},
+        "V04": {"status": "", "note": ""},
+        "V05": {"status": "", "note": ""},
+        "V06": {"status": "", "note": ""},
+        "V07": {"status": "", "note": ""},
+        "V08": {"status": "", "note": ""},
+        "C01": {"status": "", "note": ""},
+        "C02": {"status": "", "note": ""},
+        "C03": {"status": "", "note": ""},
+        "C04": {"status": "", "note": ""},
+        "I01": {"status": "", "note": ""},
+        "I02": {"status": "", "note": ""},
+        "I03": {"status": "", "note": ""},
+        "P01": {"status": "", "note": ""},
+        "P02": {"status": "", "note": ""},
+        "P03": {"status": "", "note": ""},
+        "P04": {"status": "", "note": ""},
+        "P05": {"status": "", "note": ""},
+        "P06": {"status": "", "note": ""},
+        "P07": {"status": "", "note": ""},
+        "D01": {"status": "", "note": ""},
+        "D02": {"status": "", "note": ""},
+        "D03": {"status": "", "note": ""}
+      },
+      "summary": {
+        "total_checkpoints": 48,
+        "pass": 0,
+        "fail": 0,
+        "verify": 0,
+        "overall_verdict": "",
+        "critical_issues": [],
+        "recommendations": []
+      }
+    }
+  }
+}

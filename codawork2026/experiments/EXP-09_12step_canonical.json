@@ -1,0 +1,117 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-09",
+  "name": "Master Inventory (Cross-Domain)",
+  "domain": "CROSS-DOMAIN",
+  "carriers": [
+    "Primary",
+    "Secondary",
+    "Tertiary"
+  ],
+  "D": 3,
+  "N": 150,
+  "data_source": {
+    "type": "DERIVED",
+    "url": null,
+    "description": "Representative 3-part compositions from 6 domains (Energy, Nuclear, Chemistry, Finance, Acoustics, Geochemistry). 25 samples per domain, 150 total. Tests cross-domain pipeline stability."
+  },
+  "data_hash_sha256_16": "a5b13411be396109",
+  "run_timestamp": "2026-04-22T17:41:32.516830Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-09: Master Inventory (Cross-Domain): 3-part simplex, carriers=['Primary', 'Secondary', 'Tertiary']",
+    "step2_n_samples": 150,
+    "step2_D": 3,
+    "step2_carriers": [
+      "Primary",
+      "Secondary",
+      "Tertiary"
+    ],
+    "data_hash_sha256_16": "a5b13411be396109",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      0.3792868412097196,
+      -0.09541840621371153,
+      -0.2838684349960081
+    ],
+    "step4_clr_std_per_part": [
+      0.30804853392750703,
+      0.2787591747054215,
+      0.26585036523655803
+    ],
+    "step5_sigma2_range": [
+      0.006528136181506935,
+      0.2594852297482585
+    ],
+    "step5_sigma2_final": 0.24327699343374543,
+    "step6_pll_coeffs": [
+      -1.5662741778817112e-05,
+      0.0030853349161128097,
+      0.1082668024580742
+    ],
+    "step6_pll_R2": 0.5117645206225925,
+    "step6_pll_shape": "hill",
+    "step6_vertex": [
+      98.49281050797677,
+      0.2602084560812459
+    ],
+    "step6_curvature": "concave_down",
+    "step7_squeeze_count": 0,
+    "step7_squeeze_closest": null,
+    "step7_squeeze_mean": 0.22333962536810306,
+    "step7_cancellation": false,
+    "step8_entropy_range": [
+      0.6664801950667535,
+      0.9986319162357149
+    ],
+    "step8_entropy_mean": 0.9338473230246617,
+    "step8_entropy_cv": 5.910115633409905,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.9338473230246617,
+        "H_mean_decimated": 0.9369485863716744,
+        "variation_pct": 0.332095329777036,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.9342849395783824,
+        "H_mean_decimated": 0.9393260007162441,
+        "variation_pct": 0.5395635661360997,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.9350669297755557,
+        "H_mean_decimated": 0.9431124251214347,
+        "variation_pct": 0.8604191945714635,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 143,
+      "stalls": 17,
+      "spikes": 1,
+      "reversals": 125
+    },
+    "step10_ternary_type": "ternary",
+    "step11_complex_range_re": [
+      -0.23399716096746742,
+      0.22837956642772506
+    ],
+    "step11_complex_range_im": [
+      -0.11893045075610252,
+      0.1369008212353333
+    ],
+    "step12_radius_range": [
+      0.009231707612648342,
+      0.2399899668032965
+    ],
+    "step12_theta_range": [
+      -3.0319634261983164,
+      3.141533264859478
+    ],
+    "step9_angular_velocity_std": 0.9090964231749006
+  }
+}

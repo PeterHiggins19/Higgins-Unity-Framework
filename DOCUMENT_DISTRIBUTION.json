@@ -1,0 +1,61 @@
+{
+  "schema": "tri_repo_distribution/1.0",
+  "title": "Document distribution registry — the Higgins three-repository system",
+  "updated": "2026-06-12",
+  "_note": "Identical in all three repos (it is itself in shared_identical_files). Human-readable companion: DOCUMENT_DISTRIBUTION.md. Cross-repo link resolver: CROSS_BRAIN.md.",
+  "gate": "Peter Higgins — sole commit/contact gate; honest-broker; lose nothing; AI-assisted per HUF-STD-001",
+  "repos": {
+    "Hs": {
+      "name": "higgins-decomposition",
+      "role": "pure math · the general instrument",
+      "verb": "run it",
+      "url": "https://github.com/PeterHiggins19/higgins-decomposition"
+    },
+    "HUF": {
+      "name": "Higgins-Unity-Framework",
+      "role": "governance",
+      "verb": "govern it",
+      "url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework"
+    },
+    "RWA": {
+      "name": "Rogue-Wave-Audio",
+      "role": "everything organic sound",
+      "verb": "it began in sound",
+      "url": "https://github.com/PeterHiggins19/Rogue-Wave-Audio"
+    }
+  },
+  "routing": {
+    "engine | spec | algorithm | run | diagnostic | experiment | conference instrument": "Hs",
+    "doctrine | standard | charter | claim-tiers | lineage narrative | admin governance | confidence ladder": "HUF",
+    "acoustics | BTL | diffraction | loudspeaker paper | ground state | lab identity": "RWA"
+  },
+  "single_source_rule": "Every document lives in exactly one home repo; the others reference it via CROSS_BRAIN.md with pointer stubs, never forks. Pick the home by the document's primary verb: run -> Hs, govern -> HUF, sound -> RWA.",
+  "shared_identical_files": [
+    "CROSS_BRAIN.md",
+    "ARC_OF_DISCOVERY.md",
+    "arc_of_discovery.svg",
+    "DOCUMENT_DISTRIBUTION.md",
+    "DOCUMENT_DISTRIBUTION.json",
+    ".gitattributes",
+    "TRIPLE_JOURNAL.md",
+    "TRIPLE_JOURNAL.json",
+    "HISTORY_THREAD.md",
+    "GRADUATE_SCHOOL.md"
+  ],
+  "shared_readme_blocks": [
+    {
+      "name": "Level-1 system message",
+      "file": "README.md",
+      "start_marker": "# The system — one instrument, one arc of discovery",
+      "end_marker": "## …and the system lives"
+    },
+    {
+      "name": "References & Acknowledgments",
+      "file": "README.md",
+      "start_marker": "## References & Acknowledgments",
+      "end_marker": "<EOF>"
+    }
+  ],
+  "maintenance_rule": "Shared set: change once, mirror to all three in the same change; never let copies diverge between pushes. Verify parity before every push with verify_tri_repo_coherence.py (development-mirror root) or the harness Grep tool -- NOT the Linux sandbox, whose mount can serve torn reads of just-edited files.",
+  "verifier": "verify_tri_repo_coherence.py (development-mirror root; runs when Hs, HUF, RWA are sibling folders)"
+}

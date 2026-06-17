@@ -1,0 +1,775 @@
+{
+  "_meta": {
+    "experiment": "EXP-13",
+    "title": "Simplex Parabola Hunter",
+    "series": "Nature's Confirmation Series",
+    "created": "2026-04-20T00:37:24.081679",
+    "author": "Peter Higgins / Claude",
+    "version": "1.0",
+    "purpose": "Systematically test every D=3 system in the NCS for parabolic trajectories on the 2-simplex, distinguishing ILR geodesics from true ILR parabolas, and establishing the Cartesian Parabola Theorem"
+  },
+  "glossary": {
+    "ILR": "Isometric Log-Ratio transform \u2014 maps D-simplex to R^(D-1)",
+    "CLR": "Centred Log-Ratio transform \u2014 symmetric but singular",
+    "EITT": "Entropy-Invariant Time Transformer \u2014 tests H preservation under geometric-mean decimation",
+    "F17": "Linear Contamination Tuner \u2014 F17(M) = aM\u00b2 + bM + c, sign(b) = transport direction",
+    "CIP": "Compositional Integrity Protocol \u2014 6 immutable analysis rules governing the EITT chain",
+    "\u03c3\u00b2_A": "Aitchison variance \u2014 total compositional variability on the simplex",
+    "PLL": "Phase-Locked Loop \u2014 engineering analogy for compositional lock detection",
+    "HCDT": "Higgins Compositional Diagnostic Toolkit \u2014 unified name for CoDa+EITT diagnostics",
+    "parabola_vertex": "Point on 2-simplex where CIP curvature peaks \u2014 physical transition point",
+    "ILR_geodesic": "Straight line in ILR space \u2014 maps to curved path on Cartesian simplex",
+    "ILR_parabola": "Quadratic curve in ILR space \u2014 genuine curvature beyond geodesic"
+  },
+  "systems": {
+    "stellar_burning_power_law": {
+      "trajectory": {
+        "linear": {
+          "slope": 2.387241268188558,
+          "intercept": -16.17228421627293,
+          "R2": 0.340904226411305
+        },
+        "quadratic": {
+          "a": 0.41986368329744894,
+          "b": 2.6312848576870476,
+          "c": -20.885225548775697,
+          "R2": 0.5951201850275862
+        },
+        "F_statistic": 123.69236992172502,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u222a)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          -3.133498993080256,
+          -25.00778977481054
+        ],
+        "cartesian_bulge_ratio": 0.046140300561065044,
+        "n_points": 200
+      },
+      "driver": "Stellar mass (power-law model)"
+    },
+    "stellar_burning_full": {
+      "system": "Stellar Burning Sequence",
+      "components": [
+        "pp-chain",
+        "CNO cycle",
+        "Triple-\u03b1"
+      ],
+      "driving_variable": "Stellar mass M (0.1-100 M\u2609)",
+      "N": 200,
+      "D": 3,
+      "power_law_trajectory": {
+        "linear": {
+          "slope": 2.387241268188558,
+          "intercept": -16.17228421627293,
+          "R2": 0.340904226411305
+        },
+        "quadratic": {
+          "a": 0.41986368329744894,
+          "b": 2.6312848576870476,
+          "c": -20.885225548775697,
+          "R2": 0.5951201850275862
+        },
+        "F_statistic": 123.69236992172502,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u222a)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          -3.133498993080256,
+          -25.00778977481054
+        ],
+        "cartesian_bulge_ratio": 0.046140300561065044,
+        "n_points": 200
+      },
+      "full_physics_trajectory": {
+        "linear": {
+          "slope": -1.9205757756412838,
+          "intercept": -43.75358302703371,
+          "R2": 0.6291301556341371
+        },
+        "quadratic": {
+          "a": 0.2066607398452643,
+          "b": 5.213453491722379,
+          "c": 8.532328665690422,
+          "R2": 0.6991834790546478
+        },
+        "F_statistic": 45.87681777074891,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u222a)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          -12.613555665255802,
+          -24.347764247340805
+        ],
+        "cartesian_bulge_ratio": 1.8583099885642843e-16,
+        "n_points": 200
+      },
+      "crossover_pp_cno": 48.241087041653685,
+      "cno_vertex_mass": 0.11895340673703195,
+      "cno_max_fraction": 1.0,
+      "eitt": {
+        "2": {
+          "H_full": 0.040222017058158824,
+          "H_agg": 0.04047602380696706,
+          "deviation_pct": 0.6315117127043942,
+          "pass": "True"
+        },
+        "3": {
+          "H_full": 0.040222017058158824,
+          "H_agg": 0.04130864438137913,
+          "deviation_pct": 2.701573423453812,
+          "pass": "True"
+        },
+        "4": {
+          "H_full": 0.040222017058158824,
+          "H_agg": 0.04147528378463556,
+          "deviation_pct": 3.115872395619916,
+          "pass": "True"
+        },
+        "6": {
+          "H_full": 0.040222017058158824,
+          "H_agg": 0.04352635340304587,
+          "deviation_pct": 8.21524276146837,
+          "pass": "False"
+        }
+      },
+      "f17": {
+        "F17_global": 0.037095338955662555,
+        "a": 7.762296457716163e-05,
+        "b": 0.00014989120268093202,
+        "c": 0.00042861950700360987,
+        "R2": 9.697362577498758e-06,
+        "a_status": "ZERO",
+        "b_positive": true,
+        "b_sign": "positive (arithmetic \u2192 geometric)"
+      },
+      "cip": {
+        "parabola_coeffs": [
+          -1.194750406497386,
+          1.3854063846886133,
+          1.7495563382527477
+        ],
+        "R2": 0.5791816695896737,
+        "vertex_param": 0.5797890409387548,
+        "vertex_sigma_a": 2.151178057797267,
+        "shape": "\u2229-shaped (\u2229)"
+      }
+    },
+    "qcd_running": {
+      "system": "QCD Running Coupling",
+      "components": [
+        "Strong (\u03b1_s)",
+        "EM (\u03b1_em)",
+        "Weak (\u03b1_w)"
+      ],
+      "driving_variable": "Q\u00b2 (1 - 10\u2078 GeV\u00b2)",
+      "N": 200,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": 0.5033672281621172,
+          "intercept": -1.0367046594636329,
+          "R2": 0.9988682602073388
+        },
+        "quadratic": {
+          "a": 0.05127208908350611,
+          "b": 0.272832670934333,
+          "c": -0.7835098035382909,
+          "R2": 0.9999102445199483
+        },
+        "F_statistic": 2287.0014116754587,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u222a)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          -2.6606354042837457,
+          -1.1464639354048825
+        ],
+        "cartesian_bulge_ratio": 0.005841146432371888,
+        "n_points": 200
+      },
+      "eitt": {
+        "2": {
+          "H_full": 0.6081208231304447,
+          "H_agg": 0.60812490135597,
+          "deviation_pct": 0.0006706275085746867,
+          "pass": "True"
+        },
+        "3": {
+          "H_full": 0.6081208231304447,
+          "H_agg": 0.6064197058413485,
+          "deviation_pct": 0.27973343855243477,
+          "pass": "True"
+        },
+        "4": {
+          "H_full": 0.6081208231304447,
+          "H_agg": 0.6081320280569908,
+          "deviation_pct": 0.001842549394786385,
+          "pass": "True"
+        },
+        "6": {
+          "H_full": 0.6081208231304447,
+          "H_agg": 0.6064393340516435,
+          "deviation_pct": 0.27650575590312887,
+          "pass": "True"
+        }
+      },
+      "f17": {
+        "F17_global": 0.002875074518100318,
+        "a": 2.257601072568486e-05,
+        "b": -0.0002428026791579024,
+        "c": 0.0005905682477264303,
+        "R2": 0.8287985834360628,
+        "a_status": "ZERO",
+        "b_positive": false,
+        "b_sign": "negative (geometric \u2192 arithmetic)"
+      }
+    },
+    "kerr_bh": {
+      "system": "Kerr BH Energy Partition",
+      "components": [
+        "M_irr",
+        "E_rot",
+        "L_GW"
+      ],
+      "driving_variable": "Spin a* (0-0.998)",
+      "N": 200,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": 1.797117113397438,
+          "intercept": 1.9422088342155457,
+          "R2": 0.9983155233092104
+        },
+        "quadratic": {
+          "a": -0.015148279968465926,
+          "b": 1.9222332525352412,
+          "c": 1.7499866729580513,
+          "R2": 0.9989616309912376
+        },
+        "F_statistic": 122.5799424725485,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u2229)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          63.44724472140538,
+          62.730188465571295
+        ],
+        "cartesian_bulge_ratio": 0.0035108654989048577,
+        "n_points": 200
+      },
+      "eitt": {
+        "2": {
+          "H_full": 0.19058121524073302,
+          "H_agg": 0.19058806217714142,
+          "deviation_pct": 0.003592660693107296,
+          "pass": "True"
+        },
+        "3": {
+          "H_full": 0.19058121524073302,
+          "H_agg": 0.1863906741173662,
+          "deviation_pct": 2.198821703426278,
+          "pass": "True"
+        },
+        "4": {
+          "H_full": 0.19058121524073302,
+          "H_agg": 0.19061303775446314,
+          "deviation_pct": 0.01669761297824229,
+          "pass": "True"
+        },
+        "6": {
+          "H_full": 0.19058121524073302,
+          "H_agg": 0.18643149654578187,
+          "deviation_pct": 2.1774017390483116,
+          "pass": "True"
+        }
+      },
+      "f17": {
+        "F17_global": 0.09161494573235025,
+        "a": 0.0013272955484528242,
+        "b": -0.0022015928680936157,
+        "c": 0.0014058726550895116,
+        "R2": 0.7922676979864847,
+        "a_status": "NON-ZERO",
+        "b_positive": false,
+        "b_sign": "negative (geometric \u2192 arithmetic)"
+      }
+    },
+    "fusion_reactivities": {
+      "system": "Fusion Reactivities",
+      "components": [
+        "DT",
+        "DD",
+        "DHe3"
+      ],
+      "driving_variable": "Temperature (0.3-316 keV)",
+      "N": 200,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": 0.8311254297535244,
+          "intercept": -1.517035801579289,
+          "R2": 0.9297968314426368
+        },
+        "quadratic": {
+          "a": 0.030944650336676014,
+          "b": 0.40603097633056,
+          "c": -0.37866354131459745,
+          "R2": 0.948228784311164
+        },
+        "F_statistic": 70.13732760157835,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u222a)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          -6.560600490116488,
+          -1.7105670524729715
+        ],
+        "cartesian_bulge_ratio": 0.02405671069146219,
+        "n_points": 200
+      },
+      "eitt": {
+        "2": {
+          "H_full": 0.08720590055200343,
+          "H_agg": 0.0873956336125092,
+          "deviation_pct": 0.21756906276384244,
+          "pass": "True"
+        },
+        "3": {
+          "H_full": 0.08720590055200343,
+          "H_agg": 0.08656066952772468,
+          "deviation_pct": 0.7398937688786072,
+          "pass": "True"
+        },
+        "4": {
+          "H_full": 0.08720590055200343,
+          "H_agg": 0.08813795995557508,
+          "deviation_pct": 1.0688031402368494,
+          "pass": "True"
+        },
+        "6": {
+          "H_full": 0.08720590055200343,
+          "H_agg": 0.08807082463590166,
+          "deviation_pct": 0.9918183040635367,
+          "pass": "True"
+        }
+      },
+      "f17": {
+        "F17_global": 0.08614419081037372,
+        "a": 0.04469201853098028,
+        "b": -0.11647130565922645,
+        "c": 0.058396725576151595,
+        "R2": 0.4141266435233184,
+        "a_status": "NON-ZERO",
+        "b_positive": false,
+        "b_sign": "negative (geometric \u2192 arithmetic)"
+      }
+    },
+    "gw150914_phases": {
+      "system": "GW150914 Phase Budget",
+      "components": [
+        "Inspiral",
+        "Merger",
+        "Ringdown"
+      ],
+      "driving_variable": "Time-to-merger \u03c4 (0.003-1 s)",
+      "N": 200,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": 3.989505169629922,
+          "intercept": -0.4744013707775333,
+          "R2": 0.46623625831988924
+        },
+        "quadratic": {
+          "a": 1.9208050007068407,
+          "b": -4.747122340312487,
+          "c": 1.2693461965215427,
+          "R2": 0.6753134251006643
+        },
+        "F_statistic": 126.85526609340864,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u222a)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          1.2357116778032087,
+          -1.6636910594207759
+        ],
+        "cartesian_bulge_ratio": 0.5972421277500203,
+        "n_points": 200
+      },
+      "eitt": {
+        "2": {
+          "H_full": 0.3665159099337432,
+          "H_agg": 0.36664903640941104,
+          "deviation_pct": 0.0363221546622321,
+          "pass": "True"
+        },
+        "3": {
+          "H_full": 0.3665159099337432,
+          "H_agg": 0.37048499237001126,
+          "deviation_pct": 1.082922276685215,
+          "pass": "True"
+        },
+        "4": {
+          "H_full": 0.3665159099337432,
+          "H_agg": 0.36716526493104973,
+          "deviation_pct": 0.17716966159092282,
+          "pass": "True"
+        },
+        "6": {
+          "H_full": 0.3665159099337432,
+          "H_agg": 0.3716043407735099,
+          "deviation_pct": 1.3883246816452042,
+          "pass": "True"
+        }
+      }
+    },
+    "neutron_star_eos": {
+      "system": "Neutron Star EOS (sub-threshold)",
+      "components": [
+        "Neutron",
+        "Proton",
+        "Electron"
+      ],
+      "driving_variable": "Density \u03c1/\u03c1\u2080 (0.5-3.0)",
+      "N": 150,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": 0.5773502691896261,
+          "intercept": -2.412671930491875e-16,
+          "R2": 1.0
+        },
+        "quadratic": {
+          "a": 2.707670302536975e-15,
+          "b": 0.5773502691896134,
+          "c": 1.5229087501717807e-14,
+          "R2": 1.0
+        },
+        "F_statistic": -139.73305084745763,
+        "curvature_significant": "False",
+        "shape": "ILR_GEODESIC (line)",
+        "is_parabola": false,
+        "ilr_vertex": [
+          -106613842285129.78,
+          -30776765271329.332
+        ],
+        "cartesian_bulge_ratio": 1.7494347504763838e-16,
+        "n_points": 150
+      },
+      "eitt": {
+        "2": {
+          "H_full": 0.30786708704380505,
+          "H_agg": 0.30786721975287434,
+          "deviation_pct": 4.3105961914799334e-05,
+          "pass": "True"
+        },
+        "3": {
+          "H_full": 0.30786708704380505,
+          "H_agg": 0.307867440790186,
+          "deviation_pct": 0.00011490230552484841,
+          "pass": "True"
+        },
+        "4": {
+          "H_full": 0.30786708704380505,
+          "H_agg": 0.3083604531992749,
+          "deviation_pct": 0.1602529715687516,
+          "pass": "True"
+        },
+        "6": {
+          "H_full": 0.30786708704380505,
+          "H_agg": 0.30786863131349057,
+          "deviation_pct": 0.0005016027209483418,
+          "pass": "True"
+        }
+      }
+    },
+    "qcd_confinement": {
+      "system": "QCD Color Confinement",
+      "components": [
+        "Coulomb",
+        "String",
+        "Kinetic"
+      ],
+      "driving_variable": "Separation r (0.1-3.0 fm)",
+      "N": 150,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": -1.1547005383792515,
+          "intercept": -0.45316670329150444,
+          "R2": 1.0
+        },
+        "quadratic": {
+          "a": -1.896329704614094e-16,
+          "b": -1.154700538379252,
+          "c": -0.4531667032915045,
+          "R2": 1.0
+        },
+        "F_statistic": -97.67314162675827,
+        "curvature_significant": "False",
+        "shape": "ILR_GEODESIC (line)",
+        "is_parabola": false,
+        "ilr_vertex": [
+          0.0,
+          0.0
+        ],
+        "cartesian_bulge_ratio": 0.1982956162564023,
+        "n_points": 150
+      }
+    },
+    "tokamak_losses": {
+      "system": "Tokamak Energy Losses",
+      "components": [
+        "Bremsstrahlung",
+        "Cyclotron",
+        "Conduction"
+      ],
+      "driving_variable": "Temperature (0.5-100 keV)",
+      "N": 150,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": 1.7320508075688772,
+          "intercept": -3.194153408442688,
+          "R2": 1.0
+        },
+        "quadratic": {
+          "a": -3.6100186953934537e-16,
+          "b": 1.732050807568877,
+          "c": -3.194153408442685,
+          "R2": 1.0
+        },
+        "F_statistic": -133.66717213653703,
+        "curvature_significant": "False",
+        "shape": "ILR_GEODESIC (line)",
+        "is_parabola": false,
+        "ilr_vertex": [
+          0.0,
+          0.0
+        ],
+        "cartesian_bulge_ratio": 0.054990251993610496,
+        "n_points": 150
+      }
+    },
+    "parton_fractions": {
+      "system": "Parton Momentum Fractions",
+      "components": [
+        "Gluon",
+        "Valence",
+        "Sea"
+      ],
+      "driving_variable": "Q\u00b2 (1 - 10\u2076 GeV\u00b2)",
+      "N": 200,
+      "D": 3,
+      "trajectory": {
+        "linear": {
+          "slope": -0.45398581399674304,
+          "intercept": 0.6546155073403722,
+          "R2": 0.48387071951836136
+        },
+        "quadratic": {
+          "a": -2.5514923141767984,
+          "b": 1.8459873363965305,
+          "c": 0.23502539111941745,
+          "R2": 0.9482225556621132
+        },
+        "F_statistic": 1766.7405738174493,
+        "curvature_significant": "True",
+        "shape": "ILR_PARABOLA (\u2229)",
+        "is_parabola": true,
+        "ilr_vertex": [
+          0.36174659945862137,
+          0.5689152119119789
+        ],
+        "cartesian_bulge_ratio": 0.3577956374184792,
+        "n_points": 200
+      }
+    }
+  },
+  "master_table": [
+    {
+      "system": "Stellar Burning (power-law)",
+      "driver": "Stellar mass",
+      "shape": "ILR_PARABOLA (\u222a)",
+      "is_parabola": true,
+      "quadratic_a": 0.41986368329744894,
+      "F_statistic": 123.69236992172502,
+      "R2_linear": 0.340904226411305,
+      "R2_quadratic": 0.5951201850275862,
+      "cartesian_bulge": 0.046140300561065044
+    },
+    {
+      "system": "Stellar Burning (full physics)",
+      "driver": "Stellar mass",
+      "shape": "ILR_PARABOLA (\u222a)",
+      "is_parabola": true,
+      "quadratic_a": 0.2066607398452643,
+      "F_statistic": 45.87681777074891,
+      "R2_linear": 0.6291301556341371,
+      "R2_quadratic": 0.6991834790546478,
+      "cartesian_bulge": 1.8583099885642843e-16
+    },
+    {
+      "system": "QCD Running Coupling",
+      "driver": "Q\u00b2",
+      "shape": "ILR_PARABOLA (\u222a)",
+      "is_parabola": true,
+      "quadratic_a": 0.05127208908350611,
+      "F_statistic": 2287.0014116754587,
+      "R2_linear": 0.9988682602073388,
+      "R2_quadratic": 0.9999102445199483,
+      "cartesian_bulge": 0.005841146432371888
+    },
+    {
+      "system": "Kerr BH Spin",
+      "driver": "Spin a*",
+      "shape": "ILR_PARABOLA (\u2229)",
+      "is_parabola": true,
+      "quadratic_a": -0.015148279968465926,
+      "F_statistic": 122.5799424725485,
+      "R2_linear": 0.9983155233092104,
+      "R2_quadratic": 0.9989616309912376,
+      "cartesian_bulge": 0.0035108654989048577
+    },
+    {
+      "system": "Fusion Reactivities",
+      "driver": "Temperature",
+      "shape": "ILR_PARABOLA (\u222a)",
+      "is_parabola": true,
+      "quadratic_a": 0.030944650336676014,
+      "F_statistic": 70.13732760157835,
+      "R2_linear": 0.9297968314426368,
+      "R2_quadratic": 0.948228784311164,
+      "cartesian_bulge": 0.02405671069146219
+    },
+    {
+      "system": "GW150914 Phases",
+      "driver": "Time \u03c4",
+      "shape": "ILR_PARABOLA (\u222a)",
+      "is_parabola": true,
+      "quadratic_a": 1.9208050007068407,
+      "F_statistic": 126.85526609340864,
+      "R2_linear": 0.46623625831988924,
+      "R2_quadratic": 0.6753134251006643,
+      "cartesian_bulge": 0.5972421277500203
+    },
+    {
+      "system": "Neutron Star EOS",
+      "driver": "Density \u03c1",
+      "shape": "ILR_GEODESIC (line)",
+      "is_parabola": false,
+      "quadratic_a": 2.707670302536975e-15,
+      "F_statistic": -139.73305084745763,
+      "R2_linear": 1.0,
+      "R2_quadratic": 1.0,
+      "cartesian_bulge": 1.7494347504763838e-16
+    },
+    {
+      "system": "QCD Confinement",
+      "driver": "Separation r",
+      "shape": "ILR_GEODESIC (line)",
+      "is_parabola": false,
+      "quadratic_a": -1.896329704614094e-16,
+      "F_statistic": -97.67314162675827,
+      "R2_linear": 1.0,
+      "R2_quadratic": 1.0,
+      "cartesian_bulge": 0.1982956162564023
+    },
+    {
+      "system": "Tokamak Losses",
+      "driver": "Temperature",
+      "shape": "ILR_GEODESIC (line)",
+      "is_parabola": false,
+      "quadratic_a": -3.6100186953934537e-16,
+      "F_statistic": -133.66717213653703,
+      "R2_linear": 1.0,
+      "R2_quadratic": 1.0,
+      "cartesian_bulge": 0.054990251993610496
+    },
+    {
+      "system": "Parton Fractions",
+      "driver": "Q\u00b2",
+      "shape": "ILR_PARABOLA (\u2229)",
+      "is_parabola": true,
+      "quadratic_a": -2.5514923141767984,
+      "F_statistic": 1766.7405738174493,
+      "R2_linear": 0.48387071951836136,
+      "R2_quadratic": 0.9482225556621132,
+      "cartesian_bulge": 0.3577956374184792
+    }
+  ],
+  "summary": {
+    "total_systems_tested": 10,
+    "ilr_parabolas": 7,
+    "ilr_geodesics": 3,
+    "parabola_fraction": 0.7,
+    "new_diagnostic": "ILR Curvature Index \u2014 quadratic coefficient |a| in z\u2082 = a\u00b7z\u2081\u00b2 + b\u00b7z\u2081 + c",
+    "key_theorem": "Cartesian Parabola Theorem: ILR geodesics map to curved paths on the Cartesian simplex; curvature depends on ILR slope and is a geometric property of the Aitchison metric",
+    "stellar_burning_finding": "Power-law model \u2192 ILR geodesic; full physics model with composition/density/Gamow corrections may introduce measurable curvature",
+    "binding_thesis_support": "Every D=3 system traces a structured path through the simplex \u2014 the simplex is the same everywhere"
+  },
+  "crc_chain": [
+    {
+      "step": 1,
+      "label": "framework_loaded",
+      "hash": "e2e2033ae7e19d68"
+    },
+    {
+      "step": 2,
+      "label": "stellar_power_law",
+      "hash": "e160fd653cc0583f"
+    },
+    {
+      "step": 3,
+      "label": "stellar_full_model",
+      "hash": "5db288ffa4ce55a7"
+    },
+    {
+      "step": 4,
+      "label": "qcd_running",
+      "hash": "2e133bb9ccf931f8"
+    },
+    {
+      "step": 5,
+      "label": "kerr_bh",
+      "hash": "abf06b0e9c7d203a"
+    },
+    {
+      "step": 6,
+      "label": "fusion_reactivities",
+      "hash": "b33e87630c860fe1"
+    },
+    {
+      "step": 7,
+      "label": "gw_phase",
+      "hash": "e1fbbd71b15f818d"
+    },
+    {
+      "step": 8,
+      "label": "ns_eos",
+      "hash": "f1b51e9eefff9a28"
+    },
+    {
+      "step": 9,
+      "label": "qcd_confinement",
+      "hash": "ed0bbec9adfb8ad5"
+    },
+    {
+      "step": 10,
+      "label": "tokamak_losses",
+      "hash": "e7984417f24e5273"
+    },
+    {
+      "step": 11,
+      "label": "parton_evolution",
+      "hash": "80f180cf450f008a"
+    },
+    {
+      "step": 12,
+      "label": "analysis_complete",
+      "hash": "a2dcad78d59bc1d9"
+    }
+  ]
+}

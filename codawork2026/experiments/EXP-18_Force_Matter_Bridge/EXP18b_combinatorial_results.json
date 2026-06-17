@@ -1,0 +1,23 @@
+{
+  "experiment": "EXP-18b",
+  "title": "Combinatorial Bridge Completion",
+  "bridges_tested": 6,
+  "bridges_total": 6,
+  "fully_combinatorial": true,
+  "bridge_5_energy_force": {
+    "system": "Charged droplet in E+B field",
+    "force_deviations": 296,
+    "energy_deviations": 0,
+    "cross_correlated": 0,
+    "force_aitchison": 0.000590087221240526,
+    "energy_aitchison": 0.009359742806942073
+  },
+  "bridge_6_matter_gravity": {
+    "system": "Gravitational sedimentation of mixed-density fluid",
+    "matter_deviations": 0,
+    "gravity_deviations": 0,
+    "cross_correlated": 0,
+    "matter_aitchison": 9.648139748031351,
+    "gravity_aitchison": 0.027887004039456747
+  }
+}

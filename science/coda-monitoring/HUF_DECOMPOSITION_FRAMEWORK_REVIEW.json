@@ -4,8 +4,9 @@
   "version": "5.0.0",
   "date": "2026-04-11",
   "author": "Peter Higgins — Rogue Wave Audio",
-  "contact": "PeterHiggins@RogueWaveAudio.com",
+  "contact": "PeterHiggins@RogueWaveAudio.com (canonical via RWA-001 contact_authority)",
   "standard": "RWA-001",
+  "contact_authority": "RWA-001 (RWA repo RWA-001.json) -- canonical contact/identity; check there",
   "status": "Working paper — submitted for collective review",
   "review_request": "This document presents a reframing of the Higgins Unity Framework (HUF) and EITT from the decomposition framework perspective. Reviewers are asked to evaluate the logical construction, identify gaps, test falsifiability, and assess whether the framework extends or contradicts prior EITT results.",
 

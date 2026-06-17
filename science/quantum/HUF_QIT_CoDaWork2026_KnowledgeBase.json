@@ -3,6 +3,7 @@
     "title": "HUF-QIT-CoDa Knowledge Base",
     "author": "Peter Higgins — Rogue Wave Audio",
     "email": "PeterHiggins@roguewaveaudio.com",
+    "contact_authority": "RWA-001 (RWA repo RWA-001.json) -- canonical contact/identity; check there on any conflict",
     "created": "2026-04-13",
     "purpose": "Complete knowledge transfer for AI assistant continuity. Covers CoDaWork 2026 presentation focus, full HUF framework, quantum correspondence, and all empirical results.",
     "usage": "Load this JSON as context when working on any HUF, CoDa, quantum-CoDa, or energy-mix research."
