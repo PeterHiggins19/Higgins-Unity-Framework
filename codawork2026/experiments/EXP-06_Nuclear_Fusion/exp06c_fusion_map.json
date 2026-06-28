@@ -1,0 +1,2319 @@
+{
+  "experiment": "EXP-06C",
+  "title": "Corrected Full-Kit Fusion Map",
+  "date": "2026-04-19T12:59:43.033520",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "corrections_from": "EXP-06B Bremsstrahlung Boundary Attack",
+  "channels": [
+    "P_alpha",
+    "P_brem",
+    "P_cyc",
+    "P_line",
+    "P_cond",
+    "P_ohmic"
+  ],
+  "channel_labels": {
+    "P_alpha": "Alpha",
+    "P_brem": "Brem",
+    "P_cyc": "Cyclo",
+    "P_line": "Line",
+    "P_cond": "Cond",
+    "P_ohmic": "Ohmic"
+  },
+  "steps": [
+    5.0,
+    8.0,
+    12.0,
+    15.0,
+    20.0,
+    30.0,
+    50.0
+  ],
+  "results": {
+    "diagonal": {
+      "path_type": "diagonal",
+      "Zeff": 1.5,
+      "B": 5.3,
+      "N": 350,
+      "step_results": [
+        {
+          "label": "Cold startup",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            0,
+            49
+          ],
+          "EITT_drift": 0.0122,
+          "EITT_pass": true,
+          "sigma2_A": 0.824183,
+          "total_var": 4.945098,
+          "boundary_species": "P_alpha",
+          "boundary_short": "Alpha",
+          "decomposition": {
+            "P_alpha": 56.69,
+            "P_brem": 0.66,
+            "P_cyc": 1.25,
+            "P_line": 0.66,
+            "P_cond": 1.89,
+            "P_ohmic": 38.84
+          },
+          "PLL_R2": 0.9804,
+          "PLL_vertex": 33.31,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.99,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.980381
+            },
+            {
+              "deg": 3,
+              "R2": 0.998312
+            },
+            {
+              "deg": 4,
+              "R2": 0.999809
+            },
+            {
+              "deg": 5,
+              "R2": 0.999978
+            },
+            {
+              "deg": 6,
+              "R2": 0.999998
+            },
+            {
+              "deg": 7,
+              "R2": 1.0
+            }
+          ],
+          "VT_crossings": [
+            27.97
+          ],
+          "VT_n_crossings": 1,
+          "VT_min_ip": {
+            "x": 28,
+            "ip": 0.000139
+          },
+          "T_range": [
+            1.0,
+            5.0
+          ],
+          "n_range": [
+            0.3,
+            0.5
+          ],
+          "Q_start": 0.0,
+          "Q_end": 1.46,
+          "ignited_at_end": false,
+          "margin_end": -16053.61,
+          "power_fracs_end": {
+            "Alpha": 18.11,
+            "Brem": 16.88,
+            "Cyclo": 51.2,
+            "Line": 1.51,
+            "Cond": 10.61,
+            "Ohmic": 1.68
+          }
+        },
+        {
+          "label": "Ohmic plateau",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            50,
+            99
+          ],
+          "EITT_drift": 0.0007,
+          "EITT_pass": true,
+          "sigma2_A": 0.08137,
+          "total_var": 0.48822,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 21.87,
+            "P_brem": 0.55,
+            "P_cyc": 0.0,
+            "P_line": 0.55,
+            "P_cond": 19.59,
+            "P_ohmic": 57.44
+          },
+          "PLL_R2": 0.9999,
+          "PLL_vertex": 111.12,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 98.39,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.999938
+            },
+            {
+              "deg": 3,
+              "R2": 0.999999
+            },
+            {
+              "deg": 4,
+              "R2": 0.999999
+            },
+            {
+              "deg": 5,
+              "R2": 0.999999
+            },
+            {
+              "deg": 6,
+              "R2": 0.999999
+            },
+            {
+              "deg": 7,
+              "R2": 0.999999
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 51,
+            "ip": 0.037625
+          },
+          "T_range": [
+            5.0,
+            8.0
+          ],
+          "n_range": [
+            0.5,
+            0.7
+          ],
+          "Q_start": 1.46,
+          "Q_end": 6.62,
+          "ignited_at_end": false,
+          "margin_end": -32247.87,
+          "power_fracs_end": {
+            "Alpha": 36.23,
+            "Brem": 9.37,
+            "Cyclo": 33.54,
+            "Line": 0.84,
+            "Cond": 19.83,
+            "Ohmic": 0.19
+          }
+        },
+        {
+          "label": "Aux heating ramp",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            100,
+            149
+          ],
+          "EITT_drift": 0.0004,
+          "EITT_pass": true,
+          "sigma2_A": 0.055805,
+          "total_var": 0.334829,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 16.31,
+            "P_brem": 0.04,
+            "P_cyc": 0.0,
+            "P_line": 0.04,
+            "P_cond": 19.44,
+            "P_ohmic": 64.16
+          },
+          "PLL_R2": 0.9999,
+          "PLL_vertex": 161.05,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 100.0,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.999916
+            },
+            {
+              "deg": 3,
+              "R2": 0.999999
+            },
+            {
+              "deg": 4,
+              "R2": 1.0
+            },
+            {
+              "deg": 5,
+              "R2": 1.0
+            },
+            {
+              "deg": 6,
+              "R2": 1.0
+            },
+            {
+              "deg": 7,
+              "R2": 1.0
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 148,
+            "ip": 0.062802
+          },
+          "T_range": [
+            8.0,
+            12.0
+          ],
+          "n_range": [
+            0.7,
+            1.0
+          ],
+          "Q_start": 6.62,
+          "Q_end": 39.05,
+          "ignited_at_end": false,
+          "margin_end": -31426.08,
+          "power_fracs_end": {
+            "Alpha": 46.98,
+            "Brem": 5.3,
+            "Cyclo": 19.6,
+            "Line": 0.48,
+            "Cond": 27.62,
+            "Ohmic": 0.02
+          }
+        },
+        {
+          "label": "L-H transition",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            150,
+            199
+          ],
+          "EITT_drift": 0.0,
+          "EITT_pass": true,
+          "sigma2_A": 0.017931,
+          "total_var": 0.107584,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 12.18,
+            "P_brem": 0.19,
+            "P_cyc": 0.03,
+            "P_line": 0.19,
+            "P_cond": 17.44,
+            "P_ohmic": 69.98
+          },
+          "PLL_R2": 1.0,
+          "PLL_vertex": 235.97,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 86.67,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.999985
+            },
+            {
+              "deg": 3,
+              "R2": 0.999997
+            },
+            {
+              "deg": 4,
+              "R2": 0.999998
+            },
+            {
+              "deg": 5,
+              "R2": 0.999998
+            },
+            {
+              "deg": 6,
+              "R2": 0.999998
+            },
+            {
+              "deg": 7,
+              "R2": 0.999998
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 198,
+            "ip": 0.045376
+          },
+          "T_range": [
+            12.0,
+            15.0
+          ],
+          "n_range": [
+            1.0,
+            1.3
+          ],
+          "Q_start": 39.05,
+          "Q_end": 12134.4,
+          "ignited_at_end": false,
+          "margin_end": -182.96,
+          "power_fracs_end": {
+            "Alpha": 49.99,
+            "Brem": 4.02,
+            "Cyclo": 13.93,
+            "Line": 0.36,
+            "Cond": 31.7,
+            "Ohmic": 0.01
+          }
+        },
+        {
+          "label": "H-mode to ignition",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            200,
+            249
+          ],
+          "EITT_drift": 0.0,
+          "EITT_pass": true,
+          "sigma2_A": 0.025854,
+          "total_var": 0.155126,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 9.32,
+            "P_brem": 0.48,
+            "P_cyc": 0.0,
+            "P_line": 0.48,
+            "P_cond": 16.64,
+            "P_ohmic": 73.08
+          },
+          "PLL_R2": 1.0,
+          "PLL_vertex": 269.88,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 97.14,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.999965
+            },
+            {
+              "deg": 3,
+              "R2": 0.999996
+            },
+            {
+              "deg": 4,
+              "R2": 0.999999
+            },
+            {
+              "deg": 5,
+              "R2": 0.999999
+            },
+            {
+              "deg": 6,
+              "R2": 0.999999
+            },
+            {
+              "deg": 7,
+              "R2": 0.999999
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 248,
+            "ip": 0.062337
+          },
+          "T_range": [
+            15.0,
+            20.0
+          ],
+          "n_range": [
+            1.3,
+            1.8
+          ],
+          "Q_start": 12134.4,
+          "Q_end": 100000000.0,
+          "ignited_at_end": true,
+          "margin_end": 45698.52,
+          "power_fracs_end": {
+            "Alpha": 50.58,
+            "Brem": 2.97,
+            "Cyclo": 9.43,
+            "Line": 0.27,
+            "Cond": 36.75,
+            "Ohmic": 0.0
+          }
+        },
+        {
+          "label": "Burning plasma",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            250,
+            299
+          ],
+          "EITT_drift": 0.0001,
+          "EITT_pass": true,
+          "sigma2_A": 0.025677,
+          "total_var": 0.154064,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 4.88,
+            "P_brem": 0.25,
+            "P_cyc": 1.63,
+            "P_line": 0.25,
+            "P_cond": 17.77,
+            "P_ohmic": 75.23
+          },
+          "PLL_R2": 0.9999,
+          "PLL_vertex": 310.02,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 100.0,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.999892
+            },
+            {
+              "deg": 3,
+              "R2": 0.999999
+            },
+            {
+              "deg": 4,
+              "R2": 1.0
+            },
+            {
+              "deg": 5,
+              "R2": 1.0
+            },
+            {
+              "deg": 6,
+              "R2": 1.0
+            },
+            {
+              "deg": 7,
+              "R2": 1.0
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 298,
+            "ip": 0.06962
+          },
+          "T_range": [
+            20.0,
+            30.0
+          ],
+          "n_range": [
+            1.8,
+            2.2
+          ],
+          "Q_start": 100000000.0,
+          "Q_end": 30.84,
+          "ignited_at_end": false,
+          "margin_end": -739204.99,
+          "power_fracs_end": {
+            "Alpha": 46.25,
+            "Brem": 2.16,
+            "Cyclo": 7.6,
+            "Line": 0.19,
+            "Cond": 43.79,
+            "Ohmic": 0.0
+          }
+        },
+        {
+          "label": "Thermonuclear burn",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            300,
+            349
+          ],
+          "EITT_drift": 0.0002,
+          "EITT_pass": true,
+          "sigma2_A": 0.026185,
+          "total_var": 0.157108,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 0.63,
+            "P_brem": 0.64,
+            "P_cyc": 5.83,
+            "P_line": 0.64,
+            "P_cond": 15.78,
+            "P_ohmic": 76.48
+          },
+          "PLL_R2": 0.9997,
+          "PLL_vertex": 353.33,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 100.0,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.999745
+            },
+            {
+              "deg": 3,
+              "R2": 0.999997
+            },
+            {
+              "deg": 4,
+              "R2": 1.0
+            },
+            {
+              "deg": 5,
+              "R2": 1.0
+            },
+            {
+              "deg": 6,
+              "R2": 1.0
+            },
+            {
+              "deg": 7,
+              "R2": 1.0
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 348,
+            "ip": 0.073677
+          },
+          "T_range": [
+            30.0,
+            50.0
+          ],
+          "n_range": [
+            2.2,
+            2.5
+          ],
+          "Q_start": 30.84,
+          "Q_end": 7.08,
+          "ignited_at_end": false,
+          "margin_end": -5380008.67,
+          "power_fracs_end": {
+            "Alpha": 36.96,
+            "Brem": 1.72,
+            "Cyclo": 7.54,
+            "Line": 0.15,
+            "Cond": 53.63,
+            "Ohmic": 0.0
+          }
+        }
+      ],
+      "full_trajectory": {
+        "label": "Full diagonal",
+        "n": 350,
+        "D": 6,
+        "x_range": [
+          0,
+          349
+        ],
+        "EITT_drift": 0.0022,
+        "EITT_pass": true,
+        "sigma2_A": 2.298374,
+        "total_var": 13.790247,
+        "boundary_species": "P_ohmic",
+        "boundary_short": "Ohmic",
+        "decomposition": {
+          "P_alpha": 22.15,
+          "P_brem": 0.2,
+          "P_cyc": 0.24,
+          "P_line": 0.2,
+          "P_cond": 13.34,
+          "P_ohmic": 63.86
+        },
+        "PLL_R2": 0.9113,
+        "PLL_vertex": 211.73,
+        "PLL_shape": "bowl",
+        "squeeze_pct": 99.19,
+        "squeeze_fits": [
+          {
+            "deg": 2,
+            "R2": 0.9113
+          },
+          {
+            "deg": 3,
+            "R2": 0.974699
+          },
+          {
+            "deg": 4,
+            "R2": 0.989006
+          },
+          {
+            "deg": 5,
+            "R2": 0.997021
+          },
+          {
+            "deg": 6,
+            "R2": 0.999282
+          },
+          {
+            "deg": 7,
+            "R2": 0.999654
+          }
+        ],
+        "VT_crossings": [
+          27.97
+        ],
+        "VT_n_crossings": 1,
+        "VT_min_ip": {
+          "x": 28,
+          "ip": 0.000139
+        }
+      },
+      "flip_log": [
+        {
+          "idx": 32,
+          "T": 3.612,
+          "n": 0.4306,
+          "from": "Alpha",
+          "to": "Ohmic",
+          "ignited": false
+        }
+      ],
+      "n_flips": 1,
+      "ignition_idx": 201,
+      "ignition_T": 15.102,
+      "ignition_n": 1.3102
+    },
+    "T_first": {
+      "path_type": "T_first",
+      "Zeff": 1.5,
+      "B": 5.3,
+      "N": 350,
+      "step_results": [
+        {
+          "label": "Cold startup",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            0,
+            49
+          ],
+          "EITT_drift": 0.019,
+          "EITT_pass": true,
+          "sigma2_A": 0.785727,
+          "total_var": 4.714363,
+          "boundary_species": "P_alpha",
+          "boundary_short": "Alpha",
+          "decomposition": {
+            "P_alpha": 55.44,
+            "P_brem": 1.2,
+            "P_cyc": 1.64,
+            "P_line": 1.2,
+            "P_cond": 1.23,
+            "P_ohmic": 39.29
+          },
+          "PLL_R2": 0.9642,
+          "PLL_vertex": 32.85,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.98,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.964196
+            },
+            {
+              "deg": 3,
+              "R2": 0.991091
+            },
+            {
+              "deg": 4,
+              "R2": 0.998503
+            },
+            {
+              "deg": 5,
+              "R2": 0.99991
+            },
+            {
+              "deg": 6,
+              "R2": 0.999994
+            },
+            {
+              "deg": 7,
+              "R2": 0.999995
+            }
+          ],
+          "VT_crossings": [
+            18.03,
+            30.92,
+            31.66
+          ],
+          "VT_n_crossings": 3,
+          "VT_min_ip": {
+            "x": 18,
+            "ip": -0.0002
+          },
+          "T_range": [
+            1.0,
+            5.0
+          ],
+          "n_range": [
+            0.3,
+            0.5
+          ],
+          "Q_start": 0.0,
+          "Q_end": 1.46,
+          "ignited_at_end": false,
+          "margin_end": -16053.61,
+          "power_fracs_end": {
+            "Alpha": 18.11,
+            "Brem": 16.88,
+            "Cyclo": 51.2,
+            "Line": 1.51,
+            "Cond": 10.61,
+            "Ohmic": 1.68
+          }
+        },
+        {
+          "label": "Ohmic plateau",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            50,
+            99
+          ],
+          "EITT_drift": 0.0007,
+          "EITT_pass": true,
+          "sigma2_A": 0.085621,
+          "total_var": 0.513726,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 21.69,
+            "P_brem": 1.61,
+            "P_cyc": 0.45,
+            "P_line": 1.61,
+            "P_cond": 19.97,
+            "P_ohmic": 54.67
+          },
+          "PLL_R2": 0.9951,
+          "PLL_vertex": 106.48,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 98.12,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.995116
+            },
+            {
+              "deg": 3,
+              "R2": 0.998929
+            },
+            {
+              "deg": 4,
+              "R2": 0.999262
+            },
+            {
+              "deg": 5,
+              "R2": 0.999899
+            },
+            {
+              "deg": 6,
+              "R2": 0.999908
+            },
+            {
+              "deg": 7,
+              "R2": 0.999909
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 98,
+            "ip": 0.02459
+          },
+          "T_range": [
+            5.0,
+            8.0
+          ],
+          "n_range": [
+            0.5,
+            0.7
+          ],
+          "Q_start": 1.46,
+          "Q_end": 6.62,
+          "ignited_at_end": false,
+          "margin_end": -32247.87,
+          "power_fracs_end": {
+            "Alpha": 36.23,
+            "Brem": 9.37,
+            "Cyclo": 33.54,
+            "Line": 0.84,
+            "Cond": 19.83,
+            "Ohmic": 0.19
+          }
+        },
+        {
+          "label": "Aux heating ramp",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            100,
+            149
+          ],
+          "EITT_drift": 0.0004,
+          "EITT_pass": true,
+          "sigma2_A": 0.057442,
+          "total_var": 0.34465,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 15.85,
+            "P_brem": 1.07,
+            "P_cyc": 0.77,
+            "P_line": 1.07,
+            "P_cond": 19.71,
+            "P_ohmic": 61.54
+          },
+          "PLL_R2": 0.9988,
+          "PLL_vertex": 139.26,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 95.55,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.998809
+            },
+            {
+              "deg": 3,
+              "R2": 0.999077
+            },
+            {
+              "deg": 4,
+              "R2": 0.999329
+            },
+            {
+              "deg": 5,
+              "R2": 0.999949
+            },
+            {
+              "deg": 6,
+              "R2": 0.999947
+            },
+            {
+              "deg": 7,
+              "R2": 0.999947
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 148,
+            "ip": 0.041972
+          },
+          "T_range": [
+            8.0,
+            12.0
+          ],
+          "n_range": [
+            0.7,
+            1.0
+          ],
+          "Q_start": 6.62,
+          "Q_end": 39.05,
+          "ignited_at_end": false,
+          "margin_end": -31426.08,
+          "power_fracs_end": {
+            "Alpha": 46.98,
+            "Brem": 5.3,
+            "Cyclo": 19.6,
+            "Line": 0.48,
+            "Cond": 27.62,
+            "Ohmic": 0.02
+          }
+        },
+        {
+          "label": "L-H transition",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            150,
+            199
+          ],
+          "EITT_drift": 0.0,
+          "EITT_pass": true,
+          "sigma2_A": 0.018341,
+          "total_var": 0.110045,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 11.68,
+            "P_brem": 1.13,
+            "P_cyc": 1.18,
+            "P_line": 1.13,
+            "P_cond": 17.6,
+            "P_ohmic": 67.27
+          },
+          "PLL_R2": 0.9262,
+          "PLL_vertex": 173.6,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.01,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.926248
+            },
+            {
+              "deg": 3,
+              "R2": 0.93753
+            },
+            {
+              "deg": 4,
+              "R2": 0.995734
+            },
+            {
+              "deg": 5,
+              "R2": 0.998889
+            },
+            {
+              "deg": 6,
+              "R2": 0.99927
+            },
+            {
+              "deg": 7,
+              "R2": 0.999174
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 198,
+            "ip": 0.039573
+          },
+          "T_range": [
+            12.0,
+            15.0
+          ],
+          "n_range": [
+            1.0,
+            1.3
+          ],
+          "Q_start": 39.05,
+          "Q_end": 12134.4,
+          "ignited_at_end": false,
+          "margin_end": -182.96,
+          "power_fracs_end": {
+            "Alpha": 49.99,
+            "Brem": 4.02,
+            "Cyclo": 13.93,
+            "Line": 0.36,
+            "Cond": 31.7,
+            "Ohmic": 0.01
+          }
+        },
+        {
+          "label": "H-mode to ignition",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            200,
+            249
+          ],
+          "EITT_drift": 0.0,
+          "EITT_pass": true,
+          "sigma2_A": 0.026213,
+          "total_var": 0.157279,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 8.67,
+            "P_brem": 1.29,
+            "P_cyc": 1.5,
+            "P_line": 1.29,
+            "P_cond": 16.65,
+            "P_ohmic": 70.61
+          },
+          "PLL_R2": 0.9177,
+          "PLL_vertex": 222.01,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.0,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.917711
+            },
+            {
+              "deg": 3,
+              "R2": 0.949925
+            },
+            {
+              "deg": 4,
+              "R2": 0.998553
+            },
+            {
+              "deg": 5,
+              "R2": 0.999016
+            },
+            {
+              "deg": 6,
+              "R2": 0.999178
+            },
+            {
+              "deg": 7,
+              "R2": 0.999277
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 248,
+            "ip": 0.058486
+          },
+          "T_range": [
+            15.0,
+            20.0
+          ],
+          "n_range": [
+            1.3,
+            1.8
+          ],
+          "Q_start": 12134.4,
+          "Q_end": 100000000.0,
+          "ignited_at_end": true,
+          "margin_end": 45698.52,
+          "power_fracs_end": {
+            "Alpha": 50.58,
+            "Brem": 2.97,
+            "Cyclo": 9.43,
+            "Line": 0.27,
+            "Cond": 36.75,
+            "Ohmic": 0.0
+          }
+        },
+        {
+          "label": "Burning plasma",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            250,
+            299
+          ],
+          "EITT_drift": 0.0001,
+          "EITT_pass": true,
+          "sigma2_A": 0.026603,
+          "total_var": 0.159618,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 4.14,
+            "P_brem": 0.54,
+            "P_cyc": 3.52,
+            "P_line": 0.54,
+            "P_cond": 17.96,
+            "P_ohmic": 73.29
+          },
+          "PLL_R2": 0.9941,
+          "PLL_vertex": 309.61,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 63.87,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.99409
+            },
+            {
+              "deg": 3,
+              "R2": 0.998669
+            },
+            {
+              "deg": 4,
+              "R2": 0.999191
+            },
+            {
+              "deg": 5,
+              "R2": 0.999196
+            },
+            {
+              "deg": 6,
+              "R2": 0.997865
+            },
+            {
+              "deg": 7,
+              "R2": 0.999813
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 298,
+            "ip": 0.044735
+          },
+          "T_range": [
+            20.0,
+            30.0
+          ],
+          "n_range": [
+            1.8,
+            2.2
+          ],
+          "Q_start": 100000000.0,
+          "Q_end": 30.84,
+          "ignited_at_end": false,
+          "margin_end": -739204.99,
+          "power_fracs_end": {
+            "Alpha": 46.25,
+            "Brem": 2.16,
+            "Cyclo": 7.6,
+            "Line": 0.19,
+            "Cond": 43.79,
+            "Ohmic": 0.0
+          }
+        },
+        {
+          "label": "Thermonuclear burn",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            300,
+            349
+          ],
+          "EITT_drift": 0.0004,
+          "EITT_pass": true,
+          "sigma2_A": 0.02818,
+          "total_var": 0.169079,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 0.37,
+            "P_brem": 0.65,
+            "P_cyc": 8.03,
+            "P_line": 0.65,
+            "P_cond": 15.62,
+            "P_ohmic": 74.68
+          },
+          "PLL_R2": 0.9905,
+          "PLL_vertex": 381.75,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 88.67,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.990513
+            },
+            {
+              "deg": 3,
+              "R2": 0.997669
+            },
+            {
+              "deg": 4,
+              "R2": 0.998973
+            },
+            {
+              "deg": 5,
+              "R2": 0.998956
+            },
+            {
+              "deg": 6,
+              "R2": 0.998925
+            },
+            {
+              "deg": 7,
+              "R2": 0.998892
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 348,
+            "ip": 0.033573
+          },
+          "T_range": [
+            30.0,
+            50.0
+          ],
+          "n_range": [
+            2.2,
+            2.5
+          ],
+          "Q_start": 30.84,
+          "Q_end": 7.08,
+          "ignited_at_end": false,
+          "margin_end": -5380008.67,
+          "power_fracs_end": {
+            "Alpha": 36.96,
+            "Brem": 1.72,
+            "Cyclo": 7.54,
+            "Line": 0.15,
+            "Cond": 53.63,
+            "Ohmic": 0.0
+          }
+        }
+      ],
+      "full_trajectory": {
+        "label": "Full T_first",
+        "n": 350,
+        "D": 6,
+        "x_range": [
+          0,
+          349
+        ],
+        "EITT_drift": 0.0032,
+        "EITT_pass": true,
+        "sigma2_A": 2.099773,
+        "total_var": 12.598635,
+        "boundary_species": "P_ohmic",
+        "boundary_short": "Ohmic",
+        "decomposition": {
+          "P_alpha": 19.25,
+          "P_brem": 0.19,
+          "P_cyc": 0.25,
+          "P_line": 0.19,
+          "P_cond": 14.11,
+          "P_ohmic": 66.0
+        },
+        "PLL_R2": 0.9154,
+        "PLL_vertex": 208.45,
+        "PLL_shape": "bowl",
+        "squeeze_pct": 92.5,
+        "squeeze_fits": [
+          {
+            "deg": 2,
+            "R2": 0.915433
+          },
+          {
+            "deg": 3,
+            "R2": 0.96595
+          },
+          {
+            "deg": 4,
+            "R2": 0.97457
+          },
+          {
+            "deg": 5,
+            "R2": 0.986173
+          },
+          {
+            "deg": 6,
+            "R2": 0.993657
+          },
+          {
+            "deg": 7,
+            "R2": 0.997295
+          }
+        ],
+        "VT_crossings": [
+          18.03,
+          30.92,
+          31.66
+        ],
+        "VT_n_crossings": 3,
+        "VT_min_ip": {
+          "x": 18,
+          "ip": -0.0002
+        }
+      },
+      "flip_log": [
+        {
+          "idx": 26,
+          "T": 4.537,
+          "n": 0.3,
+          "from": "Alpha",
+          "to": "Ohmic",
+          "ignited": false
+        }
+      ],
+      "n_flips": 1,
+      "ignition_idx": 242,
+      "ignition_T": 20.0,
+      "ignition_n": 1.6214
+    },
+    "n_first": {
+      "path_type": "n_first",
+      "Zeff": 1.5,
+      "B": 5.3,
+      "N": 350,
+      "step_results": [
+        {
+          "label": "Cold startup",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            0,
+            49
+          ],
+          "EITT_drift": 0.0316,
+          "EITT_pass": true,
+          "sigma2_A": 1.416605,
+          "total_var": 8.499629,
+          "boundary_species": "P_alpha",
+          "boundary_short": "Alpha",
+          "decomposition": {
+            "P_alpha": 60.86,
+            "P_brem": 1.17,
+            "P_cyc": 1.48,
+            "P_line": 1.17,
+            "P_cond": 2.16,
+            "P_ohmic": 33.14
+          },
+          "PLL_R2": 0.8796,
+          "PLL_vertex": -1.09,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.66,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.879635
+            },
+            {
+              "deg": 3,
+              "R2": 0.969049
+            },
+            {
+              "deg": 4,
+              "R2": 0.997645
+            },
+            {
+              "deg": 5,
+              "R2": 0.998585
+            },
+            {
+              "deg": 6,
+              "R2": 0.999587
+            },
+            {
+              "deg": 7,
+              "R2": 0.999875
+            }
+          ],
+          "VT_crossings": [
+            39.56
+          ],
+          "VT_n_crossings": 1,
+          "VT_min_ip": {
+            "x": 40,
+            "ip": 0.010365
+          },
+          "T_range": [
+            1.0,
+            5.0
+          ],
+          "n_range": [
+            0.3,
+            0.5
+          ],
+          "Q_start": 0.0,
+          "Q_end": 1.46,
+          "ignited_at_end": false,
+          "margin_end": -16053.61,
+          "power_fracs_end": {
+            "Alpha": 18.11,
+            "Brem": 16.88,
+            "Cyclo": 51.2,
+            "Line": 1.51,
+            "Cond": 10.61,
+            "Ohmic": 1.68
+          }
+        },
+        {
+          "label": "Ohmic plateau",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            50,
+            99
+          ],
+          "EITT_drift": 0.0013,
+          "EITT_pass": true,
+          "sigma2_A": 0.091758,
+          "total_var": 0.550546,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 22.66,
+            "P_brem": 1.66,
+            "P_cyc": 0.4,
+            "P_line": 1.66,
+            "P_cond": 19.85,
+            "P_ohmic": 53.77
+          },
+          "PLL_R2": 0.9696,
+          "PLL_vertex": 64.05,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.91,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.9696
+            },
+            {
+              "deg": 3,
+              "R2": 0.981284
+            },
+            {
+              "deg": 4,
+              "R2": 0.999418
+            },
+            {
+              "deg": 5,
+              "R2": 0.999678
+            },
+            {
+              "deg": 6,
+              "R2": 0.999973
+            },
+            {
+              "deg": 7,
+              "R2": 0.99997
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 51,
+            "ip": 0.006789
+          },
+          "T_range": [
+            5.0,
+            8.0
+          ],
+          "n_range": [
+            0.5,
+            0.7
+          ],
+          "Q_start": 1.46,
+          "Q_end": 6.62,
+          "ignited_at_end": false,
+          "margin_end": -32247.87,
+          "power_fracs_end": {
+            "Alpha": 36.23,
+            "Brem": 9.37,
+            "Cyclo": 33.54,
+            "Line": 0.84,
+            "Cond": 19.83,
+            "Ohmic": 0.19
+          }
+        },
+        {
+          "label": "Aux heating ramp",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            100,
+            149
+          ],
+          "EITT_drift": 0.0004,
+          "EITT_pass": true,
+          "sigma2_A": 0.060371,
+          "total_var": 0.362227,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 16.82,
+            "P_brem": 1.05,
+            "P_cyc": 0.73,
+            "P_line": 1.05,
+            "P_cond": 19.84,
+            "P_ohmic": 60.51
+          },
+          "PLL_R2": 0.9683,
+          "PLL_vertex": 114.14,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 98.63,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.968288
+            },
+            {
+              "deg": 3,
+              "R2": 0.98166
+            },
+            {
+              "deg": 4,
+              "R2": 0.999525
+            },
+            {
+              "deg": 5,
+              "R2": 0.999679
+            },
+            {
+              "deg": 6,
+              "R2": 0.999566
+            },
+            {
+              "deg": 7,
+              "R2": 0.999791
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 128,
+            "ip": 0.021492
+          },
+          "T_range": [
+            8.0,
+            12.0
+          ],
+          "n_range": [
+            0.7,
+            1.0
+          ],
+          "Q_start": 6.62,
+          "Q_end": 39.05,
+          "ignited_at_end": false,
+          "margin_end": -31426.08,
+          "power_fracs_end": {
+            "Alpha": 46.98,
+            "Brem": 5.3,
+            "Cyclo": 19.6,
+            "Line": 0.48,
+            "Cond": 27.62,
+            "Ohmic": 0.02
+          }
+        },
+        {
+          "label": "L-H transition",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            150,
+            199
+          ],
+          "EITT_drift": 0.0,
+          "EITT_pass": true,
+          "sigma2_A": 0.018323,
+          "total_var": 0.109937,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 12.15,
+            "P_brem": 1.14,
+            "P_cyc": 1.22,
+            "P_line": 1.14,
+            "P_cond": 17.47,
+            "P_ohmic": 66.88
+          },
+          "PLL_R2": 0.9756,
+          "PLL_vertex": 165.27,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.01,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.9756
+            },
+            {
+              "deg": 3,
+              "R2": 0.984199
+            },
+            {
+              "deg": 4,
+              "R2": 0.999602
+            },
+            {
+              "deg": 5,
+              "R2": 0.999748
+            },
+            {
+              "deg": 6,
+              "R2": 0.999759
+            },
+            {
+              "deg": 7,
+              "R2": 0.999748
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 178,
+            "ip": 0.023879
+          },
+          "T_range": [
+            12.0,
+            15.0
+          ],
+          "n_range": [
+            1.0,
+            1.3
+          ],
+          "Q_start": 39.05,
+          "Q_end": 12134.4,
+          "ignited_at_end": false,
+          "margin_end": -182.96,
+          "power_fracs_end": {
+            "Alpha": 49.99,
+            "Brem": 4.02,
+            "Cyclo": 13.93,
+            "Line": 0.36,
+            "Cond": 31.7,
+            "Ohmic": 0.01
+          }
+        },
+        {
+          "label": "H-mode to ignition",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            200,
+            249
+          ],
+          "EITT_drift": 0.0,
+          "EITT_pass": true,
+          "sigma2_A": 0.026505,
+          "total_var": 0.159031,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 9.37,
+            "P_brem": 1.22,
+            "P_cyc": 1.48,
+            "P_line": 1.22,
+            "P_cond": 16.74,
+            "P_ohmic": 69.97
+          },
+          "PLL_R2": 0.9691,
+          "PLL_vertex": 215.2,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 99.0,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.969054
+            },
+            {
+              "deg": 3,
+              "R2": 0.982298
+            },
+            {
+              "deg": 4,
+              "R2": 0.999613
+            },
+            {
+              "deg": 5,
+              "R2": 0.999671
+            },
+            {
+              "deg": 6,
+              "R2": 0.999691
+            },
+            {
+              "deg": 7,
+              "R2": 0.999697
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 228,
+            "ip": 0.03539
+          },
+          "T_range": [
+            15.0,
+            20.0
+          ],
+          "n_range": [
+            1.3,
+            1.8
+          ],
+          "Q_start": 12134.4,
+          "Q_end": 100000000.0,
+          "ignited_at_end": true,
+          "margin_end": 45698.52,
+          "power_fracs_end": {
+            "Alpha": 50.58,
+            "Brem": 2.97,
+            "Cyclo": 9.43,
+            "Line": 0.27,
+            "Cond": 36.75,
+            "Ohmic": 0.0
+          }
+        },
+        {
+          "label": "Burning plasma",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            250,
+            299
+          ],
+          "EITT_drift": 0.0002,
+          "EITT_pass": true,
+          "sigma2_A": 0.028299,
+          "total_var": 0.169794,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 5.14,
+            "P_brem": 0.43,
+            "P_cyc": 3.09,
+            "P_line": 0.43,
+            "P_cond": 18.34,
+            "P_ohmic": 72.57
+          },
+          "PLL_R2": 0.9712,
+          "PLL_vertex": 263.89,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 98.23,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.971232
+            },
+            {
+              "deg": 3,
+              "R2": 0.982753
+            },
+            {
+              "deg": 4,
+              "R2": 0.999532
+            },
+            {
+              "deg": 5,
+              "R2": 0.99957
+            },
+            {
+              "deg": 6,
+              "R2": 0.99949
+            },
+            {
+              "deg": 7,
+              "R2": 0.999685
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 278,
+            "ip": 0.026965
+          },
+          "T_range": [
+            20.0,
+            30.0
+          ],
+          "n_range": [
+            1.8,
+            2.2
+          ],
+          "Q_start": 100000000.0,
+          "Q_end": 30.84,
+          "ignited_at_end": false,
+          "margin_end": -739204.99,
+          "power_fracs_end": {
+            "Alpha": 46.25,
+            "Brem": 2.16,
+            "Cyclo": 7.6,
+            "Line": 0.19,
+            "Cond": 43.79,
+            "Ohmic": 0.0
+          }
+        },
+        {
+          "label": "Thermonuclear burn",
+          "n": 50,
+          "D": 6,
+          "x_range": [
+            300,
+            349
+          ],
+          "EITT_drift": 0.0006,
+          "EITT_pass": true,
+          "sigma2_A": 0.030764,
+          "total_var": 0.184581,
+          "boundary_species": "P_ohmic",
+          "boundary_short": "Ohmic",
+          "decomposition": {
+            "P_alpha": 0.84,
+            "P_brem": 0.45,
+            "P_cyc": 7.2,
+            "P_line": 0.45,
+            "P_cond": 16.36,
+            "P_ohmic": 74.69
+          },
+          "PLL_R2": 0.9708,
+          "PLL_vertex": 313.93,
+          "PLL_shape": "bowl",
+          "squeeze_pct": 98.2,
+          "squeeze_fits": [
+            {
+              "deg": 2,
+              "R2": 0.970753
+            },
+            {
+              "deg": 3,
+              "R2": 0.981571
+            },
+            {
+              "deg": 4,
+              "R2": 0.999385
+            },
+            {
+              "deg": 5,
+              "R2": 0.999441
+            },
+            {
+              "deg": 6,
+              "R2": 0.999474
+            },
+            {
+              "deg": 7,
+              "R2": 0.999511
+            }
+          ],
+          "VT_crossings": [],
+          "VT_n_crossings": 0,
+          "VT_min_ip": {
+            "x": 328,
+            "ip": 0.020237
+          },
+          "T_range": [
+            30.0,
+            50.0
+          ],
+          "n_range": [
+            2.2,
+            2.5
+          ],
+          "Q_start": 30.84,
+          "Q_end": 7.08,
+          "ignited_at_end": false,
+          "margin_end": -5380008.67,
+          "power_fracs_end": {
+            "Alpha": 36.96,
+            "Brem": 1.72,
+            "Cyclo": 7.54,
+            "Line": 0.15,
+            "Cond": 53.63,
+            "Ohmic": 0.0
+          }
+        }
+      ],
+      "full_trajectory": {
+        "label": "Full n_first",
+        "n": 350,
+        "D": 6,
+        "x_range": [
+          0,
+          349
+        ],
+        "EITT_drift": 0.0048,
+        "EITT_pass": true,
+        "sigma2_A": 3.202896,
+        "total_var": 19.217373,
+        "boundary_species": "P_ohmic",
+        "boundary_short": "Ohmic",
+        "decomposition": {
+          "P_alpha": 32.53,
+          "P_brem": 0.46,
+          "P_cyc": 0.41,
+          "P_line": 0.46,
+          "P_cond": 8.53,
+          "P_ohmic": 57.61
+        },
+        "PLL_R2": 0.8469,
+        "PLL_vertex": 209.84,
+        "PLL_shape": "bowl",
+        "squeeze_pct": 90.51,
+        "squeeze_fits": [
+          {
+            "deg": 2,
+            "R2": 0.846935
+          },
+          {
+            "deg": 3,
+            "R2": 0.95506
+          },
+          {
+            "deg": 4,
+            "R2": 0.981388
+          },
+          {
+            "deg": 5,
+            "R2": 0.982952
+          },
+          {
+            "deg": 6,
+            "R2": 0.985473
+          },
+          {
+            "deg": 7,
+            "R2": 0.992443
+          }
+        ],
+        "VT_crossings": [
+          39.56
+        ],
+        "VT_n_crossings": 1,
+        "VT_min_ip": {
+          "x": 50,
+          "ip": 0.003314
+        }
+      },
+      "flip_log": [
+        {
+          "idx": 30,
+          "T": 1.122,
+          "n": 0.5,
+          "from": "Ohmic",
+          "to": "Alpha",
+          "ignited": false
+        },
+        {
+          "idx": 46,
+          "T": 4.388,
+          "n": 0.5,
+          "from": "Alpha",
+          "to": "Ohmic",
+          "ignited": false
+        }
+      ],
+      "n_flips": 2,
+      "ignition_idx": 201,
+      "ignition_T": 15.0,
+      "ignition_n": 1.317
+    },
+    "zeff_sensitivity": [
+      {
+        "Zeff": 1.0,
+        "ignition_idx": 182,
+        "ignition_T": 13.959,
+        "ignition_n": 1.1959,
+        "sigma2_A": 2.298374,
+        "boundary_species": "Ohmic"
+      },
+      {
+        "Zeff": 1.2,
+        "ignition_idx": 188,
+        "ignition_T": 14.327,
+        "ignition_n": 1.2327,
+        "sigma2_A": 2.298374,
+        "boundary_species": "Ohmic"
+      },
+      {
+        "Zeff": 1.5,
+        "ignition_idx": 201,
+        "ignition_T": 15.102,
+        "ignition_n": 1.3102,
+        "sigma2_A": 2.298374,
+        "boundary_species": "Ohmic"
+      },
+      {
+        "Zeff": 2.0,
+        "ignition_idx": 218,
+        "ignition_T": 16.837,
+        "ignition_n": 1.4837,
+        "sigma2_A": 2.298374,
+        "boundary_species": "Ohmic"
+      },
+      {
+        "Zeff": 2.5,
+        "ignition_idx": null,
+        "ignition_T": null,
+        "ignition_n": null,
+        "sigma2_A": 2.298374,
+        "boundary_species": "Ohmic"
+      },
+      {
+        "Zeff": 3.0,
+        "ignition_idx": null,
+        "ignition_T": null,
+        "ignition_n": null,
+        "sigma2_A": 2.298374,
+        "boundary_species": "Ohmic"
+      },
+      {
+        "Zeff": 4.0,
+        "ignition_idx": null,
+        "ignition_T": null,
+        "ignition_n": null,
+        "sigma2_A": 2.298374,
+        "boundary_species": "Ohmic"
+      }
+    ],
+    "fabricated": {
+      "label": "Dirichlet fabricated",
+      "n": 350,
+      "D": 6,
+      "x_range": [
+        0,
+        349
+      ],
+      "EITT_drift": 6.9664,
+      "EITT_pass": false,
+      "sigma2_A": 1.312326,
+      "total_var": 7.873958,
+      "boundary_species": "P_ohmic",
+      "boundary_short": "Ohmic",
+      "decomposition": {
+        "P_alpha": 16.62,
+        "P_brem": 17.8,
+        "P_cyc": 15.33,
+        "P_line": 14.08,
+        "P_cond": 18.03,
+        "P_ohmic": 18.15
+      },
+      "PLL_R2": 0.8435,
+      "PLL_vertex": 236.7,
+      "PLL_shape": "bowl",
+      "squeeze_pct": 42.95,
+      "squeeze_fits": [
+        {
+          "deg": 2,
+          "R2": 0.843475
+        },
+        {
+          "deg": 3,
+          "R2": 0.84876
+        },
+        {
+          "deg": 4,
+          "R2": 0.889354
+        },
+        {
+          "deg": 5,
+          "R2": 0.898581
+        },
+        {
+          "deg": 6,
+          "R2": 0.910697
+        },
+        {
+          "deg": 7,
+          "R2": 0.932217
+        }
+      ],
+      "VT_crossings": [
+        1.71,
+        2.85,
+        4.25,
+        5.48,
+        6.46,
+        7.78,
+        8.64,
+        9.71,
+        10.48,
+        11.43,
+        13.28,
+        16.0,
+        17.74,
+        18.59,
+        19.66,
+        20.14,
+        21.5,
+        23.72,
+        24.19,
+        26.26,
+        29.34,
+        32.35,
+        33.52,
+        34.91,
+        35.55,
+        37.19,
+        38.82,
+        42.93,
+        43.24,
+        44.13,
+        45.77,
+        47.09,
+        48.57,
+        50.11,
+        51.26,
+        53.34,
+        54.78,
+        56.84,
+        58.42,
+        59.18,
+        60.96,
+        62.48,
+        64.43,
+        66.13,
+        67.3,
+        68.61,
+        71.42,
+        72.89,
+        73.37,
+        75.54,
+        78.76,
+        79.05,
+        80.47,
+        82.11,
+        83.45,
+        86.58,
+        88.53,
+        90.35,
+        91.97,
+        95.36,
+        96.21,
+        97.58,
+        99.88,
+        102.01,
+        103.14,
+        104.18,
+        105.35,
+        106.65,
+        109.22,
+        111.3,
+        112.76,
+        113.62,
+        115.37,
+        117.67,
+        119.76,
+        121.89,
+        122.57,
+        125.11,
+        128.16,
+        130.2,
+        131.21,
+        132.54,
+        134.0,
+        135.25,
+        136.44,
+        137.7,
+        139.62,
+        142.54,
+        144.75,
+        147.22,
+        150.38,
+        152.18,
+        154.35,
+        156.44,
+        157.72,
+        158.18,
+        159.39,
+        160.51,
+        161.56,
+        162.49,
+        163.44,
+        164.49,
+        165.68,
+        167.34,
+        168.62,
+        169.9,
+        171.49,
+        172.78,
+        173.24,
+        174.81,
+        176.74,
+        178.57,
+        179.83,
+        180.1,
+        181.95,
+        182.15,
+        184.02,
+        185.92,
+        187.17,
+        188.54,
+        189.77,
+        190.49,
+        191.57,
+        192.83,
+        193.04,
+        194.46,
+        195.75,
+        196.25,
+        197.47,
+        198.74,
+        199.99,
+        200.07,
+        201.24,
+        202.54,
+        205.04,
+        206.64,
+        209.26,
+        210.58,
+        213.29,
+        214.55,
+        215.64,
+        216.95,
+        218.94,
+        219.07,
+        220.25,
+        221.95,
+        223.24,
+        224.49,
+        226.34,
+        228.48,
+        229.6,
+        230.28,
+        231.61,
+        232.6,
+        233.44,
+        234.65,
+        235.73,
+        236.55,
+        238.67,
+        241.34,
+        242.79,
+        243.41,
+        244.4,
+        245.49,
+        246.92,
+        247.07,
+        248.33,
+        249.73,
+        250.77,
+        251.83,
+        252.13,
+        253.68,
+        255.58,
+        256.26,
+        258.09,
+        259.8,
+        261.68,
+        262.52,
+        264.34,
+        265.67,
+        266.61,
+        268.3,
+        271.08,
+        272.99,
+        274.37,
+        276.39,
+        278.24,
+        279.39,
+        280.57,
+        281.97,
+        282.53,
+        283.3,
+        285.76,
+        286.47,
+        287.26,
+        288.22,
+        289.57,
+        291.84,
+        292.61,
+        293.17,
+        294.29,
+        295.4,
+        296.77,
+        298.29,
+        300.21,
+        301.78,
+        302.33,
+        303.47,
+        304.58,
+        305.37,
+        306.81,
+        308.32,
+        310.09,
+        314.38,
+        315.81,
+        316.24,
+        317.69,
+        319.52,
+        320.58,
+        321.38,
+        322.5,
+        323.64,
+        324.42,
+        325.34,
+        326.62,
+        327.72,
+        328.18,
+        329.97,
+        331.93,
+        334.36,
+        335.6,
+        336.73,
+        337.32,
+        338.34,
+        339.63,
+        340.95,
+        342.51,
+        343.99,
+        345.33,
+        346.73
+      ],
+      "VT_n_crossings": 240,
+      "VT_min_ip": {
+        "x": 102,
+        "ip": 0.000419
+      }
+    }
+  }
+}

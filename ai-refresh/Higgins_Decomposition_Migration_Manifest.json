@@ -1,0 +1,662 @@
+{
+  "_meta": {
+    "type": "HIGGINS_DECOMPOSITION_MIGRATION_MANIFEST",
+    "version": "1.0",
+    "created": "2026-04-24",
+    "author": "OpenAI ChatGPT for Peter Higgins",
+    "source_repo": "PeterHiggins19/Higgins-Unity-Framework",
+    "target_repo": "PeterHiggins19/Higgins-Decomposition",
+    "purpose": "File-by-file migration manifest for extracting the pure math / CoDa / Higgins Decomposition core from Higgins Unity Framework while leaving HUF-GOV and governance/application history in the parent ecosystem.",
+    "position": "This manifest is designed for a controlled split: Hs/Higgins Decomposition becomes the standalone mathematical instrument repo; HUF-GOV remains the derivative applied / governance / history-bearing sibling."
+  },
+  "naming_and_scope": {
+    "new_repo_name": "Higgins-Decomposition",
+    "short_name": "Hs",
+    "scope_statement": "Standalone compositional inference instrument on the simplex, centered on EITT, Aitchison geometry, fixed-point diagnostics, lock-range analysis, release validation, theorem/proof development, and reproducible real-domain tests.",
+    "exclude_statement": "Governance, value-matrix applications, sector deployment strategy, MC-4 policy framing, and broad HUF-GOV derivative materials do not belong in the initial Hs repo."
+  },
+  "target_repo_structure": [
+    "README.md",
+    "CITATION.cff",
+    "LICENSE",
+    "INDEX.json",
+    "ai-refresh/",
+    "docs/reference/",
+    "docs/theory/",
+    "docs/operating-envelope/",
+    "docs/lineage/",
+    "papers/codawork2026/",
+    "papers/flagship/",
+    "papers/validation/",
+    "experiments/release-validation/",
+    "experiments/gold-standard/",
+    "experiments/conjugate-preservation/",
+    "experiments/materials/",
+    "discoveries/theorems/",
+    "discoveries/empirical-proofs/",
+    "discoveries/operating-envelope/",
+    "tools/pipeline/",
+    "tools/interactive/",
+    "tools/diagnostics/",
+    "tools/shared/",
+    "constants/",
+    "data/reference/"
+  ],
+  "actions_legend": {
+    "MOVE": "Move file/folder into Higgins-Decomposition as authoritative Hs content.",
+    "COPY": "Copy into Higgins-Decomposition but keep original in HUF for historical continuity.",
+    "LINK": "Do not duplicate deeply; reference back to HUF/HUF-GOV/history.",
+    "STAY": "Leave in HUF/HUF-GOV; not part of initial Hs repo.",
+    "HOLD": "Do not migrate yet; keep out until claim status is stronger or narrative is cleaned."
+  },
+  "claim_tiers": {
+    "core_science": "Primary Hs scientific content",
+    "validated_companion": "Strong secondary instrument or descriptor",
+    "engineering_control": "Integrity / release / regression / operating-envelope layer",
+    "conference_safe": "Suitable for CoDa/math audience with minimal editing",
+    "exploratory_overlay": "Interesting but not canonical",
+    "history_only": "Retain in HUF/HUF-GOV or lineage docs"
+  },
+  "migration_manifest": [
+    {
+      "source_path": "README.md",
+      "target_path": "README.md",
+      "action": "COPY",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Use as the base README but rewrite around Hs-only scope: EITT, CoDa, simplex inference, release validation, and pure math / physics audience. Remove governance and broad HUF application language."
+    },
+    {
+      "source_path": "CITATION.cff",
+      "target_path": "CITATION.cff",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Keep citation plumbing but rewrite metadata for Higgins-Decomposition."
+    },
+    {
+      "source_path": "LICENSE",
+      "target_path": "LICENSE",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Repository legal base."
+    },
+    {
+      "source_path": "INDEX.json",
+      "target_path": "INDEX.json",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 2,
+      "rationale": "Useful as machine-readable inventory; prune to Hs scope."
+    },
+    {
+      "source_path": "ai-refresh/CHATGPT_UPDATE_2026-04-23.json",
+      "target_path": "ai-refresh/CHATGPT_UPDATE_2026-04-23.json",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Current controlled change log for the state of the tool; important split-point document."
+    },
+    {
+      "source_path": "ai-refresh/CLAIM_CLASSIFICATION.json",
+      "target_path": "ai-refresh/CLAIM_CLASSIFICATION.json",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Essential for claim-status separation in the new repo."
+    },
+    {
+      "source_path": "ai-refresh/HUF_FAST_REFRESH.json",
+      "target_path": "ai-refresh/HS_FAST_REFRESH.json",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Clone and rename as Hs source-of-truth file."
+    },
+    {
+      "source_path": "ai-refresh/HUF_INTEGRITY_MANIFEST.json",
+      "target_path": "ai-refresh/HS_INTEGRITY_MANIFEST.json",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Clone and rename as Hs integrity verifier."
+    },
+    {
+      "source_path": "ai-refresh/HUF_ADMIN.json",
+      "target_path": "ai-refresh/HS_ADMIN.json",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Clone and rename for identity / authority in the new repo."
+    },
+    {
+      "source_path": "ai-refresh/MASTER_LINEAGE.json",
+      "target_path": "docs/lineage/MASTER_LINEAGE_TRIMMED.json",
+      "action": "COPY",
+      "claim_tier": "history_only",
+      "priority": 3,
+      "rationale": "Keep a trimmed lineage focused on Hs formation; link back to HUF for full history."
+    },
+    {
+      "source_path": "ai-refresh/PHASE_MARKERS.json",
+      "target_path": "ai-refresh/PHASE_MARKERS.json",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 2,
+      "rationale": "Useful for freeze points and stable release markers."
+    },
+    {
+      "source_path": "ai-refresh/CHATGPT_COLD_START_BRIEFING.md",
+      "target_path": "ai-refresh/CHATGPT_COLD_START_BRIEFING.md",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 2,
+      "rationale": "Adapt for AI onboarding into Hs-only repo."
+    },
+    {
+      "source_path": "ai-refresh/AI_COLD_START_TEST.json",
+      "target_path": "ai-refresh/AI_COLD_START_TEST.json",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 3,
+      "rationale": "Useful AI regression smoke test."
+    },
+    {
+      "source_path": "ai-refresh/test-results/",
+      "target_path": "ai-refresh/test-results/",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 3,
+      "rationale": "Bring over only Hs-relevant test artifacts."
+    },
+    {
+      "source_path": "codawork2026/README.md",
+      "target_path": "papers/codawork2026/README.md",
+      "action": "COPY",
+      "claim_tier": "conference_safe",
+      "priority": 1,
+      "rationale": "Use as the hub for CoDa-facing release materials."
+    },
+    {
+      "source_path": "codawork2026/HUF_REPO_VERIFICATION.json",
+      "target_path": "papers/codawork2026/HS_REPO_VERIFICATION.json",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Keep verification logic but rename around Hs package."
+    },
+    {
+      "source_path": "codawork2026/science/",
+      "target_path": "papers/codawork2026/science/",
+      "action": "MOVE",
+      "claim_tier": "conference_safe",
+      "priority": 1,
+      "rationale": "This is the cleanest conference-facing science lane."
+    },
+    {
+      "source_path": "codawork2026/reproducibility/",
+      "target_path": "papers/codawork2026/reproducibility/",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Critical for math-community trust."
+    },
+    {
+      "source_path": "codawork2026/journals/",
+      "target_path": "papers/codawork2026/journals/",
+      "action": "COPY",
+      "claim_tier": "conference_safe",
+      "priority": 2,
+      "rationale": "Copy only the journals that are clean, math-first, and not governance-heavy."
+    },
+    {
+      "source_path": "codawork2026/experiments/",
+      "target_path": "papers/codawork2026/experiments/",
+      "action": "COPY",
+      "claim_tier": "conference_safe",
+      "priority": 2,
+      "rationale": "Copy only selected experiments that support EITT, CoDa compliance, or release validation."
+    },
+    {
+      "source_path": "codawork2026/primers/",
+      "target_path": "papers/codawork2026/primers/",
+      "action": "COPY",
+      "claim_tier": "conference_safe",
+      "priority": 2,
+      "rationale": "Useful for onboarding mathematicians and CoDa readers."
+    },
+    {
+      "source_path": "codawork2026/presentation/",
+      "target_path": "papers/codawork2026/presentation/",
+      "action": "COPY",
+      "claim_tier": "conference_safe",
+      "priority": 2,
+      "rationale": "Keep the smallest stable conference-safe deck / handout set."
+    },
+    {
+      "source_path": "codawork2026/extended/",
+      "target_path": "papers/codawork2026/extended/",
+      "action": "HOLD",
+      "claim_tier": "history_only",
+      "priority": 4,
+      "rationale": "Migrate selectively only after pruning application/governance material."
+    },
+    {
+      "source_path": "codawork2026/preparation/",
+      "target_path": "docs/lineage/codawork2026-preparation/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 4,
+      "rationale": "Useful as process history, not core Hs front-door content."
+    },
+    {
+      "source_path": "codawork2026/data/",
+      "target_path": "data/reference/codawork2026/",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 3,
+      "rationale": "Bring over only small reference datasets or metadata needed to reproduce math claims."
+    },
+    {
+      "source_path": "discoveries/theorems/",
+      "target_path": "discoveries/theorems/",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Belongs directly in a math-first repo."
+    },
+    {
+      "source_path": "discoveries/empirical-proofs/",
+      "target_path": "discoveries/empirical-proofs/",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Strongest evidence layer for Hs."
+    },
+    {
+      "source_path": "discoveries/operating-envelope/",
+      "target_path": "discoveries/operating-envelope/",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Honesty layer is part of the instrument."
+    },
+    {
+      "source_path": "discoveries/MATHEMATICAL_REGISTRY_SUMMARY.md",
+      "target_path": "discoveries/MATHEMATICAL_REGISTRY_SUMMARY.md",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Useful map of discoveries and status."
+    },
+    {
+      "source_path": "discoveries/instruments/F17_QUADRATIC_TUNER.md",
+      "target_path": "discoveries/instruments/F17_QUADRATIC_TUNER.md",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 2,
+      "rationale": "Integrity tool belongs with Hs."
+    },
+    {
+      "source_path": "discoveries/instruments/TWO_PASS_INSTRUMENT.md",
+      "target_path": "discoveries/instruments/TWO_PASS_INSTRUMENT.md",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 2,
+      "rationale": "Release-grade classification/integrity instrument."
+    },
+    {
+      "source_path": "discoveries/instruments/MC4_COMPOSITION_MONITORING.md",
+      "target_path": "huf-gov/history-links/MC4_COMPOSITION_MONITORING.md",
+      "action": "STAY",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Application / monitoring doctrine, not pure Hs front-door math."
+    },
+    {
+      "source_path": "discoveries/gifts/",
+      "target_path": "docs/lineage/gifts/",
+      "action": "HOLD",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Useful later as interpretation essays; do not seed the initial Hs repo with them."
+    },
+    {
+      "source_path": "science/core/",
+      "target_path": "docs/theory/core/",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Core theory lane."
+    },
+    {
+      "source_path": "science/eitt/",
+      "target_path": "docs/theory/eitt/",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Primary scientific claim and instrument behavior."
+    },
+    {
+      "source_path": "science/methodology/",
+      "target_path": "docs/theory/methodology/",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Protocol and method discipline belong in Hs."
+    },
+    {
+      "source_path": "science/reference/",
+      "target_path": "docs/reference/",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Reference definitions and formulas."
+    },
+    {
+      "source_path": "science/quantum/",
+      "target_path": "docs/theory/quantum/",
+      "action": "COPY",
+      "claim_tier": "validated_companion",
+      "priority": 2,
+      "rationale": "Relevant cross-domain math/physics support."
+    },
+    {
+      "source_path": "science/chemistry/",
+      "target_path": "docs/theory/chemistry/",
+      "action": "COPY",
+      "claim_tier": "validated_companion",
+      "priority": 2,
+      "rationale": "Useful for material-science and chemistry-facing demonstrations."
+    },
+    {
+      "source_path": "science/spectral/",
+      "target_path": "docs/theory/spectral/",
+      "action": "COPY",
+      "claim_tier": "validated_companion",
+      "priority": 3,
+      "rationale": "Keep only if needed for theorem or proof development."
+    },
+    {
+      "source_path": "science/coda-monitoring/",
+      "target_path": "docs/lineage/coda-monitoring/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 4,
+      "rationale": "Technical bridge and history are useful, but keep secondary."
+    },
+    {
+      "source_path": "science/governance/",
+      "target_path": "huf-gov/science/governance/",
+      "action": "STAY",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Belongs to HUF-GOV, not Hs."
+    },
+    {
+      "source_path": "science/loudspeaker-analogy/",
+      "target_path": "docs/lineage/loudspeaker-analogy/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 4,
+      "rationale": "Important engineering ancestry, but not central front-door Hs content."
+    },
+    {
+      "source_path": "science/wetlands/",
+      "target_path": "huf-gov/science/wetlands/",
+      "action": "STAY",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Applied domain / governance spillover; not initial Hs core."
+    },
+    {
+      "source_path": "science/HUF_Cross_Disciplinary_Value_Matrix.md",
+      "target_path": "huf-gov/science/HUF_Cross_Disciplinary_Value_Matrix.md",
+      "action": "STAY",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Value matrix belongs with HUF-GOV."
+    },
+    {
+      "source_path": "tools/pipeline/",
+      "target_path": "tools/pipeline/",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "This is the operational Hs engine."
+    },
+    {
+      "source_path": "tools/shared/",
+      "target_path": "tools/shared/",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Shared code needed by the core tool."
+    },
+    {
+      "source_path": "tools/diagnostics/",
+      "target_path": "tools/diagnostics/",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Diagnostics are part of the instrument."
+    },
+    {
+      "source_path": "tools/interactive/EXP-19_Fourier_Conjugate_Preservation_Theorem.html",
+      "target_path": "tools/interactive/EXP-19_Fourier_Conjugate_Preservation_Theorem.html",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Key interactive theorem/demo artifact."
+    },
+    {
+      "source_path": "tools/interactive/",
+      "target_path": "tools/interactive/",
+      "action": "COPY",
+      "claim_tier": "validated_companion",
+      "priority": 2,
+      "rationale": "Bring over Hs-relevant interactive demos only; exclude application dashboards."
+    },
+    {
+      "source_path": "tools/spectrum-analyzer/",
+      "target_path": "docs/lineage/spectrum-analyzer/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 4,
+      "rationale": "Engineering ancestry and related tooling; keep referenced, not central."
+    },
+    {
+      "source_path": "briefings/",
+      "target_path": "docs/lineage/briefings/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 4,
+      "rationale": "Useful for history and context; not core Hs front-door content."
+    },
+    {
+      "source_path": "archive/",
+      "target_path": "docs/lineage/archive-links/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Keep referenced, not migrated wholesale."
+    },
+    {
+      "source_path": "dormant/",
+      "target_path": "docs/lineage/dormant-links/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Do not seed the new repo with dormant content."
+    },
+    {
+      "source_path": "drafts/",
+      "target_path": "docs/lineage/draft-links/",
+      "action": "LINK",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Draft material should not enter the initial Hs launch."
+    },
+    {
+      "source_path": "data/",
+      "target_path": "data/reference/",
+      "action": "COPY",
+      "claim_tier": "engineering_control",
+      "priority": 3,
+      "rationale": "Bring over only the minimal datasets and metadata needed for reproducible Hs examples."
+    },
+    {
+      "source_path": "huf-gov/",
+      "target_path": "external-link-only",
+      "action": "STAY",
+      "claim_tier": "history_only",
+      "priority": 5,
+      "rationale": "Derivative repo / sibling path. Keep separate."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/Higgins_Decomposition_Character_Analysis.docx",
+      "target_path": "papers/flagship/Higgins_Decomposition_Character_Analysis.docx",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Best DUT / architecture document for Hs."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/Higgins_Decomposition_Reference_v1.0.docx",
+      "target_path": "docs/reference/Higgins_Decomposition_Reference_v1.0.docx",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Canonical terminology, formulas, and catalog."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/Hs_release_validation.json",
+      "target_path": "experiments/release-validation/Hs_release_validation.json",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Release validation is part of trust model."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/Hs_EXP03_Precision_Inference.docx",
+      "target_path": "papers/flagship/Hs_EXP03_Precision_Inference.docx",
+      "action": "MOVE",
+      "claim_tier": "core_science",
+      "priority": 1,
+      "rationale": "Flagship precision inference paper."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/higgins_transcendental_constants_and_conjugate_pairs.html",
+      "target_path": "constants/higgins_transcendental_constants_and_conjugate_pairs.html",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Constants/pairs library belongs with core instrument."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/EXP-19b_Journal.docx",
+      "target_path": "experiments/conjugate-preservation/EXP-19b_Journal.docx",
+      "action": "MOVE",
+      "claim_tier": "engineering_control",
+      "priority": 1,
+      "rationale": "Optimization oracle and Euler-family discovery journal."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/EXP15_Xray_Crystallography_Journal.docx",
+      "target_path": "experiments/materials/EXP15_Xray_Crystallography_Journal.docx",
+      "action": "MOVE",
+      "claim_tier": "validated_companion",
+      "priority": 2,
+      "rationale": "Materials / diffraction bridge for math and crystallography audience."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/EXP-14_Fixed_Point_Selection_Principle.docx",
+      "target_path": "papers/validation/EXP-14_Fixed_Point_Selection_Principle.docx",
+      "action": "MOVE",
+      "claim_tier": "validated_companion",
+      "priority": 2,
+      "rationale": "Important principle document."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/Higgins_Diffraction_Composition_Principle.docx",
+      "target_path": "docs/theory/Higgins_Diffraction_Composition_Principle.docx",
+      "action": "COPY",
+      "claim_tier": "exploratory_overlay",
+      "priority": 3,
+      "rationale": "Keep but clearly label as proposed / L0 theoretical foundation."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/CIP_Systems_Primer.docx",
+      "target_path": "docs/reference/CIP_Systems_Primer.docx",
+      "action": "COPY",
+      "claim_tier": "conference_safe",
+      "priority": 2,
+      "rationale": "Good pedagogical primer if branding is cleaned."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/The_Calibration_Proof.docx",
+      "target_path": "papers/validation/The_Calibration_Proof.docx",
+      "action": "MOVE",
+      "claim_tier": "validated_companion",
+      "priority": 2,
+      "rationale": "Strong measurement-geometry document."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/Natures_Confirmation_Series_v2.pdf",
+      "target_path": "papers/validation/Natures_Confirmation_Series_v2.pdf",
+      "action": "COPY",
+      "claim_tier": "validated_companion",
+      "priority": 2,
+      "rationale": "Broad physics-domain validation summary."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/Information_Mechanics_Declaration.docx",
+      "target_path": "docs/theory/Information_Mechanics_Declaration.docx",
+      "action": "HOLD",
+      "claim_tier": "exploratory_overlay",
+      "priority": 4,
+      "rationale": "Strong manifesto/perspective piece, but not ideal for initial pure-math front door."
+    },
+    {
+      "source_path": "LOCAL_UPLOADED/EXP16_Interactive_Simulator.html",
+      "target_path": "tools/interactive/EXP16_Interactive_Simulator.html",
+      "action": "COPY",
+      "claim_tier": "validated_companion",
+      "priority": 3,
+      "rationale": "Keep if it demonstrates Hs mechanics cleanly; otherwise secondary."
+    }
+  ],
+  "launch_minimum_set": [
+    "README.md (rewritten for Hs)",
+    "CITATION.cff",
+    "LICENSE",
+    "ai-refresh/HS_FAST_REFRESH.json",
+    "ai-refresh/HS_INTEGRITY_MANIFEST.json",
+    "ai-refresh/CLAIM_CLASSIFICATION.json",
+    "docs/reference/Higgins_Decomposition_Reference_v1.0.docx",
+    "papers/flagship/Higgins_Decomposition_Character_Analysis.docx",
+    "papers/flagship/Hs_EXP03_Precision_Inference.docx",
+    "experiments/release-validation/Hs_release_validation.json",
+    "experiments/conjugate-preservation/EXP-19b_Journal.docx",
+    "tools/interactive/EXP-19_Fourier_Conjugate_Preservation_Theorem.html",
+    "constants/higgins_transcendental_constants_and_conjugate_pairs.html",
+    "papers/codawork2026/README.md",
+    "papers/codawork2026/science/",
+    "papers/codawork2026/reproducibility/"
+  ],
+  "do_not_seed_initial_repo_with": [
+    "huf-gov/",
+    "science/governance/",
+    "discoveries/gifts/",
+    "drafts/",
+    "dormant/",
+    "broad manifesto language as front-page content",
+    "exploratory nuclear staircase / prime overlay as a headline claim"
+  ],
+  "notes": [
+    "The new repo should bias toward deterministic tool behavior, explicit guards, explicit failure modes, release validation, and theorem/proof development.",
+    "The new repo should reference HUF/HUF-GOV for history, lineage, and applied/system-development context.",
+    "The split should preserve backward links rather than pretending Hs emerged without engineering ancestry."
+  ]
+}

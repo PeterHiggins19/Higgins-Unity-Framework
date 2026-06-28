@@ -28,7 +28,7 @@ Use ONLY what you read in HUF_FAST_REFRESH.json. Do not use prior knowledge, do 
 6. The perturbation difference formula and the drift threshold rule.
 7. Name the four EITT proof domains with one key number each.
 8. Bell test — what is best_S, what is the classical bound, what is the violation percentage?
-9. PLL — what does it stand for, how many rules?
+9. CIP — what does it stand for, how many rules?
 10. Keff_fill — what aggregator type, what value of p?
 
 For EACH question give: your answer, confidence (HIGH/MEDIUM/LOW), and pass (true/false).

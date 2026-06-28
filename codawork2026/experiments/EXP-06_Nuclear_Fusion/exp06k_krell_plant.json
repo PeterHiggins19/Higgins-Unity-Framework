@@ -1,0 +1,26 @@
+{
+  "experiment": "EXP-06K",
+  "title": "Krell Level 1 Power Plant Design",
+  "series": 2,
+  "date_sealed": "2026-04-19",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "plant": {
+    "n_IFR": 10,
+    "n_boosted": 1,
+    "IFR_P_electric_MW": 5146,
+    "boosted_P_fusion_MW": 211783,
+    "total_net_MW": 67887,
+    "total_net_GW": 67.887
+  },
+  "timeline": {
+    "total_years": 21,
+    "start": 2026,
+    "full_operation": 2047,
+    "critical_path": "HTS magnet scale-up"
+  },
+  "economics": {
+    "total_cost_B_EUR": 145,
+    "lcoe_EUR_MWh": 8.13
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-01",
+  "name": "Gold/Silver Price Ratio",
+  "domain": "COMMODITIES",
+  "carriers": [
+    "Gold",
+    "Silver"
+  ],
+  "D": 2,
+  "N": 1338,
+  "data_source": {
+    "type": "LOCAL FILE",
+    "url": "https://www.gold.org/goldhub/data/gold-prices (historical)",
+    "description": "Gold and silver normalized price ratio, 1968-2026. File: DATA/Commodities/gold_silver_normalized.csv"
+  },
+  "data_hash_sha256_16": "6beb8065805e68d1",
+  "run_timestamp": "2026-04-22T17:41:27.230827Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-01: Gold/Silver Price Ratio: 2-part simplex, carriers=['Gold', 'Silver']",
+    "step2_n_samples": 1338,
+    "step2_D": 2,
+    "step2_carriers": [
+      "Gold",
+      "Silver"
+    ],
+    "data_hash_sha256_16": "6beb8065805e68d1",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      1.8851549352732497,
+      -1.8851549352732497
+    ],
+    "step4_clr_std_per_part": [
+      0.28076427107135893,
+      0.28076427107135893
+    ],
+    "step5_sigma2_range": [
+      2.4503938924710907e-06,
+      0.17919140506594985
+    ],
+    "step5_sigma2_final": 0.15765715182046303,
+    "step6_pll_coeffs": [
+      -1.6717735218118103e-07,
+      0.00036493893803362515,
+      -0.026632036142170933
+    ],
+    "step6_pll_R2": 0.9033773846717489,
+    "step6_pll_shape": "hill",
+    "step6_vertex": [
+      1091.4724191770813,
+      0.172528356631567
+    ],
+    "step6_curvature": "concave_down",
+    "step7_squeeze_count": 9,
+    "step7_squeeze_closest": {
+      "time_index": 1316,
+      "sigma2_A": 0.1591872583387321,
+      "constant": "2pi",
+      "constant_value": 6.283185307179586,
+      "test_type": "reciprocal",
+      "test_value": 6.281909811350074,
+      "delta": 0.001275495829512252
+    },
+    "step7_squeeze_mean": 0.11789446817371313,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.08029268945771663,
+      0.35100780215352395
+    ],
+    "step8_entropy_mean": 0.16931760945351057,
+    "step8_entropy_cv": 47.65251018774939,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.16931760945351057,
+        "H_mean_decimated": 0.1693069127589849,
+        "variation_pct": 0.0063175322166361386,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.1693938776771269,
+        "H_mean_decimated": 0.16935640640731128,
+        "variation_pct": 0.02212079346046232,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.1693938776771269,
+        "H_mean_decimated": 0.1692668778124794,
+        "variation_pct": 0.07497311378016686,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 754,
+      "stalls": 291,
+      "spikes": 65,
+      "reversals": 398
+    },
+    "step10_ternary_type": "1-simplex",
+    "step11_complex_range_re": [
+      -0.03962645754177607,
+      0.01649916736546786
+    ],
+    "step11_complex_range_im": [
+      0.0,
+      0.0
+    ],
+    "step12_radius_range": [
+      0.00012871036953354675,
+      0.03962645754177607
+    ],
+    "step12_theta_range": [
+      0.0,
+      3.141592653589793
+    ],
+    "step9_angular_velocity_std": 0.28494808737262833
+  }
+}

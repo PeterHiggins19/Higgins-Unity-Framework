@@ -246,7 +246,7 @@
   },
 
   "pll_discipline": {
-    "_note": "Pipeline Lock List — rules that cannot be changed without operator approval",
+    "_note": "Compositional Integrity Protocol — rules that cannot be changed without operator approval",
     "rule_1": "All roots computed on simplex carrier",
     "rule_2": "Simplex normalisation only",
     "rule_3": "RMS aggregator (p=2 locked)",

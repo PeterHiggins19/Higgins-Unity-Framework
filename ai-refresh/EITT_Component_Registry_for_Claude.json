@@ -1,0 +1,391 @@
+{
+  "_meta": {
+    "type": "EITT_COMPONENT_REGISTRY_FOR_CLAUDE",
+    "version": "1.0",
+    "created": "2026-04-25",
+    "author": "OpenAI ChatGPT for Peter Higgins",
+    "intended_reader": "Claude",
+    "status": "WORKING_CANONICAL_REGISTRY",
+    "purpose": "Structured registry of EITT operational, diagnostic, companion, and control-layer components."
+  },
+  "registry_policy": {
+    "core_rule": "EITT is the primary instrument. Slope, velocity, vertex-distance, and trajectory efficiency are companion diagnostics. F17 and operating-envelope elements are control-layer components.",
+    "layer_definitions": {
+      "operation": "Transforms or computes on the compositional carrier.",
+      "primary_diagnostic": "Directly reads entropy invariance, pass/fail, lock range, or related primary EITT outputs.",
+      "companion_diagnostic": "Adds interpretation without rewriting the primary EITT signal.",
+      "control_layer": "Checks trust, contamination, detectability, safe use, or release integrity."
+    },
+    "claim_status_values": [
+      "core_science",
+      "validated_companion",
+      "engineering_control",
+      "bridge_metric",
+      "candidate_control",
+      "working_reference"
+    ]
+  },
+  "components": [
+    {
+      "component": "Composition formation / closure",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "x_i(t) = f(R_i(t)) / sum_j f(R_j(t))",
+      "input": "Raw positive carrier variables R_i(t)",
+      "output": "Closed composition x(t) on the simplex",
+      "purpose": "Maps raw observables into a valid compositional carrier for EITT and CoDa analysis.",
+      "failure_mode": [
+        "Negative mapped values",
+        "Improper carrier choice",
+        "Failure to close to unity",
+        "Non-compositional source variables treated as composition"
+      ],
+      "claim_status": "core_science"
+    },
+    {
+      "component": "Shannon entropy H(t)",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "H(t) = -sum_i x_i(t) ln(x_i(t))",
+      "input": "Closed composition x(t)",
+      "output": "Entropy per observation",
+      "purpose": "Measures compositional evenness at native resolution.",
+      "failure_mode": [
+        "Improper zero handling",
+        "Entropy read as channel uncertainty instead of compositional evenness",
+        "Invalid composition input"
+      ],
+      "claim_status": "core_science"
+    },
+    {
+      "component": "Geometric-mean decimation",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "g_i(c,M) = [prod_(t in block c) x_i(t)]^(1/M)",
+      "input": "Ordered compositional time series and block size M",
+      "output": "Blocked geometric composition g(c,M)",
+      "purpose": "Performs natural simplex coarse-graining while preserving compositional structure.",
+      "failure_mode": [
+        "Arithmetic averaging substituted for geometric averaging",
+        "Too few blocks for valid comparison",
+        "Scale choice outside operating envelope"
+      ],
+      "claim_status": "core_science"
+    },
+    {
+      "component": "Block probability normalization",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "p_i(c,M) = g_i(c,M) / sum_j g_j(c,M)",
+      "input": "Geometric block means g_i(c,M)",
+      "output": "Normalized blocked compositions p(c,M)",
+      "purpose": "Converts blocked compositions into entropy-ready distributions.",
+      "failure_mode": [
+        "Improper normalization",
+        "Numerical instability at extreme sparsity",
+        "Invalid block construction"
+      ],
+      "claim_status": "core_science"
+    },
+    {
+      "component": "Mean normalized entropy H_bar(M)",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "H_bar(M) = mean_c H(c,M)",
+      "input": "Blocked entropies across all valid blocks at scale M",
+      "output": "Single EITT signal per scale M",
+      "purpose": "Produces the scale-dependent entropy summary used by the EITT test.",
+      "failure_mode": [
+        "Low block count",
+        "Improper block aggregation",
+        "Noise-floor misread as precision"
+      ],
+      "claim_status": "core_science"
+    },
+    {
+      "component": "CLR transform",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "clr_i(t) = ln(x_i(t)) - (1/D) sum_j ln(x_j(t))",
+      "input": "Closed positive composition x(t)",
+      "output": "Centered log-ratio coordinates",
+      "purpose": "Moves simplex data into CoDa log-ratio coordinates for motion and spread diagnostics.",
+      "failure_mode": [
+        "Zeros or near-zeros handled poorly",
+        "CLR used without acknowledging sum-to-zero structure",
+        "Invalid composition input"
+      ],
+      "claim_status": "working_reference"
+    },
+    {
+      "component": "ILR transform",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "ilr(x) = orthonormal balance coordinates derived from x",
+      "input": "Closed positive composition x(t)",
+      "output": "Orthonormal log-ratio coordinates",
+      "purpose": "Provides orthonormal CoDa coordinates for structural analysis and balance-based diagnostics.",
+      "failure_mode": [
+        "Unclear basis selection",
+        "Interpretation drift across different bases",
+        "Promotion of basis-dependent result as universal"
+      ],
+      "claim_status": "working_reference"
+    },
+    {
+      "component": "Aitchison variance sigma_A^2",
+      "layer": "operation",
+      "operation_or_diagnostic": "operation",
+      "formula": "sigma_A^2 = (1/D) sum_i var(clr_i)",
+      "input": "CLR time series",
+      "output": "Scalar compositional spread statistic",
+      "purpose": "Measures compositional spread and serves as the main structural bridge metric from CoDa into EITT reasoning.",
+      "failure_mode": [
+        "Spread overinterpreted as dynamics",
+        "Dimension effects not controlled",
+        "Near-boundary inflation"
+      ],
+      "claim_status": "bridge_metric"
+    },
+    {
+      "component": "EITT delta",
+      "layer": "primary_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "delta_M = H_bar(M) - H_bar(1)",
+      "input": "Native mean entropy H_bar(1) and decimated mean entropy H_bar(M)",
+      "output": "Absolute entropy change by scale M",
+      "purpose": "Primary diagnostic of entropy preservation under geometric decimation.",
+      "failure_mode": [
+        "Sub-noise-floor deltas misread as strong confirmation",
+        "Single-scale success overgeneralized",
+        "Boundary cases mistaken for clean passes"
+      ],
+      "claim_status": "core_science"
+    },
+    {
+      "component": "Relative EITT",
+      "layer": "primary_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "relative_M = |delta_M| / H_bar(1)",
+      "input": "delta_M and H_bar(1)",
+      "output": "Relative entropy deviation at scale M",
+      "purpose": "Core pass/fail quantity for the EITT test.",
+      "failure_mode": [
+        "Threshold treated as universal without envelope context",
+        "Noisy low-power data treated as decisive",
+        "Arithmetic decimation confusion"
+      ],
+      "claim_status": "core_science"
+    },
+    {
+      "component": "Pass rate",
+      "layer": "primary_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "pass_rate = (# tested M satisfying threshold) / (# tested M)",
+      "input": "Relative EITT values across tested M",
+      "output": "Fraction of passing scales",
+      "purpose": "Pass 1 legitimacy classifier and compact summary of scale robustness.",
+      "failure_mode": [
+        "Threshold tuned without regression",
+        "Insufficient tested scales",
+        "Marginal cases forced into binary labels"
+      ],
+      "claim_status": "validated_companion"
+    },
+    {
+      "component": "Resolution boundary",
+      "layer": "primary_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "classification state rather than numeric formula",
+      "input": "Relative EITT, power, noise, block count, envelope state",
+      "output": "Explicit unresolved / boundary classification",
+      "purpose": "Allows the instrument to report 'cannot resolve' rather than forcing success or failure.",
+      "failure_mode": [
+        "Boundary state hidden",
+        "Weak-signal case overclaimed",
+        "Power limitations ignored"
+      ],
+      "claim_status": "engineering_control"
+    },
+    {
+      "component": "EITT slope",
+      "layer": "companion_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "slope(M) = d(relative_EITT)/dM",
+      "input": "Relative EITT curve across M",
+      "output": "Rate of invariance degradation",
+      "purpose": "Reads lock behavior: flat means in lock, rising means losing lock, steep means free-running or weakly constrained.",
+      "failure_mode": [
+        "Derivative/smoothing convention not fixed",
+        "Sparse M grid produces unstable slopes",
+        "Slope metaphor promoted beyond evidence"
+      ],
+      "claim_status": "validated_companion"
+    },
+    {
+      "component": "M_break / lock range",
+      "layer": "companion_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "M_break = first M where threshold is exceeded",
+      "input": "Relative EITT curve and threshold",
+      "output": "Lock-range boundary / constraint-strength descriptor",
+      "purpose": "Measures how far a system can be coarse-grained before invariance fails.",
+      "failure_mode": [
+        "Confusion between M_break, last pass, and max tested M",
+        "Low-power fake extension of lock range",
+        "Threshold inconsistency"
+      ],
+      "claim_status": "validated_companion"
+    },
+    {
+      "component": "Velocity",
+      "layer": "companion_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "v(t) = ||clr(t) - clr(t-1)||_2",
+      "input": "CLR path over time",
+      "output": "Local motion magnitude",
+      "purpose": "Measures how fast the composition is moving between adjacent observations.",
+      "failure_mode": [
+        "Stasis mistaken for health",
+        "High-frequency jitter mistaken for meaningful motion",
+        "Invalid CLR path due to zero issues"
+      ],
+      "claim_status": "validated_companion"
+    },
+    {
+      "component": "Vertex-distance Delta(t)",
+      "layer": "companion_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "Delta(t) = min_i x_i(t)",
+      "input": "Closed composition x(t)",
+      "output": "Distance to nearest simplex boundary",
+      "purpose": "Detects approach to degeneracy / edge risk even when entropy still looks acceptable.",
+      "failure_mode": [
+        "Boundary drift hidden by acceptable EITT",
+        "Zero-replacement policy distorts edge signal",
+        "Critical approach ignored"
+      ],
+      "claim_status": "validated_companion"
+    },
+    {
+      "component": "Trajectory efficiency",
+      "layer": "companion_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "eta = ||clr(T)-clr(1)|| / sum_t v(t)",
+      "input": "CLR trajectory and velocity sequence",
+      "output": "Directional efficiency score in [0,1]",
+      "purpose": "Distinguishes purposeful drift from wandering or oscillatory motion.",
+      "failure_mode": [
+        "Short tracks overinterpreted",
+        "Oscillatory systems misread without eta",
+        "Boundary effects distort path geometry"
+      ],
+      "claim_status": "validated_companion"
+    },
+    {
+      "component": "Four-instrument combined assessment",
+      "layer": "companion_diagnostic",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "Combined interpretation of EITT + velocity + vertex-distance + trajectory efficiency",
+      "input": "Primary EITT plus companion diagnostics",
+      "output": "Contextual health / structure interpretation",
+      "purpose": "Prevents overreliance on a single scalar reading.",
+      "failure_mode": [
+        "Improper fusion into one score",
+        "Component disagreement hidden",
+        "Tool used outside envelope"
+      ],
+      "claim_status": "validated_companion"
+    },
+    {
+      "component": "F17 / C_geom(M)",
+      "layer": "control_layer",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "C_geom(M) = |delta_geom(M) - delta_arith(M)| / H_bar(1)",
+      "input": "Geometric and arithmetic decimation results at the same M",
+      "output": "Contamination / anomaly gap signal",
+      "purpose": "Integrity alarm for arithmetic-vs-geometric divergence, anomalous coupling, or stored-energy style contamination.",
+      "failure_mode": [
+        "Used as replacement for EITT rather than control layer",
+        "Threshold uncalibrated across domains",
+        "False comfort if isolated from context"
+      ],
+      "claim_status": "candidate_control"
+    },
+    {
+      "component": "F17_norm",
+      "layer": "control_layer",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "F17_norm = C_geom / sigma_A^2",
+      "input": "C_geom and sigma_A^2",
+      "output": "Scale-normalized integrity signal",
+      "purpose": "Makes the F17 contamination gap more comparable across systems with different spread.",
+      "failure_mode": [
+        "Spread normalization hides domain-specific issues",
+        "Used as primary science signal",
+        "Sigma_A^2 instability near boundary"
+      ],
+      "claim_status": "candidate_control"
+    },
+    {
+      "component": "Detectability / noise-floor check",
+      "layer": "control_layer",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "Compare observed delta_M to empirical SE(M) and SNR thresholds",
+      "input": "delta_M, sigma_H(M), block counts",
+      "output": "Reliable / weak / sub-noise-floor classification",
+      "purpose": "Separates small measured deviations from truly detectable deviations.",
+      "failure_mode": [
+        "Tiny deltas overclaimed as decisive",
+        "Noise floor omitted from reporting",
+        "Power limits ignored"
+      ],
+      "claim_status": "engineering_control"
+    },
+    {
+      "component": "Min-blocks / valid-M guard",
+      "layer": "control_layer",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "Require adequate N/M and tested-scale support",
+      "input": "Observation count N and tested M schedule",
+      "output": "Valid / low-power / invalid scale status",
+      "purpose": "Prevents fake certainty from scales with inadequate block support.",
+      "failure_mode": [
+        "Reporting invalid M values",
+        "Low-power M treated as normal evidence",
+        "Sparse schedule disguised as robust"
+      ],
+      "claim_status": "engineering_control"
+    },
+    {
+      "component": "Stored-energy / adversarial attack protocol",
+      "layer": "control_layer",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "Deliberate contamination and correction stress tests",
+      "input": "Attacked and unattacked compositions",
+      "output": "Integrity response under attack",
+      "purpose": "Tests whether cosmetic improvement is actually contamination rather than valid correction.",
+      "failure_mode": [
+        "Correction interpreted as scientific improvement",
+        "Attack library too narrow",
+        "No separation between attack outcomes and core signal"
+      ],
+      "claim_status": "engineering_control"
+    },
+    {
+      "component": "HIVP regression chain",
+      "layer": "control_layer",
+      "operation_or_diagnostic": "diagnostic",
+      "formula": "Re-run prior DUT chain after any modification",
+      "input": "Updated method and historical DUT suite",
+      "output": "Advance / reject / fix decision",
+      "purpose": "Prevents forward-only changes from corrupting earlier validated behavior.",
+      "failure_mode": [
+        "New method promoted without regression",
+        "Historical DUTs ignored",
+        "Exploratory idea contaminates canonical chain"
+      ],
+      "claim_status": "engineering_control"
+    }
+  ]
+}

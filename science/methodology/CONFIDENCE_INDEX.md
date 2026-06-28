@@ -4,6 +4,8 @@
 **Origin:** Peter Higgins
 **Style:** EITT — human story first, mathematics second
 
+> **Realized 2026‑06‑11 — this is where it began, and here is where it landed.** The geometric core of this index — *"three perspectives define a plane; the odd one out is identified; three is the minimum to **locate** an error, not just detect it"* (§2) — is now **built and verified** as the deterministic instrument's own redundancy layer. `n=1` (3 independent checks) = the **triple‑channel reader** (tiling + Clifford + matrix) with the 2‑of‑3 vote: consensus `RC‑CON‑INF`, isolate the outlier `RC‑ISO‑WRN`, halt‑and‑report `RC‑HLT‑ERR`. `n=4`/`n=5` (replication across sites and time) = the **network cross‑verification** (any node checks any other via determinism + hash). See the Hˢ repo (resolver in `CROSS_BRAIN.md`): `experiments/clifford_tiling_redundancy_2026-06/` and `experiments/network_redundancy_2026-06/`. *The 3^n ladder was the starting calculation; the redundancy network is its instrument.*
+
 ---
 
 ## 1. The Problem Nobody Named
@@ -157,6 +159,7 @@ The 3^n Systems Confidence Index proposes that system validation requires expone
 ---
 
 **Cross-references:**
+- **Origin (the headwater):** RWA repo `THE_GROUND_STATE.md` — this index is the far end of a chain that begins in loudspeaker physics. The paired-measurement doctrine (*one curve lies; always read two*) is the direct ancestor of n=2 agreement, and the conserved-budget-on-the-simplex structure (6.02 dB apportioned across dimensions) is where "parts sum to a constant" was first forced by the physics rather than chosen. Resolver: `../Rogue-Wave-Audio/` → `https://github.com/PeterHiggins19/Rogue-Wave-Audio`.
 - Q_INQUISITOR.md — the Q-parameter philosophy underlying the diagnostic independence requirement
 - THE_THIRD_DIAGNOSTIC.md — the coherence residual that moves HUF from n=2 to n=3
 - SCALING_COHERENCE.md — the telescoping hierarchy that enables n=4 multi-site deployment

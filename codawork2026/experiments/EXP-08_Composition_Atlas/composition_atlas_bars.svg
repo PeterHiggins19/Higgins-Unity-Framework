@@ -1,0 +1,168 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 708" width="950" height="708" style="background:#0a0e1a;font-family:Consolas,monospace">
+<text x="475" y="25" text-anchor="middle" fill="#e0e0e0" font-size="18" font-weight="bold">NUCLEAR COMPOSITION ATLAS</text>
+<text x="475" y="45" text-anchor="middle" fill="#8ab4f8" font-size="12">All Fusion Approaches — 4-Channel Energy Budget [Alpha | Brem | Cyclo | Cond]</text>
+<rect x="230" y="52" width="12" height="12" fill="#ff6b35" rx="2"/>
+<text x="246" y="63" fill="#ff6b35" font-size="11">Alpha</text>
+<rect x="360" y="52" width="12" height="12" fill="#44cc44" rx="2"/>
+<text x="376" y="63" fill="#44cc44" font-size="11">Brem</text>
+<rect x="490" y="52" width="12" height="12" fill="#4488cc" rx="2"/>
+<text x="506" y="63" fill="#4488cc" font-size="11">Cyclo</text>
+<rect x="620" y="52" width="12" height="12" fill="#aaaaaa" rx="2"/>
+<text x="636" y="63" fill="#aaaaaa" font-size="11">Cond</text>
+<line x1="530.0" y1="70" x2="530.0" y2="648" stroke="#ff4444" stroke-width="1.5" stroke-dasharray="6,3" opacity="0.6"/>
+<text x="530.0" y="65" text-anchor="middle" fill="#ff4444" font-size="9">50% IGNITION LINE</text>
+<text x="222" y="88" text-anchor="end" fill="#ffcc44" font-size="11">Sun (pp-chain core)</text>
+<rect x="230.0" y="70" width="588.0" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="524.0" y="88" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">98.0%</text>
+<rect x="818.0" y="70" width="12.0" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="838" y="88" fill="#aaa" font-size="10">H=0.071</text>
+<text x="222" y="122" text-anchor="end" fill="#44cc44" font-size="11">Spherical Tokamak</text>
+<rect x="230.0" y="104" width="437.4" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="448.7" y="122" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">72.9%</text>
+<rect x="667.4" y="104" width="24.6" height="28" fill="#44cc44" opacity="0.85"/>
+<rect x="692.0" y="104" width="16.8" height="28" fill="#4488cc" opacity="0.85"/>
+<rect x="708.8" y="104" width="121.2" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="769.4" y="122" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">20.2%</text>
+<text x="838" y="122" fill="#aaa" font-size="10">H=0.566</text>
+<text x="222" y="156" text-anchor="end" fill="#44cc44" font-size="11">Krell Level 1 (Boosted)</text>
+<rect x="230.0" y="138" width="349.8" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="404.9" y="156" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">58.3%</text>
+<rect x="579.8" y="138" width="12.6" height="28" fill="#44cc44" opacity="0.85"/>
+<rect x="592.4" y="138" width="170.4" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="677.6" y="156" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">28.4%</text>
+<rect x="762.8" y="138" width="67.2" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="796.4" y="156" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">11.2%</text>
+<text x="838" y="156" fill="#aaa" font-size="10">H=0.720</text>
+<text x="222" y="190" text-anchor="end" fill="#44cc44" font-size="11">IFR (HF Tokamak)</text>
+<rect x="230.0" y="172" width="301.2" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="380.6" y="190" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">50.2%</text>
+<rect x="531.2" y="172" width="19.8" height="28" fill="#44cc44" opacity="0.85"/>
+<rect x="551.0" y="172" width="195.0" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="648.5" y="190" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">32.5%</text>
+<rect x="746.0" y="172" width="84.0" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="788.0" y="190" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">14.0%</text>
+<text x="838" y="190" fill="#aaa" font-size="10">H=0.793</text>
+<text x="222" y="224" text-anchor="end" fill="#4488cc" font-size="11">Compact HF Tokamak (SPARC)</text>
+<rect x="230.0" y="206" width="274.2" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="367.1" y="224" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">45.7%</text>
+<rect x="504.2" y="206" width="25.2" height="28" fill="#44cc44" opacity="0.85"/>
+<rect x="529.4" y="206" width="168.6" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="613.7" y="224" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">28.1%</text>
+<rect x="698.0" y="206" width="132.0" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="764.0" y="224" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">22.0%</text>
+<text x="838" y="224" fill="#aaa" font-size="10">H=0.852</text>
+<text x="222" y="258" text-anchor="end" fill="#4488cc" font-size="11">Conventional Tokamak (ITER)</text>
+<rect x="230.0" y="240" width="195.0" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="327.5" y="258" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">32.5%</text>
+<rect x="425.0" y="240" width="49.2" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="449.6" y="258" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">8.2%</text>
+<rect x="474.2" y="240" width="36.6" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="492.5" y="258" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">6.1%</text>
+<rect x="510.8" y="240" width="319.2" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="670.4" y="258" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">53.2%</text>
+<text x="838" y="258" fill="#aaa" font-size="10">H=0.777</text>
+<text x="222" y="292" text-anchor="end" fill="#4488cc" font-size="11">Magnetic Mirror</text>
+<rect x="230.0" y="274" width="176.4" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="318.2" y="292" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">29.4%</text>
+<rect x="406.4" y="274" width="34.8" height="28" fill="#44cc44" opacity="0.85"/>
+<rect x="441.2" y="274" width="109.2" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="495.8" y="292" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">18.2%</text>
+<rect x="550.4" y="274" width="279.6" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="690.2" y="292" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">46.6%</text>
+<text x="838" y="292" fill="#aaa" font-size="10">H=0.859</text>
+<text x="222" y="326" text-anchor="end" fill="#4488cc" font-size="11">Inertial Confinement (NIF)</text>
+<rect x="230.0" y="308" width="135.0" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="297.5" y="326" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">22.5%</text>
+<rect x="365.0" y="308" width="52.2" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="391.1" y="326" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">8.7%</text>
+<rect x="417.2" y="308" width="412.8" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="623.6" y="326" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">68.8%</text>
+<text x="838" y="326" fill="#aaa" font-size="10">H=0.581</text>
+<text x="222" y="360" text-anchor="end" fill="#666666" font-size="11">Stellarator (W7-X)</text>
+<rect x="230.0" y="342" width="109.8" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="284.9" y="360" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">18.3%</text>
+<rect x="339.8" y="342" width="61.2" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="370.4" y="360" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">10.2%</text>
+<rect x="401.0" y="342" width="75.0" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="438.5" y="360" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">12.5%</text>
+<rect x="476.0" y="342" width="354.0" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="653.0" y="360" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">59.0%</text>
+<text x="838" y="360" fill="#aaa" font-size="10">H=0.804</text>
+<text x="222" y="394" text-anchor="end" fill="#666666" font-size="11">Proton-Boron (p-B11)</text>
+<rect x="230.0" y="376" width="91.2" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="275.6" y="394" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">15.2%</text>
+<rect x="321.2" y="376" width="469.8" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="556.1" y="394" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">78.3%</text>
+<rect x="791.0" y="376" width="18.6" height="28" fill="#4488cc" opacity="0.85"/>
+<rect x="809.6" y="376" width="20.4" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="838" y="394" fill="#aaa" font-size="10">H=0.505</text>
+<text x="222" y="428" text-anchor="end" fill="#666666" font-size="11">D-He3 Magnetic</text>
+<rect x="230.0" y="410" width="74.4" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="267.2" y="428" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">12.4%</text>
+<rect x="304.4" y="410" width="129.0" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="368.9" y="428" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">21.5%</text>
+<rect x="433.4" y="410" width="93.6" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="480.2" y="428" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">15.6%</text>
+<rect x="527.0" y="410" width="303.0" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="678.5" y="428" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">50.5%</text>
+<text x="838" y="428" fill="#aaa" font-size="10">H=0.883</text>
+<text x="222" y="462" text-anchor="end" fill="#666666" font-size="11">FRC (TAE/Helion)</text>
+<rect x="230.0" y="444" width="49.2" height="28" fill="#ff6b35" opacity="0.85"/>
+<text x="254.6" y="462" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">8.2%</text>
+<rect x="279.2" y="444" width="133.8" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="346.1" y="462" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">22.3%</text>
+<rect x="413.0" y="444" width="6.6" height="28" fill="#4488cc" opacity="0.85"/>
+<rect x="419.6" y="444" width="410.4" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="624.8" y="462" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">68.4%</text>
+<text x="838" y="462" fill="#aaa" font-size="10">H=0.612</text>
+<text x="222" y="496" text-anchor="end" fill="#666666" font-size="11">Magnetised Target (GF)</text>
+<rect x="230.0" y="478" width="12.6" height="28" fill="#ff6b35" opacity="0.85"/>
+<rect x="242.6" y="478" width="37.2" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="261.2" y="496" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">6.2%</text>
+<rect x="279.8" y="478" width="67.8" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="313.7" y="496" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">11.3%</text>
+<rect x="347.6" y="478" width="482.4" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="588.8" y="496" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">80.4%</text>
+<text x="838" y="496" fill="#aaa" font-size="10">H=0.487</text>
+<text x="222" y="530" text-anchor="end" fill="#666666" font-size="11">Z-Pinch (Zap Energy)</text>
+<rect x="230.0" y="512" width="7.2" height="28" fill="#ff6b35" opacity="0.85"/>
+<rect x="237.2" y="512" width="31.8" height="28" fill="#44cc44" opacity="0.85"/>
+<rect x="269.0" y="512" width="51.0" height="28" fill="#4488cc" opacity="0.85"/>
+<text x="294.5" y="530" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">8.5%</text>
+<rect x="320.0" y="512" width="510.0" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="575.0" y="530" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">85.0%</text>
+<text x="838" y="530" fill="#aaa" font-size="10">H=0.401</text>
+<text x="222" y="564" text-anchor="end" fill="#666666" font-size="11">Electrostatic (Fusor)</text>
+<rect x="230.0" y="546" width="4.8" height="28" fill="#ff6b35" opacity="0.85"/>
+<rect x="234.8" y="546" width="12.6" height="28" fill="#44cc44" opacity="0.85"/>
+<rect x="247.4" y="546" width="3.0" height="28" fill="#4488cc" opacity="0.85"/>
+<rect x="250.4" y="546" width="579.6" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="540.2" y="564" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">96.6%</text>
+<text x="838" y="564" fill="#aaa" font-size="10">H=0.130</text>
+<text x="222" y="598" text-anchor="end" fill="#666666" font-size="11">Spheromak</text>
+<rect x="230.0" y="580" width="1.8" height="28" fill="#ff6b35" opacity="0.85"/>
+<rect x="231.8" y="580" width="72.6" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="268.1" y="598" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">12.1%</text>
+<rect x="304.4" y="580" width="1.2" height="28" fill="#4488cc" opacity="0.85"/>
+<rect x="305.6" y="580" width="524.4" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="567.8" y="598" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">87.4%</text>
+<text x="838" y="598" fill="#aaa" font-size="10">H=0.291</text>
+<text x="222" y="632" text-anchor="end" fill="#666666" font-size="11">Muon-Catalysed</text>
+<rect x="230.0" y="614" width="0.6" height="28" fill="#ff6b35" opacity="0.85"/>
+<rect x="230.6" y="614" width="540.0" height="28" fill="#44cc44" opacity="0.85"/>
+<text x="500.6" y="632" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">90.0%</text>
+<rect x="770.6" y="614" width="59.4" height="28" fill="#aaaaaa" opacity="0.85"/>
+<text x="800.3" y="632" text-anchor="middle" fill="#000" font-size="9" font-weight="bold">9.9%</text>
+<text x="838" y="632" fill="#aaa" font-size="10">H=0.239</text>
+<line x1="230.0" y1="70" x2="230.0" y2="648" stroke="#333" stroke-width="0.5"/>
+<text x="230.0" y="663" text-anchor="middle" fill="#666" font-size="10">0%</text>
+<line x1="380.0" y1="70" x2="380.0" y2="648" stroke="#333" stroke-width="0.5"/>
+<text x="380.0" y="663" text-anchor="middle" fill="#666" font-size="10">25%</text>
+<line x1="530.0" y1="70" x2="530.0" y2="648" stroke="#333" stroke-width="0.5"/>
+<text x="530.0" y="663" text-anchor="middle" fill="#666" font-size="10">50%</text>
+<line x1="680.0" y1="70" x2="680.0" y2="648" stroke="#333" stroke-width="0.5"/>
+<text x="680.0" y="663" text-anchor="middle" fill="#666" font-size="10">75%</text>
+<line x1="830.0" y1="70" x2="830.0" y2="648" stroke="#333" stroke-width="0.5"/>
+<text x="830.0" y="663" text-anchor="middle" fill="#666" font-size="10">100%</text>
+<text x="475" y="693" text-anchor="middle" fill="#555" font-size="10">EXP-08 — HUF Programme — Peter Higgins / Claude (Anthropic)</text>
+</svg>

@@ -1,0 +1,19 @@
+{
+  "experiment": "EXP-08",
+  "title": "Nuclear Composition Atlas",
+  "n_fusion_systems": 17,
+  "n_quark_systems": 5,
+  "outputs": [
+    "composition_atlas_bars.svg",
+    "entropy_ladder.svg",
+    "composition_space_map.svg",
+    "composition_disassembly.svg"
+  ],
+  "key_findings": [
+    "93% entropy bound appears across proton mass, spin, and QGP",
+    "50% Alpha is the compositional ignition boundary",
+    "Conduction trap: R < 2m \u2192 Cond > 50% for all approaches",
+    "Cyclotron cost: B > 12T \u2192 Cyclo > 30%, price of strong confinement",
+    "EITT framework spans 22 orders of magnitude (quarks to stars)"
+  ]
+}

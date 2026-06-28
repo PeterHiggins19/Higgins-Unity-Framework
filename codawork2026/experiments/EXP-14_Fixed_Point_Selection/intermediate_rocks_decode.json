@@ -1,0 +1,197 @@
+{
+  "system": "Intermediate Rocks (subset)",
+  "sys_id": 4,
+  "standard_PLL": {
+    "R2": 0.1946275159920976,
+    "shape": "hill",
+    "vertex": 3.1491
+  },
+  "top_pairwise_logratios": [
+    {
+      "pair": "ln(Al2O3/CaO)",
+      "i": 2,
+      "j": 5,
+      "R2": 0.7651673419389635,
+      "shape": "bowl",
+      "a": 59.3132137382223,
+      "vertex": 0.9705832577333288
+    },
+    {
+      "pair": "ln(TiO2/CaO)",
+      "i": 1,
+      "j": 5,
+      "R2": 0.75534975341211,
+      "shape": "bowl",
+      "a": 22.768605083517123,
+      "vertex": -1.7866463022148078
+    },
+    {
+      "pair": "ln(FeOt/CaO)",
+      "i": 3,
+      "j": 5,
+      "R2": 0.7140509615730685,
+      "shape": "hill",
+      "a": -0.17520795543749682,
+      "vertex": -26.968002075649633
+    },
+    {
+      "pair": "ln(SiO2/CaO)",
+      "i": 0,
+      "j": 5,
+      "R2": 0.7079332721153033,
+      "shape": "bowl",
+      "a": 20.097700634931652,
+      "vertex": 2.2225286254055487
+    },
+    {
+      "pair": "ln(Al2O3/MgO)",
+      "i": 2,
+      "j": 4,
+      "R2": 0.6921669851689445,
+      "shape": "bowl",
+      "a": 15.170466233962788,
+      "vertex": 1.7004277934988734
+    },
+    {
+      "pair": "ln(SiO2/MgO)",
+      "i": 0,
+      "j": 4,
+      "R2": 0.6791321150785452,
+      "shape": "bowl",
+      "a": 8.222917356887825,
+      "vertex": 2.9535296075521633
+    },
+    {
+      "pair": "ln(CaO/Na2O)",
+      "i": 5,
+      "j": 6,
+      "R2": 0.6720419666765205,
+      "shape": "bowl",
+      "a": 15.262013285128493,
+      "vertex": 0.6289419119424546
+    },
+    {
+      "pair": "ln(MgO/Na2O)",
+      "i": 4,
+      "j": 6,
+      "R2": 0.664907742502895,
+      "shape": "bowl",
+      "a": 6.940269459800162,
+      "vertex": -0.1010791353906818
+    },
+    {
+      "pair": "ln(Al2O3/Na2O)",
+      "i": 2,
+      "j": 6,
+      "R2": 0.6607180566953642,
+      "shape": "bowl",
+      "a": 70.5549510566944,
+      "vertex": 1.6064226178373242
+    },
+    {
+      "pair": "ln(SiO2/Al2O3)",
+      "i": 0,
+      "j": 2,
+      "R2": 0.6158244771932344,
+      "shape": "bowl",
+      "a": 114.14197734536582,
+      "vertex": 1.2502678478157498
+    }
+  ],
+  "balance_results": [
+    {
+      "balance": "b1: ln(\u221a(Si\u00b7Al)/\u221a(Fe\u00b7Mg))",
+      "vs_sA": {
+        "R2": 0.6425752524271428,
+        "shape": "bowl"
+      },
+      "vs_H": {
+        "R2": 0.9765606987620902,
+        "shape": "hill"
+      }
+    },
+    {
+      "balance": "b2: ln(Si/Al)",
+      "vs_sA": {
+        "R2": 0.6158244771932344,
+        "shape": "bowl"
+      },
+      "vs_H": {
+        "R2": 0.9030212054356145,
+        "shape": "hill"
+      }
+    },
+    {
+      "balance": "b3: ln(Fe/Mg) [Vermeesch]",
+      "vs_sA": {
+        "R2": 0.17685652257789963,
+        "shape": "bowl"
+      },
+      "vs_H": {
+        "R2": 0.391478734834075,
+        "shape": "bowl"
+      }
+    },
+    {
+      "balance": "b4: ln(\u221a(Na\u00b7K)/\u221a(Ca\u00b7Ti))",
+      "vs_sA": {
+        "R2": 0.4315865512811796,
+        "shape": "bowl"
+      },
+      "vs_H": {
+        "R2": 0.6829055686202374,
+        "shape": "hill"
+      }
+    },
+    {
+      "balance": "b5: ln(Si/Fe)",
+      "vs_sA": {
+        "R2": 0.48526723234374347,
+        "shape": "bowl"
+      },
+      "vs_H": {
+        "R2": 0.9939232657873458,
+        "shape": "hill"
+      }
+    },
+    {
+      "balance": "b6: ln(Al/Ca)",
+      "vs_sA": {
+        "R2": 0.7651673419389635,
+        "shape": "bowl"
+      },
+      "vs_H": {
+        "R2": 0.8892085578508605,
+        "shape": "hill"
+      }
+    },
+    {
+      "balance": "b7: ln(Na/K)",
+      "vs_sA": {
+        "R2": 0.5155039607695453,
+        "shape": "hill"
+      },
+      "vs_H": {
+        "R2": 0.553417867716061,
+        "shape": "bowl"
+      }
+    },
+    {
+      "balance": "b8: ln(\u221a(Si\u00b7Al\u00b7Na\u00b7K)/\u221a\u2074(Fe\u00b7Mg\u00b7Ca\u00b7Ti))",
+      "vs_sA": {
+        "R2": 0.639320032970765,
+        "shape": "bowl"
+      },
+      "vs_H": {
+        "R2": 0.8714258582868228,
+        "shape": "hill"
+      }
+    }
+  ],
+  "anti_lock_analysis": {
+    "complementary_R2": 0.986,
+    "vertex_vs_pi": 0.007507346410206672,
+    "interpretation": "Transitional system between mafic and felsic basins"
+  },
+  "recommendation": "Structure lives in pairwise balances, not full 8D space"
+}

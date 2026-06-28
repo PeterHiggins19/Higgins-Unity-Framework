@@ -1,0 +1,1220 @@
+{
+  "experiment": "EXP-06B",
+  "title": "Bremsstrahlung Boundary Attack",
+  "date": "2026-04-19T12:59:42.336775",
+  "author": "Peter Higgins",
+  "computed_by": "Claude (Anthropic)",
+  "phases": 10,
+  "results": {
+    "phase1_default": {
+      "phase": 1,
+      "label": "Temperature sweep n=1.0 B=5.3 Zeff=1.5",
+      "flips": [
+        {
+          "T_keV": 6.0,
+          "from": "P_brem",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 4.38,
+          "margin": -41071.13
+        },
+        {
+          "T_keV": 9.5,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false,
+          "Q": 18.63,
+          "margin": -37706.29
+        },
+        {
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 4.44,
+          "margin": -1386501.17
+        }
+      ],
+      "n_flips": 3,
+      "ignition_T_keV": null,
+      "PLL_R2": 0.3816,
+      "PLL_vertex_keV": 60.4,
+      "PLL_shape": "bowl",
+      "EITT_drift": 0.035,
+      "EITT_pass": true,
+      "n_points": 199
+    },
+    "phase1_high_n": {
+      "phase": 1,
+      "label": "Temperature sweep n=2.0 B=5.3 Zeff=1.5",
+      "flips": [
+        {
+          "T_keV": 6.0,
+          "from": "P_brem",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 8.02,
+          "margin": -89800.06
+        },
+        {
+          "T_keV": 9.5,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": true,
+          "Q": "inf",
+          "margin": 2474.78
+        },
+        {
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 6.02,
+          "margin": -4088432.99
+        }
+      ],
+      "n_flips": 3,
+      "ignition_T_keV": 9.5,
+      "PLL_R2": 0.3696,
+      "PLL_vertex_keV": 60.3,
+      "PLL_shape": "bowl",
+      "EITT_drift": 0.035,
+      "EITT_pass": true,
+      "n_points": 199
+    },
+    "phase1_clean": {
+      "phase": 1,
+      "label": "Temperature sweep n=1.0 B=5.3 Zeff=1.0",
+      "flips": [
+        {
+          "T_keV": 6.0,
+          "from": "P_brem",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 5.22,
+          "margin": -34518.75
+        },
+        {
+          "T_keV": 9.5,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false,
+          "Q": 23.85,
+          "margin": -29461.39
+        },
+        {
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 4.5,
+          "margin": -1367211.48
+        }
+      ],
+      "n_flips": 3,
+      "ignition_T_keV": null,
+      "PLL_R2": 0.3816,
+      "PLL_vertex_keV": 60.4,
+      "PLL_shape": "bowl",
+      "EITT_drift": 0.038,
+      "EITT_pass": true,
+      "n_points": 199
+    },
+    "phase1_dirty": {
+      "phase": 1,
+      "label": "Temperature sweep n=1.0 B=5.3 Zeff=3.0",
+      "flips": [
+        {
+          "T_keV": 6.0,
+          "from": "P_brem",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 2.96,
+          "margin": -60728.29
+        },
+        {
+          "T_keV": 9.5,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false,
+          "Q": 11.25,
+          "margin": -62441.0
+        },
+        {
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false,
+          "Q": 4.26,
+          "margin": -1444370.27
+        }
+      ],
+      "n_flips": 3,
+      "ignition_T_keV": null,
+      "PLL_R2": 0.3816,
+      "PLL_vertex_keV": 60.4,
+      "PLL_shape": "bowl",
+      "EITT_drift": 0.028,
+      "EITT_pass": true,
+      "n_points": 199
+    },
+    "phase2_15keV": {
+      "phase": 2,
+      "label": "Density sweep T=15.0 B=5.3 Zeff=1.5",
+      "flips": [
+        {
+          "n_20": 0.35,
+          "from": "?",
+          "to": "P_cyc",
+          "ignited": false,
+          "Q": 6.39
+        }
+      ],
+      "n_flips": 1,
+      "PLL_R2": 0.6809,
+      "PLL_vertex_n20": 3.19
+    },
+    "phase2_25keV": {
+      "phase": 2,
+      "label": "Density sweep T=25.0 B=5.3 Zeff=1.5",
+      "flips": [
+        {
+          "n_20": 0.35,
+          "from": "?",
+          "to": "P_cyc",
+          "ignited": false,
+          "Q": 5.51
+        }
+      ],
+      "n_flips": 1,
+      "PLL_R2": 0.6809,
+      "PLL_vertex_n20": 3.19
+    },
+    "phase3_15keV": {
+      "phase": 3,
+      "label": "Zeff sweep T=15.0 n=1.0",
+      "flips": [
+        {
+          "Zeff": 1.09,
+          "from": "?",
+          "to": "P_brem",
+          "ignited": false
+        }
+      ],
+      "ignition_lost_at_Zeff": 1.015,
+      "brem_frac_Zeff1": 0.026,
+      "brem_frac_Zeff4": 0.0965
+    },
+    "phase3_25keV": {
+      "phase": 3,
+      "label": "Zeff sweep T=25.0 n=1.0",
+      "flips": [
+        {
+          "Zeff": 1.09,
+          "from": "?",
+          "to": "P_brem",
+          "ignited": false
+        }
+      ],
+      "ignition_lost_at_Zeff": 1.015,
+      "brem_frac_Zeff1": 0.015,
+      "brem_frac_Zeff4": 0.0576
+    },
+    "phase3_50keV": {
+      "phase": 3,
+      "label": "Zeff sweep T=50.0 n=1.0",
+      "flips": [
+        {
+          "Zeff": 1.09,
+          "from": "?",
+          "to": "P_brem",
+          "ignited": false
+        }
+      ],
+      "ignition_lost_at_Zeff": 1.015,
+      "brem_frac_Zeff1": 0.0102,
+      "brem_frac_Zeff4": 0.0396
+    },
+    "phase4": {
+      "phase": 4,
+      "label": "B-field sweep T=15.0 n=1.0 Zeff=1.5",
+      "flips": [
+        {
+          "B_T": 1.42,
+          "from": "?",
+          "to": "P_cyc",
+          "ignited": true
+        }
+      ],
+      "n_flips": 1
+    },
+    "phase5": {
+      "phase": 5,
+      "label": "(n,T) plane B=5.3 Zeff=1.5",
+      "grid_size": 4704,
+      "n_ignited": 608,
+      "frac_ignited": 0.1293,
+      "pre_ignition_bs": {
+        "P_line": 4096
+      },
+      "post_ignition_bs": {
+        "P_line": 608
+      },
+      "ignition_boundary": [
+        {
+          "n_20": 1.4,
+          "T_keV": 13.0
+        },
+        {
+          "n_20": 1.5,
+          "T_keV": 12.0
+        },
+        {
+          "n_20": 1.6,
+          "T_keV": 11.0
+        },
+        {
+          "n_20": 1.7,
+          "T_keV": 11.0
+        },
+        {
+          "n_20": 1.8,
+          "T_keV": 10.0
+        },
+        {
+          "n_20": 1.9,
+          "T_keV": 10.0
+        },
+        {
+          "n_20": 2.0,
+          "T_keV": 10.0
+        },
+        {
+          "n_20": 2.1,
+          "T_keV": 10.0
+        },
+        {
+          "n_20": 2.2,
+          "T_keV": 10.0
+        },
+        {
+          "n_20": 2.3,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 2.4,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 2.5,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 2.6,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 2.7,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 2.8,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 2.9,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 3.0,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 3.1,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 3.2,
+          "T_keV": 9.0
+        },
+        {
+          "n_20": 3.3,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 3.4,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 3.5,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 3.6,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 3.7,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 3.8,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 3.9,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.0,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.1,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.2,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.3,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.4,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.5,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.6,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.7,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.8,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 4.9,
+          "T_keV": 8.0
+        },
+        {
+          "n_20": 5.0,
+          "T_keV": 8.0
+        }
+      ]
+    },
+    "phase6": {
+      "phase": 6,
+      "paths": {
+        "Path A: T-first (ITER-like)": {
+          "flips": [
+            {
+              "step": 6,
+              "T_keV": 3.1,
+              "n_20": 0.3,
+              "from": "?",
+              "to": "P_alpha",
+              "ignited": false
+            },
+            {
+              "step": 28,
+              "T_keV": 7.0,
+              "n_20": 0.3,
+              "from": "P_alpha",
+              "to": "P_cond",
+              "ignited": false
+            },
+            {
+              "step": 102,
+              "T_keV": 20.0,
+              "n_20": 0.33,
+              "from": "P_cond",
+              "to": "P_cyc",
+              "ignited": false
+            }
+          ],
+          "n_flips": 3,
+          "ignition_step": 178,
+          "PLL_R2": 0.6485,
+          "EITT_drift": 0.0,
+          "EITT_pass": true
+        },
+        "Path B: n-first (high-density)": {
+          "flips": [
+            {
+              "step": 6,
+              "T_keV": 3.0,
+              "n_20": 0.4,
+              "from": "?",
+              "to": "P_cond",
+              "ignited": false
+            },
+            {
+              "step": 25,
+              "T_keV": 3.0,
+              "n_20": 0.73,
+              "from": "P_cond",
+              "to": "P_cyc",
+              "ignited": false
+            },
+            {
+              "step": 101,
+              "T_keV": 3.2,
+              "n_20": 2.0,
+              "from": "P_cyc",
+              "to": "P_alpha",
+              "ignited": false
+            },
+            {
+              "step": 123,
+              "T_keV": 6.9,
+              "n_20": 2.0,
+              "from": "P_alpha",
+              "to": "P_cond",
+              "ignited": false
+            }
+          ],
+          "n_flips": 4,
+          "ignition_step": 138,
+          "PLL_R2": 0.1753,
+          "EITT_drift": 0.003,
+          "EITT_pass": true
+        },
+        "Path C: diagonal (balanced)": {
+          "flips": [
+            {
+              "step": 6,
+              "T_keV": 2.5,
+              "n_20": 0.35,
+              "from": "?",
+              "to": "P_alpha",
+              "ignited": false
+            },
+            {
+              "step": 56,
+              "T_keV": 7.0,
+              "n_20": 0.78,
+              "from": "P_alpha",
+              "to": "P_cond",
+              "ignited": false
+            }
+          ],
+          "n_flips": 2,
+          "ignition_step": 123,
+          "PLL_R2": 0.8281,
+          "EITT_drift": 0.0,
+          "EITT_pass": true
+        }
+      }
+    },
+    "phase7": {
+      "phase": 7,
+      "kill_surface": [
+        {
+          "T_keV": 9,
+          "n_20": 2.0,
+          "Zeff_critical": 1.265
+        },
+        {
+          "T_keV": 10,
+          "n_20": 2.0,
+          "Zeff_critical": 1.804
+        },
+        {
+          "T_keV": 11,
+          "n_20": 1.5,
+          "Zeff_critical": 1.395
+        },
+        {
+          "T_keV": 11,
+          "n_20": 2.0,
+          "Zeff_critical": 2.303
+        },
+        {
+          "T_keV": 12,
+          "n_20": 1.5,
+          "Zeff_critical": 1.744
+        },
+        {
+          "T_keV": 12,
+          "n_20": 2.0,
+          "Zeff_critical": 2.734
+        },
+        {
+          "T_keV": 13,
+          "n_20": 1.5,
+          "Zeff_critical": 2.007
+        },
+        {
+          "T_keV": 13,
+          "n_20": 2.0,
+          "Zeff_critical": 3.078
+        },
+        {
+          "T_keV": 14,
+          "n_20": 1.5,
+          "Zeff_critical": 2.174
+        },
+        {
+          "T_keV": 14,
+          "n_20": 2.0,
+          "Zeff_critical": 3.324
+        },
+        {
+          "T_keV": 15,
+          "n_20": 1.5,
+          "Zeff_critical": 2.237
+        },
+        {
+          "T_keV": 15,
+          "n_20": 2.0,
+          "Zeff_critical": 3.464
+        },
+        {
+          "T_keV": 16,
+          "n_20": 1.5,
+          "Zeff_critical": 2.194
+        },
+        {
+          "T_keV": 16,
+          "n_20": 2.0,
+          "Zeff_critical": 3.497
+        },
+        {
+          "T_keV": 17,
+          "n_20": 1.5,
+          "Zeff_critical": 2.048
+        },
+        {
+          "T_keV": 17,
+          "n_20": 2.0,
+          "Zeff_critical": 3.424
+        },
+        {
+          "T_keV": 18,
+          "n_20": 1.5,
+          "Zeff_critical": 1.803
+        },
+        {
+          "T_keV": 18,
+          "n_20": 2.0,
+          "Zeff_critical": 3.251
+        },
+        {
+          "T_keV": 19,
+          "n_20": 1.5,
+          "Zeff_critical": 1.463
+        },
+        {
+          "T_keV": 19,
+          "n_20": 2.0,
+          "Zeff_critical": 2.982
+        },
+        {
+          "T_keV": 20,
+          "n_20": 1.5,
+          "Zeff_critical": 1.036
+        },
+        {
+          "T_keV": 20,
+          "n_20": 2.0,
+          "Zeff_critical": 2.623
+        },
+        {
+          "T_keV": 21,
+          "n_20": 2.0,
+          "Zeff_critical": 2.183
+        },
+        {
+          "T_keV": 22,
+          "n_20": 2.0,
+          "Zeff_critical": 1.669
+        },
+        {
+          "T_keV": 23,
+          "n_20": 2.0,
+          "Zeff_critical": 1.087
+        }
+      ]
+    },
+    "phase8": {
+      "phase": 8,
+      "label": "D-He3 aneutronic pathway",
+      "global_boundary_species": "P_cond",
+      "boundary_fracs": {
+        "P_alpha_p": 0.1331,
+        "P_brem": 0.2114,
+        "P_cyc": 0.0159,
+        "P_line": 0.2114,
+        "P_cond": 0.4282
+      },
+      "ignition_T_keV": null,
+      "flips": [
+        {
+          "T_keV": 22.0,
+          "from": "?",
+          "to": "P_alpha_p",
+          "ignited": false
+        },
+        {
+          "T_keV": 36.0,
+          "from": "P_alpha_p",
+          "to": "P_cond",
+          "ignited": false
+        }
+      ],
+      "EITT_drift": 0.003
+    },
+    "phase9": {
+      "phase": 9,
+      "scale_results": [
+        {
+          "window": 5,
+          "window_keV": 2.5,
+          "n_points": 189,
+          "mean_sigma2_A": 0.015,
+          "var_sigma2_A": 0.005473,
+          "PLL_R2": 0.2614
+        },
+        {
+          "window": 10,
+          "window_keV": 5.0,
+          "n_points": 179,
+          "mean_sigma2_A": 0.0224,
+          "var_sigma2_A": 0.008888,
+          "PLL_R2": 0.3301
+        },
+        {
+          "window": 15,
+          "window_keV": 7.5,
+          "n_points": 169,
+          "mean_sigma2_A": 0.0268,
+          "var_sigma2_A": 0.010087,
+          "PLL_R2": 0.3816
+        },
+        {
+          "window": 25,
+          "window_keV": 12.5,
+          "n_points": 149,
+          "mean_sigma2_A": 0.0324,
+          "var_sigma2_A": 0.009965,
+          "PLL_R2": 0.4676
+        },
+        {
+          "window": 40,
+          "window_keV": 20.0,
+          "n_points": 119,
+          "mean_sigma2_A": 0.0403,
+          "var_sigma2_A": 0.008767,
+          "PLL_R2": 0.584
+        },
+        {
+          "window": 60,
+          "window_keV": 30.0,
+          "n_points": 79,
+          "mean_sigma2_A": 0.0569,
+          "var_sigma2_A": 0.007943,
+          "PLL_R2": 0.7395
+        }
+      ]
+    },
+    "phase10": {
+      "phase": 10,
+      "total_flips": 60,
+      "from_brem": 0,
+      "to_brem": 0,
+      "at_ignition": 4,
+      "brem_destinations": {},
+      "all_flips": [
+        {
+          "n_20": 0.5,
+          "Zeff": 1.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 1.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 1.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 1.5,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 1.5,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 1.5,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 2.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 2.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 2.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 3.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 3.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 0.5,
+          "Zeff": 3.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 1.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 1.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 1.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 1.5,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 1.5,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 1.5,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 2.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 2.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 2.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 3.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 3.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.0,
+          "Zeff": 3.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 1.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 1.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 1.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 1.5,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 1.5,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 1.5,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 2.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 2.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 2.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 3.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 3.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 1.5,
+          "Zeff": 3.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 1.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 1.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": true
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 1.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 1.5,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 1.5,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 1.5,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 2.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 2.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 2.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 3.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 3.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 2.0,
+          "Zeff": 3.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 1.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 1.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": true
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 1.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 1.5,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 1.5,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": true
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 1.5,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 2.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 2.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": true
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 2.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 3.0,
+          "T_keV": 5.0,
+          "from": "?",
+          "to": "P_alpha",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 3.0,
+          "T_keV": 9.0,
+          "from": "P_alpha",
+          "to": "P_cond",
+          "ignited": false
+        },
+        {
+          "n_20": 3.0,
+          "Zeff": 3.0,
+          "T_keV": 52.0,
+          "from": "P_cond",
+          "to": "P_alpha",
+          "ignited": false
+        }
+      ]
+    }
+  }
+}

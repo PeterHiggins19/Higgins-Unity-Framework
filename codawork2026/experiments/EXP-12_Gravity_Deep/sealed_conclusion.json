@@ -1,0 +1,59 @@
+{
+  "experiment": "EXP-12",
+  "title": "Gravity Deep Dive — Boundary Map + LIGO Direct Analysis",
+  "date": "2026-04-19",
+  "status": "SEALED",
+  "part_A_gravity_map": {
+    "systems_classified": 24,
+    "role_distribution": {
+      "NONE": 8,
+      "ORTHOGONAL": 4,
+      "BOUNDARY": 5,
+      "DIRECT": 7
+    },
+    "gravity_activation_scale": "~10⁷ m (stellar)",
+    "peak_stellar_leverage": {
+      "dH_dM": 2.445,
+      "at_mass": "0.9 M☉"
+    },
+    "peak_DM_sensitivity": {
+      "dH_d_logR": 2.624,
+      "at_scale": "10²¹ m"
+    },
+    "key_finding": "Gravity transitions from NONE→ORTHOGONAL→BOUNDARY→DIRECT as scale increases"
+  },
+  "part_B_ligo": {
+    "GW150914_mass_budget": {
+      "H_ratio": 0.175,
+      "BH_fraction": 0.954,
+      "verdict": "Lowest entropy composition in all of HUF"
+    },
+    "GW150914_phase_budget": {
+      "H_ratio": 0.923,
+      "inspiral": 0.50,
+      "merger": 0.33,
+      "ringdown": 0.17,
+      "verdict": "Near the 93% universal entropy bound"
+    },
+    "QNM_composition": {
+      "H_ratio": 0.279,
+      "dominant_mode": "(2,2,0) at 90%",
+      "verdict": "No-hair theorem = compositional minimum entropy statement"
+    },
+    "GW170817_BNS": {
+      "H_ratio": 0.111,
+      "channels": 5,
+      "verdict": "More channels than BBH but even more remnant-dominated"
+    },
+    "frequency_PLL_R2": 0.881
+  },
+  "discoveries": [
+    "Gravity has an ACTIVATION SCALE at ~10⁷ m — below this, compositionally silent",
+    "pp→CNO crossover = point of maximum gravitational leverage on composition",
+    "BH mergers produce the LOWEST entropy composition in all of HUF (H=0.175)",
+    "The no-hair theorem is a COMPOSITIONAL STATEMENT: max compression → min entropy",
+    "GW phase budget (inspiral/merger/ringdown) sits near the 93% universal bound",
+    "NS-NS mergers have more output channels but even lower entropy than BBH"
+  ],
+  "verdict": "Gravity mapped from compositionally silent (fm) to sole composer (universe). First direct EITT analysis of gravitational wave events."
+}

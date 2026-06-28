@@ -1,0 +1,392 @@
+{
+  "_meta": {
+    "type": "EITT_EXTENDED_TESTING_REGISTRY_FOR_CLAUDE",
+    "version": "1.0",
+    "created": "2026-04-25",
+    "author": "OpenAI ChatGPT for Peter Higgins",
+    "intended_reader": "Claude",
+    "status": "WORKING_EXTENDED_TEST_REGISTRY",
+    "purpose": "Registry of universal and conditional extended tests to maximize information extraction from every DUT. The universal panel should run on every DUT. Conditional panels should auto-enable when data type and structure support them."
+  },
+  "registry_policy": {
+    "default_rule": "Always run the universal panel on every DUT.",
+    "conditional_rule": "Auto-enable conditional tests when the DUT satisfies the required data structure, ordering, dimensionality, or event conditions.",
+    "instrument_position": "EITT remains the primary instrument. Extended tests increase extraction, interpretation, trust, and boundary visibility without replacing the core signal.",
+    "priority_scale": {
+      "High": "Should be added to the standalone instrument as core extended testing.",
+      "Medium": "Strong addition when supported by the DUT and workflow.",
+      "Lower": "Useful but not required in the first standalone release."
+    }
+  },
+  "extended_tests": [
+    {
+      "test_name": "Subcompositional coherence sweep",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Closed composition",
+        "At least one meaningful subcomposition family"
+      ],
+      "computes": [
+        "EITT outputs on each meaningful subcomposition",
+        "Companion diagnostics on each subcomposition",
+        "Coherence agreement or divergence across subcompositions"
+      ],
+      "information_gain": "Shows whether the finding is robust across the composition or carried by one hidden part combination.",
+      "priority": "High",
+      "best_precedent": "EXP-01 gap analysis and CoDa compliance hardening"
+    },
+    {
+      "test_name": "Scale invariance sweep",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Alternate valid unit scales or equivalent normalizations"
+      ],
+      "computes": [
+        "EITT outputs under alternate valid scales",
+        "Difference summary across representations"
+      ],
+      "information_gain": "Separates physical signal from unit-choice artifact.",
+      "priority": "High",
+      "best_precedent": "EXP-01 methodological hardening"
+    },
+    {
+      "test_name": "Mapping sensitivity sweep",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "At least two valid carrier-to-composition mappings"
+      ],
+      "computes": [
+        "Relative EITT by mapping",
+        "Slope by mapping",
+        "HVLD class by mapping",
+        "Delta, velocity, and lock-range shifts across mappings"
+      ],
+      "information_gain": "Measures how much of the result is decomposition choice versus system structure.",
+      "priority": "High",
+      "best_precedent": "EXP-01 mapping-sensitivity gap and DUT character-analysis logic"
+    },
+    {
+      "test_name": "Per-carrier contribution decomposition",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Carrier labels",
+        "Closed composition",
+        "Either entropy or CLR-based structural outputs"
+      ],
+      "computes": [
+        "Per-carrier contributions to sigma_A^2",
+        "Per-carrier entropy participation",
+        "Per-carrier motion contribution",
+        "Dominant carrier table"
+      ],
+      "information_gain": "Reveals which carriers actually drive the reading instead of hiding everything in a single scalar.",
+      "priority": "High",
+      "best_precedent": "QGP, SEMF, and carrier-decomposition analyses"
+    },
+    {
+      "test_name": "Slope family extraction",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Relative EITT curve across multiple M values"
+      ],
+      "computes": [
+        "Global slope",
+        "Local slope sequence",
+        "Slope sign changes",
+        "Slope variance",
+        "Slope class"
+      ],
+      "information_gain": "Adds lock behavior, drift structure, and degradation shape beyond simple pass/fail.",
+      "priority": "High",
+      "best_precedent": "EXP-04/HIVP slope-as-error-signal work"
+    },
+    {
+      "test_name": "Lock-range panel",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Thresholded relative EITT values across tested M"
+      ],
+      "computes": [
+        "M_last_pass",
+        "M_break",
+        "max_tested_M",
+        "low_power_cutoff"
+      ],
+      "information_gain": "Separates passed scale, tested scale, and power limit instead of collapsing them into one ambiguous number.",
+      "priority": "High",
+      "best_precedent": "Lock-range and M_break analyses"
+    },
+    {
+      "test_name": "Noise-floor and detectability panel",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "delta_M",
+        "sigma_H or empirical uncertainty estimate",
+        "Block counts"
+      ],
+      "computes": [
+        "SE(M)",
+        "SNR(M)",
+        "Reliable/weak/sub-noise-floor class",
+        "RMS_SNR summary"
+      ],
+      "information_gain": "Distinguishes small deviations from measurable deviations and prevents false confidence.",
+      "priority": "High",
+      "best_precedent": "EXP-01 operating-envelope and EMBER pretest work"
+    },
+    {
+      "test_name": "Carrier drift trend panel",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Ordered compositions"
+      ],
+      "computes": [
+        "Trend in delta(t)",
+        "Trend in velocity",
+        "Trend in dominant-share concentration",
+        "Bootstrap confidence intervals where feasible"
+      ],
+      "information_gain": "Shows whether the system is steadily drifting, stable, or only fluctuating locally.",
+      "priority": "High",
+      "best_precedent": "EXP-01 delta-trend and boundary tracking"
+    },
+    {
+      "test_name": "CoDa structural panel",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Closed composition",
+        "CLR or ILR support"
+      ],
+      "computes": [
+        "Variation matrix",
+        "CLR summary",
+        "ILR summary",
+        "Aitchison distance summary"
+      ],
+      "information_gain": "Provides full structural context around the EITT reading so invariance is not interpreted in isolation.",
+      "priority": "High",
+      "best_precedent": "EXP-05b large-dataset CoDa structural workflow"
+    },
+    {
+      "test_name": "Independent recalculation check",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "At least two valid computational paths to the same key result"
+      ],
+      "computes": [
+        "Primary diagnostic by route A",
+        "Primary diagnostic by route B",
+        "Agreement delta"
+      ],
+      "information_gain": "Detects hidden propagation, implementation dependence, or accidental accumulation.",
+      "priority": "High",
+      "best_precedent": "EXP-01 non-propagation / recalculation verification"
+    },
+    {
+      "test_name": "Claim-status and envelope summary",
+      "universal_or_conditional": "universal",
+      "requires": [
+        "Primary outputs",
+        "Companion outputs",
+        "Control-layer outputs"
+      ],
+      "computes": [
+        "Core readout status",
+        "Companion readout status",
+        "Control flags",
+        "Resolution class",
+        "Binding constraint"
+      ],
+      "information_gain": "Forces every DUT into an honest, comparable reporting frame.",
+      "priority": "High",
+      "best_precedent": "HIVP discipline and instrument-control architecture"
+    },
+    {
+      "test_name": "Order-sensitivity test",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "Meaningful ordering in the DUT",
+        "Ability to compare original and shuffled order"
+      ],
+      "computes": [
+        "Original-order EITT",
+        "Shuffled-order EITT",
+        "Order-sensitivity score"
+      ],
+      "information_gain": "Shows whether the reading depends on true temporal/parametric order or only on structural support.",
+      "priority": "High",
+      "best_precedent": "EXP-03 nuclear order / shuffled-valley work"
+    },
+    {
+      "test_name": "Ratio-pair lattice",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "Interpretable pairwise carrier ratios"
+      ],
+      "computes": [
+        "All meaningful ratio-pair mini-DUTs",
+        "Ratio-level EITT or stability metrics",
+        "Ratio-pair ranking"
+      ],
+      "information_gain": "Extracts stationary relations and hidden mini-systems inside the full composition.",
+      "priority": "High",
+      "best_precedent": "EXP-03 ratio-pair grid"
+    },
+    {
+      "test_name": "Zero-crossing event detector",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "Oscillatory or signed carrier dynamics",
+        "Event-capable ordered series"
+      ],
+      "computes": [
+        "Carrier zero-crossing density",
+        "Alignment of zero crossings with EITT deviations",
+        "Chaos-event spacing"
+      ],
+      "information_gain": "Identifies structural event points and local singularities that ordinary summaries can miss.",
+      "priority": "High",
+      "best_precedent": "EXP-16/17 chaos-floor and zero-crossing work"
+    },
+    {
+      "test_name": "Constant-driver fraction",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "One or more carriers behaving as quasi-constant drivers"
+      ],
+      "computes": [
+        "Constant-driver share",
+        "Driver stability score",
+        "Redistribution relative to driver"
+      ],
+      "information_gain": "Separates driver-response systems from fully redistributing systems.",
+      "priority": "Medium",
+      "best_precedent": "EXP-16 gravity-as-constant-driver interpretation"
+    },
+    {
+      "test_name": "Cross-simplex bridge test",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "Two valid decompositions of the same physical event or system"
+      ],
+      "computes": [
+        "Bridge-event coincidence score",
+        "Dual-simplex singularity alignment",
+        "Cross-simplex event table"
+      ],
+      "information_gain": "Shows whether one physical event generates simultaneous information-space events on multiple simplices.",
+      "priority": "Medium",
+      "best_precedent": "EXP-18 force-matter bridge"
+    },
+    {
+      "test_name": "Transfer-entropy panel",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "True time series",
+        "Adequate sample depth",
+        "Carrier-wise temporal dependence"
+      ],
+      "computes": [
+        "Directed transfer entropy matrix",
+        "Leading-lagging carrier pairs",
+        "Net information-flow ranking"
+      ],
+      "information_gain": "Adds directional information flow and asymmetry beyond spread and invariance.",
+      "priority": "High",
+      "best_precedent": "Character Analysis extension logic"
+    },
+    {
+      "test_name": "Information storage / modification panel",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "True time series",
+        "Temporal depth",
+        "Event-capable system"
+      ],
+      "computes": [
+        "Storage estimate",
+        "Modification estimate",
+        "Event-type classification"
+      ],
+      "information_gain": "Distinguishes persistent memory from novelty events and structural resets.",
+      "priority": "Medium",
+      "best_precedent": "Character Analysis information-mechanics extension"
+    },
+    {
+      "test_name": "Anchor sweep / natural fixed-point test",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "Plausible alternate anchors or natural equilibrium candidates"
+      ],
+      "computes": [
+        "Anchor-specific coherence score",
+        "Anchor-specific F17 or companion readouts",
+        "Best-anchor ranking"
+      ],
+      "information_gain": "Finds whether the system has a privileged natural anchor rather than a generic one.",
+      "priority": "High",
+      "best_precedent": "EXP-14 Higgins Fixed-Point Selection Principle"
+    },
+    {
+      "test_name": "Texture / class thermometer",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "Large labeled dataset",
+        "Meaningful class labels"
+      ],
+      "computes": [
+        "Class-wise sigma_A^2",
+        "Class-wise EITT",
+        "Class-wise slope profile",
+        "Class separation table"
+      ],
+      "information_gain": "Turns the instrument into a classifier / thermometer for large real-domain families.",
+      "priority": "Medium",
+      "best_precedent": "EXP-05b texture and TAS-type classification"
+    },
+    {
+      "test_name": "Attack-response panel",
+      "universal_or_conditional": "conditional",
+      "requires": [
+        "Ability to generate contamination or correction variants"
+      ],
+      "computes": [
+        "Stored-energy attack response",
+        "Arithmetic contamination response",
+        "False-correction response",
+        "F17 reaction profile"
+      ],
+      "information_gain": "Shows whether apparent improvement is valid or is actually contamination.",
+      "priority": "High",
+      "best_precedent": "HIVP correction-as-contamination and F17 attack detection"
+    }
+  ],
+  "recommended_standalone_behavior": {
+    "always_run": [
+      "Subcompositional coherence sweep",
+      "Scale invariance sweep",
+      "Mapping sensitivity sweep",
+      "Per-carrier contribution decomposition",
+      "Slope family extraction",
+      "Lock-range panel",
+      "Noise-floor and detectability panel",
+      "Carrier drift trend panel",
+      "CoDa structural panel",
+      "Independent recalculation check",
+      "Claim-status and envelope summary"
+    ],
+    "auto_enable_when_supported": [
+      "Order-sensitivity test",
+      "Ratio-pair lattice",
+      "Zero-crossing event detector",
+      "Constant-driver fraction",
+      "Cross-simplex bridge test",
+      "Transfer-entropy panel",
+      "Information storage / modification panel",
+      "Anchor sweep / natural fixed-point test",
+      "Texture / class thermometer",
+      "Attack-response panel"
+    ],
+    "goal": "Maximum information extraction from every DUT without requiring the user to remember supplemental tests that the instrument can already provide."
+  }
+}

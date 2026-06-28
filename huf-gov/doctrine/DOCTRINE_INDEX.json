@@ -1,0 +1,32 @@
+{
+ "schema": "huf_gov_doctrine_index/1.0",
+ "title": "HUF-GOV current doctrine index",
+ "version": "2.0",
+ "date": "2026-06-11",
+ "author": "Peter Higgins (human authorship for claims); AI-assisted per HUF-STD-001 (Claude Fable 5)",
+ "supersedes": "_legacy_2026-03/ (LOOP-001, SAFE-001, KILL-001, MONITOR-001 + GOV-003/HAGF-001/TRANS-001/ontological-foundation + evidence/science/tools) — preserved verbatim, not deleted",
+ "determinism": "binding by doctrine and practice: hash-chained, reproducible, no statistics in the science path",
+ "current_doctrine_doc": "HUF_GOV_OPERATING_DOCTRINE_2026-06.md",
+ "nasa_crosswalk": "../NASA_STYLE_GOVERNANCE.md",
+ "doctrines": [
+  {"id": "OPEN_LOOP", "was": "LOOP-001", "name": "Open-Loop Doctrine (Skydiver Principle)",
+   "one_line": "The instrument reads, the expert decides, the loop stays open.",
+   "cntt_binding": "engine emits diagnostics + SS-CCC-LLL codes + hash receipt; never an action or recommendation",
+   "nasa": "human decision authority; no autonomous actuation without operator volition"},
+  {"id": "SAFE_OPS", "was": "SAFE-001", "name": "Safe Operations Doctrine",
+   "one_line": "Perceive before acting; sometimes do nothing; always have a hold-and-report safe state.",
+   "cntt_binding": "DX-NUL-DIS null flag = hold-and-report in code; a null is a finding not a failure",
+   "nasa": "safe-state / abort-to-known-safe; fault tolerance; no-op is a valid command"},
+  {"id": "KILL_TEST", "was": "KILL-001", "name": "Kill-Test Doctrine (negative control)",
+   "one_line": "If it cannot be broken it is not science; map the cliff edge with the rigor of the successes.",
+   "cntt_binding": "self-test + frozen-oracle parity + disjoint-atlas L3-DSJ-ERR + E-21 carrier guard = fail loudly at the boundary",
+   "nasa": "verification & validation; off-nominal testing; documented operating limits"},
+  {"id": "MC4_COMPOSITION", "was": "MONITOR-001", "name": "Composition Monitoring (MC-4)",
+   "one_line": "Magnitude/Identity/Trend/Composition; Composition is the 4th category — recognition, not invention.",
+   "cntt_binding": "deterministic composition read (K_eff, helmsman, regime, deceptive-drift) with content hash",
+   "nasa": "observability; the monitoring taxonomy that precedes any control decision",
+   "related": "../RATIO_BLINDNESS_DOCTRINE.md"}
+ ],
+ "june_canon_kept_at_top": ["HUF_GOVERNANCE_CHARTER.md", "CARRIER_FILTER_DOCTRINE.md", "RATIO_BLINDNESS_DOCTRINE.md", "AI_ASSIST.json"],
+ "scope_line": "The mathematics is standard CoDa-compatible geometry; what is new is the deterministic monitoring instrument built around it. Hs is an extension to standard CoDa, using standard CoDa tools (CLR, ILR, Aitchison metric) in machine applications, with determinism strictly adhered to."
+}

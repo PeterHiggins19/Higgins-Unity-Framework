@@ -132,12 +132,56 @@ The theorem holds in every row where temporal autocorrelation is present. The si
 
 ---
 
-## 8. Open problems
+## 8. Gemini Resolution — The Temporal Persistence Boundary (April 28, 2026)
+
+**Status: Open Problem O-1 is RESOLVED.**
+
+Gemini (April 28, 2026) derived the closed-form boundary condition that explains
+the 10,000x gap between empirical stability and standard VAR(1) bounds. The key
+insight: map to CLR space, where the geometric mean becomes arithmetic averaging,
+then bound the residual using the VAR(1) variance retention factor R(M, ρ).
+
+**The Closed-Form Bound:**
+
+    |ΔH(M)| ≤ (1/2) · λ_max(|ℋ_H(μ)|) · Tr(Σ₁) · [1 - R(M, ρ)]
+
+where R(M, ρ) is the variance retention factor for a VAR(1) process with
+spectral radius ρ:
+
+    R(M, ρ) = 1/M + (2/M²) Σ_{k=1}^{M-1} (M-k) ρ^k
+
+**Three clean separation boundaries:**
+
+| Condition | R(M, ρ) | Gap [1 - R] | Result |
+|---|---|---|---|
+| ρ → 0 (synthetic noise) | 1/M | (M-1)/M ≈ 1 | Massive variance destruction → EITT fails |
+| ρ → 1 (persistent system) | → 1 | → 0 | Variance conserved → EITT passes |
+| x_i → 0 (simplex edge) | any | any | λ_max → ∞ → bound explodes regardless |
+
+This explains why the standard VAR(1) bounds (124%-1033%) were 10,000x too loose:
+they bounded the full covariance ellipsoid volume, while the EITT residual is
+governed strictly by the interaction between the variance drop and the local
+curvature of the entropy contour.
+
+**Collective contribution record:**
+- Peter Higgins: Physical constraints, geometric intuition, 17 adversarial tests
+- Grok: Identified the fundamental link to Euler's e via v-core exploration
+- Copilot: Built VAR(1) calibrator suite, quantified the 10,000x bound gap
+- ChatGPT: Enforced sentence discipline, identified structural errors
+- Gemini: Derived the closed-form proof via CLR Taylor expansion
+- Claude: Repository construction, residual analysis, empirical synthesis
+
+**Source:** `ai-refresh/GEMINI_O1_ANALYTIC_PROOF.json`
+
+---
+
+## 9. Remaining open problems
 
 1. **Direct measurement of V and δ.** Extend `chem_eitt_pipeline.py` with a function `measure_aitchison_variance(X) → (V, sigma_A2, delta_min)` that computes these directly from raw data, then verifies the inequality for each published proof. This moves the table from "back-computed and plausible" to "measured and checked."
 2. **Tail bound.** A concentration inequality on `|δ_M| - E|δ_M|` using mixing coefficients explicitly.
 3. **Non-stationary extension.** Allow `x*` to drift slowly and bound the residual in terms of drift velocity.
 4. **Sharpness.** Construct a process that saturates the bound. Currently the empirical residuals sit well inside the bound, suggesting the constant `(D-1)/2` is conservative.
+5. **Compositional horizon formalisation.** The boundary threshold `min(x_i) ≈ 0.05` (O-4) gains new significance as the point of **dimensional collapse** — below this threshold, components become causally disconnected from the analysis (curvature artefacts dominate signal). Formal question: for a given D, variance structure Σ, and entropy functional, at what `min(x_i)` does the Hessian contribution `1/(2δM)` exceed the signal-to-noise ratio of the EITT residual? This connects the analytic bound in §3 directly to the pruning cycle described in `EITT_DECOMPOSITION_FRAMEWORK.md §8`.
 
 ---
 

@@ -1,10 +1,55 @@
+<!-- ╔══════════════════════════════════════════════════════════════════╗
+     ║  THREE-LEVEL ORIENTATION  ·  always three to confirm position     ║
+     ║  Level 1 below is identical in every repository of this system.   ║
+     ╚══════════════════════════════════════════════════════════════════╝ -->
+
+# The system — one instrument, one arc of discovery
+
+*Level 1 of 3 · the shared message. This section is identical in every repository of this system.*
+
+This is one deterministic compositional instrument and the living history that produced it. It began as a loudspeaker's **ground state** — uniform 4π radiation into a room, a fixed **6.02 dB** budget apportioned across a cabinet's dimensions and summing to a constant — and that single structure, *forced by physics rather than chosen at a whiteboard*, became the simplex, the Higgins operator, composition monitoring (MC‑4 / EITT), the deterministic CN‑TT engine, the **3ⁿ confidence index**, and finally a verification network where any node checks any other. Each step was forced by the one before it.
+
+**Who it is for.** This is an **expert system**, and these repositories are its **expert onboarding**. The qualifier is the data itself: if you have a **composition** — parts of a whole tracked in order, within a shared budget — you already have the need, and this is the instrument for it. If your data isn't a composition of many parts within a budgeted whole, then with respect this isn't the right tool for you — and we'd rather say so kindly up front than waste your time; other methods are better suited to that, and we hope they serve you well. The work is told, shown, and offered for reproduction — not advertised.
+
+**Safety before power.** This is not merely a powerful compositional system — it is one in which **safety is dominant and absolute**. The operator holds the last breaker (LOOP‑001 / SAFE‑001): *full automation is never possible, at any scale the operator chooses*. Coherence is **offered, never imposed** — observe‑don't‑impose, operator‑gated, distributed, auditable — and capability is admitted only behind governance. The discipline is the point: a system that may be trusted with something larger must first refuse to overclaim about itself.
+
+**Read the whole arc, source to network → [`ARC_OF_DISCOVERY.md`](ARC_OF_DISCOVERY.md).**
+
+![The arc of discovery — from a loudspeaker's ground state to the verification network](arc_of_discovery.svg)
+
+## …and the system lives in more than one repository
+
+*Level 2 of 3 · the other half exists.*
+
+This is one **cross‑brain** split across sibling repositories that reference and **check** each other:
+
+- **HUF — Higgins‑Unity‑Framework** — *you are here* — the governance, lineage, and development history.
+- **Hˢ — [higgins‑decomposition](https://github.com/PeterHiggins19/higgins-decomposition)** — the live deterministic instrument (the math).
+- **RWA — [Rogue‑Wave‑Audio](https://github.com/PeterHiggins19/Rogue-Wave-Audio)** — the headwater, where the ground state and diffraction were first measured.
+
+Two‑repo map and the cross‑repo resolver: [`CROSS_BRAIN.md`](CROSS_BRAIN.md).
+
+## …and this repository is the lineage and governance
+
+*Level 3 of 3 · what this one is.*
+
+**HUF (Higgins Unity Framework)** is the experimental origin, governance layer, and development history — where the ideas (EITT, MC‑4, the cross‑AI collective) were discovered and stress‑tested before they matured into the Hˢ instrument. It is kept whole on purpose: *lose nothing.* Everything below this line is that record.
+
+> ▶ **The instrument HUF governs is Hˢ kinematics** — the matured deterministic engine for reading any composition in motion, with the guards, the determinism receipt, the traceability chain, and the **data‑is‑the‑star (49/51)** governance ([`huf-gov/THE_DATA_IS_THE_STAR.md`](huf-gov/THE_DATA_IS_THE_STAR.md)) that all of this exists to protect. If you have a composition to analyse, start at **`IS_Hs_RIGHT_FOR_YOU.md`** in the [Higgins Decomposition (Hˢ) repository](https://github.com/PeterHiggins19/higgins-decomposition): whether Hˢ fits your data, what it does at your D, and how an AI assistant can run it — under the governance HUF provides.
+
+> **Why three.** Three statements — what the system is, that a sibling exists, and which one you are reading — let any reader, human or machine, confirm both their **position** and the system's **status**. It is the same rule the instrument runs on: one perspective is a point, two a line, three a plane; three is the minimum to *locate*, not merely detect. Machines: each repo's entry point is its `AI_ASSIST.json` and fast‑refresh JSON; the resolver in [`CROSS_BRAIN.md`](CROSS_BRAIN.md) keeps every cross‑repo path valid standalone.
+
+---
+
 # Higgins Unity Framework (HUF)
+
+> **Role in the arc of discovery — read this first.** HUF is the **experimental origin, governance layer, and development history** of what became **Hˢ (Higgins Decomposition)** — the current, deterministic compositional *instrument*. The wide‑ranging exploration in this repo (EITT, MC‑4, the cross‑AI collective, the geochemistry/energy/chemistry studies) is where the ideas were discovered and stress‑tested; they matured into the Hˢ engine (CNT → CNQ → CN‑TT v4). **This repository is the support / lineage / history; the active instrument and its engine live in the [higgins‑decomposition (Hˢ) repo](https://github.com/PeterHiggins19/higgins-decomposition).** It is kept whole on purpose — *the past is the strength and the future; lose nothing.* New here? Start with [`AI_ASSIST.json`](AI_ASSIST.json) and [`RELATIONSHIP_TO_Hs.md`](RELATIONSHIP_TO_Hs.md).
 
 **An independent research project in Compositional Data Analysis (CoDa) and entropy-invariant monitoring on the simplex.** This is a scientific research repository — not a game engine, not a Unity plugin, not a software library.
 
 *Author: Peter Higgins, Rogue Wave Audio, Markham, Ontario, Canada*
 
-**Core discovery:** The Entropy-Invariant Time Transformer (EITT) — Shannon entropy of compositional time series is empirically near-invariant under geometric-mean decimation. Measured at **0.18% variation** across a 341:1 compression ratio. Validated across energy systems, chemistry (500,000 data points), hardware reliability, and climate scenarios.
+**EITT — a key point of contact, divided influence.** The Entropy-Invariant Time Transformer: Shannon entropy of compositional time series is empirically near-invariant under geometric-mean decimation — measured at **0.18% variation** across a 341:1 compression ratio (validated across energy systems, chemistry [500,000 data points], hardware reliability, climate, and 40,666 igneous rocks). Its influence is deliberately divided: **minor** inside the deterministic engine (one diagnostic, `eitt_bench_test`, among many — nothing load-bearing rests on it), and **major** as two things — the **temporal face** of the framework's central thesis (the timescale is intrinsic; the time-domain twin of the acoustic ground state) and the **falsifiable open problem** HUF offers the compositional-data-analysis community (*measured, not proven — can it be derived from Aitchison geometry?*). Full positioning: [`science/eitt/EITT_THE_PLACE_IT_HOLDS.md`](science/eitt/EITT_THE_PLACE_IT_HOLDS.md).
 
 **Disciplines:** Compositional Data Analysis, Shannon entropy, Aitchison geometry, simplex monitoring, quantum information correspondence, energy transition analysis.
 
@@ -24,7 +69,9 @@ The framework builds on Aitchison (1982/1986) simplex geometry and Shannon (1948
 
 ---
 
-## The Discovery: EITT (Entropy-Invariant Time Transformer)
+## EITT — the place it holds: a key point of contact (divided influence)
+
+EITT's influence within HUF is deliberately divided. In the deterministic engine it is one diagnostic among many (`eitt_bench_test`); nothing load-bearing depends on it. As a *result* it is the framework's primary **point of contact** with the compositional-data-analysis community — a measured, still-unproven invariance offered as a shared open problem — and the **temporal statement** of the framework's central thesis (the time-domain twin of the acoustic ground state). Full positioning: [`science/eitt/EITT_THE_PLACE_IT_HOLDS.md`](science/eitt/EITT_THE_PLACE_IT_HOLDS.md).
 
 Shannon entropy appears empirically near-invariant under geometric-mean block decimation of compositional time series. This is not a theorem — it is an empirical observation awaiting formal proof.
 
@@ -94,6 +141,11 @@ HUF/
 │   └── evidence/                   #   Case studies (energy, backblaze, etc.)
 │
 ├── tools/                          # Everything runnable
+│   ├── interactive/                #   ★ LIVE HTML TOOLS — open in browser ★
+│   │   ├── EXP-19_Interactive_Simulator.html
+│   │   ├── EXP16_Interactive_Simulator.html
+│   │   ├── EXP-19_Fourier_Conjugate_Preservation_Theorem.html
+│   │   └── HUF_Spectrum_Analyzer_Universal.html
 │   ├── pipeline/                   #   EITT pipeline, preparsers, scripts
 │   ├── diagnostics/                #   Validators, dashboards, UML diagrams
 │   ├── spectrum-analyzer/          #   HUF Spectrum Analyzer (all versions)
@@ -130,6 +182,32 @@ HUF/
 │
 └── archive/                        # Superseded work — what failed speaks loudest
 ```
+
+---
+
+## Interactive Tools — Live Hˢ Decomposition
+
+**Download any HTML file and open in a browser. No installation required. Everything runs locally.**
+
+| Tool | What It Does | Try It |
+|------|-------------|--------|
+| **Hˢ Simplex Scope** | Real-time Fourier conjugate pair decomposition. 12 pairs, all 12 pipeline steps visualised simultaneously. See self-conjugate preservation in action. | [`EXP-19_Interactive_Simulator.html`](tools/interactive/EXP-19_Interactive_Simulator.html) |
+| **Spring-Mass Force Decomposition** | Damped oscillator decomposed into KE/PE/Damping carriers. Watch chaos detection at carrier zero-crossings. EITT entropy panel. 3D helix. | [`EXP16_Interactive_Simulator.html`](tools/interactive/EXP16_Interactive_Simulator.html) |
+| **Fourier Conjugate Preservation Theorem** | Mathematical proof visualisation. 3 theorems + 1 corollary. Interactive step-through of the formal proof. | [`EXP-19_Fourier_Conjugate_Preservation_Theorem.html`](tools/interactive/EXP-19_Fourier_Conjugate_Preservation_Theorem.html) |
+| **Spectrum Analyzer** | Universal JSON reader. Drop any Hˢ pipeline output and get 5 readings: Source, Calibration, Complexity, Velocity, Peak. | [`HUF_Spectrum_Analyzer_Universal.html`](tools/interactive/HUF_Spectrum_Analyzer_Universal.html) |
+
+All tools use the Hˢ symbol (H-superscript-S = Higgins Decomposition on the Simplex) and the current 12-step pipeline v1.0 with HVLD vertex lock diagnostic.
+
+---
+
+## Hˢ Release State (April 2026)
+
+**15/15 experiments classified NATURAL** across 12 physical domains (Acoustics, Astrophysics, Commodities, Energy, Force, Geochemistry, Gravity, Materials, Matter, Nuclear, Particle, QCD). Pipeline v1.0 with 35 transcendental constants, 13 Fourier conjugate pairs, 4 input guards. Tightest match: EXP-03 Nuclear SEMF locks to 1/(π^e) at δ = 5.87 × 10⁻⁶ — six millionths.
+
+Key documents:
+- [**Character Analysis**](codawork2026/experiments/Higgins_Decomposition_Character_Analysis.docx) — 30+ page cornerstone specification (DUT exploded diagnostic, state machine, adversarial robustness, theorems, disclosures)
+- [**EXP-03 Precision Inference Paper**](codawork2026/experiments/Hs_EXP03_Precision_Inference.docx) — Standalone paper on the nuclear SEMF result
+- [**Release Validation**](codawork2026/experiments/Hs_release_validation.json) — Full sweep results for all 15 experiments
 
 ---
 
@@ -205,3 +283,54 @@ See [CITATION.cff](CITATION.cff).
 Peter Higgins | Rogue Wave Audio | PeterHiggins@RogueWaveAudio.com
 
 Repository: [github.com/PeterHiggins19/Higgins-Unity-Framework](https://github.com/PeterHiggins19/Higgins-Unity-Framework)
+
+---
+
+## References & Acknowledgments
+
+*A fully maintained list. The science here stands on the work of others; we cite it extensively, as both respect and protection. When the framework adopts a new method, or a member of the community engages the work, add it here — and in the identical block carried by the sibling repositories.*
+
+### Acknowledgments — the compositional data analysis community
+
+This instrument is built on standard compositional tools, and it exists in dialogue with the people who created and steward them. With gratitude to the **CoDa Association** and the organisers, scientific committee, and hosts of **CoDaWork 2026** (Coimbra, Portugal, 1–5 June 2026; co-hosted with the **Sociedade Portuguesa de Geologia**), whose welcome made this work's first compositional presentation possible — and to the community members who welcomed, questioned, and strengthened it:
+
+- **Conference chairs & hosts:** Juan José Egozcue (chair of the committee that accepted the work), Teresa Albuquerque (conference co-chair and host).
+- **Foundational scholars whose work the instrument stands on:** Vera Pawlowsky-Glahn, Juan José Egozcue, Raimon Tolosana-Delgado, Karel Hron, Antonella Buccianti, Gregory B. Gloor, Javier Palarea-Albaladejo.
+- **Colleagues who welcomed and challenged the work:** Paul-Gauthier Noé, Patricia Genius Serra, Christine Thomas-Agnan, Dot Dumuid, Kamila Fačevicová, Gianna Serafina Monti, Rui Santos.
+- **Fellow presenters whose work runs alongside this one:** Narayana & Chotirmall (microbiome time series), Ascari & Fiori (energy-mix clustering), Kanjiradan & Veetil (compositional health series), Vega Baquero & Santolino (compositional finance).
+
+Particular thanks to **Juan José Egozcue** and **Vera Pawlowsky-Glahn** for their written discussion of this work and their subcompositional-coherence results, which directly informed it.
+
+*The instrument reads. The expert decides. These are the experts.*
+
+### References — the science this instrument is built upon
+
+**Compositional data analysis.**
+- Aitchison, J. (1982). The statistical analysis of compositional data. *Journal of the Royal Statistical Society, Series B*, 44(2), 139–177.
+- Aitchison, J. (1986). *The Statistical Analysis of Compositional Data*. London: Chapman & Hall.
+- Pawlowsky-Glahn, V., & Egozcue, J. J. (2001). Geometric approach to statistical analysis on the simplex. *Stochastic Environmental Research and Risk Assessment*, 15, 384–398.
+- Egozcue, J. J., Pawlowsky-Glahn, V., Mateu-Figueras, G., & Barceló-Vidal, C. (2003). Isometric logratio transformations for compositional data analysis. *Mathematical Geology*, 35(3), 279–300.
+- Egozcue, J. J., & Pawlowsky-Glahn, V. (2005). Groups of parts and their balances in compositional data analysis. *Mathematical Geology*, 37(7), 795–828.
+- Pawlowsky-Glahn, V., Egozcue, J. J., & Tolosana-Delgado, R. (2015). *Modeling and Analysis of Compositional Data*. Chichester: John Wiley & Sons.
+- Egozcue, J. J., & Pawlowsky-Glahn, V. (2023). Subcompositional coherence and proportionality. *SORT — Statistics and Operations Research Transactions*.
+- Martín-Fernández, J. A., Barceló-Vidal, C., & Pawlowsky-Glahn, V. (2003). Dealing with zeros and missing values in compositional data sets. *Mathematical Geology*, 35(3), 253–278.
+- Palarea-Albaladejo, J., & Martín-Fernández, J. A. (2015). zCompositions: R package for the imputation of left-censored compositional data. *Chemometrics and Intelligent Laboratory Systems*, 143, 85–96.
+- Filzmoser, P., Hron, K., & Templ, M. (2018). *Applied Compositional Data Analysis*. Cham: Springer.
+- Greenacre, M. (2018). *Compositional Data Analysis in Practice*. Boca Raton: Chapman & Hall/CRC.
+- Gloor, G. B., Macklaim, J. M., Pawlowsky-Glahn, V., & Egozcue, J. J. (2017). Microbiome datasets are compositional: and this is not optional. *Frontiers in Microbiology*, 8, 2224.
+
+**Information theory & geometry.**
+- Shannon, C. E. (1948). A mathematical theory of communication. *Bell System Technical Journal*, 27, 379–423 & 623–656.
+- Stevens, S. S. (1946). On the theory of scales of measurement. *Science*, 103(2684), 677–680.
+- Amari, S. (1985). *Differential-Geometrical Methods in Statistics*. New York: Springer.
+
+**Acoustic & mathematical lineage (the DADC origin).**
+- Strutt, J. W. (Lord Rayleigh) (1896). *The Theory of Sound* (2nd ed.). London: Macmillan.
+- Sommerfeld, A. (1896). Mathematische Theorie der Diffraction. *Mathematische Annalen*, 47, 317–374.
+- Olson, H. F. (1957). *Acoustical Engineering*. Princeton: Van Nostrand.
+- Vanderkooy, J. (1991). A simple theory of cabinet edge diffraction. *Journal of the Audio Engineering Society*, 39(12), 923–933.
+- Linkwitz, S. H. (1976). Active crossover networks for noncoincident drivers. *Journal of the Audio Engineering Society*, 24(1), 2–8.
+- Banach, S. (1922). Sur les opérations dans les ensembles abstraits et leur application aux équations intégrales. *Fundamenta Mathematicae*, 3, 133–181.
+- Gershgorin, S. A. (1931). Über die Abgrenzung der Eigenwerte einer Matrix. *Izvestiya Akademii Nauk SSSR*.
+
+**How to cite this work:** see [`CITATION.cff`](CITATION.cff). AI assistance is used per HUF-STD-001; research design, mathematical content, and scientific responsibility remain with the named author.

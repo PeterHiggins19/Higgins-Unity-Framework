@@ -1,0 +1,138 @@
+{
+  "experiment": "EXP-19b",
+  "title": "Pipeline Optimization via Conjugate Pair Validation",
+  "timestamp": "2026-04-22T21:22:12.350686Z",
+  "pipeline_version": "1.0",
+  "oracle_spec": {
+    "test_suite": "12 Fourier conjugate pairs from EXP-19",
+    "invariant_1": "Self-conjugate ratios = 1.000 (\u00b10.001)",
+    "invariant_2": "PLL shape preservation \u2265 11/12",
+    "invariant_3": "Chaos symmetry = 1.000",
+    "invariant_4": "Pair 02/10 swap commutativity"
+  },
+  "baseline": {
+    "elapsed_s": 0.12220907211303711,
+    "pipeline": "Original 12-step v1.0"
+  },
+  "variants": [
+    {
+      "name": "OPT-A: Incremental Welford Variance",
+      "oracle_pass": true,
+      "elapsed_s": 0.08800029754638672,
+      "speedup": 1.3887347602275806,
+      "max_deviation": 5.590823632141415e-15,
+      "pll_preservation": "12/12",
+      "self_conjugate_ok": true,
+      "swap_commutativity_ok": true,
+      "n_deviations": 0,
+      "deviations_sample": []
+    },
+    {
+      "name": "OPT-B: CLR+Variance Merge",
+      "oracle_pass": true,
+      "elapsed_s": 0.10400104522705078,
+      "speedup": 1.175075422042493,
+      "max_deviation": 5.590823632141415e-15,
+      "pll_preservation": "12/12",
+      "self_conjugate_ok": true,
+      "swap_commutativity_ok": true,
+      "n_deviations": 0,
+      "deviations_sample": []
+    },
+    {
+      "name": "OPT-C: Super Squeeze Pruning",
+      "oracle_pass": true,
+      "elapsed_s": 0.18092870712280273,
+      "speedup": 0.675454293884328,
+      "max_deviation": 0.0,
+      "pll_preservation": "12/12",
+      "self_conjugate_ok": true,
+      "swap_commutativity_ok": true,
+      "n_deviations": 0,
+      "deviations_sample": []
+    },
+    {
+      "name": "OPT-D: Step Reordering (Entropy First)",
+      "oracle_pass": true,
+      "elapsed_s": 0.12845611572265625,
+      "speedup": 0.9513682663182277,
+      "max_deviation": 0.0,
+      "pll_preservation": "12/12",
+      "self_conjugate_ok": true,
+      "swap_commutativity_ok": true,
+      "n_deviations": 0,
+      "deviations_sample": []
+    },
+    {
+      "name": "OPT-E: Ternary+Complex+Helix Fusion",
+      "oracle_pass": true,
+      "elapsed_s": 0.12234210968017578,
+      "speedup": 0.9989125774642398,
+      "max_deviation": 0.0,
+      "pll_preservation": "12/12",
+      "self_conjugate_ok": true,
+      "swap_commutativity_ok": true,
+      "n_deviations": 0,
+      "deviations_sample": []
+    },
+    {
+      "name": "OPT-F: Full Streamlined Pipeline",
+      "oracle_pass": true,
+      "elapsed_s": 0.10094594955444336,
+      "speedup": 1.2106386898379302,
+      "max_deviation": 5.590823632141415e-15,
+      "pll_preservation": "12/12",
+      "self_conjugate_ok": true,
+      "swap_commutativity_ok": true,
+      "n_deviations": 0,
+      "deviations_sample": []
+    }
+  ],
+  "complexity_analysis": {
+    "original_pipeline": {
+      "close_to_simplex": "O(N\u00b7D)",
+      "clr_transform": "O(N\u00b7D)",
+      "aitchison_variance": "O(N\u00b2\u00b7D)  \u2190 BOTTLENECK",
+      "pll_parabola": "O(N)",
+      "super_squeeze": "O(N\u00b7K) where K=28 constants",
+      "eitt_entropy": "O(N\u00b7D + N/f\u00b7D) for f\u2208{2,4,8}",
+      "ternary_projection": "O(N\u00b7D)",
+      "complex_plane": "O(N)",
+      "helix_polar": "O(N)",
+      "total": "O(N\u00b2\u00b7D + N\u00b7K)",
+      "dominant": "aitchison_variance at O(N\u00b2\u00b7D)"
+    },
+    "optimized_pipeline": {
+      "close_to_simplex": "O(N\u00b7D) \u2014 unchanged",
+      "clr_variance_merged": "O(N\u00b7D) \u2014 Welford online, one pass \u2190 WAS O(N\u00b2\u00b7D)",
+      "pll_parabola": "O(N) \u2014 unchanged",
+      "super_squeeze": "O(N\u00b7K) where K=28 \u2014 ALL constants retained (Peter Higgins directive)",
+      "eitt_entropy": "O(N\u00b7D + N/f\u00b7D) \u2014 unchanged",
+      "ternary_complex_helix_fused": "O(N) \u2014 one pass \u2190 WAS 3\u00d7O(N)",
+      "total": "O(N\u00b7D + N\u00b7K)",
+      "dominant": "clr_variance or eitt_entropy at O(N\u00b7D)"
+    },
+    "speedup_theoretical": {
+      "aitchison_variance": "O(N\u00b2\u00b7D) \u2192 O(N\u00b7D) = N\u00d7 speedup",
+      "super_squeeze": "O(N\u00b728) \u2014 UNCHANGED, all constants retained for future-proofing",
+      "ternary_chain": "3 passes \u2192 1 pass = 3\u00d7 constant factor",
+      "overall": "O(N\u00b2\u00b7D) \u2192 O(N\u00b7D) = N\u00d7 asymptotic improvement"
+    }
+  },
+  "summary": {
+    "total_variants_tested": 6,
+    "passing": 6,
+    "failing": 0,
+    "passing_variants": [
+      "OPT-A: Incremental Welford Variance",
+      "OPT-B: CLR+Variance Merge",
+      "OPT-C: Super Squeeze Pruning",
+      "OPT-D: Step Reordering (Entropy First)",
+      "OPT-E: Ternary+Complex+Helix Fusion",
+      "OPT-F: Full Streamlined Pipeline"
+    ],
+    "failing_variants": [],
+    "best_speedup": 1.3887347602275806,
+    "recommended_pipeline": "OPT-F: Full Streamlined"
+  }
+}

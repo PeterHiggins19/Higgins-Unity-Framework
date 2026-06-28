@@ -1,0 +1,190 @@
+{
+  "schema": "triple_journal/1.0",
+  "title": "Triple journal — system-wide journal index + cross-repo change log",
+  "updated": "2026-06-25",
+  "_note": "Identical in all three repos (part of the shared 'map of the whole' set; see DOCUMENT_DISTRIBUTION.json). Human companion: TRIPLE_JOURNAL.md. A distributed backup: the cross-repo record survives in any one repo. Gate: Peter Higgins; honest-broker; lose nothing.",
+  "per_repo_journals": {
+    "Hs": {
+      "role": "pure math · the general instrument",
+      "source_of_truth": "HS_FAST_REFRESH.json",
+      "hubs": [
+        "EXPERIMENTS_JOURNAL.md",
+        "CHANGELOG.md",
+        "ai-refresh/PUSHES_INDEX.md",
+        "ai-refresh/HS_TRACKING_LOG.json",
+        "ai-refresh/JOURNALING_PROTOCOL.md"
+      ],
+      "leaf_journals": "per-experiment JOURNAL.md under experiments/ and HCI-CNT/experiments/",
+      "url": "https://github.com/PeterHiggins19/higgins-decomposition"
+    },
+    "HUF": {
+      "role": "governance",
+      "source_of_truth": "ai-refresh/HUF_FAST_REFRESH.json",
+      "hubs": [
+        "ai-refresh/MASTER_LINEAGE.json",
+        "briefings/THE_LINEAGE.md",
+        "ai-refresh/PHASE_MARKERS.json",
+        "ai-refresh/AI_REFRESH_2026-06-07_corpus_reconciliation.md"
+      ],
+      "leaf_journals": "session_log array inside HUF_FAST_REFRESH.json; briefings/",
+      "url": "https://github.com/PeterHiggins19/Higgins-Unity-Framework"
+    },
+    "RWA": {
+      "role": "everything organic sound",
+      "source_of_truth": "RWA_FAST_REFRESH.json",
+      "hubs": [
+        "LINEAGE.md",
+        "RWA_ADMIN.json",
+        "AI_REFRESH_2026-06-07_corpus_reconciliation.md",
+        "HUF_RELATIONSHIP.json"
+      ],
+      "leaf_journals": "current_state_* blocks inside RWA_FAST_REFRESH.json",
+      "url": "https://github.com/PeterHiggins19/Rogue-Wave-Audio"
+    }
+  },
+  "cross_repo_log": [
+    {
+      "date": "2026-06-16",
+      "change": "Safety-primacy refresh — byte-identical shared Level-1 block across all three repos (safety dominant + absolute; operator holds the last breaker; full automation never possible at any scale; coherence offered never imposed) + huf-gov banners; pushed all three green",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "README.md (shared Level-1 block)",
+        "huf-gov shared safety banners"
+      ],
+      "pushes": "Hs f297141 CI #78 green; HUF 37ba542 CI #96 green; RWA caeb161 CI #7 green"
+    },
+    {
+      "date": "2026-06-12",
+      "change": "RWA-001 made the single contact authority -- personal addresses scrubbed (carrier-filter); all active contact-bearing JSONs reference RWA-001",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "RWA-001.json contact_authority block (single-home in RWA) + contact_authority pointers across admin/science JSONs"
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "change": "History thread + graduate-school ai-refresh — common development+necessity thread; deep onboarding curriculum woven from it; ai-refresh entry points elevated",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "HISTORY_THREAD.md",
+        "GRADUATE_SCHOOL.md"
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "change": "Triple journal added — system-wide journal index + cross-repo log, identical in all three",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "TRIPLE_JOURNAL.md",
+        "TRIPLE_JOURNAL.json"
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "change": "Document-distribution policy + coherence verifier (three homes; single source of truth; the shared set)",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "DOCUMENT_DISTRIBUTION.md",
+        "DOCUMENT_DISTRIBUTION.json",
+        "verify_tri_repo_coherence.py (mirror root)"
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "change": "Unified .gitattributes (no LFS; text raw + LF). Fixed RWA arc_of_discovery.svg shipping as an LFS pointer",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        ".gitattributes"
+      ]
+    },
+    {
+      "date": "2026-06-12",
+      "change": "CROSS_BRAIN.md made a true all-three file (RWA now carries it; pre-existing Hs<->HUF section-3 drift reconciled)",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "CROSS_BRAIN.md"
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "change": "EITT repositioned as a key point of contact with divided influence; 'Transformer' documented as the Smaart-v9 phase-wrap etymology",
+      "repos": [
+        "HUF"
+      ],
+      "shared_files": [
+        "science/eitt/EITT_THE_PLACE_IT_HOLDS.md",
+        "ai-refresh/HUF_FAST_REFRESH.json",
+        "README.md"
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "change": "Arc of Discovery executive summary + three-level READMEs + maintained References/Acknowledgments block",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "ARC_OF_DISCOVERY.md",
+        "arc_of_discovery.svg",
+        "README.md (Level-1 + References blocks)"
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "change": "Ground-state headwater documented + cross-refs threaded (3^n index <-> ground state <-> network)",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": [
+        "THE_GROUND_STATE.md",
+        "LINEAGE.md",
+        "HUF_RELATIONSHIP.json",
+        "science/methodology/CONFIDENCE_INDEX.md"
+      ]
+    },
+    {
+      "date": "2026-06-11",
+      "change": "Pushes landed — Hs CI #75 148d0fb; HUF #93 24caaed; RWA #4 c97b83d",
+      "repos": [
+        "RWA",
+        "HUF",
+        "Hs"
+      ],
+      "shared_files": []
+    }
+  ],
+  "maintenance_rule": "Log only cross-repo-affecting changes here, identically in all three repos in the same change; single-repo work stays in that repo's own hubs. Verify parity with verify_tri_repo_coherence.py before push. Append, never trim.",
+  "_working_tree_note_2026-06-25": "Reviewed 2026-06-25: the G-146->G-228 arc (CMP/triangulation/constellation/EUV/Canada/world-monetary/Q/blindness/triad-backbone/differential-engine/global-user-system axiom) is ALL Hs-repo working-tree, single-repo by nature, so per the maintenance rule it stays out of this cross-repo log -- see Hs ai-refresh/HS_TRACKING_LOG.json. The one missing CROSS-repo item, the 2026-06-16 shared-block push, was added this date. Nothing pushed since; Peter sole gate."
+}

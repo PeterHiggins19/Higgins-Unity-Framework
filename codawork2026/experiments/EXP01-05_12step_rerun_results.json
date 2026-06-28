@@ -1,0 +1,305 @@
+{
+  "framework": "Higgins Unity Framework",
+  "pipeline": "12-step Higgins Decomposition (EXP-16/17 finalized)",
+  "date": "2026-04-22",
+  "experiments": {
+    "EXP01": {
+      "experiment": "EXP-01: Gold/Silver Price Ratio",
+      "carriers": [
+        "Gold",
+        "Silver"
+      ],
+      "step1_system": "EXP-01: Gold/Silver Price Ratio: 2-part simplex, carriers=['Gold', 'Silver']",
+      "step2_n_samples": 338,
+      "step3_closure_check": true,
+      "step4_clr_mean_per_part": [
+        1.5080597405442941,
+        -1.5080597405442941
+      ],
+      "step5_sigma2_range": [
+        3.048094525769001e-07,
+        0.04002422007144919
+      ],
+      "step6_pll_coeffs": [
+        4.11804352075886e-07,
+        -2.5577440024021186e-05,
+        0.0010905685145600774
+      ],
+      "step6_vertex": [
+        31.055329909806122,
+        0.0006934105954629487
+      ],
+      "step6_curvature": "concave_up",
+      "step7_squeeze_mean": 0.1764608815058676,
+      "step7_cancellation": false,
+      "step8_entropy_range": [
+        0.12407054058576339,
+        0.43949698692151334
+      ],
+      "step8_entropy_mean": 0.28083013189282124,
+      "step9_angular_velocity_std": 1.4820298889549963,
+      "step10_chaos": {
+        "total_deviations": 446,
+        "stalls": 180,
+        "spikes": 32,
+        "reversals": 234
+      },
+      "step11_complex_range_re": [
+        0.8181818181818181,
+        0.9660604891671956
+      ],
+      "step11_complex_range_im": [
+        2.0781956653010446e-18,
+        1.1133152719521393e-17
+      ],
+      "step12_radius_range": [
+        0.8181818181818181,
+        0.9660604891671956
+      ],
+      "step12_theta_range": [
+        2.1512065637759175e-18,
+        1.3607186657192814e-17
+      ]
+    },
+    "EXP02": {
+      "experiment": "EXP-02: US State Energy Mix",
+      "carriers": [
+        "Fossil",
+        "Nuclear",
+        "Renewable"
+      ],
+      "step1_system": "EXP-02: US State Energy Mix: 3-part simplex, carriers=['Fossil', 'Nuclear', 'Renewable']",
+      "step2_n_samples": 25,
+      "step3_closure_check": true,
+      "step4_clr_mean_per_part": [
+        0.8352476219668135,
+        -0.49378529345479455,
+        -0.34146232851201885
+      ],
+      "step5_sigma2_range": [
+        0.0031246793226437316,
+        0.07619542138514257
+      ],
+      "step6_pll_coeffs": [
+        -3.5263905120292116e-05,
+        0.003372004450892424,
+        0.010684158165499969
+      ],
+      "step6_vertex": [
+        47.81099029432296,
+        0.09129359420251573
+      ],
+      "step6_curvature": "concave_down",
+      "step7_squeeze_mean": 0.14154954762131122,
+      "step7_cancellation": false,
+      "step8_entropy_range": [
+        0.6314963146031455,
+        0.9175698247162152
+      ],
+      "step8_entropy_mean": 0.8152401429794982,
+      "step9_angular_velocity_std": 0.6716381533602981,
+      "step10_chaos": {
+        "total_deviations": 6,
+        "stalls": 2,
+        "spikes": 0,
+        "reversals": 4
+      },
+      "step11_complex_range_re": [
+        0.22217486948910667,
+        0.6315355264008491
+      ],
+      "step11_complex_range_im": [
+        -0.18200318871403706,
+        0.1092538331417332
+      ],
+      "step12_radius_range": [
+        0.28720521118980236,
+        0.6409161576700647
+      ],
+      "step12_theta_range": [
+        -0.6863324699797188,
+        0.17130165236249392
+      ]
+    },
+    "EXP03": {
+      "experiment": "EXP-03: Uranium Binding Energy (SEMF)",
+      "carriers": [
+        "Volume",
+        "Surf+Coulomb",
+        "Sym+Pairing"
+      ],
+      "step1_system": "EXP-03: Uranium Binding Energy (SEMF): 3-part simplex, carriers=['Volume', 'Surf+Coulomb', 'Sym+Pairing']",
+      "step2_n_samples": 237,
+      "step3_closure_check": true,
+      "step4_clr_mean_per_part": [
+        1.6046671354244888,
+        0.83767192757476,
+        -2.442339062999247
+      ],
+      "step5_sigma2_range": [
+        0.0064714066377578915,
+        0.1477168802492838
+      ],
+      "step6_pll_coeffs": [
+        1.3362558741069223e-06,
+        -0.0007224952336425454,
+        0.1296319206243944
+      ],
+      "step6_vertex": [
+        270.34314596574563,
+        0.031971103420303335
+      ],
+      "step6_curvature": "concave_up",
+      "step7_squeeze_mean": 0.07081115530205684,
+      "step7_cancellation": false,
+      "step8_entropy_range": [
+        0.5940583962736048,
+        0.9154369916689962
+      ],
+      "step8_entropy_mean": 0.6220822543560202,
+      "step9_angular_velocity_std": 0.32704377393119144,
+      "step10_chaos": {
+        "total_deviations": 219,
+        "stalls": 6,
+        "spikes": 0,
+        "reversals": 213
+      },
+      "step11_complex_range_re": [
+        0.1971721656020699,
+        0.5460778398960477
+      ],
+      "step11_complex_range_im": [
+        0.18840357543049582,
+        0.29866877486628407
+      ],
+      "step12_radius_range": [
+        0.2898652172760389,
+        0.5991306099410261
+      ],
+      "step12_theta_range": [
+        0.4076655333148253,
+        0.8911705510777232
+      ]
+    },
+    "EXP04": {
+      "experiment": "EXP-04: Microphone Valley Response",
+      "carriers": [
+        "Low",
+        "Mid",
+        "High"
+      ],
+      "step1_system": "EXP-04: Microphone Valley Response: 3-part simplex, carriers=['Low', 'Mid', 'High']",
+      "step2_n_samples": 200,
+      "step3_closure_check": true,
+      "step4_clr_mean_per_part": [
+        -1.3506349419417267,
+        -0.6297581004280973,
+        1.980393042369824
+      ],
+      "step5_sigma2_range": [
+        0.01036605609936049,
+        2.1715535901232754
+      ],
+      "step6_pll_coeffs": [
+        -0.0001330371572437929,
+        0.029171340285709495,
+        0.47451999918589827
+      ],
+      "step6_vertex": [
+        109.63606292433214,
+        2.0736354487614737
+      ],
+      "step6_curvature": "concave_down",
+      "step7_squeeze_mean": 0.22246606781106323,
+      "step7_cancellation": false,
+      "step8_entropy_range": [
+        0.09812570748250073,
+        0.9521048831622652
+      ],
+      "step8_entropy_mean": 0.35965090779504494,
+      "step9_angular_velocity_std": 0.6829155276376119,
+      "step10_chaos": {
+        "total_deviations": 205,
+        "stalls": 37,
+        "spikes": 9,
+        "reversals": 159
+      },
+      "step11_complex_range_re": [
+        -0.48883677300596734,
+        0.6410460681340031
+      ],
+      "step11_complex_range_im": [
+        -0.8412004548355685,
+        0.4331829299028931
+      ],
+      "step12_radius_range": [
+        0.2345518131951001,
+        0.9713346180835025
+      ],
+      "step12_theta_range": [
+        -2.3894974492526577,
+        1.0833095713695018
+      ]
+    },
+    "EXP05": {
+      "experiment": "EXP-05: Geochemistry (Basalt-Rhyolite)",
+      "carriers": [
+        "SiO2",
+        "Al2O3",
+        "CaO+MgO"
+      ],
+      "step1_system": "EXP-05: Geochemistry (Basalt-Rhyolite): 3-part simplex, carriers=['SiO2', 'Al2O3', 'CaO+MgO']",
+      "step2_n_samples": 150,
+      "step3_closure_check": true,
+      "step4_clr_mean_per_part": [
+        1.0179405734686482,
+        -0.27258650707068355,
+        -0.7453540663979649
+      ],
+      "step5_sigma2_range": [
+        0.00021927038848353712,
+        0.08166840190411451
+      ],
+      "step6_pll_coeffs": [
+        4.520771400174502e-06,
+        -0.00022253176659676536,
+        0.004682611115898365
+      ],
+      "step6_vertex": [
+        24.612145461300656,
+        0.0019441190112784675
+      ],
+      "step6_curvature": "concave_up",
+      "step7_squeeze_mean": 0.22771258573805833,
+      "step7_cancellation": false,
+      "step8_entropy_range": [
+        0.5015156528673677,
+        0.9089546706278613
+      ],
+      "step8_entropy_mean": 0.749742257130859,
+      "step9_angular_velocity_std": 0.5642547068169929,
+      "step10_chaos": {
+        "total_deviations": 136,
+        "stalls": 13,
+        "spikes": 4,
+        "reversals": 119
+      },
+      "step11_complex_range_re": [
+        0.32394066229564983,
+        0.7227285456383616
+      ],
+      "step11_complex_range_im": [
+        -0.06819505279424667,
+        0.1266294633763522
+      ],
+      "step12_radius_range": [
+        0.3261176385595793,
+        0.7322420606128972
+      ],
+      "step12_theta_range": [
+        -0.20203793791800956,
+        0.1803196979503835
+      ]
+    }
+  }
+}

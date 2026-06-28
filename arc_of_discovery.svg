@@ -1,0 +1,65 @@
+<svg viewBox="0 0 680 1012" xmlns="http://www.w3.org/2000/svg" role="img" font-family="Inter, Segoe UI, system-ui, sans-serif">
+  <title>The arc of discovery — from a loudspeaker's ground state to the verification network</title>
+  <desc>A vertical flow in nine steps: a cabinet radiating in a room; the isotropic ground state (the simplex barycentre); diffraction (DADC, 6.02 dB apportioned, f_c = 115/dim); the simplex; the Higgins operator H1; MC-4 and EITT; the CN-TT v4 instrument; the 3 to the n confidence index; and the triple-channel verification network. Warm boxes were found in the loudspeaker lab; cool boxes are the deterministic instrument it became.</desc>
+
+  <rect x="3" y="3" width="674" height="1006" rx="14" fill="#FFFFFF" stroke="#E4E2DA" stroke-width="1.5"/>
+
+  <text x="340" y="34" text-anchor="middle" font-size="22" font-weight="500" fill="#26251F">the arc of discovery — a loudspeaker's ground state to the network</text>
+  <text x="340" y="57" text-anchor="middle" font-size="14" font-weight="400" fill="#5F5E5A">one idea, found with a screwdriver, carried unchanged</text>
+
+  <rect x="118" y="74" width="12" height="12" rx="3" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
+  <text x="136" y="84" font-size="12.5" font-weight="400" fill="#5F5E5A">found in the lab · loudspeaker physics</text>
+  <rect x="392" y="74" width="12" height="12" rx="3" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+  <text x="410" y="84" font-size="12.5" font-weight="400" fill="#5F5E5A">the deterministic instrument it became</text>
+
+  <line x1="340" y1="118" x2="340" y2="902" stroke="#D3D1C7" stroke-width="2"/>
+  <g fill="#B4B2A9">
+    <path d="M340 199 l-5 -9 h10 z"/>
+    <path d="M340 297 l-5 -9 h10 z"/>
+    <path d="M340 395 l-5 -9 h10 z"/>
+    <path d="M340 493 l-5 -9 h10 z"/>
+    <path d="M340 591 l-5 -9 h10 z"/>
+    <path d="M340 689 l-5 -9 h10 z"/>
+    <path d="M340 787 l-5 -9 h10 z"/>
+    <path d="M340 885 l-5 -9 h10 z"/>
+  </g>
+
+  <path d="M110 208 q-8 0 -8 8 v140 q0 8 8 8" fill="none" stroke="#D85A30" stroke-width="1.5"/>
+  <text x="86" y="290" text-anchor="middle" font-size="12.5" font-weight="500" fill="#993C1D" transform="rotate(-90 86 290)">the source</text>
+
+  <rect x="120" y="110" width="440" height="58" rx="9" fill="#FAECE7" stroke="#993C1D" stroke-width="1.5"/>
+  <text x="340" y="134" text-anchor="middle" font-size="16" font-weight="500" fill="#4A1B0C">a cabinet radiates in a room</text>
+  <text x="340" y="153" text-anchor="middle" font-size="12.5" font-weight="400" fill="#712B13">Binaural Test Lab · the screwdriver</text>
+
+  <rect x="120" y="208" width="440" height="58" rx="9" fill="#FAECE7" stroke="#993C1D" stroke-width="2.25"/>
+  <text x="340" y="232" text-anchor="middle" font-size="16" font-weight="500" fill="#4A1B0C">the ground state</text>
+  <text x="340" y="251" text-anchor="middle" font-size="12.5" font-weight="400" fill="#712B13">isotropic 4π — uniform radiation = barycentre (1/D…)</text>
+
+  <rect x="120" y="306" width="440" height="58" rx="9" fill="#FAECE7" stroke="#993C1D" stroke-width="2.25"/>
+  <text x="340" y="330" text-anchor="middle" font-size="16" font-weight="500" fill="#4A1B0C">diffraction breaks the balance</text>
+  <text x="340" y="349" text-anchor="middle" font-size="12" font-weight="400" fill="#712B13">DADC · 6.02 dB shared across H, W, D · f_c = 115/dim</text>
+
+  <rect x="120" y="404" width="440" height="58" rx="9" fill="#F5C4B3" stroke="#993C1D" stroke-width="2.25"/>
+  <text x="340" y="428" text-anchor="middle" font-size="16" font-weight="500" fill="#4A1B0C">the simplex</text>
+  <text x="340" y="447" text-anchor="middle" font-size="12.5" font-weight="400" fill="#712B13">parts sum to a constant — CoDa, before it was named</text>
+
+  <rect x="120" y="502" width="440" height="58" rx="9" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+  <text x="340" y="526" text-anchor="middle" font-size="16" font-weight="500" fill="#04342C">the Higgins operator H₁</text>
+  <text x="340" y="545" text-anchor="middle" font-size="12.5" font-weight="400" fill="#085041">unity + coherence, lifted to Hilbert space</text>
+
+  <rect x="120" y="600" width="440" height="58" rx="9" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+  <text x="340" y="624" text-anchor="middle" font-size="16" font-weight="500" fill="#04342C">MC-4 · EITT</text>
+  <text x="340" y="643" text-anchor="middle" font-size="12.5" font-weight="400" fill="#085041">composition monitoring · entropy invariant</text>
+
+  <rect x="120" y="698" width="440" height="58" rx="9" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+  <text x="340" y="722" text-anchor="middle" font-size="16" font-weight="500" fill="#04342C">CN-TT v4</text>
+  <text x="340" y="741" text-anchor="middle" font-size="12.5" font-weight="400" fill="#085041">deterministic, hash-receipted instrument</text>
+
+  <rect x="120" y="796" width="440" height="58" rx="9" fill="#E1F5EE" stroke="#0F6E56" stroke-width="1.5"/>
+  <text x="340" y="820" text-anchor="middle" font-size="16" font-weight="500" fill="#04342C">the 3ⁿ confidence index</text>
+  <text x="340" y="839" text-anchor="middle" font-size="12.5" font-weight="400" fill="#085041">opinion → agreement → validation</text>
+
+  <rect x="120" y="894" width="440" height="58" rx="9" fill="#9FE1CB" stroke="#0F6E56" stroke-width="2.25"/>
+  <text x="340" y="918" text-anchor="middle" font-size="16" font-weight="500" fill="#04342C">triple-channel · the network</text>
+  <text x="340" y="937" text-anchor="middle" font-size="12.5" font-weight="400" fill="#085041">any node checks any node</text>
+</svg>

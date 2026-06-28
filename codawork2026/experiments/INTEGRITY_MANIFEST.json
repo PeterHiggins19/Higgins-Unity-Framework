@@ -1,0 +1,136 @@
+{
+  "_type": "HUF_INTEGRITY_MANIFEST",
+  "_version": "2.0",
+  "_framework": "Higgins Unity Framework (HUF)",
+  "_note": "Master manifest of all experiment integrity certificates",
+  "created": "2026-04-19T18:02:20.434092Z",
+  "reference_commit": "498dece (2026-04-18 15:47:37)",
+  "experiments": {
+    "EXP-01": {
+      "name": "Gold/Silver Ratio \u2014 Full PLL-EITT Verification",
+      "master_hash": "2a3935fcd6360821f9fcdccdf5c644d8bf23202e6c0cc72abf72fc7db375c822",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.227391Z"
+    },
+    "EXP-02": {
+      "name": "US Monthly Energy \u2014 Full PLL-EITT Verification",
+      "master_hash": "b170033fbab6e63cf2346150d3fc93820dfce0916654efd8b09219ca8fd1d7d1",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.230649Z"
+    },
+    "EXP-03": {
+      "name": "Uranium / Nuclear \u2014 Full PLL-EITT Verification",
+      "master_hash": "b45e65204c0b4af309b3b8b74e6f30f44eb25dcf9a7cd2f3d0d516a7be95a7d2",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.234715Z"
+    },
+    "EXP-06": {
+      "name": "Nuclear Fusion \u2014 PLL-EITT Chain",
+      "master_hash": "67ec55c36b42b1dab1cc31e5c9c9ca1aa0d7bdef781c6438ab2e06a9e2a1ce59",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.240138Z"
+    },
+    "EXP-06B": {
+      "name": "Bremsstrahlung Boundary Attack",
+      "master_hash": "1b9df099f8f7fcc78bbfd0990be009f5013ea35ea1453e3f644541914e94d7d1",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.244730Z"
+    },
+    "EXP-06C": {
+      "name": "Corrected Fusion Map",
+      "master_hash": "7d131116e33e7d78652644cad3b312867106d80b0a26bfeac07d962bb7662bab",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.250129Z"
+    },
+    "EXP-06D": {
+      "name": "Degrees of Freedom Analysis",
+      "master_hash": "a1a355fb4bd39f987869f632564f9cc7b7f3942aef91b51ce63c588e80da2278",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.253804Z"
+    },
+    "EXP-06E": {
+      "name": "Definitive Fusion Engine",
+      "master_hash": "84c9a0725b015cb8a0eb051ca9c336b6b75b388ac7196d6486b09d13c0b03613",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.257146Z"
+    },
+    "EXP-06F": {
+      "name": "ARC Engine at B=12T",
+      "master_hash": "d7789d91203049514fbdc9d842e7f1537c6235ae63be173b00e3c7a94ca7d484",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.260969Z"
+    },
+    "EXP-06G": {
+      "name": "Isotropic Fusion Reactor Standard",
+      "master_hash": "4493dd7602e9d1c9a95dff8c439c152ade19e7388444e96ea2316a2555d2841e",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.264656Z"
+    },
+    "EXP-06H": {
+      "name": "Fusion Approaches Comparison",
+      "master_hash": "698e8563861449ff014de846a44e440a1eeac0fc42e1affafa9205b823e04727",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.269299Z"
+    },
+    "EXP-06I": {
+      "name": "ST Deep Dive",
+      "master_hash": "8a5e171799490834e089dbc993b8a877ad504a1a62f366be0a67d313541a422b",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.272803Z"
+    },
+    "EXP-06J": {
+      "name": "Krell Logarithmic Scaling",
+      "master_hash": "682f0c5a0590b441f3ee0763d58fb9e3efeb7a160cc3356c17ff3dcc9d3c4da6",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.281272Z"
+    },
+    "EXP-06K": {
+      "name": "Krell Plant Design",
+      "master_hash": "6170c36225be73ee3bb6502a11154f6d31c80a26858afda521f3a07d6f5d9c37",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.284812Z"
+    },
+    "EXP-07": {
+      "name": "EITT at the Quark Scale",
+      "master_hash": "fc4cacf560e85e13bb6d53f30026ecdbf01deea05c539cc9c41f78668b0d03f5",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.288749Z"
+    },
+    "EXP-07B": {
+      "name": "Quark Mysteries",
+      "master_hash": "11d9bc5f7be3961f6157bbbc4a622c9f4fe91c46ec3e62aa3629eea462e8f468",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.293150Z"
+    },
+    "EXP-08": {
+      "name": "Cross-Boundary Composition Atlas",
+      "master_hash": "4cbf45d3d8293e9d4d7f23799b28b1c7544d380f7006b1bbc4334753f399c808",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.296637Z"
+    },
+    "EXP-09": {
+      "name": "Master Inventory",
+      "master_hash": "72531a5058dbc6577aa2a98f04c58caebd590ec8a406faf11e6c3c8b8137a465",
+      "step_count": 5,
+      "sealed": "2026-04-19T18:02:20.300953Z"
+    },
+    "EXP-10": {
+      "name": "Full Sweep \u2014 All Mapped Systems",
+      "master_hash": "45070be70a04532880d977ff14ce70b1e7e531ce1fcb8af235b570da1303a73f",
+      "step_count": 6,
+      "sealed": "2026-04-19T18:02:20.304848Z"
+    },
+    "EXP-11": {
+      "name": "Final Four \u2014 100% Programme Completion",
+      "master_hash": "3b102b421ea46ffcec3712e33e1a2ccefe69c66d5431a336c6faed7be35bff90",
+      "step_count": 6,
+      "sealed": "2026-04-19T18:02:20.309851Z"
+    },
+    "EXP-12": {
+      "name": "Gravity Deep Dive",
+      "master_hash": "99cf60b03cb2973eeae95c3107f58c9e1ce5b2b76f9d4c0f9577a99aad6b114c",
+      "step_count": 6,
+      "sealed": "2026-04-19T18:02:20.314731Z"
+    }
+  }
+}

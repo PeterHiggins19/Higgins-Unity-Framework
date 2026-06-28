@@ -1,0 +1,28 @@
+{
+ "schema": "huf_ai_assist/1.1",
+ "folder": "discoveries/",
+ "topic": "Discovery write-ups.",
+ "purpose": "Local bring-your-own-AI node for this HUF folder. Orient, then climb to the root hub (../AI_ASSIST.json) and forward to the Hs repo.",
+ "byo_ai_onboarding": {
+  "mission": "Understand HUF as the arc of discovery + governance that produced Hs (Higgins Decomposition). This repo is history/support; the live instrument is in the Hs repo.",
+  "the_arc": "DADC (loudspeaker) -> Higgins Operator H1 -> HUF (EITT + MC-4 + cross-AI collective) -> Hs -> CNT -> CNQ -> CN-TT v4.",
+  "standard_coda_relation": "HUF framed composition monitoring (MC-4) on standard CoDa (Aitchison/CLR/ILR); Hs made it a deterministic, hash-chained instrument. Math is standard CoDa-compatible; the instrument is the new part.",
+  "climb_to_current_work": "Run/build = Hs repo (https://github.com/PeterHiggins19/higgins-decomposition). Source of truth on current state = Hs/HS_FAST_REFRESH.json (wins on conflict). Governance discipline = huf-gov/ + DVR-1.0 (Hs/ai-refresh/VERIFICATION_PROTOCOL.json).",
+  "lose_nothing": "HUF was the messy experiment 'that went everywhere'; kept whole on purpose. Honest-broker; claim tiers; Peter is the sole gate."
+ },
+ "specific_knowledge": {
+  "what": "The discovery records \u2014 what was found and when, in HUF's development cycle. See DEVELOPMENT_CYCLE.md for the threaded narrative.",
+  "key_files": [
+   "README.md"
+  ],
+  "status": "HISTORICAL record",
+  "claim_tiers": "Tier 1 verified \u00b7 Tier 2 standard/practiced \u00b7 Tier 3 to-earn. Historical claims keep their original tiers; current canon is Hs's."
+ },
+ "join_the_chain": [
+  "AI_ASSIST.json (HUF root hub)",
+  "RELATIONSHIP_TO_Hs.md",
+  "HUF_REPO_MAP.md",
+  "Hs repo: higgins-decomposition"
+ ],
+ "governance": "Honest-broker; interest expressed never acquired; Peter sole commit/contact gate; AI-assisted per HUF-STD-001."
+}

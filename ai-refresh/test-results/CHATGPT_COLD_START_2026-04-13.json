@@ -6,6 +6,7 @@
     "model_version": "GPT-5.2 Thinking",
     "run_date": "2026-04-13",
     "run_timezone": "America/Toronto",
+    "terminology_note": "This test was run on 2026-04-13 when 'PLL' referred to 'Pipeline Lock List' (the 6 rules). On 2026-04-19, 'Pipeline Lock List' was retired and replaced by 'Compositional Integrity Protocol (CIP)'. PLL now means Phase-Locked Loop only. Q09 answers below reflect the pre-2026-04-19 terminology and were correct at time of test.",
     "repo": "PeterHiggins19/Higgins-Unity-Framework",
     "commit_short": "9d97665",
     "commit_full": "PENDING — Peter to fill from GitHub",
@@ -55,7 +56,7 @@
       "score": 1, "pass": true, "confidence": "HIGH"
     },
     "Q09_pll": {
-      "answer": "PLL = Pipeline Lock List. 6 rules (rule_1 through rule_6).",
+      "answer": "PLL = Compositional Integrity Protocol. 6 rules (rule_1 through rule_6).",
       "score": 1, "pass": true, "confidence": "HIGH"
     },
     "Q10_architecture": {

@@ -1,0 +1,76 @@
+{
+  "_type": "HUF_INTEGRITY_CERTIFICATE",
+  "_version": "1.0",
+  "_framework": "Higgins Unity Framework (HUF)",
+  "_method": "Entropy-Invariant Time Transformer (EITT)",
+  "_reference": "ai-refresh/HUF_COMPLETE_REFERENCE.json",
+  "experiment_id": "EXP-06",
+  "experiment_name": "Nuclear Fusion \u2014 PLL-EITT Chain",
+  "description": "Integrity certificate for EXP-06",
+  "created": "2026-04-19T18:02:20.236176Z",
+  "sealed": "2026-04-19T18:02:20.240138Z",
+  "step_count": 5,
+  "master_hash": "67ec55c36b42b1dab1cc31e5c9c9ca1aa0d7bdef781c6438ab2e06a9e2a1ce59",
+  "chain": [
+    {
+      "step_number": 1,
+      "step_name": "script_integrity",
+      "input_hash": "c6aa280379bf479990d3b76d14fa1bb3ea15a9d9c50de8b79004e15e71a53f33",
+      "output_hash": "c8b009fa45aac6f3fdf4037f698f909828218208677da0aaa2638466f2155a4d",
+      "prev_hash": "GENESIS",
+      "step_hash": "7b3c0fc568257be704d0dca81d0eb67a73ee533b269364b396b9943f6309cad7",
+      "timestamp": "2026-04-19T18:02:20.236829Z",
+      "metadata": {
+        "file": "exp06_fusion_chain.py",
+        "sha256": "9f98df1b7e0f954c626f17d05008ae483ca8c73bf06d5ee74a4a826957c778a0"
+      }
+    },
+    {
+      "step_number": 2,
+      "step_name": "output_integrity",
+      "input_hash": "c3902f21ec24c69c3a13408a9fea484b7e97e32befdd82020ab336f6a43079b7",
+      "output_hash": "a76808e95e6a432bce76c0878f81fb8f039107209d0c1743ad40556cede0d01b",
+      "prev_hash": "7b3c0fc568257be704d0dca81d0eb67a73ee533b269364b396b9943f6309cad7",
+      "step_hash": "7d689d031be99d5b260be88162ae287bfd74efa1b6e46cb00bda9c9600ccb7fd",
+      "timestamp": "2026-04-19T18:02:20.238180Z",
+      "metadata": {
+        "file": "exp06_fusion_chain.json",
+        "sha256": "b771c7a9a5b37741f7c96e176cb9ad2db9dc577da33680f19d34924c3db65c72"
+      }
+    },
+    {
+      "step_number": 3,
+      "step_name": "json_valid",
+      "input_hash": "b2d96dda9969ed399bfdac05b6819026d67187be19ad73f96d10bd4ee1c88755",
+      "output_hash": "0f1608d914a88aadd867168c5ab33ae2396332c6725deb62b36d3aa0312f6f9b",
+      "prev_hash": "7d689d031be99d5b260be88162ae287bfd74efa1b6e46cb00bda9c9600ccb7fd",
+      "step_hash": "c170fb5891250f9fa2dcbc7dfb41459f18d8a53c8cb3c2466344702fd0e96a5b",
+      "timestamp": "2026-04-19T18:02:20.238985Z"
+    },
+    {
+      "step_number": 4,
+      "step_name": "data_extraction",
+      "input_hash": "ba97b52679e55d601fcedf31c42fed8f9b1b32dfb326f1016ef7b3c0900d69cd",
+      "output_hash": "25db35d21f3661c90f20e9013da9010157743fcdf7c020689ae39a8c14a067c6",
+      "prev_hash": "c170fb5891250f9fa2dcbc7dfb41459f18d8a53c8cb3c2466344702fd0e96a5b",
+      "step_hash": "29e13033dd2a8b98c6465c0e2ecd7afb3f5d092a06a54fe3b21dd5d6589ae434",
+      "timestamp": "2026-04-19T18:02:20.239823Z",
+      "metadata": {
+        "total_numeric_values": 954
+      }
+    },
+    {
+      "step_number": 5,
+      "step_name": "physics_validation",
+      "input_hash": "4a344e46e9355c634474898a179cfee9d506b5554096f71a2f0594727694addf",
+      "output_hash": "86e7187c7102deb66cb595652bd4748b5e42ebaabb5d4a8bedf44d34ed55c841",
+      "prev_hash": "29e13033dd2a8b98c6465c0e2ecd7afb3f5d092a06a54fe3b21dd5d6589ae434",
+      "step_hash": "d8790b662efb464f1eb8faed1d74acf66db6c8503f40ec12a9630e8e5eb539e2",
+      "timestamp": "2026-04-19T18:02:20.239885Z",
+      "metadata": {
+        "physics_issues": 0
+      }
+    }
+  ],
+  "verification_instructions": "To verify this certificate: load the chain, recompute each step_hash from (step_name + input_hash + output_hash + prev_hash), then verify master_hash = SHA-256(concat(all step_hashes)). Any mismatch indicates data alteration."
+}

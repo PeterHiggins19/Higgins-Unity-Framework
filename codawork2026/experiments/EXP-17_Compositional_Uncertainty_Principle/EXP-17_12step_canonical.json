@@ -1,0 +1,129 @@
+{
+  "framework": "Higgins Unity Framework",
+  "instrument": "Higgins Decomposition \u2014 12-Step Pipeline v1.0",
+  "experiment": "EXP-17",
+  "name": "Compositional Uncertainty Principle (D=4)",
+  "domain": "THEORY",
+  "carriers": [
+    "Carrier_1",
+    "Carrier_2",
+    "Carrier_3",
+    "Carrier_4"
+  ],
+  "D": 4,
+  "N": 500,
+  "data_source": {
+    "type": "SIMULATED",
+    "url": null,
+    "description": "Coupled harmonic oscillators with D=4 carriers. Natural frequencies \u03c9=[1,2,3,4]. 500 timesteps over 20s. Tests Compositional Uncertainty Principle: floor = 6.37 \u00d7 N^0.18."
+  },
+  "data_hash_sha256_16": "763cf233afd1ef93",
+  "run_timestamp": "2026-04-22T17:41:37.321539Z",
+  "pipeline_version": "1.0",
+  "steps": {
+    "step1_system": "EXP-17: Compositional Uncertainty Principle (D=4): 4-part simplex, carriers=['Carrier_1', 'Carrier_2', 'Carrier_3', 'Carrier_4']",
+    "step2_n_samples": 500,
+    "step2_D": 4,
+    "step2_carriers": [
+      "Carrier_1",
+      "Carrier_2",
+      "Carrier_3",
+      "Carrier_4"
+    ],
+    "data_hash_sha256_16": "763cf233afd1ef93",
+    "step3_closure_check": true,
+    "step3_zero_replacement_applied": false,
+    "step3_zero_delta": 1e-06,
+    "step4_clr_mean_per_part": [
+      -1.139986824724444,
+      -0.06538819568741346,
+      0.47747928267995926,
+      0.7278957377318993
+    ],
+    "step4_clr_std_per_part": [
+      0.7571683487313455,
+      0.9005747163811428,
+      0.7004643519882848,
+      0.8579954933966806
+    ],
+    "step5_sigma2_range": [
+      0.0002481987929059218,
+      2.8407938719523247
+    ],
+    "step5_sigma2_final": 2.6111453032009093,
+    "step6_pll_coeffs": [
+      -1.0687328746608374e-05,
+      0.006577691932731724,
+      1.7754426722812258
+    ],
+    "step6_pll_R2": 0.418577413150223,
+    "step6_pll_shape": "hill",
+    "step6_vertex": [
+      307.73320858213316,
+      2.787529794043399
+    ],
+    "step6_curvature": "concave_down",
+    "step7_squeeze_count": 399,
+    "step7_squeeze_closest": {
+      "time_index": 279,
+      "sigma2_A": 2.7185540992507113,
+      "constant": "1/e",
+      "constant_value": 0.36787944117144233,
+      "test_type": "reciprocal",
+      "test_value": 0.3678425970171498,
+      "delta": 3.684415429255905e-05
+    },
+    "step7_squeeze_mean": 2.531647818153233,
+    "step7_cancellation": true,
+    "step8_entropy_range": [
+      0.4594464900927104,
+      0.9737787867347618
+    ],
+    "step8_entropy_mean": 0.8025984359609265,
+    "step8_entropy_cv": 12.409454445295346,
+    "step8_eitt_invariance": {
+      "compression_2x": {
+        "H_mean_original": 0.8025984359609265,
+        "H_mean_decimated": 0.8017598894784871,
+        "variation_pct": 0.1044789579530455,
+        "pass": true
+      },
+      "compression_4x": {
+        "H_mean_original": 0.8025984359609265,
+        "H_mean_decimated": 0.8057120049276669,
+        "variation_pct": 0.3879360869938203,
+        "pass": true
+      },
+      "compression_8x": {
+        "H_mean_original": 0.8025280762667703,
+        "H_mean_decimated": 0.8259649326513251,
+        "variation_pct": 2.920378373997739,
+        "pass": true
+      }
+    },
+    "step9_chaos_detection": {
+      "total_deviations": 166,
+      "stalls": 41,
+      "spikes": 2,
+      "reversals": 123
+    },
+    "step10_ternary_type": "projected_ternary",
+    "step11_complex_range_re": [
+      -0.19013195701294028,
+      0.38730284756334143
+    ],
+    "step11_complex_range_im": [
+      -0.458827856371151,
+      0.26331925084815694
+    ],
+    "step12_radius_range": [
+      0.0037052294860177716,
+      0.5981148928511968
+    ],
+    "step12_theta_range": [
+      -3.1393539646046267,
+      3.068811482428636
+    ],
+    "step9_angular_velocity_std": 0.3994509707859456
+  }
+}

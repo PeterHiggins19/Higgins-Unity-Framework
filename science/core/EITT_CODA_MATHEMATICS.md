@@ -93,15 +93,15 @@ Tested on:
 | Financial (price-level) | 9 | 74 | 2:1 | +0.004% | [+0.004%, +0.006%] |
 | Germany electricity | 7 | 36 | 2:1 | +0.029% | [−0.119%, +0.086%] |
 
-### Remark 2.2 (Not a Theorem)
+### Remark 2.2 (Analytic Bound — O-1 Resolved)
 
-This is an empirical observation, not a proved theorem. A second-order Taylor expansion of $H$ around the Fréchet mean $\mathbf{x}^*$ gives:
+This observation is now analytically bounded (Open Problem O-1 resolved April 28, 2026). A second-order Taylor expansion of $H$ around the Fréchet mean $\mathbf{x}^*$ gives:
 
 $$\Delta H_M \approx \frac{1}{2} \text{tr}\left[|\text{Hess}\,H(\mathbf{x}^*)| \cdot \text{Cov}(\bar{\mathbf{x}}_G^{(b)})\right]$$
 
 The Hessian of $H$ on $\mathcal{S}^D$ is diagonal with $\partial^2 H / \partial x_i^2 = -1/x_i$. The geometric-mean decimation reduces $\text{Cov}(\bar{\mathbf{x}}_G^{(b)})$ relative to $\text{Cov}(\mathbf{x}(t))$, making $\Delta H_M$ small when the series is near-stationary. The first-order term vanishes because $\exp$ and $\ln$ (in the geometric mean and entropy respectively) share base $e$.
 
-A formal proof bounding $|\delta_M|$ in terms of the Aitchison variance of the process remains open.
+The closed-form bound is: $|\Delta H(M)| \leq 0.5 \cdot \lambda_{\max}(|\mathcal{H}_H(\mu)|) \cdot \text{Tr}(\Sigma_1) \cdot [1 - R(M, \rho)]$, where $R(M, \rho)$ is the VAR(1) variance retention factor. See `EITT_HESSIAN_BOUND.md §8` for the full proof.
 
 ### Observation 2.3 (Multi-Ratio Behaviour)
 
